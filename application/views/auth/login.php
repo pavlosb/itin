@@ -1,23 +1,23 @@
 <div class="container">
   <div class="row justify-content-center">
-  <div class="col-sm-8">
-<h1><?php echo lang('login_heading');?></h1>
-<p><?php echo lang('login_subheading');?></p>
+  <div class="col-sm-8 col-lg-6">
+<h1 class="display-4"><?php echo lang('login_heading');?></h1>
+<p class="lead"><?php echo lang('login_subheading');?></p>
 
-<div id="infoMessage"><?php echo $message;?></div>
+<div class="alert alert-danger" role="alert"><?php echo $message;?></div>
 </div>
 </div>
 <div class="row justify-content-center">
-<div class="col-sm-8">
+<div class="col-sm-8 col-lg-6">
 <?php echo form_open("auth/login");?>
 
   <p>
-    <?php echo lang('login_identity_label', 'identity');?>
+  <label for="identity"><?php echo lang('login_identity_label', 'identity');?></label>
     <?php echo form_input($identity);?>
   </p>
 
   <p>
-    <?php echo lang('login_password_label', 'password');?>
+  <label for="password"><?php echo lang('login_password_label', 'password');?></label>
     <?php echo form_input($password);?>
   </p>
 
