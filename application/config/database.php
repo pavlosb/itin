@@ -94,7 +94,7 @@ $db['default'] = array(
 	'password' => $password,
 	'database' => $database,
 	'dbdriver' => 'mysqli',
-	'dbprefix' => 'itin_',
+	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
