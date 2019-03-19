@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 $connstr = getenv("MYSQLCONNSTR_MySQLConn"); 
-
+echo $connstr;
 foreach ($_SERVER as $key => $value) 
     {
         if (strpos($key, "MYSQLCONNSTR_") !== 0) 
