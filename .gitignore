@@ -1,5 +1,5 @@
 .DS_Store
-
+/bootstrap-scss/
 application/cache/*
 !application/cache/index.html
 

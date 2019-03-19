@@ -72,15 +72,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
+$connstr = getenv("MYSQLCONNSTR_MySQLConn"); 
+
+foreach ($_SERVER as $key => $value) 
+    {
+        if (strpos($key, "MYSQLCONNSTR_") !== 0) 
+        {
+            continue;
+        }
+		$database = preg_replace("/^.*Database=(.+?);.*$/", "\\1", $value);
+        $hostname = preg_replace("/^.*Data Source=(.+?);.*$/", "\\1", $value);
+        $username = preg_replace("/^.*User Id=(.+?);.*$/", "\\1", $value);
+        $password = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
+        break;
+    }
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'hostname' => $hostname,
+	'username' => $username,
+	'password' => $password,
+	'database' => $database,
 	'dbdriver' => 'mysqli',
-	'dbprefix' => '',
+	'dbprefix' => 'itin_',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
 	'cache_on' => FALSE,
