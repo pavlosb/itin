@@ -13,7 +13,7 @@
 
   <p>
     <?php echo lang('login_identity_label', 'identity');?>
-    <?php echo form_input($identity);?>
+    <?php echo form_input($identity, ,array('class' =>"form-control"));?>
   </p>
 
   <p>
