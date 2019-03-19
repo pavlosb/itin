@@ -1,8 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+  <div class="col-sm-8">
 <h1><?php echo lang('login_heading');?></h1>
 <p><?php echo lang('login_subheading');?></p>
 
 <div id="infoMessage"><?php echo $message;?></div>
-
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-sm-8">
 <?php echo form_open("auth/login");?>
 
   <p>
@@ -26,3 +32,6 @@
 <?php echo form_close();?>
 
 <p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
+</div>
+</div>
+</div>
