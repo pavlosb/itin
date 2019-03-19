@@ -75,10 +75,10 @@ $query_builder = TRUE;
 $connstr = getenv("MYSQLCONNSTR_MySQLConn"); 
 
 
-		$database = preg_replace("/^.*Database=(.+?);.*$/", "\\1", $value);
-        $hostname = preg_replace("/^.*Data Source=(.+?);.*$/", "\\1", $value);
-        $username = preg_replace("/^.*User Id=(.+?);.*$/", "\\1", $value);
-        $password = preg_replace("/^.*Password=(.+?)$/", "\\1", $value);
+		$database = preg_replace("/^.*Database=(.+?);.*$/", "\\1", $connstr);
+        $hostname = preg_replace("/^.*Data Source=(.+?);.*$/", "\\1", $connstr);
+        $username = preg_replace("/^.*User Id=(.+?);.*$/", "\\1", $connstr);
+        $password = preg_replace("/^.*Password=(.+?)$/", "\\1", $connstr);
  
 
 $db['default'] = array(
