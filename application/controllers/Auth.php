@@ -101,6 +101,7 @@ class Auth extends CI_Controller
 				'name' => 'identity',
 				'id' => 'identity',
 				'type' => 'text',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('identity'),
 			];
 
@@ -108,6 +109,7 @@ class Auth extends CI_Controller
 				'name' => 'password',
 				'id' => 'password',
 				'type' => 'password',
+				'class' =>'form-control',
 			];
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'login', $this->data);
@@ -156,17 +158,20 @@ class Auth extends CI_Controller
 				'name' => 'old',
 				'id' => 'old',
 				'type' => 'password',
+				'class' =>'form-control',
 			];
 			$this->data['new_password'] = [
 				'name' => 'new',
 				'id' => 'new',
 				'type' => 'password',
+				'class' =>'form-control',
 				'pattern' => '^.{' . $this->data['min_password_length'] . '}.*$',
 			];
 			$this->data['new_password_confirm'] = [
 				'name' => 'new_confirm',
 				'id' => 'new_confirm',
 				'type' => 'password',
+				'class' =>'form-control',
 				'pattern' => '^.{' . $this->data['min_password_length'] . '}.*$',
 			];
 			$this->data['user_id'] = [
@@ -224,6 +229,7 @@ class Auth extends CI_Controller
 			$this->data['identity'] = [
 				'name' => 'identity',
 				'id' => 'identity',
+				'class' =>'form-control',
 			];
 
 			if ($this->config->item('identity', 'ion_auth') != 'email')
@@ -312,18 +318,21 @@ class Auth extends CI_Controller
 					'name' => 'new',
 					'id' => 'new',
 					'type' => 'password',
+					'class' =>'form-control',
 					'pattern' => '^.{' . $this->data['min_password_length'] . '}.*$',
 				];
 				$this->data['new_password_confirm'] = [
 					'name' => 'new_confirm',
 					'id' => 'new_confirm',
 					'type' => 'password',
+					'class' =>'form-control',
 					'pattern' => '^.{' . $this->data['min_password_length'] . '}.*$',
 				];
 				$this->data['user_id'] = [
 					'name' => 'user_id',
 					'id' => 'user_id',
 					'type' => 'hidden',
+					'class' =>'form-control',
 					'value' => $user->id,
 				];
 				$this->data['csrf'] = $this->_get_csrf_nonce();
@@ -519,48 +528,56 @@ class Auth extends CI_Controller
 				'name' => 'first_name',
 				'id' => 'first_name',
 				'type' => 'text',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('first_name'),
 			];
 			$this->data['last_name'] = [
 				'name' => 'last_name',
 				'id' => 'last_name',
 				'type' => 'text',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('last_name'),
 			];
 			$this->data['identity'] = [
 				'name' => 'identity',
 				'id' => 'identity',
 				'type' => 'text',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('identity'),
 			];
 			$this->data['email'] = [
 				'name' => 'email',
 				'id' => 'email',
 				'type' => 'text',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('email'),
 			];
 			$this->data['company'] = [
 				'name' => 'company',
 				'id' => 'company',
 				'type' => 'text',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('company'),
 			];
 			$this->data['phone'] = [
 				'name' => 'phone',
 				'id' => 'phone',
 				'type' => 'text',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('phone'),
 			];
 			$this->data['password'] = [
 				'name' => 'password',
 				'id' => 'password',
 				'type' => 'password',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('password'),
 			];
 			$this->data['password_confirm'] = [
 				'name' => 'password_confirm',
 				'id' => 'password_confirm',
 				'type' => 'password',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('password_confirm'),
 			];
 
