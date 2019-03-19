@@ -23,7 +23,7 @@
     </div>
 
   <div class="form-group form-check">
-    <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"', 'class="form-check-input"');?>
+    <?php echo form_checkbox('remember', '1', FALSE, array('id' => "remember", 'class' => 'form-check-input');?>
     <label class="form-check-label" for="remember"><?php echo lang('login_remember_label', 'remember');?></label>
   </div>
 
