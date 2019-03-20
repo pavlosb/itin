@@ -182,6 +182,7 @@ class Auth extends CI_Controller
 			];
 
 			// render
+			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'change_password', $this->data);
 		}
 		else
@@ -243,6 +244,7 @@ class Auth extends CI_Controller
 
 			// set any errors and display the form
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'forgot_password', $this->data);
 		}
 		else
@@ -439,7 +441,7 @@ class Auth extends CI_Controller
 			// insert csrf check
 			$this->data['csrf'] = $this->_get_csrf_nonce();
 			$this->data['user'] = $this->ion_auth->user($id)->row();
-
+			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'deactivate_user', $this->data);
 		}
 		else
@@ -580,7 +582,7 @@ class Auth extends CI_Controller
 				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('password_confirm'),
 			];
-
+			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'create_user', $this->data);
 		}
 	}
@@ -733,7 +735,7 @@ class Auth extends CI_Controller
 			'id'   => 'password_confirm',
 			'type' => 'password'
 		];
-
+		$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
 		$this->_render_page('auth/edit_user', $this->data);
 	}
 
@@ -781,7 +783,7 @@ class Auth extends CI_Controller
 				'type'  => 'text',
 				'value' => $this->form_validation->set_value('description'),
 			];
-
+			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
 			$this->_render_page('auth/create_group', $this->data);
 		}
 	}
@@ -850,7 +852,7 @@ class Auth extends CI_Controller
 			'type'  => 'text',
 			'value' => $this->form_validation->set_value('group_description', $group->description),
 		];
-
+		$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
 		$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'edit_group', $this->data);
 	}
 
