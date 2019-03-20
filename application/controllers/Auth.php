@@ -705,34 +705,40 @@ class Auth extends CI_Controller
 			'name'  => 'first_name',
 			'id'    => 'first_name',
 			'type'  => 'text',
+			'class' =>'form-control',
 			'value' => $this->form_validation->set_value('first_name', $user->first_name),
 		];
 		$this->data['last_name'] = [
 			'name'  => 'last_name',
 			'id'    => 'last_name',
 			'type'  => 'text',
+			'class' =>'form-control',
 			'value' => $this->form_validation->set_value('last_name', $user->last_name),
 		];
 		$this->data['company'] = [
 			'name'  => 'company',
 			'id'    => 'company',
 			'type'  => 'text',
+			'class' =>'form-control',
 			'value' => $this->form_validation->set_value('company', $user->company),
 		];
 		$this->data['phone'] = [
 			'name'  => 'phone',
 			'id'    => 'phone',
 			'type'  => 'text',
+			'class' =>'form-control',
 			'value' => $this->form_validation->set_value('phone', $user->phone),
 		];
 		$this->data['password'] = [
 			'name' => 'password',
 			'id'   => 'password',
+			'class' =>'form-control',
 			'type' => 'password'
 		];
 		$this->data['password_confirm'] = [
 			'name' => 'password_confirm',
 			'id'   => 'password_confirm',
+			'class' =>'form-control',
 			'type' => 'password'
 		];
 		$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
@@ -775,12 +781,14 @@ class Auth extends CI_Controller
 				'name'  => 'group_name',
 				'id'    => 'group_name',
 				'type'  => 'text',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('group_name'),
 			];
 			$this->data['description'] = [
 				'name'  => 'description',
 				'id'    => 'description',
 				'type'  => 'text',
+				'class' =>'form-control',
 				'value' => $this->form_validation->set_value('description'),
 			];
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
@@ -843,6 +851,7 @@ class Auth extends CI_Controller
 			'name'    => 'group_name',
 			'id'      => 'group_name',
 			'type'    => 'text',
+			'class' =>'form-control',
 			'value'   => $this->form_validation->set_value('group_name', $group->name),
 			$readonly => $readonly,
 		];
@@ -850,6 +859,7 @@ class Auth extends CI_Controller
 			'name'  => 'group_description',
 			'id'    => 'group_description',
 			'type'  => 'text',
+			'class' =>'form-control',
 			'value' => $this->form_validation->set_value('group_description', $group->description),
 		];
 		$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
