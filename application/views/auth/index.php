@@ -34,7 +34,7 @@
                 <?php endforeach?>
 			</td>
 			<td class="text-center"><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id, '<i class="far fa-traffic-light-go fa-2x"></i>') : anchor("auth/activate/". $user->id, '<i class="fal fa-traffic-light-stop fa-2x"></i>');?></td>
-			<td class="text-center"><?php echo anchor("auth/edit_user/".$user->id, 'Edit') ;?></td>
+			<td class="text-center"><?php echo anchor("auth/edit_user/".$user->id, '<i class="far fa-edit fa-2x"></i>') ;?></td>
 		</tr>
 	<?php endforeach;?>
 	</tbody>
