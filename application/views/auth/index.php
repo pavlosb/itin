@@ -33,7 +33,7 @@
 					<?php echo anchor("auth/edit_group/".$group->id, htmlspecialchars($group->name,ENT_QUOTES,'UTF-8')) ;?><br />
                 <?php endforeach?>
 			</td>
-			<td class="text-center"><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id, '<i class="green far fa-traffic-light-go fa-2x"></i>') : anchor("auth/activate/". $user->id, '<i class="red fal fa-traffic-light-stop fa-2x"></i>');?></td>
+			<td class="text-center"><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id, '<i class="green far fa-traffic-light-go fa-lg"></i>') : anchor("auth/activate/". $user->id, '<i class="red fal fa-traffic-light-stop fa-lg"></i>');?></td>
 			<td class="text-center"><?php echo anchor("auth/edit_user/".$user->id, '<i class="far fa-edit fa-lg"></i>') ;?></td>
 		</tr>
 	<?php endforeach;?>
