@@ -13,12 +13,12 @@
 <?php echo form_open("auth/create_user");?>
 
 <div class="form-group">
-            <?php echo lang('create_user_fname_label', 'first_name');?> <br />
+<label for="first_name"><?php echo lang('create_user_fname_label', 'first_name');?> </label>
             <?php echo form_input($first_name);?>
       </div>
 
       <div class="form-group">
-            <?php echo lang('create_user_lname_label', 'last_name');?> <br />
+      <label for="last_name"><?php echo lang('create_user_lname_label', 'last_name');?> </label>
             <?php echo form_input($last_name);?>
             </div>
       
@@ -44,7 +44,7 @@
             </div>
 
 <div class="form-group">
-<label for="phone">  <?php echo lang('create_user_phone_label', 'phone');?> </label>
+<label for="phone"><?php echo lang('create_user_phone_label', 'phone');?> </label>
             <?php echo form_input($phone);?>
             </div>
 
@@ -54,7 +54,7 @@
             </div>
 
 <div class="form-group">
-<label for="password_confirm">  <?php echo lang('create_user_password_confirm_label', 'password_confirm');?> </label>
+<label for="password_confirm"><?php echo lang('create_user_password_confirm_label', 'password_confirm');?> </label>
             <?php echo form_input($password_confirm);?>
       </div>
 
