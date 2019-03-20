@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row justify-content-center">
-  <div class="col-sm-12 col-lg-10">
+  <div class="col-sm-12 col-lg-12">
   <h1 class="display-4"><?php echo lang('index_heading');?></h1>
 <p class="lead"><?php echo lang('index_subheading');?></p>
 
@@ -11,7 +11,7 @@
 </div>
 </div>
 <div class="row justify-content-center">
-<div class="col-sm-12 col-lg-10">
+<div class="col-sm-12 col-lg-12">
 <div class="table-responsive-sm">
 <table class= "table table-striped">
 <thead>
