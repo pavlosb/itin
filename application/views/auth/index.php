@@ -30,7 +30,7 @@
             <td><?php echo htmlspecialchars($user->email,ENT_QUOTES,'UTF-8');?></td>
 			<td class="text-center">
 				<?php foreach ($user->groups as $group):?>
-				<span class="badge badge-primary badge-pill">	<?php echo anchor("auth/edit_group/".$group->id, htmlspecialchars($group->name,ENT_QUOTES,'UTF-8')) ;?></span>
+				<?php echo anchor("auth/edit_group/".$group->id, htmlspecialchars($group->name,ENT_QUOTES,'UTF-8'), array('class' => 'badge badge-primary')) ;?>
                 <?php endforeach?>
 			</td>
 			<td class="text-center"><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id, '<i class="green far fa-traffic-light-go fa-lg"></i>') : anchor("auth/activate/". $user->id, '<i class="red fal fa-traffic-light-stop fa-lg"></i>');?></td>
