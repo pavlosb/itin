@@ -20,6 +20,17 @@ class Inspection extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		if (!$this->ion_auth->logged_in())
+		{
+		
+			$this->load->view('header', $data);
+			$this->load->view('inspections', $data);
+			$this->load->view('footer', $data);
+
+		}
 	}
+
+
+
+
 }
