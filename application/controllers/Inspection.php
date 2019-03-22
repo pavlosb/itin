@@ -24,7 +24,7 @@ class Inspection extends CI_Controller {
 		{
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
-			$data['username'] = $user->first_name." ".$user->lastname_name;
+			$data['username'] = $user->first_name." ".$user->last_name;
 			$this->load->view('header', $data);
 			$this->load->view('inspections', $data);
 			$this->load->view('footer', $data);
