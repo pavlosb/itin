@@ -32,7 +32,7 @@
       </li>
     </ul>
     <span class="navbar-text">
-      Navbar text with an inline element
+      <?php echo $username ?> | Logout
     </span>
   </div>
 </nav>
