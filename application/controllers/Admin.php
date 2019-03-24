@@ -18,8 +18,39 @@ class Admin extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct()
+	{
+			parent::__construct();
+			$this->load->model('itindata_model');
+			$this->load->helper('url_helper');
+			$this->load->helper('form');
+			
+			
+	}
+
+
 	public function index()
 	{
 		$this->load->view('welcome_message');
 	}
+
+	public function section_add(){
+
+		if (!$this->ion_auth->logged_in())
+		{
+		  redirect('auth/login');
+		} else if ($this->ion_auth->is_admin())
+			{
+
+			$user = $this->ion_auth->user()->row();
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$data['sections'] = $this->itindata_model->get_sections();
+			$this->load->view('header', $data);
+			$this->load->view('sectionsform', $data);
+			$this->load->view('footer', $data);
+
+}
+}
 }
