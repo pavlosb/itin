@@ -46,11 +46,29 @@ class Admin extends CI_Controller {
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			$data['sections'] = $this->itindata_model->get_sections();
+			$data['sections'] = $this->_getsections();
 			$this->load->view('header', $data);
 			$this->load->view('sectionsform', $data);
 			$this->load->view('footer', $data);
 
 }
+}
+
+
+public function section_save() {
+	if (!$this->ion_auth->logged_in())
+	{
+	  redirect('auth/login');
+	} else if ($this->ion_auth->is_admin())
+		{
+			$this->inlsrvc_model->set_section();
+			redirect('admin/section_add', 'refresh');
+
+		}
+}
+
+private function _getsections($level = null){
+$sections = $this->itindata_model->get_sections();
+return $sections;
 }
 }
