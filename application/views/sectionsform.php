@@ -7,7 +7,7 @@
 </div>
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-6">
-<?php echo form_open("admin/sections_save");?>
+<?php echo form_open("admin/section_save");?>
 <div class="form-group">
     <label for="name_section">Section Name</label>
     <input type="text" class="form-control" id="name_section" name ="name_section">
