@@ -19,7 +19,7 @@
   </div>
   <div class="form-group">
     <label for="exampleFormControlSelect1">Parent Section</label>
-    <select class="form-control" id="exampleFormControlSelect1">
+    <select class="form-control" id="parent_section" name="parent_section">
       <option></option>
       <?php foreach ($sections as $section) : ?>
       <option value="<?= $section['id_section'] ?>"><?= $section['name_section'] ?></option>
