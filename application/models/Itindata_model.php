@@ -27,7 +27,7 @@ class Itindata_model extends CI_Model
             $query = $this->db->get('sections_tbl');
             foreach ($query->result() as $row)
 {
-$maxpos = $row->maxpos
+$maxpos = $row->maxpos;
 }
             $data ['pos_section'] = $maxpos + 1;
            
