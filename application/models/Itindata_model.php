@@ -30,7 +30,9 @@ class Itindata_model extends CI_Model
 $maxpos = $row->maxpos;
 }
             $data ['pos_section'] = $maxpos + 1;
-           
+            if ($this->input->post('parent_section' !="")) {
+                $data ['parent_section'] = $this->input->post('parent_section');
+             }   
         return $this->db->insert('sections_tbl', $data);
     }
     
