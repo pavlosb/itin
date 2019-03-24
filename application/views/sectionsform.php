@@ -22,7 +22,7 @@
     <select class="form-control" id="exampleFormControlSelect1">
       <option></option>
       <?php foreach ($sections as $section) : ?>
-      <option value="<?= $section->id_section ?>"><?= $section->name_section ?></option>
+      <option value="<?= $section['id_section'] ?>"><?= $section['name_section'] ?></option>
 <?php endforeach; ?>
     </select>
   </div>
