@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends CI_Controller {
 
@@ -61,7 +60,7 @@ public function section_save() {
 	  redirect('auth/login');
 	} else if ($this->ion_auth->is_admin())
 		{
-			$this->inlsrvc_model->set_section();
+			$this->itindata_model->set_section();
 			redirect('admin/section_add', 'refresh');
 
 		}
