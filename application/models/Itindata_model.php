@@ -17,7 +17,7 @@ class Itindata_model extends CI_Model
     {
 
         $data ['name_section'] = $this->input->post('name_section');
-         if (isset($this->input->post('printtext_section'))) {
+         if (null !== $this->input->post('printtext_section')) {
             $data ['printtext_section'] = $this->input->post('printtext_section');
          } else {
             $data ['printtext_section'] = $this->input->post('name_section');
