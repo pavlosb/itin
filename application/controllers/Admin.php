@@ -71,10 +71,10 @@ private function _getsections($level = null){
 if (isset($level)){
 
 switch ($level) {
-case: "first" :
+case "first" :
 $where = "WHERE 'parent_section' IS NULL";
 break;
-case: "second" :
+case "second" :
 $where = "WHERE 'parent_section' IS NOT NULL";
 break;
 }
