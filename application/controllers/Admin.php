@@ -72,10 +72,10 @@ if (isset($level)){
 
 switch ($level) {
 case "first" :
-$where = "WHERE 'parent_section' IS NULL";
+$where = "'parent_section' IS NULL";
 break;
 case "second" :
-$where = "WHERE 'parent_section' IS NOT NULL";
+$where = "'parent_section' IS NOT NULL";
 break;
 }
 $sections = $this->itindata_model->get_sections($where);
