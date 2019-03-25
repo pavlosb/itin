@@ -45,7 +45,7 @@ class Admin extends CI_Controller {
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			$data['sections'] = $this->_getsections();
+			$data['sections'] = $this->_getsections('first');
 			$this->load->view('header', $data);
 			$this->load->view('sectionsform', $data);
 			$this->load->view('footer', $data);
@@ -67,7 +67,21 @@ public function section_save() {
 }
 
 private function _getsections($level = null){
+
+if (isset($level)){
+
+switch ($level) {
+case: "first" :
+$where = "WHERE 'parent_section' IS NULL";
+break;
+case: "second" :
+$where = "WHERE 'parent_section' IS NOT NULL";
+break;
+}
+$sections = $this->itindata_model->get_sections($where);
+} else {
 $sections = $this->itindata_model->get_sections();
+}
 return $sections;
 }
 }

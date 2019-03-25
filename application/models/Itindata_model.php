@@ -5,9 +5,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Itindata_model extends CI_Model
 {
 
-    public function get_sections()
+    public function get_sections($where = null)
     {
        // $this->db->order_by('compname_clients', 'ASC');
+       if (isset($where)) {
+        $this->db->where($where);
+       }
         $query = $this->db->get('sections_tbl');
         return $query->result_array();
     }
