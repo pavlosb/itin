@@ -38,6 +38,30 @@ $maxpos = $row->maxpos;
              }   
         return $this->db->insert('sections_tbl', $data);
     }
+
+    public function set_checkpoint()
+    {
+
+        $data ['name_cp'] = $this->input->post('name_cp');
+         if ($this->input->post('printtext_cp' !="")) {
+            $data ['printtext_cp'] = $this->input->post('printtext_cp');
+         } else {
+            $data ['printtext_cp'] = $this->input->post('name_cp');
+         }
+
+         $this->db->select_max('pos_cp', 'maxpos');
+            $query = $this->db->get('checkpoint_tbl');
+            foreach ($query->result() as $row)
+{
+$maxpos = $row->maxpos;
+}
+            $data ['pos_cp'] = $maxpos + 1;
+            $data ['sect_cp'] = $this->input->post('sect_cp');
+            $data ['helptext_cp'] = $this->input->post('helptext_cp');
+            $data ['points_cp'] = $this->input->post('points_cp');
+            
+        return $this->db->insert('checkpoint_tbl', $data);
+    }
     
 }
 
