@@ -16,7 +16,7 @@ if ($cp['name_section'] != $scp) { ?>
 <tr><td><?= $cp['name_cp']; ?></td><td><?= $cp['points_cp']; ?></td><td></td></tr>
 <?php
 $mcp = $cp['mainsect'];
-$smcp = $cp['name_section'];
+$scp = $cp['name_section'];
  endforeach ?>
 </table>
 </div>
