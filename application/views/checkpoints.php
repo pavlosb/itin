@@ -12,9 +12,9 @@ if ($cp['mainsect'] != $mcp) { ?>
 <?php } 
 if ($cp['name_section'] != $scp) { ?>
 <tr><td colspan="3"><h4><?= $cp['name_section']; ?></h4></td></tr>
-<tr><td>Σημείο</td><td>Βαθμολογία</td><td></td></tr>
+<tr><th>Σημείο</th><th class="text-center">Βαθμολογία</th><th></th></tr>
 <?php } ?>
-<tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td></td></tr>
+<tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr>
 <?php
 $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
