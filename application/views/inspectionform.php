@@ -18,6 +18,7 @@ if ($cp['mainsect'] != $mcp) { ?>
 if ($cp['name_section'] != $scp) { ?>
 <h4><?= $cp['name_section']; ?></h4>
 <?php } ?>
+
 <div class="form-group row">
     <label for="inputEmail3" class="col-sm-8 col-form-label"><?= $cp['name_cp']; ?></label>
     <div class="col-sm-6">
