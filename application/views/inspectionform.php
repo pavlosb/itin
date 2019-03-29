@@ -21,10 +21,10 @@ if ($cp['name_section'] != $scp) { ?>
 </div>
 <?php } ?>
 
-<div class="form-group row py-5">
+<div class="form-group row py-3">
     <label for="inputEmail3" class="col-sm-6 col-form-label "><?= $cp['name_cp']; ?></label>
-    <div class="col-sm-6">
-    <div class="btn-group btn-group-toggle text-center text-sm-right" data-toggle="buttons">
+    <div class="col-sm-6 text-center text-sm-right">
+    <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary">
     <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" value="<?= $cp['points_cp']; ?>"  autocomplete="off"><i class="fal fa-times-square"></i>
   </label>
