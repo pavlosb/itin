@@ -56,5 +56,16 @@ class Inspection extends CI_Controller {
 		}
 	}
 
+	public function inspection_save()
+	{
+		if ($this->ion_auth->logged_in())
+		{
+			$user = $this->ion_auth->user()->row();
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			print_r($_POST);
+		}
+	}
+
 
 }

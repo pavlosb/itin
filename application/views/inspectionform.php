@@ -7,7 +7,7 @@
 </div>
 <div class="row justify-content-center">
 <div class="col-12">
-<?php echo form_open("inspections/inspection_save");?>
+<?php echo form_open("inspection/inspection_save");?>
 <?php 
 $mcp = "";
 $scp = "";
