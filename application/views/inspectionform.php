@@ -57,7 +57,7 @@ $scp = $cp['name_section'];
 </div>
 </div>
 <script>
-    $( document ).ready(function() {
+    $(document).ready(function() {
     $('input:checkbox').change(function ()
 {
 
