@@ -32,7 +32,19 @@ class Inspection extends CI_Controller {
 		}
 	}
 
+	public function inspection_add()
+	{
+		if ($this->ion_auth->logged_in())
+		{
+			$user = $this->ion_auth->user()->row();
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$this->load->view('header', $data);
+			$this->load->view('inspectionform', $data);
+			$this->load->view('footer', $data);
 
+		}
+	}
 
 
 }
