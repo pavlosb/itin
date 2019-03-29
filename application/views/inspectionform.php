@@ -16,7 +16,9 @@ if ($cp['mainsect'] != $mcp) { ?>
 <h3><?= $cp['mainsect']; ?></h3>
 <?php } 
 if ($cp['name_section'] != $scp) { ?>
+<div class="row">
  <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp['name_section']; ?></legend>
+</div>
 <?php } ?>
 
 <div class="form-group row">
