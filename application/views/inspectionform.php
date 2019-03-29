@@ -20,7 +20,7 @@ if ($cp['name_section'] != $scp) { ?>
 <?php } ?>
 
 <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-8 col-form-label"><?= $cp['name_cp']; ?></label>
+    <label for="inputEmail3" class="col-sm-6 col-form-label"><?= $cp['name_cp']; ?></label>
     <div class="col-sm-6">
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
   <label class="btn btn-secondary active">
