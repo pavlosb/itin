@@ -9,7 +9,7 @@
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
-
+   <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
     <title>ITIN</title>
   </head>
   <body>
