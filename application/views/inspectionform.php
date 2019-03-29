@@ -57,6 +57,7 @@ $scp = $cp['name_section'];
 </div>
 </div>
 <script>
+    $( document ).ready(function() {
     $('input:checkbox').change(function ()
 {
 
@@ -67,5 +68,6 @@ $scp = $cp['name_section'];
   
      alert(total);
 
+});
 });
     </script>
