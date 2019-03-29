@@ -23,13 +23,13 @@ if ($cp['name_section'] != $scp) { ?>
     <label for="inputEmail3" class="col-sm-6 col-form-label"><?= $cp['name_cp']; ?></label>
     <div class="col-sm-6">
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-secondary">
-    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" value="<?= $cp['points_cp']; ?>"  autocomplete="off" checked><i class="fal fa-times-square"></i>
+  <label class="btn btnnok btn-secondary">
+    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" value="<?= $cp['points_cp']; ?>"  autocomplete="off"><i class="fal fa-times-square"></i>
   </label>
-  <label class="btn btn-secondary active">
+  <label class="btn btnna btn-secondary active">
     <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2" value="0" autocomplete="off" checked="checked"> <i class="fal fa-stop"></i>
   </label>
-  <label class="btn btn-secondary">
+  <label class="btn btnok btn-secondary">
     <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
   </label>
 </div>

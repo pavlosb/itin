@@ -1,2 +1,5 @@
 .green, a .green {color:green;}
 .red, a .red {color:red;}
+
+.btnnok.active .fal {color:red;}
+.btnok.active .fal {color:rgb(60, 255, 0) }
