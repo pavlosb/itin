@@ -21,7 +21,7 @@ if ($cp['name_section'] != $scp) { ?>
 </div>
 <?php } ?>
 
-<div class="form-group row">
+<div class="form-group row py-5">
     <label for="inputEmail3" class="col-sm-6 col-form-label "><?= $cp['name_cp']; ?></label>
     <div class="col-sm-6">
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
