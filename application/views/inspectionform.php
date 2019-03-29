@@ -58,11 +58,11 @@ $scp = $cp['name_section'];
 </div>
 <script>
 jQuery(document).ready(function($) {
-    $('input:checkbox').change(function ()
+    $('input:radio').change(function ()
 {
 
       var total = 0;
-      $('input:checkbox:checked').each(function(){
+      $('input:radio:checked').each(function(){
        total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
       });   
   
