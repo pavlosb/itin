@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row justify-content-center">
   <div class="col-12">
-<h1 class="display-4">Νέo Σημείο Ελέγχου</h1>
+<!--<h1 class="display-4">Νέo Σημείο Ελέγχου</h1> -->
 <p class="lead"></p>
 </div>
 </div>
@@ -24,13 +24,13 @@ if ($cp['name_section'] != $scp) { ?>
     <div class="col-sm-6">
     <div class="btn-group btn-group-toggle" data-toggle="buttons">
   <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option1" value="<?= $cp['points_cp']; ?>"  autocomplete="off" checked><i class="fal fa-times-square"></i>
+    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" value="<?= $cp['points_cp']; ?>"  autocomplete="off" checked><i class="fal fa-times-square"></i>
   </label>
   <label class="btn btn-secondary active">
-    <input type="radio" name="options" id="option2" value="0" autocomplete="off" checked="checked"> <i class="fal fa-stop"></i>
+    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2" value="0" autocomplete="off" checked="checked"> <i class="fal fa-stop"></i>
   </label>
   <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
+    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
   </label>
 </div>
     </div>
