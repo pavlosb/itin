@@ -1,5 +1,5 @@
 .green, a .green {color:green;}
 .red, a .red {color:red;}
 
-.btnnok.active { background-color: red; border-color: red;}
-.btnok.active {background-color: rgb(60, 255, 0); border-color: rgb(60, 255, 0);}
+.btnnok.active { background-color: red!important; border-color: red!important;}
+.btnok.active {background-color: rgb(60, 255, 0)!important; border-color: rgb(60, 255, 0)!important;}
