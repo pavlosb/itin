@@ -13,10 +13,11 @@ $mcp = "";
 $scp = "";
 foreach ($checkpoints as $cp): 
 if ($cp['mainsect'] != $mcp) { ?>
-<tr><td colspan="3"><h3><?= $cp['mainsect']; ?></h3></td></tr>
+<h3><?= $cp['mainsect']; ?></h3>
 <?php } 
 if ($cp['name_section'] != $scp) { ?>
-<tr><td colspan="3"><h4><?= $cp['name_section']; ?></h4></td></tr>
+<h4><?= $cp['name_section']; ?></h4>
+<?php } ?>
 <div class="form-group row">
     <label for="inputEmail3" class="col-sm-8 col-form-label"><?= $cp['name_cp']; ?></label>
     <div class="col-sm-6">
@@ -37,14 +38,14 @@ if ($cp['name_section'] != $scp) { ?>
 
 
 
-<tr><th>Σημείο</th><th class="text-center">Βαθμολογία</th><th></th></tr>
-<?php } ?>
-<tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr>
+
+
+<!-- <tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr> -->
 <?php
 $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
  endforeach ?>
-</table>
+
 
 
 <button type="submit" class="btn btn-primary">Submit</button>
