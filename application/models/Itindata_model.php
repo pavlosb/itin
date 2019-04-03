@@ -12,15 +12,7 @@ class Itindata_model extends CI_Model
         $this->db->where($where);
        }
         $query = $this->db->get('sections_tbl');
-        if ($query -> num_rows() > 0) {
-			foreach ($query->result() as $row) {
-				$data[] = $row;
-			}
-			return $data;
-		} else {
-			return null;
-		}
-       
+        return $query->result_array();
     }
 
     public function get_carbrands($where = null)
@@ -30,7 +22,14 @@ class Itindata_model extends CI_Model
         $this->db->where($where);
        }
         $query = $this->db->get('carbrands_tbl');
-        return $query->result_array();
+        if ($query -> num_rows() > 0) {
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		} else {
+			return null;
+		}
     }
 
 
