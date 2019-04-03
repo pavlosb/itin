@@ -12,6 +12,20 @@ class Itindata_model extends CI_Model
         $this->db->where($where);
        }
         $query = $this->db->get('sections_tbl');
+        foreach ($query->result_array() as $row)
+{
+        $data = $row
+}
+        return $data;
+    }
+
+    public function get_carbrands($where = null)
+    {
+       // $this->db->order_by('compname_clients', 'ASC');
+       if (isset($where)) {
+        $this->db->where($where);
+       }
+        $query = $this->db->get('carbrands_tbl');
         return $query->result_array();
     }
 
