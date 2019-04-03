@@ -17,7 +17,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#itinnavbartoggle" aria-controls="itinnavbartoggle" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">ITIN</a>
 
   <div class="collapse navbar-collapse" id="itinnavbartoggle">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
