@@ -86,7 +86,7 @@ class Inspection extends CI_Controller {
 	private function _getcarbrands(){
 
 		
-		$sections = $this->itindata_model->get_carbrands();
+		$carbrands = $this->itindata_model->get_carbrands();
 	
 		return $carbrands;
 		}
