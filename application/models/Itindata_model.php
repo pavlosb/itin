@@ -14,7 +14,7 @@ class Itindata_model extends CI_Model
         $query = $this->db->get('sections_tbl');
         foreach ($query->result_array() as $row)
 {
-        $data = $row;
+        $data[] = $row;
 }
         return $data;
     }
