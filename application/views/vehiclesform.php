@@ -38,6 +38,7 @@
     <label for="displ_vhcl">Μοντέλο</label>
     <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
   </div>
+  <div class="form-row">
   <div class="form-group col">
     <label for="displ_vhcl">Κυβικά</label>
     <div class="input-group mb-3">
@@ -53,7 +54,7 @@
     <div class="input-group-append">
     <span class="input-group-text" id="basic-addon2">kw</span>
   </div></div>
-  </div>
+  </div></div>
    <button type="submit" class="btn btn-primary">Submit</button>
 <?php echo form_close();?>
 </div>
