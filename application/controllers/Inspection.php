@@ -74,6 +74,7 @@ class Inspection extends CI_Controller {
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$data['carbrands'] = $this->_getcarbrands();
+			$data['vhcltypes'] = $this->_getvhcltypes();
 			$this->load->view('header', $data);
 			$this->load->view('vehiclesform', $data);
 			$this->load->view('footer', $data);
@@ -90,4 +91,14 @@ class Inspection extends CI_Controller {
 	
 		return $carbrands;
 		}
+
+	private function _getvhcltypes(){
+
+		$vhcltype = array(
+			array('nametype' => 'ΙΧ Επιβατικό'),
+			array('nametype' = > 'Ελαφρύ Φορτηγο')
+		);
+
+		return $vhcltype;
+	}	
 }
