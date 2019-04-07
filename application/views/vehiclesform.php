@@ -20,7 +20,7 @@
     <div class="input-group-append" data-target="#datetimepicker11" data-toggle="datetimepicker">
     <span class="input-group-text" id="basic-addon2">cc</span>
   </div></div>
-    </div>
+    </div></div>
   <div class="form-group">
     <label for="vin_vhcl">Αριθμός Πλαισίου</label>
     <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl">
