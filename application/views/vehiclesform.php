@@ -8,9 +8,15 @@
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-6">
 <?php echo form_open("admin/vehicle_save");?>
-<div class="form-group">
+<div class="form-row">
+<div class="form-group col">
     <label for="reg_vhcl">Αριθμός Πινακίδας</label>
     <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl">
+    </div>
+    <div class="form-group col">
+    <label for="reg_vhcl">Πρώτη Κυκλοφορία</label>
+    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl">
+    </div>
     </div>
   <div class="form-group">
     <label for="vin_vhcl">Αριθμός Πλαισίου</label>
