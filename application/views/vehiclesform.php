@@ -38,7 +38,7 @@
     <label for="displ_vhcl">Μοντέλο</label>
     <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
   </div>
-  <div class="form-group">
+  <div class="form-group col">
     <label for="displ_vhcl">Κυβικά</label>
     <div class="input-group mb-3">
     <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
@@ -46,7 +46,7 @@
     <span class="input-group-text" id="basic-addon2">cc</span>
   </div></div>
   </div>
-  <div class="form-group">
+  <div class="form-group col">
     <label for="displ_vhcl">Ιπποδύναμη</label>
     <div class="input-group mb-3">
     <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
