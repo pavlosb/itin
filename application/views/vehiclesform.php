@@ -24,6 +24,7 @@
       <option value="<?= $vt['nametype'] ?>"><?=  $vt['nametype'] ?></option>
 <?php endforeach; ?>
     </select>
+    </div>
   <div class="form-group">
     <label for="make_vhcl">Κατασκευαστής</label>
     <select class="form-control" id="make_vhcl" name="make_vhcl">
@@ -32,6 +33,26 @@
       <option value="<?= $cb->name_carbrand ?>"><?= $cb->name_carbrand ?></option>
 <?php endforeach; ?>
     </select>
+  </div>
+  <div class="form-group">
+    <label for="displ_vhcl">Μοντέλο</label>
+    <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
+  </div>
+  <div class="form-group">
+    <label for="displ_vhcl">Κυβικά</label>
+    <div class="input-group mb-3">
+    <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
+    <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon2">cc</span>
+  </div></div>
+  </div>
+  <div class="form-group">
+    <label for="displ_vhcl">Ιπποδύναμη</label>
+    <div class="input-group mb-3">
+    <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
+    <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon2">kw</span>
+  </div></div>
   </div>
    <button type="submit" class="btn btn-primary">Submit</button>
 <?php echo form_close();?>
