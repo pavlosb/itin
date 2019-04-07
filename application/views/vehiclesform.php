@@ -21,7 +21,7 @@
     <select class="form-control" id="type_vhcl" name="type_vhcl">
       <option value = 0></option>
       <?php foreach ($vhcltypes as $vt) : ?>
-      <option value="<?= $vt->type ?>"><?= $vt->type ?></option>
+      <option value="<?= $vt['nametype'] ?>"><?=  $vt['nametype'] ?></option>
 <?php endforeach; ?>
     </select>
   <div class="form-group">
