@@ -14,11 +14,11 @@
     <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl">
     </div>
     <div class="form-group col">
-    <label for="displ_vhcl">1η Κυκλοφορία</label>
+    <label for="firstreg_vhcl">1η Κυκλοφορία</label>
     <div class="input-group mb-3 date" id="datetimepicker11" data-target-input="nearest">
-    <input type="text" class="form-control datetimepicker-input" id="displ_vhcl" name ="displ_vhcl" data-target="#datetimepicker11">
+    <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" data-target="#datetimepicker11">
     <div class="input-group-append" data-target="#datetimepicker11" data-toggle="datetimepicker">
-    <span class="input-group-text" id="basic-addon2">cc</span>
+    <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
   </div></div>
     </div></div>
   <div class="form-group">
