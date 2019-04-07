@@ -96,7 +96,7 @@ class Inspection extends CI_Controller {
 
 		$vhcltype = array(
 			array('nametype' => 'ΙΧ Επιβατικό'),
-			array('nametype' = > 'Ελαφρύ Φορτηγο')
+			array('nametype' => 'Ελαφρύ Φορτηγο')
 		);
 
 		return $vhcltype;
