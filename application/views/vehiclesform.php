@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row justify-content-center">
   <div class="col-sm-8 col-lg-6">
-<h1 class="display-4">Νέo όχημα</h1>
+<h1 class="display-4">Στοιχεία Οχήματος</h1>
 <p class="lead"></p>
 </div>
 </div>
