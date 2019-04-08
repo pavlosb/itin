@@ -26,7 +26,7 @@ if ($cp['name_section'] != $scp) { ?>
 <?php } ?>
 
 <div class="form-group row py-3">
-    <label for="inputEmail3" class="col-sm-7 col-form-label "><?= $cp['name_cp']; ?><small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small></label>
+    <label for="inputEmail3" class="col-sm-7 col-form-label "><?= $cp['name_cp']; ?><small class="form-text text-muted"><?= $cp['helptext_cp']; ?></small></label>
     <div class="col-sm-5 text-center text-sm-right">
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary">
