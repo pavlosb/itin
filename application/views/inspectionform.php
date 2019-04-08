@@ -38,6 +38,7 @@ if ($cp['name_section'] != $scp) { ?>
   <label class="btn btnok btn-secondary">
     <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
   </label>
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 </div>
     </div>
   </div>
