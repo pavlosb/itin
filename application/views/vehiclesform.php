@@ -44,8 +44,8 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="displ_vhcl">Μοντέλο</label>
-    <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
+    <label for="model_vhcl">Μοντέλο</label>
+    <input type="text" class="form-control" id="model_vhcl" name ="model_vhcl">
   </div>
   <div class="form-row">
   <div class="form-group col">
