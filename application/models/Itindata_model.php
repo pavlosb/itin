@@ -119,7 +119,7 @@ $maxpos = $row->maxpos;
 
     public function get_unisnpvehicles(){
 
-      $query = "Select * from vehicles_tbl AS VT where not exists( select * from inspections_tbl AS IT where VT.id_vhcl = IT.vehicle_inspection)";
+      $query = $this->db->query("Select * from vehicles_tbl AS VT where not exists( select * from inspections_tbl AS IT where VT.id_vhcl = IT.vehicle_inspection)");
       if ($query -> num_rows() > 0) {
 			foreach ($query->result() as $row) {
 				$data[] = $row;
