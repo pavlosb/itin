@@ -70,16 +70,17 @@ jQuery(document).ready(function($) {
        total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
       });   
   
-     alert(total);
+     gauge.set(total);
+     AnimationUpdater.run();
 
 });
 
 var opts = {
-  angle: 0.15, // The span of the gauge arc
-  lineWidth: 0.44, // The line thickness
-  radiusScale: 1, // Relative radius
+  angle: 0, // The span of the gauge arc
+  lineWidth: 0.2, // The line thickness
+  radiusScale: 0.78, // Relative radius
   pointer: {
-    length: 0.6, // // Relative to gauge radius
+    length: 0.41, // // Relative to gauge radius
     strokeWidth: 0.035, // The thickness
     color: '#000000' // Fill color
   },
