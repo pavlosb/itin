@@ -95,6 +95,32 @@ class Inspection extends CI_Controller {
 
 	}
 
+	public function client_add() {
+		if ($this->ion_auth->logged_in())
+		{
+			$user = $this->ion_auth->user()->row();
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$this->load->view('header', $data);
+			$this->load->view('clientsform', $data);
+			$this->load->view('footer', $data);
+
+		}
+		
+	}
+
+	public function client_save() {
+
+		if ($this->ion_auth->logged_in())
+		{
+			$user = $this->ion_auth->user()->row();
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			print_r($_POST);
+		}
+
+	}
+
 	private function _getcarbrands(){
 
 		

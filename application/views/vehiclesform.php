@@ -57,9 +57,9 @@
   </div></div>
   </div>
   <div class="form-group col">
-    <label for="displ_vhcl">Ιπποδύναμη</label>
+    <label for="pow_vhcl">Ιπποδύναμη</label>
     <div class="input-group mb-3">
-    <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
+    <input type="text" class="form-control" id="pow_vhcl" name ="pow_vhcl">
     <div class="input-group-append">
     <span class="input-group-text" id="basic-addon2">kw</span>
   </div></div>
