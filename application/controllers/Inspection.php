@@ -116,7 +116,15 @@ class Inspection extends CI_Controller {
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			print_r($_POST);
+			if (isset($_POST))
+			{
+				print_r($_POST);
+				if (isset($_POST['createaccount']) && $_POST['createaccount'] == 1) {
+
+					echo "create account";
+				}
+		
+			}
 		}
 
 	}
