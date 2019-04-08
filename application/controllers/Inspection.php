@@ -134,19 +134,23 @@ class Inspection extends CI_Controller {
 					if (!$this->ion_auth->username_check($username))
 					{
 						$group = array('5'); // Sets user to clients.
-						$data['accid_client'] = $this->ion_auth->register($username, $password, $email, $additional_data, $group);
+						$insdata['accid_client'] = $this->ion_auth->register($username, $password, $email, $additional_data, $group);
+					} else {
+						$user = $this->ion_auth->where($username, $this->input->post('email_client'))->users()->result();
+						
+						$insdata['accid_client'] = $user[0]->id;
 					}
 
 				}
-				$data['firstname_client'] = $this->input->post('firstname_client');
-				$data['lastname_client'] = $this->input->post('lasttname_client');
-				$data['name_client'] = $this->input->post('name_client');
-				$data['vatno_client'] = $this->input->post('vatno_client');
-				$data['address_client'] = $this->input->post('address_client');
-				$data['zip_client'] = $this->input->post('zip_client');
-				$data['tel_client'] = $this->input->post('tel_client');
-				$data['email_client'] = $this->input->post('email_client');
-				$clientid = $this->itindata_model->set_client($data);
+				$insdata['firstname_client'] = $this->input->post('firstname_client');
+				$insdata['lastname_client'] = $this->input->post('lasttname_client');
+				$insdata['name_client'] = $this->input->post('name_client');
+				$insdata['vatno_client'] = $this->input->post('vatno_client');
+				$insdata['address_client'] = $this->input->post('address_client');
+				$insdata['zip_client'] = $this->input->post('zip_client');
+				$insdata['tel_client'] = $this->input->post('tel_client');
+				$insdata['email_client'] = $this->input->post('email_client');
+				$clientid = $this->itindata_model->set_client($insdata);
 
 		
 			}
