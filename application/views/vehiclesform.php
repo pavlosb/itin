@@ -7,7 +7,7 @@
 </div>
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-6">
-<?php echo form_open("admin/vehicle_save");?>
+<?php echo form_open("inspection/vehicle_save");?>
 <div class="form-row">
 <div class="form-group col">
     <label for="reg_vhcl">Αριθμός Πινακίδας</label>
