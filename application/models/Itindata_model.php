@@ -88,11 +88,9 @@ $maxpos = $row->maxpos;
         return $query->result_array();
     }
     
-    public function set_client() {
-
-
+    public function set_client($data) {
       $this->db->insert('clients_tbl', $data);
-      
+      return $this->db->insert_id()
 
     }
 

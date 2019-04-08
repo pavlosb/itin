@@ -119,10 +119,35 @@ class Inspection extends CI_Controller {
 			if (isset($_POST))
 			{
 				print_r($_POST);
-				if (isset($_POST['createaccount']) && $_POST['createaccount'] == 1) {
+				if (isset($_POST['createaccount']) && $_POST['createaccount'] == 1) 
+				{
 
-					echo "create account";
+
+					$username = $this->input->post('email_client');
+    				$password = $this->_genpassword();
+    				$email = $this->input->post('email_client');
+    				$additional_data = array(
+                							'first_name' => $this->input->post('firstname_client'),
+											'last_name' => $this->input->post('lastname_client'),
+											'company' => $this->input->post('name_client'),
+											);
+					if (!$this->ion_auth->username_check($username))
+					{
+						$group = array('5'); // Sets user to clients.
+						$data['accid_client'] = $this->ion_auth->register($username, $password, $email, $additional_data, $group);
+					}
+
 				}
+				$data['firstname_client'] = $this->input->post('firstname_client');
+				$data['lastname_client'] = $this->input->post('lasttname_client');
+				$data['name_client'] = $this->input->post('name_client');
+				$data['vatno_client'] = $this->input->post('vatno_client');
+				$data['address_client'] = $this->input->post('address_client');
+				$data['zip_client'] = $this->input->post('zip_client');
+				$data['tel_client'] = $this->input->post('tel_client');
+				$data['email_client'] = $this->input->post('email_client');
+				$clientid = $this->itindata_model->set_client($data);
+
 		
 			}
 		}
@@ -153,5 +178,16 @@ class Inspection extends CI_Controller {
 	
 		return $clients;
 
+	}
+
+	private functiop _genpassword() {
+		$alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$#!@';
+		$pass = array(); //remember to declare $pass as an array
+		$alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+		for ($i = 0; $i < 8; $i++) {
+			$n = rand(0, $alphaLength);
+			$pass[] = $alphabet[$n];
+		}
+		return implode($pass); //turn the array into a string
 	}
 }
