@@ -9,22 +9,39 @@
 <div class="col-sm-8 col-lg-6">
 <?php echo form_open("inspection/vehicle_save");?>
 <div class="form-row">
-<div class="form-group col">
+  <div class="form-group col">
     <label for="reg_vhcl">Αριθμός Πινακίδας</label>
     <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl">
-    </div>
-    <div class="form-group col">
+  </div>
+  <div class="form-group col">
     <label for="firstreg_vhcl">1η Κυκλοφορία</label>
-    <div class="input-group mb-3 date" id="datetimepicker11" data-target-input="nearest">
-    <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" data-target="#datetimepicker11">
-    <div class="input-group-append" data-target="#datetimepicker11" data-toggle="datetimepicker">
-    <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
-  </div></div>
-    </div></div>
+      <div class="input-group mb-3 date" id="datetimepicker11" data-target-input="nearest">
+        <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" data-target="#datetimepicker11">
+          <div class="input-group-append" data-target="#datetimepicker11" data-toggle="datetimepicker">
+            <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
+          </div>
+      </div>
+  </div>
+</div>
   <div class="form-group">
     <label for="vin_vhcl">Αριθμός Πλαισίου</label>
     <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl">
   </div>
+  <div class="form-row">
+  <div class="form-group col">
+    <label for="reg_vhcl">Χιλιόμετρα</label>
+    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl">
+  </div>
+  <div class="form-group col">
+    <label for="firstreg_vhcl">Επόμενος Ελέγχος</label>
+      <div class="input-group mb-3 date" id="datetimepicker12" data-target-input="nearest">
+        <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" data-target="#datetimepicker12">
+          <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
+            <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
+          </div>
+      </div>
+  </div>
+</div>
   <div class="form-group">
     <label for="type_vhcl">Είδος Οχήματος</label>
     <select class="form-control" id="type_vhcl" name="type_vhcl">
@@ -72,6 +89,10 @@
 <script type="text/javascript">
         $(function () {
             $('#datetimepicker11').datetimepicker({
+                viewMode: 'years',
+                format: 'MM/YYYY'
+            });
+            $('#datetimepicker12').datetimepicker({
                 viewMode: 'years',
                 format: 'MM/YYYY'
             });
