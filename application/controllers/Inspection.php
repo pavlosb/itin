@@ -136,7 +136,7 @@ class Inspection extends CI_Controller {
 						$group = array('5'); // Sets user to clients.
 						$insdata['accid_client'] = $this->ion_auth->register($username, $password, $email, $additional_data, $group);
 					} else {
-						$user = $this->ion_auth->where($username, $this->input->post('email_client'))->users()->result();
+						$user = $this->ion_auth->where('username', $this->input->post('email_client'))->users()->result();
 						
 						$insdata['accid_client'] = $user[0]->id;
 					}
