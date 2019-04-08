@@ -180,7 +180,7 @@ class Inspection extends CI_Controller {
 
 	}
 
-	private functiop _genpassword() {
+	private function _genpassword() {
 		$alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890$#!@';
 		$pass = array(); //remember to declare $pass as an array
 		$alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
