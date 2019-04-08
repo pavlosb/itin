@@ -1,5 +1,5 @@
-<div id="gauge-wrapper">
-<canvas id="cnvgauge" width = "400px" height="250px"></canvas>
+<div id="gauge-wrapper" style="position: fixed;">
+<canvas id="cnvgauge" width = "300px" height="200px"></canvas>
 </div>
 
 <div class="container">
