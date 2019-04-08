@@ -30,13 +30,13 @@ if ($cp['name_section'] != $scp) { ?>
     <div class="col-sm-5 text-center text-sm-right">
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary">
-    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" value="<?= $cp['points_cp']; ?>"  autocomplete="off"><i class="fal fa-times-square"></i>
+    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" value="<?= $cp['nokpoints_cp']; ?>"  autocomplete="off"><i class="fal fa-times-square"></i>
   </label>
   <label class="btn btnna btn-secondary active">
     <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2" value="0" autocomplete="off" checked="checked"> <i class="fal fa-stop"></i>
   </label>
   <label class="btn btnok btn-secondary">
-    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" value ="<?= $cp['nokpoints_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
+    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
   </label>
   
 </div>
