@@ -12,7 +12,7 @@
 
 <div class="form-group">
     <label for="client_vhcl">Πελάτης</label>
-    <select class="form-control" id="client_vhcl" name="client_vhcl">
+    <select class="form-control form-control-lg" id="client_vhcl" name="client_vhcl">
       <option value = 0></option>
       <?php foreach ($vehicles as $vh) : ?>
       <option value="<?= $vh->id_vhcl ?>"><?= $vh->reg_vhcl ?> <?= $vh->make_vhcl ?> <?= $vh->model_vhcl ?></option>
@@ -22,7 +22,7 @@
 
     <div class="form-group">
         <label for="name_client">Αριθμός </label>
-        <input type="text" class="form-control" id="name_client" name ="name_client">
+        <input type="text" class="form-control form-control-lg" id="name_client" name ="name_client">
     </div>
     
   
