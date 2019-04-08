@@ -95,7 +95,7 @@ $maxpos = $row->maxpos;
     }
 
     public function set_vehicle($data) {
-      $this->db->insert('vehiles_tbl', $data);
+      $this->db->insert('vehicles_tbl', $data);
       return $this->db->insert_id();
 
     }
