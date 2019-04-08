@@ -143,7 +143,7 @@ class Inspection extends CI_Controller {
 
 				}
 				$insdata['firstname_client'] = $this->input->post('firstname_client');
-				$insdata['lastname_client'] = $this->input->post('lasttname_client');
+				$insdata['lastname_client'] = $this->input->post('lastname_client');
 				$insdata['name_client'] = $this->input->post('name_client');
 				$insdata['vatno_client'] = $this->input->post('vatno_client');
 				$insdata['address_client'] = $this->input->post('address_client');
