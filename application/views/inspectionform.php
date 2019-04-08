@@ -4,7 +4,7 @@
 
 <div class="container">
 <div class="row justify-content-center">
-  <div class="col-12">
+  <div class="col-md-10">
 <!--<h1 class="display-4">Νέo Σημείο Ελέγχου</h1> -->
 <p class="lead"></p>
 </div>
