@@ -94,6 +94,12 @@ $maxpos = $row->maxpos;
 
     }
 
+    public function set_vehicle($data) {
+      $this->db->insert('vehiles_tbl', $data);
+      return $this->db->insert_id();
+
+    }
+
     public function get_clients($where = null)
     {
        // $this->db->order_by('compname_clients', 'ASC');

@@ -102,7 +102,7 @@ class Inspection extends CI_Controller {
 			$insdata['firstreg_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('firstreg_vhcl'))))));
 			$insdata['nxtdate_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('nxtdate_vhcl'))))));
 
-			print_r($insdata);
+			$vehicleid = $this->itindata_model->set_vehicle($insdata);
 
 		}
 
