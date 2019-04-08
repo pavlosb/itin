@@ -42,6 +42,10 @@
         <label for="email_client">email</label>
         <input type="text" class="form-control" id="email_client" name ="email_client">
     </div>
+    <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" name="createaccount" id="createaccount" value = "1">
+    <label class="form-check-label" for="createaccount">Δημιουργία Λογαριασμού</label>
+  </div>
   
    <button type="submit" class="btn btn-primary">Submit</button>
 <?php echo form_close();?>

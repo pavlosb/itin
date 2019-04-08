@@ -29,13 +29,13 @@
   </div>
   <div class="form-row">
   <div class="form-group col">
-    <label for="reg_vhcl">Χιλιόμετρα</label>
-    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl">
+    <label for="mlg_vhcl">Χιλιόμετρα</label>
+    <input type="number" class="form-control" id="mlg_vhcl" name ="mlg_vhcl">
   </div>
   <div class="form-group col">
-    <label for="firstreg_vhcl">Επόμενος Ελέγχος</label>
+    <label for="nxtdate_vhcl">Επόμενος Ελέγχος</label>
       <div class="input-group mb-3 date" id="datetimepicker12" data-target-input="nearest">
-        <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" data-target="#datetimepicker12">
+        <input type="text" class="form-control datetimepicker-input" id="nxtdate_vhcl" name ="nxtdate_vhcl" data-target="#datetimepicker12">
           <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
           </div>

@@ -88,5 +88,29 @@ $maxpos = $row->maxpos;
         return $query->result_array();
     }
     
+    public function set_client() {
+
+
+      $this->db->insert('clients_tbl', $data);
+      
+
+    }
+
+    public function get_clients($where = null)
+    {
+       // $this->db->order_by('compname_clients', 'ASC');
+       if (isset($where)) {
+        $this->db->where($where);
+       }
+        $query = $this->db->get('clients_tbl');
+        if ($query -> num_rows() > 0) {
+			foreach ($query->result() as $row) {
+				$data[] = $row;
+			}
+			return $data;
+		} else {
+			return null;
+		}
+    }
 }
 

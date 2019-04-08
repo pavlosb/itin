@@ -137,5 +137,13 @@ class Inspection extends CI_Controller {
 		);
 
 		return $vhcltype;
-	}	
+	}
+	
+	private function _getclients() {
+
+		$clients = $this->itindata_model->get_clients();
+	
+		return $clients;
+
+	}
 }
