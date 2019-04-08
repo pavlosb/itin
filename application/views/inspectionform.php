@@ -36,7 +36,7 @@ if ($cp['name_section'] != $scp) { ?>
     <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2" value="0" autocomplete="off" checked="checked"> <i class="fal fa-stop"></i>
   </label>
   <label class="btn btnok btn-secondary">
-    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
+    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" value ="<?= $cp['nokpoints_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
   </label>
   
 </div>
