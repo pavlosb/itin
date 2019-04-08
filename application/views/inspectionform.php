@@ -10,7 +10,7 @@
 </div>
 </div>
 <div class="row justify-content-center">
-<div class="col-12">
+<div class="col-md-8">
 <?php echo form_open("inspection/inspection_save");?>
 <?php 
 $mcp = "";
