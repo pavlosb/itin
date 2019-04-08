@@ -9,34 +9,38 @@
 <div class="col-sm-8 col-lg-6">
 <?php echo form_open("inspection/client_save");?>
     <div class="form-group">
-        <label for="vin_vhcl">Επωνυμία </label>
-        <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl">
+        <label for="name_client">Επωνυμία </label>
+        <input type="text" class="form-control" id="name_client" name ="name_client">
     </div>
     <div class="form-row">
         <div class="form-group col">
-            <label for="reg_vhcl">'Ονομα</label>
-            <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl">
+            <label for="firstname_client">'Ονομα</label>
+            <input type="text" class="form-control" id="firstname_client" name ="firstname_client">
         </div>
         <div class="form-group col">
-            <label for="reg_vhcl">Επώνυμο</label>
-            <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl">
+            <label for="lastname_client">Επώνυμο</label>
+            <input type="text" class="form-control" id="lastname_client" name ="lastname_client">
         </div>
     </div>
      <div class="form-group">
-        <label for="displ_vhcl">Α.Φ.Μ.</label>
-        <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
+        <label for="vatno_client">Α.Φ.Μ.</label>
+        <input type="text" class="form-control" id="vatno_client" name ="vatno_client">
     </div>
     <div class="form-group">
-        <label for="displ_vhcl">Διεύθυνση</label>
-        <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
+        <label for="address_client">Διεύθυνση</label>
+        <input type="text" class="form-control" id="address_client" name ="address_client">
     </div>
     <div class="form-group">
-        <label for="displ_vhcl">Τηλέφωνο</label>
-        <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
+        <label for="zip_client">T.K.</label>
+        <input type="text" class="form-control" id="zip_client" name ="zip_client">
     </div>
     <div class="form-group">
-        <label for="displ_vhcl">email</label>
-        <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
+        <label for="tel_client">Τηλέφωνο</label>
+        <input type="text" class="form-control" id="tel_client" name ="tel_client">
+    </div>
+    <div class="form-group">
+        <label for="email_client">email</label>
+        <input type="text" class="form-control" id="email_client" name ="email_client">
     </div>
   
    <button type="submit" class="btn btn-primary">Submit</button>
