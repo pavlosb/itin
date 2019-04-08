@@ -75,6 +75,7 @@ class Inspection extends CI_Controller {
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$data['carbrands'] = $this->_getcarbrands();
 			$data['vhcltypes'] = $this->_getvhcltypes();
+			$data['clients'] = $this->_getclients();
 			$this->load->view('header', $data);
 			$this->load->view('vehiclesform', $data);
 			$this->load->view('footer', $data);
@@ -148,6 +149,7 @@ class Inspection extends CI_Controller {
 				$insdata['vatno_client'] = $this->input->post('vatno_client');
 				$insdata['address_client'] = $this->input->post('address_client');
 				$insdata['zip_client'] = $this->input->post('zip_client');
+				$insdata['since_client'] = date('Y-m-d');
 				$insdata['tel_client'] = $this->input->post('tel_client');
 				$insdata['email_client'] = $this->input->post('email_client');
 				$clientid = $this->itindata_model->set_client($insdata);

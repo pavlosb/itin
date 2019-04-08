@@ -8,6 +8,15 @@
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-6">
 <?php echo form_open("inspection/vehicle_save");?>
+<div class="form-group">
+    <label for="client_vhcl">Πελάτης</label>
+    <select class="form-control" id="client_vhcl" name="client_vhcl">
+      <option value = 0></option>
+      <?php foreach ($clients as $client) : ?>
+      <option value="<?= $client->id_client ?>"><?= $client->name_client ?></option>
+<?php endforeach; ?>
+    </select>
+  </div>
 <div class="form-row">
   <div class="form-group col">
     <label for="reg_vhcl">Αριθμός Πινακίδας</label>

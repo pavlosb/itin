@@ -33,7 +33,7 @@
       </li>
     </ul>
     <span class="navbar-text">
-      <?php echo $username ?> | Logout
+      <?php echo $username ?> | <a href="<?php echo base_url(); ?>auth/logout">Logout</a>
     </span>
   </div>
 </nav>
