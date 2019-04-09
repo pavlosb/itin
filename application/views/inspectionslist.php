@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
  <?php print_r($inspections); ?>
         <div class="col-12">
@@ -20,7 +20,8 @@
                     <td class="text-center"><?php echo $insp->date_inspection; ?></td>
                     <td class="text-center"><?php echo $insp->reg_vhcl; ?> <?php echo $insp->make_vhcl; ?></td>
                     <td class="text-center"><?php echo $insp->name_client; ?></td>
-                    <td class="text-center"><?php echo ($insp->status_inspection > 0 ? '<i class="fal fa-check text-success"></i>' : '<i class="fal fa-hourglass-half text-primary"></i>') ?></td>
+                    <td class="text-center"><?php echo ($insp->status_inspection > 0 ? '<i class="fal fa-check text-success"></i>' : '<i class="fal fa-hourglass-half text-secondary"></i>') ?></td>
+                    <td class="text-center"><?php echo ($insp->status_inspection > 0 ? '<a herf="'.base_url().'inspection/inspection_edit?id='.$insp->id_inspection.'"><i class="fal fa-edit text-secondary"></i></a>' : '<i class="fal fa-eye text-secondary"></i>') ?></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
