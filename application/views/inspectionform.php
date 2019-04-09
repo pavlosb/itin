@@ -38,13 +38,13 @@ if ($cp['name_section'] != $scp) { ?>
     <div class="col-sm-5 text-center text-sm-right">
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary">
-    <input type="radio" class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" value="-1" <?php if (isset($inspscore) && $inspscore['id_cp'] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
+    <input type="radio" class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
   </label>
   <label class="btn btnna btn-secondary active">
-    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore['id_cp'] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
+    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
   </label>
   <label class="btn btnok btn-secondary">
-    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" <?php if (isset($inspscore) && $inspscore['id_cp'] == $cp['points_cp']) { echo "checked"; } ?> value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
+    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "checked"; } ?> value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
   </label>
   
 </div>
@@ -71,6 +71,18 @@ $scp = $cp['name_section'];
 </div>
 <script>
 jQuery(document).ready(function($) {
+
+  var total = 0;
+      $('input:radio:checked').each(function(){
+        if (!$(this).hasClass('do-not-calc')) {
+       total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+        }
+      });   
+  
+     gauge.set(total);
+     AnimationUpdater.run();
+
+
     $('input:radio').change(function ()
 {
 
