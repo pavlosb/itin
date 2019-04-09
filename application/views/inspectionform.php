@@ -13,7 +13,7 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <?php echo form_open("inspection/inspection_save");?>
-        <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?>">
+        <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
         <?php 
           $mcp = "";
           $scp = "";

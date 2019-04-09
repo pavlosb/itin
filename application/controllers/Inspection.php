@@ -80,7 +80,7 @@ class Inspection extends CI_Controller {
 		}
 	}
 
-	public function inspection_edit()
+	public function inspection_edit($id)
 	{
 		if ($this->ion_auth->logged_in())
 		{
@@ -88,7 +88,10 @@ class Inspection extends CI_Controller {
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 
-		$data['checkpoints'] = $this->itindata_model->get_checkpoints();
+			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
+			$data['inspection'] = $inspections[0];
+			
+			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 				$this->load->view('header', $data);
 				$this->load->view('inspectionform', $data);
 				$this->load->view('footer', $data);
