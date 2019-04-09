@@ -142,5 +142,11 @@ $maxpos = $row->maxpos;
 			return null;
 		}
     }
+
+    public function set_inspection($data) {
+
+      $this->db->insert('inspections_tbl', $data);
+      return $this->db->insert_id();
+    }
 }
 

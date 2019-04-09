@@ -1,24 +1,27 @@
 <div id="gauge-wrapper" style="position: fixed;">
-<canvas id="cnvgauge" width = "300px" height="200px"></canvas>
+      <canvas id="cnvgauge" width = "300px" height="200px"></canvas>
 </div>
 
 <div class="container">
-<div class="row justify-content-center">
-  <div class="col-md-8">
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
 <!--<h1 class="display-4">Νέo Σημείο Ελέγχου</h1> -->
-<p class="lead"></p>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-md-8">
-<?php echo form_open("inspection/inspection_save");?>
-<?php 
-$mcp = "";
-$scp = "";
-foreach ($checkpoints as $cp): 
-if ($cp['mainsect'] != $mcp) { ?>
-<h3><?= $cp['mainsect']; ?></h3>
-<?php } 
+        <p class="lead"></p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <?php echo form_open("inspection/inspection_save");?>
+        <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?>">
+        <?php 
+          $mcp = "";
+          $scp = "";
+          foreach ($checkpoints as $cp): 
+            if ($cp['mainsect'] != $mcp) 
+            {?>
+              <h3><?= $cp['mainsect']; ?></h3>
+      <?php } 
 if ($cp['name_section'] != $scp) { ?>
 <div class="row">
  <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp['name_section']; ?></legend>

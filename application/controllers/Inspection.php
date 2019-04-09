@@ -48,7 +48,7 @@ class Inspection extends CI_Controller {
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			if (isset($_POST) && $_POST['vehicle_inspection'] > 0)
+			if (isset($_POST['vehicle_inspection']) && $_POST['vehicle_inspection'] > 0)
 			{
 				$vehicle = $this->itindata_model->get_vehicle(array('id_vhcl'=> $this->input->post('vehicle_inspection')));
 				$insdata['vehicle_inspection'] = $vehicle->id_vhcl;
@@ -57,12 +57,22 @@ class Inspection extends CI_Controller {
 				$insdata['number_inspection'] = $this->input->post('number_inspection');
 				$insdata['date_inspection'] = $this->input->post('date_inspection');
 				$insdata['status_inspection'] = 0;
-				print_r($insdata);
-			
+				$data['inspectionid'] = $this->itindata_model->set_inspection($insdata);
+				
+				$clients = $this->_getclients();
+				
+				foreach ($clients as $client) :
+					 if ($client->id_client == $vehicle->client_vhcl) 
+					 	{
+							$data['clientname'] = $client->name_client
+	 					}
+				endforeach;
+				
+				$data['vehicleinfo'] = array ('vhclreg' => $vehicle->reg_vhcl, 'vhclmake' => $vehicle->make_vhcl, 'modelvhcl' => $vehicle->model_vhcl);
 				$data['checkpoints'] = $this->itindata_model->get_checkpoints();
-		//	$this->load->view('header', $data);
-		//	$this->load->view('inspectionform', $data);
-		//	$this->load->view('footer', $data);
+				$this->load->view('header', $data);
+				$this->load->view('inspectionform', $data);
+				$this->load->view('footer', $data);
 			
 			} else {
 				redirect('inspection/inspection_new', 'refresh');
