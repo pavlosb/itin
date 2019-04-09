@@ -10,7 +10,7 @@
 <?php echo form_open("inspection/inspection_add");?>
 
 
-<div class="form-group">
+<div class="form-group mb-3">
     <label for="client_vhcl">Όχημα</label>
     <select class="form-control form-control-lg" id="vehicle_inspection" name="vehicle_inspection">
       <option value = 0></option>
@@ -22,12 +22,12 @@
 
     <div class="form-group col">
         <label for="number_inspection">Αριθμός </label>
-        <input type="text" class="form-control form-control-lg" id="number_inspection" name ="number_inspection">
+        <input type="text" class="form-control" id="number_inspection" name ="number_inspection">
     </div>
     <div class="form-group col">
     <label for="date_inspection">Ημερομηνία</label>
       <div class="input-group mb-3 date" id="datetimepicker12" data-target-input="nearest">
-        <input type="text" class="form-control form-control-lg datetimepicker-input" id="date_inspection" name ="date_inspection" data-target="#datetimepicker12">
+        <input type="text" class="form-control datetimepicker-input" id="date_inspection" name ="date_inspection" data-target="#datetimepicker12">
           <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
           </div>
