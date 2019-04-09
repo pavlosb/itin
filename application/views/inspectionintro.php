@@ -20,14 +20,29 @@
     </select>
   </div>
 
-    <div class="form-group">
-        <label for="name_client">Αριθμός </label>
-        <input type="text" class="form-control form-control-lg" id="name_client" name ="name_client">
+    <div class="form-group col">
+        <label for="number_inspection">Αριθμός </label>
+        <input type="text" class="form-control form-control-lg" id="number_inspection" name ="number_inspection">
     </div>
-    
+    <div class="form-group col">
+    <label for="date_inspection">Ημερομηνία</label>
+      <div class="input-group mb-3 date" id="datetimepicker12" data-target-input="nearest">
+        <input type="text" class="form-control form-control-lg datetimepicker-input" id="date_inspection" name ="date_inspection" data-target="#datetimepicker12">
+          <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
+            <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
+          </div>
+      </div>
+  </div>
   
    <button type="submit" class="btn btn-primary">Continue</button>
 <?php echo form_close();?>
 </div>
 </div>
 </div>
+<script type="text/javascript">
+        $(function () {
+            $('#datetimepicker12').datetimepicker({
+                    format: 'YYYY-MM-DD'
+            });
+        });
+    </script>
