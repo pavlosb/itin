@@ -19,7 +19,7 @@
 <?php endforeach; ?>
     </select>
   </div>
-
+<div class="form-row">
     <div class="form-group col">
         <label for="number_inspection">Αριθμός </label>
         <input type="text" class="form-control" id="number_inspection" name ="number_inspection">
@@ -33,7 +33,7 @@
           </div>
       </div>
   </div>
-  
+</div> 
    <button type="submit" class="btn btn-primary">Continue</button>
 <?php echo form_close();?>
 </div>
