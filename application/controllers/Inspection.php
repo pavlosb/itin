@@ -90,7 +90,7 @@ class Inspection extends CI_Controller {
 
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
-			$data['inspectionid'] = $id
+			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 				$this->load->view('header', $data);
 				$this->load->view('inspectionform', $data);
