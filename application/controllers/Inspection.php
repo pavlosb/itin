@@ -47,7 +47,7 @@ class Inspection extends CI_Controller {
 		{
 
 			if (isset($_POST) && $_POST['vehicle_inspection'] > 0){
-			$vehicle = $this->itindata_model->getvehicle(array('id_vhcl'=> $this->input->post('vehicle_inspection')));
+			$vehicle = $this->itindata_model->get_vehicle(array('id_vhcl'=> $this->input->post('vehicle_inspection')));
 			print_r($vehicle);
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
