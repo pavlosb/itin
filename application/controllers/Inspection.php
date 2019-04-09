@@ -90,7 +90,7 @@ class Inspection extends CI_Controller {
 
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
-			
+			$data['inspectionid'] = $id
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 				$this->load->view('header', $data);
 				$this->load->view('inspectionform', $data);
@@ -106,7 +106,7 @@ class Inspection extends CI_Controller {
 		$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-		
+			
 			$data['inspections'] = $this->itindata_model->get_inspectionsfull(array('inspector_inspection' => $user->id));
 			$this->load->view('header', $data);
 			$this->load->view('inspectionslist', $data);
