@@ -64,7 +64,7 @@ class Inspection extends CI_Controller {
 				foreach ($clients as $client) :
 					 if ($client->id_client == $vehicle->client_vhcl) 
 					 	{
-							$data['clientname'] = $client->name_client
+							$data['clientname'] = $client->name_client;
 	 					}
 				endforeach;
 				
