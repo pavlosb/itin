@@ -129,5 +129,18 @@ $maxpos = $row->maxpos;
 			return null;
 		}
     }
+
+    public function get_vehicle($data){
+
+      $query = $this->db->get_where('vehicles_tbl', $data);
+      if ($query -> num_rows() > 0) {
+			foreach ($query->result() as $row) {
+				$data = $row;
+			}
+			return $data;
+		} else {
+			return null;
+		}
+    }
 }
 
