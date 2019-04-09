@@ -175,7 +175,7 @@ $maxpos = $row->maxpos;
             }
     }
 
-    function get_inspectionscore($id) {
+    public function get_inspectionscore($id) {
 
       $this->db->where(array('inspectionid_insres' => $id));
       $query = $this->db->get('inspectionresults_tbl');
@@ -189,6 +189,12 @@ $maxpos = $row->maxpos;
       return null;
    }
     }
+    public function set_inspectionscore($id, $data) 
+    {
+      $this->db->where(array('inspectionid_insres' => $id));
+      $this->db->delete('inspectionresults_tbl');
 
+      $this->db->insert_batch('inspectionresults_tbl', $data);
+    }
 }
 
