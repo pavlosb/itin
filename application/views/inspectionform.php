@@ -1,9 +1,9 @@
 <div class="container mt-5">
 <div class="row justify-content-center">
       <div class="col-md-8">
-      <p><i class="fal fa-user-tie"></i> <?php echo $inspection->number_inspection; ?></p>
-      <p><i class="fal fa-car"></i> <?php echo $inspection->reg_vhcl; ?> <?php echo $inspection->make_vhcl; ?> <?php echo $inspection->model_vhcl; ?></p>
-      <p><i class="fal fa-user-tie"></i> <?php echo $inspection->name_client; ?>></p>
+      <p class="lead"><i class="fal fa-user-tie"></i> <?php echo $inspection->number_inspection; ?></p>
+      <p class="lead"><i class="fal fa-car"></i> <?php echo $inspection->reg_vhcl; ?> <?php echo $inspection->make_vhcl; ?> <?php echo $inspection->model_vhcl; ?></p>
+      <p class="lead"><i class="fal fa-user-tie"></i> <?php echo $inspection->name_client; ?></p>
       </div>
 </div>
 
