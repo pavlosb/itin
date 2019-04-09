@@ -1,4 +1,4 @@
-<div id="gauge-wrapper" style="position: fixed;">
+<div id="gauge-wrapper" style="position: fixed; top:300px; left:0px;">
       <canvas id="cnvgauge" width = "300px" height="200px"></canvas>
 </div>
 

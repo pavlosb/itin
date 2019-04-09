@@ -148,5 +148,32 @@ $maxpos = $row->maxpos;
       $this->db->insert('inspections_tbl', $data);
       return $this->db->insert_id();
     }
+
+
+    public function get_inspectionsfull($where) 
+    {
+      $q = "Select i.* v.* c.* from inspections_tbl I
+            LEFT JOIN vehicles_tbl v ON i.vehicle_inspection = v.id_vhcl
+            LEFT JOIN clients_tbl c ON i.client_inspection = c.id_client";
+
+      if (isset($where)) 
+      {
+
+         $q .= " WHERE ";
+            foreach ($where as $field => $value):
+               $q .= echo $field." = ".$value;
+            endforeach;
+      }
+            $query = $this->db->query($q);
+            if ($query -> num_rows() > 0) {
+               foreach ($query->result() as $row) {
+                  $data[] = $row;
+               }
+               return $data;
+            } else {
+               return null;
+            }
+    }
+
 }
 
