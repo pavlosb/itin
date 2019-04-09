@@ -175,5 +175,20 @@ $maxpos = $row->maxpos;
             }
     }
 
+    function get_inspectionscore($id) {
+
+      $this->db->where(array('inspectionid_insres' => $id));
+      $query = $this->db->get('inspectionresults_tbl');
+      if ($query -> num_rows() > 0) {
+      foreach ($query->result() as $row)
+      {
+         $score[$row->chkpointid_insres] = $row->chpointscore_insres;
+      }
+      return $score;
+   } else {
+      return null;
+   }
+    }
+
 }
 

@@ -90,6 +90,7 @@ class Inspection extends CI_Controller {
 
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
+			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 				$this->load->view('header', $data);
@@ -138,7 +139,14 @@ class Inspection extends CI_Controller {
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			print_r($_POST);
+			$points = $_POST['checkpoint'];
+foreach ($points as $key => $value):
+ 
+	$insdata[] = array($this->input->post('date_inspection'), $key, $value)
+
+endforeach;
+print_r($insdata);
+
 		}
 	}
 

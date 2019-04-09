@@ -1,8 +1,13 @@
+<div class="container">
+
+</div>
+
+
 <div id="gauge-wrapper" style="position: fixed; top:300px; left:0px;">
       <canvas id="cnvgauge" width = "300px" height="200px"></canvas>
 </div>
 
-<div class="container">
+<div class="container mt-5">
 
     <div class="row justify-content-center">
       <div class="col-md-8">
