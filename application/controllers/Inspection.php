@@ -56,6 +56,7 @@ class Inspection extends CI_Controller {
 				$insdata['inspector_inspection'] = $user->id;
 				$insdata['number_inspection'] = $this->input->post('number_inspection');
 				$insdata['date_inspection'] = $this->input->post('date_inspection');
+				$insdata['status_inspection'] = 0;
 				print_r($insdata);
 			
 				$data['checkpoints'] = $this->itindata_model->get_checkpoints();
