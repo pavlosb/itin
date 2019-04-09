@@ -72,18 +72,7 @@ $scp = $cp['name_section'];
 <script>
 jQuery(document).ready(function($) {
 
-  var total = 0;
-      $('input:radio:checked').each(function(){
-        if (!$(this).hasClass('do-not-calc')) {
-       total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
-        }
-      });   
-  
-     gauge.set(total);
-     AnimationUpdater.run();
-
-
-    $('input:radio').change(function ()
+     $('input:radio').change(function ()
 {
 
       var total = 0;
@@ -125,7 +114,15 @@ gauge.set(0); // set actual value
 
 
 
-
+var total = 0;
+      $('input:radio:checked').each(function(){
+        if (!$(this).hasClass('do-not-calc')) {
+       total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+        }
+      });   
+  
+     gauge.set(total);
+     AnimationUpdater.run();
 
 });
     </script>
