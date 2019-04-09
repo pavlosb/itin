@@ -142,7 +142,7 @@ class Inspection extends CI_Controller {
 			$points = $_POST['checkpoint'];
 foreach ($points as $key => $value):
  
-	$insdata[] = array($this->input->post('date_inspection'), $key, $value)
+	$insdata[] = array($this->input->post('date_inspection'), $key, $value);
 
 endforeach;
 print_r($insdata);
