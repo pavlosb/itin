@@ -91,7 +91,7 @@ class Inspection extends CI_Controller {
 		
 			$data['inspections'] = $this->itindata_model->get_inspectionsfull(array('inspector_inspection' => $user->id));
 			$this->load->view('header', $data);
-			$this->load->view('inspectionlist', $data);
+			$this->load->view('inspectionslist', $data);
 			$this->load->view('footer', $data);
 		}
 		
