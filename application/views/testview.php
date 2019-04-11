@@ -14,7 +14,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:16px;}
 @page {
                 margin: 100px 40px 100px 80px;
             }
-            .smalltxt {font-size:10px;}
+            .smalltxt {font-size:8px;}
             header {
                 position: fixed;
                 top: -40px;
@@ -32,13 +32,9 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:16px;}
                 bottom: -40px; 
                 left: 0px; 
                 right: 0px;
-                height: 25px; 
+                height: 20px; 
 
-                /** Extra personal styles **/
-                background-color: #03a9f4;
-                color: white;
-                text-align: center;
-                line-height: 35px;
+              
             }
            footer .page-number:after { content: counter(page); }
             .dgreen {color:#007c3f;}
@@ -56,7 +52,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:16px;}
   <body>
   <header>
   <table width="100%">
-  <tr><td width="70%" class="top-border bot-border">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ:</td><td width="30%" align="right" class="top-border bot-border">Ημ/νια:</td>
+  <tr><td width="70%">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ:</td><td width="30%" align="right">Ημ/νια:</td>
   </table>
         </header>
 
@@ -135,6 +131,21 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <tr><td>Ο εμπειρογνώμονας ΔΙΟΛΗΣ ΝΙΚΟΣ<br/><span class="smalltxt">Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή</span></td></tr>
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
+<table width="100%" style="margin-top:40px">
+  <tr><td width="30%" class="smalltxt">IMPERIAL AUTOMOTIVE
+DEKRA PARTNER 
+
+</td>
+<td width="30%" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
+ΝΕΑ ΣΜΥΡΝΗ TΚ 17122<br/>
+ΤΗΛ. 2109426352<br/>
+E-Mail : savvas.tzanis@dekra.com</td>
+<td width="30%" class="smalltxt" align="right">Έδρα ΑΘΗΝΑ<br/>
+ΑΦΜ.998469321 ΔOY ΝΕΑΣ ΣΜΥΡΝΗΣ<br/>
+Αρ. μητρώου:8524901000<br/>
+ALPHA BANK SWIFT CRBAGRAA<br/>
+IBAN:GR8701401200120002320007025</td>
+  </table>
 </main>
   </body>
   </html>
