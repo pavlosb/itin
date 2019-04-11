@@ -55,7 +55,9 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:16px;}
   </head>
   <body>
   <header>
-            Our Code World
+  <table width="100%">
+  <tr><td width="70%" class="top-border bot-border">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ:</td><td width="30%" align="right" class="top-border bot-border">Ημ/νια:</td>
+  </table>
         </header>
 
         <footer>
