@@ -71,7 +71,7 @@ DEKRA PARTNER<br />
 E-Mail :<br />
 savvas.tzanis@dekra.com<br />
 </td>
-<td align="right"><img src="<?php echo $_SERVER["DOCUMENT_ROOT"]; ?>/assets/images/dekra-stamp.jpg"></td>
+<td align="right"><img src="<?php echo base_url(); ?>assets/images/dekra-stamp.jpg"></td>
  </tr>
  </table>
 </main>

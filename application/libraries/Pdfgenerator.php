@@ -9,6 +9,7 @@ class Pdfgenerator {
   public function generate($html, $filename='', $stream=TRUE, $paper = 'A4', $orientation = "portrait")
   {
     $dompdf = new DOMPDF();
+    $dompdf->set_option('setIsRemoteEnabled', 'True');
     $dompdf->loadHtml($html);
     $dompdf->setPaper($paper, $orientation);
     $dompdf->render();
