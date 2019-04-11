@@ -154,8 +154,10 @@ IBAN:GR8701401200120002320007025</td>
   $scp = 99999;
           foreach ($checkpoints as $cp): 
             if ($cp['mainsectid'] != $mcp) 
-            $x = $x+1; 
-            {?>
+            
+            {
+                $x = $x+1; 
+                ?>
               <tr class="page_break_before"><td colspan="4"><h3><?= $cp['mainsectprint']; ?></h3></td></tr>
       <?php 
       
