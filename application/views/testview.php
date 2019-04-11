@@ -43,7 +43,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:16px;}
            footer .page-number:after { content: counter(page); }
             .dgreen {color:#007c3f;}
             .frcellhdr {font-size:14px; font-weight:bold;}
-            .frcellfld {color: #9e9e9e;}
+            .frcellfld {color: #9e9e9e; font-size:12px;}
             .top-border {border-top:1px solid #000;}
             .bot-border {border-bottom:1px solid #000;}
            .page_break_before { page-break-before: always; }
@@ -110,7 +110,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <td class="frcellfld">Αρ Πλαισίου:</td><td></td><td class="frcellfld">Ένδειξη χλμ*<br />(καταγεγραμμένη):</td><td></td>
 </tr>
 <tr>
-<td class="frcellfld">Ισχύς/Κυβισμός:</td><td></td><td class="frcellfld">Ημ.1ης ταξινόμησης:</td><td></td>
+<td class="frcellfld">Ισχύς/Κυβισμός:</td><td></td><td class="frcellfld" nowrap>Ημ.1ης ταξινόμησης:</td><td></td>
 </tr>
 <tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
 <tr><td colspan="4" class="smalltxt">*Θεωρείται δεδομένο, ότι η συνολική απόσταση που διανύθηκε, αντιστοιχεί στην καταγεγραμμένη χιλιομετρική ένδειξη</td></tr>
