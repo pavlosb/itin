@@ -45,7 +45,7 @@ body { font-family: DejaVu Sans; font-size:14px; }
            footer .page-number:after { content: counter(page); }
             .dgreen {color:#007c3f;}
             .frcellhdr {font-size:16px; font-weight:bold;}
-            .frcellfld {color: #ccc;}
+            .frcellfld {color: #9e9e9e;}
             .bot-border {border-bottom:1px solid #000;}
            .page_break_before { page-break-before: always; }
            .page_break_after { page-break-after: always; }
@@ -100,7 +100,15 @@ savvas.tzanis@dekra.com<br />
 <td width="50%" colspan="2" class="frcellhdr dgreen bot-border">Περιγραφή οχήματος</td>
 <td width="50%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα</td>
 </tr>
-
+<tr>
+<td class="frcellfld">Τύπος οχήματος:</td><td></td><td class="frcellfld">Θύρες:</td><td></td>
+</tr>
+<tr>
+<td class="frcellfld">Κατασκευαστής:</td><td></td><td class="frcellfld">Χρώμα:</td><td></td>
+</tr>
+<tr>
+<td class="frcellfld">Εμπορική ονομασία:</td><td></td><td class="frcellfld">Επόμενος Τεχ.ελεγχ.:</td><td></td>
+</tr>
 </table>
 </main>
   </body>
