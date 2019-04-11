@@ -74,8 +74,8 @@ savvas.tzanis@dekra.com<br />
 <td align="right"><img src="http://itin.azurewebsites.net/assets/images/dekra-stamp.jpg">
  </tr>
  </table>
-<table width="100%" style="padding: 0 3px; margin-top:120px; background-color:#007c3f">
-<tr><td style="font-size:19px; line-height:14px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
+<table width="100%" style="padding: 3px 0; margin-top:120px; background-color:#007c3f">
+<tr><td style="font-size:21px; line-height:14px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
 
 </main>
   </body>
