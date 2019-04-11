@@ -60,7 +60,7 @@ body { font-family: DejaVu Sans; }
         <span class="page-number">Page </span>
         </footer>
         <main>
- <table>
+ <table width="100%">
  <tr>
  <td style="font-size:12px; line-height:14px;">IMPERIAL AUTOMOTIVE<br />
 DEKRA PARTNER<br />
