@@ -160,7 +160,7 @@ IBAN:GR8701401200120002320007025</td>
                 $x = $x+1; 
                 ?>
                 </table>
-            <table class="newsect" width = "100%" >
+            <table class="newsect" width = "100%">
               <tr><td colspan="4"><h3><?= $cp['mainsectprint']; ?></h3></td></tr>
       <?php 
       
