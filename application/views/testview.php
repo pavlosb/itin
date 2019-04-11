@@ -33,6 +33,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
                 left: 0px; 
                 right: 0px;
                 height: 20px; 
+                text-align:right;
 
               
             }
@@ -57,7 +58,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
         </header>
 
         <footer>
-        <span class="page-number">Page </span>
+        <span class="page-number">Σελ. </span>
         </footer>
         <main>
  <table width="100%">
@@ -82,7 +83,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <td width="40%"  colspan="2" class="frcellhdr dgreen bot-border">Επιθεώρηση</td>
 </tr>
 <tr>
-<td class="frcellfld">Αρ.Πελάτη:</td><td colspan="3"></td>
+<td class="frcellfld">Αρ.Πελάτη:</td><td colspan="3"><?php echo $inspection->name_client; ?></td>
 </tr>
 <tr>
 <td class="frcellfld">Κατ' εντολή σας από:</td><td colspan="3">12.03.2019, προφορική</td>
@@ -128,7 +129,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 </table>
 <table width="100%">
 <tr><td class="top-border smalltxt">&nbsp;</td></tr>
-<tr><td>Ο εμπειρογνώμονας ΔΙΟΛΗΣ ΝΙΚΟΣ<br/><br/><span class="smalltxt">Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή</span></td></tr>
+<tr><td>Ο εμπειρογνώμονας <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?><br/><br/><span class="smalltxt">Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή</span></td></tr>
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
 <table width="100%" style="margin-top:160px" class="page_break_after">
