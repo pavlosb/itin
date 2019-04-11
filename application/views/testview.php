@@ -42,6 +42,7 @@ body { font-family: DejaVu Sans; }
                 text-align: center;
                 line-height: 35px;
             }
+           footer .page-number:after { content: counter(page); }
 </style>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
    <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
@@ -53,7 +54,7 @@ body { font-family: DejaVu Sans; }
         </header>
 
         <footer>
-            Copyright &copy; <?php echo date("Y");?> 
+        <span class="page-number">Page </span>
         </footer>
         <main>
   <h2>What is Lorem Ipsum</h2>
