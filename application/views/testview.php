@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
    <style>
-body { font-family: DejaVu Sans; font-size:14px; }
+body { font-family: DejaVu Sans; font-size:14px; line-height:16px;}
 @page {
                 margin: 100px 40px 100px 40px;
             }
