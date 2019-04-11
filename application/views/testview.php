@@ -104,7 +104,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <td class="frcellfld">Κατασκευαστής:</td><td></td><td class="frcellfld">Χρώμα:</td><td></td>
 </tr>
 <tr>
-<td class="frcellfld">Εμπορική ονομασία:</td><td></td><td class="frcellfld">Επόμενος Τεχ.ελεγχ.:</td><td></td>
+<td class="frcellfld">Εμπορική ονομασία:</td><td></td><td class="frcellfld" nowrap>Επόμενος Τεχ.ελεγχ.:</td><td></td>
 </tr>
 <tr>
 <td class="frcellfld">Αρ Πλαισίου:</td><td></td><td class="frcellfld">Ένδειξη χλμ*<br />(καταγεγραμμένη):</td><td></td>
