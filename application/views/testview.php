@@ -146,6 +146,38 @@ E-Mail : savvas.tzanis@dekra.com</td>
 ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
+
+
+  <?php 
+          $mcp = "";
+          $scp = "";
+          foreach ($checkpoints as $cp): 
+            if ($cp['mainsect'] != $mcp) 
+            {?>
+              <h3><?= $cp['mainsect']; ?></h3>
+      <?php } 
+if ($cp['name_section'] != $scp) { ?>
+<div class="row">
+ <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp['name_section']; ?></legend>
+</div>
+<?php } ?>
+
+<div class="row py-3">
+    <div class="col-sm-7"><?= $cp['name_cp']; ?><small class="form-text text-muted"><?= $cp['helptext_cp']; ?></small></div>>
+    <div class="col-sm-5 text-center text-sm-right"><?php echo $inspscore[$cp['id_cp']];?></div>
+</div>
+    
+
+
+
+
+
+
+<!-- <tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr> -->
+<?php
+$mcp = $cp['mainsect'];
+$scp = $cp['name_section'];
+ endforeach ?> 
 </main>
   </body>
   </html>
