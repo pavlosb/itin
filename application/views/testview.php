@@ -44,7 +44,9 @@ body { font-family: DejaVu Sans; }
             }
            footer .page-number:after { content: counter(page); }
             .dgreen {color:#007c3f;}
-            .frcellhdr {font-size:16px; font-weight:bold; border-bottom:1px solid #000;}
+            .frcellhdr {font-size:16px; font-weight:bold;}
+            .frcellfld {color: #ccc;}
+            .bot-border {border-bottom:1px solid #000;}
            .page_break_before { page-break-before: always; }
            .page_break_after { page-break-after: always; }
 </style>
@@ -80,9 +82,22 @@ savvas.tzanis@dekra.com<br />
 </table>
 
 <table  width="100%" style="border:0px;">
-<tr style="border-bottom:1px solid #000;">
-<td width="50%" class="frcellhdr dgreen">Διαδικασία</td>
-<td width="50%" class="frcellhdr dgreen">Επιθεώρηση</td>
+<tr>
+<td width="50%" colspan="2" class="frcellhdr dgreen bot-border">Διαδικασία</td>
+<td width="50%"  colspan="2" class="frcellhdr dgreen bot-border">Επιθεώρηση</td>
+</tr>
+<tr>
+<td class="frcellfld">Αρ.Πελάτη:</td><td colspan="3"></td>
+</tr>
+<tr>
+<td class="frcellfld">Κατ' εντολή σας από:</td><td colspan="3">12.03.2019, προφορική</td>
+</tr>
+<tr>
+<td class="frcellfld bot-border">Είδος ελέγχου:</td><td colspan="3" class="bot-border">Τεχνικός Έλεγχος, Έλεγχος Αμαξώματος, Έλεγχος Συστήματος</td>
+</tr>
+<tr>
+<td width="50%" colspan="2" class="frcellhdr dgreen bot-border">Περιγραφή οχήματος</td>
+<td width="50%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα</td>
 </tr>
 </table>
 </main>
