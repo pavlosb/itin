@@ -113,7 +113,8 @@ savvas.tzanis@dekra.com<br />
 <tr>
 <td class="frcellfld">Ισχύς/Κυβισμός:</td><td></td><td class="frcellfld">Ημ.1ης ταξινόμησης:</td><td></td>
 </tr>
-<tr><td colspan="4" class="bot-border">&nbsp;</td></tr>
+<tr><td colspan="4" class="bot-border"><small>&nbsp;</small></td></tr>
+<tr><td colspan="4" class="bot-border"><small>*Θεωρείται δεδομένο, ότι η συνολική απόσταση που διανύθηκε, αντιστοιχεί στην καταγεγραμμένη χιλιομετρική ένδειξη</small></td></tr>
 </table>
 </main>
   </body>
