@@ -172,7 +172,7 @@ $y = $y+1;
 } ?>
 
 
-<tr><td colspan="2" width="50%"><?= sprintf("%02d",$z) ?> <?= $cp['name_cp']; ?></td>
+<tr><td colspan="2" width="50%"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></td>
 <td width="10%" class="text-center"><?php echo $inspscore[$cp['id_cp']];?></td>
 <td width="40%">&nbsp;</td>
 </tr>
