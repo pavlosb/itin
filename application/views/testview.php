@@ -155,23 +155,24 @@ IBAN:GR8701401200120002320007025</td>
           $scp = "";
           foreach ($checkpoints as $cp): 
             if ($cp['mainsect'] != $mcp) 
+            $x = $x+1; 
             {?>
-              <tr><td colspan="3"><h3><?= $cp['mainsect']; ?></h3></td></tr>
+              <tr><td colspan="4"><h3><?= $cp['mainsectprint']; ?></h3></td></tr>
       <?php 
-      $x = $x+1; 
+      
       $y= 1;
     } 
 if ($cp['name_section'] != $scp) { 
     
     $z=1; ?>
-<tr><td colspan="3"><?= $x ?>.<?= $y ?> <?= $cp['name_section']; ?></td></tr>
+<tr class="page_break_before"><td colspan="4"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
 
 <?php 
 $y = $y+1;
 } ?>
 
 
-<tr><td width="50%"><?= sprintf("%02d",$z) ?> <?= $cp['name_cp']; ?></td>
+<tr><td colspan="2" width="50%"><?= sprintf("%02d",$z) ?> <?= $cp['name_cp']; ?></td>
 <td width="10%" class="text-center"><?php echo $inspscore[$cp['id_cp']];?></td>
 <td width="40%">&nbsp;</td>
 </tr>
