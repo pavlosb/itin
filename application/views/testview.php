@@ -12,7 +12,7 @@
    <style>
 body { font-family: DejaVu Sans; font-size:14px; }
 @page {
-                margin: 100px 40px 100px 80px;
+                margin: 100px 40px 100px 40px;
             }
 
             header {
@@ -109,6 +109,13 @@ savvas.tzanis@dekra.com<br />
 <tr>
 <td class="frcellfld">Εμπορική ονομασία:</td><td></td><td class="frcellfld">Επόμενος Τεχ.ελεγχ.:</td><td></td>
 </tr>
+<tr>
+<td class="frcellfld">Αρ Πλαισίου:</td><td></td><td class="frcellfld">Ένδειξη χλμ*<br />(καταγεγραμμένη):</td><td></td>
+</tr>
+<tr>
+<td class="frcellfld">Ισχύς/Κυβισμός:</td><td></td><td class="frcellfld">Ημ.1ης ταξινόμησης:</td><td></td>
+</tr>
+<tr><td colspan="4" class="bot-border">&nbsp;</td></tr>
 </table>
 </main>
   </body>
