@@ -14,7 +14,7 @@ body { font-family: DejaVu Sans; font-size:14px; line-height:16px;}
 @page {
                 margin: 100px 40px 100px 40px;
             }
-
+            .smalltxt {font-size:10px;}
             header {
                 position: fixed;
                 top: -40px;
@@ -93,7 +93,7 @@ savvas.tzanis@dekra.com<br />
 <tr>
 <td class="frcellfld">Είδος ελέγχου:</td><td colspan="3">Τεχνικός Έλεγχος, Έλεγχος Αμαξώματος, Έλεγχος Συστήματος</td>
 </tr>
-<tr><td colspan="4" class="bot-border">&nbsp;</td></tr>
+<tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
 <tr>
 <td width="60%" colspan="2" class="frcellhdr dgreen bot-border">Περιγραφή οχήματος</td>
 <td width="40%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα</td>
@@ -113,8 +113,8 @@ savvas.tzanis@dekra.com<br />
 <tr>
 <td class="frcellfld">Ισχύς/Κυβισμός:</td><td></td><td class="frcellfld">Ημ.1ης ταξινόμησης:</td><td></td>
 </tr>
-<tr><td colspan="4" class="bot-border"><small>&nbsp;</small></td></tr>
-<tr><td colspan="4" class="bot-border"><small>*Θεωρείται δεδομένο, ότι η συνολική απόσταση που διανύθηκε, αντιστοιχεί στην καταγεγραμμένη χιλιομετρική ένδειξη</small></td></tr>
+<tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
+<tr><td colspan="4" class="smalltxt">*Θεωρείται δεδομένο, ότι η συνολική απόσταση που διανύθηκε, αντιστοιχεί στην καταγεγραμμένη χιλιομετρική ένδειξη</td></tr>
 </table>
 </main>
   </body>
