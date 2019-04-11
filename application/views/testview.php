@@ -93,12 +93,14 @@ savvas.tzanis@dekra.com<br />
 <td class="frcellfld">Κατ' εντολή σας από:</td><td colspan="3">12.03.2019, προφορική</td>
 </tr>
 <tr>
-<td class="frcellfld bot-border">Είδος ελέγχου:</td><td colspan="3" class="bot-border">Τεχνικός Έλεγχος, Έλεγχος Αμαξώματος, Έλεγχος Συστήματος</td>
+<td class="frcellfld">Είδος ελέγχου:</td><td colspan="3">Τεχνικός Έλεγχος, Έλεγχος Αμαξώματος, Έλεγχος Συστήματος</td>
 </tr>
+<tr><td colspan="4" class="bot-border">&nbsp;</td></tr>
 <tr>
 <td width="50%" colspan="2" class="frcellhdr dgreen bot-border">Περιγραφή οχήματος</td>
 <td width="50%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα</td>
 </tr>
+
 </table>
 </main>
   </body>
