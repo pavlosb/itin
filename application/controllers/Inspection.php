@@ -110,9 +110,9 @@ class Inspection extends CI_Controller {
 			$data['username'] = $user->first_name." ".$user->last_name;
 			
 			$data['inspections'] = $this->itindata_model->get_inspectionsfull(array('inspector_inspection' => $user->id));
-			$html = $this->load->view('header', $data, true);
-			$html .= $this->load->view('inspectionslist', $data, true);
-			$html .= $this->load->view('footer', $data, true);
+			//$html = $this->load->view('header', $data, true);
+			$html = $this->load->view('testview', $data, true);
+			//$html .= $this->load->view('footer', $data, true);
 			$filename = 'report_'.time();
 			$this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
 		}
