@@ -15,6 +15,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
                 margin: 100px 40px 100px 80px;
             }
             .smalltxt {font-size:8px;line-height:9px;}
+            .mainsecthd { color:#fff; font-size:18px; line-height:22px; background:darkgrey;}
             header {
                 position: fixed;
                 top: -40px;
@@ -75,7 +76,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
  </tr>
  </table>
 <table width="100%" style="padding: 5px 0 3px 0; margin-top:50px; background-color:#007c3f">
-<tr><td style="font-size:20px; line-height:14px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
+<tr><td style="font-size:20px; line-height:21px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
 </table>
 
 <table  width="100%" style="border:0px;">
@@ -161,7 +162,7 @@ IBAN:GR8701401200120002320007025</td>
                 ?>
                 </table>
             <table class="newsect" width = "100%">
-              <tr><td colspan="4"><h3><?= $cp['mainsectprint']; ?></h3></td></tr>
+              <tr><td colspan="4" class="mainsecthd"><?= $cp['mainsectprint']; ?></td></tr>
       <?php 
       
       $y= 1;
@@ -169,7 +170,7 @@ IBAN:GR8701401200120002320007025</td>
 if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
-<tr><td colspan="4"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
+<tr><td class="secthd" colspan="4"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
 
 <?php 
 $y = $y+1;
