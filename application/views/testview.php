@@ -163,11 +163,12 @@ if ($cp['name_section'] != $scp) {
 
 <?php } ?>
 
-<div class="row">
+
 <tr><td width="50%"><?= sprintf("%02d",$n) ?> <?= $cp['name_cp']; ?></td>
 <td width="10%" class="text-center"><?php echo $inspscore[$cp['id_cp']];?></td>
 <td width="40%">&nbsp;</td>
-</div>
+</tr>
+
     
 
 
