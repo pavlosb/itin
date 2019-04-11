@@ -71,10 +71,10 @@ DEKRA PARTNER<br />
 Τηλέφωνο: 2109426352<br />
 E-Mail: savvas.tzanis@dekra.com<br />
 </td>
-<td align="right"><img src="<?php echo base_url(); ?>assets/images/dekra-stamp.jpg" width="100" height="133"></td>
+<td align="right"><img src="<?php echo base_url(); ?>assets/images/dekra-stamp.jpg" width="90" height="120"></td>
  </tr>
  </table>
-<table width="100%" style="padding: 5px 0 3px 0; margin-top:60px; background-color:#007c3f">
+<table width="100%" style="padding: 5px 0 3px 0; margin-top:50px; background-color:#007c3f">
 <tr><td style="font-size:20px; line-height:14px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
 </table>
 
