@@ -8,8 +8,11 @@ class Pdfgenerator {
 
   public function generate($html, $filename='', $stream=TRUE, $paper = 'A4', $orientation = "portrait")
   {
+    $options = new Options();
+    $options->setIsRemoteEnabled(true);
     $dompdf = new DOMPDF();
-    $dompdf->set_option('setIsRemoteEnabled', 'True');
+   // $dompdf->set_option('setIsRemoteEnabled', 'True');
+    $domPdf->setOptions($options);
     $dompdf->loadHtml($html);
     $dompdf->setPaper($paper, $orientation);
     $dompdf->render();
