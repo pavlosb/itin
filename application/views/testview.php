@@ -131,8 +131,8 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <tr><td>Ο εμπειρογνώμονας ΔΙΟΛΗΣ ΝΙΚΟΣ<br/><span class="smalltxt">Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή</span></td></tr>
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
-<table width="100%" style="margin-top:40px">
-  <tr><td width="20%" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
+<table width="100%" style="margin-top:100px">
+  <tr><td width="20%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
 DEKRA PARTNER 
 
 </td>
