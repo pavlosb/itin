@@ -150,7 +150,7 @@ IBAN:GR8701401200120002320007025</td>
 <table>
   <?php 
   $x = 0;
-  $y= 1;
+ 
           $mcp = "";
           $scp = "";
           foreach ($checkpoints as $cp): 
@@ -158,7 +158,8 @@ IBAN:GR8701401200120002320007025</td>
             {?>
               <tr><td colspan="3"><h3><?= $cp['mainsect']; ?></h3></td></tr>
       <?php 
-      $x = $x+1;
+      $x = $x+1; 
+      $y= 1;
     } 
 if ($cp['name_section'] != $scp) { 
     
