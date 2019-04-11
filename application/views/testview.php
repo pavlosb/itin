@@ -43,7 +43,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:16px;}
            footer .page-number:after { content: counter(page); }
             .dgreen {color:#007c3f;}
             .frcellhdr {font-size:14px; font-weight:bold;}
-            .frcellfld {color: #9e9e9e; font-size:12px;}
+            .frcellfld {color: #606060; font-size:12px;}
             .top-border {border-top:1px solid #000;}
             .bot-border {border-bottom:1px solid #000;}
            .page_break_before { page-break-before: always; }
