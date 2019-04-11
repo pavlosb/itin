@@ -158,7 +158,9 @@ IBAN:GR8701401200120002320007025</td>
             {
                 $x = $x+1; 
                 ?>
-              <tr class="page_break_before"><td colspan="4"><h3><?= $cp['mainsectprint']; ?></h3></td></tr>
+                </table>
+            <table width = "100%" class="page_break_after" >
+              <tr><td colspan="4"><h3><?= $cp['mainsectprint']; ?></h3></td></tr>
       <?php 
       
       $y= 1;
