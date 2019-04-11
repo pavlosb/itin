@@ -118,7 +118,7 @@ class Inspection extends CI_Controller {
 	}
 
 
-	public function inspections_pdf() 
+	public function inspections_pdf($id=1) 
 	{
 	
 		if ($this->ion_auth->logged_in())
@@ -128,7 +128,11 @@ class Inspection extends CI_Controller {
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			
-			$data['inspections'] = $this->itindata_model->get_inspectionsfull(array('inspector_inspection' => $user->id));
+			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
+			$data['inspection'] = $inspections[0];
+			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
+			$data['inspectionid'] = $id;
+			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			//$html = $this->load->view('header', $data, true);
 			//$this->load->view('testview', $data);
 			$html = $this->load->view('testview', $data, true);
