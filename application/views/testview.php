@@ -149,22 +149,28 @@ IBAN:GR8701401200120002320007025</td>
 
 <table>
   <?php 
+  $x = 0;
+  $y= 1;
           $mcp = "";
           $scp = "";
           foreach ($checkpoints as $cp): 
             if ($cp['mainsect'] != $mcp) 
             {?>
               <tr><td colspan="3"><h3><?= $cp['mainsect']; ?></h3></td></tr>
-      <?php } 
+      <?php 
+      $x = $x+1;
+    } 
 if ($cp['name_section'] != $scp) { 
     
-    $n=1; ?>
-<tr><td colspan="3"><?= $mcp ?>.<?= $scp ?> <?= $cp['name_section']; ?></td></tr>
+    $z=1; ?>
+<tr><td colspan="3"><?= $x ?>.<?= $y ?> <?= $cp['name_section']; ?></td></tr>
 
-<?php } ?>
+<?php 
+$y = $y+1;
+} ?>
 
 
-<tr><td width="50%"><?= sprintf("%02d",$n) ?> <?= $cp['name_cp']; ?></td>
+<tr><td width="50%"><?= sprintf("%02d",$z) ?> <?= $cp['name_cp']; ?></td>
 <td width="10%" class="text-center"><?php echo $inspscore[$cp['id_cp']];?></td>
 <td width="40%">&nbsp;</td>
 </tr>
@@ -180,7 +186,7 @@ if ($cp['name_section'] != $scp) {
 <?php
 $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
-$n = $n + 1;
+$z = $z + 1;
  endforeach ?> 
 </table>
 </main>
