@@ -12,7 +12,7 @@
    <style>
 body { font-family: DejaVu Sans; }
 @page {
-                margin: 100px 25px;
+                margin: 100px 40px 100px 25px;
             }
 
             header {
