@@ -44,7 +44,8 @@ body { font-family: DejaVu Sans; }
             }
            footer .page-number:after { content: counter(page); }
 
-           .page_break { page-break-before: always; }
+           .page_break_before { page-break-before: always; }
+           .page_break_after { page-break-after: always; }
 </style>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
    <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
