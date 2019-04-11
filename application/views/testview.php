@@ -44,7 +44,7 @@ body { font-family: DejaVu Sans; }
             }
            footer .page-number:after { content: counter(page); }
             .dgreen {color:#007c3f;}
-            .frcellhdr {font-size:18px; font-weight:bold;}
+            .frcellhdr {font-size:16px; font-weight:bold;}
            .page_break_before { page-break-before: always; }
            .page_break_after { page-break-after: always; }
 </style>
@@ -79,7 +79,7 @@ savvas.tzanis@dekra.com<br />
 <tr><td style="font-size:23px; line-height:14px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
 </table>
 
-<table  width="100%">
+<table  width="100%" style="border:0px;">
 <tr style="border-bottom:1px solid #000000;">
 <td width="50%" class="frcellhdr dgreen">Διαδικασία</td>
 <td width="50%" class="frcellhdr dgreen">Επιθεώρηση</td>
