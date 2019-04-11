@@ -44,7 +44,7 @@ body { font-family: DejaVu Sans; }
             }
            footer .page-number:after { content: counter(page); }
             .dgreen {color:#007c3f;}
-            .frcellhdr {font-size:16px; font-weight:bold;}
+            .frcellhdr {font-size:16px; font-weight:bold; border-bottom:1px solid #000;}
            .page_break_before { page-break-before: always; }
            .page_break_after { page-break-after: always; }
 </style>
@@ -80,7 +80,7 @@ savvas.tzanis@dekra.com<br />
 </table>
 
 <table  width="100%" style="border:0px;">
-<tr style="border-bottom:1px solid #000000;">
+<tr style="border-bottom:1px solid #000;">
 <td width="50%" class="frcellhdr dgreen">Διαδικασία</td>
 <td width="50%" class="frcellhdr dgreen">Επιθεώρηση</td>
 </tr>
