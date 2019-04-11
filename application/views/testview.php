@@ -62,7 +62,7 @@ body { font-family: DejaVu Sans; }
         <main>
  <table>
  <tr>
- <td>IMPERIAL AUTOMOTIVE<br />
+ <td style="font-size:12px;">IMPERIAL AUTOMOTIVE<br />
 DEKRA PARTNER<br />
 ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ<br />
 253 ΝΕΑ ΣΜΥΡΝΗ<br />
