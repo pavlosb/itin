@@ -75,7 +75,7 @@ savvas.tzanis@dekra.com<br />
  </tr>
  </table>
 <table width="100%" style="margin-top:120px; background-color:#007c3f">
-<tr><td style="font-size:18px; line-height:14px;">DEKRA Έκθεση Σφραγίδας</td></tr>
+<tr><td style="padding: 0 3px; font-size:19px; line-height:14px; color:"#fff;>DEKRA Έκθεση Σφραγίδας</td></tr>
 
 </main>
   </body>
