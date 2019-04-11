@@ -9,7 +9,6 @@ class Pdfgenerator {
   public function generate($html, $filename='', $stream=TRUE, $paper = 'A4', $orientation = "portrait")
   {
     $dompdf = new DOMPDF();
-    $dompdf->set_option('defaultFont', 'Helvetica');
     $dompdf->loadHtml($html);
     $dompdf->setPaper($paper, $orientation);
     $dompdf->render();
