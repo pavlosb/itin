@@ -134,7 +134,7 @@ class Inspection extends CI_Controller {
 			//$html = $this->load->view('testview', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
 			$filename = 'report_'.time();
-			$this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
+			//$this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
 		}
 		
 
