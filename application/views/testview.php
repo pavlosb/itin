@@ -16,6 +16,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
             }
             .smalltxt {font-size:8px;line-height:9px;}
             .mainsecthd { color:#fff; font-size:18px; line-height:22px; background:darkgrey;}
+            .secthd {line-height:20px;}
             header {
                 position: fixed;
                 top: -40px;
@@ -46,7 +47,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
             .bot-border {border-bottom:1px solid #000;}
            .page_break_before { page-break-before: always; }
            .page_break_after { page-break-after: always; }
-           .newsect:not(:first-child):not(:last-child){page-break-after: always;}
+           .newsect:not(:last-child){page-break-after: always;}
 </style>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
    <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
@@ -149,7 +150,7 @@ ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
 
-<table>
+<table width = "100%">
   <?php 
   $x = 0;
   $mcp = 99999;
