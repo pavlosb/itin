@@ -116,15 +116,14 @@ savvas.tzanis@dekra.com<br />
 <tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
 <tr><td colspan="4" class="smalltxt">*Θεωρείται δεδομένο, ότι η συνολική απόσταση που διανύθηκε, αντιστοιχεί στην καταγεγραμμένη χιλιομετρική ένδειξη</td></tr>
 </table>
-<table  width="100%" style="border:0px;">
-<tr><td colspan="3" class="bot-border smalltxt">&nbsp;</td></tr>
+<table  width="100%" style="border:0px; margin-top:15px;">
 <tr>
 <td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="120" height="122"></td>
 <td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="120" height="122"></td>
 <td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="120" height="122"></td>
 </tr>
 <tr>
-<td align="center" class="small dgreen bot-border">DEKRA Τεχνικός Έλεγχος</td>
+<td align="center" class="small dgreen">DEKRA Τεχνικός Έλεγχος</td>
 <td align="center" class="small dgreen">DEKRA Έλεγχος Αμαξώματος</td>
 <td align="center" class="small dgreen">DEKRA Έλεγχος Συστήματος</td>
 </tr>
