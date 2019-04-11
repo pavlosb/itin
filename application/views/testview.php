@@ -131,10 +131,9 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <tr><td>Ο εμπειρογνώμονας ΔΙΟΛΗΣ ΝΙΚΟΣ<br/><br/><span class="smalltxt">Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή</span></td></tr>
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
-<table width="100%" style="margin-top:160px">
+<table width="100%" style="margin-top:190px" class="page_break_after">
   <tr><td width="20%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
 DEKRA PARTNER 
-
 </td>
 <td width="40%" valign="top" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
 ΝΕΑ ΣΜΥΡΝΗ TΚ 17122<br/>
