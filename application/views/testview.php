@@ -151,10 +151,10 @@ IBAN:GR8701401200120002320007025</td>
   <?php 
   $x = 0;
  
-          $mcp = "";
-          $scp = "";
+          $mcp = 99999;
+          $scp = 99999;
           foreach ($checkpoints as $cp): 
-            if ($cp['mainsectprint'] != $mcp) 
+            if ($cp['mainsectid'] != $mcp) 
             $x = $x+1; 
             {?>
               <tr><td colspan="4"><h3><?= $cp['mainsectprint']; ?></h3></td></tr>
@@ -162,7 +162,7 @@ IBAN:GR8701401200120002320007025</td>
       
       $y= 1;
     } 
-if ($cp['printtext_section'] != $scp) { 
+if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
 <tr class="page_break_before"><td colspan="4"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
@@ -186,8 +186,8 @@ $y = $y+1;
 
 <!-- <tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr> -->
 <?php
-$mcp = $cp['mainsectprint'];
-$scp = $cp['printtext_section'];
+$mcp = $cp['mainsectid'];
+$scp = $cp['id__section'];
 $z = $z + 1;
  endforeach ?> 
 </table>
