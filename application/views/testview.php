@@ -163,7 +163,7 @@ if ($cp['name_section'] != $scp) { ?>
 <?php } ?>
 
 <div class="row py-3">
-    <div class="col-sm-7"><?= $cp['name_cp']; ?><small class="form-text text-muted"><?= $cp['helptext_cp']; ?></small></div>>
+    <div class="col-sm-7"><?= $cp['name_cp']; ?></div>
     <div class="col-sm-5 text-center text-sm-right"><?php echo $inspscore[$cp['id_cp']];?></div>
 </div>
     
