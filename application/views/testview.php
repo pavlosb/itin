@@ -83,8 +83,8 @@ savvas.tzanis@dekra.com<br />
 
 <table  width="100%" style="border:0px;">
 <tr>
-<td width="50%" colspan="2" class="frcellhdr dgreen bot-border">Διαδικασία</td>
-<td width="50%"  colspan="2" class="frcellhdr dgreen bot-border">Επιθεώρηση</td>
+<td width="60%" colspan="2" class="frcellhdr dgreen bot-border">Διαδικασία</td>
+<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border">Επιθεώρηση</td>
 </tr>
 <tr>
 <td class="frcellfld">Αρ.Πελάτη:</td><td colspan="3"></td>
@@ -97,8 +97,8 @@ savvas.tzanis@dekra.com<br />
 </tr>
 <tr><td colspan="4" class="bot-border">&nbsp;</td></tr>
 <tr>
-<td width="50%" colspan="2" class="frcellhdr dgreen bot-border">Περιγραφή οχήματος</td>
-<td width="50%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα</td>
+<td width="60%" colspan="2" class="frcellhdr dgreen bot-border">Περιγραφή οχήματος</td>
+<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα</td>
 </tr>
 <tr>
 <td class="frcellfld">Τύπος οχήματος:</td><td></td><td class="frcellfld">Θύρες:</td><td></td>
