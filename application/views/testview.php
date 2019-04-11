@@ -43,7 +43,7 @@ body { font-family: DejaVu Sans; }
                 line-height: 35px;
             }
            footer .page-number:after { content: counter(page); }
-
+            .dgreen {color:#007c3f;}
            .page_break_before { page-break-before: always; }
            .page_break_after { page-break-after: always; }
 </style>
@@ -74,9 +74,12 @@ savvas.tzanis@dekra.com<br />
 <td align="right"><img src="http://itin.azurewebsites.net/assets/images/dekra-stamp.jpg">
  </tr>
  </table>
-<table width="100%" style="padding: 3px 0; margin-top:120px; background-color:#007c3f">
-<tr><td style="font-size:21px; line-height:14px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
+<table width="100%" style="padding: 5px 0 3px 0; margin-top:120px; background-color:#007c3f">
+<tr><td style="font-size:23px; line-height:14px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
+</table>
 
+<table  width="100%">
+</table>
 </main>
   </body>
   </html>
