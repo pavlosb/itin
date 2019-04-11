@@ -147,26 +147,26 @@ ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
 
-<div class="container-fluid">
+<table>
   <?php 
           $mcp = "";
           $scp = "";
           foreach ($checkpoints as $cp): 
             if ($cp['mainsect'] != $mcp) 
             {?>
-              <h3><?= $cp['mainsect']; ?></h3>
+              <tr><td colspan="3"><h3><?= $cp['mainsect']; ?></h3></td></tr>
       <?php } 
 if ($cp['name_section'] != $scp) { 
     
     $n=1; ?>
-<div class="row">
- <div class="col-12"><?= $mcp ?>.<?= $scp ?> <?= $cp['name_section']; ?></div>
-</div>
+<tr><td colspan="3"><?= $mcp ?>.<?= $scp ?> <?= $cp['name_section']; ?></td></tr>
+
 <?php } ?>
 
 <div class="row">
-    <div class="col-7"><?= $cp['name_cp']; ?></div>
-    <div class="col-5 text-center"><?= sprintf("%02d",$n) ?> <?php echo $inspscore[$cp['id_cp']];?></div>
+<tr><td width="50%"><?= sprintf("%02d",$n) ?> <?= $cp['name_cp']; ?></td>
+<td width="10%" class="text-center"><?php echo $inspscore[$cp['id_cp']];?></td>
+<td width="40%">&nbsp;</td>
 </div>
     
 
@@ -181,7 +181,7 @@ $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
 $n = $n + 1;
  endforeach ?> 
- </div>
+</table>
 </main>
   </body>
   </html>
