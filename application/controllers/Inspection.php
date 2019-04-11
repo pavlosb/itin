@@ -104,14 +104,17 @@ class Inspection extends CI_Controller {
 	
 		if ($this->ion_auth->logged_in())
 		{
+			$this->load->library('pdfgenerator');
 		$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			
 			$data['inspections'] = $this->itindata_model->get_inspectionsfull(array('inspector_inspection' => $user->id));
-			$this->load->view('header', $data);
-			$this->load->view('inspectionslist', $data);
-			$this->load->view('footer', $data);
+			$html = $this->load->view('header', $data, true);
+			$html .= $this->load->view('inspectionslist', $data, true);
+			$html .= $this->load->view('footer', $data, true);
+			$filename = 'report_'.time();
+			$this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
 		}
 		
 
