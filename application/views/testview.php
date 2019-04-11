@@ -162,6 +162,7 @@ IBAN:GR8701401200120002320007025</td>
                 $x = $x+1; 
                 ?>
                 </table>
+                <div class="newsect">
             <table class="newsect" width = "100%">
               <tr><td colspan="4" class="mainsecthd"><?= $cp['mainsectprint']; ?></td></tr>
       <?php 
@@ -197,6 +198,7 @@ $scp = $cp['id_section'];
 $z = $z + 1;
  endforeach ?> 
 </table>
+</div>
 </main>
   </body>
   </html>
