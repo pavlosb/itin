@@ -10,11 +10,11 @@
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
    <style>
-body { font-family: DejaVu Sans; font-size:13px; line-height:16px;}
+body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
 @page {
                 margin: 100px 40px 100px 80px;
             }
-            .smalltxt {font-size:8px;}
+            .smalltxt {font-size:8px;line-height:9px;}
             header {
                 position: fixed;
                 top: -40px;
@@ -132,15 +132,15 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
 <table width="100%" style="margin-top:40px">
-  <tr><td width="30%" class="smalltxt">IMPERIAL AUTOMOTIVE
+  <tr><td width="20%" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
 DEKRA PARTNER 
 
 </td>
-<td width="30%" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
+<td width="40%" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
 ΝΕΑ ΣΜΥΡΝΗ TΚ 17122<br/>
 ΤΗΛ. 2109426352<br/>
 E-Mail : savvas.tzanis@dekra.com</td>
-<td width="30%" class="smalltxt" align="right">Έδρα ΑΘΗΝΑ<br/>
+<td width="30%" class="smalltxt">Έδρα ΑΘΗΝΑ<br/>
 ΑΦΜ.998469321 ΔOY ΝΕΑΣ ΣΜΥΡΝΗΣ<br/>
 Αρ. μητρώου:8524901000<br/>
 ALPHA BANK SWIFT CRBAGRAA<br/>
