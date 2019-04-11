@@ -1,13 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-//require_once("./vendor/autoload.php");
-require_once './vendor/dompdf/dompdf/lib/html5lib/Parser.php';
-require_once './vendor/dompdf/dompdf/lib/php-font-lib/src/FontLib/Autoloader.php';
-require_once './vendor/dompdf/dompdf/lib/php-svg-lib/src/autoload.php';
-require_once './vendor/dompdf/dompdf/src/Autoloader.php';
-Dompdf\Autoloader::register();
-
+require_once("./vendor/autoload.php");
 use Dompdf\Dompdf;
 
 class Pdfgenerator {
@@ -15,6 +9,7 @@ class Pdfgenerator {
   public function generate($html, $filename='', $stream=TRUE, $paper = 'A4', $orientation = "portrait")
   {
     $dompdf = new DOMPDF();
+    $dompdf->set_option('defaultFont', 'Courier');
     $dompdf->loadHtml($html);
     $dompdf->setPaper($paper, $orientation);
     $dompdf->render();
