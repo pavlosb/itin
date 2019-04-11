@@ -147,7 +147,7 @@ ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
 
-
+<div class="container">
   <?php 
           $mcp = "";
           $scp = "";
@@ -162,9 +162,9 @@ if ($cp['name_section'] != $scp) { ?>
 </div>
 <?php } ?>
 
-<div class="row py-3">
-    <div class="col-sm-7"><?= $cp['name_cp']; ?></div>
-    <div class="col-sm-5 text-center text-sm-right"><?php echo $inspscore[$cp['id_cp']];?></div>
+<div class="row">
+    <div class="col-7"><?= $cp['name_cp']; ?></div>
+    <div class="col-5 text-center"><?php echo $inspscore[$cp['id_cp']];?></div>
 </div>
     
 
@@ -178,6 +178,7 @@ if ($cp['name_section'] != $scp) { ?>
 $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
  endforeach ?> 
+ </div>
 </main>
   </body>
   </html>
