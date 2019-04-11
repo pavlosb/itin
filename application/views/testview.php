@@ -128,7 +128,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 </table>
 <table width="100%">
 <tr><td class="top-border smalltxt">&nbsp;</td></tr>
-<tr><td>Ο εμπειρογνώμονας ΔΙΟΛΗΣ ΝΙΚΟΣ<br/><span class="smalltxt">Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή</span></td></tr>
+<tr><td>Ο εμπειρογνώμονας ΔΙΟΛΗΣ ΝΙΚΟΣ<br/><br/><span class="smalltxt">Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή</span></td></tr>
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
 <table width="100%" style="margin-top:160px">
