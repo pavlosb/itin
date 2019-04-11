@@ -156,15 +156,17 @@ IBAN:GR8701401200120002320007025</td>
             {?>
               <h3><?= $cp['mainsect']; ?></h3>
       <?php } 
-if ($cp['name_section'] != $scp) { ?>
+if ($cp['name_section'] != $scp) { 
+    
+    $n=1; ?>
 <div class="row">
- <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp['name_section']; ?></legend>
+ <div class="col-12"><?= $mcp ?>.<?= $scp ?> <?= $cp['name_section']; ?></div>
 </div>
 <?php } ?>
 
 <div class="row">
     <div class="col-7"><?= $cp['name_cp']; ?></div>
-    <div class="col-5 text-center"><?php echo $inspscore[$cp['id_cp']];?></div>
+    <div class="col-5 text-center"><?= sprintf("%02d",$n) ?> <?php echo $inspscore[$cp['id_cp']];?></div>
 </div>
     
 
@@ -177,6 +179,7 @@ if ($cp['name_section'] != $scp) { ?>
 <?php
 $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
+$n = $n + 1;
  endforeach ?> 
  </div>
 </main>
