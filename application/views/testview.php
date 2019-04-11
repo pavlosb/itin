@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-   
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
    <style>
 body { font-family: DejaVu Sans; }
 @page {
-                margin: 100px 40px 100px 25px;
+                margin: 100px 40px 100px 120px;
             }
 
             header {
@@ -71,7 +71,7 @@ DEKRA PARTNER<br />
 E-Mail :<br />
 savvas.tzanis@dekra.com<br />
 </td>
-</td>
+<td></td>
  </tr>
  </table>
 </main>
