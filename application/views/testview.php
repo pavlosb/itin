@@ -17,24 +17,22 @@ body { font-family: DejaVu Sans; font-size:14px; line-height:16px;}
 
             header {
                 position: fixed;
-                top: -60px;
+                top: -40px;
                 left: 0px;
                 right: 0px;
-                height: 50px;
-
+                height: 25px;
+                border-top:1px solid #000;
+                border-bottom:1px solid #000;
                 /** Extra personal styles **/
-                background-color: #03a9f4;
-                color: white;
-                text-align: center;
-                line-height: 35px;
+               
             }
 
             footer {
                 position: fixed; 
-                bottom: -60px; 
+                bottom: -40px; 
                 left: 0px; 
                 right: 0px;
-                height: 50px; 
+                height: 25px; 
 
                 /** Extra personal styles **/
                 background-color: #03a9f4;
@@ -77,7 +75,7 @@ savvas.tzanis@dekra.com<br />
 <td align="right"><img src="http://itin.azurewebsites.net/assets/images/dekra-stamp.jpg">
  </tr>
  </table>
-<table width="100%" style="padding: 5px 0 3px 0; margin-top:120px; background-color:#007c3f">
+<table width="100%" style="padding: 5px 0 3px 0; margin-top:60px; background-color:#007c3f">
 <tr><td style="font-size:23px; line-height:14px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
 </table>
 
