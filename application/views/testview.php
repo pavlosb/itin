@@ -62,7 +62,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
         <main>
  <table width="100%">
  <tr>
- <td style="font-size:12px; line-height:12px;">IMPERIAL AUTOMOTIVE<br />
+ <td valign="top" style="font-size:12px; line-height:12px;">IMPERIAL AUTOMOTIVE<br />
 DEKRA PARTNER<br />
 ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253 ΝΕΑ ΣΜΥΡΝΗ<br />
 Τ.Κ. 17122<br />
@@ -136,11 +136,11 @@ E-Mail: savvas.tzanis@dekra.com<br />
 DEKRA PARTNER 
 
 </td>
-<td width="40%" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
+<td width="40%" valign="top" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
 ΝΕΑ ΣΜΥΡΝΗ TΚ 17122<br/>
 ΤΗΛ. 2109426352<br/>
 E-Mail : savvas.tzanis@dekra.com</td>
-<td width="30%" class="smalltxt">Έδρα ΑΘΗΝΑ<br/>
+<td width="30%" valign="top" class="smalltxt">Έδρα ΑΘΗΝΑ<br/>
 ΑΦΜ.998469321 ΔOY ΝΕΑΣ ΣΜΥΡΝΗΣ<br/>
 Αρ. μητρώου:8524901000<br/>
 ALPHA BANK SWIFT CRBAGRAA<br/>
