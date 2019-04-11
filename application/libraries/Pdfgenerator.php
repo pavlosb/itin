@@ -13,7 +13,7 @@ class Pdfgenerator {
     $options->setIsRemoteEnabled(true);
     $dompdf = new DOMPDF();
    // $dompdf->set_option('setIsRemoteEnabled', 'True');
-    $domPdf->setOptions($options);
+    $dompdf->setOptions($options);
     $dompdf->loadHtml($html);
     $dompdf->setPaper($paper, $orientation);
     $dompdf->render();
