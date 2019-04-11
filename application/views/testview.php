@@ -53,7 +53,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
   <body>
   <header>
   <table width="100%">
-  <tr><td width="70%">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ: <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right">Ημ/νια: <?php echo $inspection->date_inspection; ?></td>
+  <tr><td width="70%">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ: <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right">Ημ/νια: <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td>
   </table>
         </header>
 
