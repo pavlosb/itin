@@ -132,10 +132,10 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
 <table width="100%" style="margin-top:190px" class="page_break_after">
-  <tr><td width="20%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
+  <tr><td width="18%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
 DEKRA PARTNER 
 </td>
-<td width="40%" valign="top" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
+<td width="52%" valign="top" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
 ΝΕΑ ΣΜΥΡΝΗ TΚ 17122<br/>
 ΤΗΛ. 2109426352<br/>
 E-Mail : savvas.tzanis@dekra.com</td>
