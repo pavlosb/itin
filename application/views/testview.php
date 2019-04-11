@@ -150,14 +150,13 @@ IBAN:GR8701401200120002320007025</td>
 <table>
   <?php 
   $x = 0;
- 
-          $mcp = 99999;
-          $scp = 99999;
+  $mcp = 99999;
+  $scp = 99999;
           foreach ($checkpoints as $cp): 
             if ($cp['mainsectid'] != $mcp) 
             $x = $x+1; 
             {?>
-              <tr><td colspan="4"><h3><?= $cp['mainsectprint']; ?></h3></td></tr>
+              <tr class="page_break_before"><td colspan="4"><h3><?= $cp['mainsectprint']; ?></h3></td></tr>
       <?php 
       
       $y= 1;
@@ -165,7 +164,7 @@ IBAN:GR8701401200120002320007025</td>
 if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
-<tr class="page_break_before"><td colspan="4"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
+<tr><td colspan="4"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
 
 <?php 
 $y = $y+1;
