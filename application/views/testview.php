@@ -47,7 +47,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
             .bot-border {border-bottom:1px solid #000;}
            .page_break_before { page-break-before: always; }
            .page_break_after { page-break-after: always; }
-           .newsect:not(:last-child){page-break-after: always;}
+           .newsect{page-break-after: always;}
 </style>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
    <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
@@ -162,7 +162,7 @@ IBAN:GR8701401200120002320007025</td>
                 $x = $x+1; 
                 ?>
                 </table>
-                <div class="newsect">
+                
             <table class="newsect" width = "100%">
               <tr><td colspan="4" class="mainsecthd"><?= $cp['mainsectprint']; ?></td></tr>
       <?php 
@@ -198,7 +198,6 @@ $scp = $cp['id_section'];
 $z = $z + 1;
  endforeach ?> 
 </table>
-</div>
 </main>
   </body>
   </html>
