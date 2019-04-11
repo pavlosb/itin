@@ -123,12 +123,16 @@ savvas.tzanis@dekra.com<br />
 <td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="120" height="122"></td>
 </tr>
 <tr>
-<td align="center" class="small dgreen">DEKRA Τεχνικός Έλεγχος</td>
-<td align="center" class="small dgreen">DEKRA Έλεγχος Αμαξώματος</td>
-<td align="center" class="small dgreen">DEKRA Έλεγχος Συστήματος</td>
+<td align="center" class="smalltxt dgreen">DEKRA Τεχνικός Έλεγχος</td>
+<td align="center" class="smalltxt dgreen">DEKRA Έλεγχος Αμαξώματος</td>
+<td align="center" class="smalltxt dgreen">DEKRA Έλεγχος Συστήματος</td>
 </tr>
 <tr><td colspan="3" class="bot-border smalltxt">&nbsp;</td></tr>
-
+</table>
+<table>
+<tr><td class="bot-border smalltxt">&nbsp;</td></tr>
+<tr><td>Ο εμπειρογνώμονας ΔΙΟΛΗΣ ΝΙΚΟΣ<br/><span class="smalltxt">Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή</span></td></tr>
+<tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
 </main>
   </body>
