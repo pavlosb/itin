@@ -40,7 +40,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
             }
            footer .page-number:after { content: counter(page); }
             .dgreen {color:#007c3f;}
-            .frcellhdr {font-size:14px; font-weight:bold;}
+            .frcellhdr, .secthd {font-size:14px; font-weight:bold;}
             .frcellfld {color: #606060; font-size:12px;}
             .top-border {border-top:1px solid #000;}
             .bot-border {border-bottom:1px solid #000;}
@@ -170,7 +170,7 @@ IBAN:GR8701401200120002320007025</td>
 if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
-<tr><td class="secthd" colspan="4"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
+<tr><td class="secthd dgreen" colspan="4"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
 
 <?php 
 $y = $y+1;
