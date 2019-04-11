@@ -186,8 +186,8 @@ $y = $y+1;
 
 <!-- <tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr> -->
 <?php
-$mcp = $cp['mainsect'];
-$scp = $cp['name_section'];
+$mcp = $cp['mainsectprint'];
+$scp = $cp['printtext_section'];
 $z = $z + 1;
  endforeach ?> 
 </table>
