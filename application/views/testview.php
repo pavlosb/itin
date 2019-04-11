@@ -147,7 +147,7 @@ ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
 
-<div class="container">
+<div class="container-fluid">
   <?php 
           $mcp = "";
           $scp = "";
