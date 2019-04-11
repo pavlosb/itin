@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require_once("./vendor/dompdf/dompdf/autoload.inc.php");
+require_once("./vendor/autoload.php");
 use Dompdf\Dompdf;
 
 class Pdfgenerator {
