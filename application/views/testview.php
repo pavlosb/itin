@@ -97,10 +97,10 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <td width="40%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα <span style = "font-weight:normal; color: #000;"><?php echo $inspection->reg_vhcl; ?></span> </td>
 </tr>
 <tr>
-<td class="frcellfld">Τύπος οχήματος:</td><td><?php echo $inspection->type_vhcl; ?></td><td class="frcellfld">Θύρες:</td><td></td>
+<td class="frcellfld">Τύπος οχήματος:</td><td><?php echo $inspection->type_vhcl; ?></td><td class="frcellfld">Θύρες:</td><td><?php echo $inspection->doors_vhcl; ?></td>
 </tr>
 <tr>
-<td class="frcellfld">Κατασκευαστής:</td><td><?php echo $inspection->make_vhcl; ?></td><td class="frcellfld">Χρώμα:</td><td></td>
+<td class="frcellfld">Κατασκευαστής:</td><td><?php echo $inspection->make_vhcl; ?></td><td class="frcellfld">Χρώμα:</td><td><?php echo $inspection->colour_vhcl; ?></td>
 </tr>
 <tr>
 <td class="frcellfld">Εμπορική ονομασία:</td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap>Επόμενος Τεχ.ελεγχ.:</td><td><?php echo $inspection->nxtdate_vhcl; ?></td>
