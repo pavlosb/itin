@@ -10,9 +10,9 @@
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
    <style>
-body { font-family: DejaVu Sans; font-size:14px; line-height:16px;}
+body { font-family: DejaVu Sans; font-size:13px; line-height:16px;}
 @page {
-                margin: 100px 40px 100px 40px;
+                margin: 100px 40px 100px 80px;
             }
             .smalltxt {font-size:10px;}
             header {
@@ -42,7 +42,7 @@ body { font-family: DejaVu Sans; font-size:14px; line-height:16px;}
             }
            footer .page-number:after { content: counter(page); }
             .dgreen {color:#007c3f;}
-            .frcellhdr {font-size:16px; font-weight:bold;}
+            .frcellhdr {font-size:14px; font-weight:bold;}
             .frcellfld {color: #9e9e9e;}
             .top-border {border-top:1px solid #000;}
             .bot-border {border-bottom:1px solid #000;}
@@ -64,7 +64,7 @@ body { font-family: DejaVu Sans; font-size:14px; line-height:16px;}
         <main>
  <table width="100%">
  <tr>
- <td style="font-size:13px; line-height:14px;">IMPERIAL AUTOMOTIVE<br />
+ <td style="font-size:12px; line-height:13px;">IMPERIAL AUTOMOTIVE<br />
 DEKRA PARTNER<br />
 ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ<br />
 253 ΝΕΑ ΣΜΥΡΝΗ<br />
@@ -77,7 +77,7 @@ savvas.tzanis@dekra.com<br />
  </tr>
  </table>
 <table width="100%" style="padding: 5px 0 3px 0; margin-top:60px; background-color:#007c3f">
-<tr><td style="font-size:23px; line-height:14px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
+<tr><td style="font-size:20px; line-height:14px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
 </table>
 
 <table  width="100%" style="border:0px;">
@@ -119,9 +119,9 @@ savvas.tzanis@dekra.com<br />
 </table>
 <table  width="100%" style="border:0px; margin-top:15px;">
 <tr>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="120" height="122"></td>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="120" height="122"></td>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="120" height="122"></td>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"></td>
 </tr>
 <tr>
 <td align="center" class="smalltxt dgreen">DEKRA Τεχνικός Έλεγχος</td>
