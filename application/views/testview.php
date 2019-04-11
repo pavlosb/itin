@@ -52,7 +52,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
   <body>
   <header>
   <table width="100%">
-  <tr><td width="70%">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ:</td><td width="30%" align="right">Ημ/νια:</td>
+  <tr><td width="70%">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ: <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right">Ημ/νια: <?php echo $inspection->date_inspection; ?></td>
   </table>
         </header>
 
@@ -93,22 +93,22 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
 <tr>
 <td width="60%" colspan="2" class="frcellhdr dgreen bot-border">Περιγραφή οχήματος</td>
-<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα</td>
+<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα <span style = "font-weight:normal; color: #000;"><?php echo $inspection->reg_vhcl; ?></span> </td>
 </tr>
 <tr>
 <td class="frcellfld">Τύπος οχήματος:</td><td></td><td class="frcellfld">Θύρες:</td><td></td>
 </tr>
 <tr>
-<td class="frcellfld">Κατασκευαστής:</td><td></td><td class="frcellfld">Χρώμα:</td><td></td>
+<td class="frcellfld">Κατασκευαστής:</td><td><?php echo $inspection->make_vhcl; ?></td><td class="frcellfld">Χρώμα:</td><td></td>
 </tr>
 <tr>
-<td class="frcellfld">Εμπορική ονομασία:</td><td></td><td class="frcellfld" nowrap>Επόμενος Τεχ.ελεγχ.:</td><td></td>
+<td class="frcellfld">Εμπορική ονομασία:</td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap>Επόμενος Τεχ.ελεγχ.:</td><td><?php echo $inspection->nxtdate_vhcl; ?></td>
 </tr>
 <tr>
-<td class="frcellfld">Αρ Πλαισίου:</td><td></td><td class="frcellfld">Ένδειξη χλμ*<br />(καταγεγραμμένη):</td><td></td>
+<td class="frcellfld">Αρ Πλαισίου:</td><td><?php echo $inspection->vin_vhcl; ?></td><td class="frcellfld">Ένδειξη χλμ*<br />(καταγεγραμμένη):</td><td><?php echo $inspection->mlg_vhcl; ?></td>
 </tr>
 <tr>
-<td class="frcellfld">Ισχύς/Κυβισμός:</td><td></td><td class="frcellfld" nowrap>Ημ.1ης ταξινόμησης:</td><td></td>
+<td class="frcellfld">Ισχύς/Κυβισμός:</td><td><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td><td class="frcellfld" nowrap>Ημ.1ης ταξινόμησης:</td><td><?php echo $inspection->firstreg_vhcl; ?></td>
 </tr>
 <tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
 <tr><td colspan="4" class="smalltxt">*Θεωρείται δεδομένο, ότι η συνολική απόσταση που διανύθηκε, αντιστοιχεί στην καταγεγραμμένη χιλιομετρική ένδειξη</td></tr>
