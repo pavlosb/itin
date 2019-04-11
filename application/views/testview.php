@@ -96,7 +96,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <td width="40%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα <span style = "font-weight:normal; color: #000;"><?php echo $inspection->reg_vhcl; ?></span> </td>
 </tr>
 <tr>
-<td class="frcellfld">Τύπος οχήματος:</td><td></td><td class="frcellfld">Θύρες:</td><td></td>
+<td class="frcellfld">Τύπος οχήματος:</td><td><?php echo $inspection->type_vhcl; ?></td><td class="frcellfld">Θύρες:</td><td></td>
 </tr>
 <tr>
 <td class="frcellfld">Κατασκευαστής:</td><td><?php echo $inspection->make_vhcl; ?></td><td class="frcellfld">Χρώμα:</td><td></td>
@@ -131,7 +131,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <tr><td>Ο εμπειρογνώμονας ΔΙΟΛΗΣ ΝΙΚΟΣ<br/><br/><span class="smalltxt">Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή</span></td></tr>
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
-<table width="100%" style="margin-top:190px" class="page_break_after">
+<table width="100%" style="margin-top:160px" class="page_break_after">
   <tr><td width="18%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
 DEKRA PARTNER 
 </td>
