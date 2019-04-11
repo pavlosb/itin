@@ -12,7 +12,7 @@
    <style>
 body { font-family: DejaVu Sans; }
 @page {
-                margin: 100px 40px 100px 120px;
+                margin: 100px 40px 100px 80px;
             }
 
             header {
@@ -71,7 +71,7 @@ DEKRA PARTNER<br />
 E-Mail :<br />
 savvas.tzanis@dekra.com<br />
 </td>
-<td></td>
+<td align="right"><img src="<?php echo base_url(); ?>assets/images/dekra-stamp.jpg"></td>
  </tr>
  </table>
 </main>
