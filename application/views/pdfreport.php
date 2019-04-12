@@ -38,7 +38,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 
               
             }
-           footer .page-number:after { content: counter(page); }
+           
             .dgreen {color:#007c3f;}
             .frcellhdr, .secthd {font-size:14px; font-weight:bold;}
             .frcellfld {color: #606060; font-size:12px;}
