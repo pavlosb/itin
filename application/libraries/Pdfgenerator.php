@@ -19,7 +19,7 @@ class Pdfgenerator {
     $dompdf->render();
     $output = $dompdf->output();
     $dir ="assets/pdfs";
-    file_put_contents($dir."/".$filename.".pdf", $output);
+    file_put_contents($filename.".pdf", $output);
     return $filename;
   }
    }
