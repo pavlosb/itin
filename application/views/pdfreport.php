@@ -17,6 +17,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
                 header: html_pgheader;
                 footer: html_pgfooter;
             }
+            .text-center {text-align:center;}
             .small {font-size:11px;line-height:12px;}
             .smalltxt {font-size:8px;line-height:9px;}
             .mainsecthd { color:#fff; font-size:18px; line-height:22px; background:darkgrey;}
@@ -155,7 +156,7 @@ ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
 
- <table width="100%">
+ <table width="100%" border="0">
   <?php 
   $x = 0;
   $mcp = 99999;
@@ -185,8 +186,8 @@ $y = $y+1;
 
 
 <tr style="page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <td style="width:50%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></td>
-<td class="text-center" style="width:15%; padding:2px 0 0 0"><?php 
+    <td style="width:55%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></td>
+<td class="text-center" style="width:5%; padding:2px 0 0 0"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
