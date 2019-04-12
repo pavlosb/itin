@@ -66,7 +66,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
         <htmlpagefooter class="pgfooter"  style="display:none">
         <span class="page-number">Σελ. {PAGENO}</span>
         </htmlpagefooter>
-        <main>
+       
         <table width="100%">
  <tr>
  <td valign="top" style="font-size:12px; line-height:12px;">IMPERIAL AUTOMOTIVE<br />
@@ -152,6 +152,6 @@ E-Mail : savvas.tzanis@dekra.com</td>
 ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
-        </main>
+      
   </body>
   </html>
