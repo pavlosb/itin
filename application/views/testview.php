@@ -167,9 +167,9 @@ IBAN:GR8701401200120002320007025</td>
                 </div>
                 
             <div class="newsect-<?= $x ?>" style="width:100%">
-            <div style="width:25% display:inline-block"><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></div>
-            <div style="width:23% display:inline-block; margin-left:1%" class="text-right dgreen">Περιγραφή οχήματος:</div>
-            <div style="width:18% display:inline-block; margin-left:1%" class="">Τύπος οχήματος:<br />
+            <div style="width:25%; display:inline-block"><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></div>
+            <div style="width:23%; height:100px; display:inline-block; margin-left:1% font-size:16px;" class="text-right dgreen">Περιγραφή οχήματος:</div>
+            <div style="width:18%; height:100px;  display:inline-block; margin-left:1%" class="">Τύπος οχήματος:<br />
 Κατασκευαστής:<br />
 Εμπορική ονομασία:<br />
 Αρ. πλαισίου:<br />
