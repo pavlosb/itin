@@ -182,7 +182,7 @@ IBAN:GR8701401200120002320007025</td>
 if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
-<div class="secthd dgreen" ><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></div>
+<div class="secthd dgreen" style="page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></div>
 <?php 
 $y = $y+1;
 } ?>
