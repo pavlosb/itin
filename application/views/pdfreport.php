@@ -192,9 +192,7 @@ if ($cp['id_section'] != $scp) {
 <?php 
 $y = $y+1;
 } ?>
-
-
-<tr style="page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
+<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
     <td style="width:60%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></td>
 <td class="text-center" style="width:5%; padding:2px 0 0 0"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
@@ -208,15 +206,6 @@ $pointscore = $inspscore[$cp['id_cp']];
 </td>
 <td class="text-center">&nbsp;</td>
 </tr>
-
-    
-
-
-
-
-
-
-
 <?php
 $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
