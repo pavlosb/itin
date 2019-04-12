@@ -123,7 +123,7 @@ class Inspection extends CI_Controller {
 	
 		if ($this->ion_auth->logged_in())
 		{
-			$this->load->library('pdfgenerator');
+			$this->load->library('mpdfgenerator');
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -139,7 +139,7 @@ class Inspection extends CI_Controller {
 			$html = $this->load->view('testview', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
 			$filename = $inspection->number_inspection;
-			$this->pdfgenerator->generate($html, $filename, True, 'A4', 'portrait');
+			$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');
 		}
 		
 
