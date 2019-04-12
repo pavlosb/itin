@@ -12,6 +12,8 @@
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 @page {
                 margin: 100px 40px 100px 80px;
+                header: myheader;
+                footer: myfooter;
             }
             .small {font-size:11px;line-height:12px;}
             .smalltxt {font-size:8px;line-height:9px;}
@@ -55,15 +57,15 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
     <title>ITIN</title>
   </head>
   <body>
-  <header>
+  <myheader>
   <table width="100%">
   <tr><td width="70%">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ: <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right">Ημ/νια: <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td>
   </table>
-        </header>
+        </myheader>
 
-        <footer>
+        <myfooter>
         <span class="page-number">Σελ. {PAGENO}</span>
-        </footer>
+        </myfooter>
         <main>
         <table width="100%">
  <tr>
