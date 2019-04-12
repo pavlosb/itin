@@ -16,7 +16,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 	            margin-footer: 60px; /* <any of the usual CSS values for margins> */
                 header: html_pgheader;
                 footer: html_pgfooter;
-            }
+       }
             .text-center {text-align:center;}
             .small {font-size:11px;line-height:12px;}
             .smalltxt {font-size:8px;line-height:9px;}
@@ -179,7 +179,7 @@ IBAN:GR8701401200120002320007025</td>
 if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
-<tr><td class="secthd dgreen" colspan="3" style="page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
+<tr><td class="secthd dgreen" colspan="3" style="padding:5px 0; page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
 <?php 
 $y = $y+1;
 } ?>
