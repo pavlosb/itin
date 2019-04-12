@@ -18,11 +18,7 @@ class Pdfgenerator {
     $dompdf->setPaper($paper, $orientation);
     $dompdf->render();
     $output = $dompdf->output();
-    file_put_contents($filename.".pdf", $output);
-    if ($stream) {
-        $dompdf->stream($filename.".pdf", array("Attachment" => 0));
-        } else {
-        return $dompdf->output();
-    }
-  }
-}
+    $dir ="assets/pdfs";
+    file_put_contents($dir."/".$filename.".pdf", $output);
+    return $filename;
+   }

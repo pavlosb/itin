@@ -130,6 +130,7 @@ class Inspection extends CI_Controller {
 			
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
+			$inspection = $inspections[0];
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
@@ -137,7 +138,7 @@ class Inspection extends CI_Controller {
 			//$this->load->view('testview', $data);
 			$html = $this->load->view('testview', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
-			$filename = 'report_'.time();
+			$filename = $inspection->number_inspection;
 			$this->pdfgenerator->generate($html, $filename, True, 'A4', 'portrait');
 		}
 		
