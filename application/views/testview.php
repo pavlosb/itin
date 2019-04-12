@@ -183,11 +183,11 @@ $y = $y+1;
 <td width="10%" class="text-center"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
-<!-- <img src="<?php echo base_url(); ?>assets/images/check.png" width="25" height="25"> -->
+<img src="<?php echo base_url(); ?>assets/images/check.png" width="25" height="25">
  <?php } else if ($pointscore == 0) { ?>
-<!--    <img src="<?php echo base_url(); ?>assets/images/minus.png" width="25" height="25">-->
+    <img src="<?php echo base_url(); ?>assets/images/minus.png" width="25" height="25">
  <?php } else { ?>
-<!--    <img src="<?php echo base_url(); ?>assets/images/times.png" width="25" height="25">-->
+    <img src="<?php echo base_url(); ?>assets/images/times.png" width="25" height="25">
  <?php } ?>
 </td>
 <td width="40%">&nbsp;</td>
