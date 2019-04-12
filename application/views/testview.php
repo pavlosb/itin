@@ -150,7 +150,7 @@ ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
 
-<div width = "100%">
+<div style="width:100%">
   <?php 
   $x = 0;
   $mcp = 99999;
@@ -163,8 +163,8 @@ IBAN:GR8701401200120002320007025</td>
                 ?>
                 </div>
                 
-            <div class="newsect-<?= $x ?>" width = "100%">
-              <div class="mainsecthd"><?= $cp['mainsectprint']; ?></div>
+            <div class="newsect-<?= $x ?>" style="width:100%">
+              <div class="mainsecthd" style="width:100%"><?= $cp['mainsectprint']; ?></div>
       <?php 
       
       $y= 1;
@@ -179,8 +179,9 @@ $y = $y+1;
 } ?>
 
 
-<div><div><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
-<div class="text-center"><?php 
+<div style="width:100%">
+    <div style="width:50%; display:inline-block; line-height:25px"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
+<div class="text-center" style="width:15%; display:inline-block; line-height:25px"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="25" height="25">
@@ -190,7 +191,7 @@ $pointscore = $inspscore[$cp['id_cp']];
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="25" height="25">
  <?php } ?>
 </div>
-<div>&nbsp;</div>
+<div class="text-center" style="width:35%; display:inline-block; line-height:25px">&nbsp;</div>
 </div>
 
     
