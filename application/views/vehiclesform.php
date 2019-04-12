@@ -7,7 +7,9 @@
 </div>
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-6">
-<?php echo form_open("inspection/vehicle_save");?>
+<?php 
+$attributes = array('id' => 'vehicleForm');
+echo form_open("inspection/vehicle_save", $attributes);?>
 <div class="form-group">
     <label for="client_vhcl">Πελάτης</label>
     <select class="form-control" id="client_vhcl" name="client_vhcl">
@@ -106,7 +108,7 @@
 </div>
 </div>
 <script type="text/javascript">
-        $(function () {
+       jQuery(document).ready(function($){
             $('#datetimepicker11').datetimepicker({
                 viewMode: 'years',
                 format: 'MM/YYYY'
@@ -115,5 +117,25 @@
                 viewMode: 'years',
                 format: 'MM/YYYY'
             });
-        });
+   
+        $('#vehicleForm').formValidation({
+			framework: 'bootstrap',
+			icon: false,
+			fields: {
+				client_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Δεν έχετε επιλέξει Πελάτη'
+						},
+											}
+				},
+				
+				   
+			 
+			}
+			
+		});	
+
+	});	
     </script>
+
