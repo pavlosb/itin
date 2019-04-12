@@ -13,7 +13,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
 @page {
                 margin: 100px 40px 100px 80px;
             }
-            
+            .small {font-size:11px;line-height:12px;}
             .smalltxt {font-size:8px;line-height:9px;}
             .mainsecthd { color:#fff; font-size:18px; line-height:22px; background:darkgrey;}
             .secthd {line-height:20px; margin: 10px 0;}
