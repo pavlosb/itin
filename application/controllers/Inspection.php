@@ -138,7 +138,7 @@ class Inspection extends CI_Controller {
 			//$this->load->view('testview', $data);
 			$html = $this->load->view('pdfreport', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
-			$mpdf = new \Mpdf\Mpdf();
+			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
    			$mpdf->Output();

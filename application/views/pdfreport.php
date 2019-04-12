@@ -18,6 +18,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
                 footer: html_pgfooter;
        }
             .text-center {text-align:center;}
+            .text-right {text-align:right;}
             .small {font-size:11px;line-height:12px;}
             .smalltxt {font-size:8px;line-height:9px;}
             .mainsecthd { color:#fff; font-size:18px; line-height:22px; background:darkgrey;}
@@ -169,7 +170,7 @@ IBAN:GR8701401200120002320007025</td>
                 ?>
                 </table>
                 
-            <table border="0" class="newsect-<?= $x ?>">
+            <table border="0" padding="0" class="newsect-<?= $x ?>">
             <tr><td colspan="3">
             <table width="100%" style="margin-bottom:15px"><tr>
             <td width="22%"><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
