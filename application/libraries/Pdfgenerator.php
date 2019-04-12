@@ -17,6 +17,7 @@ class Pdfgenerator {
     $dompdf->loadHtml($html);
     $dompdf->setPaper($paper, $orientation);
     $dompdf->render();
+    $output = $dompdf->output();
     file_put_contents($filename.".pdf", $output);
     if ($stream) {
         $dompdf->stream($filename.".pdf", array("Attachment" => 0));
