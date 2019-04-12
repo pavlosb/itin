@@ -185,8 +185,8 @@ $y = $y+1;
 
 
 <div style="page-break-inside:avoid; width:100%<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <div style="float:left; width:50%; display:inline-block; min-height:20px; padding:4px 0 0 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
-<div class="text-center" style="float:left; width:15%; display:inline-block; min-height:20px; padding:2px 0 0 0"><?php 
+    <div style="float:left; width:50%;  min-height:20px; padding:4px 0 0 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
+<div class="text-center" style="float:left; width:15%;  min-height:20px; padding:2px 0 0 0"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
@@ -196,7 +196,7 @@ $pointscore = $inspscore[$cp['id_cp']];
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
  <?php } ?>
 </div>
-<div class="text-center" style="float:left; width:30%; display:inline-block; min-heigh:20px">&nbsp;</div>
+<div class="text-center" style="float:left; width:30%;  min-heigh:20px">&nbsp;</div>
 </div>
 
     
