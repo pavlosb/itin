@@ -102,7 +102,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
     <span class="input-group-text" id="basic-addon2">kw</span>
   </div></div>
   </div></div>
-   <button type="submit" class="btn btn-primary">Submit</button>
+   <button type="submit" class="btn btn-primary">Καταχώρηση</button>
 <?php echo form_close();?>
 </div>
 </div>

@@ -49,7 +49,7 @@ echo form_open("inspection/client_save", $attributes);?>
     <label class="form-check-label" for="createaccount">Δημιουργία Λογαριασμού</label>
   </div>
   
-   <button type="submit" class="btn btn-primary">Submit</button>
+   <button type="submit" class="btn btn-primary">Καταχώρηση</button>
 <?php echo form_close();?>
 </div>
 </div>
