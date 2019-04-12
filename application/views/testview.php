@@ -14,16 +14,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
 @page {
                 margin: 100px 40px 100px 80px;
             }
-            html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
-  }
+            
             .smalltxt {font-size:8px;line-height:9px;}
             .mainsecthd { color:#fff; font-size:18px; line-height:22px; background:darkgrey;}
             .secthd {line-height:20px;}
