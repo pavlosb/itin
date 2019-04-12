@@ -56,7 +56,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   <div class="form-group">
     <label for="type_vhcl">Είδος Οχήματος</label>
     <select class="form-control" id="type_vhcl" name="type_vhcl">
-      <option value = 0></option>
+    <option value = "">Επιλέξτε</option>
       <?php foreach ($vhcltypes as $vt) : ?>
       <option value="<?= $vt['nametype'] ?>"><?=  $vt['nametype'] ?></option>
 <?php endforeach; ?>
@@ -65,7 +65,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   <div class="form-group">
     <label for="make_vhcl">Κατασκευαστής</label>
     <select class="form-control" id="make_vhcl" name="make_vhcl">
-      <option value = 0></option>
+    <option value = "">Επιλέξτε</option>
       <?php foreach ($carbrands as $cb) : ?>
       <option value="<?= $cb->name_carbrand ?>"><?= $cb->name_carbrand ?></option>
 <?php endforeach; ?>
