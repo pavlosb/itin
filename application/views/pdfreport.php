@@ -12,14 +12,14 @@
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 @page {
                 margin: 100px 40px 100px 80px;
-                header: myheader;
-                footer: myfooter;
+                header: html_pgheader;
+                footer: html_pgfooter;
             }
             .small {font-size:11px;line-height:12px;}
             .smalltxt {font-size:8px;line-height:9px;}
             .mainsecthd { color:#fff; font-size:18px; line-height:22px; background:darkgrey;}
             .secthd {line-height:20px; margin: 10px 0;}
-            header {
+            .pgheader {
                 position: fixed;
                 top: -40px;
                 left: 0px;
@@ -30,7 +30,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
                 /** Extra personal styles **/
                 }
 
-            footer {
+                .pgfooter {
                 position: fixed; 
                 bottom: -40px; 
                 left: 0px; 
@@ -57,15 +57,15 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
     <title>ITIN</title>
   </head>
   <body>
-  <myheader>
+  <htmlpageheader class="pgheader"  style="display:none">
   <table width="100%">
   <tr><td width="70%">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ: <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right">Ημ/νια: <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td>
   </table>
-        </myheader>
+        </htmlpageheader>
 
-        <myfooter>
+        <htmlpagefooter class="pgfooter"  style="display:none">
         <span class="page-number">Σελ. {PAGENO}</span>
-        </myfooter>
+        </htmlpagefooter>
         <main>
         <table width="100%">
  <tr>
