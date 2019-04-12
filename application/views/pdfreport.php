@@ -9,7 +9,7 @@
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
    <style>
-body {font-size:13px; line-height:14px;}
+body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 @page {
                 margin: 100px 40px 100px 80px;
             }
@@ -77,6 +77,60 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <td align="right"><img src="<?php echo base_url(); ?>assets/images/dekra-stamp.jpg" width="90" height="120"></td>
  </tr>
  </table>
+ <table width="100%" style="padding: 5px 0 3px 0; margin-top:50px; background-color:#007c3f">
+<tr><td style="font-size:20px; line-height:21px; color:#fff;">DEKRA Έκθεση Σφραγίδας</td></tr>
+</table>
+
+<table  width="100%" style="border:0px;">
+<tr>
+<td width="60%" colspan="2" class="frcellhdr dgreen bot-border">Διαδικασία</td>
+<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border">Επιθεώρηση</td>
+</tr>
+<tr>
+<td class="frcellfld">Αρ.Πελάτη:</td><td colspan="3"><?php echo $inspection->name_client; ?></td>
+</tr>
+<tr>
+<td class="frcellfld">Κατ' εντολή σας από:</td><td colspan="3"><?php echo date("d-m-Y", strtotime($inspection->orderdate_inspection)); ?>, <?php echo date("d-m-Y", strtotime($inspection->ordermethod_inspection)); ?></td>
+</tr>
+<tr>
+<td class="frcellfld">Είδος ελέγχου:</td><td colspan="3">Τεχνικός Έλεγχος, Έλεγχος Αμαξώματος, Έλεγχος Συστήματος</td>
+</tr>
+<tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
+<tr>
+<td width="60%" colspan="2" class="frcellhdr dgreen bot-border">Περιγραφή οχήματος</td>
+<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border">Πινακίδα <span style = "font-weight:normal; color: #000;"><?php echo $inspection->reg_vhcl; ?></span> </td>
+</tr>
+<tr>
+<td class="frcellfld">Τύπος οχήματος:</td><td><?php echo $inspection->type_vhcl; ?></td><td class="frcellfld">Θύρες:</td><td><?php echo $inspection->doors_vhcl; ?></td>
+</tr>
+<tr>
+<td class="frcellfld">Κατασκευαστής:</td><td><?php echo $inspection->make_vhcl; ?></td><td class="frcellfld">Χρώμα:</td><td><?php echo $inspection->colour_vhcl; ?></td>
+</tr>
+<tr>
+<td class="frcellfld">Εμπορική ονομασία:</td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap>Επόμενος Τεχ.ελεγχ.:</td><td><?php echo $inspection->nxtdate_vhcl; ?></td>
+</tr>
+<tr>
+<td class="frcellfld">Αρ Πλαισίου:</td><td class="small"><?php echo $inspection->vin_vhcl; ?></td><td class="frcellfld">Ένδειξη χλμ*<br />(καταγεγραμμένη):</td><td><?php echo $inspection->mlg_vhcl; ?></td>
+</tr>
+<tr>
+<td class="frcellfld">Ισχύς/Κυβισμός:</td><td><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td><td class="frcellfld" nowrap>Ημ.1ης ταξινόμησης:</td><td><?php echo $inspection->firstreg_vhcl; ?></td>
+</tr>
+<tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
+<tr><td colspan="4" class="smalltxt">*Θεωρείται δεδομένο, ότι η συνολική απόσταση που διανύθηκε, αντιστοιχεί στην καταγεγραμμένη χιλιομετρική ένδειξη</td></tr>
+</table>
+<table  width="100%" style="border:0px; margin-top:15px;">
+<tr>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"></td>
+</tr>
+<tr>
+<td align="center" class="smalltxt dgreen">DEKRA Τεχνικός Έλεγχος</td>
+<td align="center" class="smalltxt dgreen">DEKRA Έλεγχος Αμαξώματος</td>
+<td align="center" class="smalltxt dgreen">DEKRA Έλεγχος Συστήματος</td>
+</tr>
+<tr><td colspan="3" class="bot-border smalltxt">&nbsp;</td></tr>
+</table>
         </main>
   </body>
   </html>
