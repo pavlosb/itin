@@ -154,52 +154,6 @@ E-Mail : savvas.tzanis@dekra.com</td>
 ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
-  <div style="width:100%">
-  <?php 
-  $x = 0;
-  $mcp = 99999;
-  $scp = 99999;
-          foreach ($checkpoints as $cp): 
-            if ($cp['mainsectid'] != $mcp) 
-            
-            {
-                $x = $x+1; 
-                ?>
-                </div>
-                
-            <div class="newsect-<?= $x ?>" style="width:100%">
-            <table width="100%" style="margin-bottom:15px">
-            <td width="22%" ><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
-            <td width="30%" valign="top" style="padding-right:1%; font-size:16px;" class="text-right dgreen">Περιγραφή οχήματος:</td>
-            <td width="20%" valign="top" style="margin-left:1%" class="small">Τύπος οχήματος:<br />Κατασκευαστής:<br />Μοντέλο:<br />Αρ. πλαισίου:<br />Ισχύς/Κυβισμός</td>
-            <td class="small"><?php echo $inspection->type_vhcl; ?><br /><?php echo $inspection->make_vhcl; ?><br /><?php echo $inspection->model_vhcl; ?><br /><?php echo $inspection->vin_vhcl; ?><br /><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></table>
-              <div class="mainsecthd" style="width:100%; display:block"><?= $cp['mainsectprint']; ?></div>
-      <?php 
       
-      $y= 1;
-    } 
-if ($cp['id_section'] != $scp) { 
-    
-    $z=1; ?>
-<div class="secthd dgreen" style="page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></div>
-<?php 
-$y = $y+1;
-} ?>
-
-
-<div style="page-break-inside:avoid; width:100%<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <div style="width:50%; display:inline-block; min-height:20px; padding:4px 0 0 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
-<div class="text-center" style="width:15%; display:inline-block; min-height:20px; padding:2px 0 0 0"><?php 
-$pointscore = $inspscore[$cp['id_cp']];
- if ($pointscore > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
- <?php } else if ($pointscore == 0) { ?>
-    <img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
- <?php } else { ?>
-    <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
- <?php } ?>
-</div>
-<div class="text-center" style="width:30%; display:inline-block; min-heigh:20px">&nbsp;</div>
-</div>
   </body>
   </html>
