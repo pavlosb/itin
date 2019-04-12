@@ -169,7 +169,7 @@ IBAN:GR8701401200120002320007025</td>
                 ?>
                 </table>
                 
-            <table class="newsect-<?= $x ?>" style="float:left; width:100%">
+            <table border="0" class="newsect-<?= $x ?>" style="float:left; width:100%">
             
               <tr><td class="mainsecthd" colspan="3"><?= $cp['mainsectprint']; ?></td></tr>>
       <?php 
@@ -186,7 +186,7 @@ $y = $y+1;
 
 
 <tr style="page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <td style="width:55%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></td>
+    <td style="width:60%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></td>
 <td class="text-center" style="width:5%; padding:2px 0 0 0"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
