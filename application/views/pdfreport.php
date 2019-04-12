@@ -131,6 +131,25 @@ E-Mail: savvas.tzanis@dekra.com<br />
 </tr>
 <tr><td colspan="3" class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
+<table width="100%">
+<tr><td class="top-border smalltxt">&nbsp;</td></tr>
+<tr><td>Ο εμπειρογνώμονας <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?><br/><br/><span class="smalltxt">Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή</span></td></tr>
+<tr><td class="bot-border smalltxt">&nbsp;</td></tr>
+</table>
+<table width="100%" style="margin-top:160px" class="page_break_after">
+  <tr><td width="18%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
+DEKRA PARTNER 
+</td>
+<td width="52%" valign="top" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
+ΝΕΑ ΣΜΥΡΝΗ TΚ 17122<br/>
+ΤΗΛ. 2109426352<br/>
+E-Mail : savvas.tzanis@dekra.com</td>
+<td width="30%" valign="top" class="smalltxt">Έδρα ΑΘΗΝΑ<br/>
+ΑΦΜ.998469321 ΔOY ΝΕΑΣ ΣΜΥΡΝΗΣ<br/>
+Αρ. μητρώου:8524901000<br/>
+ALPHA BANK SWIFT CRBAGRAA<br/>
+IBAN:GR8701401200120002320007025</td>
+  </table>
         </main>
   </body>
   </html>
