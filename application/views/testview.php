@@ -48,9 +48,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
            .page_break_after { page-break-after: always; }
            .newsect-1, .newsect-2 {page-break-after: always;}
       
-p:nth-child(even) {
-  background: blue;
-}
+
 </style>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
    <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
@@ -170,7 +168,7 @@ IBAN:GR8701401200120002320007025</td>
             <table width=100%>
             <td width="25%" ><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
             <td width="25%" valign="top" style="margin-left:1% font-size:20px;" class="text-right dgreen">Περιγραφή οχήματος:</td>
-            <td width="18%" valign="top" style="margin-left:1%" class="">Τύπος οχήματος:<br />Κατασκευαστής:<br />Εμπορική ονομασία:<br />Αρ. πλαισίου:<br />Ισχύς/Κυβισμός</td>
+            <td width="20%" valign="top" style="margin-left:1%" class="">Τύπος οχήματος:<br />Κατασκευαστής:<br />Εμπορική ονομασία:<br />Αρ. πλαισίου:<br />Ισχύς/Κυβισμός</td>
             <td></td></table>
               <div class="mainsecthd" style="width:100% diplay:block"><?= $cp['mainsectprint']; ?></div>
       <?php 
