@@ -22,7 +22,7 @@ class Mpdfgenerator {
    // file_put_contents($filename.".pdf", $output);
    // return $filename;
 
-   $mpdf = new \Mpdf\Mpdf();
+   $mpdf = new \mPDF('utf-8','$paper','');
    $mpdf->WriteHTML($html);
    $mpdf->Output();
   }
