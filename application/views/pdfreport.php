@@ -57,13 +57,13 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
     <title>ITIN</title>
   </head>
   <body>
-  <htmlpageheader class="pgheader"  style="display:none">
+  <htmlpageheader name="pgheader" class="pgheader"  style="display:none">
   <table width="100%">
   <tr><td width="70%">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ: <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right">Ημ/νια: <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td>
   </table>
         </htmlpageheader>
 
-        <htmlpagefooter class="pgfooter"  style="display:none">
+        <htmlpagefooter class="pgfooter" name="pgfooter" style="display:none">
         <span class="page-number">Σελ. {PAGENO}</span>
         </htmlpagefooter>
        
