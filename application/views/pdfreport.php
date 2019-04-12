@@ -168,9 +168,9 @@ IBAN:GR8701401200120002320007025</td>
                 ?>
                 </div>
                 
-            <div class="newsect-<?= $x ?>" style="float:left; width:100%">
+            <div class="newsect-<?= $x ?>" style=" width:100%">
             
-              <div class="mainsecthd" style="float:left; width:100%; display:block"><?= $cp['mainsectprint']; ?></div>
+              <div class="mainsecthd" style=" width:100%; display:block"><?= $cp['mainsectprint']; ?></div>
       <?php 
       
       $y= 1;
@@ -178,15 +178,15 @@ IBAN:GR8701401200120002320007025</td>
 if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
-<div class="secthd dgreen" style="float:left; page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></div>
+<div class="secthd dgreen" style=" page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></div>
 <?php 
 $y = $y+1;
 } ?>
 
 
 <div style="page-break-inside:avoid; width:100%<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <div style="width:50%; float:left; min-height:20px; padding:4px 0 0 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
-<div class="text-center" style="width:15%; float:left; min-height:20px; padding:2px 0 0 0"><?php 
+    <div style="width:50%;  min-height:20px; padding:4px 0 0 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
+<div class="text-center" style="width:15%;  min-height:20px; padding:2px 0 0 0"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
@@ -196,7 +196,7 @@ $pointscore = $inspscore[$cp['id_cp']];
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
  <?php } ?>
 </div>
-<div class="text-center" style="width:30%; float:left; min-heigh:20px">&nbsp;</div>
+<div class="text-center" style="width:30%;  min-heigh:20px">&nbsp;</div>
 </div>
 
     
