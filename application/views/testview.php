@@ -166,8 +166,8 @@ IBAN:GR8701401200120002320007025</td>
                 
             <div class="newsect-<?= $x ?>" style="width:100%">
             <table width="100%" style="margin-bottom:15px">
-            <td width="25%" ><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
-            <td width="25%" valign="top" style="margin-left:1%; font-size:20px;" class="text-right dgreen">Περιγραφή οχήματος:</td>
+            <td width="22%" ><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
+            <td width="28%" valign="top" style="margin-left:1%; font-size:18px;" class="text-right dgreen">Περιγραφή οχήματος:</td>
             <td width="20%" valign="top" style="margin-left:1%" class="small">Τύπος οχήματος:<br />Κατασκευαστής:<br />Μοντέλο:<br />Αρ. πλαισίου:<br />Ισχύς/Κυβισμός</td>
             <td><?php echo $inspection->type_vhcl; ?><br /><?php echo $inspection->make_vhcl; ?><br /><?php echo $inspection->model_vhcl; ?><br /><?php echo $inspection->vin_vhcl; ?><br /><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></table>
               <div class="mainsecthd" style="width:100% diplay:block"><?= $cp['mainsectprint']; ?></div>
