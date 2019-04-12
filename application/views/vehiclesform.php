@@ -119,7 +119,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
             });
    
         $('#vehicleForm').formValidation({
-			framework: 'bootstrap',
+			framework: 'bootstrap4',
 			icon: false,
 			fields: {
 				client_vhcl: {
