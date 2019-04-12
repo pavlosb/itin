@@ -11,7 +11,7 @@
    <style>
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 @page {
-                margin: 100px 40px 100px 80px;
+                margin: 120px 40px 120px 80px;
                 header: html_pgheader;
                 footer: html_pgfooter;
             }
@@ -57,14 +57,14 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
     <title>ITIN</title>
   </head>
   <body>
-  <htmlpageheader name="pgheader" class="pgheader"  style="display:none">
-  <table width="100%">
+  <htmlpageheader name="pgheader" style="display:none">
+  <table width="100%" style="border-top: 1px solid #000; border-bottom: 1px solid #000;">
   <tr><td width="70%">ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ: <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right">Ημ/νια: <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td>
   </table>
         </htmlpageheader>
 
-        <htmlpagefooter class="pgfooter" name="pgfooter" style="display:none">
-        <span class="page-number">Σελ. {PAGENO}</span>
+        <htmlpagefooter name="pgfooter" style="display:none">
+        <div style="width:100%; text-align:right;">Σελ. {PAGENO}</div>
         </htmlpagefooter>
        
         <table width="100%">
