@@ -137,7 +137,7 @@ class Inspection extends CI_Controller {
 			//$html = $this->load->view('header', $data, true);
 			//$this->load->view('testview', $data);
 			//$html = $this->load->view('testview', $data, true);
-			$html = "hello world";
+			$html = "Γεια σου κόσμε";
 			//$html .= $this->load->view('footer', $data, true);
 			$mpdf = new \Mpdf\Mpdf();
 			$mpdf->WriteHTML($html);
