@@ -75,6 +75,16 @@
   </div>
   <div class="form-row">
   <div class="form-group col">
+    <label for="doors_vhcl">Πόρτες</label>
+    <input type="number" class="form-control" id="doors_vhcl" name ="doors_vhcl" min="2" max="5">
+    
+  </div>
+  <div class="form-group col">
+    <label for="colour_vhcl">Χρώμα</label>
+    <input type="text" class="form-control" id="colour_vhcl" name ="colour_vhcl">
+    </div></div>
+  <div class="form-row">
+  <div class="form-group col">
     <label for="displ_vhcl">Κυβικά</label>
     <div class="input-group mb-3">
     <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
