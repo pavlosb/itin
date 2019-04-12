@@ -136,8 +136,7 @@ class Inspection extends CI_Controller {
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			//$html = $this->load->view('header', $data, true);
 			//$this->load->view('testview', $data);
-			//$html = $this->load->view('testview', $data, true);
-			$html = "Γεια σου κόσμε";
+			$html = $this->load->view('pdfreport', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
 			$mpdf = new \Mpdf\Mpdf();
 			$mpdf->WriteHTML($html);
