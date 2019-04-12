@@ -142,10 +142,10 @@ class Inspection extends CI_Controller {
 			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
    			$filename = $inspection->number_inspection;
-			//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
-			$output = $mpdf->Output();
-	    	$dir ="assets/pdfs";
-			file_put_contents($dir."/".$filename.".pdf", $output);
+			$dir ="assets/pdfs";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
+			$mpdf->Output($dir."/".$filename.".pdf",'F');
+	    	
+			
 			   
 		}
 		
