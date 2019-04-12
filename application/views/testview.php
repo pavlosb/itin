@@ -180,7 +180,25 @@ $y = $y+1;
 
 
 <tr><td colspan="2" width="50%"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></td>
-<td width="10%" class="text-center"><?php echo $inspscore[$cp['id_cp']];?></td>
+<td width="10%" class="text-center"><?php 
+$pointscore = $inspscore[$cp['id_cp']];
+ if ($pointscore > 0) { ?>
+<span class="fa-stack fa-2x">
+  <i class="fas fa-circle fa-stack-2x"></i>
+  <i class="fas fa-check fa-stack-1x fa-inverse"></i>
+</span>
+ <?php } else if ($pointscore == 0) { ?>
+    <span class="fa-stack fa-2x">
+  <i class="fas fa-circle fa-stack-2x"></i>
+  <i class="fas fa-minus fa-stack-1x fa-inverse"></i>
+</span>
+ <?php } else { ?>
+    <span class="fa-stack fa-2x">
+  <i class="fas fa-circle fa-stack-2x"></i>
+  <i class="fas fa-times fa-stack-1x fa-inverse"></i>
+</span>
+ <?php } ?>
+</td>
 <td width="40%">&nbsp;</td>
 </tr>
 
