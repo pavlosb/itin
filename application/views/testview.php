@@ -167,7 +167,8 @@ IBAN:GR8701401200120002320007025</td>
                 </div>
                 
             <div class="newsect-<?= $x ?>" style="width:100%">
-              <div class="mainsecthd" style="width:100%"><?= $cp['mainsectprint']; ?></div>
+            <div style="width:20% display:inline-block"><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg"></div>
+              <div class="mainsecthd" style="width:100% diplay:block"><?= $cp['mainsectprint']; ?></div>
       <?php 
       
       $y= 1;
@@ -182,7 +183,7 @@ $y = $y+1;
 
 
 <div style="width:100%<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <div style="width:50%; display:inline-block; padding:2px 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
+    <div style="width:50%; display:inline-block; padding:4px 0 0 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
 <div class="text-center" style="width:15%; display:inline-block; line-height:25px"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
