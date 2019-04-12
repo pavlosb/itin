@@ -13,7 +13,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 <div class="form-group">
     <label for="client_vhcl">Πελάτης</label>
     <select class="form-control" id="client_vhcl" name="client_vhcl">
-      <option value = 0></option>
+      <option value = "">Επιλέξτε</option>
       <?php foreach ($clients as $client) : ?>
       <option value="<?= $client->id_client ?>"><?= $client->name_client ?></option>
 <?php endforeach; ?>
