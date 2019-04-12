@@ -165,11 +165,11 @@ IBAN:GR8701401200120002320007025</td>
                 </div>
                 
             <div class="newsect-<?= $x ?>" style="width:100%">
-            <table width=100%>
+            <table width="100%" style="margin-bottom:15px">
             <td width="25%" ><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
-            <td width="25%" valign="top" style="margin-left:1% font-size:20px;" class="text-right dgreen">Περιγραφή οχήματος:</td>
-            <td width="20%" valign="top" style="margin-left:1%" class="small">Τύπος οχήματος:<br />Κατασκευαστής:<br />Εμπορική ονομασία:<br />Αρ. πλαισίου:<br />Ισχύς/Κυβισμός</td>
-            <td></td></table>
+            <td width="25%" valign="top" style="margin-left:1%; font-size:20px;" class="text-right dgreen">Περιγραφή οχήματος:</td>
+            <td width="20%" valign="top" style="margin-left:1%" class="small">Τύπος οχήματος:<br />Κατασκευαστής:<br />Μοντέλο:<br />Αρ. πλαισίου:<br />Ισχύς/Κυβισμός</td>
+            <td><?php echo $inspection->type_vhcl; ?><br /><?php echo $inspection->make_vhcl; ?><br /><?php echo $inspection->model_vhcl; ?><br /><?php echo $inspection->vin_vhcl; ?><br /><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></table>
               <div class="mainsecthd" style="width:100% diplay:block"><?= $cp['mainsectprint']; ?></div>
       <?php 
       
@@ -185,8 +185,8 @@ $y = $y+1;
 
 
 <div style="width:100%<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <div style="width:50%; display:inline-block; padding:4px 0 0 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
-<div class="text-center" style="width:15%; display:inline-block; line-height:25px"><?php 
+    <div style="width:50%; display:inline-block; min-height:20px; padding:4px 0 0 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
+<div class="text-center" style="width:15%; display:inline-block; min-height:20px; padding:2px 0 0 0"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
