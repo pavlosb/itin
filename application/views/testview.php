@@ -16,7 +16,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
             }
             .smalltxt {font-size:8px;line-height:9px;}
             .mainsecthd { color:#fff; font-size:18px; line-height:22px; background:darkgrey;}
-            .secthd {line-height:20px;}
+            .secthd {line-height:20px;margin-bottom:10px;}
             header {
                 position: fixed;
                 top: -40px;
@@ -173,25 +173,24 @@ if ($cp['id_section'] != $scp) {
     
     $z=1; ?>
 <div class="secthd dgreen" ><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></div>
-
 <?php 
 $y = $y+1;
 } ?>
 
 
 <div style="width:100%">
-    <div style="width:50%; display:inline-block; line-height:25px"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
+    <div style="width:50%; display:inline-block; line-height:20px"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
 <div class="text-center" style="width:15%; display:inline-block; line-height:25px"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/check.png" width="25" height="25">
+<img src="<?php echo base_url(); ?>assets/images/check.png" width="20" height="20">
  <?php } else if ($pointscore == 0) { ?>
-    <img src="<?php echo base_url(); ?>assets/images/minus.png" width="25" height="25">
+    <img src="<?php echo base_url(); ?>assets/images/minus.png" width="20" height="20">
  <?php } else { ?>
-    <img src="<?php echo base_url(); ?>assets/images/times.png" width="25" height="25">
+    <img src="<?php echo base_url(); ?>assets/images/times.png" width="20" height="20">
  <?php } ?>
 </div>
-<div class="text-center" style="width:35%; display:inline-block; line-height:25px">&nbsp;</div>
+<div class="text-center" style="width:30%; display:inline-block; line-height:20px">&nbsp;</div>
 </div>
 
     
