@@ -197,5 +197,11 @@ $maxpos = $row->maxpos;
 
       $this->db->insert_batch('inspectionresults_tbl', $data);
     }
+
+    public function upd_inspection($id, $data){
+      $this->db->where('inspection_id', $id);
+      $this->db->update('inspections_tbl', $data);
+
+    }
 }
 
