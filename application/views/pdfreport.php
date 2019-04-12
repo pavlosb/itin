@@ -64,6 +64,19 @@ body {font-size:13px; line-height:14px;}
         <footer>
         <span class="page-number">Σελ. </span>
         </footer>
-        
+        <main>
+        <table width="100%">
+ <tr>
+ <td valign="top" style="font-size:12px; line-height:12px;">IMPERIAL AUTOMOTIVE<br />
+DEKRA PARTNER<br />
+ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253 ΝΕΑ ΣΜΥΡΝΗ<br />
+Τ.Κ. 17122<br />
+Τηλέφωνο: 2109426352<br />
+E-Mail: savvas.tzanis@dekra.com<br />
+</td>
+<td align="right"><img src="<?php echo base_url(); ?>assets/images/dekra-stamp.jpg" width="90" height="120"></td>
+ </tr>
+ </table>
+        </main>
   </body>
   </html>
