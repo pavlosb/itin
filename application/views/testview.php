@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
@@ -17,7 +16,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
             
             .smalltxt {font-size:8px;line-height:9px;}
             .mainsecthd { color:#fff; font-size:18px; line-height:22px; background:darkgrey;}
-            .secthd {line-height:20px;}
+            .secthd {line-height:20px; margin: 10px 0;}
             header {
                 position: fixed;
                 top: -40px;
@@ -27,8 +26,7 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
                 border-top:1px solid #000;
                 border-bottom:1px solid #000;
                 /** Extra personal styles **/
-               
-            }
+                }
 
             footer {
                 position: fixed; 
@@ -49,9 +47,9 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
            .page_break_before { page-break-before: always; }
            .page_break_after { page-break-after: always; }
            .newsect-1, .newsect-2 {page-break-after: always;}
-           .newsect-1 .pointrow:nth-child(odd) {background: #ccc;}
-           .newsect-2 .pointrow:nth-child(odd) {background: #ccc;}
-           .newsect-3 .pointrow:nth-child(odd) {background: #ccc;}
+           .newsect-1  div.pointrow:nth-child(odd) {background: #ccc;}
+           .newsect-2 div.pointrow:nth-child(odd) {background: #ccc;}
+           .newsect-3 div.pointrow:nth-child(odd) {background: #ccc;}
 
 p:nth-child(even) {
   background: blue;
