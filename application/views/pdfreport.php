@@ -155,7 +155,7 @@ ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
 
- <div style="width:100%">
+ <table width="100%">
   <?php 
   $x = 0;
   $mcp = 99999;
@@ -166,11 +166,11 @@ IBAN:GR8701401200120002320007025</td>
             {
                 $x = $x+1; 
                 ?>
-                </div>
+                </table>
                 
-            <div class="newsect-<?= $x ?>" style="float:left; width:100%">
+            <table class="newsect-<?= $x ?>" style="float:left; width:100%">
             
-              <div class="mainsecthd" style="float:left; width:100%; display:block"><?= $cp['mainsectprint']; ?></div>
+              <tr><td class="mainsecthd" colspan="3"><?= $cp['mainsectprint']; ?></td></tr>>
       <?php 
       
       $y= 1;
@@ -178,15 +178,15 @@ IBAN:GR8701401200120002320007025</td>
 if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
-<div class="secthd dgreen" style="float:left; width:100%; page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></div>
+<tr><td class="secthd dgreen" colspan="3" style="page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
 <?php 
 $y = $y+1;
 } ?>
 
 
-<div style="page-break-inside:avoid; width:100%<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <div style="width:50%; float:left; min-height:20px; padding:4px 0 0 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
-<div class="text-center" style="width:15%; float:left; min-height:20px; padding:2px 0 0 0"><?php 
+<tr style="page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
+    <td style="width:50%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></td>
+<td class="text-center" style="width:15%; padding:2px 0 0 0"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
@@ -195,9 +195,9 @@ $pointscore = $inspscore[$cp['id_cp']];
  <?php } else { ?>
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
  <?php } ?>
-</div>
-<div class="text-center" style="width:30%; float:left; min-heigh:20px">&nbsp;</div>
-</div>
+</td>
+<td class="text-center">&nbsp;</td>
+</tr>
 
     
 
@@ -212,6 +212,6 @@ $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
 $z = $z + 1;
  endforeach ?> 
-</div>     
+</table>     
   </body>
   </html>
