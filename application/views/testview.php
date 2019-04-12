@@ -183,20 +183,11 @@ $y = $y+1;
 <td width="10%" class="text-center"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
-<span class="fa-stack fa-2x">
-  <i class="fas fa-circle fa-stack-2x"></i>
-  <i class="fas fa-check fa-stack-1x fa-inverse"></i>
-</span>
+<img src="<?php echo base_url(); ?>assets/images/check.png" width="25" height="25">
  <?php } else if ($pointscore == 0) { ?>
-    <span class="fa-stack fa-2x">
-  <i class="fas fa-circle fa-stack-2x"></i>
-  <i class="fas fa-minus fa-stack-1x fa-inverse"></i>
-</span>
+    <img src="<?php echo base_url(); ?>assets/images/minus.png" width="25" height="25">
  <?php } else { ?>
-    <span class="fa-stack fa-2x">
-  <i class="fas fa-circle fa-stack-2x"></i>
-  <i class="fas fa-times fa-stack-1x fa-inverse"></i>
-</span>
+    <img src="<?php echo base_url(); ?>assets/images/times.png" width="25" height="25">
  <?php } ?>
 </td>
 <td width="40%">&nbsp;</td>
