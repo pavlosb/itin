@@ -5,7 +5,7 @@ require_once("./vendor/autoload.php");
 //use Dompdf\Dompdf;
 //use Dompdf\Options;
 
-class Pdfgenerator {
+class Mpdfgenerator {
 
   public function generate($html, $filename='', $stream=TRUE, $paper = 'A4', $orientation = "portrait")
   {
