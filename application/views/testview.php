@@ -181,7 +181,7 @@ $y = $y+1;
 } ?>
 
 
-<div style="width:100% <?php if($number % 2 != 0){ echo "background-color: #ccc;"; } ?>" class="pointrow">
+<div style="width:100% <?php if($z % 2 != 0){ echo "background-color: #ccc;"; } ?>" class="pointrow">
     <div style="width:50%; display:inline-block; padding:2px 0"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
 <div class="text-center" style="width:15%; display:inline-block; line-height:25px"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
