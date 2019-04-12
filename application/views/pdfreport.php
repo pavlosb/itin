@@ -62,7 +62,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
         </header>
 
         <footer>
-        <span class="page-number">Σελ. </span>
+        <span class="page-number">Σελ. {PAGENO}</span>
         </footer>
         <main>
         <table width="100%">
