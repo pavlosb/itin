@@ -7,7 +7,9 @@
 </div>
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-6">
-<?php echo form_open("inspection/client_save");?>
+<?php 
+$attributes = array('id' => 'clientForm');
+echo form_open("inspection/client_save");?>
     <div class="form-group">
         <label for="name_client">Επωνυμία </label>
         <input type="text" class="form-control" id="name_client" name ="name_client">
@@ -52,3 +54,68 @@
 </div>
 </div>
 </div>
+<script type="text/javascript">
+       jQuery(document).ready(function($){
+           
+   
+        $('#vehicleForm').formValidation({
+			framework: 'bootstrap4',
+			icon: false,
+			fields: {
+				name_client: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+				vatno_client: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+                address_client: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+                zip_client: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+                tel_client: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+                email_client: {
+						validators: {
+							notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+							emailAddress: {
+								message: 'Η διεύθυνση email δεν είναι έγκυρη'
+							},
+							regexp: {
+								regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
+								message: 'Η διεύθυνση email δεν είναι έγκυρη'
+							}
+						}
+				   },
+       	   
+			 
+			}
+			
+		});	
+
+	});	
+    </script>
