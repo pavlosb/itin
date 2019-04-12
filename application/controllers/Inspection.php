@@ -118,7 +118,7 @@ class Inspection extends CI_Controller {
 	}
 
 
-	public function inspections_pdf($id=1) 
+	public function inspections_pdf($id) 
 	{
 	
 		if ($this->ion_auth->logged_in())

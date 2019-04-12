@@ -1,7 +1,6 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
- <?php print_r($inspections); ?>
-        <div class="col-12">
+         <div class="col-12">
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>

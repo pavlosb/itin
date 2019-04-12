@@ -90,7 +90,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <td class="frcellfld">Αρ.Πελάτη:</td><td colspan="3"><?php echo $inspection->name_client; ?></td>
 </tr>
 <tr>
-<td class="frcellfld">Κατ' εντολή σας από:</td><td colspan="3">12.03.2019, προφορική</td>
+<td class="frcellfld">Κατ' εντολή σας από:</td><td colspan="3"><?php echo date("d-m-Y", strtotime($inspection->orderdate_inspection)); ?>, <?php echo date("d-m-Y", strtotime($inspection->ordermethod_inspection)); ?></td>
 </tr>
 <tr>
 <td class="frcellfld">Είδος ελέγχου:</td><td colspan="3">Τεχνικός Έλεγχος, Έλεγχος Αμαξώματος, Έλεγχος Συστήματος</td>
