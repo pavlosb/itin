@@ -21,4 +21,5 @@ class Pdfgenerator {
     $dir ="assets/pdfs";
     file_put_contents($dir."/".$filename.".pdf", $output);
     return $filename;
+  }
    }
