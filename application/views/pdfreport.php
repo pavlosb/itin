@@ -135,7 +135,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <td align="center" class="smalltxt dgreen">DEKRA Έλεγχος Αμαξώματος</td>
 <td align="center" class="smalltxt dgreen">DEKRA Έλεγχος Συστήματος</td>
 </tr>
-<tr><td colspan="3" class="bot-border smalltxt">&nbsp;</td></tr>
+<tr><td colspan="3" class="smalltxt">&nbsp;</td></tr>
 </table>
 <table width="100%">
 <tr><td class="top-border smalltxt">&nbsp;</td></tr>
@@ -170,7 +170,7 @@ IBAN:GR8701401200120002320007025</td>
                 ?>
                 </table>
                 
-            <table border="0" padding="0" class="newsect-<?= $x ?>">
+            <table border="0" padding="0" width="100%" class="newsect-<?= $x ?>">
             <tr><td colspan="3">
             <table width="100%" style="margin-bottom:15px"><tr>
             <td width="22%"><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
