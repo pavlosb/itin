@@ -12,10 +12,10 @@ $attributes = array('id' => 'inspectionIntroForm');
  echo form_open("inspection/inspection_add", $attributes);?>
 
 
-<div class="form-group mb-3">
+<div class="form-group mb-5">
     <label for="client_vhcl">Όχημα</label>
     <select class="form-control form-control-lg" id="vehicle_inspection" name="vehicle_inspection">
-      <option value = 0></option>
+      <option value = ""></option>
       <?php foreach ($vehicles as $vh) : ?>
       <option value="<?= $vh->id_vhcl ?>"><?= $vh->reg_vhcl ?> | <?= $vh->make_vhcl ?> <?= $vh->model_vhcl ?></option>
 <?php endforeach; ?>
