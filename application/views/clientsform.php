@@ -57,7 +57,7 @@ echo form_open("inspection/client_save");?>
 <script type="text/javascript">
        jQuery(document).ready(function($){
       
-      $('#vehicleForm').formValidation({
+      $('#clientForm').formValidation({
 			framework: 'bootstrap4',
 			icon: false,
 			fields: {
