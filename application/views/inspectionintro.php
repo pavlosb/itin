@@ -7,7 +7,9 @@
 </div>
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-6">
-<?php echo form_open("inspection/inspection_add");?>
+<?php
+$attributes = array('id' => 'inspectionIntroForm');
+ echo form_open("inspection/inspection_add", $attributes);?>
 
 
 <div class="form-group mb-3">
@@ -37,12 +39,12 @@
 <div class="form-row">
     <div class="form-group col">
         <label for="number_inspection">Εντολή</label>
-        <input type="text" class="form-control" id="number_inspection" name ="number_inspection">
+        <input type="text" class="form-control" id="ordermethod_inspection" name ="ordermethod_inspection">
     </div>
     <div class="form-group col">
-    <label for="date_inspection">Ημερομηνία Εντολής</label>
+    <label for="orderdate_inspection">Ημερομηνία Εντολής</label>
       <div class="input-group mb-3 date" id="datetimepicker13" data-target-input="nearest">
-        <input type="text" class="form-control datetimepicker-input" id="date_inspection" name ="date_inspection" data-target="#datetimepicker13" value="<?php echo date('Y-m-d'); ?>">
+        <input type="text" class="form-control datetimepicker-input" id="orderdate_inspection" name ="orderdate_inspection" data-target="#datetimepicker13" value="<?php echo date('Y-m-d'); ?>">
           <div class="input-group-append" data-target="#datetimepicker13" data-toggle="datetimepicker">
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
           </div>
