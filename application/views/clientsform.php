@@ -9,7 +9,7 @@
 <div class="col-sm-8 col-lg-6">
 <?php 
 $attributes = array('id' => 'clientForm');
-echo form_open("inspection/client_save");?>
+echo form_open("inspection/client_save", $attributes);?>
     <div class="form-group">
         <label for="name_client">Επωνυμία </label>
         <input type="text" class="form-control" id="name_client" name ="name_client">
