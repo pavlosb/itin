@@ -150,7 +150,7 @@ ALPHA BANK SWIFT CRBAGRAA<br/>
 IBAN:GR8701401200120002320007025</td>
   </table>
 
-<table width = "100%">
+<div width = "100%">
   <?php 
   $x = 0;
   $mcp = 99999;
@@ -161,10 +161,10 @@ IBAN:GR8701401200120002320007025</td>
             {
                 $x = $x+1; 
                 ?>
-                </table>
+                </div>
                 
-            <table class="newsect-<?= $x ?>" width = "100%">
-              <tr><td colspan="4" class="mainsecthd"><?= $cp['mainsectprint']; ?></td></tr>
+            <div class="newsect-<?= $x ?>" width = "100%">
+              <div class="mainsecthd"><?= $cp['mainsectprint']; ?></div>
       <?php 
       
       $y= 1;
@@ -172,15 +172,15 @@ IBAN:GR8701401200120002320007025</td>
 if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
-<tr><td class="secthd dgreen" colspan="4"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
+<div class="secthd dgreen" ><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></div>
 
 <?php 
 $y = $y+1;
 } ?>
 
 
-<tr><td colspan="2" width="50%"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></td>
-<td width="10%" class="text-center"><?php 
+<div><div><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
+<div class="text-center"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="25" height="25">
@@ -189,9 +189,9 @@ $pointscore = $inspscore[$cp['id_cp']];
  <?php } else { ?>
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="25" height="25">
  <?php } ?>
-</td>
-<td width="40%">&nbsp;</td>
-</tr>
+</div>
+<div>&nbsp;</div>
+</div>
 
     
 
@@ -200,13 +200,13 @@ $pointscore = $inspscore[$cp['id_cp']];
 
 
 
-<!-- <tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr> -->
+
 <?php
 $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
 $z = $z + 1;
  endforeach ?> 
-</table>
+</div>
 </main>
   </body>
   </html>
