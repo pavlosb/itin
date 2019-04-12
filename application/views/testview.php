@@ -48,6 +48,13 @@ body { font-family: DejaVu Sans; font-size:13px; line-height:14px;}
            .page_break_before { page-break-before: always; }
            .page_break_after { page-break-after: always; }
            .newsect-1, .newsect-2 {page-break-after: always;}
+           .newsect-1 .pointrow:nth-child(odd) {background: ccc;}
+           .newsect-2 .pointrow:nth-child(odd) {background: ccc;}
+           .newsect-3 .pointrow:nth-child(odd) {background: ccc;}
+
+p:nth-child(even) {
+  background: blue;
+}
 </style>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
    <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
@@ -178,7 +185,7 @@ $y = $y+1;
 } ?>
 
 
-<div style="width:100%">
+<div style="width:100%" class="pointrow">
     <div style="width:50%; display:inline-block; min-heigh:20px"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></div>
 <div class="text-center" style="width:15%; display:inline-block; line-height:25px"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
