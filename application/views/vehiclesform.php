@@ -129,7 +129,83 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 						},
 											}
 				},
-				
+        reg_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+				firstreg_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+        vin_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+        mlg_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+        make_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+        model_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+        doors_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+        colour_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+        displ_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+        pow_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+        type_vhcl: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
 				   
 			 
 			}
