@@ -11,7 +11,7 @@
    <style>
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 @page {
-                margin: 20px 40px 120px 40px;
+                margin: 80px 40px 120px 80px;
                 margin-header: 60px; /* <any of the usual CSS values for margins> */
 	            margin-footer: 60px; /* <any of the usual CSS values for margins> */
                 header: html_pgheader;
