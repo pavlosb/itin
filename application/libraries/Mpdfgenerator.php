@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require_once("./vendor/autoload.php");
-//use Dompdf\Dompdf;
+use Mpdf\Mpdf;
 //use Dompdf\Options;
 
 class Mpdfgenerator {
@@ -22,7 +22,7 @@ class Mpdfgenerator {
    // file_put_contents($filename.".pdf", $output);
    // return $filename;
 
-   $mpdf = new \mPDF('utf-8','$paper','');
+   $mpdf = new \Mpdf\Mpdf();
    $mpdf->WriteHTML($html);
    $mpdf->Output();
   }
