@@ -170,7 +170,14 @@ IBAN:GR8701401200120002320007025</td>
                 </table>
                 
             <table border="0" class="newsect-<?= $x ?>" style="float:left; width:100%">
+            <tr><td colspan="3">
+            <table width="100%" style="margin-bottom:15px">
+            <td width="22%" ><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
+            <td width="30%" valign="top" style="padding-right:1%; font-size:16px;" class="text-right dgreen">Περιγραφή οχήματος:</td>
+            <td width="20%" valign="top" style="margin-left:1%" class="small">Τύπος οχήματος:<br />Κατασκευαστής:<br />Μοντέλο:<br />Αρ. πλαισίου:<br />Ισχύς/Κυβισμός</td>
+            <td class="small"><?php echo $inspection->type_vhcl; ?><br /><?php echo $inspection->make_vhcl; ?><br /><?php echo $inspection->model_vhcl; ?><br /><?php echo $inspection->vin_vhcl; ?><br /><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></table>
             
+            </td></tr>>
               <tr><td class="mainsecthd" colspan="3"><?= $cp['mainsectprint']; ?></td></tr>>
       <?php 
       
