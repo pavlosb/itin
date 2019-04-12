@@ -199,7 +199,7 @@ $maxpos = $row->maxpos;
     }
 
     public function upd_inspection($id, $data){
-      $this->db->where('inspection_id', $id);
+      $this->db->where('id_inspection', $id);
       $this->db->update('inspections_tbl', $data);
 
     }
