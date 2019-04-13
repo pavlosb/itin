@@ -57,12 +57,45 @@ $attributes = array('id' => 'inspectionIntroForm');
 </div>
 </div>
 <script type="text/javascript">
-        $(function () {
+        jQuery(document).ready(function($) {
             $('#datetimepicker12').datetimepicker({
                     format: 'YYYY-MM-DD'
             });
             $('#datetimepicker13').datetimepicker({
                     format: 'YYYY-MM-DD'
             });
+            $('#inspectionIntroForm').formValidation({
+			framework: 'bootstrap4',
+			icon: false,
+			fields: {
+				vehicle_inspection: {
+					validators: {
+						notEmpty: {
+							message: 'Δεν έχετε επιλέξει Όχημα'
+						},
+											}
+				},
+        number_inspection: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+        ordermethod_inspection: {
+					validators: {
+						notEmpty: {
+							message: 'Απαιτούμενο πεδίο'
+						},
+											}
+				},
+				
+				   
+			 
+			}
+			
+		});	
+
+
         });
     </script>
