@@ -38,6 +38,8 @@ class Inspection extends CI_Controller {
 			$this->load->view('inspections', $data);
 			$this->load->view('footer', $data);
 
+		} else {
+			redirect('auth/login');
 		}
 	}
 
@@ -56,6 +58,8 @@ class Inspection extends CI_Controller {
 				$insdata['inspector_inspection'] = $user->id;
 				$insdata['number_inspection'] = $this->input->post('number_inspection');
 				$insdata['date_inspection'] = $this->input->post('date_inspection');
+				$insdata['orderdate_inspection'] = $this->input->post('orderdate_inspection');
+				$insdata['ordermethod_inspection'] = $this->input->post('ordermethod_inspection');
 				$insdata['status_inspection'] = 0;
 				$data['inspectionid'] = $this->itindata_model->set_inspection($insdata);
 				
@@ -77,6 +81,8 @@ class Inspection extends CI_Controller {
 			} else {
 				redirect('inspection/inspection_new', 'refresh');
 		}
+		} else {
+			redirect('auth/login');
 		}
 	}
 
@@ -96,6 +102,8 @@ class Inspection extends CI_Controller {
 				$this->load->view('header', $data);
 				$this->load->view('inspectionform', $data);
 				$this->load->view('footer', $data);
+		} else {
+			redirect('auth/login');
 		}
 	}	
 	
@@ -112,6 +120,8 @@ class Inspection extends CI_Controller {
 			$this->load->view('header', $data);
 			$this->load->view('inspectionslist', $data);
 			$this->load->view('footer', $data);
+		} else {
+			redirect('auth/login');
 		}
 		
 
@@ -147,37 +157,14 @@ class Inspection extends CI_Controller {
 	    	$this->itindata_model->upd_inspection($inspection->id_inspection, array("filename_inspection" => $filename.".pdf", "status_inspaction" => 1));
 			redirect ('inspection/inspections_list', 'refresh');
 			   
+		} else {
+			redirect('auth/login');
 		}
 		
 
 	}
 
-	public function inspections_pdftst($id=1) 
-	{
-	
-		if ($this->ion_auth->logged_in())
-		{
-			$this->load->library('mpdfgenerator');
-			$user = $this->ion_auth->user()->row();
-			$data['userid'] = $user->id;
-			$data['username'] = $user->first_name." ".$user->last_name;
-			
-			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
-			$data['inspection'] = $inspections[0];
-			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
-			$data['inspectionid'] = $id;
-			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
-			//print_r($data['checkpoints']);
-			//$html = $this->load->view('header', $data, true);
-		$this->load->view('testview', $data);
-			//$html = $this->load->view('testview', $data, true);
-			//$html .= $this->load->view('footer', $data, true);
-		//	$filename = 'report_'.time();
-			//$this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
-		}
-		
 
-	}
 
 	public function inspection_new()
 	{
@@ -191,6 +178,8 @@ class Inspection extends CI_Controller {
 			$this->load->view('inspectionintro', $data);
 			$this->load->view('footer', $data);
 
+		} else {
+			redirect('auth/login');
 		}
 	}
 
@@ -209,6 +198,8 @@ foreach ($points as $key => $value):
 endforeach;
 $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
 
+	} else {
+		redirect('auth/login');
 	}
 	}
 
@@ -225,6 +216,8 @@ $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insr
 			$this->load->view('vehiclesform', $data);
 			$this->load->view('footer', $data);
 
+		} else {
+			redirect('auth/login');
 		}
 		
 	}
@@ -245,11 +238,15 @@ $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insr
 			$insdata['model_vhcl'] = $this->input->post('model_vhcl');
 			$insdata['displ_vhcl'] = $this->input->post('displ_vhcl');
 			$insdata['pow_vhcl'] = $this->input->post('pow_vhcl');
+			$insdata['doors_vhcl'] = $this->input->post('doors_vhcl');
+			$insdata['colour_vhcl'] = $this->input->post('colour_vhcl');
 			$insdata['firstreg_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('firstreg_vhcl'))))));
 			$insdata['nxtdate_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('nxtdate_vhcl'))))));
 
 			$vehicleid = $this->itindata_model->set_vehicle($insdata);
 
+		} else {
+			redirect('auth/login');
 		}
 
 	}
@@ -264,6 +261,8 @@ $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insr
 			$this->load->view('clientsform', $data);
 			$this->load->view('footer', $data);
 
+		} else {
+			redirect('auth/login');
 		}
 		
 	}
@@ -314,9 +313,11 @@ $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insr
 
 		
 			}
+		} else {
+			redirect('auth/login');
 		}
 
-	}
+	} 
 
 	private function _getcarbrands(){
 
