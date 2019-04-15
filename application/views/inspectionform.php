@@ -6,7 +6,7 @@
       <p class="lead"><i class="fal fa-user-tie"></i> <?php echo $inspection->name_client; ?></p>
       </div>
       <div class="col-lg-8 p-3 bg-light">
-        <div class="row">
+        <div class="row d-lg-none">
       
 <div class="col-sm-4">
 <canvas id="cnvgauge1" width = "240px" height="120px"></canvas>
@@ -87,7 +87,7 @@ if ($cp['name_section'] != $scp) { ?>
 </div>
     </div>
   </div>
-
+  <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-lg"></i></a>
 
 
 
@@ -254,5 +254,28 @@ gauge3.set(0); // set actual value
      AnimationUpdater.run();
      gauge3.set(total3);
      AnimationUpdater.run();
+
+     
+     if ($('#back-to-top').length) {
+    var scrollTrigger = 100, // px
+        backToTop = function () {
+            var scrollTop = $(window).scrollTop();
+            if (scrollTop > scrollTrigger) {
+                $('#back-to-top').addClass('show');
+            } else {
+                $('#back-to-top').removeClass('show');
+            }
+        };
+    backToTop();
+    $(window).on('scroll', function () {
+        backToTop();
+    });
+    $('#back-to-top').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0
+        }, 700);
+    });
+}
 });
     </script>
