@@ -38,6 +38,10 @@
 </div>
 <script>
 $(document).ready(function() {
-    $('#inspectlist').DataTable();
+    $('#inspectlist').DataTable({
+            "language": {
+                "url": "dataTables.german.lang"
+            }
+        });
 } );
 </script>
