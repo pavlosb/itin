@@ -87,7 +87,7 @@ if ($cp['name_section'] != $scp) { ?>
 </div>
     </div>
   </div>
-  <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-lg"></i></a>
+ 
 
 
 
@@ -105,7 +105,8 @@ $scp = $cp['name_section'];
 <?php echo form_close();?>
 </div>
 </div>
-</div>
+</div> 
+<a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-lg"></i></a>
 <script>
 jQuery(document).ready(function($) {
 
@@ -255,7 +256,7 @@ gauge3.set(0); // set actual value
      gauge3.set(total3);
      AnimationUpdater.run();
 
-     
+
      if ($('#back-to-top').length) {
     var scrollTrigger = 100, // px
         backToTop = function () {
