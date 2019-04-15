@@ -209,7 +209,7 @@ $maxpos = $row->maxpos;
 
       $this->db->select_sum('chpointscore_insres');
       $this->db->where('inspectionid_insres', $inspid);
-      $this->db->where('$sectid', $sectid);
+      $this->db->where('chkpointsect_insres', $sectid);
       $query = $this->db->get('inspectionresults_tbl'); 
       if ($query -> num_rows() > 0) {
 			foreach ($query->result() as $row) {
