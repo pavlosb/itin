@@ -8,10 +8,11 @@
 </div>
 
 
-<div id="gauge-wrapper" style="position: fixed; top:300px; left:0px;" class="d-md-none d-lg-block">
+<div id="gauge-wrapper" style="position: fixed; top:150px; left:0px;" class="d-md-none d-lg-block">
       <canvas id="cnvgauge1" width = "300px" height="200px"></canvas>
-      <div id="score1" style="width:300px" class="text-center"></div>
+      <div id="score1" style="width:300px" class="text-center mb-2">0</div>
       <canvas id="cnvgauge2" width = "300px" height="200px"></canvas>
+      <div id="score2" style="width:300px" class="text-center mb-2">0</div>
       <canvas id="cnvgauge3" width = "300px" height="200px"></canvas>
 </div>
 
@@ -95,6 +96,7 @@ jQuery(document).ready(function($) {
           }
           if ($(this).data("sect") === 12) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+       $("#score2").text(total2);
           }
           if ($(this).data("sect") === 16) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
@@ -102,7 +104,9 @@ jQuery(document).ready(function($) {
         }
       });   
   
-     gauge.set(total1);
+      gauge1.set(total1);
+     AnimationUpdater.run();
+     gauge2.set(total2);
      AnimationUpdater.run();
 
 });
@@ -129,12 +133,34 @@ var opts1 = {
   highDpiSupport: true,     // High resolution support
   
 };
-var target = document.getElementById('cnvgauge1'); // your canvas element
-var gauge = new Gauge(target).setOptions(opts1); // create sexy gauge!
-gauge.maxValue = 112; // set max gauge value
-gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
-gauge.animationSpeed = 32; // set animation speed (32 is default value)
-gauge.set(0); // set actual value
+var opts2 = {
+  angle: 0, // The span of the gauge arc
+  lineWidth: 0.2, // The line thickness
+  radiusScale: 0.78, // Relative radius
+  pointer: {
+    length: 0.41, // // Relative to gauge radius
+    strokeWidth: 0.035, // The thickness
+    color: '#000000' // Fill color
+  },
+  limitMax: false,     // If false, max value increases automatically if value > maxValue
+  limitMin: false,     // If true, the min value of the gauge will be fixed
+  colorStart: '#6FADCF',   // Colors
+  colorStop: '#8FC0DA',    // just experiment with them
+  strokeColor: '#E0E0E0',  // to see which ones work best for you
+  staticZones: [
+   {strokeStyle: "#ff3300", min: 0, max: 52}, // Red from 100 to 130
+   {strokeStyle: "#28db00", min: 53, max: 62}, // Yellow
+  ],
+  generateGradient: true,
+  highDpiSupport: true,     // High resolution support
+  
+};
+var target2 = document.getElementById('cnvgauge2'); // your canvas element
+var gauge2 = new Gauge(target).setOptions(opts2); // create sexy gauge!
+gauge2.maxValue = 62; // set max gauge value
+gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+gauge2.animationSpeed = 32; // set animation speed (32 is default value)
+gauge2.set(0); // set actual value
 
 
 
@@ -149,6 +175,7 @@ gauge.set(0); // set actual value
           }
           if ($(this).data("sect") === 12) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+       $("#score2").text(total2);
           }
           if ($(this).data("sect") === 16) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
@@ -156,8 +183,9 @@ gauge.set(0); // set actual value
         }
       });    
   
-     gauge.set(total1);
+     gauge1.set(total1);
      AnimationUpdater.run();
-
+     gauge2.set(total2);
+     AnimationUpdater.run();
 });
     </script>
