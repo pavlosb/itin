@@ -58,8 +58,8 @@ $attributes = array('id' => 'inspectionIntroForm');
    <button type="submit" class="btn btn-primary">Συνέχεια</button>
 <?php echo form_close();?>
 <?php } else {?>
-<p class="lead text-center">Δεν υπάρχουν οχήματα προς επιθεώρηση.</p>
-<p class="text-center"><a href="<?php echo base_url(); ?>inspection/vehicle_add" class="btn btn-secondary btn-lg"><i class="fal fa-car"></i><h4 >Νέο Όχημα</h4></a></p>
+<p class="lead text-center mt5">Δεν υπάρχουν οχήματα προς επιθεώρηση.</p>
+<p class="text-center"><a href="<?php echo base_url(); ?>inspection/vehicle_add" class="btn btn-secondary btn-lg"><i class="fal fa-car"></i>Νέο Όχημα</a></p>
   <?php }?>
 
 </div>
