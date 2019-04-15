@@ -6,19 +6,23 @@
       <p class="lead"><i class="fal fa-user-tie"></i> <?php echo $inspection->name_client; ?></p>
       </div>
       <div class="col-lg-8 p-3 bg-light">
-      <div id="gauge-wrapper-small" style="position: fixed; top:150px; left:0px;" class="d-md-none d-lg-block">
-
+        <div class="row">
+      
+<div class="col-sm-4">
 <canvas id="cnvgauge1" width = "240px" height="120px"></canvas>
-<div style="width:240px" class="text-center small">Τεχνικός έλεγχος</div>
-      <div id="score1" style="width:240px" class="text-center mb-2">0</div>
-      
+<div style="width:100%" class="text-center small">Τεχνικός έλεγχος</div>
+      <div id="score1" style="width:100%" class="text-center mb-2">0</div>
+</div>
+<div class="col-sm-4">   
       <canvas id="cnvgauge2"  width = "240px" height="120px"></canvas>
-      <div style="width:240px" class="text-center small">Έλεγχος Αμαξώματος</div>
-      <div id="score2" style="width:240px" class="text-center mb-2">0</div>
-      
+      <div style="width:100%" class="text-center small">Έλεγχος Αμαξώματος</div>
+      <div id="score2" style="width:100%" class="text-center mb-2">0</div>
+      </div>
+<div class="col-sm-4">    
       <canvas id="cnvgauge3"  width = "240px" height="120px"></canvas>
-      <div style="width:240px" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
-      <div id="score3" style="width:240px" class="text-center mb-2">0</div>
+      <div style="width:100%" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
+      <div id="score3" style="width:100%" class="text-center mb-2">0</div>
+      </div>
 </div>
       </div>
 </div>
