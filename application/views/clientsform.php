@@ -4,7 +4,7 @@
 <h1 class="display-4">Στοιχεία Πελάτη</h1>
 <p class="lead"></p>
 </div>
-</div>echo $cl->name_client;
+</div>
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-6">
 <?php 
