@@ -155,8 +155,14 @@ var opts2 = {
   highDpiSupport: true,     // High resolution support
   
 };
+var target1 = document.getElementById('cnvgauge1'); // your canvas element
+var gauge1 = new Gauge(target2).setOptions(opts1); // create sexy gauge!
+gauge1.maxValue = 112; // set max gauge value
+gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+gauge1.animationSpeed = 32; // set animation speed (32 is default value)
+gauge1.set(0); // set actual value
 var target2 = document.getElementById('cnvgauge2'); // your canvas element
-var gauge2 = new Gauge(target).setOptions(opts2); // create sexy gauge!
+var gauge2 = new Gauge(target2).setOptions(opts2); // create sexy gauge!
 gauge2.maxValue = 62; // set max gauge value
 gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge2.animationSpeed = 32; // set animation speed (32 is default value)
