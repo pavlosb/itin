@@ -343,7 +343,7 @@ redirect('inspection/inspections_list', 'refresh');
 $apiPrefix = "https://api.vindecoder.eu/2.0";
 $apikey = "17f275ff3136";   // Your API key
 $secretkey = "853a46ba0d";  // Your secret key
-$vin = $vin; // Requested VIN
+$vin = $vinr; // Requested VIN
 $id = $vin;
 
 $controlsum = substr(sha1("{$id}|{$apikey}|{$secretkey}"), 0, 10);
