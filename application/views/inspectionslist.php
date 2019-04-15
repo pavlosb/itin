@@ -22,7 +22,7 @@
                     <td class="text-center"><?php echo $insp->name_client; ?></td>
                     <td class="text-center"><?php 
                     if ($insp->filename_inspection != NULL) {?>
-                    <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>"><i class="fal fa-file-pdf fa-lg"></i></a>
+                    <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
                     <?php } else { ?>
                         <a href="<?= base_url()?>inspection/inspections_pdf/<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></a>
 
