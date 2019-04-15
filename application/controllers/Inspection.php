@@ -198,9 +198,9 @@ foreach ($points as $key => $value):
 	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
 
 endforeach;
-print_r($insdata);
-//$this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
-//redirect('inspection/inspections_list', 'refresh');
+//print_r($insdata);
+$this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
+redirect('inspection/inspections_list', 'refresh');
 	} else {
 		redirect('auth/login');
 	}
