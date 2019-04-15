@@ -11,17 +11,17 @@
 <div class="col-sm-4">
 <canvas id="cnvgauge5" width = "240px" height="120px"></canvas>
 <div style="width:100%" class="text-center small">Τεχνικός έλεγχος</div>
-      <div id="score1" style="width:100%" class="text-center mb-2">0</div>
+      <div id="score4" style="width:100%" class="text-center mb-2">0</div>
 </div>
 <div class="col-sm-4">   
       <canvas id="cnvgauge6"  width = "240px" height="120px"></canvas>
       <div style="width:100%" class="text-center small">Έλεγχος Αμαξώματος</div>
-      <div id="score2" style="width:100%" class="text-center mb-2">0</div>
+      <div id="score5" style="width:100%" class="text-center mb-2">0</div>
       </div>
 <div class="col-sm-4">    
       <canvas id="cnvgauge7"  width = "240px" height="120px"></canvas>
       <div style="width:100%" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
-      <div id="score3" style="width:100%" class="text-center mb-2">0</div>
+      <div id="score6" style="width:100%" class="text-center mb-2">0</div>
       </div>
 </div>
       </div>
