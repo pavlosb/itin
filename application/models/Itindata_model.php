@@ -150,7 +150,7 @@ $maxpos = $row->maxpos;
     }
 
 
-    public function get_inspectionsfull($where) 
+    public function get_inspectionsfull($where=null) 
     {
       $q = "Select i.*, v.*, c.*, u.first_name, u.last_name from inspections_tbl I
             LEFT JOIN vehicles_tbl v ON i.vehicle_inspection = v.id_vhcl
