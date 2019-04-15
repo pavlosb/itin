@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
          <div class="col-12">
-            <table class="table table-striped table-sm">
+            <table id="inspectlist" class="table table-striped table-sm">
                 <thead>
                     <tr>
                         <th scope="col" class="text-center">Αριθμός</th>
@@ -36,3 +36,8 @@
         </div>
     </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('#inspectlist').DataTable();
+} );
+</script>
