@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container mt-5 mb-5">
 <div class="row justify-content-center">
-  <div class="col-sm-8 col-lg-6">
+  <div class="col-sm-10 col-lg-6">
 <h1 class="display-4">Στοιχεία Οχήματος</h1>
 <p class="lead"></p>
 </div>
