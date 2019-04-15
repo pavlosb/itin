@@ -208,8 +208,7 @@ $updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($this->i
 $updata['s2score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 12);
 $updata['s3score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 16);
 $this->itindata_model->upd_inspection($this->input->post('inspectionid_insres'), $updata);
-
-//redirect('inspection/inspections_list', 'refresh');
+redirect('inspection/inspections_list', 'refresh');
 	} else {
 		redirect('auth/login');
 	}
