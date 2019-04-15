@@ -125,7 +125,7 @@ gauge.set(0); // set actual value
 
 
 var total1 = 0;
-      $('input:radio:checked').attr("data-sect", 1).each(function(){
+      $('input:radio:checked').each(function(){
         if (!$(this).hasClass('do-not-calc')) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
         }
