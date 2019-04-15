@@ -10,7 +10,7 @@
 
 <div id="gauge-wrapper" style="position: fixed; top:300px; left:0px;" class="d-md-none d-lg-block">
       <canvas id="cnvgauge1" width = "300px" height="200px"></canvas>
-      <div id="score1"></div>
+      <div id="score1" style="width:300px" class="text-center"></div>
       <canvas id="cnvgauge2" width = "300px" height="200px"></canvas>
       <canvas id="cnvgauge3" width = "300px" height="200px"></canvas>
 </div>
@@ -121,7 +121,10 @@ var opts1 = {
   colorStart: '#6FADCF',   // Colors
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
-  percentColors: [[0.0, "#ff3300" ], [0.82, "#b8e764"], [1.0, "#28db00"]], // !!!!
+  staticZones: [
+   {strokeStyle: "#ff3300", min: 0, max: 91}, // Red from 100 to 130
+   {strokeStyle: "#28db00", min: 92, max: 112}, // Yellow
+  ],
   generateGradient: true,
   highDpiSupport: true,     // High resolution support
   
@@ -142,6 +145,7 @@ gauge.set(0); // set actual value
         if (!$(this).hasClass('do-not-calc')) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+       $("#score1").text(total1);
           }
           if ($(this).data("sect") === 12) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
