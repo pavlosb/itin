@@ -9,7 +9,9 @@
 
 
 <div id="gauge-wrapper" style="position: fixed; top:300px; left:0px;" class="d-md-none d-lg-block">
-      <canvas id="cnvgauge" width = "300px" height="200px"></canvas>
+      <canvas id="cnvgauge1" width = "300px" height="200px"></canvas>
+      <canvas id="cnvgauge2" width = "300px" height="200px"></canvas>
+      <canvas id="cnvgauge3" width = "300px" height="200px"></canvas>
 </div>
 
 <div class="container mt-2">
@@ -44,13 +46,13 @@ if ($cp['name_section'] != $scp) { ?>
     <div class="col-sm-5 text-center text-sm-right">
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
-    <input type="radio" class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
   </label>
   <label class="btn btnna btn-secondary <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "active"; } ?>">
-    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
   </label>
   <label class="btn btnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "active"; } ?>">
-    <input type="radio" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "checked"; } ?> value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "checked"; } ?> value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
   </label>
   
 </div>
@@ -81,19 +83,19 @@ jQuery(document).ready(function($) {
      $('input:radio').change(function ()
 {
 
-      var total = 0;
-      $('input:radio:checked').each(function(){
+      var total1 = 0;
+      $('input:radio:checked').attr("data-sect", 1).each(function(){
         if (!$(this).hasClass('do-not-calc')) {
-       total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+       total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
         }
       });   
   
-     gauge.set(total);
+     gauge.set(total1);
      AnimationUpdater.run();
 
 });
 
-var opts = {
+var opts1 = {
   angle: 0, // The span of the gauge arc
   lineWidth: 0.2, // The line thickness
   radiusScale: 0.78, // Relative radius
@@ -111,23 +113,23 @@ var opts = {
   highDpiSupport: true,     // High resolution support
   
 };
-var target = document.getElementById('cnvgauge'); // your canvas element
-var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
-gauge.maxValue = 190; // set max gauge value
+var target = document.getElementById('cnvgauge1'); // your canvas element
+var gauge = new Gauge(target).setOptions(opts1); // create sexy gauge!
+gauge.maxValue = 112; // set max gauge value
 gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge.animationSpeed = 32; // set animation speed (32 is default value)
 gauge.set(0); // set actual value
 
 
 
-var total = 0;
-      $('input:radio:checked').each(function(){
+var total1 = 0;
+      $('input:radio:checked').attr("data-sect", 1).each(function(){
         if (!$(this).hasClass('do-not-calc')) {
-       total += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+       total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
         }
       });   
   
-     gauge.set(total);
+     gauge.set(total1);
      AnimationUpdater.run();
 
 });
