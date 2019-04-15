@@ -16,7 +16,7 @@
                     <tr>
                     <td class="text-center"><?php echo $cl->name_client; ?></td>
                     <td class="text-center"><?php echo $cl->vatno_client; ?></td>
-                    <td class="text-center"><?php echo $cl->tel_client; ?> <?php echo $insp->make_vhcl; ?></td>
+                    <td class="text-center"><?php echo $cl->tel_client; ?></td>
                     <td class="text-center"><?php echo $cl->email_client; ?></td>
                     <td class="text-center"><a href="<?=base_url() ?>inspection/client_edit/<?= $cl->name_client ?>"><i class="fal fa-edit"></i></a></td>
                     </tr>
