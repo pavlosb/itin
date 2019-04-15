@@ -71,7 +71,8 @@ class Inspection extends CI_Controller {
 							$data['clientname'] = $client->name_client;
 	 					}
 				endforeach;
-				
+				$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $data['inspectionid']));
+				$data['inspection'] = $inspections[0];
 				$data['vehicleinfo'] = array ('vhclreg' => $vehicle->reg_vhcl, 'vhclmake' => $vehicle->make_vhcl, 'modelvhcl' => $vehicle->model_vhcl);
 				$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 				$this->load->view('header', $data);
