@@ -1,6 +1,6 @@
 <div class="container mt-5">
 <div class="row justify-content-center">
-      <div class="col-md-8 p-3 bg-light">
+      <div class="col-lg-8 p-3 bg-light">
       <p class="lead"><i class="fal fa-clipboard-check"></i> <?php echo $inspection->number_inspection; ?></p>
       <p class="lead"><i class="fal fa-car"></i> <?php echo $inspection->reg_vhcl; ?> <?php echo $inspection->make_vhcl; ?> <?php echo $inspection->model_vhcl; ?></p>
       <p class="lead"><i class="fal fa-user-tie"></i> <?php echo $inspection->name_client; ?></p>
@@ -8,20 +8,20 @@
 </div>
 
 
-<div id="gauge-wrapper" style="position: fixed; top:300px; left:0px;" class="d-sm-none d-md-block">
+<div id="gauge-wrapper" style="position: fixed; top:300px; left:0px;" class="d-md-none d-lg-block">
       <canvas id="cnvgauge" width = "300px" height="200px"></canvas>
 </div>
 
 <div class="container mt-2">
 
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-lg-8">
 <!--<h1 class="display-4">Νέo Σημείο Ελέγχου</h1> -->
         <p class="lead"></p>
       </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-lg-8">
         <?php echo form_open("inspection/inspection_save");?>
         <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
         <?php 

@@ -8,7 +8,7 @@
                         <th scope="col" class="text-center">Ημερομηνία</th>
                         <th scope="col" class="text-center">Όχημα</th>
                         <th scope="col" class="text-center">Πελάτης</th>
-                        <th scope="col" class="text-center"></th>
+                        <th scope="col" class="text-center"><i class="fal fa-file-alt"></i></th>
                         <th scope="col" class="text-center"></th>
                         <th scope="col" class="text-center"></th>
                     </tr>
@@ -23,7 +23,10 @@
                     <td class="text-center"><?php 
                     if ($insp->filename_inspection != NULL) {?>
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>"><i class="fal fa-file-pdf fa-lg"></i></a>
-                    <?php } ?></td>
+                    <?php } else { ?>
+                        <a href="<?= base_url()?>inspection/inspections_pdf/<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></a>
+
+                    } ?></td>
                     <td class="text-center"><?php echo ($insp->status_inspection > 0 ? '<i class="fal fa-check text-success"></i>' : '<i class="fal fa-hourglass-half text-secondary fa-lg"></i>') ?></td>
                     <td class="text-center"><?php echo ($insp->status_inspection > 0 ? '<i class="fal fa-eye fa-lg text-secondary"></i>' : '<a href="'.base_url().'inspection/inspection_edit/'.$insp->id_inspection.'"><i class="fal fa-edit fa-lg text-secondary"></i></a>') ?></td>
                     </tr>
