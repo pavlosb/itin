@@ -5,6 +5,22 @@
       <p class="lead"><i class="fal fa-car"></i> <?php echo $inspection->reg_vhcl; ?> <?php echo $inspection->make_vhcl; ?> <?php echo $inspection->model_vhcl; ?></p>
       <p class="lead"><i class="fal fa-user-tie"></i> <?php echo $inspection->name_client; ?></p>
       </div>
+      <div class="col-lg-8 p-3 bg-light">
+      <div id="gauge-wrapper-small" style="position: fixed; top:150px; left:0px;" class="d-md-none d-lg-block">
+
+<canvas id="cnvgauge1" width = "240px" height="120px"></canvas>
+<div style="width:240px" class="text-center small">Τεχνικός έλεγχος</div>
+      <div id="score1" style="width:240px" class="text-center mb-2">0</div>
+      
+      <canvas id="cnvgauge2"  width = "240px" height="120px"></canvas>
+      <div style="width:240px" class="text-center small">Έλεγχος Αμαξώματος</div>
+      <div id="score2" style="width:240px" class="text-center mb-2">0</div>
+      
+      <canvas id="cnvgauge3"  width = "240px" height="120px"></canvas>
+      <div style="width:240px" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
+      <div id="score3" style="width:240px" class="text-center mb-2">0</div>
+</div>
+      </div>
 </div>
 
 
