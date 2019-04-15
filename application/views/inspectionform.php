@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
 <div class="row justify-content-center">
       <div class="col-lg-8 p-3 bg-light">
       <p class="lead"><i class="fal fa-clipboard-check"></i> <?php echo $inspection->number_inspection; ?></p>
@@ -69,7 +69,7 @@ $scp = $cp['name_section'];
 
 
 
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary">Καταχώρηση</button>
 <?php echo form_close();?>
 </div>
 </div>
