@@ -213,7 +213,7 @@ $maxpos = $row->maxpos;
       $query = $this->db->get('inspectionresults_tbl'); 
       if ($query -> num_rows() > 0) {
 			foreach ($query->result() as $row) {
-				$data = $row;
+				$data = $row->chpointscore_insres;
 			}
 			return $data;
 		} else {

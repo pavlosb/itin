@@ -201,11 +201,9 @@ endforeach;
 //print_r($insdata);
 $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
 $updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 1);
-print_r($updata['s1score_inspection']);
 $updata['s2score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 12);
-print_r($updata['s2score_inspection']);
-$updata['s3score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 12);
-print_r($updata['s3score_inspection']);
+$updata['s3score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 16);
+$this->itindata_model->upd_inspection($this->input->post('inspectionid_insres'), $updata);
 
 //redirect('inspection/inspections_list', 'refresh');
 	} else {
