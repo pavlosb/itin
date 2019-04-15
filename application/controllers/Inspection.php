@@ -200,7 +200,14 @@ foreach ($points as $key => $value):
 endforeach;
 //print_r($insdata);
 $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
-redirect('inspection/inspections_list', 'refresh');
+$updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 1);
+echo $updata['s1score_inspection'];
+$updata['s2score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 12);
+$updata['s2score_inspection'] ;
+$updata['s3score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 12);
+$updata['s3score_inspection'] ;
+
+//redirect('inspection/inspections_list', 'refresh');
 	} else {
 		redirect('auth/login');
 	}

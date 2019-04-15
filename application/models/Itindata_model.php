@@ -203,5 +203,22 @@ $maxpos = $row->maxpos;
       $this->db->update('inspections_tbl', $data);
 
     }
+
+
+    public function get_sectionscore($inspid, $sectid) {
+
+      $this->db->select_sum('$sectid');
+      $this->db->where('inspectionid_insres', $inspid);
+      $this->db->where('$sectid', $sectid);
+      $query = $this->db->get('inspectionresults_tbl'); 
+      if ($query -> num_rows() > 0) {
+			foreach ($query->result() as $row) {
+				$data = $row;
+			}
+			return $data;
+		} else {
+			return null;
+		}
+    }
 }
 
