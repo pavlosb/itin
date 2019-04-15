@@ -13,6 +13,8 @@ $attributes = array('id' => 'inspectionIntroForm');
 
 
 <div class="form-group mb-5">
+
+<?php if ($vehicles != null) { ?>
     <label for="client_vhcl">Όχημα</label>
     <select class="form-control form-control-lg" id="vehicle_inspection" name="vehicle_inspection">
       <option value = ""></option>
@@ -20,6 +22,7 @@ $attributes = array('id' => 'inspectionIntroForm');
       <option value="<?= $vh->id_vhcl ?>"><?= $vh->reg_vhcl ?> | <?= $vh->make_vhcl ?> <?= $vh->model_vhcl ?></option>
 <?php endforeach; ?>
     </select>
+<?php } ?>
   </div>
 <div class="form-row">
     <div class="form-group col">
