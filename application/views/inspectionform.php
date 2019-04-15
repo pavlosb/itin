@@ -86,7 +86,7 @@ jQuery(document).ready(function($) {
       var total1 = 0;
       $('input:radio:checked').each(function(){
         if (!$(this).hasClass('do-not-calc')) {
-          if ($(this).data("sect") === '1') {
+          if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
           }
         }
