@@ -197,7 +197,7 @@ foreach ($points as $key => $value):
 
 endforeach;
 $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
-
+redirect('inspection/inspections_list', 'refresh');
 	} else {
 		redirect('auth/login');
 	}
@@ -242,9 +242,8 @@ $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insr
 			$insdata['colour_vhcl'] = $this->input->post('colour_vhcl');
 			$insdata['firstreg_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('firstreg_vhcl'))))));
 			$insdata['nxtdate_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('nxtdate_vhcl'))))));
-
 			$vehicleid = $this->itindata_model->set_vehicle($insdata);
-
+			redirect('inspection/index', 'refresh');
 		} else {
 			redirect('auth/login');
 		}
@@ -310,7 +309,7 @@ $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insr
 				$insdata['tel_client'] = $this->input->post('tel_client');
 				$insdata['email_client'] = $this->input->post('email_client');
 				$clientid = $this->itindata_model->set_client($insdata);
-
+				redirect('inspection/index', 'refresh');
 		
 			}
 		} else {
