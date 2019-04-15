@@ -6,7 +6,7 @@
 </div>
 </div>
 <div class="row justify-content-center">
-<div class="col-sm-8 col-lg-6">
+<div class="col-sm-10 col-lg-6">
 <?php 
 $attributes = array('id' => 'vehicleForm');
 echo form_open("inspection/vehicle_save", $attributes);?>
