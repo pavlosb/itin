@@ -111,6 +111,35 @@ jQuery(document).ready(function($) {
 
 });
 
+
+
+
+
+      var total1 = 0;
+      var total2 = 0;
+      var total3 = 0;
+      $('input:radio:checked').each(function(){
+        if (!$(this).hasClass('do-not-calc')) {
+          if ($(this).data("sect") === 1) {
+       total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+       $("#score1").text(total1);
+          }
+          if ($(this).data("sect") === 12) {
+       total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+       $("#score2").text(total2);
+          }
+          if ($(this).data("sect") === 16) {
+       total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+          }
+        }
+      });    
+  
+     gauge1.set(total1);
+     AnimationUpdater.run();
+     gauge2.set(total2);
+     AnimationUpdater.run();
+});
+
 var opts1 = {
   angle: 0, // The span of the gauge arc
   lineWidth: 0.2, // The line thickness
@@ -156,42 +185,15 @@ var opts2 = {
   
 };
 var target1 = document.getElementById('cnvgauge1'); // your canvas element
-var gauge1 = new Gauge(target2).setOptions(opts1); // create sexy gauge!
+var gauge1 = new Gauge(target1).setOptions(opts1); // create sexy gauge!
 gauge1.maxValue = 112; // set max gauge value
 gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge1.animationSpeed = 32; // set animation speed (32 is default value)
 gauge1.set(0); // set actual value
-var target2 = document.getElementById('cnvgauge2'); // your canvas element
+var target2 = document.getElementById('cnvgauge2'); // your canvas elem ent
 var gauge2 = new Gauge(target2).setOptions(opts2); // create sexy gauge!
 gauge2.maxValue = 62; // set max gauge value
 gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge2.animationSpeed = 32; // set animation speed (32 is default value)
 gauge2.set(0); // set actual value
-
-
-
-      var total1 = 0;
-      var total2 = 0;
-      var total3 = 0;
-      $('input:radio:checked').each(function(){
-        if (!$(this).hasClass('do-not-calc')) {
-          if ($(this).data("sect") === 1) {
-       total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
-       $("#score1").text(total1);
-          }
-          if ($(this).data("sect") === 12) {
-       total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
-       $("#score2").text(total2);
-          }
-          if ($(this).data("sect") === 16) {
-       total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
-          }
-        }
-      });    
-  
-     gauge1.set(total1);
-     AnimationUpdater.run();
-     gauge2.set(total2);
-     AnimationUpdater.run();
-});
     </script>
