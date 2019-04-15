@@ -126,9 +126,9 @@ E-Mail: savvas.tzanis@dekra.com<br />
 </table>
 <table  width="100%" style="border:0px; margin-top:15px;">
 <tr>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"></td>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"></td>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"><?php echo $sec1score ?></td>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"><?php echo $sec2score ?></td>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1.jpg" width="100" height="102"><?php echo $sec3score ?></td>
 </tr>
 <tr>
 <td align="center" class="smalltxt dgreen">DEKRA Τεχνικός Έλεγχος</td>
