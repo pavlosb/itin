@@ -89,6 +89,12 @@ jQuery(document).ready(function($) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
           }
+          if ($(this).data("sect") === 12) {
+       total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+          }
+          if ($(this).data("sect") === 16) {
+       total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+          }
         }
       });   
   
@@ -111,6 +117,7 @@ var opts1 = {
   colorStart: '#6FADCF',   // Colors
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
+  percentColors: [[0.0, "#ff3300" ], [0.82, "#b8e764"], [1.0, "#28db00"]], // !!!!
   generateGradient: true,
   highDpiSupport: true,     // High resolution support
   
