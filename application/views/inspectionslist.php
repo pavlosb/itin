@@ -16,7 +16,7 @@
                 <tbody>
                 <?php foreach ($inspections as $insp): ?>
                     <tr>
-                    <td class="text-center"><?php echo $insp->number_inspection; ?></td>
+                    <td class="text-left"><?php echo $insp->number_inspection; ?></td>
                     <td class="text-center"><?php echo date("d-m-Y", strtotime($insp->date_inspection)); ?></td>
                     <td class="text-center"><?php echo $insp->reg_vhcl; ?> <?php echo $insp->make_vhcl; ?></td>
                     <td class="text-center"><?php echo $insp->name_client; ?></td>
