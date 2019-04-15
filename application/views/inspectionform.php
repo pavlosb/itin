@@ -10,6 +10,7 @@
 
 <div id="gauge-wrapper" style="position: fixed; top:300px; left:0px;" class="d-md-none d-lg-block">
       <canvas id="cnvgauge1" width = "300px" height="200px"></canvas>
+      <div id="score1"></div>
       <canvas id="cnvgauge2" width = "300px" height="200px"></canvas>
       <canvas id="cnvgauge3" width = "300px" height="200px"></canvas>
 </div>
@@ -90,6 +91,7 @@ jQuery(document).ready(function($) {
         if (!$(this).hasClass('do-not-calc')) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+       $("#test1").text(total1);
           }
           if ($(this).data("sect") === 12) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
@@ -133,12 +135,22 @@ gauge.set(0); // set actual value
 
 
 
-var total1 = 0;
+      var total1 = 0;
+      var total2 = 0;
+      var total3 = 0;
       $('input:radio:checked').each(function(){
         if (!$(this).hasClass('do-not-calc')) {
+          if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+          }
+          if ($(this).data("sect") === 12) {
+       total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+          }
+          if ($(this).data("sect") === 16) {
+       total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+          }
         }
-      });   
+      });    
   
      gauge.set(total1);
      AnimationUpdater.run();
