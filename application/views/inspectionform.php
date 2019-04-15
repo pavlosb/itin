@@ -242,7 +242,7 @@ gauge3.set(0); // set actual value
        $("#score2").text(total2);
           }
           if ($(this).data("sect") === 16) {
-       total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
+       total3 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
        $("#score3").text(total3);
           }
         }
