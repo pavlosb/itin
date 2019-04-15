@@ -192,13 +192,15 @@ class Inspection extends CI_Controller {
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$points = $_POST['checkpoint'];
+			$sectors = $_POST['chpsect'];
 foreach ($points as $key => $value):
  
-	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
+	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
 
 endforeach;
-$this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
-redirect('inspection/inspections_list', 'refresh');
+print_r($insdata);
+//$this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
+//redirect('inspection/inspections_list', 'refresh');
 	} else {
 		redirect('auth/login');
 	}
