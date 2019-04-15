@@ -318,7 +318,22 @@ redirect('inspection/inspections_list', 'refresh');
 		}
 
 	} 
+    public function clients_list() {
+		if ($this->ion_auth->logged_in())
+		{
+			$user = $this->ion_auth->user()->row();
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$data['clients'] = $this->_getclients();
+			$this->load->view('header', $data);
+			$this->load->view('clientslist', $data);
+			$this->load->view('footer', $data);
 
+		} else {
+			redirect('auth/login');
+		}
+		
+	}
 	private function _getcarbrands(){
 
 		
