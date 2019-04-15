@@ -148,6 +148,12 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 						notEmpty: {
 							message: 'Απαιτούμενο πεδίο'
 						},
+            stringLength: {
+                            max: 17,
+                            message: 'Ο αριθμός πλαισίου δεν είναι έγκυρος',
+                            min: 17,
+                            message: 'Ο αριθμός πλαισίου δεν είναι έγκυρος'
+                        }
 											}
 				},
         mlg_vhcl: {
