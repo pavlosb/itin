@@ -7,6 +7,7 @@
 </div>
 <div class="row justify-content-center">
 <div class="col-sm-8 col-lg-6">
+<?php if ($vehicles != null) { ?>
 <?php
 $attributes = array('id' => 'inspectionIntroForm');
  echo form_open("inspection/inspection_add", $attributes);?>
@@ -14,7 +15,7 @@ $attributes = array('id' => 'inspectionIntroForm');
 
 <div class="form-group mb-5">
 
-<?php if ($vehicles != null) { ?>
+
     <label for="client_vhcl">Όχημα</label>
     <select class="form-control form-control-lg" id="vehicle_inspection" name="vehicle_inspection">
       <option value = ""></option>
@@ -22,7 +23,7 @@ $attributes = array('id' => 'inspectionIntroForm');
       <option value="<?= $vh->id_vhcl ?>"><?= $vh->reg_vhcl ?> | <?= $vh->make_vhcl ?> <?= $vh->model_vhcl ?></option>
 <?php endforeach; ?>
     </select>
-<?php } ?>
+
   </div>
 <div class="form-row">
     <div class="form-group col">
@@ -56,6 +57,11 @@ $attributes = array('id' => 'inspectionIntroForm');
 </div> 
    <button type="submit" class="btn btn-primary">Συνέχεια</button>
 <?php echo form_close();?>
+<?php } else {?>
+<p class="lead text-center">Δεν υπάρχουν οχήματα προς επιθεώρηση.</p>
+<p class="text-center"><a href="<?php echo base_url(); ?>inspection/vehicle_add" class="btn btn-secondary btn-lg"><i class="fal fa-car"></i><h4 >Νέο Όχημα</h4></a></p>
+  <?php }?>
+
 </div>
 </div>
 </div>
