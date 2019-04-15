@@ -8,7 +8,7 @@
 </div>
 
 
-<div id="gauge-wrapper" style="position: fixed; top:300px; left:0px;">
+<div id="gauge-wrapper" style="position: fixed; top:300px; left:0px;" class="d-sm-none d-md-block">
       <canvas id="cnvgauge" width = "300px" height="200px"></canvas>
 </div>
 

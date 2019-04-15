@@ -29,8 +29,8 @@
           Πελάτες
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Νέος Πελάτης</a>
-          <a class="dropdown-item" href="#">Κατάλογος</a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/client_add">Νέος Πελάτης</a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/clients_list">Κατάλογος</a>
           </div>
       </li>
       <li class="nav-item dropdown">
@@ -38,8 +38,8 @@
           Οχήματα 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Νέο Όχημα</a>
-          <a class="dropdown-item" href="#">Κατάλογος</a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/vehicle_add">Νέο Όχημα</a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/vehicles_list">Κατάλογος</a>
          </div>
       </li>
       <li class="nav-item dropdown">
@@ -47,8 +47,8 @@
           Επιθεωρήσεις
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Νέα Επιθεώρηση</a>
-          <a class="dropdown-item" href="#">Κατάλογος</a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/inspection_new">Νέα Επιθεώρηση</a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/inspections_list">Κατάλογος</a>
           </div>
       </li>
     </ul>
