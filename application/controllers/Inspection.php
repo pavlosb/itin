@@ -154,7 +154,7 @@ class Inspection extends CI_Controller {
    			$filename = $inspection->number_inspection;
 			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
-	    	$this->itindata_model->upd_inspection($inspection->id_inspection, array("filename_inspection" => $filename.".pdf", "status_inspaction" => 1));
+	    	$this->itindata_model->upd_inspection($inspection->id_inspection, array("filename_inspection" => $filename.".pdf", "status_inspection" => 1));
 			redirect ('inspection/inspections_list', 'refresh');
 			   
 		} else {
