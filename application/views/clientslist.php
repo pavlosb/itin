@@ -1,4 +1,10 @@
 <div class="container mt-5">
+<div class="row justify-content-center">
+  <div class="col-12">
+<h1 class="display-4">Πελάτες</h1>
+<p class="lead"></p>
+</div>
+</div>
     <div class="row justify-content-center">
          <div class="col-12">
             <table class="table table-striped table-sm">
