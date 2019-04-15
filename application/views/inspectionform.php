@@ -9,14 +9,17 @@
 
 
 <div id="gauge-wrapper" style="position: fixed; top:150px; left:0px;" class="d-md-none d-lg-block">
+
+<canvas id="cnvgauge1" width = "300px" height="160px"></canvas>
 <div style="width:300px" class="text-center small">Τεχνικός έλεγχος</div>
-<canvas id="cnvgauge1" width = "300px" height="200px"></canvas>
       <div id="score1" style="width:300px" class="text-center mb-2">0</div>
+      
+      <canvas id="cnvgauge2" width = "300px" height="160px"></canvas>
       <div style="width:300px" class="text-center small">Έλεγχος Αμαξώματος</div>
-      <canvas id="cnvgauge2" width = "300px" height="200px"></canvas>
       <div id="score2" style="width:300px" class="text-center mb-2">0</div>
+      
+      <canvas id="cnvgauge3" width = "300px" height="160px"></canvas>
       <div style="width:300px" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
-      <canvas id="cnvgauge3" width = "300px" height="200px"></canvas>
       <div id="score3" style="width:300px" class="text-center mb-2">0</div>
 </div>
 
