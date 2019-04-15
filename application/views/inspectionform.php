@@ -133,7 +133,7 @@ var opts1 = {
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
   staticZones: [
-   {strokeStyle: "#ff3300", min: 0, max: 91}, // Red from 100 to 130
+   {strokeStyle: "#ff3300", min: 0, max: 91.99}, // Red from 100 to 130
    {strokeStyle: "#28db00", min: 92, max: 112}, // Yellow
   ],
   generateGradient: true,
@@ -155,7 +155,7 @@ var opts2 = {
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
   staticZones: [
-   {strokeStyle: "#ff3300", min: 0, max: 52}, // Red from 100 to 130
+   {strokeStyle: "#ff3300", min: 0, max: 52.99}, // Red from 100 to 130
    {strokeStyle: "#28db00", min: 53, max: 62}, // Yellow
   ],
   generateGradient: true,
@@ -177,7 +177,7 @@ var opts3 = {
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
   staticZones: [
-   {strokeStyle: "#ff3300", min: 0, max: 11}, 
+   {strokeStyle: "#ff3300", min: 0, max: 11.99}, 
    {strokeStyle: "#28db00", min: 12, max: 16}, 
   ],
   generateGradient: true,
@@ -197,7 +197,7 @@ gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge2.animationSpeed = 32; // set animation speed (32 is default value)
 gauge2.set(0); // set actual value
 var target3 = document.getElementById('cnvgauge3'); // your canvas elem ent
-var gauge3 = new Gauge(target2).setOptions(opts3); // create sexy gauge!
+var gauge3 = new Gauge(target3).setOptions(opts3); // create sexy gauge!
 gauge3.maxValue = 16; // set max gauge value
 gauge3.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge3.animationSpeed = 32; // set animation speed (32 is default value)
