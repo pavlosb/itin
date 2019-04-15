@@ -207,7 +207,7 @@ $maxpos = $row->maxpos;
 
     public function get_sectionscore($inspid, $sectid) {
 
-      $this->db->select_sum('$sectid');
+      $this->db->select_sum('chpointscore_insres');
       $this->db->where('inspectionid_insres', $inspid);
       $this->db->where('$sectid', $sectid);
       $query = $this->db->get('inspectionresults_tbl'); 
