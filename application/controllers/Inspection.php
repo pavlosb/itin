@@ -334,6 +334,29 @@ redirect('inspection/inspections_list', 'refresh');
 		}
 		
 	}
+
+
+	public function vindecoder($vinr) {
+		if ($this->ion_auth->logged_in())
+		{
+		
+$apiPrefix = "https://api.vindecoder.eu/2.0";
+$apikey = "17f275ff3136";   // Your API key
+$secretkey = "853a46ba0d";  // Your secret key
+$vin = $vin; // Requested VIN
+$id = $vin;
+
+$controlsum = substr(sha1("{$id}|{$apikey}|{$secretkey}"), 0, 10);
+
+$data = file_get_contents("{$apiPrefix}/{$apikey}/{$controlsum}/decode/{$vin}.json", false);
+$result = json_decode($data);
+print_r($result);
+} else {
+	redirect('auth/login');
+}
+
+
+	}
 	private function _getcarbrands(){
 
 		
