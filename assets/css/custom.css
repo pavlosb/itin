@@ -52,7 +52,7 @@
 
 @media (min-width: 992px) 
 {
-    .cnvgauge5, .cnvgauge6, .cnvgauge7 {
+    #cnvgauge5, #cnvgauge6, #cnvgauge7 {
         width:240px;
         height: 120px;
     }
