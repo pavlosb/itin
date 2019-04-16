@@ -1,30 +1,35 @@
 <div class="container mt-5 mb-5">
-<div class="row justify-content-center">
-      <div class="col-lg-8 p-3 bg-light">
-      <div class="row">
-        <div class="col-sm-4">Αριθμός: <?php echo $inspection->number_inspection; ?></div>
-        <div class="col-sm-4 text-right">Ημερομηνία: <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
-      </div>
-      <div class="col-lg-8 p-3 bg-light">
-<div class="row">
-      
-<div class="col-sm-4">
-<canvas id="cnvgauge5" width = "240px" height="120px"></canvas>
-<div style="width:100%" class="text-center small">Τεχνικός έλεγχος</div>
-      <div id="score4" style="width:100%" class="text-center mb-2"><?= $sec1score ?></div>
-</div>
-<div class="col-sm-4">   
-      <canvas id="cnvgauge6"  width = "240px" height="120px"></canvas>
-      <div style="width:100%" class="text-center small">Έλεγχος Αμαξώματος</div>
-      <div id="score5" style="width:100%" class="text-center mb-2"><?= $sec2score ?></div>
-      </div>
-<div class="col-sm-4">    
-      <canvas id="cnvgauge7"  width = "240px" height="120px"></canvas>
-      <div style="width:100%" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
-      <div id="score6" style="width:100%" class="text-center mb-2"><?= $sec3score ?></div>
-      </div>
-</div>
-      </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-8 p-3 bg-light">
+            <div class="row">
+                <div class="col-sm-6">Αριθμός: <?php echo $inspection->number_inspection; ?></div>
+                <div class="col-sm-6 text-right">Ημερομηνία: <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
+            </div>
+            <div class="row">
+
+            </div>    
+
+        </div>
+        <div class="col-lg-8 p-3 bg-light">
+            <div class="row">
+                <div class="col-sm-4">
+                    <canvas id="cnvgauge5" width = "240px" height="120px"></canvas>
+                    <div style="width:100%" class="text-center small">Τεχνικός έλεγχος</div>
+                    <div id="score4" style="width:100%" class="text-center mb-2"><?= $sec1score ?></div>
+                </div>
+                <div class="col-sm-4">   
+                    <canvas id="cnvgauge6"  width = "240px" height="120px"></canvas>
+                    <div style="width:100%" class="text-center small">Έλεγχος Αμαξώματος</div>
+                    <div id="score5" style="width:100%" class="text-center mb-2"><?= $sec2score ?></div>
+                </div>
+                <div class="col-sm-4">    
+                    <canvas id="cnvgauge7"  width = "240px" height="120px"></canvas>
+                    <div style="width:100%" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
+                    <div id="score6" style="width:100%" class="text-center mb-2"><?= $sec3score ?></div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
