@@ -38,17 +38,17 @@
                 <div class="col-sm-4 text-center">
                     <canvas id="cnvgauge5" ></canvas>
                     <div style="width:100%" class="text-center small">Τεχνικός έλεγχος</div>
-                    <div id="score4" style="width:100%" class="text-center mb-2"><?= $sec1score ?></div>
+                    <div id="score4" style="width:100%" class="text-center mb-2"><?= $sec1score ?><small>pts</small></div>
                 </div>
                 <div class="col-sm-4 text-center">   
                     <canvas id="cnvgauge6"></canvas>
                     <div style="width:100%" class="text-center small">Έλεγχος Αμαξώματος</div>
-                    <div id="score5" style="width:100%" class="text-center mb-2"><?= $sec2score ?></div>
+                    <div id="score5" style="width:100%" class="text-center mb-2"><?= $sec2score ?><small>pts</small></div>
                 </div>
                 <div class="col-sm-4 text-center">    
                     <canvas id="cnvgauge7"></canvas>
                     <div style="width:100%" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
-                    <div id="score6" style="width:100%" class="text-center mb-2"><?= $sec3score ?></div>
+                    <div id="score6" style="width:100%" class="text-center mb-2"><?= $sec3score ?><small>pts</small></div>
                 </div>
             </div>
         </div>
