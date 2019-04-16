@@ -52,9 +52,7 @@ jQuery(document).ready(function($) {
 var score1 = <?= $sec1score ?>;
 var score2 = <?= $sec2score ?>;
 var score3 = <?= $sec3score ?>;
-alert(score1);
-alert(score2);
-alert(score3);
+
 
 var opts1 = {
   angle: 0, // The span of the gauge arc
@@ -65,8 +63,8 @@ var opts1 = {
     strokeWidth: 0.035, // The thickness
     color: '#000000' // Fill color
   },
-  limitMax: false,     // If false, max value increases automatically if value > maxValue
-  limitMin: false,     // If true, the min value of the gauge will be fixed
+  limitMax: true,     // If false, max value increases automatically if value > maxValue
+  limitMin: true,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
@@ -87,8 +85,8 @@ var opts2 = {
     strokeWidth: 0.035, // The thickness
     color: '#000000' // Fill color
   },
-  limitMax: false,     // If false, max value increases automatically if value > maxValue
-  limitMin: false,     // If true, the min value of the gauge will be fixed
+  limitMax: true,     // If false, max value increases automatically if value > maxValue
+  limitMin: true,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
@@ -109,8 +107,8 @@ var opts3 = {
     strokeWidth: 0.035, // The thickness
     color: '#000000' // Fill color
   },
-  limitMax: false,     // If false, max value increases automatically if value > maxValue
-  limitMin: false,     // If true, the min value of the gauge will be fixed
+  limitMax: true,     // If false, max value increases automatically if value > maxValue
+  limitMin: true,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
