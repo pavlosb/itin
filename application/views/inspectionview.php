@@ -8,7 +8,11 @@
             <div class="row">
                 <div class="col-sm-12 text-center text-light bg-green pt-1 pb-1">Στοιχεία Οχήματος</div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Αριθμός Πλαισίου:</div>
-                <div class="col-sm-6 col-md-9 pt-2 pb-2"><?php echo $inspection->type_vhcl; ?></div>
+                <div class="col-sm-6 col-md-9 pt-2 pb-2"><?php echo $inspection->vin_vhcl; ?></div>
+                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Πινακίδα:</div>
+                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->type_vhcl; ?></div>
+                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">1η Κυκλοφορία:</div>
+                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Τύπος οχήματος:</div>
                 <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->type_vhcl; ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Θύρες:</div>
