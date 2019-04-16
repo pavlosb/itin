@@ -101,20 +101,20 @@ var opts3 = {
   highDpiSupport: true,     // High resolution support
   
 };
-var target1 = document.getElementById('cnvgauge1'); // your canvas element
-var gauge1 = new Gauge(target5).setOptions(opts1); // create sexy gauge!
+var target1 = document.getElementById('cnvgauge5'); // your canvas element
+var gauge1 = new Gauge(target1).setOptions(opts1); // create sexy gauge!
 gauge1.maxValue = 112; // set max gauge value
 gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge1.animationSpeed = 32; // set animation speed (32 is default value)
 gauge1.set(Number(score1)); // set actual value
-var target2 = document.getElementById('cnvgauge2'); // your canvas elem ent
-var gauge2 = new Gauge(target6).setOptions(opts2); // create sexy gauge!
+var target2 = document.getElementById('cnvgauge6'); // your canvas elem ent
+var gauge2 = new Gauge(target2).setOptions(opts2); // create sexy gauge!
 gauge2.maxValue = 62; // set max gauge value
 gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge2.animationSpeed = 32; // set animation speed (32 is default value)
 gauge2.set(Number(score2)); // set actual value
-var target3 = document.getElementById('cnvgauge3'); // your canvas elem ent
-var gauge3 = new Gauge(target7).setOptions(opts3); // create sexy gauge!
+var target3 = document.getElementById('cnvgauge7'); // your canvas elem ent
+var gauge3 = new Gauge(target3).setOptions(opts3); // create sexy gauge!
 gauge3.maxValue = 16; // set max gauge value
 gauge3.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge3.animationSpeed = 32; // set animation speed (32 is default value)
