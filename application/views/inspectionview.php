@@ -1,7 +1,9 @@
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
       <div class="col-lg-8 p-3 bg-light">
-      
+      <div class="row">
+        <div class="col-sm-4">Αριθμός: <?php echo $inspection->number_inspection; ?></div>
+        <div class="col-sm-4 text-right">Ημερομηνία: <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
       </div>
       <div class="col-lg-8 p-3 bg-light">
 <div class="row">
