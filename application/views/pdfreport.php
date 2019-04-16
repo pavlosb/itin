@@ -113,13 +113,13 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <td class="frcellfld">Κατασκευαστής:</td><td><?php echo $inspection->make_vhcl; ?></td><td class="frcellfld">Χρώμα:</td><td><?php echo $inspection->colour_vhcl; ?></td>
 </tr>
 <tr>
-<td class="frcellfld">Εμπορική ονομασία:</td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap>Επόμενος Τεχ.ελεγχ.:</td><td><?php echo $inspection->nxtdate_vhcl; ?></td>
+<td class="frcellfld">Εμπορική ονομασία:</td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap>Επόμενος Τεχ.ελεγχ.:</td><td><?php echo date("m/Y", strtotime($inspection->nxtdate_vhcl)); ?></td>
 </tr>
 <tr>
 <td class="frcellfld">Αρ Πλαισίου:</td><td class="small"><?php echo $inspection->vin_vhcl; ?></td><td class="frcellfld">Ένδειξη χλμ*<br />(καταγεγραμμένη):</td><td><?php echo $inspection->mlg_vhcl; ?></td>
 </tr>
 <tr>
-<td class="frcellfld">Ισχύς/Κυβισμός:</td><td><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td><td class="frcellfld" nowrap>Ημ.1ης ταξινόμησης:</td><td><?php echo $inspection->firstreg_vhcl; ?></td>
+<td class="frcellfld">Ισχύς/Κυβισμός:</td><td><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td><td class="frcellfld" nowrap>Ημ.1ης ταξινόμησης:</td><td><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></td>
 </tr>
 <tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
 <tr><td colspan="4" class="smalltxt">*Θεωρείται δεδομένο, ότι η συνολική απόσταση που διανύθηκε, αντιστοιχεί στην καταγεγραμμένη χιλιομετρική ένδειξη</td></tr>

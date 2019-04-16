@@ -2,15 +2,15 @@
     <div class="row justify-content-center">
         <div class="col-sm-10 p-3 bg-light">
             <div class="row mb-2">
-                <div class="col-sm-6">Αριθμός: <?php echo $inspection->number_inspection; ?></div>
-                <div class="col-sm-6 text-right">Ημερομηνία: <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
+                <div class="col-sm-8"><span class="text-secondary">Αριθμός:</span> <?php echo $inspection->number_inspection; ?> <span class="text-secondary">Εμπειρογνώμονας:</span> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?></div>
+                <div class="col-sm-4 text-right"><span class="text-secondary">Ημερομηνία:</span> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center text-light bg-green pt-1 pb-1">Στοιχεία Οχήματος</div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Αριθμός Πλαισίου:</div>
                 <div class="col-sm-6 col-md-9 pt-2 pb-2"><?php echo $inspection->vin_vhcl; ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Πινακίδα:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->type_vhcl; ?></div>
+                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->reg_vhcl; ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">1η Κυκλοφορία:</div>
                 <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Τύπος οχήματος:</div>
@@ -23,8 +23,12 @@
                 <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->colour_vhcl; ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Μοντέλο:</div>
                 <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->model_vhcl; ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Μοντέλο:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->model_vhcl; ?></div>
+                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Επόμενος Τεχ. Έλεγχος:</div>
+                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo date("m/Y", strtotime($inspection->nxtdate_vhcl)); ?></div>
+                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Ισχύς / Κυβισμός:</div>
+                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></div>
+                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Χιλιόμετρα:</div>
+                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->mlg_vhcl; ?></div>
 
             </div>    
 
