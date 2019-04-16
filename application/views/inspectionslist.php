@@ -27,7 +27,19 @@
                         <a href="<?= base_url()?>inspection/inspections_pdf/<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></a>
 
                     <?php } ?></td>
-                    <td class="text-center"><?php echo ($insp->status_inspection > 0 ? '<i class="fal fa-check text-success"></i>' : '<i class="fal fa-hourglass-half text-secondary fa-lg"></i>') ?></td>
+                    <td class="text-center"><?php 
+                    if ( ($insp->s1score_inspection >= 92) && ($insp->s2score_inspection >= 53) && ($insp->s1score_inspection >= 12))
+                    {
+                        echo '<i class="far fa-check text-success"></i>';
+
+                    } else {
+                        echo '<i class="far fa-times text-danger"></i>';
+
+                    } ?>
+        
+                    
+                    
+                   </td>
                     <td class="text-center"><?php echo ($insp->status_inspection > 0 ? '<a href="'.base_url().'inspection/inspection_view/'.$insp->id_inspection.'"><i class="fal fa-eye fa-lg text-secondary"></i></a>' : '<a href="'.base_url().'inspection/inspection_edit/'.$insp->id_inspection.'"><i class="fal fa-edit fa-lg text-secondary"></i></a>') ?></td>
                     </tr>
                 <?php endforeach; ?>
