@@ -7,16 +7,20 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center text-light bg-green pt-1 pb-1">Στοιχεία Οχήματος</div>
+                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Αριθμός Πλαισίου:</div>
+                <div class="col-sm-6 col-md-9 pt-2 pb-2"><?php echo $inspection->type_vhcl; ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Τύπος οχήματος:</div>
                 <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->type_vhcl; ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Θύρες:</div>
                 <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->doors_vhcl; ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Κατασκευαστής:</div>
                 <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->make_vhcl; ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Χρώμα</div>
+                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Χρώμα:</div>
                 <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->colour_vhcl; ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Χρώμα</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->colour_vhcl; ?></div>
+                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Μοντέλο:</div>
+                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->model_vhcl; ?></div>
+                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Μοντέλο:</div>
+                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->model_vhcl; ?></div>
 
             </div>    
 
