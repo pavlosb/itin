@@ -4,7 +4,7 @@
       
       </div>
       <div class="col-lg-8 p-3 bg-light">
-<div class="row d-lg-none">
+<div class="row">
       
 <div class="col-sm-4">
 <canvas id="cnvgauge5" width = "240px" height="120px"></canvas>
