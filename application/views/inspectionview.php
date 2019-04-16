@@ -1,9 +1,9 @@
 <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
-        <div class="col-sm-10 p-3 bg-light">
+        <div class="col-lg-10 p-3 bg-light">
             <div class="row mb-2">
-                <div class="col-lg-8"><span class="text-secondary">Αριθμός:</span> <?php echo $inspection->number_inspection; ?> <span class="text-secondary">Εμπειρογνώμονας:</span> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?></div>
-                <div class="col-lg-4 text-lg-right"><span class="text-secondary">Ημερομηνία:</span> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
+                <div class="col-md-8"><span class="text-secondary">Αριθμός:</span> <?php echo $inspection->number_inspection; ?> <span class="text-secondary">Εμπειρογνώμονας:</span> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?></div>
+                <div class="col-md-4 text-md-right"><span class="text-secondary">Ημερομηνία:</span> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center text-light bg-green pt-1 pb-1">Στοιχεία Οχήματος</div>
@@ -33,7 +33,7 @@
             </div>    
 
         </div>
-        <div class="col-sm-10 p-3 bg-light">
+        <div class="col-lg-10 p-3 bg-light">
             <div class="row">
                 <div class="col-sm-4 text-center">
                     <canvas id="cnvgauge5" width = "240px" height="120px"></canvas>
