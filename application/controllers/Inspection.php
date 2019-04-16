@@ -188,7 +188,9 @@ class Inspection extends CI_Controller {
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
-			
+			$this->load->view('header', $data);
+			$this->load->view('inspectionview', $data);
+			$this->load->view('footer', $data);
 			   
 		} else {
 			redirect('auth/login');
