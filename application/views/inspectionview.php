@@ -7,6 +7,14 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center text-light bg-green pt-1 pb-1">Στοιχεία Οχήματος</div>
+                <div class="col-sm-6 col-md-3 text-secondary">Τύπος οχήματος:</div>
+                <div class="col-sm-6 col-md-3"></div>
+                <div class="col-sm-6 col-md-3 text-secondary"></div>
+                <div class="col-sm-6 col-md-3"></div>
+                <div class="col-sm-6 col-md-3 text-secondary"></div>
+                <div class="col-sm-6 col-md-3"></div>
+                <div class="col-sm-6 col-md-3 text-secondary"></div>
+
             </div>    
 
         </div>
