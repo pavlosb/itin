@@ -7,8 +7,8 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center text-light bg-green pt-1 pb-1">Στοιχεία Οχήματος</div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Αριθμός Πλαισίου:</div>
-                <div class="col-sm-6 col-md-9 pt-2 pb-2"><?php echo $inspection->vin_vhcl; ?></div>
+                <div class="col-5 col-sm-3 text-secondary pt-2 pb-2">Αριθμός Πλαισίου:</div>
+                <div class="col-7 col-sm-9 pt-2 pb-2"><?php echo $inspection->vin_vhcl; ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Πινακίδα:</div>
                 <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->reg_vhcl; ?></div>
                 <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">1η Κυκλοφορία:</div>
