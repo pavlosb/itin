@@ -9,26 +9,26 @@
                 <div class="col-sm-12 text-center text-light bg-green pt-1 pb-1">Στοιχεία Οχήματος</div>
                 <div class="col-5 col-sm-3 text-secondary pt-2 pb-2">Αριθμός Πλαισίου:</div>
                 <div class="col-7 col-sm-9 pt-2 pb-2"><?php echo $inspection->vin_vhcl; ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Πινακίδα:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->reg_vhcl; ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">1η Κυκλοφορία:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Τύπος οχήματος:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->type_vhcl; ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Θύρες:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->doors_vhcl; ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Κατασκευαστής:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->make_vhcl; ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Χρώμα:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->colour_vhcl; ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Μοντέλο:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->model_vhcl; ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Επόμενος Τεχ. Έλεγχος:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo date("m/Y", strtotime($inspection->nxtdate_vhcl)); ?></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Ισχύς / Κυβισμός:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></div>
-                <div class="col-sm-6 col-md-3 text-secondary pt-2 pb-2">Χιλιόμετρα:</div>
-                <div class="col-sm-6 col-md-3 pt-2 pb-2"><?php echo $inspection->mlg_vhcl; ?></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Πινακίδα:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->reg_vhcl; ?></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">1η Κυκλοφορία:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Τύπος οχήματος:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->type_vhcl; ?></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Θύρες:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->doors_vhcl; ?></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Κατασκευαστής:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->make_vhcl; ?></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Χρώμα:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->colour_vhcl; ?></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Μοντέλο:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->model_vhcl; ?></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Επόμενος Τεχ. Έλεγχος:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo date("m/Y", strtotime($inspection->nxtdate_vhcl)); ?></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Ισχύς / Κυβισμός:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Χιλιόμετρα:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->mlg_vhcl; ?></div>
 
             </div>    
 
