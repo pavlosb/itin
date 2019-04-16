@@ -1,6 +1,6 @@
 <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
-        <div class="col-sm-12 p-3 bg-light">
+        <div class="col-sm-10 p-3 bg-light">
             <div class="row">
                 <div class="col-sm-6">Αριθμός: <?php echo $inspection->number_inspection; ?></div>
                 <div class="col-sm-6 text-right">Ημερομηνία: <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
@@ -10,7 +10,7 @@
             </div>    
 
         </div>
-        <div class="col-sm-12 p-3 bg-light">
+        <div class="col-sm-10 p-3 bg-light">
             <div class="row">
                 <div class="col-sm-4 text-center">
                     <canvas id="cnvgauge5" width = "240px" height="120px"></canvas>
