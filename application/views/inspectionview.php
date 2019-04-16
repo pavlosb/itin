@@ -41,6 +41,9 @@ jQuery(document).ready(function($) {
 var score1 = <?= $sec1score ?>;
 var score2 = <?= $sec2score ?>;
 var score3 = <?= $sec3score ?>;
+alert(score1);
+alert(score2);
+alert(score3);
 
 var opts1 = {
   angle: 0, // The span of the gauge arc
