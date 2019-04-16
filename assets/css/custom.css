@@ -75,7 +75,7 @@
 
 @media (max-width: 991.98px) 
 {
-    .cnvgauge5, .cnvgauge6, .cnvgauge7 {
+    #cnvgauge5, #cnvgauge6, #cnvgauge7 {
       width:170px;
       height: 100px;
   }
