@@ -7,7 +7,7 @@
 </div>
     <div class="row justify-content-center">
          <div class="col-12">
-            <table class="table table-striped table-sm">
+            <table id="clentslist" class="table table-striped table-sm">
                 <thead>
                     <tr>
                         <th scope="col" class="text-center">Επωνυμία</th>
@@ -32,3 +32,12 @@
         </div>
     </div>
 </div>
+<script>
+$(document).ready(function() {
+    $('#inspectlist').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Greek.json"
+            }
+        });
+} );
+</script>
