@@ -57,11 +57,7 @@ $(document).ready(function() {
                 "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Greek.json"
             },
             "columnDefs": [
-            {
-                "targets": [ 4 ],
-                "order": false,
-                "searchable": false
-            }
+                {"searchable": false, "orderable": false, "targets": 4 }
         ]
         });
 } );
