@@ -9,14 +9,15 @@ $tel_client = "";
 $email_client = "";
 
 if (isset($cldata)) {
-	$name_client = $cldata->name_client;
-	$firstname_client = $cldata->firstname_client;
-	$lastname_client = $cldata->lastname_client;
-	$vatno_client = $cldata->vatno_client;
-	$address_client = $cldata->address_client;
-	$zip_client = $cldata->zip_client;
-	$tel_client = $cldata->tel_client;
-	$email_client = $cldata->email_client;
+	$id_client = $cldata[0]->id_client;
+	$name_client = $cldata[0]->name_client;
+	$firstname_client = $cldata[0]->firstname_client;
+	$lastname_client = $cldata[0]->lastname_client;
+	$vatno_client = $cldata[0]->vatno_client;
+	$address_client = $cldata[0]->address_client;
+	$zip_client = $cldata[0]->zip_client;
+	$tel_client = $cldata[0]->tel_client;
+	$email_client = $cldata[0]->email_client;
 }
 
 ?>
@@ -32,6 +33,9 @@ if (isset($cldata)) {
 <?php 
 $attributes = array('id' => 'clientForm');
 echo form_open("inspection/client_save", $attributes);?>
+<?php if (isset($id_client)) {?>
+	<input type="hidden" name ="id_client" value ="<?= $id_client ?>">
+<?php } ?>
     <div class="form-group">
         <label for="name_client">Επωνυμία </label>
         <input type="text" class="form-control" id="name_client" name ="name_client" value ="<?= $name_client ?>">
@@ -66,18 +70,22 @@ echo form_open("inspection/client_save", $attributes);?>
         <label for="email_client">email</label>
         <input type="text" class="form-control" id="email_client" name ="email_client" value ="<?= $email_client ?>">
     </div>
+	<?php if (!isset($hasaccount) || !$hasaccount) { ?>
     <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" name="createaccount" id="createaccount" value = "1">
     <label class="form-check-label" for="createaccount">Δημιουργία Λογαριασμού</label>
   </div>
-  
-   <button type="submit" class="btn btn-primary">Καταχώρηση</button>
+  <?php } ?>
+   <button type="submit" class="btn btn-primary" disabled>Καταχώρηση</button>
 <?php echo form_close();?>
 </div>
 </div>
 </div>
 <script type="text/javascript">
        jQuery(document).ready(function($){
+		$('#clientForm').on('input change', function() {
+    	$('.btn.btn-primary').attr('disabled', false);
+  });
       
       $('#clientForm').formValidation({
 			framework: 'bootstrap4',

@@ -104,7 +104,8 @@ $maxpos = $row->maxpos;
 
     $q = "Select c.*, v.*, i.* from clients_tbl c
             LEFT JOIN vehicles_tbl v ON c.id_client = v.client_vhcl
-            LEFT JOIN inspections_tbl i ON v.id_vhcl = i.vehicle_inspection ORDER BY c.id_client";
+            LEFT JOIN inspections_tbl i ON v.id_vhcl = i.vehicle_inspection";
+
       if (isset($where)) 
       {
 
@@ -113,6 +114,8 @@ $maxpos = $row->maxpos;
                $q .= $field." = ".$value;
             endforeach;
       }
+
+      $q .= " ORDER BY c.id_client";
             $query = $this->db->query($q);
 
         if ($query -> num_rows() > 0) {
@@ -209,7 +212,7 @@ $maxpos = $row->maxpos;
     public function upd_inspection($id, $data){
       $this->db->where('id_inspection', $id);
       $this->db->update('inspections_tbl', $data);
-
+      return;
     }
 
 
@@ -228,5 +231,17 @@ $maxpos = $row->maxpos;
 			return null;
 		}
     }
+
+    public function upd_client($id, $data) {
+      $this->db->where('id_client', $id);
+      $this->db->update('clients_tbl', $data);
+      return;
+    }    
+
+    public function del_client($id) {
+      $this->db->where('id_client', $id);
+      $this->db->delete('clients_tbl');
+      return;
+    } 
 }
 

@@ -25,14 +25,17 @@
                     $cid = $cl->id_client;
                     ?>
                     <tr>
-                    <td class="text-center"><?php echo $cl->name_client; ?></td>
+                    <td class="text-center name_client"><?php echo $cl->name_client; ?></td>
                     <td class="text-center"><?php echo $cl->vatno_client; ?></td>
                     <td class="text-center"><?php echo $cl->tel_client; ?></td>
                     <td class="text-center"><?php echo $cl->email_client; ?></td>
-                    <td class="text-center"><a href="<?=base_url() ?>inspection/client_edit/<?= $cl->id_client ?>"><i class="fal fa-edit"></i></a></td>
+                    <td class="text-left"><a href="<?=base_url() ?>inspection/client_edit/<?= $cl->id_client ?>"><i class="fal fa-edit"></i></a>
+                    <?php if (!isset($cl->id_vhcl)) { ?>
+                        <a href="<?=base_url() ?>inspection/client_delete/<?= $cl->id_client ?>" class="confirm"><i class="fal fa-times text-danger"></i></a>                    
+                    <?php } ?>
+                    </td>
                     </tr>
-                
-                <?php 
+       <?php 
                     }
             
             endforeach; ?>
@@ -42,11 +45,37 @@
     </div>
 </div>
 <script>
+
+
+
 $(document).ready(function() {
     $('#clientslist').DataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Greek.json"
-            }
+            },
+            "columnDefs": [
+                {"searchable": false, "orderable": false, "targets": 4 }
+        ]
         });
+
+
+        $('.confirm').on('click', function (e) {
+                             	var link = $(this).attr("href"); // "get" the intended link in a var
+       e.preventDefault();    
+            bootbox.confirm("Να γίνει η διαγραφή;", function(result) {    
+                if (result) {
+                    document.location.href = link;  // if result, "set" the document location       
+                }    
+            });
+    });
+    bootbox.setDefaults({
+          /**
+           * @optional String
+           * @default: en
+           * which locale settings to use to translate the three
+           * standard button labels: OK, CONFIRM, CANCEL
+           */
+          locale: "el"
+    });
 } );
 </script>

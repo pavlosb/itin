@@ -155,7 +155,7 @@ class Inspection extends CI_Controller {
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
-   			$filename = $inspection->number_inspection;
+   			$filename = $this->_stringclean($inspection->number_inspection);
 			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
 			//$mpdf->Output();
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
@@ -314,17 +314,54 @@ redirect('inspection/inspections_list', 'refresh');
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			if (isset($_POST))
-			{
-				print_r($_POST);
+			
+				if (isset($_POST['id_client'])) {
+				$id = $this->input->post('id_client');
+				$updata['firstname_client'] = $this->input->post('firstname_client');
+				$updata['lastname_client'] = $this->input->post('lastname_client');
+				$updata['name_client'] = $this->input->post('name_client');
+				$updata['vatno_client'] = $this->input->post('vatno_client');
+				$updata['address_client'] = $this->input->post('address_client');
+				$updata['zip_client'] = $this->input->post('zip_client');
+				$updata['since_client'] = date('Y-m-d');
+				$updata['tel_client'] = $this->input->post('tel_client');
+				$updata['email_client'] = $this->input->post('email_client');
 				if (isset($_POST['createaccount']) && $_POST['createaccount'] == 1) 
 				{
 
 
 					$username = $this->input->post('email_client');
-    				$password = $this->_genpassword();
-    				$email = $this->input->post('email_client');
-    				$additional_data = array(
+    			$password = $this->_genpassword();
+    			$email = $this->input->post('email_client');
+    			$additional_data = array(
+                							'first_name' => $this->input->post('firstname_client'),
+											'last_name' => $this->input->post('lastname_client'),
+											'company' => $this->input->post('name_client'),
+											);
+					if (!$this->ion_auth->username_check($username))
+					{
+						$group = array('5'); // Sets user to clients.
+						$updata['accid_client'] = $this->ion_auth->register($username, $password, $email, $additional_data, $group);
+					} else {
+						$user = $this->ion_auth->where('username', $this->input->post('email_client'))->users()->result();
+						
+						$updata['accid_client'] = $user[0]->id;
+					}
+
+
+				}
+				$this->itindata_model->upd_client($id, $updata);
+				redirect('inspection/clients_list', 'refresh');
+				} else {
+			//	print_r($_POST);
+				if (isset($_POST['createaccount']) && $_POST['createaccount'] == 1) 
+				{
+
+
+					$username = $this->input->post('email_client');
+    			$password = $this->_genpassword();
+    			$email = $this->input->post('email_client');
+    			$additional_data = array(
                 							'first_name' => $this->input->post('firstname_client'),
 											'last_name' => $this->input->post('lastname_client'),
 											'company' => $this->input->post('name_client'),
@@ -338,7 +375,7 @@ redirect('inspection/inspections_list', 'refresh');
 						
 						$insdata['accid_client'] = $user[0]->id;
 					}
-
+					
 				}
 				$insdata['firstname_client'] = $this->input->post('firstname_client');
 				$insdata['lastname_client'] = $this->input->post('lastname_client');
@@ -358,6 +395,8 @@ redirect('inspection/inspections_list', 'refresh');
 		}
 
 	} 
+
+
     public function clients_list() {
 		if ($this->ion_auth->logged_in())
 		{
@@ -374,6 +413,37 @@ redirect('inspection/inspections_list', 'refresh');
 			redirect('auth/login');
 		}
 		
+	}
+
+	public function client_edit($id_client) {
+
+		if ($this->ion_auth->logged_in())
+		{
+			$user = $this->ion_auth->user()->row();
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$data['cldata'] = $this->itindata_model->get_clients(array('id_client' => $id_client));
+			$data['hasaccount'] = $this->ion_auth->email_check($data['cldata'][0]->email_client);
+			//print_r($data['clients']);
+				$this->load->view('header', $data);
+				$this->load->view('clientsform', $data);
+				$this->load->view('footer', $data);
+		} else {
+			redirect('auth/login');
+		}
+
+
+	}
+
+	public function client_delete($id) {
+		if ($this->ion_auth->logged_in())
+		{
+			$this->itindata_model->del_client($id);
+			redirect('inspection/clients_list', 'refresh');
+		} else {
+			redirect('auth/login');
+		}
+
 	}
 
 
@@ -434,4 +504,12 @@ print_r($result);
 		}
 		return implode($pass); //turn the array into a string
 	}
+
+
+	private function _stringclean($string) {
+		$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+		$string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+ 
+		return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
+ }
 }
