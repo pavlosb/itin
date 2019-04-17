@@ -22,6 +22,7 @@
                 $cid = 0;
                 foreach ($clients as $cl): 
                     if ($cl->id_client <> $cid ) {
+                    $cid = $cl->id_client;
                     ?>
                     <tr>
                     <td class="text-center"><?php echo $cl->name_client; ?></td>
@@ -33,7 +34,7 @@
                 
                 <?php 
                     }
-            $cid = $cl->id_client;
+            
             endforeach; ?>
                 </tbody>
             </table>
