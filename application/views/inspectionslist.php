@@ -33,7 +33,7 @@
                         echo '<i class="fas fa-thumbs-up text-success"></i>';
 
                     } else {
-                        echo '<i class="fal fa-thumbs-up text-danger"></i>';
+                        echo '<i class="fal fa-thumbs-down text-danger"></i>';
 
                     } ?>
         
