@@ -25,7 +25,7 @@
                     $cid = $cl->id_client;
                     ?>
                     <tr>
-                    <td class="text-center"><?php echo $cl->name_client; ?></td>
+                    <td class="text-center name_client"><?php echo $cl->name_client; ?></td>
                     <td class="text-center"><?php echo $cl->vatno_client; ?></td>
                     <td class="text-center"><?php echo $cl->tel_client; ?></td>
                     <td class="text-center"><?php echo $cl->email_client; ?></td>
@@ -47,7 +47,7 @@
 <script>
 
 $(document).on("click", ".show-alert", function(e) {
-    return confirm("Are you sure you want to delete?");
+    return confirm("Are you sure you want to delete? "+$(this).closest("tr").find(td.name_client).text());
         });
 
 $(document).ready(function() {
