@@ -83,9 +83,7 @@ echo form_open("inspection/client_save", $attributes);?>
 </div>
 <script type="text/javascript">
        jQuery(document).ready(function($){
-		$('#clientForm').on('input change', function() {
-    	$('#submit').attr('disabled', false);
-  });
+		
       
       $('#clientForm').formValidation({
 			framework: 'bootstrap4',
