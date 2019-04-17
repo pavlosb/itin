@@ -155,7 +155,7 @@ class Inspection extends CI_Controller {
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
-   			$filename = $inspection->number_inspection;
+   			$filename = $this->_stringclean($inspection->number_inspection);
 			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
 			//$mpdf->Output();
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
@@ -504,4 +504,12 @@ print_r($result);
 		}
 		return implode($pass); //turn the array into a string
 	}
+
+
+	private function _stringclean($string) {
+		$string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
+		$string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
+ 
+		return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
+ }
 }
