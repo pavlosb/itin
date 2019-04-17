@@ -384,6 +384,7 @@ redirect('inspection/inspections_list', 'refresh');
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$data['cldata'] = $this->itindata_model->get_clients(array('id_client' => $id_client));
+			$data['hasaccount'] = $this->ion_auth->email_check($data['cldata'][0]->email_client);
 			//print_r($data['clients']);
 				$this->load->view('header', $data);
 				$this->load->view('clientsform', $data);
