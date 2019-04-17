@@ -237,5 +237,11 @@ $maxpos = $row->maxpos;
       $this->db->update('clients_tbl', $data);
       return;
     }    
+
+    public function del_client($id) {
+      $this->db->where('id_client', $id);
+      $this->db->delete('clients_tbl');
+      return;
+    } 
 }
 

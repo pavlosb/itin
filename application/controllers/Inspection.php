@@ -435,6 +435,16 @@ redirect('inspection/inspections_list', 'refresh');
 
 	}
 
+	public function client_delete($id) {
+		if ($this->ion_auth->logged_in())
+		{
+			$this->itindata_model->del_client($id);
+		} else {
+			redirect('auth/login');
+		}
+
+	}
+
 
 	public function vindecoder($vinr) {
 		if ($this->ion_auth->logged_in())
