@@ -9,6 +9,7 @@ $tel_client = "";
 $email_client = "";
 
 if (isset($cldata)) {
+	$id_client = $cldata[0]->id_client;
 	$name_client = $cldata[0]->name_client;
 	$firstname_client = $cldata[0]->firstname_client;
 	$lastname_client = $cldata[0]->lastname_client;
@@ -32,6 +33,9 @@ if (isset($cldata)) {
 <?php 
 $attributes = array('id' => 'clientForm');
 echo form_open("inspection/client_save", $attributes);?>
+<?php if (isset($id_client)) {?>
+	<input type="hidden" name ="name_client" value ="<?= $id_client ?>">
+<?php } ?>
     <div class="form-group">
         <label for="name_client">Επωνυμία </label>
         <input type="text" class="form-control" id="name_client" name ="name_client" value ="<?= $name_client ?>">
