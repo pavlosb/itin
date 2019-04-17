@@ -48,9 +48,7 @@
 <script>
 
 $(document).on("click", ".show-alert", function(e) {
-            bootbox.confirm("Are you sure?", function(result){
-    /* your callback code */ 
-})
+    return confirm("Are you sure you want to delete?");
         });
 
 $(document).ready(function() {
