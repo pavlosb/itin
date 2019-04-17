@@ -34,7 +34,7 @@ if (isset($cldata)) {
 $attributes = array('id' => 'clientForm');
 echo form_open("inspection/client_save", $attributes);?>
 <?php if (isset($id_client)) {?>
-	<input type="hidden" name ="name_client" value ="<?= $id_client ?>">
+	<input type="hidden" name ="id_client" value ="<?= $id_client ?>">
 <?php } ?>
     <div class="form-group">
         <label for="name_client">Επωνυμία </label>
