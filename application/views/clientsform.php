@@ -75,13 +75,16 @@ echo form_open("inspection/client_save", $attributes);?>
     <label class="form-check-label" for="createaccount">Δημιουργία Λογαριασμού</label>
   </div>
   
-   <button type="submit" class="btn btn-primary">Καταχώρηση</button>
+   <button type="submit" id="submit" class="btn btn-primary" disabled>Καταχώρηση</button>
 <?php echo form_close();?>
 </div>
 </div>
 </div>
 <script type="text/javascript">
        jQuery(document).ready(function($){
+		$('#clientForm').on('input change', function() {
+    	$('#submit').attr('disabled', false);
+  });
       
       $('#clientForm').formValidation({
 			framework: 'bootstrap4',
