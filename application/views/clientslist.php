@@ -31,7 +31,7 @@
                     <td class="text-center"><?php echo $cl->email_client; ?></td>
                     <td class="text-left"><a href="<?=base_url() ?>inspection/client_edit/<?= $cl->id_client ?>"><i class="fal fa-edit"></i></a>
                     <?php if (!isset($cl->id_vhcl)) { ?>
-                        <a href="<?=base_url() ?>inspection/client_delete/<?= $cl->id_client ?>" class="show-alert"><i class="fal fa-times text-danger"></i></a>                    
+                        <a href="<?=base_url() ?>inspection/client_delete/<?= $cl->id_client ?>" class="confirm"><i class="fal fa-times text-danger"></i></a>                    
                     <?php } ?>
                     </td>
                     </tr>
@@ -46,9 +46,7 @@
 </div>
 <script>
 
-$(document).on("click", ".show-alert", function(e) {
-    return confirm("Να γινει διαγραφή του πελάτη;");
-        });
+
 
 $(document).ready(function() {
     $('#clientslist').DataTable({
@@ -59,5 +57,25 @@ $(document).ready(function() {
                 {"searchable": false, "orderable": false, "targets": 4 }
         ]
         });
+
+
+        $('.confirm').on('click', function (e) {
+                             	var link = $(this).attr("href"); // "get" the intended link in a var
+       e.preventDefault();    
+            bootbox.confirm("Να γίνει η διαγραφή;", function(result) {    
+                if (result) {
+                    document.location.href = link;  // if result, "set" the document location       
+                }    
+            });
+    });
+    bootbox.setDefaults({
+          /**
+           * @optional String
+           * @default: en
+           * which locale settings to use to translate the three
+           * standard button labels: OK, CONFIRM, CANCEL
+           */
+          locale: "el"
+    });
 } );
 </script>
