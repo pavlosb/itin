@@ -439,6 +439,7 @@ redirect('inspection/inspections_list', 'refresh');
 		if ($this->ion_auth->logged_in())
 		{
 			$this->itindata_model->del_client($id);
+			redirect('inspection/clients_list', 'refresh');
 		} else {
 			redirect('auth/login');
 		}

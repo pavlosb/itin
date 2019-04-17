@@ -70,7 +70,7 @@ echo form_open("inspection/client_save", $attributes);?>
         <label for="email_client">email</label>
         <input type="text" class="form-control" id="email_client" name ="email_client" value ="<?= $email_client ?>">
     </div>
-	<?php if (!$hasaccount) { ?>
+	<?php if (!isset($hasaccount) || !$hasaccount) { ?>
     <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" name="createaccount" id="createaccount" value = "1">
     <label class="form-check-label" for="createaccount">Δημιουργία Λογαριασμού</label>
