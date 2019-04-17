@@ -35,8 +35,7 @@
                     <?php } ?>
                     </td>
                     </tr>
-                
-                <?php 
+       <?php 
                     }
             
             endforeach; ?>

@@ -212,7 +212,7 @@ $maxpos = $row->maxpos;
     public function upd_inspection($id, $data){
       $this->db->where('id_inspection', $id);
       $this->db->update('inspections_tbl', $data);
-
+      return;
     }
 
 
@@ -231,5 +231,11 @@ $maxpos = $row->maxpos;
 			return null;
 		}
     }
+
+    public function upd_client($id, $data) {
+      $this->db->where('id_client', $id);
+      $this->db->update('clients_tbl', $data);
+      return;
+    }    
 }
 
