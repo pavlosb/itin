@@ -59,7 +59,7 @@ $(document).ready(function() {
             "columnDefs": [
             {
                 "targets": [ 4 ],
-                "ordering": false,
+                "order": false,
                 "searchable": false
             }
         ]
