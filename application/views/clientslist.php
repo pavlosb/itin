@@ -47,7 +47,7 @@
 <script>
 
 $(document).on("click", ".show-alert", function(e) {
-    return confirm("Are you sure you want to delete? "+$(this).closest("tr").find(td.name_client).text());
+    return confirm("Να γινει διαγραφή του πελάτη;");
         });
 
 $(document).ready(function() {
