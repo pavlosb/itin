@@ -29,7 +29,7 @@
                     <td class="text-center"><?php echo $cl->vatno_client; ?></td>
                     <td class="text-center"><?php echo $cl->tel_client; ?></td>
                     <td class="text-center"><?php echo $cl->email_client; ?></td>
-                    <td class="text-center"><a href="<?=base_url() ?>inspection/client_edit/<?= $cl->id_client ?>"><i class="fal fa-edit"></i></a>
+                    <td class="text-left"><a href="<?=base_url() ?>inspection/client_edit/<?= $cl->id_client ?>"><i class="fal fa-edit"></i></a>
                     <?php if (!isset($cl->id_vhcl)) { ?>
                         <a href="<?=base_url() ?>inspection/client_delete/<?= $cl->id_client ?>" class="show-alert"><i class="fal fa-times text-danger"></i></a>                    
                     <?php } ?>
@@ -55,7 +55,14 @@ $(document).ready(function() {
     $('#clientslist').DataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Greek.json"
+            },
+            "columnDefs": [
+            {
+                "targets": [ 4 ],
+                "ordering": false,
+                "searchable": false
             }
+        ]
         });
 } );
 </script>
