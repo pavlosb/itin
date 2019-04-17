@@ -105,7 +105,6 @@ $maxpos = $row->maxpos;
     $q = "Select c.*, v.*, i.* from clients_tbl c
             LEFT JOIN vehicles_tbl v ON c.id_client = v.client_vhcl
             LEFT JOIN inspections_tbl i ON v.id_vhcl = i.vehicle_inspection ORDER BY c.id_client";
-
       if (isset($where)) 
       {
 
