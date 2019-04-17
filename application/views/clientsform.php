@@ -1,3 +1,25 @@
+<?php
+$name_client = "";
+$firstname_client = "";
+$lastname_client = "";
+$vatno_client = "";
+$address_client ="";
+$zip_client ="";
+$tel_client = "";
+$email_client = "";
+
+if (isset($cldata)) {
+	$name_client = $cldata->name_client;
+	$firstname_client = $cldata->firstname_client;
+	$lastname_client = $cldata->lastname_client;
+	$vatno_client = $cldata->vatno_client;
+	$address_client = $cldata->address_client;
+	$zip_client = $cldata->zip_client;
+	$tel_client = $cldata->tel_client;
+	$email_client = $cldata->email_client;
+}
+
+?>
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
   <div class="col-sm-10 col-lg-6">
@@ -12,37 +34,37 @@ $attributes = array('id' => 'clientForm');
 echo form_open("inspection/client_save", $attributes);?>
     <div class="form-group">
         <label for="name_client">Επωνυμία </label>
-        <input type="text" class="form-control" id="name_client" name ="name_client">
+        <input type="text" class="form-control" id="name_client" name ="name_client" value ="name_client">
     </div>
     <div class="form-row">
         <div class="form-group col">
             <label for="firstname_client">'Ονομα</label>
-            <input type="text" class="form-control" id="firstname_client" name ="firstname_client">
+            <input type="text" class="form-control" id="firstname_client" name ="firstname_client" value ="firstname_client">
         </div>
         <div class="form-group col">
             <label for="lastname_client">Επώνυμο</label>
-            <input type="text" class="form-control" id="lastname_client" name ="lastname_client">
+            <input type="text" class="form-control" id="lastname_client" name ="lastname_client" value ="lastname_client">
         </div>
     </div>
      <div class="form-group">
         <label for="vatno_client">Α.Φ.Μ.</label>
-        <input type="text" class="form-control" id="vatno_client" name ="vatno_client">
+        <input type="text" class="form-control" id="vatno_client" name ="vatno_client" value ="vatno_client">
     </div>
     <div class="form-group">
         <label for="address_client">Διεύθυνση</label>
-        <input type="text" class="form-control" id="address_client" name ="address_client">
+        <input type="text" class="form-control" id="address_client" name ="address_client" value ="address_client">
     </div>
     <div class="form-group">
         <label for="zip_client">T.K.</label>
-        <input type="text" class="form-control" id="zip_client" name ="zip_client">
+        <input type="text" class="form-control" id="zip_client" name ="zip_client" value ="zip_client">
     </div>
     <div class="form-group">
         <label for="tel_client">Τηλέφωνο</label>
-        <input type="text" class="form-control" id="tel_client" name ="tel_client">
+        <input type="text" class="form-control" id="tel_client" name ="tel_client" value ="tel_client">
     </div>
     <div class="form-group">
         <label for="email_client">email</label>
-        <input type="text" class="form-control" id="email_client" name ="email_client">
+        <input type="text" class="form-control" id="email_client" name ="email_client" value ="email_client">
     </div>
     <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" name="createaccount" id="createaccount" value = "1">

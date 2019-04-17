@@ -24,7 +24,7 @@
                     <td class="text-center"><?php echo $cl->vatno_client; ?></td>
                     <td class="text-center"><?php echo $cl->tel_client; ?></td>
                     <td class="text-center"><?php echo $cl->email_client; ?></td>
-                    <td class="text-center"><a href="<?=base_url() ?>inspection/client_edit/<?= $cl->name_client ?>"><i class="fal fa-edit"></i></a></td>
+                    <td class="text-center"><a href="<?=base_url() ?>inspection/client_edit/<?= $cl->id_client ?>"><i class="fal fa-edit"></i></a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
