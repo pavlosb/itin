@@ -9,7 +9,7 @@
                         <th scope="col" class="text-center">Όχημα</th>
                         <th scope="col" class="text-center">Πελάτης</th>
                         <th scope="col" class="text-center"><i class="fal fa-file-alt"></i></th>
-                        <th scope="col" class="text-center"></th>
+                        <th scope="col" class="text-center"><i class="fal fa-tachometer-fast"></i></th>
                         <th scope="col" class="text-center"></th>
                     </tr>
                 </thead>
@@ -30,10 +30,10 @@
                     <td class="text-center"><?php 
                     if ( ($insp->s1score_inspection >= 92) && ($insp->s2score_inspection >= 53) && ($insp->s1score_inspection >= 12))
                     {
-                        echo '<i class="far fa-check text-success"></i>';
+                        echo '<i class="fas fa-thumbs-up text-success"></i>';
 
                     } else {
-                        echo '<i class="far fa-times text-danger"></i>';
+                        echo '<i class="fal fa-thumbs-up text-danger"></i>';
 
                     } ?>
         
