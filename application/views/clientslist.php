@@ -31,7 +31,7 @@
                     <td class="text-center"><?php echo $cl->email_client; ?></td>
                     <td class="text-center"><a href="<?=base_url() ?>inspection/client_edit/<?= $cl->id_client ?>"><i class="fal fa-edit"></i></a>
                     <?php if (!isset($cl->id_vhcl)) { ?>
-                        <a href="<?=base_url() ?>inspection/client_delete/<?= $cl->id_client ?>"><i class="fal fa-times text-danger"></i></a>                    
+                        <a href="<?=base_url() ?>inspection/client_delete/<?= $cl->id_client ?>" class="show-alert"><i class="fal fa-times text-danger"></i></a>                    
                     <?php } ?>
                     </td>
                     </tr>
@@ -46,6 +46,13 @@
     </div>
 </div>
 <script>
+
+$(document).on("click", ".show-alert", function(e) {
+            bootbox.confirm("Are you sure?", function(result){
+    /* your callback code */ 
+})
+        });
+
 $(document).ready(function() {
     $('#clientslist').DataTable({
             "language": {
