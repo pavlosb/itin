@@ -9,14 +9,14 @@ $tel_client = "";
 $email_client = "";
 
 if (isset($cldata)) {
-	$name_client = $cldata->name_client;
-	$firstname_client = $cldata->firstname_client;
-	$lastname_client = $cldata->lastname_client;
-	$vatno_client = $cldata->vatno_client;
-	$address_client = $cldata->address_client;
-	$zip_client = $cldata->zip_client;
-	$tel_client = $cldata->tel_client;
-	$email_client = $cldata->email_client;
+	$name_client = $cldata[0][name_client];
+	$firstname_client = $cldata[0][firstname_client];
+	$lastname_client = $cldata[0][lastname_client];
+	$vatno_client = $cldata[0][vatno_client];
+	$address_client = $cldata[0][address_client];
+	$zip_client = $cldata[0][zip_client];
+	$tel_client = $cldata[0][tel_client];
+	$email_client = $cldata[0][email_client];
 }
 
 ?>
