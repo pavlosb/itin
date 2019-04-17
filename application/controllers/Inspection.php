@@ -364,10 +364,11 @@ redirect('inspection/inspections_list', 'refresh');
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			$data['clients'] = $this->_getclients();
-			$this->load->view('header', $data);
-			$this->load->view('clientslist', $data);
-			$this->load->view('footer', $data);
+			$data['clients'] = $this->itindata_model->get_clients();
+			print_r($data['clients']);
+		//	$this->load->view('header', $data);
+		//	$this->load->view('clientslist', $data);
+		//	$this->load->view('footer', $data);
 
 		} else {
 			redirect('auth/login');
