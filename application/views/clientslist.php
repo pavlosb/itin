@@ -18,7 +18,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($clients as $cl): ?>
+                <?php 
+                $cid = 0;
+                foreach ($clients as $cl): 
+                    if ($cl->id_client <> $cid ) {
+                    ?>
                     <tr>
                     <td class="text-center"><?php echo $cl->name_client; ?></td>
                     <td class="text-center"><?php echo $cl->vatno_client; ?></td>
@@ -26,7 +30,11 @@
                     <td class="text-center"><?php echo $cl->email_client; ?></td>
                     <td class="text-center"><a href="<?=base_url() ?>inspection/client_edit/<?= $cl->id_client ?>"><i class="fal fa-edit"></i></a></td>
                     </tr>
-                <?php endforeach; ?>
+                
+                <?php 
+                    }
+            $cid = $cl->id_client;
+            endforeach; ?>
                 </tbody>
             </table>
         </div>
