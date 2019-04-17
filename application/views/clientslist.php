@@ -7,7 +7,7 @@
 </div>
     <div class="row justify-content-center">
          <div class="col-12">
-            <table id="clentslist" class="table table-striped table-sm">
+            <table id="clientslist" class="table table-striped table-sm">
                 <thead>
                     <tr>
                         <th scope="col" class="text-center">Επωνυμία</th>
@@ -34,7 +34,7 @@
 </div>
 <script>
 $(document).ready(function() {
-    $('#inspectlist').DataTable({
+    $('#clientslist').DataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Greek.json"
             }
