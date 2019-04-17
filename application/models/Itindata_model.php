@@ -100,13 +100,22 @@ $maxpos = $row->maxpos;
 
     }
 
-    public function get_clients($where = null)
-    {
-       // $this->db->order_by('compname_clients', 'ASC');
-       if (isset($where)) {
-        $this->db->where($where);
-       }
-        $query = $this->db->get('clients_tbl');
+    public function get_clients($where = null) {
+
+    $q = "Select v.*, c.*, from clients_tbl c
+            LEFT JOIN clients_tbl c ON c.id_client = v.client_vhcl
+            LEFT JOIN inspections_tbl i ON v.id_vhcl = i.vehicle_inspection";
+
+      if (isset($where)) 
+      {
+
+         $q .= " WHERE ";
+            foreach ($where as $field => $value):
+               $q .= $field." = ".$value;
+            endforeach;
+      }
+            $query = $this->db->query($q);
+
         if ($query -> num_rows() > 0) {
 			foreach ($query->result() as $row) {
 				$data[] = $row;
