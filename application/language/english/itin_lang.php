@@ -14,6 +14,7 @@
 // GLOBAL
 $lang['required_field'] = 'Required field';
 $lang['invalid_email'] = 'Invalid e-mail address';
+$lang['choose'] = 'Επιλέξτε';
 $lang['submit'] = 'Submit';
 
 // HEADER - MENU
