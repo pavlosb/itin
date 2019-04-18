@@ -100,6 +100,22 @@ $maxpos = $row->maxpos;
 
     }
 
+    public function get_clientsplain($where=null) {
+      // $this->db->order_by('compname_clients', 'ASC');
+      if (isset($where)) {
+       $this->db->where($where);
+      }
+       $query = $this->db->get('clients_tbl');
+       if ($query -> num_rows() > 0) {
+        foreach ($query->result() as $row) {
+           $data[] = $row;
+        }
+        return $data;
+     } else {
+        return null;
+     }
+   }
+
     public function get_clients($where = null) {
 
     $q = "Select c.*, v.*, i.* from clients_tbl c
