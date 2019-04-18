@@ -63,13 +63,9 @@ $lang['date_inspection'] = 'Ημερομηνία';
 $lang['number_inspection'] = 'Αριθμός';
 $lang['ordermethod_inspection'] = 'Εντολή';
 $lang['orderdate_inspection'] = 'Ημερομηνία Εντολής';
-$lang['number_inspection'] = 'Δεν υπάρχουν οχήματα προς επιθεώρηση.';
 $lang['no_vehicles_for_inspection'] = 'Δεν υπάρχουν οχήματα προς επιθεώρηση.';
-$lang['new_vehicle'] = 'Νέο Όχημα';
+$lang['add_new_vehicle'] = 'Νέο Όχημα';
 $lang['no_vehicle_chosen'] = 'Δεν έχετε επιλέξει Όχημα';
-$lang['number_inspection'] = 'Αριθμός';
-$lang['number_inspection'] = 'Αριθμός';
-$lang['number_inspection'] = 'Αριθμός';
-$lang['number_inspection'] = 'Αριθμός';
+
 
 

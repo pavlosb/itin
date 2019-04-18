@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row justify-content-center">
   <div class="col-sm-8 col-lg-6">
-<h1 class="display-4">Νέα Επιθεώρηση</h1>
+<h1 class="display-4"><?= $this->lang->line('new_inspection'); ?></h1>
 <p class="lead"></p>
 </div>
 </div>
@@ -16,7 +16,7 @@ $attributes = array('id' => 'inspectionIntroForm');
 <div class="form-group mb-5">
 
 
-    <label for="client_vhcl">Όχημα</label>
+    <label for="vehicle_inspection"><?= $this->lang->line('vehicle_inspection'); ?></label>
     <select class="form-control form-control-lg" id="vehicle_inspection" name="vehicle_inspection">
       <option value = ""></option>
       <?php foreach ($vehicles as $vh) : ?>
@@ -27,11 +27,11 @@ $attributes = array('id' => 'inspectionIntroForm');
   </div>
 <div class="form-row">
     <div class="form-group col">
-        <label for="number_inspection">Αριθμός </label>
+        <label for="number_inspection"><?= $this->lang->line('number_inspection'); ?></label>
         <input type="text" class="form-control" id="number_inspection" name ="number_inspection">
     </div>
     <div class="form-group col">
-    <label for="date_inspection">Ημερομηνία</label>
+    <label for="date_inspection"><?= $this->lang->line('date_inspection'); ?></label>
       <div class="input-group mb-3 date" id="datetimepicker12" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input" id="date_inspection" name ="date_inspection" data-target="#datetimepicker12" value="<?php echo date('Y-m-d'); ?>">
           <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
@@ -42,11 +42,11 @@ $attributes = array('id' => 'inspectionIntroForm');
 </div> 
 <div class="form-row">
     <div class="form-group col">
-        <label for="ordermethod_inspection">Εντολή</label>
+        <label for="ordermethod_inspection"><?= $this->lang->line('ordermethod_inspection'); ?></label>
         <input type="text" class="form-control" id="ordermethod_inspection" name ="ordermethod_inspection">
     </div>
     <div class="form-group col">
-    <label for="orderdate_inspection">Ημερομηνία Εντολής</label>
+    <label for="orderdate_inspection"><?= $this->lang->line('orderdate_inspection'); ?></label>
       <div class="input-group mb-3 date" id="datetimepicker13" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input" id="orderdate_inspection" name ="orderdate_inspection" data-target="#datetimepicker13" value="<?php echo date('Y-m-d'); ?>">
           <div class="input-group-append" data-target="#datetimepicker13" data-toggle="datetimepicker">
@@ -55,11 +55,11 @@ $attributes = array('id' => 'inspectionIntroForm');
       </div>
   </div>
 </div> 
-   <button type="submit" class="btn btn-primary">Συνέχεια</button>
+   <button type="submit" class="btn btn-primary"><?= $this->lang->line('new_incontinuespection'); ?></button>
 <?php echo form_close();?>
 <?php } else {?>
-<p class="lead text-center text-warning mt-5">Δεν υπάρχουν οχήματα προς επιθεώρηση.</p>
-<p class="text-center"><a href="<?php echo base_url(); ?>inspection/vehicle_add" class="btn btn-primary btn-lg"><i class="fal fa-car"></i> Νέο Όχημα</a></p>
+<p class="lead text-center text-warning mt-5"><?= $this->lang->line('no_vehicles_for_inspection'); ?></p>
+<p class="text-center"><a href="<?php echo base_url(); ?>inspection/vehicle_add" class="btn btn-primary btn-lg"><i class="fal fa-car"></i> <?= $this->lang->line('add_new_vehicle'); ?></a></p>
   <?php }?>
 
 </div>
@@ -80,21 +80,21 @@ $attributes = array('id' => 'inspectionIntroForm');
 				vehicle_inspection: {
 					validators: {
 						notEmpty: {
-							message: 'Δεν έχετε επιλέξει Όχημα'
+							message: '<?= $this->lang->line('no_vehicle_chosen'); ?>'
 						},
 											}
 				},
         number_inspection: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
         ordermethod_inspection: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},

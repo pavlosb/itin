@@ -16,6 +16,7 @@ $lang['required_field'] = 'Required field';
 $lang['invalid_email'] = 'Invalid e-mail address';
 $lang['choose'] = 'Select';
 $lang['submit'] = 'Submit';
+$lang['continue'] = 'Continue';
 
 // HEADER - MENU
 $lang['logout'] = 'Logout';
@@ -57,3 +58,12 @@ $lang['pow_vhcl'] = 'Power';
 
 
 //INSPECTION
+$lang['new_inspection'] = 'New Inspection';
+$lang['vehicle_inspection'] = "Vehicle";
+$lang['date_inspection'] = 'Date';
+$lang['number_inspection'] = 'Number';
+$lang['ordermethod_inspection'] = 'Order';
+$lang['orderdate_inspection'] = 'Order Date';
+$lang['no_vehicles_for_inspection'] = 'No vehicles awaiting inspection.';
+$lang['add_new_vehicle'] = 'Add new vehicle';
+$lang['no_vehicle_chosen'] = 'You must select a vehicle';
