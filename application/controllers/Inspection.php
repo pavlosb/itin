@@ -26,7 +26,9 @@ class Inspection extends CI_Controller {
 			$this->load->helper('form');
 			$this->lang->load('itin','greek');
 			$sesdata = $this->session->userdata;
-			$data['user_lang'] = $sesdata['site_lang'];
+			$this->data = array(
+			'user_lang' => $sesdata['site_lang']
+			);
 			
 	}
 	public function index()
@@ -34,6 +36,7 @@ class Inspection extends CI_Controller {
 		if ($this->ion_auth->logged_in())
 		{
 			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$this->load->view('header', $data);
@@ -50,6 +53,7 @@ class Inspection extends CI_Controller {
 		if ($this->ion_auth->logged_in())
 		{
 			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			if (isset($_POST['vehicle_inspection']) && $_POST['vehicle_inspection'] > 0)
@@ -93,6 +97,7 @@ class Inspection extends CI_Controller {
 	{
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -115,6 +120,7 @@ class Inspection extends CI_Controller {
 	
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 		$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -138,6 +144,7 @@ class Inspection extends CI_Controller {
 		{
 		
 			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			
@@ -176,7 +183,7 @@ class Inspection extends CI_Controller {
 	
 		if ($this->ion_auth->logged_in())
 		{
-		
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -207,6 +214,7 @@ class Inspection extends CI_Controller {
 	{
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -224,6 +232,7 @@ class Inspection extends CI_Controller {
 	{
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -249,6 +258,7 @@ redirect('inspection/inspections_list', 'refresh');
 	public function vehicle_add() {
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -269,6 +279,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -296,6 +307,7 @@ redirect('inspection/inspections_list', 'refresh');
 	public function client_add() {
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -313,6 +325,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -402,6 +415,7 @@ redirect('inspection/inspections_list', 'refresh');
     public function clients_list() {
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -421,6 +435,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
