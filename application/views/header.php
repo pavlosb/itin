@@ -62,9 +62,19 @@
           </div>
       </li>
     </ul>
-    <span class="navbar-text"><a href="<?php echo base_url(); ?>languageswitcher/switchLang/english" <?php if (isset($site_lang) && $site_lang == "english") {echo "class='text-success'";} ?>>EN</a>  <a href="<?php echo base_url(); ?>languageswitcher/switchLang/greek">EL</a>
-      <?php echo $username ?> | <a href="<?php echo base_url(); ?>auth/logout">Αποσύνδεση</a>
+    <span class="navbar-text"><a href="<?php echo base_url(); ?>languageswitcher/switchLang/english" <?php if (isset($user_lang) && $user_lang == "english") {echo "class='text-success'";} ?>>EN</a>  <a href="<?php echo base_url(); ?>languageswitcher/switchLang/greek">EL</a>
+     
     </span>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <i class="fas fa-user"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/client_add">Νέος Πελάτης</a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/clients_list">Κατάλογος</a>
+          </div>
+      </li>
   </div>
 </nav>
 </header>
