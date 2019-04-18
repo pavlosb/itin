@@ -23,9 +23,9 @@ $lang['continue'] = 'Συνέχεια';
 $lang['logout'] = 'Αποσύνδεση';
 
 // INSPECTIONS
-$lang['new_client'] = 'Νέος<br />Πελάτης';
-$lang['new_vehicle'] = 'Νέο<br />Όχημα';
-$lang['new_inspection'] = 'Νέα<br />Επιθεώρηση';
+$lang['home_new_client'] = 'Νέος<br />Πελάτης';
+$lang['home_new_vehicle'] = 'Νέο<br />Όχημα';
+$lang['home_new_inspection'] = 'Νέα<br />Επιθεώρηση';
 
 //  CLIENTS
 $lang['clients'] = 'Πελάτες';
