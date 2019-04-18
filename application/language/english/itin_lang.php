@@ -22,9 +22,9 @@ $lang['continue'] = 'Continue';
 $lang['logout'] = 'Logout';
 
 // INSPECTIONS
-$lang['new_client'] = 'New<br />Client';
-$lang['new_vehicle'] = 'New<br />Vehicle';
-$lang['new_inspection'] = 'New<br />Inspection';
+$lang['home_new_client'] = 'New<br />Client';
+$lang['home_new_vehicle'] = 'New<br />Vehicle';
+$lang['home_new_inspection'] = 'New<br />Inspection';
 
 //  CLIENTS
 $lang['clients'] = 'Clients';
