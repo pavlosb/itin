@@ -11,6 +11,7 @@
 * Description:  ENGLISH file ITIN
 *
 */
+$lang['logout'] = 'Logout';
 $lang['new_client'] = 'New<br />Client';
 $lang['new_vehicle'] = 'New<br />Vehicle';
 $lang['new_inspection'] = 'New<br />Inspection';
