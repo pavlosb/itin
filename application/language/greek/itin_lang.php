@@ -27,3 +27,12 @@ $lang['new_inspection'] = 'Νέα<br />Επιθεώρηση';
 
 //  CLIENTSFORM
 $lang['client_details'] = 'Στοιχεία Πελάτη';
+$lang['name_client'] = 'Επωνυμία';
+$lang['firstname_client'] = "Όνομα";
+$lang['lastname_client'] = 'Επώνυμο';
+$lang['vatno_client'] = 'Α.Φ.Μ.';
+$lang['address_client'] = 'Διεύθυνση';
+$lang['zip_client'] = 'T.K.';
+$lang['tel_client'] = 'Τηλέφωνο';
+$lang['email_client'] = 'email';
+$lang['createaccount'] = 'Δημιουργία Λογαριασμού';
