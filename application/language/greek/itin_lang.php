@@ -26,6 +26,7 @@ $lang['new_vehicle'] = 'Νέο<br />Όχημα';
 $lang['new_inspection'] = 'Νέα<br />Επιθεώρηση';
 
 //  CLIENTS
+$lang['clients'] = 'Πελάτες';
 $lang['client_details'] = 'Στοιχεία Πελάτη';
 $lang['name_client'] = 'Επωνυμία';
 $lang['firstname_client'] = "Όνομα";

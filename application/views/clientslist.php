@@ -1,7 +1,7 @@
 <div class="container mt-5">
 <div class="row justify-content-center">
   <div class="col-12">
-<h1 class="display-4">Πελάτες</h1>
+<h1 class="display-4"><?= $this->lang->line('clients'); ?></h1>
 <p class="lead"></p>
 </div>
 </div>
