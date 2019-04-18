@@ -11,6 +11,7 @@
 * Description:  Greek language file ITIN
 *
 */
+$lang['logout'] = 'Αποσύνδεση';
 $lang['new_client'] = 'Νέος<br />Πελάτης';
 $lang['new_vehicle'] = 'Νέο<br />Όχημα';
 $lang['new_inspection'] = 'Νέα<br />Επιθεώρηση';
