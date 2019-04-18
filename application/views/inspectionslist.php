@@ -50,13 +50,17 @@
 </div>
 <script>
 $(document).ready(function() {
+
+    var ulang = '<?= ucfirst($user_lang) ?>';
+
     $('#inspectlist').DataTable({
             "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Greek.json"
+                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
             "columnDefs": [
                 {"searchable": false, "orderable": false, "targets": 6 }
-        ]
+        ],
+        "lengthMenu": [ 25, 50, 100 ]
         });
 } );
 </script>

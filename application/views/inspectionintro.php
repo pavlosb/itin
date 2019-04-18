@@ -42,7 +42,7 @@ $attributes = array('id' => 'inspectionIntroForm');
 </div> 
 <div class="form-row">
     <div class="form-group col">
-        <label for="number_inspection">Εντολή</label>
+        <label for="ordermethod_inspection">Εντολή</label>
         <input type="text" class="form-control" id="ordermethod_inspection" name ="ordermethod_inspection">
     </div>
     <div class="form-group col">

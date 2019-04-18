@@ -17,6 +17,7 @@ $lang['required_field'] = 'Απαιτούμενο πεδίο';
 $lang['invalid_email'] = 'Η διεύθυνση email δεν είναι έγκυρη';
 $lang['choose'] = 'Επιλέξτε';
 $lang['submit'] = 'Καταχώρηση';
+$lang['continue'] = 'Συνέχεια';
 
 // HEADER - MENU
 $lang['logout'] = 'Αποσύνδεση';
@@ -55,4 +56,20 @@ $lang['doors_vhcl'] = 'Πόρτες';
 $lang['colour_vhcl'] = 'Χρώμα';
 $lang['displ_vhcl'] = 'Κυβικά';
 $lang['pow_vhcl'] = 'Ιπποδύναμη';
+
+//INSPECTION
+$lang['new_inspection'] = 'Νέα Επιθεώρηση';
+$lang['date_inspection'] = 'Ημερομηνία';
+$lang['number_inspection'] = 'Αριθμός';
+$lang['ordermethod_inspection'] = 'Εντολή';
+$lang['orderdate_inspection'] = 'Ημερομηνία Εντολής';
+$lang['number_inspection'] = 'Δεν υπάρχουν οχήματα προς επιθεώρηση.';
+$lang['no_vehicles_for_inspection'] = 'Δεν υπάρχουν οχήματα προς επιθεώρηση.';
+$lang['new_vehicle'] = 'Νέο Όχημα';
+$lang['no_vehicle_chosen'] = 'Δεν έχετε επιλέξει Όχημα';
+$lang['number_inspection'] = 'Αριθμός';
+$lang['number_inspection'] = 'Αριθμός';
+$lang['number_inspection'] = 'Αριθμός';
+$lang['number_inspection'] = 'Αριθμός';
+
 

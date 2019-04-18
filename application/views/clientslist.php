@@ -58,7 +58,8 @@ var ulang = '<?= ucfirst($user_lang) ?>';
             },
             "columnDefs": [
                 {"searchable": false, "orderable": false, "targets": 4 }
-        ]
+        ],
+        "lengthMenu": [ 25, 50, 100 ]
         });
 
 

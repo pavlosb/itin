@@ -14,7 +14,7 @@
 // GLOBAL
 $lang['required_field'] = 'Required field';
 $lang['invalid_email'] = 'Invalid e-mail address';
-$lang['choose'] = 'Επιλέξτε';
+$lang['choose'] = 'Select';
 $lang['submit'] = 'Submit';
 
 // HEADER - MENU
@@ -54,3 +54,6 @@ $lang['doors_vhcl'] = 'Doors';
 $lang['colour_vhcl'] = 'Colour';
 $lang['displ_vhcl'] = 'Displacement';
 $lang['pow_vhcl'] = 'Power';
+
+
+//INSPECTION
