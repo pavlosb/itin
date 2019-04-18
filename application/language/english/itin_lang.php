@@ -24,7 +24,7 @@ $lang['new_client'] = 'New<br />Client';
 $lang['new_vehicle'] = 'New<br />Vehicle';
 $lang['new_inspection'] = 'New<br />Inspection';
 
-//  CLIENTSFORM
+//  CLIENTS
 $lang['client_details'] = 'Client Details';
 $lang['name_client'] = 'Company Name';
 $lang['firstname_client'] = 'First Name';

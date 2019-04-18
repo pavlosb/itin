@@ -25,7 +25,7 @@ $lang['new_client'] = 'Νέος<br />Πελάτης';
 $lang['new_vehicle'] = 'Νέο<br />Όχημα';
 $lang['new_inspection'] = 'Νέα<br />Επιθεώρηση';
 
-//  CLIENTSFORM
+//  CLIENTS
 $lang['client_details'] = 'Στοιχεία Πελάτη';
 $lang['name_client'] = 'Επωνυμία';
 $lang['firstname_client'] = "Όνομα";
@@ -36,3 +36,5 @@ $lang['zip_client'] = 'T.K.';
 $lang['tel_client'] = 'Τηλέφωνο';
 $lang['email_client'] = 'email';
 $lang['createaccount'] = 'Δημιουργία Λογαριασμού';
+
+// CLIENTSLIST
