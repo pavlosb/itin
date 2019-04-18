@@ -11,6 +11,12 @@
 * Description:  Greek language file ITIN
 *
 */
+
+// GLOBAL
+$lang['required_field'] = 'Απαιτούμενο πεδίο';
+$lang['invalid_email'] = 'Η διεύθυνση email δεν είναι έγκυρη';
+$lang['submit'] = 'Καταχώρηση';
+
 // HEADER - MENU
 $lang['logout'] = 'Αποσύνδεση';
 
@@ -20,3 +26,4 @@ $lang['new_vehicle'] = 'Νέο<br />Όχημα';
 $lang['new_inspection'] = 'Νέα<br />Επιθεώρηση';
 
 //  CLIENTSFORM
+$lang['client_details'] = 'Στοιχεία Πελάτη';

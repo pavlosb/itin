@@ -26,3 +26,17 @@ $lang['new_inspection'] = 'New<br />Inspection';
 
 //  CLIENTSFORM
 $lang['client_details'] = 'Client Details';
+$lang['name_client'] = 'Company Name';
+$lang['firstname_client'] = 'First Name';
+$lang['lastname_client'] = 'Last Name';
+$lang['vatno_client'] = 'VAT No';
+$lang['address_client'] = 'Address';
+$lang['zip_client'] = 'ZIP';
+$lang['tel_client'] = 'Tel';
+$lang['email_client'] = 'email';
+$lang['createaccount'] = 'Create Account';
+$lang['name_client'] = 'Επωνυμία';
+$lang['name_client'] = 'Επωνυμία';
+$lang['name_client'] = 'Επωνυμία';
+$lang['name_client'] = 'Επωνυμία';
+$lang['name_client'] = 'Επωνυμία';

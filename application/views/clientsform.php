@@ -37,43 +37,43 @@ echo form_open("inspection/client_save", $attributes);?>
 	<input type="hidden" name ="id_client" value ="<?= $id_client ?>">
 <?php } ?>
     <div class="form-group">
-        <label for="name_client">Επωνυμία </label>
+        <label for="name_client"><?= $this->lang->line('name_client'); ?></label>
         <input type="text" class="form-control" id="name_client" name ="name_client" value ="<?= $name_client ?>">
     </div>
     <div class="form-row">
         <div class="form-group col">
-            <label for="firstname_client">'Ονομα</label>
+            <label for="firstname_client"><?= $this->lang->line('firstname_client'); ?></label>
             <input type="text" class="form-control" id="firstname_client" name ="firstname_client" value ="<?= $firstname_client ?>">
         </div>
         <div class="form-group col">
-            <label for="lastname_client">Επώνυμο</label>
+            <label for="lastname_client"><?= $this->lang->line('lastname_client'); ?></label>
             <input type="text" class="form-control" id="lastname_client" name ="lastname_client" value ="<?= $lastname_client ?>">
         </div>
     </div>
      <div class="form-group">
-        <label for="vatno_client">Α.Φ.Μ.</label>
+        <label for="vatno_client"><?= $this->lang->line('vatno_client'); ?></label>
         <input type="text" class="form-control" id="vatno_client" name ="vatno_client" value ="<?= $vatno_client ?>">
     </div>
     <div class="form-group">
-        <label for="address_client">Διεύθυνση</label>
+        <label for="address_client"><?= $this->lang->line('address_client'); ?></label>
         <input type="text" class="form-control" id="address_client" name ="address_client" value ="<?= $address_client ?>">
     </div>
     <div class="form-group">
-        <label for="zip_client">T.K.</label>
+        <label for="zip_client"><?= $this->lang->line('zip_client'); ?></label>
         <input type="text" class="form-control" id="zip_client" name ="zip_client" value ="<?= $zip_client ?>">
     </div>
     <div class="form-group">
-        <label for="tel_client">Τηλέφωνο</label>
+        <label for="tel_client"><?= $this->lang->line('tel_client'); ?></label>
         <input type="text" class="form-control" id="tel_client" name ="tel_client" value ="<?= $tel_client ?>">
     </div>
     <div class="form-group">
-        <label for="email_client">email</label>
+        <label for="email_client"><?= $this->lang->line('email_client'); ?></label>
         <input type="text" class="form-control" id="email_client" name ="email_client" value ="<?= $email_client ?>">
     </div>
 	<?php if (!isset($hasaccount) || !$hasaccount) { ?>
     <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" name="createaccount" id="createaccount" value = "1">
-    <label class="form-check-label" for="createaccount">Δημιουργία Λογαριασμού</label>
+    <label class="form-check-label" for="createaccount"><?= $this->lang->line('createaccount'); ?></label>
   </div>
   <?php } ?>
    <button type="submit" class="btn btn-primary" disabled><?= $this->lang->line('submit'); ?></button>
@@ -132,11 +132,11 @@ echo form_open("inspection/client_save", $attributes);?>
 							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 							emailAddress: {
-								message: '<?= $this->lang->line('required_field'); ?>'
+								message: '<?= $this->lang->line('invalid_email'); ?>'
 							},
 							regexp: {
 								regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
-								message: '<?= $this->lang->line('required_field'); ?>'
+								message: '<?= $this->lang->line('invalid_email'); ?>'
 							}
 						}
 				   },
