@@ -24,7 +24,7 @@ if (isset($cldata)) {
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
   <div class="col-sm-10 col-lg-6">
-<h1 class="display-4">Στοιχεία Πελάτη</h1>
+<h1 class="display-4"><?= $this->lang->line('client_details'); ?></h1>
 <p class="lead"></p>
 </div>
 </div>
@@ -76,7 +76,7 @@ echo form_open("inspection/client_save", $attributes);?>
     <label class="form-check-label" for="createaccount">Δημιουργία Λογαριασμού</label>
   </div>
   <?php } ?>
-   <button type="submit" class="btn btn-primary" disabled>Καταχώρηση</button>
+   <button type="submit" class="btn btn-primary" disabled><?= $this->lang->line('submit'); ?></button>
 <?php echo form_close();?>
 </div>
 </div>
@@ -94,49 +94,49 @@ echo form_open("inspection/client_save", $attributes);?>
 				name_client: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
 				vatno_client: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
                 address_client: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
                 zip_client: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
                 tel_client: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
                 email_client: {
 						validators: {
 							notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 							emailAddress: {
-								message: 'Η διεύθυνση email δεν είναι έγκυρη'
+								message: '<?= $this->lang->line('required_field'); ?>'
 							},
 							regexp: {
 								regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
-								message: 'Η διεύθυνση email δεν είναι έγκυρη'
+								message: '<?= $this->lang->line('required_field'); ?>'
 							}
 						}
 				   },
