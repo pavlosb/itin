@@ -11,8 +11,8 @@ class LanguageSwitcher extends CI_Controller
        $this->session->set_userdata('site_lang', $language);
       // redirect($_SERVER['HTTP_REFERER']);
       //redirect($this->agent->referrer());
+      echo $this->agent->referrer();
 
       echo $_SERVER['HTTP_REFERER'];
-      echo $this->agent->referrer();
    }
 }
