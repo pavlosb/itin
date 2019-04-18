@@ -59,6 +59,7 @@ $lang['pow_vhcl'] = 'Ιπποδύναμη';
 
 //INSPECTION
 $lang['new_inspection'] = 'Νέα Επιθεώρηση';
+$lang['vehicle_inspection'] = "Όχημα";
 $lang['date_inspection'] = 'Ημερομηνία';
 $lang['number_inspection'] = 'Αριθμός';
 $lang['ordermethod_inspection'] = 'Εντολή';

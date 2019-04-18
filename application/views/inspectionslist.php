@@ -4,10 +4,10 @@
             <table id="inspectlist" class="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th scope="col" class="text-center">Αριθμός</th>
-                        <th scope="col" class="text-center">Ημερομηνία</th>
-                        <th scope="col" class="text-center">Όχημα</th>
-                        <th scope="col" class="text-center">Πελάτης</th>
+                        <th scope="col" class="text-center"><?= $this->lang->line('number_inspection'); ?></th>
+                        <th scope="col" class="text-center"><?= $this->lang->line('date_inspection'); ?></th>
+                        <th scope="col" class="text-center"><?= $this->lang->line('vehicle_inspection'); ?></th>
+                        <th scope="col" class="text-center"><?= $this->lang->line('client_vhcl'); ?></th>
                         <th scope="col" class="text-center"><i class="fal fa-file-alt"></i></th>
                         <th scope="col" class="text-center"><i class="fal fa-tachometer-fast"></i></th>
                         <th scope="col" class="text-center"></th>

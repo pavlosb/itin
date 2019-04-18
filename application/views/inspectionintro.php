@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
 <div class="row justify-content-center">
   <div class="col-sm-8 col-lg-6">
 <h1 class="display-4"><?= $this->lang->line('new_inspection'); ?></h1>
@@ -55,7 +55,7 @@ $attributes = array('id' => 'inspectionIntroForm');
       </div>
   </div>
 </div> 
-   <button type="submit" class="btn btn-primary"><?= $this->lang->line('new_incontinuespection'); ?></button>
+   <button type="submit" class="btn btn-primary"><?= $this->lang->line('continue'); ?></button>
 <?php echo form_close();?>
 <?php } else {?>
 <p class="lead text-center text-warning mt-5"><?= $this->lang->line('no_vehicles_for_inspection'); ?></p>
