@@ -252,7 +252,7 @@ redirect('inspection/inspections_list', 'refresh');
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$data['carbrands'] = $this->_getcarbrands();
 			$data['vhcltypes'] = $this->_getvhcltypes();
-			$data['clients'] = $this->_getclients();
+			$data['clients'] = $this->itindata_model->get_clientsplain();
 			$this->load->view('header', $data);
 			$this->load->view('vehiclesform', $data);
 			$this->load->view('footer', $data);
