@@ -11,9 +11,9 @@
 $attributes = array('id' => 'vehicleForm');
 echo form_open("inspection/vehicle_save", $attributes);?>
 <div class="form-group">
-    <label for="client_vhcl">Πελάτης</label>
+    <label for="client_vhcl"><?= $this->lang->line('client_vhcl'); ?></label>
     <select class="form-control" id="client_vhcl" name="client_vhcl">
-      <option value = "">Επιλέξτε</option>
+      <option value = ""><?= $this->lang->line('choose'); ?></option>
       <?php foreach ($clients as $client) : ?>
       <option value="<?= $client->id_client ?>"><?= $client->name_client ?></option>
 <?php endforeach; ?>
@@ -21,11 +21,11 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   </div>
 <div class="form-row">
   <div class="form-group col">
-    <label for="reg_vhcl">Αριθμός Πινακίδας</label>
+    <label for="reg_vhcl"><?= $this->lang->line('reg_vhcl'); ?></label>
     <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl">
   </div>
   <div class="form-group col">
-    <label for="firstreg_vhcl">1η Κυκλοφορία</label>
+    <label for="firstreg_vhcl"><?= $this->lang->line('firstreg_vhcl'); ?></label>
       <div class="input-group mb-3 date" id="datetimepicker11" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" data-target="#datetimepicker11">
           <div class="input-group-append" data-target="#datetimepicker11" data-toggle="datetimepicker">
@@ -35,16 +35,16 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   </div>
 </div>
   <div class="form-group">
-    <label for="vin_vhcl">Αριθμός Πλαισίου</label>
+    <label for="vin_vhcl"><?= $this->lang->line('vin_vhcl'); ?></label>
     <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl">
   </div>
   <div class="form-row">
   <div class="form-group col">
-    <label for="mlg_vhcl">Χιλιόμετρα</label>
+    <label for="mlg_vhcl"><?= $this->lang->line('mlg_vhcl'); ?></label>
     <input type="number" class="form-control" id="mlg_vhcl" name ="mlg_vhcl">
   </div>
   <div class="form-group col">
-    <label for="nxtdate_vhcl">Επόμενος Ελέγχος</label>
+    <label for="nxtdate_vhcl"><?= $this->lang->line('nxtdate_vhcl'); ?></label>
       <div class="input-group mb-3 date" id="datetimepicker12" data-target-input="nearest">
         <input type="text" class="form-control datetimepicker-input" id="nxtdate_vhcl" name ="nxtdate_vhcl" data-target="#datetimepicker12">
           <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
@@ -54,40 +54,40 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   </div>
 </div>
   <div class="form-group">
-    <label for="type_vhcl">Είδος Οχήματος</label>
+    <label for="type_vhcl"><?= $this->lang->line('type_vhcl'); ?></label>
     <select class="form-control" id="type_vhcl" name="type_vhcl">
-    <option value = "">Επιλέξτε</option>
+    <option value = ""><?= $this->lang->line('choose'); ?></option>
       <?php foreach ($vhcltypes as $vt) : ?>
       <option value="<?= $vt['nametype'] ?>"><?=  $vt['nametype'] ?></option>
 <?php endforeach; ?>
     </select>
     </div>
   <div class="form-group">
-    <label for="make_vhcl">Κατασκευαστής</label>
+    <label for="make_vhcl"><?= $this->lang->line('required_field'); ?></label>
     <select class="form-control" id="make_vhcl" name="make_vhcl">
-    <option value = "">Επιλέξτε</option>
+    <option value = ""><?= $this->lang->line('choose'); ?></option>
       <?php foreach ($carbrands as $cb) : ?>
       <option value="<?= $cb->name_carbrand ?>"><?= $cb->name_carbrand ?></option>
 <?php endforeach; ?>
     </select>
   </div>
   <div class="form-group">
-    <label for="model_vhcl">Μοντέλο</label>
+    <label for="model_vhcl"><?= $this->lang->line('model_vhcl'); ?></label>
     <input type="text" class="form-control" id="model_vhcl" name ="model_vhcl">
   </div>
   <div class="form-row">
   <div class="form-group col">
-    <label for="doors_vhcl">Πόρτες</label>
+    <label for="doors_vhcl"><?= $this->lang->line('doors_vhcl'); ?></label>
     <input type="number" class="form-control" id="doors_vhcl" name ="doors_vhcl" min="2" max="5">
     
   </div>
   <div class="form-group col">
-    <label for="colour_vhcl">Χρώμα</label>
+    <label for="colour_vhcl"><?= $this->lang->line('colour_vhcl'); ?></label>
     <input type="text" class="form-control" id="colour_vhcl" name ="colour_vhcl">
     </div></div>
   <div class="form-row">
   <div class="form-group col">
-    <label for="displ_vhcl">Κυβικά</label>
+    <label for="displ_vhcl"><?= $this->lang->line('displ_vhcl'); ?></label>
     <div class="input-group mb-3">
     <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
     <div class="input-group-append">
@@ -95,14 +95,14 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   </div></div>
   </div>
   <div class="form-group col">
-    <label for="pow_vhcl">Ιπποδύναμη</label>
+    <label for="pow_vhcl"><?= $this->lang->line('pow_vhcl'); ?></label>
     <div class="input-group mb-3">
     <input type="text" class="form-control" id="pow_vhcl" name ="pow_vhcl">
     <div class="input-group-append">
     <span class="input-group-text" id="basic-addon2">kw</span>
   </div></div>
   </div></div>
-   <button type="submit" class="btn btn-primary">Καταχώρηση</button>
+   <button type="submit" class="btn btn-primary"><?= $this->lang->line('submit'); ?></button>
 <?php echo form_close();?>
 </div>
 </div>
@@ -125,90 +125,90 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 				client_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Δεν έχετε επιλέξει Πελάτη'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
         reg_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
 				firstreg_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
         vin_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
             stringLength: {
                             max: 17,
-                            message: 'Ο αριθμός πλαισίου δεν είναι έγκυρος',
+                            message: '<?= $this->lang->line('incorrect_vin'); ?>',
                             min: 17,
-                            message: 'Ο αριθμός πλαισίου δεν είναι έγκυρος'
+                            message: '<?= $this->lang->line('incorrect_vin'); ?>'
                         }
 											}
 				},
         mlg_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
         make_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
         model_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
         doors_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
         colour_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
         displ_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
         pow_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
         type_vhcl: {
 					validators: {
 						notEmpty: {
-							message: 'Απαιτούμενο πεδίο'
+							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},

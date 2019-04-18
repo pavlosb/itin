@@ -15,6 +15,7 @@
 // GLOBAL
 $lang['required_field'] = 'Απαιτούμενο πεδίο';
 $lang['invalid_email'] = 'Η διεύθυνση email δεν είναι έγκυρη';
+$lang['choose'] = 'Επιλέξτε';
 $lang['submit'] = 'Καταχώρηση';
 
 // HEADER - MENU
@@ -38,4 +39,20 @@ $lang['tel_client'] = 'Τηλέφωνο';
 $lang['email_client'] = 'email';
 $lang['createaccount'] = 'Δημιουργία Λογαριασμού';
 
-// CLIENTSLIST
+// VEHICLES
+$lang['incorrect_vin'] = 'Ο αριθμός πλαισίου δεν είναι έγκυρος';
+$lang['vehicle_details'] = 'Στοιχεία Οχήματος';
+$lang['client_vhcl'] = 'Πελάτης';
+$lang['reg_vhcl'] = 'Αριθμός Πινακίδας';
+$lang['firstreg_vhcl'] = '1η Κυκλοφορία';
+$lang['vin_vhcl'] = 'Αριθμός Πλαισίου';
+$lang['mlg_vhcl'] = 'Χιλιόμετρα';
+$lang['nxtdate_vhcl'] = 'Επόμενος Ελέγχος';
+$lang['type_vhcl'] = 'Είδος Οχήματος';
+$lang['make_vhcl'] = 'Κατασκευαστής';
+$lang['model_vhcl'] = 'Μοντέλο';
+$lang['doors_vhcl'] = 'Πόρτες';
+$lang['colour_vhcl'] = 'Χρώμα';
+$lang['displ_vhcl'] = 'Κυβικά';
+$lang['pow_vhcl'] = 'Ιπποδύναμη';
+
