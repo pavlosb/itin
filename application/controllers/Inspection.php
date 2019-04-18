@@ -24,7 +24,7 @@ class Inspection extends CI_Controller {
 			$this->load->model('itindata_model');
 			$this->load->helper('url_helper');
 			$this->load->helper('form');
-			
+			$this->lang->load('itin','greek');
 			
 	}
 	public function index()
