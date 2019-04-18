@@ -6,9 +6,13 @@ class LanguageSwitcher extends CI_Controller
        parent::__construct();
    }
    function switchLang($language = "") {
+    $this->load->library('user_agent');
        $language = ($language != "") ? $language : "english";
        $this->session->set_userdata('site_lang', $language);
       // redirect($_SERVER['HTTP_REFERER']);
-      redirect($this->agent->referrer());
+      //redirect($this->agent->referrer());
+
+      echo $_SERVER['HTTP_REFERER'];
+      echo $this->agent->referrer();
    }
 }
