@@ -25,6 +25,8 @@ class Inspection extends CI_Controller {
 			$this->load->helper('url_helper');
 			$this->load->helper('form');
 			$this->lang->load('itin','greek');
+			$sesdata = $this->session->userdata;
+			$data['user_lang'] = $sesdata['site_lang'];
 			
 	}
 	public function index()

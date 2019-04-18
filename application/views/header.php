@@ -62,7 +62,7 @@
           </div>
       </li>
     </ul>
-    <span class="navbar-text"><a href="<?php echo base_url(); ?>languageswitcher/switchLang/english">EN</a><a href="<?php echo base_url(); ?>languageswitcher/switchLang/greek">EL</a>
+    <span class="navbar-text"><a href="<?php echo base_url(); ?>languageswitcher/switchLang/english" <?php if (isset($site_lang) && $site_lang == "english") {echo "class='text-success'";} ?>>EN</a>  <a href="<?php echo base_url(); ?>languageswitcher/switchLang/greek">EL</a>
       <?php echo $username ?> | <a href="<?php echo base_url(); ?>auth/logout">Αποσύνδεση</a>
     </span>
   </div>
