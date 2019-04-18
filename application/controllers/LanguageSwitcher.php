@@ -13,6 +13,6 @@ class LanguageSwitcher extends CI_Controller
       //redirect($this->agent->referrer());
       echo $this->agent->referrer();
 
-      echo $_SERVER['HTTP_REFERER'];
+     print_r($_SERVER);
    }
 }
