@@ -1,3 +1,10 @@
+<?php if (isset($user_lang) && $user_lang == "greek") {
+  $langprefix ="";
+} else {
+  $langprefix ="en_";
+  }
+  ?>
+
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
       <div class="col-lg-8 p-3 bg-light">
@@ -61,7 +68,7 @@
           foreach ($checkpoints as $cp): 
             if ($cp['mainsect'] != $mcp) 
             {?>
-              <h3><?= $cp['mainsect']; ?></h3>
+              <h3><?= $cp[<?= $langprefix ?>'.mainsect']; ?></h3>
       <?php } 
 if ($cp['name_section'] != $scp) { ?>
 <div class="row">
