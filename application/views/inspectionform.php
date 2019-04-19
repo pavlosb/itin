@@ -68,7 +68,7 @@
           foreach ($checkpoints as $cp): 
             if ($cp['mainsect'] != $mcp) 
             {?>
-              <h3><?= $cp[<?= $langprefix ?>'.mainsect']; ?></h3>
+              <h3><?= $cp['<?= $langprefix ?>.mainsect']; ?></h3>
       <?php } 
 if ($cp['name_section'] != $scp) { ?>
 <div class="row">

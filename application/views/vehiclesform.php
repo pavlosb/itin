@@ -63,7 +63,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
     </select>
     </div>
   <div class="form-group">
-    <label for="make_vhcl"><?= $this->lang->line('required_field'); ?></label>
+    <label for="make_vhcl"><?= $this->lang->line('make_vhcl'); ?></label>
     <select class="form-control" id="make_vhcl" name="make_vhcl">
     <option value = ""><?= $this->lang->line('choose'); ?></option>
       <?php foreach ($carbrands as $cb) : ?>
