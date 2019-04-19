@@ -6,6 +6,8 @@
 
   $mainsect = $langprefix."mainsect";
   $name_section = $langprefix."name_section";
+  $name_cp = $langprefix."name_cp";
+  $helptext_cp = $langprefix."helptext_cp";
   ?>
 
 <div class="container mt-5 mb-5">
@@ -81,7 +83,7 @@ if ($cp['name_section'] != $scp) { ?>
 
 <div class="form-group row py-3">
   <input type=hidden name="chpsect[<?= $cp['id_cp']; ?>]" value ="<?= $cp['mainsectid']; ?>">
-    <label for="inputEmail3" class="col-sm-7 col-form-label "><?= $cp['name_cp']; ?><small class="form-text text-muted"><?= $cp['helptext_cp']; ?></small></label>
+    <label for="inputEmail3" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
     <div class="col-sm-5 text-center text-sm-right">
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
