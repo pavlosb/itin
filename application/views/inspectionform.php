@@ -3,6 +3,8 @@
 } else {
   $langprefix ="en_";
   }
+
+  $mainsect = $langprefix."mainsect";
   ?>
 
 <div class="container mt-5 mb-5">
