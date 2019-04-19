@@ -5,6 +5,7 @@
   }
 
   $mainsect = $langprefix."mainsect";
+  $name_section = $langprefix."name_section";
   ?>
 
 <div class="container mt-5 mb-5">
@@ -74,7 +75,7 @@
       <?php } 
 if ($cp['name_section'] != $scp) { ?>
 <div class="row">
- <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp['name_section']; ?></legend>
+ <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp[$name_section]; ?></legend>
 </div>
 <?php } ?>
 
