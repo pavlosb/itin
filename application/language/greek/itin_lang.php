@@ -88,7 +88,7 @@ $lang['pdf_make_vhcl'] = 'Κατασκευαστής:';
 $lang['pdf_colour_vhcl'] = 'Χρώμα:';
 $lang['pdf_model_vhcl'] = 'Εμπορική ονομασία:';
 $lang['pdf_nxtdate_vhcl'] = 'Επόμενος Τεχ.ελεγχ.:';
-$lang['pdf_vin_vhcl'] = 'Αριθμός Πλαισίου';
+$lang['pdf_vin_vhcl'] = 'Αριθμός Πλαισίου:';
 $lang['pdf_mlg_vhcl'] = 'Ένδειξη χλμ*<br />(καταγεγραμμένη):';
 $lang['pdf_displpow_vhcl'] = 'Ισχύς/Κυβισμός:';
 $lang['pdf_firstreg_vhcl'] = 'Ημ.1ης ταξινόμησης:';
@@ -103,14 +103,3 @@ $lang['pdf_sign_notice'] = 'Αυτό το έγγραφο συντάχθηκε η
 
 
 
-$lang['firstreg_vhcl'] = '1η Κυκλοφορία';
-$lang['vin_vhcl'] = 'Αριθμός Πλαισίου';
-$lang['mlg_vhcl'] = 'Χιλιόμετρα';
-$lang['nxtdate_vhcl'] = 'Επόμενος Ελέγχος';
-$lang['type_vhcl'] = 'Είδος Οχήματος';
-$lang['make_vhcl'] = 'Κατασκευαστής';
-
-$lang['doors_vhcl'] = 'Πόρτες';
-
-$lang['displ_vhcl'] = 'Κυβικά';
-$lang['pow_vhcl'] = 'Ιπποδύναμη';

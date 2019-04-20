@@ -159,6 +159,17 @@ IBAN:GR8701401200120002320007025</td>
 
  <table width="100%" border="0">
   <?php 
+if (isset($user_lang) && $user_lang == "greek") {
+  $langprefix ="";
+} else {
+  $langprefix ="en_";
+  }
+
+  $mainsectprint = $langprefix."mainsectprint";
+  $printtext_section = $langprefix."printtext_section";
+  $printtext_cp = $langprefix."printtext_cp";
+
+
   $x = 0;
   $mcp = 99999;
   $scp = 99999;
@@ -174,13 +185,13 @@ IBAN:GR8701401200120002320007025</td>
             <tr><td colspan="3">
             <table width="100%" style="margin-bottom:15px"><tr>
             <td width="22%"><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
-            <td width="30%" valign="top" style="padding-right:1%; font-size:16px;" class="text-right dgreen">Περιγραφή οχήματος:</td>
-            <td width="20%" valign="top" style="margin-left:1%" class="small">Τύπος οχήματος:<br />Κατασκευαστής:<br />Μοντέλο:<br />Αρ. πλαισίου:<br />Ισχύς/Κυβισμός:</td>
+            <td width="30%" valign="top" style="padding-right:1%; font-size:16px;" class="text-right dgreen"><?= $this->lang->line('pdf_vehicle_description'); ?>:</td>
+            <td width="20%" valign="top" style="margin-left:1%" class="small"><?= $this->lang->line('pdf_type_vhcl'); ?><br /><?= $this->lang->line('pdf_make_vhcl'); ?><br /><?= $this->lang->line('pdf_model_vhcl'); ?>:<br /><?= $this->lang->line('pdf_vin_vhcl'); ?><br /><?= $this->lang->line('pdf_displpow_vhcl'); ?></td>
             <td class="small" valign="top"><?php echo $inspection->type_vhcl; ?><br /><?php echo $inspection->make_vhcl; ?><br /><?php echo $inspection->model_vhcl; ?><br /><?php echo $inspection->vin_vhcl; ?><br /><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></tr>
             </table>
             
             </td></tr>
-              <tr><td class="mainsecthd" colspan="3"><?= $cp['mainsectprint']; ?></td></tr>
+              <tr><td class="mainsecthd" colspan="3"><?= $cp[$mainsectprint]; ?></td></tr>
       <?php 
       
       $y= 1;
@@ -188,12 +199,12 @@ IBAN:GR8701401200120002320007025</td>
 if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
-<tr><td class="secthd dgreen" colspan="3" style="padding:5px 0; page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp['printtext_section']; ?></td></tr>
+<tr><td class="secthd dgreen" colspan="3" style="padding:5px 0; page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp[$printtext_section]; ?></td></tr>
 <?php 
 $y = $y+1;
 } ?>
 <tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <td style="width:60%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp['printtext_cp']; ?></td>
+    <td style="width:60%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
 <td class="text-center" style="width:5%; padding:2px 0 0 0"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
