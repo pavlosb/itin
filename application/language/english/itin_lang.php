@@ -72,6 +72,8 @@ $lang['add_new_vehicle'] = 'Add new vehicle';
 $lang['no_vehicle_chosen'] = 'You must select a vehicle';
 
 //PDF REPORT
+$lang['pdf_report_num'] = 'REPORT NUMBER:';
+$lang['pdf_date'] = 'Date:';
 $lang['pdf_page'] = 'Page.';
 $lang['pdf_dekra_report'] = 'DEKRA Seal for Used Cars Report';
 $lang['pdf_procedure'] = 'PROCEDURE';
