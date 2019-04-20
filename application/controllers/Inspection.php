@@ -150,6 +150,15 @@ class Inspection extends CI_Controller {
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
 			$inspection = $inspections[0];
+			$score1 = $inspection->s1score_inspection;
+			$score2 = $inspection->s2score_inspection;
+			$score3 = $inspection->s3score_inspection;
+			if ( ($score1 >= 92) && ($score2 >= 53) && ($score3 >= 12))
+			{
+					$data['result'] = 1;
+			} else {
+				$data['result'] = 0;
+			}
 			$data['sec1score'] = round(100*($inspection->s1score_inspection / 112), -1);
 			$data['sec2score'] = round(100*($inspection->s2score_inspection / 62), -1);
 			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);

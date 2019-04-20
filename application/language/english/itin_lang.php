@@ -73,7 +73,7 @@ $lang['no_vehicle_chosen'] = 'You must select a vehicle';
 
 //PDF REPORT
 $lang['pdf_page'] = 'Page.';
-$lang['pdf_dekra_report'] = 'DEKRA Έκθεση Σφραγίδας';
+$lang['pdf_dekra_report'] = 'DEKRA Seal for Used Cars Report';
 $lang['pdf_procedure'] = 'PROCEDURE';
 $lang['pdf_inspection'] = 'INSPECTION';
 $lang['pdf_client'] = 'Client:';
