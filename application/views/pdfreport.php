@@ -1,3 +1,12 @@
+<?php
+if (isset($user_lang) && $user_lang == "greek") {
+  $langprefix ="";
+} else {
+  $langprefix ="en_";
+  }
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -159,12 +168,6 @@ IBAN:GR8701401200120002320007025</td>
 
  <table width="100%" border="0">
   <?php 
-if (isset($user_lang) && $user_lang == "greek") {
-  $langprefix ="";
-} else {
-  $langprefix ="en_";
-  }
-
   $mainsectprint = $langprefix."mainsectprint";
   $printtext_section = $langprefix."printtext_section";
   $printtext_cp = $langprefix."printtext_cp";

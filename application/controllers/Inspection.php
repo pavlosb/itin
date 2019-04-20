@@ -147,7 +147,6 @@ class Inspection extends CI_Controller {
 			$data = $this->data;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
 			$inspection = $inspections[0];
