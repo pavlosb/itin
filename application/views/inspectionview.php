@@ -61,7 +61,7 @@
                 <a href="<?= base_url()?>assets/pdfs/<?= $inspection->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('greeklang'); ?>)</a><br />
             <?php } ?>
             <?php if ($inspection->en_filename_inspection != NULL) {?>
-                <a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> <?= $this->lang->line('englishlang'); ?></a>
+                <a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('englishlang'); ?>)</a>
             <?php } ?>
             </div>
             <div class="col-sm-6 text-center text-sm-right p-1 ">
