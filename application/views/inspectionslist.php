@@ -1,4 +1,11 @@
-<div class="container mt-5">
+
+<?php
+if (isset($user_lang) && $user_lang == "greek") {
+  $langprefix ="";
+} else {
+  $langprefix ="en_";
+  }
+?><div class="container mt-5">
     <div class="row justify-content-center">
          <div class="col-12">
             <table id="inspectlist" class="table table-striped table-sm">
@@ -23,6 +30,7 @@
                     <td class="text-center"><?php 
                     if ($insp->filename_inspection != NULL) {?>
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
+                    <a href="<?= base_url()?>assets/pdfs/<?= $insp->el_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
                     <?php } else { ?>
                         <a href="<?= base_url()?>inspection/inspections_pdf/<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></a>
 

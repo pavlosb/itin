@@ -224,6 +224,7 @@ class Inspection extends CI_Controller {
 		
 			$user = $this->ion_auth->user()->row();
 			$data = $this->data;
+			$ulang = $data['user_lang'];
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
@@ -244,6 +245,17 @@ class Inspection extends CI_Controller {
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
+			if ($ulang == "greek") {
+				$langprefix ="";
+				$oldlang = "greek";
+				$newlang = "english";
+				$newprfx = "en_";
+			} else {
+				$langprefix ="en_";
+				$newlang = "greek";
+				$oldlang = "english";
+				$newprfx = "";
+				}
 			//$html = $this->load->view('header', $data, true);
 			//$this->load->view('pdfcert', $data);
 			$html = $this->load->view('pdfcert', $data, true);
@@ -251,12 +263,27 @@ class Inspection extends CI_Controller {
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
-				 $filename = $this->_stringclean($inspection->number_inspection);
+			$filename = $langprefix;
+				 $filename .= $this->_stringclean($inspection->number_inspection);
 				 $filename .= "_cert";
 			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
 			//$mpdf->Output();
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
-	   $this->itindata_model->upd_inspection($inspection->id_inspection, array("certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
+	   $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
+		 $this->session->set_userdata('site_lang', $newlang);
+		 $html = $this->load->view('pdfcert', $data, true);
+		 //$html .= $this->load->view('footer', $data, true);
+		 $mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
+		 $mpdf->setFooter('{PAGENO}');
+		 $mpdf->WriteHTML($html);
+		 $filename = $langprefix;
+				$filename .= $this->_stringclean($inspection->number_inspection);
+				$filename .= "_cert";
+		 $dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
+		 //$mpdf->Output();
+		 $mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
+		$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
+		$this->session->set_userdata('site_lang', $oldlang);
 		redirect ('inspection/inspections_list', 'refresh');
 			   
 		} else {
