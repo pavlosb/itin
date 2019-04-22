@@ -60,7 +60,7 @@
             <?php } ?>
             </div>
             <div class="col-sm-6 text-center text-sm-right p-1 ">
-           <?php if ( ($insp->s1score_inspection >= 92) && ($insp->s2score_inspection >= 53) && ($insp->s1score_inspection >= 12))
+           <?php if ( ($inspection->s1score_inspection >= 92) && ($inspection->s2score_inspection >= 53) && ($inspection->s1score_inspection >= 12))
                     {
                         if ($inspection->certfile_inspection != NULL) { ?>
                            <a href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?></i></a>
