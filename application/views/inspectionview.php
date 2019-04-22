@@ -85,7 +85,9 @@
 
 <script>
 jQuery(document).ready(function($) {
-
+  var btns = document.querySelectorAll('button');
+  var clipboard = new ClipboardJS(btns);
+  
 var score1 = <?= $sec1score ?>;
 var score2 = <?= $sec2score ?>;
 var score3 = <?= $sec3score ?>;
