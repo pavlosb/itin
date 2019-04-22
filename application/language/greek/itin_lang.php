@@ -105,6 +105,6 @@ $lang['pdf_sign_notice'] = 'Αυτό το έγγραφο συντάχθηκε η
 // PDF CERT
 $lang['certificate'] = 'Πιστοποιητικό';
 $lang['dekra_nr'] = 'DEKRA Αριθμός';
-$lang['full_date'] = 'Ημερομηνία:';
+$lang['full_date'] = 'Ημερομηνία';
 $lang['seal_granded_by'] = 'Η σφραγίδα χορηγείται από';
 $lang['sign_notice'] = 'Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και δεν απαιτείται υπογραφή.';
