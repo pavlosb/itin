@@ -71,72 +71,13 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
   </head>
   <body>
   <htmlpageheader name="pgheader" style="display:none"></htmlpageheader>
+<htmlpagefooter name="pgfooter" style="display:none"></htmlpagefooter>
 
-        <htmlpagefooter name="pgfooter" style="display:none"></htmlpagefooter>
-       <table width="80%" align = "center" style="border: 0 0 0 0; margin-top:60px;">
+<table width="80%" align = "center" style="border: 0 0 0 0; margin-top:60px;">
 <tr><td colspan="2" class="certhead"><?= $this->lang->line('certificate'); ?></td></tr>
 <tr><td colspan="2"><?= $this->lang->line('dekra_nr'); ?>: <?php echo $inspection->number_inspection; ?></td></tr>
-       <table>
+<table>
 
-        <table width="100%">
- <tr>
- <td valign="top" style="font-size:12px; line-height:12px;">IMPERIAL AUTOMOTIVE<br />
-DEKRA PARTNER<br />
-ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253 ΝΕΑ ΣΜΥΡΝΗ<br />
-Τ.Κ. 17122<br />
-Τηλέφωνο: 2109426352<br />
-E-Mail: savvas.tzanis@dekra.com<br />
-</td>
-<td align="right">
-<?php if ($result > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg" width="90" height="120">
-<?php } else { ?>
-<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp-fail.jpg" width="90" height="120">
-<?php } ?>
-</td>
- </tr>
- </table>
- <table width="100%" style="padding: 5px 0 3px 0; margin-top:50px; background-color:#007c3f">
-<tr><td style="font-size:20px; line-height:21px; color:#fff;"><?= $this->lang->line('pdf_dekra_report'); ?></td></tr>
-</table>
-
-<table  width="100%" style="border:0px;">
-<tr>
-<td width="60%" colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_procedure'); ?></td>
-<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_inspection'); ?></td>
-</tr>
-<tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_inspection'); ?></td><td colspan="3"><?php echo $inspection->name_client; ?></td>
-</tr>
-<tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_po'); ?></td><td colspan="3"><?php echo date("d-m-Y", strtotime($inspection->orderdate_inspection)); ?>, <?php echo $inspection->ordermethod_inspection; ?></td>
-</tr>
-<tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_check_type'); ?></td><td colspan="3"><?= $this->lang->line('technology_check'); ?>, <?= $this->lang->line('bodywork_check'); ?>, <?= $this->lang->line('system_check'); ?></td>
-</tr>
-<tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
-<tr>
-<td width="60%" colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_vehicle_description'); ?></td>
-<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_reg_vhcl'); ?> <span style = "font-weight:normal; color: #000;"><?php echo $inspection->reg_vhcl; ?></span> </td>
-</tr>
-<tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_type_vhcl'); ?></td><td><?php echo $inspection->type_vhcl; ?></td><td class="frcellfld"><?= $this->lang->line('pdf_doors_vhcl'); ?></td><td><?php echo $inspection->doors_vhcl; ?></td>
-</tr>
-<tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_make_vhcl'); ?></td><td><?php echo $inspection->make_vhcl; ?></td><td class="frcellfld"><?= $this->lang->line('pdf_colour_vhcl'); ?></td><td><?php echo $inspection->colour_vhcl; ?></td>
-</tr>
-<tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_model_vhcl'); ?></td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap><?= $this->lang->line('pdf_nxtdate_vhcl'); ?></td><td><?php echo date("m/Y", strtotime($inspection->nxtdate_vhcl)); ?></td>
-</tr>
-<tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_vin_vhcl'); ?></td><td class="small"><?php echo $inspection->vin_vhcl; ?></td><td class="frcellfld"><?= $this->lang->line('pdf_mlg_vhcl'); ?></td><td><?php echo $inspection->mlg_vhcl; ?></td>
-</tr>
-<tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_displpow_vhcl'); ?></td><td><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td><td class="frcellfld" nowrap><?= $this->lang->line('pdf_firstreg_vhcl'); ?></td><td><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></td>
-</tr>
-<tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
-<tr><td colspan="4" class="smalltxt"><?= $this->lang->line('pdf_mlg_notice'); ?></td></tr>
-</table>
 <table  width="100%" style="border:0px; margin-top:15px;">
 <tr>
 <td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1-<?php echo $sec1score ?>.jpg" width="100" height="102"></td>
@@ -150,6 +91,22 @@ E-Mail: savvas.tzanis@dekra.com<br />
 </tr>
 <tr><td colspan="3" class="smalltxt">&nbsp;</td></tr>
 </table>
+
+        <table width="100%">
+ <tr>
+ <td valign="top" style="font-size:12px; line-height:12px;">
+</td>
+<td align="right">
+<?php if ($result > 0) { ?>
+<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg" width="90" height="120">
+<?php } else { ?>
+<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp-fail.jpg" width="90" height="120">
+<?php } ?>
+</td>
+ </tr>
+ </table>
+ 
+
 
 
 
