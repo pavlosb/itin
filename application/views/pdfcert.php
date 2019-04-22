@@ -75,6 +75,8 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 
 
 <p class="certhead"><?= $this->lang->line('certificate'); ?></p>
+<p><?= $this->lang->line('dekra_nr'); ?>: <?php echo $inspection->number_inspection; ?></p>
+
 
 <table  width="100%" style="border:0px; margin-top:15px;">
 <tr>
