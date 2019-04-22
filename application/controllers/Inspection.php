@@ -190,7 +190,7 @@ class Inspection extends CI_Controller {
 	//	$mpdf->Output();
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
 			$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf", "status_inspection" => 1));
-			$ci->lang->load('itin',$newlang);
+			$this->lang->load('itin',$newlang);
 			 $this->session->set_userdata('site_lang', $newlang);
 			 $sesdata = $this->session->userdata;
 			 $data['user_lang'] = $sesdata['site_lang'];
@@ -207,7 +207,7 @@ class Inspection extends CI_Controller {
 		//	$mpdf->Output();
 	$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
 	 $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf"));
-	 $ci->lang->load('itin',$oldlang);
+	 $this->lang->load('itin', $oldlang);
 		$this->session->set_userdata('site_lang', $oldlang);
 
 	redirect ('inspection/inspections_list', 'refresh');
@@ -273,7 +273,7 @@ class Inspection extends CI_Controller {
 			//$mpdf->Output();
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
 	   $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
-		 $ci->lang->load('itin',$newlang);
+		 $this->lang->load('itin',$newlang);
 		 $this->session->set_userdata('site_lang', $newlang);
 		 $html = $this->load->view('pdfcert', $data, true);
 		 //$html .= $this->load->view('footer', $data, true);
@@ -288,7 +288,7 @@ class Inspection extends CI_Controller {
 		 //$mpdf->Output();
 		 $mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
 		$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
-		$ci->lang->load('itin',$oldlang);
+		$this->lang->load('itin',$oldlang);
 		$this->session->set_userdata('site_lang', $oldlang);
 		redirect ('inspection/inspections_list', 'refresh');
 			   
