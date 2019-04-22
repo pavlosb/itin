@@ -78,10 +78,13 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 
 <p class="certhead"><?= $this->lang->line('certificate'); ?></p>
 <p class="certsubhead"><?= $this->lang->line('dekra_nr'); ?>: <?php echo $inspection->number_inspection; ?></p>
-<table width = "80%">
+<table width = "80%" align="center">
+<tr><td width="30%" class="certfield" style="padding: 10px 0"><?= $this->lang->line('pdf_make_vhcl'); ?></td><td></td></tr>
+<tr><td width="30%" class="certfield"><?= $this->lang->line('pdf_make_vhcl'); ?></td><td></td></tr>
+<tr><td width="30%" class="certfield"><?= $this->lang->line('pdf_make_vhcl'); ?></td><td></td></tr>
 <tr><td width="30%" class="certfield"><?= $this->lang->line('pdf_make_vhcl'); ?></td><td></td></tr>
 </table>
-<table  width="100%" style="border:0px; margin-top:15px;">
+<table  width="100%" style="border:0px; margin-top:25px;">
 <tr>
 <td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1-<?php echo $sec1score ?>.jpg" width="100" height="102"></td>
 <td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge2-<?php echo $sec2score ?>.jpg" width="100" height="102"></td>
