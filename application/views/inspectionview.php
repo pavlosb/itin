@@ -90,7 +90,7 @@ jQuery(document).ready(function($) {
 
   clipboard.on('success', function(e) {
     $(e.trigger).tooltip({title:"Copied!", trigger:'manual'}).tooltip('show').on('shown.bs.tooltip', function () {
-        $(e.trigger).delay(800).tooltip('hide')
+        $(e.trigger).delay(1200).tooltip('hide')
 })
     });
 

@@ -62,7 +62,11 @@ class Inspection extends CI_Controller {
 				$insdata['vehicle_inspection'] = $vehicle->id_vhcl;
 				$insdata['client_inspection'] = $vehicle->client_vhcl;
 				$insdata['inspector_inspection'] = $user->id;
+				if (isset($_POST['number_inspection'])) {
 				$insdata['number_inspection'] = $this->input->post('number_inspection');
+				} else {
+					$insdata['number_inspection'] = $this->createinspnum($vehicle->id_vhcl);
+				}
 				$insdata['date_inspection'] = $this->input->post('date_inspection');
 				$insdata['orderdate_inspection'] = $this->input->post('orderdate_inspection');
 				$insdata['ordermethod_inspection'] = $this->input->post('ordermethod_inspection');
@@ -649,5 +653,18 @@ print_r($result);
 		$string = preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
  
 		return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
+ }
+
+ function createinspnum($vhclid) {
+	$user = $this->ion_auth->user()->row();
+			
+	$part1 = date('Ymd');
+	$part2 = $user->id;
+	$part3 = $this->itindata_model->getlatsinspectionid() + 1;
+	$part4 = $vhclid;
+
+	$inspnum = $part1.$part2.$part3.$part4;
+	//return $inspnum; 
+	echo $inspnum;
  }
 }

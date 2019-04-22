@@ -259,5 +259,22 @@ $maxpos = $row->maxpos;
       $this->db->delete('clients_tbl');
       return;
     } 
+
+    public function getlatsinspectionid() {
+      
+      $this->db->select('id_inspection');
+      $this->db->order_by('id_inspection', 'DESC');
+      $this->db->limit(1);
+      $query = $this->db->get('inspections_tbl');
+      if ($query -> num_rows() > 0) {
+      foreach ($query->result() as $row)
+         {
+               $data = $row->id_inspection;
+         }
+      } else {
+         $data = 0;
+      }
+      return $data;
+   }
 }
 
