@@ -99,3 +99,11 @@ $lang['pdf_bodywork_check'] = 'DEKRA Bodywork Check';
 $lang['pdf_system_check'] = 'DEKRA System Check';
 $lang['pdf_inspector'] = 'Inspector';
 $lang['pdf_sign_notice'] = 'This document was compiled electronically and is valid and without signature';
+
+// PDF CERT
+$lang['certificate'] = 'Certicate';
+$lang['dekra_nr'] = 'DEKRA nr';
+$lang['full_date'] = 'Date';
+$lang['seal_granded_by'] = 'Seal granded by';
+$lang['sign_notice'] = 'This document was created electronically and does not require a signature.';
+$lang['cert_mlg_vhcl'] = 'Odometer:';
