@@ -192,7 +192,8 @@ class Inspection extends CI_Controller {
 			$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf", "status_inspection" => 1));
 			$ci->lang->load('itin',$newlang);
 			 $this->session->set_userdata('site_lang', $newlang);
-			 $data['user_lang'] = $newlang;
+			 $sesdata = $this->session->userdata;
+			 $data['user_lang'] = $sesdata['site_lang'];
 			 $html = $this->load->view('pdfreport', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
