@@ -11,7 +11,6 @@
 * Description:  Greek language file ITIN
 *
 */
-
 // GLOBAL
 $lang['required_field'] = 'Απαιτούμενο πεδίο';
 $lang['invalid_email'] = 'Η διεύθυνση email δεν είναι έγκυρη';
@@ -24,6 +23,14 @@ $lang['system_check'] = 'Έλεγχος Συστήματος';
 
 // HEADER - MENU
 $lang['logout'] = 'Αποσύνδεση';
+$lang['mnu_clients'] = 'Πελάτες';
+$lang['mnu_client_add'] = 'Νέος Πελάτης';
+$lang['mnu_clients_list'] = "Κατάλογος";
+$lang['mnu_vehicles'] = 'Οχήματα';
+$lang['mnu_vehicle_add'] = 'Νέο Όχημα';
+$lang['mnu_inspections'] = 'Επιθεωρήσεις';
+$lang['mnu_inspection_add'] = 'Νέα Επιθεώρηση';
+$lang['mnu_inspections_list'] = "Κατάλογος";
 
 // INSPECTIONS
 $lang['home_new_client'] = 'Νέος<br />Πελάτης';
@@ -51,7 +58,7 @@ $lang['reg_vhcl'] = 'Αριθμός Πινακίδας';
 $lang['firstreg_vhcl'] = '1η Κυκλοφορία';
 $lang['vin_vhcl'] = 'Αριθμός Πλαισίου';
 $lang['mlg_vhcl'] = 'Χιλιόμετρα';
-$lang['nxtdate_vhcl'] = 'Επόμενος Ελέγχος';
+$lang['nxtdate_vhcl'] = 'Επόμενος Τεχν. Ελέγχος';
 $lang['type_vhcl'] = 'Είδος Οχήματος';
 $lang['make_vhcl'] = 'Κατασκευαστής';
 $lang['model_vhcl'] = 'Μοντέλο';
@@ -59,6 +66,7 @@ $lang['doors_vhcl'] = 'Πόρτες';
 $lang['colour_vhcl'] = 'Χρώμα';
 $lang['displ_vhcl'] = 'Κυβικά';
 $lang['pow_vhcl'] = 'Ιπποδύναμη';
+
 
 //INSPECTION
 $lang['new_inspection'] = 'Νέα Επιθεώρηση';
@@ -71,8 +79,9 @@ $lang['no_vehicles_for_inspection'] = 'Δεν υπάρχουν οχήματα π
 $lang['add_new_vehicle'] = 'Νέο Όχημα';
 $lang['no_vehicle_chosen'] = 'Δεν έχετε επιλέξει Όχημα';
 $lang['inspection_report'] = 'Έκθεση Επιθεώρησης';
-$lang['inspection_report'] = 'DEKRA Πιστοποιητικό';
+$lang['inspection_certificate'] = 'DEKRA Πιστοποιητικό';
 $lang['create_certificate'] = 'Δημιουργία Πιστοποιητικού';
+$lang['inspector'] = 'Εμπειρογνώμονας';
 
 
 // PDF REPORT
@@ -103,7 +112,6 @@ $lang['pdf_bodywork_check'] = 'DEKRA Έλεγχος Αμαξώματος';
 $lang['pdf_system_check'] = 'DEKRA Έλεγχος Συστήματος';
 $lang['pdf_inspector'] = 'Ο εμπειρογνώμονας';
 $lang['pdf_sign_notice'] = 'Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή';
-
 
 // PDF CERT
 $lang['certificate'] = 'Πιστοποιητικό';

@@ -23,6 +23,14 @@ $lang['system_check'] = 'System Check';
 
 // HEADER - MENU
 $lang['logout'] = 'Logout';
+$lang['mnu_clients'] = 'Clients';
+$lang['mnu_client_add'] = 'New Client';
+$lang['mnu_clients_list'] = "Clients' List";
+$lang['mnu_vehicles'] = 'Vehicles';
+$lang['mnu_vehicle_add'] = 'New Vehicle';
+$lang['mnu_inspections'] = 'Inspections';
+$lang['mnu_inspection_add'] = 'News Inspection';
+$lang['mnu_inspections_list'] = "Inspection's List";
 
 // INSPECTIONS
 $lang['home_new_client'] = 'New<br />Client';
@@ -71,6 +79,10 @@ $lang['no_vehicles_for_inspection'] = 'No vehicles awaiting inspection.';
 $lang['add_new_vehicle'] = 'Add new vehicle';
 $lang['no_vehicle_chosen'] = 'You must select a vehicle';
 $lang['inspection_report'] = 'Inspection Report';
+$lang['inspection_certificate'] = 'DEKRA Certificate';
+$lang['create_certificate'] = 'Create Certificate';
+$lang['inspector'] = 'Inspector';
+
 
 //PDF REPORT
 $lang['pdf_report_num'] = 'REPORT NUMBER:';

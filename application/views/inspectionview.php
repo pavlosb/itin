@@ -2,32 +2,32 @@
         <div class="row justify-content-center">
             <div class="col-lg-10 p-3 bg-light">
             <div class="row mb-2">
-                <div class="col-md-8"><span class="text-secondary">Αριθμός:</span> <?php echo $inspection->number_inspection; ?> <span class="text-secondary">Εμπειρογνώμονας:</span> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?></div>
-                <div class="col-md-4 text-md-right"><span class="text-secondary">Ημερομηνία:</span> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
+                <div class="col-md-8"><span class="text-secondary"><?= $this->lang->line('number_inspection'); ?>:</span> <?php echo $inspection->number_inspection; ?> <span class="text-secondary"><?= $this->lang->line('inspector'); ?>:</span> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?></div>
+                <div class="col-md-4 text-md-right"><span class="text-secondary"><?= $this->lang->line('date_inspection'); ?>:</span> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
             </div>
             <div class="row">
-                <div class="col-sm-12 text-center text-light bg-green pt-1 pb-1">Στοιχεία Οχήματος</div>
-                <div class="col-5 col-sm-3 text-secondary pt-2 pb-2">Αριθμός Πλαισίου:</div>
+                <div class="col-sm-12 text-center text-light bg-green pt-1 pb-1"><?= $this->lang->line('vehicle_details'); ?></div>
+                <div class="col-5 col-sm-3 text-secondary pt-2 pb-2"><?= $this->lang->line('vin_vhcl'); ?>:</div>
                 <div class="col-7 col-sm-9 pt-2 pb-2"><?php echo $inspection->vin_vhcl; ?></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Πινακίδα:</div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('reg_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->reg_vhcl; ?></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">1η Κυκλοφορία:</div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('firstreg_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Τύπος οχήματος:</div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('type_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->type_vhcl; ?></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Θύρες:</div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('doors_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->doors_vhcl; ?></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Κατασκευαστής:</div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('make_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->make_vhcl; ?></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Χρώμα:</div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('colour_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->colour_vhcl; ?></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Μοντέλο:</div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('model_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->model_vhcl; ?></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Επόμενος Τεχ. Έλεγχος:</div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('nxtdate_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo date("m/Y", strtotime($inspection->nxtdate_vhcl)); ?></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Ισχύς / Κυβισμός:</div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('pdf_displpow_vhcl'); ?></div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2">Χιλιόμετρα:</div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('mlg_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->mlg_vhcl; ?></div>
 
             </div>    
@@ -37,17 +37,17 @@
             <div class="row">
                 <div class="col-sm-4 text-center">
                     <canvas id="cnvgauge5" ></canvas>
-                    <div style="width:100%" class="text-center small">Τεχνικός έλεγχος</div>
+                    <div style="width:100%" class="text-center small"><?= $this->lang->line('technology_check'); ?></div>
                     <div id="score4" style="width:100%" class="text-center mb-2"><?= $sec1score ?><small>pts</small></div>
                 </div>
                 <div class="col-sm-4 text-center">   
                     <canvas id="cnvgauge6"></canvas>
-                    <div style="width:100%" class="text-center small">Έλεγχος Αμαξώματος</div>
+                    <div style="width:100%" class="text-center small"><?= $this->lang->line('bodywork_check'); ?></div>
                     <div id="score5" style="width:100%" class="text-center mb-2"><?= $sec2score ?><small>pts</small></div>
                 </div>
                 <div class="col-sm-4 text-center">    
                     <canvas id="cnvgauge7"></canvas>
-                    <div style="width:100%" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
+                    <div style="width:100%" class="text-center small"><?= $this->lang->line('system_check'); ?></div>
                     <div id="score6" style="width:100%" class="text-center mb-2"><?= $sec3score ?><small>pts</small></div>
                 </div>
             </div>
