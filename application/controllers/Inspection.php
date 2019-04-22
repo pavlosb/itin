@@ -62,7 +62,7 @@ class Inspection extends CI_Controller {
 				$insdata['vehicle_inspection'] = $vehicle->id_vhcl;
 				$insdata['client_inspection'] = $vehicle->client_vhcl;
 				$insdata['inspector_inspection'] = $user->id;
-				if (isset($_POST['number_inspection'])) {
+				if (isset($_POST['number_inspection']) && $_POST['number_inspection'] <> "") {
 				$insdata['number_inspection'] = $this->input->post('number_inspection');
 				} else {
 				$insdata['number_inspection'] = $this->_createinspnum($vehicle->id_vhcl);
