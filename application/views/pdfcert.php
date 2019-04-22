@@ -70,10 +70,10 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
     <title>ITIN</title>
   </head>
   <body>
-  <htmlpageheader name="pgheader" style="display:none"></htmlpageheader>
-<htmlpagefooter name="pgfooter" style="display:none"></htmlpagefooter>
+  <htmlpageheader name="pgheader" style="display:none">&nbsp;</htmlpageheader>
+<htmlpagefooter name="pgfooter" style="display:none">&nbsp;</htmlpagefooter>
 
-<table style="border: 0 0 0 0; margin-top:60px;">
+<table>
 <tr><td colspan="2" class="certhead"><?= $this->lang->line('certificate'); ?></td></tr>
 <tr><td colspan="2"><?= $this->lang->line('dekra_nr'); ?>: <?php echo $inspection->number_inspection; ?></td></tr>
 <table>
