@@ -71,6 +71,8 @@ $lang['no_vehicles_for_inspection'] = 'Δεν υπάρχουν οχήματα π
 $lang['add_new_vehicle'] = 'Νέο Όχημα';
 $lang['no_vehicle_chosen'] = 'Δεν έχετε επιλέξει Όχημα';
 $lang['inspection_report'] = 'Έκθεση Επιθεώρησης';
+$lang['inspection_report'] = 'DEKRA Πιστοποιητικό';
+$lang['create_certificate'] = 'Δημιουργία Πιστοποιητικού';
 
 
 // PDF REPORT

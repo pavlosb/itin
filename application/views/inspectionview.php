@@ -53,12 +53,22 @@
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
-            <div class="col-lg-10 p-3">
+    <div class="row justify-content-center mt-2">
+            <div class="col-sm-6 p-1 text-center text-sm-left">
             <?php if ($inspection->filename_inspection != NULL) {?>
                 <a href="<?= base_url()?>assets/pdfs/<?= $inspection->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?></i></a>
             <?php } ?>
             </div>
+            <div class="col-sm-6 text-center text-sm-right p-1 ">
+           <?php if ( ($insp->s1score_inspection >= 92) && ($insp->s2score_inspection >= 53) && ($insp->s1score_inspection >= 12))
+                    {
+                        if ($inspection->certfile_inspection != NULL) { ?>
+                           <a href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?></i></a>
+                           <?php } else { ?>
+                            <a href="<?= base_url()?>inspection/cert_pdf/<?= $inspection->id_inspection ?>" target="_blank"><i class="fas fa-plus"></i></i> <?= $this->lang->line('create_certificate'); ?></i></a>
+                            <?php }
+                            }?>
+           </div>
     </div>
 </div>
 
