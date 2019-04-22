@@ -53,7 +53,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 
               
             }
-           
+            .certhead {font-size:38px; text-align:center;}
             .dgreen {color:#007c3f;}
             .frcellhdr, .secthd {font-size:14px; font-weight:bold;}
             .frcellfld {color: #606060; font-size:12px;}
@@ -70,16 +70,14 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
     <title>ITIN</title>
   </head>
   <body>
-  <htmlpageheader name="pgheader" style="display:none">
-  <table width="100%" style="border-top: 1px solid #000; border-bottom: 1px solid #000;">
-  <tr><td width="70%"><?= $this->lang->line('pdf_report_num'); ?> <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right"><?= $this->lang->line('pdf_date'); ?> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td>
-  </table>
-        </htmlpageheader>
+  <htmlpageheader name="pgheader" style="display:none"></htmlpageheader>
 
-        <htmlpagefooter name="pgfooter" style="display:none">
-        <div style="width:100%; text-align:right;"><?= $this->lang->line('pdf_page'); ?> {PAGENO}</div>
-        </htmlpagefooter>
-       
+        <htmlpagefooter name="pgfooter" style="display:none"></htmlpagefooter>
+       <table width-"80%" align="center" border="0" style="margin-top:60px;">
+<tr><td colspan="2" class="certhead"><?= $this->lang->line('certificate'); ?></td></tr>
+<tr><td colspan="2"><?= $this->lang->line('dekra_nr'); ?>: <?php echo $inspection->number_inspection; ?></td></tr>
+       <table>
+
         <table width="100%">
  <tr>
  <td valign="top" style="font-size:12px; line-height:12px;">IMPERIAL AUTOMOTIVE<br />
@@ -152,85 +150,11 @@ E-Mail: savvas.tzanis@dekra.com<br />
 </tr>
 <tr><td colspan="3" class="smalltxt">&nbsp;</td></tr>
 </table>
-<table width="100%">
-<tr><td class="top-border smalltxt">&nbsp;</td></tr>
-<tr><td><?= $this->lang->line('pdf_inspector'); ?> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?><br/><br/><span class="smalltxt"><?= $this->lang->line('pdf_sign_notice'); ?></span></td></tr>
-<tr><td class="bot-border smalltxt">&nbsp;</td></tr>
-</table>
-<table width="100%" style="margin-top:160px" class="page_break_after">
-  <tr><td width="18%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
-DEKRA PARTNER 
-</td>
-<td width="52%" valign="top" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
-ΝΕΑ ΣΜΥΡΝΗ TΚ 17122<br/>
-ΤΗΛ. 2109426352<br/>
-E-Mail : savvas.tzanis@dekra.com</td>
-<td width="30%" valign="top" class="smalltxt">Έδρα ΑΘΗΝΑ<br/>
-ΑΦΜ.998469321 ΔOY ΝΕΑΣ ΣΜΥΡΝΗΣ<br/>
-Αρ. μητρώου:8524901000<br/>
-ALPHA BANK SWIFT CRBAGRAA<br/>
-IBAN:GR8701401200120002320007025</td>
-  </table>
-
- <table width="100%" border="0">
-  <?php 
-  $mainsectprint = $langprefix."mainsectprint";
-  $printtext_section = $langprefix."printtext_section";
-  $printtext_cp = $langprefix."printtext_cp";
 
 
-  $x = 0;
-  $mcp = 99999;
-  $scp = 99999;
-          foreach ($checkpoints as $cp): 
-            if ($cp['mainsectid'] != $mcp) 
-            
-            {
-                $x = $x+1; 
-                ?>
-                </table>
+
+ 
                 
-            <table border="0" padding="0" width="100%" class="newsect-<?= $x ?>">
-            <tr><td colspan="3">
-            <table width="100%" style="margin-bottom:15px"><tr>
-            <td width="22%"><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
-            <td width="30%" valign="top" style="padding-right:1%; font-size:16px;" class="text-right dgreen"><?= $this->lang->line('pdf_vehicle_description'); ?>:</td>
-            <td width="20%" valign="top" style="margin-left:1%" class="small"><?= $this->lang->line('pdf_type_vhcl'); ?><br /><?= $this->lang->line('pdf_make_vhcl'); ?><br /><?= $this->lang->line('pdf_model_vhcl'); ?>:<br /><?= $this->lang->line('pdf_vin_vhcl'); ?><br /><?= $this->lang->line('pdf_displpow_vhcl'); ?></td>
-            <td class="small" valign="top"><?php echo $inspection->type_vhcl; ?><br /><?php echo $inspection->make_vhcl; ?><br /><?php echo $inspection->model_vhcl; ?><br /><?php echo $inspection->vin_vhcl; ?><br /><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></tr>
-            </table>
             
-            </td></tr>
-              <tr><td class="mainsecthd" colspan="3"><?= $cp[$mainsectprint]; ?></td></tr>
-      <?php 
-      
-      $y= 1;
-    } 
-if ($cp['id_section'] != $scp) { 
-    
-    $z=1; ?>
-<tr><td class="secthd dgreen" colspan="3" style="padding:5px 0; page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp[$printtext_section]; ?></td></tr>
-<?php 
-$y = $y+1;
-} ?>
-<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <td style="width:60%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
-<td class="text-center" style="width:5%; padding:2px 0 0 0"><?php 
-$pointscore = $inspscore[$cp['id_cp']];
- if ($pointscore > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
- <?php } else if ($pointscore == 0) { ?>
-    <img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
- <?php } else { ?>
-    <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
- <?php } ?>
-</td>
-<td class="text-center">&nbsp;</td>
-</tr>
-<?php
-$mcp = $cp['mainsectid'];
-$scp = $cp['id_section'];
-$z = $z + 1;
- endforeach ?> 
-</table>     
   </body>
   </html>

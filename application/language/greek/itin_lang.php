@@ -72,7 +72,9 @@ $lang['add_new_vehicle'] = 'Νέο Όχημα';
 $lang['no_vehicle_chosen'] = 'Δεν έχετε επιλέξει Όχημα';
 
 
-//PDF REPORT
+// PDF REPORT
+$lang['pdf_report_num'] = 'ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ:';
+$lang['pdf_date'] = 'Ημ/νια:';
 $lang['pdf_page'] = 'Σελ.';
 $lang['pdf_dekra_report'] = 'DEKRA Έκθεση Σφραγίδας';
 $lang['pdf_procedure'] = 'Διαδικασία';
@@ -98,3 +100,8 @@ $lang['pdf_bodywork_check'] = 'DEKRA Έλεγχος Αμαξώματος';
 $lang['pdf_system_check'] = 'DEKRA Έλεγχος Συστήματος';
 $lang['pdf_inspector'] = 'Ο εμπειρογνώμονας';
 $lang['pdf_sign_notice'] = 'Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή';
+
+
+// PDF CERT
+$lang['certicate'] = 'Πιστοποιητικό';
+$lang['dekta_nr'] = 'DEKRA Αριθμός';
