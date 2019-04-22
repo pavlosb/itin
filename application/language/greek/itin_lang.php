@@ -20,6 +20,8 @@ $lang['continue'] = 'Συνέχεια';
 $lang['technology_check'] = 'Τεχνικός Έλεγχος';
 $lang['bodywork_check'] = 'Έλεγχος Αμαξώματος';
 $lang['system_check'] = 'Έλεγχος Συστήματος';
+$lang['greeklang'] = 'Ελληνικά';
+$lang['englishlang'] = 'Αγγλικά';
 
 // HEADER - MENU
 $lang['logout'] = 'Αποσύνδεση';

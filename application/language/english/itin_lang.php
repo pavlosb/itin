@@ -20,6 +20,8 @@ $lang['continue'] = 'Continue';
 $lang['technology_check'] = 'Τechnology Check';
 $lang['bodywork_check'] = 'Bodywork Check';
 $lang['system_check'] = 'System Check';
+$lang['greeklang'] = 'Greek';
+$lang['englishlang'] = 'English';
 
 // HEADER - MENU
 $lang['logout'] = 'Logout';

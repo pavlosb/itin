@@ -156,7 +156,7 @@ class Inspection extends CI_Controller {
 			$score3 = $inspection->s3score_inspection;
 			if ( ($score1 >= 92) && ($score2 >= 53) && ($score3 >= 12))
 			{
-					$data['result'] = 1;
+				$data['result'] = 1;
 			} else {
 				$data['result'] = 0;
 			}
@@ -170,8 +170,12 @@ class Inspection extends CI_Controller {
 			//$this->load->view('testview', $data);
 			if ($ulang == "greek") {
 				$langprefix ="";
+				$oldlang = "greek";
+				$newlang = "english";
 			} else {
 				$langprefix ="en_";
+				$newlang = "greek";
+				$oldlang = "english";
 				}
 			$html = $this->load->view('pdfreport', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
@@ -183,8 +187,19 @@ class Inspection extends CI_Controller {
 			 
 			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
 		//	$mpdf->Output();
+			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
+			 $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf", "status_inspection" => 1));
+
+		 	$this->session->set_userdata('site_lang', $newlang);
+			 $filename = $langprefix;
+			$filename .= $this->_stringclean($inspection->number_inspection);
+			 
+			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
+		//	$mpdf->Output();
 	$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
-	 $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf", "status_inspection" => 1));
+	 $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf"));
+	 $this->session->set_userdata('site_lang', $oldlang);
+
 	redirect ('inspection/inspections_list', 'refresh');
 			   
 		} else {
