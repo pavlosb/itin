@@ -53,8 +53,8 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 
               
             }
-            .certhead {font-size:38px; text-align:center; margin-top:160px;}
-            .certsubhead {font-size:18px; text-align:center; margin-top:20px;}
+            .certhead {font-size:38px; text-align:center; display:block; margin-top:160px;}
+            .certsubhead {font-size:18px; text-align:center; margin-top:10px;}
             .certfield {font-size:18px;}
             .dgreen {color:#007c3f;}
             .frcellhdr, .secthd {font-size:14px; font-weight:bold;}
@@ -98,6 +98,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
  <tr>
  <td valign="top" style="font-size:12px; line-height:12px;">
 <table>
+<tr><td class="certfield"><?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td></tr>
 <tr><td><?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td></tr>
 </table>
 </td>
