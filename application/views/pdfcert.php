@@ -73,10 +73,8 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
   <htmlpageheader name="pgheader" style="display:none">&nbsp;</htmlpageheader>
 <htmlpagefooter name="pgfooter" style="display:none">&nbsp;</htmlpagefooter>
 
-<table>
-<tr><td colspan="2" class="certhead"><?= $this->lang->line('certificate'); ?></td></tr>
-<tr><td colspan="2"><?= $this->lang->line('dekra_nr'); ?>: <?php echo $inspection->number_inspection; ?></td></tr>
-<table>
+
+<p class="certhead"><?= $this->lang->line('certificate'); ?></p>
 
 <table  width="100%" style="border:0px; margin-top:15px;">
 <tr>
