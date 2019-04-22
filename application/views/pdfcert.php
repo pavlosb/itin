@@ -73,7 +73,10 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
   <htmlpageheader name="pgheader" style="display:none"></htmlpageheader>
 <htmlpagefooter name="pgfooter" style="display:none"></htmlpagefooter>
 
-
+<table style="border: 0 0 0 0; margin-top:60px;">
+<tr><td colspan="2" class="certhead"><?= $this->lang->line('certificate'); ?></td></tr>
+<tr><td colspan="2"><?= $this->lang->line('dekra_nr'); ?>: <?php echo $inspection->number_inspection; ?></td></tr>
+<table>
 
 <table  width="100%" style="border:0px; margin-top:15px;">
 <tr>
@@ -95,9 +98,9 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 </td>
 <td align="right">
 <?php if ($result > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg" width="90" height="120">
+<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg">
 <?php } else { ?>
-<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp-fail.jpg" width="90" height="120">
+<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp-fail.jpg">
 <?php } ?>
 </td>
  </tr>
