@@ -30,7 +30,7 @@ if (isset($user_lang) && $user_lang == "greek") {
                     <td class="text-center"><?php 
                     if ($insp->filename_inspection != NULL) {?>
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
-                    <a href="<?= base_url()?>assets/pdfs/<?= $insp->el_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
+                    <a href="<?= base_url()?>assets/pdfs/<?= $insp->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
                     <?php } else { ?>
                         <a href="<?= base_url()?>inspection/inspections_pdf/<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></a>
 
