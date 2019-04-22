@@ -58,17 +58,18 @@
             <div class="row mb-2">
             <div class="col-sm-6 p-1 text-center text-sm-left">
             <?php if ($inspection->filename_inspection != NULL) {?>
-                <a href="<?= base_url()?>assets/pdfs/<?= $inspection->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> <?= $this->lang->line('greeklang'); ?></a><br />
+                <a href="<?= base_url()?>assets/pdfs/<?= $inspection->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('greeklang'); ?>)</a><br />
             <?php } ?>
             <?php if ($inspection->en_filename_inspection != NULL) {?>
-                <a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> <?= $this->lang->line('englishlang'); ?></a><br />
+                <a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> <?= $this->lang->line('englishlang'); ?></a>
             <?php } ?>
             </div>
             <div class="col-sm-6 text-center text-sm-right p-1 ">
            <?php if ( ($inspection->s1score_inspection >= 92) && ($inspection->s2score_inspection >= 53) && ($inspection->s1score_inspection >= 12))
                     {
                         if ($inspection->certfile_inspection != NULL) { ?>
-                           <a href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?></i></a>
+                           <a href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('greeklang'); ?>)</i></a><br />
+                           <a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('englishlang'); ?>)</i></a><br />
                            <?php } else { ?>
                             <a href="<?= base_url()?>inspection/cert_pdf/<?= $inspection->id_inspection ?>" target="_blank"><i class="fas fa-plus"></i></i> <?= $this->lang->line('create_certificate'); ?></i></a>
                             <?php }
