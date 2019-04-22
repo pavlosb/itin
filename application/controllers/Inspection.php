@@ -145,6 +145,7 @@ class Inspection extends CI_Controller {
 		
 			$user = $this->ion_auth->user()->row();
 			$data = $this->data;
+			$ulang = $data['user_lang'];
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
@@ -167,16 +168,23 @@ class Inspection extends CI_Controller {
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			//$html = $this->load->view('header', $data, true);
 			//$this->load->view('testview', $data);
+			if ($ulang == "greek") {
+				$langprefix ="";
+			} else {
+				$langprefix ="en_";
+				}
 			$html = $this->load->view('pdfreport', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
-   			$filename = $this->_stringclean($inspection->number_inspection);
+			$filename = $langprefix;
+			$filename .= $this->_stringclean($inspection->number_inspection);
+			 
 			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
 		//	$mpdf->Output();
 	$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
-	 $this->itindata_model->upd_inspection($inspection->id_inspection, array("filename_inspection" => $filename.".pdf", "status_inspection" => 1));
+	 $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf", "status_inspection" => 1));
 	redirect ('inspection/inspections_list', 'refresh');
 			   
 		} else {
