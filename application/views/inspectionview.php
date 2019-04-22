@@ -54,7 +54,7 @@
         </div>
     </div>
     <div class="row justify-content-center mt-2">
-        <div class="col-lg-10 p-3 bg-light">
+        <div class="col-lg-10 p-3">
             <div class="row mb-2">
             <div class="col-sm-6 p-1 text-center text-sm-left">
             <?php if ($inspection->filename_inspection != NULL) {?>
@@ -87,7 +87,11 @@
 jQuery(document).ready(function($) {
   var btns = document.querySelectorAll('button');
   var clipboard = new ClipboardJS(btns);
-  
+
+  clipboard.on('success', function(e) {
+        console.log(e);
+    });
+
 var score1 = <?= $sec1score ?>;
 var score2 = <?= $sec2score ?>;
 var score3 = <?= $sec3score ?>;
