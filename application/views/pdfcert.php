@@ -55,7 +55,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
             }
             .certhead {font-size:38px; line-height:42px; text-align:center; display:block; margin-top:280px;}
             .certsubhead {font-size:18px; text-align:center;}
-            .certfield {font-size:18px;}
+            .certfield {font-size:16px;}
             .dgreen {color:#007c3f;}
             .frcellhdr, .secthd {font-size:14px; font-weight:bold;}
             .frcellfld {color: #606060; font-size:12px;}
@@ -82,7 +82,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 <tr><td width="40%" class="certfield" style="padding: 15px 0"><?= $this->lang->line('pdf_make_vhcl'); ?></td><td class="certfield" style="padding: 15px 0"><?php echo $inspection->make_vhcl; ?></td></tr>
 <tr><td width="40%" class="certfield" style="padding: 15px 0"><?= $this->lang->line('pdf_model_vhcl'); ?></td><td class="certfield" style="padding: 15px 0"><?php echo $inspection->model_vhcl; ?></td></tr>
 <tr><td width="40%" class="certfield" style="padding: 15px 0"><?= $this->lang->line('pdf_vin_vhcl'); ?></td><td class="certfield" style="padding: 15px 0"><?php echo $inspection->vin_vhcl; ?></td></tr>
-<tr><td width="40%" class="certfield" style="padding: 15px 0"><?= $this->lang->line('pdf_mlg_vhcl'); ?></td><td class="certfield" style="padding: 15px 0"><?php echo $inspection->mlg_vhcl; ?></td></tr>
+<tr><td width="40%" class="certfield" style="padding: 15px 0"><?= $this->lang->line('cert_mlg_vhcl'); ?></td><td class="certfield" style="padding: 15px 0"><?php echo $inspection->mlg_vhcl; ?></td></tr>
 </table>
 <table  width="100%" style="border:0px; margin-top:25px;">
 <tr>
@@ -102,7 +102,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
  <tr>
  <td valign="top" style="font-size:12px; line-height:12px;">
 <table width="100%">
-<tr><td class="certfield"><?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td></tr>
+<tr><td class="certfield" style ="border-bottom: 1px dashed #000;"><?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td></tr>
 <tr><td><?= $this->lang->line('full_date'); ?></td></tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td>&nbsp;</td></tr>
