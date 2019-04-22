@@ -68,8 +68,8 @@
            <?php if ( ($inspection->s1score_inspection >= 92) && ($inspection->s2score_inspection >= 53) && ($inspection->s1score_inspection >= 12))
                     {
                         if ($inspection->certfile_inspection != NULL) { ?>
-                           <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('greeklang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>"><i class="far fa-link"></i></button></p>
-                           <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('englishlang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>"><i class="far fa-link"></i></button></p> 
+                           <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('greeklang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn1" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>"><i class="far fa-link"></i></button></p>
+                           <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('englishlang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn2" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>"><i class="far fa-link"></i></button></p> 
                            <?php } else { ?>
                             <a href="<?= base_url()?>inspection/cert_pdf/<?= $inspection->id_inspection ?>" target="_blank"><i class="fas fa-plus"></i></i> <?= $this->lang->line('create_certificate'); ?></i></a>
                             <?php }
@@ -89,7 +89,7 @@ jQuery(document).ready(function($) {
   var clipboard = new ClipboardJS(btns);
 
   clipboard.on('success', function(e) {
-        console.log(e);
+    $(e.trigger).tooltip({title:"Copied!"})
     });
 
 var score1 = <?= $sec1score ?>;
