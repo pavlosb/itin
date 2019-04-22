@@ -20,7 +20,7 @@ if (isset($user_lang) && $user_lang == "greek") {
    <style>
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 @page {
-                margin: 120px 40px 120px 80px;
+                margin: 280px 40px 120px 80px;
                 margin-header: 60px; /* <any of the usual CSS values for margins> */
 	              margin-footer: 60px; /* <any of the usual CSS values for margins> */
                 header: html_pgheader;
@@ -94,7 +94,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 <tr><td colspan="3" class="smalltxt">&nbsp;</td></tr>
 </table>
 
-        <table width="100%">
+        <table width="100%" style="border:0px; margin-top:40px;">
  <tr>
  <td valign="top" style="font-size:12px; line-height:12px;">
 <table width="100%">
@@ -103,9 +103,9 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 <tr><td>&nbsp;</td></tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td>&nbsp;</td></tr>
-<tr><td><?= $this->lang->line('full_date'); ?></td></tr>
+<tr><td><?= $this->lang->line('seal_granded_by'); ?></td></tr>
 <tr><td>&nbsp;</td></tr>
-<tr><td><?= $this->lang->line('full_date'); ?></td></tr>
+<tr><td><?= $this->lang->line('sign_notice'); ?></td></tr>
 </table>
 </td>
 <td align="right">
