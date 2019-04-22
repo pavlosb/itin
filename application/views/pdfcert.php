@@ -53,7 +53,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 
               
             }
-            .certhead {font-size:38px; text-align:center;}
+            .certhead {font-size:38px; text-align:center; margin-top:80px;}
             .dgreen {color:#007c3f;}
             .frcellhdr, .secthd {font-size:14px; font-weight:bold;}
             .frcellfld {color: #606060; font-size:12px;}
