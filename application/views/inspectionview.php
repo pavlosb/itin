@@ -1,6 +1,6 @@
 <div class="container mt-5 mb-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-10 p-3 bg-light">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 p-3 bg-light">
             <div class="row mb-2">
                 <div class="col-md-8"><span class="text-secondary">Αριθμός:</span> <?php echo $inspection->number_inspection; ?> <span class="text-secondary">Εμπειρογνώμονας:</span> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?></div>
                 <div class="col-md-4 text-md-right"><span class="text-secondary">Ημερομηνία:</span> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
@@ -53,6 +53,12 @@
             </div>
         </div>
     </div>
+    <div class="row justify-content-center">
+            <div class="col-lg-10 p-3">
+            <?php if ($inspection->filename_inspection != NULL) {?>
+                <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>" target="_blank"><?= $this->lang->line('inspection_report'); ?></i></a>
+            <?php } ?>
+            </div>
 </div>
 
 

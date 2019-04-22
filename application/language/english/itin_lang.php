@@ -70,6 +70,7 @@ $lang['orderdate_inspection'] = 'Order Date';
 $lang['no_vehicles_for_inspection'] = 'No vehicles awaiting inspection.';
 $lang['add_new_vehicle'] = 'Add new vehicle';
 $lang['no_vehicle_chosen'] = 'You must select a vehicle';
+$lang['inspection_report'] = 'Inspection Report';
 
 //PDF REPORT
 $lang['pdf_report_num'] = 'REPORT NUMBER:';

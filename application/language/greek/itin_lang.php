@@ -70,6 +70,7 @@ $lang['orderdate_inspection'] = 'Ημερομηνία Εντολής';
 $lang['no_vehicles_for_inspection'] = 'Δεν υπάρχουν οχήματα προς επιθεώρηση.';
 $lang['add_new_vehicle'] = 'Νέο Όχημα';
 $lang['no_vehicle_chosen'] = 'Δεν έχετε επιλέξει Όχημα';
+$lang['inspection_report'] = 'Έκθεση Επιθεώρησης';
 
 
 // PDF REPORT
