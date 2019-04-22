@@ -31,7 +31,7 @@ $lang['mnu_clients_list'] = "Clients' List";
 $lang['mnu_vehicles'] = 'Vehicles';
 $lang['mnu_vehicle_add'] = 'New Vehicle';
 $lang['mnu_inspections'] = 'Inspections';
-$lang['mnu_inspection_add'] = 'News Inspection';
+$lang['mnu_inspection_add'] = 'New Inspection';
 $lang['mnu_inspections_list'] = "Inspection's List";
 
 // INSPECTIONS
