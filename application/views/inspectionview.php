@@ -54,6 +54,8 @@
         </div>
     </div>
     <div class="row justify-content-center mt-2">
+        <div class="col-lg-10 p-3 bg-light">
+            <div class="row mb-2">
             <div class="col-sm-6 p-1 text-center text-sm-left">
             <?php if ($inspection->filename_inspection != NULL) {?>
                 <a href="<?= base_url()?>assets/pdfs/<?= $inspection->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?></i></a>
@@ -69,6 +71,8 @@
                             <?php }
                             }?>
            </div>
+                        </div>
+                        </div>
     </div>
 </div>
 
