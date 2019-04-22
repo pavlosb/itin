@@ -1,7 +1,7 @@
 <div class="container mt-5">
 <div class="row justify-content-center">
   <div class="col-12">
-<h1 class="display-4">Πελάτες</h1>
+<h1 class="display-4"><?= $this->lang->line('clients'); ?></h1>
 <p class="lead"></p>
 </div>
 </div>
@@ -10,10 +10,10 @@
             <table id="clientslist" class="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th scope="col" class="text-center">Επωνυμία</th>
-                        <th scope="col" class="text-center">ΑΦΜ</th>
-                        <th scope="col" class="text-center">Τηλέφωνο</th>
-                        <th scope="col" class="text-center">e-mail</th>
+                        <th scope="col" class="text-center"><?= $this->lang->line('name_client'); ?></th>
+                        <th scope="col" class="text-center"><?= $this->lang->line('vatno_client'); ?></th>
+                        <th scope="col" class="text-center"><?= $this->lang->line('tel_client'); ?></th>
+                        <th scope="col" class="text-center"><?= $this->lang->line('email_client'); ?></th>
                         <th scope="col" class="text-center"></th>
                     </tr>
                 </thead>
@@ -49,13 +49,17 @@
 
 
 $(document).ready(function() {
+
+var ulang = '<?= ucfirst($user_lang) ?>';
+
     $('#clientslist').DataTable({
             "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Greek.json"
+                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
             "columnDefs": [
                 {"searchable": false, "orderable": false, "targets": 4 }
-        ]
+        ],
+        "lengthMenu": [ 25, 50, 100 ]
         });
 
 

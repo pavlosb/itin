@@ -64,6 +64,7 @@ class Auth extends CI_Controller
 	 */
 	public function login()
 	{
+		$this->session->set_userdata('site_lang', 'greek');
 		$this->data['title'] = $this->lang->line('login_heading');
 
 		// validate form input

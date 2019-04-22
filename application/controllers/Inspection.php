@@ -24,7 +24,11 @@ class Inspection extends CI_Controller {
 			$this->load->model('itindata_model');
 			$this->load->helper('url_helper');
 			$this->load->helper('form');
-			
+			$this->lang->load('itin','greek');
+			$sesdata = $this->session->userdata;
+			$this->data = array(
+			'user_lang' => $sesdata['site_lang']
+			);
 			
 	}
 	public function index()
@@ -32,6 +36,7 @@ class Inspection extends CI_Controller {
 		if ($this->ion_auth->logged_in())
 		{
 			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$this->load->view('header', $data);
@@ -48,6 +53,7 @@ class Inspection extends CI_Controller {
 		if ($this->ion_auth->logged_in())
 		{
 			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			if (isset($_POST['vehicle_inspection']) && $_POST['vehicle_inspection'] > 0)
@@ -91,6 +97,7 @@ class Inspection extends CI_Controller {
 	{
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -113,6 +120,7 @@ class Inspection extends CI_Controller {
 	
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 		$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -136,12 +144,21 @@ class Inspection extends CI_Controller {
 		{
 		
 			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
 			$inspection = $inspections[0];
+			$score1 = $inspection->s1score_inspection;
+			$score2 = $inspection->s2score_inspection;
+			$score3 = $inspection->s3score_inspection;
+			if ( ($score1 >= 92) && ($score2 >= 53) && ($score3 >= 12))
+			{
+					$data['result'] = 1;
+			} else {
+				$data['result'] = 0;
+			}
 			$data['sec1score'] = round(100*($inspection->s1score_inspection / 112), -1);
 			$data['sec2score'] = round(100*($inspection->s2score_inspection / 62), -1);
 			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
@@ -157,10 +174,60 @@ class Inspection extends CI_Controller {
 			$mpdf->WriteHTML($html);
    			$filename = $this->_stringclean($inspection->number_inspection);
 			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
+		//	$mpdf->Output();
+	$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
+	 $this->itindata_model->upd_inspection($inspection->id_inspection, array("filename_inspection" => $filename.".pdf", "status_inspection" => 1));
+	redirect ('inspection/inspections_list', 'refresh');
+			   
+		} else {
+			redirect('auth/login');
+		}
+		
+
+	}
+
+	public function cert_pdf($id) 
+	{
+	
+		if ($this->ion_auth->logged_in())
+		{
+		
+			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
+			$data['inspection'] = $inspections[0];
+			$inspection = $inspections[0];
+			$score1 = $inspection->s1score_inspection;
+			$score2 = $inspection->s2score_inspection;
+			$score3 = $inspection->s3score_inspection;
+			if ( ($score1 >= 92) && ($score2 >= 53) && ($score3 >= 12))
+			{
+					$data['result'] = 1;
+			} else {
+				$data['result'] = 0;
+			}
+			$data['sec1score'] = round(100*($inspection->s1score_inspection / 112), -1);
+			$data['sec2score'] = round(100*($inspection->s2score_inspection / 62), -1);
+			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
+			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
+			$data['inspectionid'] = $id;
+			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
+			//$html = $this->load->view('header', $data, true);
+			//$this->load->view('pdfcert', $data);
+			$html = $this->load->view('pdfcert', $data, true);
+			//$html .= $this->load->view('footer', $data, true);
+			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
+			$mpdf->setFooter('{PAGENO}');
+			$mpdf->WriteHTML($html);
+				 $filename = $this->_stringclean($inspection->number_inspection);
+				 $filename .= "_cert";
+			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
 			//$mpdf->Output();
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
-	    	$this->itindata_model->upd_inspection($inspection->id_inspection, array("filename_inspection" => $filename.".pdf", "status_inspection" => 1));
-			redirect ('inspection/inspections_list', 'refresh');
+	   $this->itindata_model->upd_inspection($inspection->id_inspection, array("certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
+		redirect ('inspection/inspections_list', 'refresh');
 			   
 		} else {
 			redirect('auth/login');
@@ -174,7 +241,7 @@ class Inspection extends CI_Controller {
 	
 		if ($this->ion_auth->logged_in())
 		{
-		
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -205,6 +272,7 @@ class Inspection extends CI_Controller {
 	{
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -222,6 +290,7 @@ class Inspection extends CI_Controller {
 	{
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -247,6 +316,7 @@ redirect('inspection/inspections_list', 'refresh');
 	public function vehicle_add() {
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -267,6 +337,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -294,6 +365,7 @@ redirect('inspection/inspections_list', 'refresh');
 	public function client_add() {
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -311,6 +383,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -400,6 +473,7 @@ redirect('inspection/inspections_list', 'refresh');
     public function clients_list() {
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
@@ -419,6 +493,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 		if ($this->ion_auth->logged_in())
 		{
+			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;

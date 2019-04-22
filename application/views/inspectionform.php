@@ -1,3 +1,15 @@
+<?php if (isset($user_lang) && $user_lang == "greek") {
+  $langprefix ="";
+} else {
+  $langprefix ="en_";
+  }
+
+  $mainsect = $langprefix."mainsect";
+  $name_section = $langprefix."name_section";
+  $name_cp = $langprefix."name_cp";
+  $helptext_cp = $langprefix."helptext_cp";
+  ?>
+
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
       <div class="col-lg-8 p-3 bg-light">
@@ -10,17 +22,17 @@
       
 <div class="col-sm-4">
 <canvas id="cnvgauge5" width = "240px" height="120px"></canvas>
-<div style="width:100%" class="text-center small">Τεχνικός έλεγχος</div>
+<div style="width:100%" class="text-center small"><?= $this->lang->line('technology_check'); ?></div>
       <div id="score4" style="width:100%" class="text-center mb-2">0</div>
 </div>
 <div class="col-sm-4">   
       <canvas id="cnvgauge6"  width = "240px" height="120px"></canvas>
-      <div style="width:100%" class="text-center small">Έλεγχος Αμαξώματος</div>
+      <div style="width:100%" class="text-center small"><?= $this->lang->line('bodywork_check'); ?></div>
       <div id="score5" style="width:100%" class="text-center mb-2">0</div>
       </div>
 <div class="col-sm-4">    
       <canvas id="cnvgauge7"  width = "240px" height="120px"></canvas>
-      <div style="width:100%" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
+      <div style="width:100%" class="text-center small"><?= $this->lang->line('system_check'); ?></div>
       <div id="score6" style="width:100%" class="text-center mb-2">0</div>
       </div>
 </div>
@@ -31,15 +43,15 @@
 <div id="gauge-wrapper" style="position: fixed; top:150px; left:0px;" class="d-md-none d-lg-block">
 
 <canvas id="cnvgauge1" width = "300px" height="160px"></canvas>
-<div style="width:300px" class="text-center small">Τεχνικός έλεγχος</div>
+<div style="width:300px" class="text-center small"><?= $this->lang->line('technology_check'); ?></div>
       <div id="score1" style="width:300px" class="text-center mb-2">0</div>
       
       <canvas id="cnvgauge2" width = "300px" height="160px"></canvas>
-      <div style="width:300px" class="text-center small">Έλεγχος Αμαξώματος</div>
+      <div style="width:300px" class="text-center small"><?= $this->lang->line('bodywork_check'); ?></div>
       <div id="score2" style="width:300px" class="text-center mb-2">0</div>
       
       <canvas id="cnvgauge3" width = "300px" height="160px"></canvas>
-      <div style="width:300px" class="text-center small">Έλεγχος συστήματος μνήμης σφαλμάτων</div>
+      <div style="width:300px" class="text-center small"><?= $this->lang->line('system_check'); ?></div>
       <div id="score3" style="width:300px" class="text-center mb-2">0</div>
 </div>
 
@@ -61,17 +73,17 @@
           foreach ($checkpoints as $cp): 
             if ($cp['mainsect'] != $mcp) 
             {?>
-              <h3><?= $cp['mainsect']; ?></h3>
+              <h3><?= $cp[$mainsect]; ?></h3>
       <?php } 
 if ($cp['name_section'] != $scp) { ?>
 <div class="row">
- <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp['name_section']; ?></legend>
+ <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp[$name_section]; ?></legend>
 </div>
 <?php } ?>
 
 <div class="form-group row py-3">
   <input type=hidden name="chpsect[<?= $cp['id_cp']; ?>]" value ="<?= $cp['mainsectid']; ?>">
-    <label for="inputEmail3" class="col-sm-7 col-form-label "><?= $cp['name_cp']; ?><small class="form-text text-muted"><?= $cp['helptext_cp']; ?></small></label>
+    <label for="inputEmail3" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
     <div class="col-sm-5 text-center text-sm-right">
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
@@ -151,8 +163,8 @@ var opts1 = {
     strokeWidth: 0.035, // The thickness
     color: '#000000' // Fill color
   },
-  limitMax: false,     // If false, max value increases automatically if value > maxValue
-  limitMin: false,     // If true, the min value of the gauge will be fixed
+  limitMax: true,     // If false, max value increases automatically if value > maxValue
+  limitMin: true,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
@@ -173,8 +185,8 @@ var opts2 = {
     strokeWidth: 0.035, // The thickness
     color: '#000000' // Fill color
   },
-  limitMax: false,     // If false, max value increases automatically if value > maxValue
-  limitMin: false,     // If true, the min value of the gauge will be fixed
+  limitMax: true,     // If false, max value increases automatically if value > maxValue
+  limitMin: true,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
@@ -195,8 +207,8 @@ var opts3 = {
     strokeWidth: 0.035, // The thickness
     color: '#000000' // Fill color
   },
-  limitMax: false,     // If false, max value increases automatically if value > maxValue
-  limitMin: false,     // If true, the min value of the gauge will be fixed
+  limitMax: true,     // If false, max value increases automatically if value > maxValue
+  limitMin: true,     // If true, the min value of the gauge will be fixed
   colorStart: '#6FADCF',   // Colors
   colorStop: '#8FC0DA',    // just experiment with them
   strokeColor: '#E0E0E0',  // to see which ones work best for you
