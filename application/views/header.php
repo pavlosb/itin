@@ -66,7 +66,7 @@
          <i class="fas fa-user"></i>
         </a>
         <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/client_add"><?php echo $username ?></a>
+          <a class="dropdown-item" href="#"><?php echo $username ?></a>
           <a class="dropdown-item" href="<?php echo base_url(); ?>auth/logout"><?= $this->lang->line('logout'); ?></a>
           </div>
       </li>
