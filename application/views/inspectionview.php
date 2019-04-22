@@ -89,7 +89,7 @@ jQuery(document).ready(function($) {
   var clipboard = new ClipboardJS(btns);
 
   clipboard.on('success', function(e) {
-    $(e.trigger).tooltip({title:"Copied!", trigger:'manual'}).tooltip('show').delay(800).tooltip('dispose');
+    $(e.trigger).tooltip({title:"Copied!", trigger:'manual'}).tooltip('show').delay(800).tooltip('hide');
     });
 
 var score1 = <?= $sec1score ?>;
