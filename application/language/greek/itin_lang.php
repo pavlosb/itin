@@ -84,6 +84,7 @@ $lang['inspection_report'] = 'Έκθεση Επιθεώρησης';
 $lang['inspection_certificate'] = 'DEKRA Πιστοποιητικό';
 $lang['create_certificate'] = 'Δημιουργία Πιστοποιητικού';
 $lang['inspector'] = 'Εμπειρογνώμονας';
+$lang['number_inspection'] = 'Αφήστε κενό για αυτόματη αρίθμηση';
 
 
 // PDF REPORT

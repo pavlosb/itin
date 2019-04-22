@@ -1,6 +1,6 @@
 <div class="container mt-5">
 <div class="row justify-content-center">
-  <div class="col-sm-8 col-lg-6">
+  <div class="col-sm-10 col-lg-8">
 <h1 class="display-4"><?= $this->lang->line('new_inspection'); ?></h1>
 <p class="lead"></p>
 </div>
@@ -29,6 +29,7 @@ $attributes = array('id' => 'inspectionIntroForm');
     <div class="form-group col">
         <label for="number_inspection"><?= $this->lang->line('number_inspection'); ?></label>
         <input type="text" class="form-control" id="number_inspection" name ="number_inspection">
+        <small class="form-text text-primary"><?= $this->lang->line('leave_empty'); ?></small>
     </div>
     <div class="form-group col">
     <label for="date_inspection"><?= $this->lang->line('date_inspection'); ?></label>
@@ -81,13 +82,6 @@ $attributes = array('id' => 'inspectionIntroForm');
 					validators: {
 						notEmpty: {
 							message: '<?= $this->lang->line('no_vehicle_chosen'); ?>'
-						},
-											}
-				},
-        number_inspection: {
-					validators: {
-						notEmpty: {
-							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
 				},
