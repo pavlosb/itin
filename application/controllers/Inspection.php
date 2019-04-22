@@ -172,10 +172,12 @@ class Inspection extends CI_Controller {
 				$langprefix ="";
 				$oldlang = "greek";
 				$newlang = "english";
+				$newprfx = "en_";
 			} else {
 				$langprefix ="en_";
 				$newlang = "greek";
 				$oldlang = "english";
+				$newprfx = "";
 				}
 			$html = $this->load->view('pdfreport', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
@@ -184,14 +186,13 @@ class Inspection extends CI_Controller {
 			$mpdf->WriteHTML($html);
 			$filename = $langprefix;
 			$filename .= $this->_stringclean($inspection->number_inspection);
-			 
 			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
-		//	$mpdf->Output();
+	//	$mpdf->Output();
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
-			 $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf", "status_inspection" => 1));
-
-		 	$this->session->set_userdata('site_lang', $newlang);
-			 $filename = $langprefix;
+			$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf", "status_inspection" => 1));
+			 $this->session->set_userdata('site_lang', $newlang);
+			 $langprefix = $newprfx;
+		 $filename = $langprefix;
 			$filename .= $this->_stringclean($inspection->number_inspection);
 			 
 			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
