@@ -84,7 +84,7 @@ $lang['inspection_report'] = 'Inspection Report';
 $lang['inspection_certificate'] = 'DEKRA Certificate';
 $lang['create_certificate'] = 'Create Certificate';
 $lang['inspector'] = 'Inspector';
-$lang['number_inspection'] = 'Leave empty for auto-numbering';
+$lang['leave_empty'] = 'Leave empty for auto-numbering';
 
 
 //PDF REPORT
