@@ -56,7 +56,7 @@
     <div class="row justify-content-center">
             <div class="col-lg-10 p-3">
             <?php if ($inspection->filename_inspection != NULL) {?>
-                <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>" target="_blank"><?= $this->lang->line('inspection_report'); ?></i></a>
+                <a href="<?= base_url()?>assets/pdfs/<?= $inspection->filename_inspection ?>" target="_blank"><?= $this->lang->line('inspection_report'); ?></i></a>
             <?php } ?>
             </div>
 </div>
