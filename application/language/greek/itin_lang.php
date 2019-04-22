@@ -103,5 +103,5 @@ $lang['pdf_sign_notice'] = 'Αυτό το έγγραφο συντάχθηκε η
 
 
 // PDF CERT
-$lang['certicate'] = 'Πιστοποιητικό';
-$lang['dekta_nr'] = 'DEKRA Αριθμός';
+$lang['certificate'] = 'Πιστοποιητικό';
+$lang['dekra_nr'] = 'DEKRA Αριθμός';
