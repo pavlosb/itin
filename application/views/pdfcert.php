@@ -54,7 +54,8 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
               
             }
             .certhead {font-size:38px; text-align:center; margin-top:160px;}
-            .certsubhead {font-size:24px; text-align:center; margin-top:20px;}
+            .certsubhead {font-size:18px; text-align:center; margin-top:20px;}
+            .certfield {font-size:18px;}
             .dgreen {color:#007c3f;}
             .frcellhdr, .secthd {font-size:14px; font-weight:bold;}
             .frcellfld {color: #606060; font-size:12px;}
@@ -96,6 +97,9 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
         <table width="100%">
  <tr>
  <td valign="top" style="font-size:12px; line-height:12px;">
+<table>
+<tr><td><?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td></tr>
+</table>
 </td>
 <td align="right">
 <?php if ($result > 0) { ?>
