@@ -290,7 +290,7 @@ class Inspection extends CI_Controller {
 		$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
 		$this->lang->load('itin',$oldlang);
 		$this->session->set_userdata('site_lang', $oldlang);
-		redirect ('inspection/inspections_list', 'refresh');
+		redirect ('inspection/inspection_view/'.$id, 'refresh');
 			   
 		} else {
 			redirect('auth/login');
