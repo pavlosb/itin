@@ -53,8 +53,8 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 
               
             }
-            .certhead {font-size:38px; text-align:center; display:block; margin-top:280px;}
-            .certsubhead {font-size:18px; text-align:center; margin-top:10px;}
+            .certhead {font-size:38px; line-height:42px; text-align:center; display:block; margin-top:280px;}
+            .certsubhead {font-size:18px; text-align:center;}
             .certfield {font-size:18px;}
             .dgreen {color:#007c3f;}
             .frcellhdr, .secthd {font-size:14px; font-weight:bold;}
@@ -78,8 +78,9 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 
 <p class="certhead"><?= $this->lang->line('certificate'); ?></p>
 <p class="certsubhead"><?= $this->lang->line('dekra_nr'); ?>: <?php echo $inspection->number_inspection; ?></p>
-
-
+<table width = "80%">
+<tr><td width="30%" class="certfield"><?= $this->lang->line('pdf_make_vhcl'); ?></td><td></td></tr>
+</table>
 <table  width="100%" style="border:0px; margin-top:15px;">
 <tr>
 <td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1-<?php echo $sec1score ?>.jpg" width="100" height="102"></td>
