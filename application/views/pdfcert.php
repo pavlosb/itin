@@ -106,12 +106,13 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 <tr><td><?= $this->lang->line('full_date'); ?></td></tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td></tr>
+<tr><td style ="border-bottom: 1px dashed #000;">&nbsp;</td></tr>
 <tr><td><?= $this->lang->line('seal_granded_by'); ?></td></tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td><?= $this->lang->line('sign_notice'); ?></td></tr>
 </table>
 </td>
+<td width="2%">&nbsp;</td>
 <td align="right">
 <?php if ($result > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg">
