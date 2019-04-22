@@ -65,7 +65,7 @@ class Inspection extends CI_Controller {
 				if (isset($_POST['number_inspection'])) {
 				$insdata['number_inspection'] = $this->input->post('number_inspection');
 				} else {
-				$insdata['number_inspection'] = $this->createinspnum($vehicle->id_vhcl);
+				$insdata['number_inspection'] = $this->_createinspnum($vehicle->id_vhcl);
 				}
 				$insdata['date_inspection'] = $this->input->post('date_inspection');
 				$insdata['orderdate_inspection'] = $this->input->post('orderdate_inspection');
@@ -655,7 +655,7 @@ print_r($result);
 		return preg_replace('/-+/', '-', $string); // Replaces multiple hyphens with single one.
  }
 
- function createinspnum($vhclid) {
+ private function _createinspnum($vhclid) {
 	$user = $this->ion_auth->user()->row();
 			
 	$part1 = date('Ymd');
