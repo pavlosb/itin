@@ -220,7 +220,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 
 	});	
 
-var conversionMap = {Ρ:2,Β:'B',Ε:'E',Ζ:'Z',Η:'H',Ι:'I',Κ:'K',Μ:'M',Ν:'N',Ο:'O',Τ:'T',Υ:'Y',Χ:'X',Α:'A'};
+var conversionMap = {Ρ:'P',Β:'B',Ε:'E',Ζ:'Z',Η:'H',Ι:'I',Κ:'K',Μ:'M',Ν:'N',Ο:'O',Τ:'T',Υ:'Y',Χ:'X',Α:'A'};
 function elToEn(){
     var field = document.getElementById('reg_vhcl');
     var value = field.value.split('');
