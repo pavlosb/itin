@@ -22,7 +22,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 <div class="form-row">
   <div class="form-group col">
     <label for="reg_vhcl"><?= $this->lang->line('reg_vhcl'); ?></label>
-    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl">
+    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl" onKeyUp="elToEn(this.value)">
   </div>
   <div class="form-group col">
     <label for="firstreg_vhcl"><?= $this->lang->line('firstreg_vhcl'); ?></label>
@@ -219,5 +219,21 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 		});	
 
 	});	
+
+var conversionMap = {Ρ:2,Β:B,Ε:E,Ζ:Z,Η:H,Ι:I,Κ:K,Μ:M,Ν:N,Ο:O,Τ:T,Υ:Y,Χ:X,Α:A};
+function elToEn(){
+    var field = document.getElementById('reg_vhcl');
+    var value = field.value.split('');
+    var i = 0, len = value.length;
+
+    for(i;i<len;i++){
+        if (conversionMap[value[i]]) {
+            value[i] = conversionMap[value[i]];
+        }
+    }
+    field.value = value.join('');
+    // prevent memory leak.
+    field = null;
+}
     </script>
 
