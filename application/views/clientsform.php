@@ -68,7 +68,7 @@ echo form_open("inspection/client_save", $attributes);?>
     </div>
     <div class="form-group">
         <label for="email_client"><?= $this->lang->line('email_client'); ?></label>
-        <input type="text" class="form-control" id="email_client" name ="email_client" value ="<?= $email_client ?>"  onfocusout="checkifexists(this, 7)">
+        <input type="text" class="form-control" id="email_client" name ="email_client" value ="<?= $email_client ?>"  onchange="checkifexists(this, 7)">
     </div>
 	<?php if (!isset($hasaccount) || !$hasaccount) { ?>
     <div class="form-group form-check">
