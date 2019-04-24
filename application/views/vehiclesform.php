@@ -36,7 +36,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 </div>
   <div class="form-group">
     <label for="vin_vhcl"><?= $this->lang->line('vin_vhcl'); ?></label>
-    <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl"  onfocusout="checkifexists(this, 4)">
+    <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl"  onfocusout="checkifexists(this, 15)">
   </div>
   <div class="form-row">
   <div class="form-group col">
