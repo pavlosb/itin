@@ -108,6 +108,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 </div>
 </div>
 <script type="text/javascript">
+var fv;
        jQuery(document).ready(function($){
             $('#datetimepicker11').datetimepicker({
                 viewMode: 'years',
@@ -118,7 +119,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
                 format: 'MM/YYYY'
             });
    
-          var fv = $('#vehicleForm').formValidation({
+         fv = $('#vehicleForm').formValidation({
 			framework: 'bootstrap4',
 			icon: false,
 			fields: {
