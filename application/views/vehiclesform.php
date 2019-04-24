@@ -118,7 +118,15 @@ echo form_open("inspection/vehicle_save", $attributes);?>
                 format: 'MM/YYYY'
             });
    
-            fv = $('#vehicleForm').formValidation({
+            
+
+
+    
+
+	});	
+ fv = FormValidation.formValidation(
+        document.getElementById('vehicleForm'),
+        {
 			framework: 'bootstrap4',
 			icon: false,
 			fields: {
@@ -217,11 +225,6 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 			}
 			
 		});	
-
-
-    
-
-	});	
 
 var conversionMap = {Ρ:'P',Β:'B',Ε:'E',Ζ:'Z',Η:'H',Ι:'I',Κ:'K',Μ:'M',Ν:'N',Ο:'O',Τ:'T',Υ:'Y',Χ:'X',Α:'A'};
 function elToEn(){
