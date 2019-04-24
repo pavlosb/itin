@@ -241,8 +241,8 @@ function elToEn(){
 
 function checkifexists(fld){
 		
-    var search = fld.val();
-   console_log(search);
+   
+   console_log(fld);
   }
     </script>
 
