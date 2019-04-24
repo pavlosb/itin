@@ -266,8 +266,8 @@ $.ajax({
     
   
 }); 
-field = null;
-field.focus();
+chkval = "";
+chkfld.focus();
 
 }
 
