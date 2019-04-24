@@ -158,6 +158,7 @@ var fv;
                         callback: {
                             message: 'The password is not valid',
                             callback: function(input) {
+                              console.log(input);
                               if (checkifexists(input, 8)) {
                                 return true;
                               }
