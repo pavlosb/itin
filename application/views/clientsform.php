@@ -52,7 +52,7 @@ echo form_open("inspection/client_save", $attributes);?>
     </div>
      <div class="form-group">
         <label for="vatno_client"><?= $this->lang->line('vatno_client'); ?></label>
-        <input type="text" class="form-control" id="vatno_client" name ="vatno_client" value ="<?= $vatno_client ?>"  onfocusout="checkifexists(this, 9)">
+        <input type="text" class="form-control" id="vatno_client" name ="vatno_client" value ="<?= $vatno_client ?>"  onfocusout="checkifexists(this, 8)">
     </div>
     <div class="form-group">
         <label for="address_client"><?= $this->lang->line('address_client'); ?></label>
