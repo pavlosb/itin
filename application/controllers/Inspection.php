@@ -624,11 +624,11 @@ $chk_tbl = $fieldtables[$chk_fld];
 $data['rows'] = $this->itindata_model->checkifexists($chk_fld, $chk_val, $chk_tbl);
 	if (empty($data['rows'])) {
 		$status[] = array(
-		'EXISTS' => 'false'
+		'EXISTS' => 'notexists'
 		);
 	} else {
 		$status[] = array(
-		'EXISTS' => 'true'
+		'EXISTS' => 'exists'
 		);
 		}
 $this->output->set_header("Cache-Control: no-cache, must-revalidate");
