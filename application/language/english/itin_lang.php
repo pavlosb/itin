@@ -13,6 +13,7 @@
 */
 // GLOBAL
 $lang['required_field'] = 'Required field';
+$lang['already_exists'] = 'already exists!';
 $lang['invalid_email'] = 'Invalid e-mail address';
 $lang['choose'] = 'Select';
 $lang['submit'] = 'Submit';

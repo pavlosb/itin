@@ -257,7 +257,7 @@ $.ajax({
 			if (item.EXISTS == 'exists'){
 			
         fld.value ="";
-        fld.placeholder = chkval+"- Υπάρχει ήδη";
+        fld.placeholder = chkval+"- <?= $this->lang->line('already_exists'); ?>";
         fld.focus();
         $('#vehicleForm').formValidation('revalidateField', chkfld);
 
