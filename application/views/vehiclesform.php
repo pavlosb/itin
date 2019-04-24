@@ -155,17 +155,7 @@ var fv;
                             min: 17,
                             message: '<?= $this->lang->line('incorrect_vin'); ?>'
                           },
-            callback: {
-                    
-                    callback: function(value, validator, $field) {
-                     
-                      if (checkifexists('vin_vhcl', 8)) {
-                        return true;
                       }
-                    }
-                
-          }
-          }
 				},
         mlg_vhcl: {
 					validators: {
