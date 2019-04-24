@@ -22,7 +22,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 <div class="form-row">
   <div class="form-group col">
     <label for="reg_vhcl"><?= $this->lang->line('reg_vhcl'); ?></label>
-    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl" onKeyUp="elToEn(this.value)">
+    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl" onKeyUp="elToEn(this.value)" onfocusout="checkifexists()">
   </div>
   <div class="form-group col">
     <label for="firstreg_vhcl"><?= $this->lang->line('firstreg_vhcl'); ?></label>
@@ -217,6 +217,13 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 			}
 			
 		});	
+
+
+    function checkifexists(){
+		
+    var search = $this.val();
+   console_log(search);
+  };
 
 	});	
 

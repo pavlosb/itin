@@ -607,9 +607,38 @@ print_r($result);
 } else {
 	redirect('auth/login');
 }
-
-
 	}
+public function checkifexists(){
+if (isset($_POST['chk_fld']) && isset($_POST['chk_val'])) {
+
+$fieldtables = array (
+	'vin_vhcl' => 'vehicles_tbl',
+	'reg_vhcl' => 'vehicles_tbl',
+	'vatno_client'=> 'clients_tbl',
+	'email_client'=> 'clients_tbl',
+	'number_inspection' => 'inspections_tbl'
+);
+$chk_fld = $this->input->post('chk_fld');
+$chk_val = $this->input->post('chk_val');
+$chk_tbl = $fieldtables[$chk_fld];
+$data['rows'] = $this->itindata_model->checkifexists($chk_fld, $chk_val, $chk_tbl);
+	if (empty($data['rows'])) {
+		$status[] = array(
+		'EXISTS' => 'false'
+		);
+	} else {
+		$status[] = array(
+		'EXISTS' => 'true'
+		);
+		}
+$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+$this->output->set_header("Content-type: application/json");
+echo json_encode($status) ;  
+}
+}
+
+
 	private function _getcarbrands(){
 
 		

@@ -276,5 +276,11 @@ $maxpos = $row->maxpos;
       }
       return $data;
    }
+
+   public function checkifexists($chk_fld, $chk_val, $chk_tbl) {
+      $this->db->where($chk_fld, $chk_val);
+      $query = $this->db->get($chk_tbl); 
+      return $query;
+   }
 }
 
