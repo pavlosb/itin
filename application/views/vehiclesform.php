@@ -157,9 +157,8 @@ var fv;
                         },
                         callback: {
                             message: 'The password is not valid',
-                            callback: function(input) {
-                              console.log(input);
-                              if (checkifexists(input, 8)) {
+                            callback: function() {
+                              if (checkifexists('vin_vhcl', 8)) {
                                 return true;
                               }
 
@@ -251,8 +250,9 @@ function elToEn(){
     field = null;
 }
 
-function checkifexists(fld, len){
+function checkifexists(field, len){
 		
+  fld = document.getElementById(field);
     var chkval = fld.value;
     var chkfld  = fld.name;
 
