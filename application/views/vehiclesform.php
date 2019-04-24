@@ -257,7 +257,7 @@ $.ajax({
 			if (item.EXISTS == 'exists'){
 			
         fld.value ="";
-        chkfld.focus();
+        
 
 			} else {
       
