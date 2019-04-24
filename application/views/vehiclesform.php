@@ -257,7 +257,7 @@ $.ajax({
 			if (item.EXISTS == 'exists'){
 			
         fld.value ="";
-        fld.attr('placeholder', "Υπάρχει ήδη");
+        fld.placeholder = "Υπάρχει ήδη";
         fld.focus();
         $('#vehicleForm').formValidation('revalidateField', chkfld);
 
