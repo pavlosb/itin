@@ -254,12 +254,12 @@ $.ajax({
     url: "checkifexists",
     success: function(data){
     	$.each(data, function(i,item){
-			if (item.EXISTS == 'true'){
+			if (item.EXISTS == 'exists'){
 			
-			alert('TRUE');
+        fld.value ="";
 
 			} else {
-        alert('FALSE');
+      
         			}
 	    });
 	    }
