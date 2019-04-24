@@ -266,9 +266,10 @@ $.ajax({
     
   
 }); 
+field = null;
 }
 
-   console.log(chk_fld,chk_val);
+ 
   }
     </script>
 
