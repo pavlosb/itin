@@ -41,7 +41,11 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   <div class="form-row">
   <div class="form-group col">
     <label for="mlg_vhcl"><?= $this->lang->line('mlg_vhcl'); ?></label>
+    <div class="input-group mb-3">
     <input type="number" class="form-control" id="mlg_vhcl" name ="mlg_vhcl">
+    <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon2">km</span>
+  </div></div>
   </div>
   <div class="form-group col">
     <label for="nxtdate_vhcl"><?= $this->lang->line('nxtdate_vhcl'); ?></label>
