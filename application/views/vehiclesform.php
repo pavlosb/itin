@@ -156,13 +156,14 @@ var fv;
                             message: '<?= $this->lang->line('incorrect_vin'); ?>'
                           },
             callback: {
-                    message: 'The password must have at least one lowercase character',
+                    
                     callback: function(value, validator, $field) {
                      
                       if (checkifexists('vin_vhcl', 8)) {
                         return true;
                       }
-                    }
+                    },
+                    message: 'The password must have at least one lowercase character',
                 
           }
           }
