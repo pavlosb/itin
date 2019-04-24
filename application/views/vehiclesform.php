@@ -219,11 +219,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 		});	
 
 
-    function checkifexists(){
-		
-    var search = $this.val();
-   console_log(search);
-  };
+    
 
 	});	
 
@@ -242,5 +238,11 @@ function elToEn(){
     // prevent memory leak.
     field = null;
 }
+
+function checkifexists(){
+		
+    var search = $this.val();
+   console_log(search);
+  }
     </script>
 
