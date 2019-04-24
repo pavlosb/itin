@@ -154,16 +154,7 @@ var fv;
                             message: '<?= $this->lang->line('incorrect_vin'); ?>',
                             min: 17,
                             message: '<?= $this->lang->line('incorrect_vin'); ?>'
-                        },
-                        
-                      checkifexists: {
-                    alias: 'callback',
-                    message: 'The password must have at least one lowercase character',
-                    callback: function(value, validator, $field) {
-                      console.log ($field);
-                      checkifexists('vin_vhcl', 8);
-                    }
-                },
+                        }
           }
 				},
         mlg_vhcl: {
