@@ -52,7 +52,7 @@ echo form_open("inspection/client_save", $attributes);?>
     </div>
      <div class="form-group">
         <label for="vatno_client"><?= $this->lang->line('vatno_client'); ?></label>
-        <input type="text" class="form-control" id="vatno_client" name ="vatno_client" value ="<?= $vatno_client ?>">
+        <input type="text" class="form-control" id="vatno_client" name ="vatno_client" value ="<?= $vatno_client ?>"  onfocusout="checkifexists(this, 9)">
     </div>
     <div class="form-group">
         <label for="address_client"><?= $this->lang->line('address_client'); ?></label>
@@ -68,7 +68,7 @@ echo form_open("inspection/client_save", $attributes);?>
     </div>
     <div class="form-group">
         <label for="email_client"><?= $this->lang->line('email_client'); ?></label>
-        <input type="text" class="form-control" id="email_client" name ="email_client" value ="<?= $email_client ?>">
+        <input type="text" class="form-control" id="email_client" name ="email_client" value ="<?= $email_client ?>"  onfocusout="checkifexists(this, 7)">
     </div>
 	<?php if (!isset($hasaccount) || !$hasaccount) { ?>
     <div class="form-group form-check">
@@ -147,4 +147,37 @@ echo form_open("inspection/client_save", $attributes);?>
 		});	
 
 	});	
+
+	function checkifexists(fld, len){
+		
+		var chkval = fld.value;
+		var chkfld  = fld.name;
+	
+		if (chkval.length > len) {
+			$(".memberok").empty();
+			$(".nomember").empty();
+	$.ajax({
+		type: "POST",
+		dataType: "JSON",
+		data: {chk_fld:chkfld, chk_val:chkval},
+		url: "checkifexists",
+		success: function(data){
+			$.each(data, function(i,item){
+				if (item.EXISTS == 'exists'){
+				
+			fld.value ="";
+			fld.placeholder = chkval+"- <?= $this->lang->line('already_exists'); ?>";
+			fld.focus();
+			$('#clientForm').formValidation('revalidateField', chkfld);
+	
+				} else {
+		  
+						}
+			});
+			}
+		
+	  
+	}); 
+	}
+	}
     </script>

@@ -28,7 +28,7 @@ $attributes = array('id' => 'inspectionIntroForm');
 <div class="form-row">
     <div class="form-group col">
         <label for="number_inspection"><?= $this->lang->line('number_inspection'); ?></label>
-        <input type="text" class="form-control" id="number_inspection" name ="number_inspection">
+        <input type="text" class="form-control" id="number_inspection" name ="number_inspection"  onfocusout="checkifexists(this, 4)">
         <small class="form-text text-primary"><?= $this->lang->line('leave_empty'); ?></small>
     </div>
     <div class="form-group col">
