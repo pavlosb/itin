@@ -22,7 +22,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 <div class="form-row">
   <div class="form-group col">
     <label for="reg_vhcl"><?= $this->lang->line('reg_vhcl'); ?></label>
-    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl" onKeyUp="elToEn(this.value)" onfocusout="checkifexists(this)">
+    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl" onKeyUp="elToEn(this.value)" onfocusout="checkifexists(this, 4)">
   </div>
   <div class="form-group col">
     <label for="firstreg_vhcl"><?= $this->lang->line('firstreg_vhcl'); ?></label>
@@ -239,10 +239,34 @@ function elToEn(){
     field = null;
 }
 
-function checkifexists(fld){
+function checkifexists(fld, len){
 		
-    var chk_val = fld.value;
-    var chk_fld  = fld.name;
+    var chkval = fld.value;
+    var chkfld  = fld.name;
+
+    if (chkval.length > len) {
+		$(".memberok").empty();
+		$(".nomember").empty();
+$.ajax({
+    type: "POST",
+    dataType: "JSON",
+    data: {chk_fld:chkfld, chkval:chk_val},
+    url: "checkifexists",
+    success: function(data){
+    	$.each(data, function(i,item){
+			if (item.EXISTS == 'true'){
+			
+			alert('TRUE');
+
+			} else {
+        alert('FALSE');
+        			}
+	    });
+	    }
+    
+  
+}); 
+}
 
    console.log(chk_fld,chk_val);
   }
