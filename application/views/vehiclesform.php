@@ -165,6 +165,7 @@ var fv;
 
                                 }
 											}
+          }
 				},
         mlg_vhcl: {
 					validators: {
@@ -266,11 +267,11 @@ $.ajax({
     	$.each(data, function(i,item){
 			if (item.EXISTS == 'exists'){
 			
-        return true;
+        return false;
 
 			} else {
       
-      return false;
+      return true;
         			}
 	    });
 	    }
