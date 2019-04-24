@@ -118,7 +118,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
                 format: 'MM/YYYY'
             });
    
-            fv = $('#vehicleForm').formValidation({
+          var fv = $('#vehicleForm').formValidation({
 			framework: 'bootstrap4',
 			icon: false,
 			fields: {
@@ -258,6 +258,7 @@ $.ajax({
 			
         fld.value ="";
         fld.focus();
+        fv.revalidateField(chkfld);
 
 			} else {
       
