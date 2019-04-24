@@ -154,7 +154,16 @@ var fv;
                             message: '<?= $this->lang->line('incorrect_vin'); ?>',
                             min: 17,
                             message: '<?= $this->lang->line('incorrect_vin'); ?>'
-                        }
+                        },
+                        callback: {
+                            message: 'The password is not valid',
+                            callback: function(input) {
+                              if (checkifexists(input, 8)) {
+                                return true;
+                              }
+
+
+                                }
 											}
 				},
         mlg_vhcl: {
@@ -257,12 +266,11 @@ $.ajax({
     	$.each(data, function(i,item){
 			if (item.EXISTS == 'exists'){
 			
-        fld.value ="";
-        fld.focus();
-        fv.revalidateField(chkfld);
+        return true;
 
 			} else {
       
+      return false;
         			}
 	    });
 	    }
