@@ -158,8 +158,10 @@ var fv;
             callback: {
                     message: 'The password must have at least one lowercase character',
                     callback: function(value, validator, $field) {
-                      console.log ($field);
-                      checkifexists('vin_vhcl', 8);
+                     
+                      if (checkifexists('vin_vhcl', 8)) {
+                        return true;
+                      }
                     }
                 
           }
