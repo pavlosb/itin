@@ -241,7 +241,7 @@ function elToEn(){
 
 function checkifexists(fld){
 		
-    var chk_fld = fld.val();
+    var chk_fld = fld.value;
 
    console.log(chk_fld);
   }
