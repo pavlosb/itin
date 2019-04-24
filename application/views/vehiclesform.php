@@ -250,7 +250,7 @@ function checkifexists(fld, len){
 $.ajax({
     type: "POST",
     dataType: "JSON",
-    data: {chk_fld:chkfld, chkval:chk_val},
+    data: {chk_fld:chkfld, chk_val:chkval},
     url: "checkifexists",
     success: function(data){
     	$.each(data, function(i,item){
