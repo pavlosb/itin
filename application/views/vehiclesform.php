@@ -154,14 +154,13 @@ var fv;
                             message: '<?= $this->lang->line('incorrect_vin'); ?>',
                             min: 17,
                             message: '<?= $this->lang->line('incorrect_vin'); ?>'
-                        },
-                        
-                      callback: {
-                      message: 'The password must have at least one lowercase character' ,
-                      callback: function(value, validator, $field) {
-                        console.log ($field);
-                        checkifexists('vin_vhcl', 8);
-                      }
+                        },  
+                            callback: {
+                            message: 'The password must have at least one lowercase character',
+                            callback: function(value, validator, $field) {
+                                console.log ($field);
+                                checkifexists('vin_vhcl', 8);
+                            }
                   
             }
           }
@@ -266,18 +265,13 @@ $.ajax({
     success: function(data){
     	$.each(data, function(i,item){
 			if (item.EXISTS == 'exists'){
-			
-        return false;
-
-			} else {
-      
+			return false;
+      } else {
       return true;
         			}
 	    });
 	    }
-    
-  
-}); 
+    }); 
 
 
 
