@@ -267,7 +267,6 @@ $.ajax({
   
 }); 
 field = null;
-fv.validateField(chkfld);
 }
 
  
