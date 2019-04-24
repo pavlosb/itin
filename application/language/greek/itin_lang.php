@@ -13,6 +13,7 @@
 */
 // GLOBAL
 $lang['required_field'] = 'Απαιτούμενο πεδίο';
+$lang['already_exists'] = 'υπάρχει ήδη!';
 $lang['invalid_email'] = 'Η διεύθυνση email δεν είναι έγκυρη';
 $lang['choose'] = 'Επιλέξτε';
 $lang['submit'] = 'Καταχώρηση';
