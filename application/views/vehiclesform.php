@@ -239,9 +239,9 @@ function elToEn(){
     field = null;
 }
 
-function checkifexists(this){
+function checkifexists(fld){
 		
-    var search = this.val();
+    var search = fld.val();
    console_log(search);
   }
     </script>
