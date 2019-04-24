@@ -36,7 +36,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 </div>
   <div class="form-group">
     <label for="vin_vhcl"><?= $this->lang->line('vin_vhcl'); ?></label>
-    <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl">
+    <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl"  onfocusout="checkifexists(this, 4)">
   </div>
   <div class="form-row">
   <div class="form-group col">
@@ -108,7 +108,6 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 </div>
 </div>
 <script type="text/javascript">
-var fv;
        jQuery(document).ready(function($){
             $('#datetimepicker11').datetimepicker({
                 viewMode: 'years',
@@ -119,7 +118,7 @@ var fv;
                 format: 'MM/YYYY'
             });
    
-         fv = $('#vehicleForm').formValidation({
+          var fv = $('#vehicleForm').formValidation({
 			framework: 'bootstrap4',
 			icon: false,
 			fields: {
@@ -154,8 +153,8 @@ var fv;
                             message: '<?= $this->lang->line('incorrect_vin'); ?>',
                             min: 17,
                             message: '<?= $this->lang->line('incorrect_vin'); ?>'
-                          },
-                      }
+                        }
+											}
 				},
         mlg_vhcl: {
 					validators: {
@@ -240,9 +239,8 @@ function elToEn(){
     field = null;
 }
 
-function checkifexists(field, len){
+function checkifexists(fld, len){
 		
-  fld = document.getElementById(field);
     var chkval = fld.value;
     var chkfld  = fld.name;
 
@@ -257,13 +255,19 @@ $.ajax({
     success: function(data){
     	$.each(data, function(i,item){
 			if (item.EXISTS == 'exists'){
-			return false;
-      } else {
-      return true;
+			
+        fld.value ="";
+        fld.focus();
+        $('#vehicleForm').formValidation('revalidateField', chkfld);
+
+			} else {
+      
         			}
 	    });
 	    }
-    }); 
+    
+  
+}); 
 
 
 
