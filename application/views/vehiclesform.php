@@ -162,8 +162,7 @@ var fv;
                       if (checkifexists('vin_vhcl', 8)) {
                         return true;
                       }
-                    },
-                    message: 'The password must have at least one lowercase character',
+                    }
                 
           }
           }
