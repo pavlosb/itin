@@ -124,8 +124,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
     
 
 	});	
- fv = FormValidation.formValidation(
-        document.getElementById('vehicleForm'),
+ fv = FormValidation.formValidation(document.getElementById('vehicleForm'),
         {
 			framework: 'bootstrap4',
 			icon: false,
