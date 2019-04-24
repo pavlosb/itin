@@ -242,7 +242,7 @@ function elToEn(){
 function checkifexists(fld){
 		
    
-   console_log(fld);
+   console.log(fld);
   }
     </script>
 
