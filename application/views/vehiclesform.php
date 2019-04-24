@@ -158,9 +158,7 @@ var fv;
                         callback: {
                             message: 'The password is not valid',
                             callback: function() {
-                              if (checkifexists('vin_vhcl', 8)) {
-                                return true;
-                              }
+                              checkifexists('vin_vhcl', 8);
 
 
                                 }
