@@ -187,6 +187,7 @@ class Inspection extends CI_Controller {
 			$html = $this->load->view('pdfreport', $data, true);
 			//$this->load->view('pdfreport');
 			//$html .= $this->load->view('footer', $data, true);
+			try {
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->debug = true;
 			$mpdf->setFooter('{PAGENO}');
@@ -195,6 +196,9 @@ class Inspection extends CI_Controller {
 			$filename .= $this->_stringclean($inspection->number_inspection);
 			$dir ="/home/site/wwwroot/assets/pdfs/";
 			$mpdf->Output();
+			} catch (\Mpdf\MpdfException $e) {
+				echo $e->getMessage();
+			}
 			//$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
 			$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf", "status_inspection" => 1));
 			$this->lang->load('itin',$newlang);
