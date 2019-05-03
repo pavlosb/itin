@@ -698,4 +698,8 @@ echo json_encode($status) ;
 	$inspnum = $part1.$part2.$part3.$part4;
 	return $inspnum; 
  }
+
+ public function pinfo() {
+	phpinfo();
+ }
 }
