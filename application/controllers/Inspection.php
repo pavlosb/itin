@@ -216,7 +216,7 @@ class Inspection extends CI_Controller {
 	 $this->lang->load('itin', $oldlang);
 		$this->session->set_userdata('site_lang', $oldlang);
 
-//redirect ('inspection/inspections_list', 'refresh');
+redirect ('inspection/inspections_list', 'refresh');
 			   
 		} else {
 			redirect('auth/login');
