@@ -12,6 +12,7 @@ if (isset($user_lang) && $user_lang == "greek") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
+
    <style>
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 @page {
@@ -92,7 +93,8 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 </tr>
 <tr><td colspan="3" class="smalltxt">&nbsp;</td></tr>
 </table>
-<table width="100%" style="border:0px; margin-top:40px;">
+
+        <table width="100%" style="border:0px; margin-top:40px;">
  <tr>
  <td valign="top" style="font-size:12px; line-height:12px;">
 <table width="100%">
@@ -116,5 +118,13 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 </td>
  </tr>
  </table>
+ 
+
+
+
+
+ 
+                
+            
   </body>
   </html>

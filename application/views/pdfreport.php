@@ -65,13 +65,13 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
     <title>ITIN</title>
   </head>
   <body>
-  <htmlpageheader name="pgheader">
+  <htmlpageheader name="pgheader" style="display:none">
   <table width="100%" style="border-top: 1px solid #000; border-bottom: 1px solid #000;">
   <tr><td width="70%"><?= $this->lang->line('pdf_report_num'); ?> <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right"<?= $this->lang->line('pdf_date'); ?> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td>
   </table>
         </htmlpageheader>
 
-        <htmlpagefooter name="pgfooter">
+        <htmlpagefooter name="pgfooter" style="display:none">
         <div style="width:100%; text-align:right;"><?= $this->lang->line('pdf_page'); ?> {PAGENO}</div>
         </htmlpagefooter>
        
