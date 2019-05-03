@@ -62,15 +62,14 @@ echo form_open("inspection/client_save", $attributes);?>
         <label for="zip_client"><?= $this->lang->line('zip_client'); ?></label>
         <input type="text" class="form-control" id="zip_client" name ="zip_client" value ="<?= $zip_client ?>">
     </div>
-	<div class="form-group">
-        <label for="email_client"><?= $this->lang->line('email_client'); ?></label>
-        <input type="text" class="form-control" id="email_client" name ="email_client" value ="<?= $email_client ?>"  onfocusout="checkifexists(this, 7)">
-    </div>
     <div class="form-group">
         <label for="tel_client"><?= $this->lang->line('tel_client'); ?></label>
         <input type="text" class="form-control" id="tel_client" name ="tel_client" value ="<?= $tel_client ?>">
     </div>
-    
+    <div class="form-group">
+        <label for="email_client"><?= $this->lang->line('email_client'); ?></label>
+        <input type="text" class="form-control" id="email_client" name ="email_client" value ="<?= $email_client ?>"  onchange="checkifexists(this, 7)">
+    </div>
 	<?php if (!isset($hasaccount) || !$hasaccount) { ?>
     <div class="form-group form-check">
     <input type="checkbox" class="form-check-input" name="createaccount" id="createaccount" value = "1">
