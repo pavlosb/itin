@@ -207,8 +207,8 @@ class Inspection extends CI_Controller {
 		 $filename = $langprefix;
 			$filename .= $this->_stringclean($inspection->number_inspection);
 			 
-			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
-		//	$mpdf->Output();
+			$dir ="/home/site/wwwroot/assets/pdfs/";
+		
 	$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
 	 $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf"));
 	 $this->lang->load('itin', $oldlang);
