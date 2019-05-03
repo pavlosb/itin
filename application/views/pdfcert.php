@@ -16,7 +16,7 @@ if (isset($user_lang) && $user_lang == "greek") {
     <!-- Bootstrap CSS 
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">-->
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
-   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
+  
    <style>
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 @page {
