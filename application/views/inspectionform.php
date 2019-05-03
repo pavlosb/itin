@@ -113,7 +113,7 @@ $scp = $cp['name_section'];
 
 
 
-<button type="submit" class="btn btn-primary">Καταχώρηση</button>
+<button type="submit" class="btn btn-primary"><?= $this->lang->line('submit'); ?></button>
 <?php echo form_close();?>
 </div>
 </div>
