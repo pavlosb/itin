@@ -183,6 +183,7 @@ class Inspection extends CI_Controller {
 				$oldlang = "english";
 				$newprfx = "";
 				}
+			ob_end_clean();
 			$html = $this->load->view('pdfreport', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
@@ -199,6 +200,7 @@ class Inspection extends CI_Controller {
 			 $this->session->set_userdata('site_lang', $newlang);
 			 $sesdata = $this->session->userdata;
 			 $data['user_lang'] = $sesdata['site_lang'];
+			 ob_end_clean();
 			 $html = $this->load->view('pdfreport', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
