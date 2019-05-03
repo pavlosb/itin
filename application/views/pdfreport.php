@@ -65,17 +65,107 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
     <title>ITIN</title>
   </head>
   <body>
-  <htmlpageheader name="pgheader" style="display:none">
+  <htmlpageheader name="pgheader">
   <table width="100%" style="border-top: 1px solid #000; border-bottom: 1px solid #000;">
   <tr><td width="70%"><?= $this->lang->line('pdf_report_num'); ?> <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right"<?= $this->lang->line('pdf_date'); ?> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td>
   </table>
         </htmlpageheader>
 
-        <htmlpagefooter name="pgfooter" style="display:none">
+        <htmlpagefooter name="pgfooter">
         <div style="width:100%; text-align:right;"><?= $this->lang->line('pdf_page'); ?> {PAGENO}</div>
         </htmlpagefooter>
        
-        
+        <table width="100%">
+ <tr>
+ <td valign="top" style="font-size:12px; line-height:12px;">IMPERIAL AUTOMOTIVE<br />
+DEKRA PARTNER<br />
+ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253 ΝΕΑ ΣΜΥΡΝΗ<br />
+Τ.Κ. 17122<br />
+Τηλέφωνο: 2109426352<br />
+E-Mail: savvas.tzanis@dekra.com<br />
+</td>
+<td align="right">
+<?php if ($result > 0) { ?>
+<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg" width="90" height="120">
+<?php } else { ?>
+<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp-fail.jpg" width="90" height="120">
+<?php } ?>
+</td>
+ </tr>
+ </table>
+ <table width="100%" style="padding: 5px 0 3px 0; margin-top:50px; background-color:#007c3f">
+<tr><td style="font-size:20px; line-height:21px; color:#fff;"><?= $this->lang->line('pdf_dekra_report'); ?></td></tr>
+</table>
+
+<table  width="100%" style="border:0px;">
+<tr>
+<td width="60%" colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_procedure'); ?></td>
+<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_inspection'); ?></td>
+</tr>
+<tr>
+<td class="frcellfld"><?= $this->lang->line('pdf_inspection'); ?></td><td colspan="3"><?php echo $inspection->name_client; ?></td>
+</tr>
+<tr>
+<td class="frcellfld"><?= $this->lang->line('pdf_po'); ?></td><td colspan="3"><?php echo date("d-m-Y", strtotime($inspection->orderdate_inspection)); ?>, <?php echo $inspection->ordermethod_inspection; ?></td>
+</tr>
+<tr>
+<td class="frcellfld"><?= $this->lang->line('pdf_check_type'); ?></td><td colspan="3"><?= $this->lang->line('technology_check'); ?>, <?= $this->lang->line('bodywork_check'); ?>, <?= $this->lang->line('system_check'); ?></td>
+</tr>
+<tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
+<tr>
+<td width="60%" colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_vehicle_description'); ?></td>
+<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_reg_vhcl'); ?> <span style = "font-weight:normal; color: #000;"><?php echo $inspection->reg_vhcl; ?></span> </td>
+</tr>
+<tr>
+<td class="frcellfld"><?= $this->lang->line('pdf_type_vhcl'); ?></td><td><?php echo $inspection->type_vhcl; ?></td><td class="frcellfld"><?= $this->lang->line('pdf_doors_vhcl'); ?></td><td><?php echo $inspection->doors_vhcl; ?></td>
+</tr>
+<tr>
+<td class="frcellfld"><?= $this->lang->line('pdf_make_vhcl'); ?></td><td><?php echo $inspection->make_vhcl; ?></td><td class="frcellfld"><?= $this->lang->line('pdf_colour_vhcl'); ?></td><td><?php echo $inspection->colour_vhcl; ?></td>
+</tr>
+<tr>
+<td class="frcellfld"><?= $this->lang->line('pdf_model_vhcl'); ?></td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap><?= $this->lang->line('pdf_nxtdate_vhcl'); ?></td><td><?php echo date("m/Y", strtotime($inspection->nxtdate_vhcl)); ?></td>
+</tr>
+<tr>
+<td class="frcellfld"><?= $this->lang->line('pdf_vin_vhcl'); ?></td><td class="small"><?php echo $inspection->vin_vhcl; ?></td><td class="frcellfld"><?= $this->lang->line('pdf_mlg_vhcl'); ?></td><td><?php echo $inspection->mlg_vhcl; ?></td>
+</tr>
+<tr>
+<td class="frcellfld"><?= $this->lang->line('pdf_displpow_vhcl'); ?></td><td><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td><td class="frcellfld" nowrap><?= $this->lang->line('pdf_firstreg_vhcl'); ?></td><td><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></td>
+</tr>
+<tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
+<tr><td colspan="4" class="smalltxt"><?= $this->lang->line('pdf_mlg_notice'); ?></td></tr>
+</table>
+<table  width="100%" style="border:0px; margin-top:15px;">
+<tr>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1-<?php echo $sec1score ?>.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge2-<?php echo $sec2score ?>.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge3-<?php echo $sec3score ?>.jpg" width="100" height="102"></td>
+</tr>
+<tr>
+<td align="center" class="smalltxt dgreen"><?= $this->lang->line('pdf_technology_check'); ?></td>
+<td align="center" class="smalltxt dgreen"><?= $this->lang->line('pdf_bodywork_check'); ?></td>
+<td align="center" class="smalltxt dgreen"><?= $this->lang->line('pdf_system_check'); ?></td>
+</tr>
+<tr><td colspan="3" class="smalltxt">&nbsp;</td></tr>
+</table>
+<table width="100%">
+<tr><td class="top-border smalltxt">&nbsp;</td></tr>
+<tr><td><?= $this->lang->line('pdf_inspector'); ?> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?><br/><br/><span class="smalltxt"><?= $this->lang->line('pdf_sign_notice'); ?></span></td></tr>
+<tr><td class="bot-border smalltxt">&nbsp;</td></tr>
+</table>
+<table width="100%" style="margin-top:160px" class="page_break_after">
+  <tr><td width="18%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
+DEKRA PARTNER 
+</td>
+<td width="52%" valign="top" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
+ΝΕΑ ΣΜΥΡΝΗ TΚ 17122<br/>
+ΤΗΛ. 2109426352<br/>
+E-Mail : savvas.tzanis@dekra.com</td>
+<td width="30%" valign="top" class="smalltxt">Έδρα ΑΘΗΝΑ<br/>
+ΑΦΜ.998469321 ΔOY ΝΕΑΣ ΣΜΥΡΝΗΣ<br/>
+Αρ. μητρώου:8524901000<br/>
+ALPHA BANK SWIFT CRBAGRAA<br/>
+IBAN:GR8701401200120002320007025</td>
+  </table>
 
  <table width="100%" border="0">
   <?php 
