@@ -226,6 +226,6 @@ $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
 $z = $z + 1;
  endforeach ?> 
-</table>     
+   
   </body>
   </html>
