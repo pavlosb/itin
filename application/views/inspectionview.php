@@ -71,7 +71,7 @@
                            <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('greeklang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn1" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>"><i class="far fa-link"></i></button></p>
                            <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('englishlang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn2" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>"><i class="far fa-link"></i></button></p> 
                            <?php } else { ?>
-                            <a href="<?= base_url()?>inspection/cert_pdf/<?= $inspection->id_inspection ?>" target="_blank"><i class="fas fa-plus"></i></i> <?= $this->lang->line('create_certificate'); ?></i></a>
+                            <a href="<?= base_url()?>inspection/cert_pdf/<?= $inspection->id_inspection ?>"><i class="fas fa-plus"></i></i> <?= $this->lang->line('create_certificate'); ?></i></a>
                             <?php }
                             }?>
            </div>

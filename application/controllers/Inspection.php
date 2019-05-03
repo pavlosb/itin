@@ -263,8 +263,6 @@ redirect ('inspection/inspections_list', 'refresh');
 				$oldlang = "english";
 				$newprfx = "";
 				}
-			//$html = $this->load->view('header', $data, true);
-			//$this->load->view('pdfcert', $data);
 			$html = $this->load->view('pdfcert', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
