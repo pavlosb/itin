@@ -185,6 +185,7 @@ class Inspection extends CI_Controller {
 				}
 			
 			$html = $this->load->view('pdfreport', $data, true);
+			$this->load->view('pdfreport');
 			//$html .= $this->load->view('footer', $data, true);
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->debug = true;
@@ -214,7 +215,7 @@ class Inspection extends CI_Controller {
 	 $this->lang->load('itin', $oldlang);
 		$this->session->set_userdata('site_lang', $oldlang);
 
-redirect ('inspection/inspections_list', 'refresh');
+//redirect ('inspection/inspections_list', 'refresh');
 			   
 		} else {
 			redirect('auth/login');
