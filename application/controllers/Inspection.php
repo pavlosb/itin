@@ -225,12 +225,12 @@ redirect ('inspection/inspections_list', 'refresh');
 
 	}
 
-	public function cert_pdf($id) 
+	public function cert_pdf() 
 	{
 	
 		if ($this->ion_auth->logged_in())
 		{
-		
+			$id = $this->input->post('id');
 			$user = $this->ion_auth->user()->row();
 			$data = $this->data;
 			$ulang = $data['user_lang'];
