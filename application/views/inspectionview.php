@@ -71,7 +71,7 @@
                            <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('greeklang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn1" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>"><i class="far fa-link"></i></button></p>
                            <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('englishlang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn2" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>"><i class="far fa-link"></i></button></p> 
                            <?php } else { ?>
-                            <a href="<?= base_url()?>inspection/cert_pdf/<?= $inspection->id_inspection ?>"><i class="fas fa-plus"></i></i> <?= $this->lang->line('create_certificate'); ?></i></a>
+                            <button type="button" id="createcert" class="btn btn-outline-success btn-sm"><i class="fas fa-plus"></i> <?= $this->lang->line('create_certificate'); ?></button>
                             <?php }
                             }?>
            </div>
@@ -80,7 +80,7 @@
     </div>
     
 </div>
-<div id="spinner" class="d-flex justify-content-center" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0; z-index: 9999;">
+<div id="spinner" class="d-flex justify-content-center" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0; z-index: 9999; background: rgba(255,255,255,0.7);">
   <div class="spinner-border align-self-center" role="status">
     <span class="sr-only">Loading...</span>
   </div>
@@ -90,6 +90,7 @@
 
 <script>
 jQuery(document).ready(function($) {
+    $("#spinner").hide();
   var btns = document.querySelectorAll('button');
   var clipboard = new ClipboardJS(btns);
 
@@ -218,6 +219,7 @@ gauge3.set(Number(score3)); // set actual value
 
 
 $( "p" ).click(function() {
+    $("#spinner").show();
     $.ajax({
 		type: "POST",
 		dataType: "JSON",
