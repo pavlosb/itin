@@ -224,7 +224,7 @@ $( "#createcert" ).click(function() {
 		type: "POST",
 		dataType: "JSON",
 		data: {id:<?= $inspection->id_inspection ?>},
-		url: "cert_pdf",
+		url: "<?= base_url()?>inspection/cert_pdf",
 		success: function(data){
 			$.each(data, function(i,item){
 				if (item.created == 'ok'){
