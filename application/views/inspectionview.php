@@ -218,8 +218,8 @@ gauge3.set(Number(score3)); // set actual value
 }
 
 
-$( "p" ).click(function() {
-   
+$( "#createcert" ).click(function() {
+    $("#spinner").addClass("d-flex").show();
     $.ajax({
 		type: "POST",
 		dataType: "JSON",
@@ -228,7 +228,7 @@ $( "p" ).click(function() {
 		success: function(data){
 			$.each(data, function(i,item){
 				if (item.created == 'ok'){
-				
+                    $("#spinner").removeClass("d-flex").hide();
 		
 				} else {
 		  
