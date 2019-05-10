@@ -23,6 +23,7 @@ $lang['bodywork_check'] = 'Bodywork Check';
 $lang['system_check'] = 'System Check';
 $lang['greeklang'] = 'Greek';
 $lang['englishlang'] = 'English';
+$lang['confirm_erase'] = "Are you sure you want to delete this;";
 
 // HEADER - MENU
 $lang['logout'] = 'Logout';

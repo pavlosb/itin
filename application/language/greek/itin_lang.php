@@ -23,6 +23,7 @@ $lang['bodywork_check'] = 'Έλεγχος Αμαξώματος';
 $lang['system_check'] = 'Έλεγχος Συστήματος';
 $lang['greeklang'] = 'Ελληνικά';
 $lang['englishlang'] = 'Αγγλικά';
+$lang['confirm_erase'] = "Να γίνει η διαγραφή;";
 
 // HEADER - MENU
 $lang['logout'] = 'Αποσύνδεση';
