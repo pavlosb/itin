@@ -79,7 +79,7 @@ var ulang = '<?= ucfirst($user_lang) ?>';
            * which locale settings to use to translate the three
            * standard button labels: OK, CONFIRM, CANCEL
            */
-          locale: "el"
+          locale: "<?= $ulcl ?>"
     });
 } );
 </script>

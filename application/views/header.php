@@ -72,7 +72,7 @@
       </li>
   </div>
   </ul>
-  <span class="navbar-text"><a href="<?php echo base_url(); ?>languageswitcher/switchLang/english" <?php if (isset($user_lang) && $user_lang == "english") {echo "class='text-success'";} ?>>EN</a>  <a href="<?php echo base_url(); ?>languageswitcher/switchLang/greek" <?php if (isset($user_lang) && $user_lang == "greek") {echo "class='text-success'";} ?>>EL</a>
+  <span class="navbar-text"><a href="<?php echo base_url(); ?>languageswitcher/switchLang/english" <?php if (isset($user_lang) && $user_lang == "english") {echo "class='text-success'"; $ulcl="en";} ?>>EN</a>  <a href="<?php echo base_url(); ?>languageswitcher/switchLang/greek" <?php if (isset($user_lang) && $user_lang == "greek") {echo "class='text-success'"; $ulcl = "el"; } ?>>EL</a>
      
     </span>
 </nav>
