@@ -78,7 +78,9 @@
                         </div>
                         </div>
     </div>
-    <div class="d-flex justify-content-center" style="
+    
+</div>
+<div class="text-center" style="
     position: absolute;
     width: 100%;
     height: 100%;
@@ -89,8 +91,6 @@
     <span class="sr-only">Loading...</span>
   </div>
 </div>
-</div>
-
 
 
 
