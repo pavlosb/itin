@@ -219,7 +219,7 @@ gauge3.set(Number(score3)); // set actual value
 
 
 $( "p" ).click(function() {
-    $("#spinner").show();
+   
     $.ajax({
 		type: "POST",
 		dataType: "JSON",
