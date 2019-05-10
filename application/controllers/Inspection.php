@@ -276,7 +276,8 @@ redirect ('inspection/inspections_list', 'refresh');
 			$dir ="/home/site/wwwroot/assets/pdfs/";//$this->mpdfgenerator->generate($html, $filename, True, 'A4', 'portrait');	
 			//$mpdf->Output();
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
-	   $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
+		 $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
+		 $status = array($langprefix."certfile_inspection" => $filename.".pdf");
 		 $this->lang->load('itin',$newlang);
 		 $this->session->set_userdata('site_lang', $newlang);
 		 $html = $this->load->view('pdfcert', $data, true);
@@ -292,9 +293,15 @@ redirect ('inspection/inspections_list', 'refresh');
 		 //$mpdf->Output();
 		 $mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
 		$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
+		$status[$langprefix."certfile_inspection"] = $filename.".pdf";
+		$status['created'] = "ok";
 		$this->lang->load('itin',$oldlang);
 		$this->session->set_userdata('site_lang', $oldlang);
-		redirect ('inspection/inspection_view/'.$id, 'refresh');
+		//redirect ('inspection/inspection_view/'.$id, 'refresh');
+		$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+		$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+		$this->output->set_header("Content-type: application/json");
+		echo json_encode($status) ;  
 			   
 		} else {
 			redirect('auth/login');
