@@ -79,7 +79,11 @@
                         </div>
     </div>
 </div>
-
+<div class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div
 
 
 
@@ -210,5 +214,27 @@ gauge3.set(Number(score3)); // set actual value
         }, 700);
     });
 }
+
+
+$( "p" ).click(function() {
+    $.ajax({
+		type: "POST",
+		dataType: "JSON",
+		data: {id:<?= $inspection->id_inspection ?>},
+		url: "cert_pdf",
+		success: function(data){
+			$.each(data, function(i,item){
+				if (item.created == 'ok'){
+				
+		
+				} else {
+		  
+						}
+			});
+			}
+		
+	  
+	});
+});
 });
     </script>
