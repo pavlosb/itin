@@ -90,7 +90,7 @@
 
 <script>
 jQuery(document).ready(function($) {
-    $("#spinner").hide();
+    $("#spinner").removeClass("d-flex").hide();
   var btns = document.querySelectorAll('button');
   var clipboard = new ClipboardJS(btns);
 
