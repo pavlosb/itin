@@ -233,9 +233,10 @@ $( "#createcert" ).click(function() {
 		success: function(data){
 			//$.each(data, function(i,item){
 				if (data.created == 'ok'){
-                    alert(data.created);
-                    alert(data.en_certfile_inspection);
-                    alert(data.certfile_inspection);
+                   // alert(data.created);
+                   // alert(data.en_certfile_inspection);
+                   // alert(data.certfile_inspection);
+                    $( "#createcert" ).hide();
                     $('.certel').attr('href','<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
                     $('.certen').attr('href','<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
                     $("#spinner").removeClass("d-flex").hide();
