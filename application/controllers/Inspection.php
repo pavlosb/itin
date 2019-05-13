@@ -294,7 +294,7 @@ redirect ('inspection/inspections_list', 'refresh');
 		 $mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
 		$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."certfile_inspection" => $filename.".pdf", "status_inspection" => 1));
 		$status[$langprefix."certfile_inspection"] = $filename.".pdf";
-		$status['created'] "ok";
+		$status['created'] = "ok";
 		$this->lang->load('itin',$oldlang);
 		$this->session->set_userdata('site_lang', $oldlang);
 		//redirect ('inspection/inspection_view/'.$id, 'refresh');
