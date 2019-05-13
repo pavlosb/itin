@@ -32,7 +32,7 @@ if (isset($user_lang) && $user_lang == "greek") {
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
                     <?php } else { ?>
-                        <a href="<?= base_url()?>inspection/inspections_pdf/<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></a>
+                        <button type="button" id="createrpt" class="btn btn-outline-success btn-sm" data-inspid="<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></button>
 
                     <?php } ?></td>
                     <td class="text-center"><?php 
@@ -55,9 +55,13 @@ if (isset($user_lang) && $user_lang == "greek") {
             </table>
         </div>
     </div>
+    <div class="spinner-border align-self-center" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
 </div>
 <script>
 $(document).ready(function() {
+    $("#spinner").removeClass("d-flex").hide();
 
     var ulang = '<?= ucfirst($user_lang) ?>';
 
@@ -69,6 +73,13 @@ $(document).ready(function() {
                 {"searchable": false, "orderable": false, "targets": 6 }
         ],
         "lengthMenu": [ 25, 50, 100 ]
+        });
+
+
+        $( "#createrpt" ).click(function() {
+        var inspid =$(this).data("inspid");
+        alert(inspid);
+
         });
 } );
 </script>
