@@ -233,6 +233,8 @@ $( "#createcert" ).click(function() {
 		success: function(data){
 			$.each(data, function(i,item){
 				if (item.created == 'ok'){
+                    alert(item.en_certfile_inspection);
+                    alert(item.certfile_inspection);
                     $('.certel').attr('href','<?= base_url()?>assets/pdfs/'+ item.certfile_inspection);
                     $('.certen').attr('href','<?= base_url()?>assets/pdfs/'+ item.en_certfile_inspection);
                     $("#spinner").removeClass("d-flex").hide();
