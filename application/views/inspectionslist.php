@@ -100,6 +100,7 @@ $(document).ready(function() {
                     $('.repen').attr('href','<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
                     $("#spinner").removeClass("d-flex").hide();
                     $('.prep').show();
+                    window.location.reload(true);
 		
 				} else {
 		  
