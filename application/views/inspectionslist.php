@@ -32,7 +32,7 @@ if (isset($user_lang) && $user_lang == "greek") {
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
                     <?php } else { ?>
-                        <button type="button" id="createrpt" class="btn btn-outline-success btn-sm" data-inspid="<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></button>
+                        <button type="button" class="createrpt btn btn-outline-success btn-sm" data-inspid="<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></button>
                         <span class="prep"><a class="repel" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
                         <span class="prep"><a class="repen" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
                     <?php } ?></td>
@@ -80,7 +80,7 @@ $(document).ready(function() {
         });
 
 
-        $( "#createrpt" ).click(function() {
+        $( ".createrpt" ).click(function() {
         var inspid =$(this).data("inspid");
         $('.prep').hide();
         $("#spinner").addClass("d-flex").show();
@@ -95,7 +95,7 @@ $(document).ready(function() {
                    // alert(data.created);
                    // alert(data.en_certfile_inspection);
                    // alert(data.certfile_inspection);
-                    $( "#createrpt" ).hide();
+                    $( ".createrpt" ).hide();
                     $('.repel').attr('href','<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
                     $('.repen').attr('href','<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
                     $("#spinner").removeClass("d-flex").hide();
