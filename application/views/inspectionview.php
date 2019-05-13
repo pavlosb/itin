@@ -233,6 +233,7 @@ $( "#createcert" ).click(function() {
 		success: function(data){
 			$.each(data, function(i,item){
 				if (item.created == 'ok'){
+                    alert(item.created);
                     alert(item.en_certfile_inspection);
                     alert(item.certfile_inspection);
                     $('.certel').attr('href','<?= base_url()?>assets/pdfs/'+ item.certfile_inspection);
