@@ -23,7 +23,7 @@ if ($cp['name_section'] != $scp) { ?>
 <tr><td colspan="3"><h4><?= $cp[$langprefix.'name_section']; ?><br /><small><?= $cp[$otherlangprefix.'name_section']; ?></small></h4></td></tr>
 <tr><th>Σημείο</th><th class="text-center">Βαθμολογία</th><th></th></tr>
 <?php } ?>
-<tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr>
+<tr><td><?= $cp[$langprefix.'name_cp']; ?><br /><small><?= $cp[$otherlangprefix.'name_cp']; ?></small></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr>
 <?php
 $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
