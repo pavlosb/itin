@@ -45,10 +45,7 @@ if (isset($user_lang) && $user_lang == "greek") {
                         echo '<i class="fal fa-thumbs-down text-danger"></i>';
 
                     } ?>
-        
-                    
-                    
-                   </td>
+                  </td>
                     <td class="text-center"><?php echo ($insp->status_inspection > 0 ? '<a href="'.base_url().'inspection/inspection_view/'.$insp->id_inspection.'"><i class="fal fa-eye fa-lg text-secondary"></i></a>' : '<a href="'.base_url().'inspection/inspection_edit/'.$insp->id_inspection.'"><i class="fal fa-edit fa-lg text-secondary"></i></a>') ?></td>
                     </tr>
                 <?php endforeach; ?>
