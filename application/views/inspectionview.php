@@ -72,6 +72,10 @@
                            <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('englishlang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn2" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>"><i class="far fa-link"></i></button></p> 
                            <?php } else { ?>
                             <button type="button" id="createcert" class="btn btn-outline-success btn-sm"><i class="fas fa-plus"></i> <?= $this->lang->line('create_certificate'); ?></button>
+                            <p class="pcert"><a class="certel" href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('greeklang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn1" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>"><i class="far fa-link"></i></button></p>
+                            <p class="pcert"><a class="certen" href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('greeklang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn1" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>"><i class="far fa-link"></i></button></p>
+
+                            
                             <?php }
                             }?>
            </div>
@@ -91,6 +95,7 @@
 <script>
 jQuery(document).ready(function($) {
     $("#spinner").removeClass("d-flex").hide();
+    $('.pcert').hide();
   var btns = document.querySelectorAll('button');
   var clipboard = new ClipboardJS(btns);
 
@@ -228,7 +233,10 @@ $( "#createcert" ).click(function() {
 		success: function(data){
 			$.each(data, function(i,item){
 				if (item.created == 'ok'){
+                    $('.certel').attr('href','<?= base_url()?>assets/pdfs/'+ item.certfile_inspection);
+                    $('.certen').attr('href','<?= base_url()?>assets/pdfs/'+ item.en_certfile_inspection);
                     $("#spinner").removeClass("d-flex").hide();
+                    $('.pcert').show();
 		
 				} else {
 		  
