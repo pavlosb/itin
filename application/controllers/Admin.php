@@ -24,7 +24,11 @@ class Admin extends CI_Controller {
 			$this->load->model('itindata_model');
 			$this->load->helper('url_helper');
 			$this->load->helper('form');
-			
+			$this->lang->load('itin','greek');
+			$sesdata = $this->session->userdata;
+			$this->data = array(
+			'user_lang' => $sesdata['site_lang']
+			);
 			
 	}
 
@@ -43,6 +47,7 @@ class Admin extends CI_Controller {
 			{
 
 			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$data['sections'] = $this->_getsections('first');
@@ -73,6 +78,7 @@ public function checkpoints() {
 	} else if ($this->ion_auth->is_admin())
 		{
 			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
@@ -91,6 +97,7 @@ public function checkpoint_add(){
 		{
 
 		$user = $this->ion_auth->user()->row();
+		$data = $this->data;
 		$data['userid'] = $user->id;
 		$data['username'] = $user->first_name." ".$user->last_name;
 		$data['sections'] = $this->_getsections('second');
