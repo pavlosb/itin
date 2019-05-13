@@ -231,20 +231,20 @@ $( "#createcert" ).click(function() {
 		data: {id:<?= $inspection->id_inspection ?>},
 		url: "<?= base_url()?>inspection/cert_pdf",
 		success: function(data){
-			$.each(data, function(i,item){
-				if (item.created == 'ok'){
-                    alert(item.created);
-                    alert(item.en_certfile_inspection);
-                    alert(item.certfile_inspection);
-                    $('.certel').attr('href','<?= base_url()?>assets/pdfs/'+ item.certfile_inspection);
-                    $('.certen').attr('href','<?= base_url()?>assets/pdfs/'+ item.en_certfile_inspection);
+			//$.each(data, function(i,item){
+				if (data.created == 'ok'){
+                    alert(data.created);
+                    alert(data.en_certfile_inspection);
+                    alert(data.certfile_inspection);
+                    $('.certel').attr('href','<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
+                    $('.certen').attr('href','<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
                     $("#spinner").removeClass("d-flex").hide();
                     $('.pcert').show();
 		
 				} else {
 		  
 						}
-			});
+			//});
 			}
 		
 	  
