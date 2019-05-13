@@ -17,10 +17,10 @@ $mcp = "";
 $scp = "";
 foreach ($checkpoints as $cp): 
 if ($cp['mainsect'] != $mcp) { ?>
-<tr><td colspan="3"><h3><?= $cp[$langprefix.'mainsect']; ?><br /><small><?= $cp[$langprefix.'mainsect']; ?></small></h3></td></tr>
+<tr><td colspan="3"><h3><?= $cp[$langprefix.'mainsect']; ?><br /><small><?= $cp[$otherlangprefix.'mainsect']; ?></small></h3></td></tr>
 <?php } 
 if ($cp['name_section'] != $scp) { ?>
-<tr><td colspan="3"><h4><?= $cp['name_section']; ?></h4></td></tr>
+<tr><td colspan="3"><h4><?= $cp[$langprefix.'name_section']; ?><br /><small><?= $cp[$otherlangprefix.'name_section']; ?></small></h4></td></tr>
 <tr><th>Σημείο</th><th class="text-center">Βαθμολογία</th><th></th></tr>
 <?php } ?>
 <tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr>
