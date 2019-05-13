@@ -66,7 +66,7 @@ if (isset($user_lang) && $user_lang == "greek") {
 <script>
 $(document).ready(function() {
     $("#spinner").removeClass("d-flex").hide();
-
+    $('.prep').hide();
     var ulang = '<?= ucfirst($user_lang) ?>';
 
     $('#inspectlist').DataTable({
