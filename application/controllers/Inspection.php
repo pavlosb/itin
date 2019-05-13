@@ -141,12 +141,12 @@ class Inspection extends CI_Controller {
 	}
 
 
-	public function inspections_pdf($id) 
+	public function inspections_pdf() 
 	{
 	
 		if ($this->ion_auth->logged_in())
 		{
-		
+			$id = $this->input->post('id');
 			$user = $this->ion_auth->user()->row();
 			$data = $this->data;
 			$ulang = $data['user_lang'];
@@ -198,6 +198,7 @@ class Inspection extends CI_Controller {
 			//$mpdf->Output();
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
 			$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf", "status_inspection" => 1));
+			$status[$langprefix."certfile_inspection"] = $filename.".pdf";
 			$this->lang->load('itin',$newlang);
 			$this->session->set_userdata('site_lang', $newlang);
 			$sesdata = $this->session->userdata;
@@ -213,11 +214,17 @@ class Inspection extends CI_Controller {
 		
 	$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
 	 $this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf"));
+	 $status[$langprefix."certfile_inspection"] = $filename.".pdf";
+		$status['created'] = "ok";
 	 $this->lang->load('itin', $oldlang);
 		$this->session->set_userdata('site_lang', $oldlang);
 
-redirect ('inspection/inspections_list', 'refresh');
-			   
+//redirect ('inspection/inspections_list', 'refresh');
+$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+$this->output->set_header("Content-type: application/json");
+echo json_encode($status) ;  
+		 
 		} else {
 			redirect('auth/login');
 		}

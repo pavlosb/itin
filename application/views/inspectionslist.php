@@ -33,7 +33,8 @@ if (isset($user_lang) && $user_lang == "greek") {
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
                     <?php } else { ?>
                         <button type="button" id="createrpt" class="btn btn-outline-success btn-sm" data-inspid="<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></button>
-
+                        <span class="prep"><a class="repel" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
+                        <span class="prep"><a class="repen" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
                     <?php } ?></td>
                     <td class="text-center"><?php 
                     if ( ($insp->s1score_inspection >= 92) && ($insp->s2score_inspection >= 53) && ($insp->s1score_inspection >= 12))
@@ -55,7 +56,10 @@ if (isset($user_lang) && $user_lang == "greek") {
             </table>
         </div>
     </div>
-    <div class="spinner-border align-self-center" role="status">
+    
+</div>
+<div id="spinner" class="d-flex justify-content-center" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0; z-index: 9999; background: rgba(255,255,255,0.7);">
+  <div class="spinner-border align-self-center" role="status">
     <span class="sr-only">Loading...</span>
   </div>
 </div>
@@ -78,7 +82,33 @@ $(document).ready(function() {
 
         $( "#createrpt" ).click(function() {
         var inspid =$(this).data("inspid");
-        alert(inspid);
+        $('.prep').hide();
+        $("#spinner").addClass("d-flex").show();
+    $.ajax({
+		type: "POST",
+		dataType: "JSON",
+		data: {id:inspid},
+		url: "<?= base_url()?>inspection/inspections_pdf",
+		success: function(data){
+			//$.each(data, function(i,item){
+				if (data.created == 'ok'){
+                   // alert(data.created);
+                   // alert(data.en_certfile_inspection);
+                   // alert(data.certfile_inspection);
+                    $( "#createrpt" ).hide();
+                    $('.repel').attr('href','<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
+                    $('.repen').attr('href','<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
+                    $("#spinner").removeClass("d-flex").hide();
+                    $('.prep').show();
+		
+				} else {
+		  
+						}
+			//});
+			}
+		
+	  
+	});
 
         });
 } );
