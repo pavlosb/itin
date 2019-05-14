@@ -74,25 +74,25 @@ $lang['create_user_validation_password_label']         = 'Password';
 $lang['create_user_validation_password_confirm_label'] = 'Password Confirmation';
 
 // Edit User
-$lang['edit_user_heading']                           = 'Edit User';
+$lang['edit_user_heading']                           = 'Στοιχεία Χρήστη';
 $lang['edit_user_subheading']                        = 'Please enter the users information below.';
-$lang['edit_user_fname_label']                       = 'First Name:';
-$lang['edit_user_lname_label']                       = 'Last Name:';
-$lang['edit_user_company_label']                     = 'Company Name:';
+$lang['edit_user_fname_label']                       = "Όνομα:" ;
+$lang['edit_user_lname_label']                       = 'Επώνυμο:';
+$lang['edit_user_company_label']                     = 'Εταιρεία:';
 $lang['edit_user_email_label']                       = 'Email:';
-$lang['edit_user_phone_label']                       = 'Phone:';
-$lang['edit_user_password_label']                    = 'Password: (if changing password)';
-$lang['edit_user_password_confirm_label']            = 'Confirm Password: (if changing password)';
+$lang['edit_user_phone_label']                       = 'Τηλέφωνο:';
+$lang['edit_user_password_label']                    = 'Password: (εφόσον αλλάζει)';
+$lang['edit_user_password_confirm_label']            = 'Επιβεβαίωση Password: (εφόσον αλλάζει)';
 $lang['edit_user_groups_heading']                    = 'Member of groups';
-$lang['edit_user_submit_btn']                        = 'Save User';
-$lang['edit_user_validation_fname_label']            = 'First Name';
-$lang['edit_user_validation_lname_label']            = 'Last Name';
-$lang['edit_user_validation_email_label']            = 'Email Address';
-$lang['edit_user_validation_phone_label']            = 'Phone';
-$lang['edit_user_validation_company_label']          = 'Company Name';
+$lang['edit_user_submit_btn']                        = 'Αποθήκευση';
+$lang['edit_user_validation_fname_label']            = "Όνομα";
+$lang['edit_user_validation_lname_label']            = 'Επώνυμο';
+$lang['edit_user_validation_email_label']            = 'Email';
+$lang['edit_user_validation_phone_label']            = 'Τηλέφωνο';
+$lang['edit_user_validation_company_label']          = 'Εταιρεία';
 $lang['edit_user_validation_groups_label']           = 'Groups';
 $lang['edit_user_validation_password_label']         = 'Password';
-$lang['edit_user_validation_password_confirm_label'] = 'Password Confirmation';
+$lang['edit_user_validation_password_confirm_label'] = 'Επιβεβαίωση Password';
 
 // Create Group
 $lang['create_group_title']                  = 'Create Group';
