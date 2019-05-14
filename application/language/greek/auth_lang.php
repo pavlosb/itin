@@ -75,7 +75,7 @@ $lang['create_user_validation_password_confirm_label'] = 'Password Confirmation'
 
 // Edit User
 $lang['edit_user_heading']                           = 'Στοιχεία Χρήστη';
-$lang['edit_user_subheading']                        = 'Please enter the users information below.';
+$lang['edit_user_subheading']                        = 'Εισάγετε τα στοιχεία χρήστη.';
 $lang['edit_user_fname_label']                       = "Όνομα:" ;
 $lang['edit_user_lname_label']                       = 'Επώνυμο:';
 $lang['edit_user_company_label']                     = 'Εταιρεία:';
