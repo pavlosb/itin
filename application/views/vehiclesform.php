@@ -1,3 +1,40 @@
+<?php
+$client_vhcl = "";
+$reg_vhcl = "";
+$firstreg_vhcl = "";
+$vin_vhcl = "";
+$mlg_vhcl = "";
+$nxtdate_vhcl = "";
+$type_vhcl = "";
+$make_vhcl = "";
+$model_vhcl = "";
+$doors_vhcl = "";
+$colour_vhcl = "";
+$displ_vhcl = "";
+$pow_vhcl = "";
+if (isset($vhcldata)) {
+  $id_vhcl = $vhcldata[0]->id_vhcl;
+  $reg_vhcl = $vhcldata[0]->reg_vhcl;
+  $firstreg_vhcl = $vhcldata[0]->firstreg_vhcl;
+  $vin_vhcl = $vhcldata[0]->vin_vhcl;
+  $mlg_vhcl = $vhcldata[0]->mlg_vhcl;
+  $nxtdate_vhcl = $vhcldata[0]->nxtdate_vhcl;
+  $type_vhcl = $vhcldata[0]->type_vhcl;
+  $make_vhcl = $vhcldata[0]->make_vhcl;
+  $model_vhcl = $vhcldata[0]->model_vhcl;
+  $doors_vhcl = $vhcldata[0]->doors_vhcl;
+  $colour_vhcl = $vhcldata[0]->colour_vhcl;
+  $displ_vhcl = $vhcldata[0]->displ_vhcl;
+  $pow_vhcl = $vhcldata[0]->pow_vhcl;
+  $id_vhcl = $vhcldata[0]->id_vhcl;
+
+}
+
+
+?>
+
+
+
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
   <div class="col-sm-10 col-lg-6">
@@ -10,6 +47,9 @@
 <?php 
 $attributes = array('id' => 'vehicleForm');
 echo form_open("inspection/vehicle_save", $attributes);?>
+<?php if (isset($id_vhcl)) {?>
+	<input type="hidden" name ="id_vhcl" value ="<?= $id_vhcl ?>">
+<?php } ?>
 <div class="form-group">
     <label for="client_vhcl"><?= $this->lang->line('client_vhcl'); ?></label>
     <select class="form-control" id="client_vhcl" name="client_vhcl">
@@ -22,12 +62,12 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 <div class="form-row">
   <div class="form-group col">
     <label for="reg_vhcl"><?= $this->lang->line('reg_vhcl'); ?></label>
-    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl" onKeyUp="elToEn(this.value)" onfocusout="checkifexists(this, 4)">
+    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl" value = <?= $reg_vhcl ?> onKeyUp="elToEn(this.value)" onfocusout="checkifexists(this, 4)">
   </div>
   <div class="form-group col">
     <label for="firstreg_vhcl"><?= $this->lang->line('firstreg_vhcl'); ?></label>
       <div class="input-group mb-3 date" id="datetimepicker11" data-target-input="nearest">
-        <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" data-target="#datetimepicker11">
+        <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" value = <?= $firstreg_vhcl ?> data-target="#datetimepicker11">
           <div class="input-group-append" data-target="#datetimepicker11" data-toggle="datetimepicker">
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
           </div>
@@ -36,17 +76,17 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 </div>
   <div class="form-group">
     <label for="vin_vhcl"><?= $this->lang->line('vin_vhcl'); ?></label>
-    <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl"  onfocusout="checkifexists(this, 15)">
+    <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl" value = <?= $vin_vhcl ?>  onfocusout="checkifexists(this, 15)">
   </div>
   <div class="form-row">
   <div class="form-group col">
     <label for="mlg_vhcl"><?= $this->lang->line('mlg_vhcl'); ?></label>
-    <input type="number" class="form-control" id="mlg_vhcl" name ="mlg_vhcl">
+    <input type="number" class="form-control" id="mlg_vhcl" name ="mlg_vhcl" value = <?= $mlg_vhcl ?>>
   </div>
   <div class="form-group col">
     <label for="nxtdate_vhcl"><?= $this->lang->line('nxtdate_vhcl'); ?></label>
       <div class="input-group mb-3 date" id="datetimepicker12" data-target-input="nearest">
-        <input type="text" class="form-control datetimepicker-input" id="nxtdate_vhcl" name ="nxtdate_vhcl" data-target="#datetimepicker12">
+        <input type="text" class="form-control datetimepicker-input" id="nxtdate_vhcl" value = <?= $nxtdate_vhcl ?> name ="nxtdate_vhcl" data-target="#datetimepicker12">
           <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
           </div>

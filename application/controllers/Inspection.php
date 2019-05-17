@@ -612,6 +612,26 @@ redirect('inspection/inspections_list', 'refresh');
 
 	}
 
+	public function vehicle_edit($id_vhcl) {
+
+		if ($this->ion_auth->logged_in())
+		{
+			$data = $this->data;
+			$user = $this->ion_auth->user()->row();
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$data['vhcldata'] = $this->itindata_model->get_vehiclesfull(array('id_vhcl' => $id_vhcl));
+			//print_r($data['clients']);
+				$this->load->view('header', $data);
+				$this->load->view('vehiclesform', $data);
+				$this->load->view('footer', $data);
+		} else {
+			redirect('auth/login');
+		}
+
+
+	}
+
 	public function client_delete($id) {
 		if ($this->ion_auth->logged_in())
 		{
