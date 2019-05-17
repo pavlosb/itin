@@ -55,6 +55,7 @@ $lang['email_client'] = 'email';
 $lang['createaccount'] = 'Δημιουργία Λογαριασμού';
 
 // VEHICLES
+$lang['vehicles'] = 'Οχήματα';
 $lang['incorrect_vin'] = 'Ο αριθμός πλαισίου δεν είναι έγκυρος';
 $lang['vehicle_details'] = 'Στοιχεία Οχήματος';
 $lang['client_vhcl'] = 'Πελάτης';

@@ -140,6 +140,27 @@ class Inspection extends CI_Controller {
 
 	}
 
+	public function vehicles_list() 
+	{
+	
+		if ($this->ion_auth->logged_in())
+		{
+			$data = $this->data;
+		$user = $this->ion_auth->user()->row();
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$data['vehicles'] = $this->itindata_model->get_vehiclesfull();
+			//$data['inspections'] = $this->itindata_model->get_inspectionsfull(array('inspector_inspection' => $user->id));
+			$this->load->view('header', $data);
+			$this->load->view('vehicleslist', $data);
+			$this->load->view('footer', $data);
+		} else {
+			redirect('auth/login');
+		}
+		
+
+	}
+
 
 	public function inspections_pdf() 
 	{

@@ -55,6 +55,7 @@ $lang['email_client'] = 'email';
 $lang['createaccount'] = 'Create Account';
 
 // VEHICLES
+$lang['vehicles'] = 'Vehicles';
 $lang['incorrect_vin'] = 'Invalid VIN';
 $lang['vehicle_details'] = 'Vehicle Details';
 $lang['client_vhcl'] = 'Client';
