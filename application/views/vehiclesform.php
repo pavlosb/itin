@@ -14,6 +14,7 @@ $displ_vhcl = "";
 $pow_vhcl = "";
 if (isset($vhcldata)) {
   $id_vhcl = $vhcldata[0]->id_vhcl;
+  $client_vhcl = $vhcldata[0]->client_vhcl;
   $reg_vhcl = $vhcldata[0]->reg_vhcl;
   $firstreg_vhcl = $vhcldata[0]->firstreg_vhcl;
   $vin_vhcl = $vhcldata[0]->vin_vhcl;
@@ -55,7 +56,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
     <select class="form-control" id="client_vhcl" name="client_vhcl">
       <option value = ""><?= $this->lang->line('choose'); ?></option>
       <?php foreach ($clients as $client) : ?>
-      <option value="<?= $client->id_client ?>"><?= $client->name_client ?></option>
+      <option value="<?= $client->id_client ?>" <?php if ($client->id_client == $client_vhcl) { echo "SELECTED"; } ?>><?= $client->name_client ?></option>
 <?php endforeach; ?>
     </select>
   </div>
