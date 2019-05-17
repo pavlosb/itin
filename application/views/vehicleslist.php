@@ -30,7 +30,7 @@
                     <td class="text-center"><?php echo $vhcl->model_vhcl; ?></td>
                     <td class="text-center"><?php echo $vhcl->name_client; ?></td>
                     <td class="text-left"><a href="<?=base_url() ?>inspection/vehicle_edit/<?= $vhcl->id_vhcl; ?>"><i class="fal fa-edit"></i></a>
-                    <?php if (!isset($cl->id_vhcl)) { ?>
+                    <?php if (!isset($vhcl->id_inspection)) { ?>
                         <a href="<?=base_url() ?>inspection/vehicle_delete/<?= $vhcl->id_vhcl ?>" class="confirm"><i class="fal fa-times text-danger"></i></a>                    
                     <?php } ?>
                     </td>
@@ -52,7 +52,7 @@ $(document).ready(function() {
 
 var ulang = '<?= ucfirst($user_lang) ?>';
 
-    $('#clientslist').DataTable({
+    $('#vehicleslist').DataTable({
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
