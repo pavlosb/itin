@@ -151,7 +151,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 <script type="text/javascript">
        jQuery(document).ready(function($){
 
-        jQuery(document).ready(function($){
+       
 		$('#vehicleForm').on('input change', function() {
     	$('.btn.btn-primary').attr('disabled', false);
   });
