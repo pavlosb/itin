@@ -161,7 +161,7 @@ $maxpos = $row->maxpos;
     {
       $q = "Select  v.*, i.*, c.*  from vehicles_tbl v
             LEFT JOIN inspections_tbl i ON  v.id_vhcl = i.vehicle_inspection
-            LEFT JOIN clients_tbl c ON v.client_vhcl = c.id_client 
+            LEFT JOIN clients_tbl c ON v.client_vhcl = c.id_client"
             ;
 
       if (isset($where)) 
