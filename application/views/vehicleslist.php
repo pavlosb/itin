@@ -19,20 +19,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php 
-                
-                foreach ($vehicles as $vhcl): 
-                                      ?>
+                <?php foreach ($vehicles as $vhcl): ?>
                     <tr>
                     <td class="text-center name_client"><?php echo $vhcl->reg_vhcl; ?></td>
-                    <td class="text-center"><?php echo $vhcl->vin_vhcl; ?></td>
+                    <td class="text-center small"><?php echo $vhcl->vin_vhcl; ?></td>
                     <td class="text-center"><?php echo $vhcl->make_vhcl; ?></td>
                     <td class="text-center"><?php echo $vhcl->model_vhcl; ?></td>
-                    <td class="text-center"><?php echo $vhcl->name_client; ?></td>
+                    <td class="text-center small"><?php echo $vhcl->name_client; ?></td>
                     <td class="text-left"><a href="<?=base_url() ?>inspection/vehicle_edit/<?= $vhcl->id_vhcl; ?>"><i class="fal fa-edit"></i></a>
                     <?php if (!isset($vhcl->id_inspection)) { ?>
                         <a href="<?=base_url() ?>inspection/vehicle_delete/<?= $vhcl->id_vhcl ?>" class="confirm"><i class="fal fa-times text-danger"></i></a>                    
-                    <?php } ?>
+                    <?php } else { ?>
+<?php echo ($vhcl->status_inspection > 0 ? '<a href="'.base_url().'inspection/inspection_view/'.$vhcl->id_inspection.'"><i class="fal fa-clipboard-check"></i></a>' : '<a href="'.base_url().'inspection/inspection_edit/'.$vhcl->id_inspection.'"><i class="fal fa-clipboard-check"></i></a>') ?>
+                   <?php  } ?>
+
+
+
+                     } ?>
                     </td>
                     </tr>
        <?php 
