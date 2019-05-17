@@ -30,7 +30,7 @@
                     <?php if (!isset($vhcl->id_inspection)) { ?>
                         <a href="<?=base_url() ?>inspection/vehicle_delete/<?= $vhcl->id_vhcl ?>" class="confirm"><i class="fal fa-times fa-lg text-danger"></i></a>                    
                     <?php } else { ?>
-<?php echo ($vhcl->status_inspection > 0 ? '<a href="'.base_url().'inspection/inspection_view/'.$vhcl->id_inspection.'"><i class="fal fa-clipboard-check fa-lg"></i></a>' : '<a href="'.base_url().'inspection/inspection_edit/'.$vhcl->id_inspection.'"><i class="fal fa-clipboard-check"></i></a>') ?>
+<?php echo ($vhcl->status_inspection > 0 ? '<a href="'.base_url().'inspection/inspection_view/'.$vhcl->id_inspection.'"><i class="fal fa-clipboard-check fa-lg"></i></a>' : '<a href="'.base_url().'inspection/inspection_edit/'.$vhcl->id_inspection.'"><i class="fal fa-clipboard-check fa-lg"></i></a>') ?>
                    <?php  } ?>
 
 
