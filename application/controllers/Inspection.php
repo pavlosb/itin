@@ -623,6 +623,17 @@ redirect('inspection/inspections_list', 'refresh');
 
 	}
 
+	public function vehicle_delete($id) {
+		if ($this->ion_auth->logged_in())
+		{
+			$this->itindata_model->del_vehicle($id);
+			redirect('inspection/vehicles_list', 'refresh');
+		} else {
+			redirect('auth/login');
+		}
+
+	}
+
 
 	public function vindecoder($vinr) {
 		if ($this->ion_auth->logged_in())

@@ -288,6 +288,12 @@ $maxpos = $row->maxpos;
       return;
     } 
 
+    public function del_vehicle($id) {
+      $this->db->where('id_vehicle', $id);
+      $this->db->delete('vehicles_tbl');
+      return;
+    } 
+
     public function getlatsinspectionid() {
       
       $this->db->select('id_inspection');
