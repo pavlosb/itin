@@ -67,7 +67,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   <div class="form-group col">
     <label for="firstreg_vhcl"><?= $this->lang->line('firstreg_vhcl'); ?></label>
       <div class="input-group mb-3 date" id="datetimepicker11" data-target-input="nearest">
-        <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" value = <?= $firstreg_vhcl ?> data-target="#datetimepicker11">
+        <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" value = <?= date("m/Y", strtotime($firstreg_vhcl)) ?> data-target="#datetimepicker11">
           <div class="input-group-append" data-target="#datetimepicker11" data-toggle="datetimepicker">
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
           </div>
