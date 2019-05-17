@@ -289,7 +289,7 @@ $maxpos = $row->maxpos;
     } 
 
     public function del_vehicle($id) {
-      $this->db->where('id_vehicle', $id);
+      $this->db->where('id_vhcl', $id);
       $this->db->delete('vehicles_tbl');
       return;
     } 
