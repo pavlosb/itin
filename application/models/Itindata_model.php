@@ -282,6 +282,12 @@ $maxpos = $row->maxpos;
       return;
     }    
 
+    public function upd_vehicle($id, $data) {
+      $this->db->where('id_vhcl', $id);
+      $this->db->update('vehicles_tbl', $data);
+      return;
+    }
+
     public function del_client($id) {
       $this->db->where('id_client', $id);
       $this->db->delete('clients_tbl');

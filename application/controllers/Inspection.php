@@ -443,6 +443,7 @@ redirect('inspection/inspections_list', 'refresh');
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
+			
 			$insdata['client_vhcl'] = $this->input->post('client_vhcl');
 			$insdata['reg_vhcl'] = $this->input->post('reg_vhcl');
 			$insdata['vin_vhcl'] = $this->input->post('vin_vhcl');
@@ -456,8 +457,14 @@ redirect('inspection/inspections_list', 'refresh');
 			$insdata['colour_vhcl'] = $this->input->post('colour_vhcl');
 			$insdata['firstreg_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('firstreg_vhcl'))))));
 			$insdata['nxtdate_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('nxtdate_vhcl'))))));
+			if (isset($_POST['id_vhcl'])) {
+			$this->itindata_model->upd_vehicle($this->input->post('id_vhcl'), $insdata);
+			redirect('inspection/vehicles_list', 'refresh');
+			} else {
 			$vehicleid = $this->itindata_model->set_vehicle($insdata);
 			redirect('inspection/index', 'refresh');
+			}
+			
 		} else {
 			redirect('auth/login');
 		}
