@@ -13,6 +13,7 @@ class LanguageLoader
         } else {
             $ci->lang->load('itin','greek');
             $ci->lang->load('ion_auth','greek');
+            
         }
     }
 }

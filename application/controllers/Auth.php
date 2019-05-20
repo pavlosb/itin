@@ -21,7 +21,7 @@ class Auth extends CI_Controller
 			$this->data = array(
 			'user_lang' => $sesdata['site_lang'],
 			);
-		//$this->lang->load('auth','site_lang');
+		$this->lang->load('auth',$sesdata['site_lang']);
 	}
 
 	/**
