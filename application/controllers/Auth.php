@@ -43,6 +43,7 @@ class Auth extends CI_Controller
 			
 			// set the flash data error message if there is one
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+			$this->data['msgclass'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('msgclass');
 
 			//list the users
 			$this->data['users'] = $this->ion_auth->users()->result();
@@ -82,6 +83,7 @@ class Auth extends CI_Controller
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
+				$this->session->set_flashdata('msgclass', 'alert-success');
 				redirect('/', 'refresh');
 			}
 			else
@@ -89,6 +91,7 @@ class Auth extends CI_Controller
 				// if the login was un-successful
 				// redirect them back to the login page
 				$this->session->set_flashdata('message', $this->ion_auth->errors());
+				$this->session->set_flashdata('msgclass', 'alert-danger');
 				redirect('auth/login', 'refresh'); // use redirects instead of loading views for compatibility with MY_Controller libraries
 			}
 		}
@@ -324,7 +327,7 @@ class Auth extends CI_Controller
 
 				// set the flash data error message if there is one
 				$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-				$this->data['msgclass'] = 'alert-danger';
+				$this->data['msgclass'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('msgclass');
 				
 
 				$this->data['min_password_length'] = $this->config->item('min_password_length', 'ion_auth');
@@ -378,11 +381,13 @@ class Auth extends CI_Controller
 					{
 						// if the password was successfully changed
 						$this->session->set_flashdata('message', $this->ion_auth->messages());
+						$this->session->set_flashdata('msgclass', 'alert-success');
 						redirect("auth/login", 'refresh');
 					}
 					else
 					{
 						$this->session->set_flashdata('message', $this->ion_auth->errors());
+						$this->session->set_flashdata('msgclass', 'alert-danger');
 						redirect('auth/reset_password/' . $code, 'refresh');
 					}
 				}
@@ -420,12 +425,14 @@ class Auth extends CI_Controller
 		{
 			// redirect them to the auth page
 			$this->session->set_flashdata('message', $this->ion_auth->messages());
+			$this->session->set_flashdata('msgclass', 'alert-success');
 			redirect("auth", 'refresh');
 		}
 		else
 		{
 			// redirect them to the forgot password page
 			$this->session->set_flashdata('message', $this->ion_auth->errors());
+			$this->session->set_flashdata('msgclass', 'alert-danger');
 			redirect("auth/forgot_password", 'refresh');
 		}
 	}
@@ -539,7 +546,7 @@ class Auth extends CI_Controller
 			// display the create user form
 			// set the flash data error message if there is one
 			$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-			$this->data['msgclass'] = 'alert-danger';
+			$this->data['msgclass'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('msgclass')));
 			$this->data['first_name'] = [
 				'name' => 'first_name',
 				'id' => 'first_name',
@@ -712,7 +719,7 @@ class Auth extends CI_Controller
 
 		// set the flash data error message if there is one
 		$this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
-		$this->data['msgclass'] = $this->session->flashdata('msgclass');
+		$this->data['msgclass'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('msgclass')));
 		// pass the user to the view
 		$this->data['user'] = $user;
 		$this->data['groups'] = $groups;
