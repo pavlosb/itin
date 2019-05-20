@@ -4,7 +4,7 @@
 <h1 class="display-4"><?php echo lang('login_heading');?></h1>
 <p class="lead"><?php echo lang('login_subheading');?></p>
 <?php if ($message !=""){ ?>
-<div class="alert alert-danger" role="alert"><?php echo $message;?></div>
+<div class="alert <?php echo $msgclass;?>" role="alert"><?php echo $message;?></div>
 <?php } ?>
 </div>
 </div>

@@ -6,7 +6,7 @@
 <p class="lead"><?php echo lang('index_subheading');?></p>
 
 <?php if ($message !=""){ ?>
- <div class="alert alert-danger" role="alert"><?php echo $message;?></div>
+ <div class="alert <?php echo $msgclass;?>" role="alert"><?php echo $message;?></div>
 <?php } ?>
 </div>
 </div>
