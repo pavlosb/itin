@@ -27,13 +27,14 @@ class Inspection extends CI_Controller {
 			$this->lang->load('itin','greek');
 			$sesdata = $this->session->userdata;
 			$this->data = array(
-			'user_lang' => $sesdata['site_lang']
+			'user_lang' => $sesdata['site_lang'],
+			'usrlvl' => 3
 			);
 			
 	}
 	public function index()
 	{
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$user = $this->ion_auth->user()->row();
 			$data = $this->data;
@@ -50,7 +51,7 @@ class Inspection extends CI_Controller {
 
 	public function inspection_add()
 	{
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$user = $this->ion_auth->user()->row();
 			$data = $this->data;
@@ -99,7 +100,7 @@ class Inspection extends CI_Controller {
 
 	public function inspection_edit($id)
 	{
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
@@ -122,7 +123,7 @@ class Inspection extends CI_Controller {
 	public function inspections_list() 
 	{
 	
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 		$user = $this->ion_auth->user()->row();
@@ -143,7 +144,7 @@ class Inspection extends CI_Controller {
 	public function vehicles_list() 
 	{
 	
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 		$user = $this->ion_auth->user()->row();
@@ -165,7 +166,7 @@ class Inspection extends CI_Controller {
 	public function inspections_pdf() 
 	{
 	
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$id = $this->input->post('id');
 			$user = $this->ion_auth->user()->row();
@@ -256,7 +257,7 @@ echo json_encode($status) ;
 	public function cert_pdf() 
 	{
 	
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$id = $this->input->post('id');
 			$user = $this->ion_auth->user()->row();
@@ -341,7 +342,7 @@ echo json_encode($status) ;
 	public function inspection_view($id) 
 	{
 	
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
@@ -372,7 +373,7 @@ echo json_encode($status) ;
 
 	public function inspection_new()
 	{
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
@@ -390,7 +391,7 @@ echo json_encode($status) ;
 
 	public function inspection_save()
 	{
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
@@ -416,7 +417,7 @@ redirect('inspection/inspections_list', 'refresh');
 	}
 
 	public function vehicle_add() {
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
@@ -437,7 +438,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 	public function vehicle_save() {
 
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
@@ -472,7 +473,7 @@ redirect('inspection/inspections_list', 'refresh');
 	}
 
 	public function client_add() {
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
@@ -490,7 +491,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 	public function client_save() {
 
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
@@ -580,7 +581,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 
     public function clients_list() {
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
@@ -621,7 +622,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 	public function vehicle_edit($id_vhcl) {
 
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$data = $this->data;
 			$user = $this->ion_auth->user()->row();
@@ -643,7 +644,7 @@ redirect('inspection/inspections_list', 'refresh');
 	}
 
 	public function client_delete($id) {
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			$this->itindata_model->del_client($id);
 			redirect('inspection/clients_list', 'refresh');
@@ -666,7 +667,7 @@ redirect('inspection/inspections_list', 'refresh');
 
 
 	public function vindecoder($vinr) {
-		if ($this->ion_auth->logged_in())
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 		
 $apiPrefix = "https://api.vindecoder.eu/2.0";
