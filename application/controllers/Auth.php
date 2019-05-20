@@ -39,6 +39,10 @@ class Auth extends CI_Controller
 		}
 		else
 		{
+			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
+			$this->data['userid'] = $user->id;
+			$this->data['username'] = $user->first_name." ".$user->last_name;
 			$this->data['title'] = $this->lang->line('index_heading');
 			
 			// set the flash data error message if there is one
@@ -57,6 +61,7 @@ class Auth extends CI_Controller
 			}
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
 			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'index', $this->data);
+			$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'footer', $this->data);
 		}
 	}
 
