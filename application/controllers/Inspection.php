@@ -28,7 +28,7 @@ class Inspection extends CI_Controller {
 			$sesdata = $this->session->userdata;
 			$this->data = array(
 			'user_lang' => $sesdata['site_lang'],
-			'usrlvl' => 3
+			'usrgrp' => 3
 			);
 			
 	}
