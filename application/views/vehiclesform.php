@@ -99,7 +99,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
     <select class="form-control" id="type_vhcl" name="type_vhcl">
     <option value = ""><?= $this->lang->line('choose'); ?></option>
       <?php foreach ($vhcltypes as $vt) : ?>
-      <option value="<?= $vt['nametype'] ?>"><?=  $vt['nametype'] ?></option>
+      <option value="<?= $vt['nametype'] ?>" <?php if ($vt['nametype'] == $type_vhcl) { echo "SELECTED"; } ?>><?=  $vt['nametype'] ?></option>
 <?php endforeach; ?>
     </select>
     </div>
