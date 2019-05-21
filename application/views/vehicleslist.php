@@ -26,9 +26,9 @@
                     <td class="text-center"><?php echo $vhcl->make_vhcl; ?></td>
                     <td class="text-center"><?php echo $vhcl->model_vhcl; ?></td>
                     <td class="text-center small"><?php echo $vhcl->name_client; ?></td>
-                    <td class="text-left"><a href="<?=base_url() ?>inspection/vehicle_edit/<?= $vhcl->id_vhcl; ?>"><i class="fal fa-edit fa-lg"></i></a>
+                    <td class="text-left"><a class="button btn btn-outline-primary btn-sm" href="<?=base_url() ?>inspection/vehicle_edit/<?= $vhcl->id_vhcl; ?>"><i class="fal fa-edit fa-lg"></i></a>
                     <?php if (!isset($vhcl->id_inspection)) { ?>
-                        <a href="<?=base_url() ?>inspection/vehicle_delete/<?= $vhcl->id_vhcl ?>" class="confirm"><i class="fal fa-times fa-lg text-danger"></i></a>                    
+                        <a class="button btn btn-outline-danger btn-sm" href="<?=base_url() ?>inspection/vehicle_delete/<?= $vhcl->id_vhcl ?>" class="confirm"><i class="fal fa-times fa-lg text-danger"></i></a>                    
                     <?php } else { ?>
 <?php echo ($vhcl->status_inspection > 0 ? '<a href="'.base_url().'inspection/inspection_view/'.$vhcl->id_inspection.'"><i class="fal fa-clipboard-check fa-lg"></i></a>' : '<a href="'.base_url().'inspection/inspection_edit/'.$vhcl->id_inspection.'"><i class="fal fa-clipboard-check fa-lg"></i></a>') ?>
                    <?php  } ?>
