@@ -73,3 +73,6 @@
       <p><?php echo form_submit('submit', lang('edit_user_submit_btn'));?></p>
 
 <?php echo form_close();?>
+</div>
+</div>
+</div>
