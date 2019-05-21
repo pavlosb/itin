@@ -773,8 +773,13 @@ class Auth extends CI_Controller
 			'class' =>'form-control',
 			'type' => 'password'
 		];
+		if ($this->ion_auth->is_admin()) {
 		$this->_render_page('auth' . DIRECTORY_SEPARATOR . 'header', $this->data);
+		} else {
+		$this->_render_page('header', $this->data);	
+		}
 		$this->_render_page('auth/edit_user', $this->data);
+		$this->_render_page('auth/footer', $this->data);
 	}
 
 	/**
