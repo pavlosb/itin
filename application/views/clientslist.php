@@ -7,7 +7,7 @@
 </div>
     <div class="row justify-content-center">
          <div class="col-12">
-            <table id="clientslist" class="table table-striped table-smtable-responsive-sm">
+            <table id="clientslist" class="table table-striped table-sm table-responsive-sm">
                 <thead>
                     <tr>
                         <th scope="col" class="text-center"><?= $this->lang->line('name_client'); ?></th>
