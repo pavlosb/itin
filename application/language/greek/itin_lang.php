@@ -32,6 +32,7 @@ $lang['mnu_client_add'] = 'Νέος Πελάτης';
 $lang['mnu_clients_list'] = "Κατάλογος";
 $lang['mnu_vehicles'] = 'Οχήματα';
 $lang['mnu_vehicle_add'] = 'Νέο Όχημα';
+$lang['mnu_vehicles_list'] = "Κατάλογος";
 $lang['mnu_inspections'] = 'Επιθεωρήσεις';
 $lang['mnu_inspection_add'] = 'Νέα Επιθεώρηση';
 $lang['mnu_inspections_list'] = "Κατάλογος";

@@ -40,7 +40,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/vehicle_add"><?= $this->lang->line('mnu_vehicle_add'); ?></a>
-          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/inspections_list"><?= $this->lang->line('mnu_inspections_list'); ?></a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/vehicles_list"><?= $this->lang->line('mnu_vehicless_list'); ?></a>
          </div>
       </li>
       <li class="nav-item dropdown">
