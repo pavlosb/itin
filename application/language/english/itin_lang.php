@@ -32,9 +32,10 @@ $lang['mnu_client_add'] = 'New Client';
 $lang['mnu_clients_list'] = "Clients' List";
 $lang['mnu_vehicles'] = 'Vehicles';
 $lang['mnu_vehicle_add'] = 'New Vehicle';
+$lang['mnu_vehicles_list'] = "Vehicles' List";
 $lang['mnu_inspections'] = 'Inspections';
 $lang['mnu_inspection_add'] = 'New Inspection';
-$lang['mnu_inspections_list'] = "Inspection's List";
+$lang['mnu_inspections_list'] = "Inspections' List";
 
 // INSPECTIONS
 $lang['home_new_client'] = 'New<br />Client';
