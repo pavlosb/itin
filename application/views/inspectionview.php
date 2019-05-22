@@ -72,8 +72,8 @@
                            <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('englishlang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn2" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->en_certfile_inspection ?>"><i class="far fa-link"></i></button></p> 
                            <?php } else { ?>
                             <button type="button" id="createcert" class="btn btn-outline-success btn-sm"><i class="fas fa-plus"></i> <?= $this->lang->line('create_certificate'); ?></button>
-                            <p class="pcert"><a class="certel" href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('greeklang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn1" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>"><i class="far fa-link"></i></button></p>
-                            <p class="pcert"><a class="certen" href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('englishlang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn1" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>"><i class="far fa-link"></i></button></p>
+                            <p class="pcert"><a class="certel" href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('greeklang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn1 btnel" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>"><i class="far fa-link"></i></button></p>
+                            <p class="pcert"><a class="certen" href="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_certificate'); ?> (<?= $this->lang->line('englishlang'); ?>)</i></a> <button type="button" class="btn btn-info btn-sm btn1 btnen" data-clipboard-text="<?= base_url()?>assets/pdfs/<?= $inspection->certfile_inspection ?>"><i class="far fa-link"></i></button></p>
 
                             
                             <?php }
@@ -238,7 +238,9 @@ $( "#createcert" ).click(function() {
                    // alert(data.certfile_inspection);
                     $( "#createcert" ).hide();
                     $('.certel').attr('href','<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
+                    $('.btnel').attr('data-clipboard-text', '<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
                     $('.certen').attr('href','<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
+                    $('.btnen').attr('data-clipboard-text', '<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
                     $("#spinner").removeClass("d-flex").hide();
                     $('.pcert').show();
 		
