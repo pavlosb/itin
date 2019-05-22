@@ -238,9 +238,9 @@ $( "#createcert" ).click(function() {
                    // alert(data.certfile_inspection);
                     $( "#createcert" ).hide();
                     $('.certel').attr('href','<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
-                    $('.btnel').data('clipboard-text', '<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
+                    $('.btnel').attr('data-clipboard-text', '<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
                     $('.certen').attr('href','<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
-                    $('.btnen').data('clipboard-text', '<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
+                    $('.btnen').attr('data-clipboard-text', '<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
                     $("#spinner").removeClass("d-flex").hide();
                     $('.pcert').show();
 		
