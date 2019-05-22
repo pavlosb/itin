@@ -32,6 +32,7 @@ $lang['mnu_client_add'] = 'Νέος Πελάτης';
 $lang['mnu_clients_list'] = "Κατάλογος";
 $lang['mnu_vehicles'] = 'Οχήματα';
 $lang['mnu_vehicle_add'] = 'Νέο Όχημα';
+$lang['mnu_vehicles_list'] = "Κατάλογος";
 $lang['mnu_inspections'] = 'Επιθεωρήσεις';
 $lang['mnu_inspection_add'] = 'Νέα Επιθεώρηση';
 $lang['mnu_inspections_list'] = "Κατάλογος";
@@ -55,12 +56,13 @@ $lang['email_client'] = 'email';
 $lang['createaccount'] = 'Δημιουργία Λογαριασμού';
 
 // VEHICLES
+$lang['vehicles'] = 'Οχήματα';
 $lang['incorrect_vin'] = 'Ο αριθμός πλαισίου δεν είναι έγκυρος';
 $lang['vehicle_details'] = 'Στοιχεία Οχήματος';
 $lang['client_vhcl'] = 'Πελάτης';
-$lang['reg_vhcl'] = 'Αριθμός Πινακίδας';
+$lang['reg_vhcl'] = 'Πινακίδα';
 $lang['firstreg_vhcl'] = '1η Κυκλοφορία';
-$lang['vin_vhcl'] = 'Αριθμός Πλαισίου';
+$lang['vin_vhcl'] = 'Αρ. Πλαισίου';
 $lang['mlg_vhcl'] = 'Χιλιόμετρα';
 $lang['nxtdate_vhcl'] = 'Επόμενος Τεχν. Ελέγχος';
 $lang['type_vhcl'] = 'Είδος Οχήματος';

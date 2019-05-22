@@ -9,8 +9,11 @@ class LanguageLoader
         $siteLang = $ci->session->userdata('site_lang');
         if ($siteLang) {
             $ci->lang->load('itin',$siteLang);
+            $ci->lang->load('ion_auth',$siteLang);
         } else {
             $ci->lang->load('itin','greek');
+            $ci->lang->load('ion_auth','greek');
+            
         }
     }
 }

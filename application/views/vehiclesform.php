@@ -1,3 +1,41 @@
+<?php
+$client_vhcl = "";
+$reg_vhcl = "";
+$firstreg_vhcl = "";
+$vin_vhcl = "";
+$mlg_vhcl = "";
+$nxtdate_vhcl = "";
+$type_vhcl = "";
+$make_vhcl = "";
+$model_vhcl = "";
+$doors_vhcl = "";
+$colour_vhcl = "";
+$displ_vhcl = "";
+$pow_vhcl = "";
+if (isset($vhcldata)) {
+  $id_vhcl = $vhcldata[0]->id_vhcl;
+  $client_vhcl = $vhcldata[0]->client_vhcl;
+  $reg_vhcl = $vhcldata[0]->reg_vhcl;
+  $firstreg_vhcl = $vhcldata[0]->firstreg_vhcl;
+  $vin_vhcl = $vhcldata[0]->vin_vhcl;
+  $mlg_vhcl = $vhcldata[0]->mlg_vhcl;
+  $nxtdate_vhcl = $vhcldata[0]->nxtdate_vhcl;
+  $type_vhcl = $vhcldata[0]->type_vhcl;
+  $make_vhcl = $vhcldata[0]->make_vhcl;
+  $model_vhcl = $vhcldata[0]->model_vhcl;
+  $doors_vhcl = $vhcldata[0]->doors_vhcl;
+  $colour_vhcl = $vhcldata[0]->colour_vhcl;
+  $displ_vhcl = $vhcldata[0]->displ_vhcl;
+  $pow_vhcl = $vhcldata[0]->pow_vhcl;
+  $id_vhcl = $vhcldata[0]->id_vhcl;
+
+}
+
+
+?>
+
+
+
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
   <div class="col-sm-10 col-lg-6">
@@ -10,24 +48,27 @@
 <?php 
 $attributes = array('id' => 'vehicleForm');
 echo form_open("inspection/vehicle_save", $attributes);?>
+<?php if (isset($id_vhcl)) {?>
+	<input type="hidden" name ="id_vhcl" value ="<?= $id_vhcl ?>">
+<?php } ?>
 <div class="form-group">
     <label for="client_vhcl"><?= $this->lang->line('client_vhcl'); ?></label>
     <select class="form-control" id="client_vhcl" name="client_vhcl">
       <option value = ""><?= $this->lang->line('choose'); ?></option>
       <?php foreach ($clients as $client) : ?>
-      <option value="<?= $client->id_client ?>"><?= $client->name_client ?></option>
+      <option value="<?= $client->id_client ?>" <?php if ($client->id_client == $client_vhcl) { echo "SELECTED"; } ?>><?= $client->name_client ?></option>
 <?php endforeach; ?>
     </select>
   </div>
 <div class="form-row">
   <div class="form-group col">
     <label for="reg_vhcl"><?= $this->lang->line('reg_vhcl'); ?></label>
-    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl" onKeyUp="elToEn(this.value)" onfocusout="checkifexists(this, 4)">
+    <input type="text" class="form-control" id="reg_vhcl" name ="reg_vhcl" value = "<?= $reg_vhcl ?>" onKeyUp="elToEn(this.value)" onfocusout="checkifexists(this, 4)">
   </div>
   <div class="form-group col">
     <label for="firstreg_vhcl"><?= $this->lang->line('firstreg_vhcl'); ?></label>
       <div class="input-group mb-3 date" id="datetimepicker11" data-target-input="nearest">
-        <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" data-target="#datetimepicker11">
+        <input type="text" class="form-control datetimepicker-input" id="firstreg_vhcl" name ="firstreg_vhcl" value = "<?= date("m/Y", strtotime($firstreg_vhcl)) ?>" data-target="#datetimepicker11">
           <div class="input-group-append" data-target="#datetimepicker11" data-toggle="datetimepicker">
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
           </div>
@@ -36,17 +77,17 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 </div>
   <div class="form-group">
     <label for="vin_vhcl"><?= $this->lang->line('vin_vhcl'); ?></label>
-    <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl"  onfocusout="checkifexists(this, 15)">
+    <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl" value = "<?= $vin_vhcl ?>"  onfocusout="checkifexists(this, 15)">
   </div>
   <div class="form-row">
   <div class="form-group col">
     <label for="mlg_vhcl"><?= $this->lang->line('mlg_vhcl'); ?></label>
-    <input type="number" class="form-control" id="mlg_vhcl" name ="mlg_vhcl">
+    <input type="number" class="form-control" id="mlg_vhcl" name ="mlg_vhcl" value = "<?= $mlg_vhcl ?>">
   </div>
   <div class="form-group col">
     <label for="nxtdate_vhcl"><?= $this->lang->line('nxtdate_vhcl'); ?></label>
       <div class="input-group mb-3 date" id="datetimepicker12" data-target-input="nearest">
-        <input type="text" class="form-control datetimepicker-input" id="nxtdate_vhcl" name ="nxtdate_vhcl" data-target="#datetimepicker12">
+        <input type="text" class="form-control datetimepicker-input" id="nxtdate_vhcl" value = "<?= date("m/Y", strtotime($nxtdate_vhcl)) ?>" name ="nxtdate_vhcl" data-target="#datetimepicker12">
           <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
           </div>
@@ -58,7 +99,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
     <select class="form-control" id="type_vhcl" name="type_vhcl">
     <option value = ""><?= $this->lang->line('choose'); ?></option>
       <?php foreach ($vhcltypes as $vt) : ?>
-      <option value="<?= $vt['nametype'] ?>"><?=  $vt['nametype'] ?></option>
+      <option value="<?= $vt['nametype'] ?>" <?php if ($vt['nametype'] == $type_vhcl) { echo "SELECTED"; } ?>><?=  $vt['nametype'] ?></option>
 <?php endforeach; ?>
     </select>
     </div>
@@ -67,29 +108,29 @@ echo form_open("inspection/vehicle_save", $attributes);?>
     <select class="form-control" id="make_vhcl" name="make_vhcl">
     <option value = ""><?= $this->lang->line('choose'); ?></option>
       <?php foreach ($carbrands as $cb) : ?>
-      <option value="<?= $cb->name_carbrand ?>"><?= $cb->name_carbrand ?></option>
+      <option value="<?= $cb->name_carbrand ?>" <?php if ($cb->name_carbrand == $make_vhcl) { echo "SELECTED"; } ?>><?= $cb->name_carbrand ?></option>
 <?php endforeach; ?>
     </select>
   </div>
   <div class="form-group">
     <label for="model_vhcl"><?= $this->lang->line('model_vhcl'); ?></label>
-    <input type="text" class="form-control" id="model_vhcl" name ="model_vhcl">
+    <input type="text" class="form-control" id="model_vhcl" name ="model_vhcl" value = "<?= $model_vhcl ?>">
   </div>
   <div class="form-row">
   <div class="form-group col">
     <label for="doors_vhcl"><?= $this->lang->line('doors_vhcl'); ?></label>
-    <input type="number" class="form-control" id="doors_vhcl" name ="doors_vhcl" min="2" max="5">
+    <input type="number" class="form-control" id="doors_vhcl" name ="doors_vhcl" value = "<?= $doors_vhcl ?>" min="2" max="5">
     
   </div>
   <div class="form-group col">
     <label for="colour_vhcl"><?= $this->lang->line('colour_vhcl'); ?></label>
-    <input type="text" class="form-control" id="colour_vhcl" name ="colour_vhcl">
+    <input type="text" class="form-control" id="colour_vhcl"  value = "<?= $colour_vhcl ?>" name ="colour_vhcl">
     </div></div>
   <div class="form-row">
   <div class="form-group col">
     <label for="displ_vhcl"><?= $this->lang->line('displ_vhcl'); ?></label>
     <div class="input-group mb-3">
-    <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl">
+    <input type="text" class="form-control" id="displ_vhcl" name ="displ_vhcl"  value = "<?= $displ_vhcl ?>">
     <div class="input-group-append">
     <span class="input-group-text" id="basic-addon2">cc</span>
   </div></div>
@@ -97,18 +138,24 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   <div class="form-group col">
     <label for="pow_vhcl"><?= $this->lang->line('pow_vhcl'); ?></label>
     <div class="input-group mb-3">
-    <input type="text" class="form-control" id="pow_vhcl" name ="pow_vhcl">
+    <input type="text" class="form-control" id="pow_vhcl" name ="pow_vhcl" value = "<?= $pow_vhcl ?>">
     <div class="input-group-append">
     <span class="input-group-text" id="basic-addon2">kw</span>
   </div></div>
   </div></div>
-   <button type="submit" class="btn btn-primary"><?= $this->lang->line('submit'); ?></button>
+   <button type="submit" class="btn btn-primary" disabled><?= $this->lang->line('submit'); ?></button>
 <?php echo form_close();?>
 </div>
 </div>
 </div>
 <script type="text/javascript">
        jQuery(document).ready(function($){
+
+       
+		$('#vehicleForm').on('input change', function() {
+    	$('.btn.btn-primary').attr('disabled', false);
+  });
+
             $('#datetimepicker11').datetimepicker({
                 viewMode: 'years',
                 format: 'MM/YYYY'

@@ -12,16 +12,9 @@
    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/rg-1.1.0/datatables.min.css"/>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom.css">
-
-
-
-
-   <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/rg-1.1.0/datatables.min.js"></script>
-  
- 
-
-    <title>ITIN</title>
+ <title>ITIN</title>
   </head>
   <body>
   <div class="content">  
@@ -47,7 +40,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/vehicle_add"><?= $this->lang->line('mnu_vehicle_add'); ?></a>
-          <!--<a class="dropdown-item" href="<?php echo base_url(); ?>inspection/vehicles_list">Κατάλογος</a>-->
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/vehicles_list"><?= $this->lang->line('mnu_vehicles_list'); ?></a>
          </div>
       </li>
       <li class="nav-item dropdown">
@@ -66,7 +59,7 @@
          <i class="fas fa-user"></i>
         </a>
         <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<?php echo base_url(); ?>auth/edit_user/<?php echo $userid; ?>"><?php echo $username; ?></a>
+          <a class="dropdown-item" href="<?php echo base_url(); ?>auth/edit_user/<?= $userid; ?>"><?php echo $username ?></a>
           <a class="dropdown-item" href="<?php echo base_url(); ?>auth/logout"><?= $this->lang->line('logout'); ?></a>
           </div>
       </li>
