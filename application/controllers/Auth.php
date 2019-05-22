@@ -115,6 +115,7 @@ class Auth extends CI_Controller
 				'id' => 'identity',
 				'type' => 'text',
 				'class' =>'form-control',
+				'inputmode' => "email",
 				'value' => $this->form_validation->set_value('identity'),
 			];
 
