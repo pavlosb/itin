@@ -30,26 +30,26 @@ $lang['login_submit_btn']      = 'Login';
 $lang['login_forgot_password'] = 'Forgot your password?';
 
 // Index
-$lang['index_heading']           = 'Users';
-$lang['index_subheading']        = 'Below is a list of the users.';
-$lang['index_fname_th']          = 'First Name';
-$lang['index_lname_th']          = 'Last Name';
+$lang['index_heading']           = 'Χρήστες';
+$lang['index_subheading']        = 'Κατάλογος Χρηστών.';
+$lang['index_fname_th']          = 'Όνομα';
+$lang['index_lname_th']          = 'Επώνυμο';
 $lang['index_email_th']          = 'Email';
-$lang['index_groups_th']         = 'Groups';
-$lang['index_status_th']         = 'Status';
-$lang['index_action_th']         = 'Action';
-$lang['index_active_link']       = 'Active';
-$lang['index_inactive_link']     = 'Inactive';
-$lang['index_create_user_link']  = 'Create a new user';
-$lang['index_create_group_link'] = 'Create a new group';
+$lang['index_groups_th']         = 'Ομάδες';
+$lang['index_status_th']         = 'Κατάσταση';
+$lang['index_action_th']         = 'Ενέργεια';
+$lang['index_active_link']       = 'Ενεργός';
+$lang['index_inactive_link']     = 'Ανενεργός';
+$lang['index_create_user_link']  = 'Νέος Χρήστης';
+$lang['index_create_group_link'] = 'Νέα Ομάδα';
 
 // Deactivate User
-$lang['deactivate_heading']                  = 'Deactivate User';
-$lang['deactivate_subheading']               = 'Are you sure you want to deactivate the user \'%s\'';
-$lang['deactivate_confirm_y_label']          = 'Yes:';
-$lang['deactivate_confirm_n_label']          = 'No:';
-$lang['deactivate_submit_btn']               = 'Submit';
-$lang['deactivate_validation_confirm_label'] = 'confirmation';
+$lang['deactivate_heading']                  = 'Απενεργοποίηση Χρήστη';
+$lang['deactivate_subheading']               = 'Να απενεργοποιηθεί ο χρήστης \'%s\'';
+$lang['deactivate_confirm_y_label']          = 'Ναι:';
+$lang['deactivate_confirm_n_label']          = 'Όχι:';
+$lang['deactivate_submit_btn']               = 'Υποβολή';
+$lang['deactivate_validation_confirm_label'] = 'Επιβεβαιώση';
 $lang['deactivate_validation_user_id_label'] = 'user ID';
 
 // Create User

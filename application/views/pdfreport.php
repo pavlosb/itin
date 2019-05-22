@@ -88,7 +88,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <?php if ($result > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg" width="90" height="120">
 <?php } else { ?>
-<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp-fail.jpg" width="90" height="120">
+&nbsp;
 <?php } ?>
 </td>
  </tr>

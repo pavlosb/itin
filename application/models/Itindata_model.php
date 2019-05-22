@@ -157,6 +157,34 @@ $maxpos = $row->maxpos;
 		}
     }
 
+    public function get_vehiclesfull($where=null) 
+    {
+      $q = "Select  v.*, i.*, c.*  from vehicles_tbl v
+            LEFT JOIN inspections_tbl i ON  v.id_vhcl = i.vehicle_inspection
+            LEFT JOIN clients_tbl c ON v.client_vhcl = c.id_client"
+            ;
+
+      if (isset($where)) 
+      {
+
+         $q .= " WHERE ";
+            foreach ($where as $field => $value):
+               $q .= $field." = ".$value;
+            endforeach;
+      }
+            $query = $this->db->query($q);
+            if ($query -> num_rows() > 0) {
+               foreach ($query->result() as $row) {
+                  $data[] = $row;
+               }
+               return $data;
+            } else {
+               return null;
+            }
+    }
+
+    
+
     public function get_vehicle($data){
 
       $query = $this->db->get_where('vehicles_tbl', $data);
@@ -254,9 +282,21 @@ $maxpos = $row->maxpos;
       return;
     }    
 
+    public function upd_vehicle($id, $data) {
+      $this->db->where('id_vhcl', $id);
+      $this->db->update('vehicles_tbl', $data);
+      return;
+    }
+
     public function del_client($id) {
       $this->db->where('id_client', $id);
       $this->db->delete('clients_tbl');
+      return;
+    } 
+
+    public function del_vehicle($id) {
+      $this->db->where('id_vhcl', $id);
+      $this->db->delete('vehicles_tbl');
       return;
     } 
 
