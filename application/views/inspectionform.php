@@ -9,7 +9,6 @@
   $name_cp = $langprefix."name_cp";
   $helptext_cp = $langprefix."helptext_cp";
   ?>
-
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
       <div class="col-lg-8 p-3 bg-light">
