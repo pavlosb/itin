@@ -74,6 +74,7 @@ $lang['displ_vhcl'] = 'Κυβικά';
 $lang['pow_vhcl'] = 'Ιπποδύναμη';
 
 
+
 //INSPECTION
 $lang['new_inspection'] = 'Νέα Επιθεώρηση';
 $lang['vehicle_inspection'] = "Όχημα";
@@ -89,6 +90,8 @@ $lang['inspection_certificate'] = 'DEKRA Πιστοποιητικό';
 $lang['create_certificate'] = 'Δημιουργία Πιστοποιητικού';
 $lang['inspector'] = 'Εμπειρογνώμονας';
 $lang['leave_empty'] = 'Αφήστε κενό για αυτόματη αρίθμηση';
+$lang['comment'] = 'Παρατηρήσεις';
+
 
 
 // PDF REPORT
