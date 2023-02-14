@@ -81,7 +81,7 @@ if ($cp['name_section'] != $scp) { ?>
 </div>
 <?php } ?>
 
-<div class="form-group row py-3">
+<div class="form-group row pt-3">
   <input type=hidden name="chpsect[<?= $cp['id_cp']; ?>]" value ="<?= $cp['mainsectid']; ?>">
     <label for="inputEmail3" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
     <div class="col-sm-5 text-center text-sm-right">
@@ -98,6 +98,10 @@ if ($cp['name_section'] != $scp) { ?>
   
 </div>
     </div>
+  </div>
+	<div class="form-group row pb-3">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
  
 
