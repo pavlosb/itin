@@ -191,6 +191,7 @@ class Inspection extends CI_Controller {
 			$data['sec2score'] = round(100*($inspection->s2score_inspection / 62), -1);
 			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
+			$data['inspremark'] = $this->itindata_model->get_inspectionremarks($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			//$html = $this->load->view('header', $data, true);
