@@ -89,7 +89,7 @@ $lang['inspection_certificate'] = 'DEKRA Certificate';
 $lang['create_certificate'] = 'Create Certificate';
 $lang['inspector'] = 'Inspector';
 $lang['leave_empty'] = 'Leave empty for auto-numbering';
-
+$lang['comment'] = 'Remarks';
 
 //PDF REPORT
 $lang['pdf_report_num'] = 'REPORT NUMBER:';
