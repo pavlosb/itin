@@ -3,7 +3,7 @@
 } else {
   $langprefix ="en_";
   }
-
+print_r($inspremark);
   $mainsect = $langprefix."mainsect";
   $name_section = $langprefix."name_section";
   $name_cp = $langprefix."name_cp";
