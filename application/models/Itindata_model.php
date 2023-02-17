@@ -253,6 +253,14 @@ $maxpos = $row->maxpos;
       $this->db->insert_batch('inspectionresults_tbl', $data);
     }
 
+	 public function set_inspectionremarks($id, $data) 
+    {
+      $this->db->where(array('inspectionid_insrem' => $id));
+      $this->db->delete('inspectionremarks_tbl');
+
+      $this->db->insert_batch('inspectionremarks_tbl', $data);
+    }
+
     public function upd_inspection($id, $data){
       $this->db->where('id_inspection', $id);
       $this->db->update('inspections_tbl', $data);
@@ -322,7 +330,6 @@ $maxpos = $row->maxpos;
       $query = $this->db->get($chk_tbl); 
       if ($query->num_rows() > 0) {
          foreach ($query->result() as $row) {
-
              $data[] = $row;
          }
          return $data;

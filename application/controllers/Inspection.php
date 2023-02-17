@@ -398,11 +398,15 @@ echo json_encode($status) ;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$points = $_POST['checkpoint'];
+			$remarks = $_POST['remark'];
 			$sectors = $_POST['chpsect'];
 foreach ($points as $key => $value):
  
 	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
 
+endforeach;
+foreach ($remarks as $key => $value):
+	$remdata[] = array('inspectionid_insrem' => $this->input->post('inspectionid_insres'), 'chkpointid_insrem' => $key, 'remark_insrem' => $value);
 endforeach;
 //print_r($insdata);
 $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
