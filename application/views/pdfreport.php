@@ -227,7 +227,7 @@ $pointscore = $inspscore[$cp['id_cp']];
 	<?= $this->lang->line('comment'); ?><br/>
 <?php		echo $inspremark[$cp['id_cp']]; ?>
 </td></tr>
-	<?php } ?> 
+	<?php } 
 $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
 $z = $z + 1;
