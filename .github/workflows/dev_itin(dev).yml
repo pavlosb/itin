@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-			- name: Delete Old Artifacts
+		- name: Delete Old Artifacts
     		uses: actions/github-script@v6
     		id: artifact
     		with:
