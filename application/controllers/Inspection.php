@@ -407,7 +407,7 @@ foreach ($points as $key => $value):
 
 endforeach;
 foreach ($remarks as $key => $value):
-	if (isset($value)){
+	if ($value!=""){
 	$remdata[] = array('inspectionid_insrem' => $this->input->post('inspectionid_insres'), 'chkpointid_insrem' => $key, 'remark_insrem' => $value);
 	}
 endforeach;
