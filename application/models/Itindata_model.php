@@ -245,6 +245,24 @@ $maxpos = $row->maxpos;
       return null;
    }
     }
+
+	 public function get_inspectionremarks($id) {
+
+      $this->db->where(array('inspectionid_insrem' => $id));
+      $query = $this->db->get('inspectionremarks_tbl');
+      if ($query -> num_rows() > 0) {
+      foreach ($query->result() as $row)
+      {
+         $remark[$row->chkpointid_insrem] = $row->remark_insrem;
+      }
+      return $remark;
+   } else {
+      return null;
+   }
+    }
+
+
+
     public function set_inspectionscore($id, $data) 
     {
       $this->db->where(array('inspectionid_insres' => $id));

@@ -102,7 +102,11 @@ if ($cp['name_section'] != $scp) { ?>
 	<div class="form-group row pb-3">
 		<div class="col-12">
     <label for="rmrk[<?= $cp['id_cp']; ?>]"><?= $this->lang->line('comment'); ?></label>
-    <textarea name="remark[<?= $cp['id_cp']; ?>]"class="form-control" id="remark[<?= $cp['id_cp']; ?>]" rows="3"></textarea>
+    <textarea name="remark[<?= $cp['id_cp']; ?>]"class="form-control" id="remark[<?= $cp['id_cp']; ?>]" rows="3">
+	<?php if (isset($inspectionremark[$cp['id_cp']])){ 
+		echo $inspectionremark[$cp['id_cp']];
+	}
+		?></textarea>
 	</div>
   </div>
 
