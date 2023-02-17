@@ -16,7 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+         php-version: 'php|7.4'
 
       - name: Check if composer.json exists
         id: check_files
@@ -53,5 +56,5 @@ jobs:
         with:
           app-name: 'itin'
           slot-name: 'dev'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6746D259EAB44620906866541E524025 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4DCA4B7B28B844478222D529C50DDCB1 }}
           package: .
