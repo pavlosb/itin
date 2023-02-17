@@ -103,8 +103,7 @@ if ($cp['name_section'] != $scp) { ?>
     <label for="rmrk[<?= $cp['id_cp']; ?>]"><?= $this->lang->line('comment'); ?></label>
     <textarea name="remark[<?= $cp['id_cp']; ?>]"class="form-control" id="remark[<?= $cp['id_cp']; ?>]" rows="3"><?php if (isset($inspremark[$cp['id_cp']])){ 
 		echo $inspremark[$cp['id_cp']];
-	}
-		?></textarea>
+	}?></textarea>
 	</div>
   </div>
 
