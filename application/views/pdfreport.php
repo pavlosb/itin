@@ -184,7 +184,10 @@ IBAN:GR8701401200120002320007025</td>
                 $x = $x+1; 
                 ?>
                 </table>
-                
+								<?php if ($x==3) {
+									echo "here";
+								}
+                ?>
             <table border="0" padding="0" width="100%" class="newsect-<?= $x ?>">
             <tr><td colspan="3">
             <table width="100%" style="margin-bottom:15px"><tr>
