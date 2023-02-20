@@ -156,7 +156,8 @@ $scp = $cp['name_section'];
     // take snapshot and get image data
     Webcam.snap( function(data_uri) {
        // display results in page
-       document.getElementById('results').append('<div class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>');
+       document.getElementById('results').innerHTML +=
+			         '<div class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
      Webcam.reset();
