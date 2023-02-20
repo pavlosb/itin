@@ -38,7 +38,7 @@
 </div>
 
 
-<div id="gauge-wrapper" style="position: fixed; top:150px; left:0px;" class="d-md-none d-lg-block">
+<div id="gauge-wrapper" style="position: fixed; top:150px; left:0px;" class="d-none d-lg-block">
 
 <canvas id="cnvgauge1" width = "300px" height="160px"></canvas>
 <div style="width:300px" class="text-center small"><?= $this->lang->line('technology_check'); ?></div>
