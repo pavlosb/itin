@@ -118,7 +118,7 @@ $scp = $cp['name_section'];
 <input type=button value="Open Camera" onClick="configure()">
 <input type=button id="takesnapshot" value="Take Snapshot" onClick="take_snapshot()" disbled>
 <input type=button id="savesnapshot" value="Save Snapshot" onClick="saveSnap()" disabled>
-<div id="results" ></div>
+<div id="results" class="row"></div>
 
 
 <button type="submit" class="btn btn-primary"><?= $this->lang->line('submit'); ?></button>
@@ -153,8 +153,8 @@ $scp = $cp['name_section'];
     // take snapshot and get image data
     Webcam.snap( function(data_uri) {
        // display results in page
-       document.getElementById('results').innerHTML = 
-           '<img id="imageprev" src="'+data_uri+'"/>';
+       document.getElementById('results').innerHTML =
+			         '<div class="col-md-3"><img id="imageprev" class="img-responsive" src="'+data_uri+'"/></div>';
      } );
 
      Webcam.reset();
@@ -166,6 +166,7 @@ $scp = $cp['name_section'];
 
    Webcam.upload( base64image, '/inspection/photoupload', function(code, text) {
         console.log(text);
+				console.log(code);
        //console.log(text);
    });
 
