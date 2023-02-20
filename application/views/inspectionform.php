@@ -107,6 +107,7 @@ if ($cp['name_section'] != $scp) { ?>
 	</div>
   </div>
 
+	<?php echo $scp; ?>
 
 
 
