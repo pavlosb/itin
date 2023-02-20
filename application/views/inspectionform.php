@@ -157,7 +157,7 @@ $scp = $cp['name_section'];
     Webcam.snap( function(data_uri) {
        // display results in page
        document.getElementById('results').innerHTML +=
-			         '<div class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
+			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
      Webcam.reset();
