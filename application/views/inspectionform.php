@@ -165,7 +165,7 @@ $scp = $cp['name_section'];
  }
  function saveSnap(){
    // Get base64 value from <img id='imageprev'> source
-   var base64image = document.getElementById("imageprev-"+i+").src;
+   var base64image = document.getElementById("imageprev-"+i).src;
 
    Webcam.upload( base64image, '/inspection/photoupload', function(code, text) {
         console.log(text);
