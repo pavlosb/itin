@@ -141,7 +141,7 @@ $scp = $cp['name_section'];
  // preload shutter audio clip
  var shutter = new Audio();
  shutter.autoplay = true;
- shutter.src = navigator.userAgent.match(/Firefox/) ? 'shutter.ogg' : 'shutter.mp3';
+ shutter.src = navigator.userAgent.match(/Firefox/) ? '/assets/shutter.ogg' : '/assets/shutter.mp3';
 
  function take_snapshot() {
     // play sound effect
@@ -160,7 +160,7 @@ $scp = $cp['name_section'];
    // Get base64 value from <img id='imageprev'> source
    var base64image = document.getElementById("imageprev").src;
 
-   Webcam.upload( base64image, '/photoupload', function(code, text) {
+   Webcam.upload( base64image, '/inspection/photoupload', function(code, text) {
         console.log('Save successfully');
        //console.log(text);
    });
