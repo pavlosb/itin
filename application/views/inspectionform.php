@@ -143,7 +143,7 @@ $scp = $cp['name_section'];
 
  // preload shutter audio clip
  var shutter = new Audio();
- shutter.autoplay = true;
+ /*shutter.autoplay = true;*/
  shutter.src = navigator.userAgent.match(/Firefox/) ? '/assets/mm/shutter.ogg' : '/assets/mm/shutter.mp3';
 
  function take_snapshot() {
