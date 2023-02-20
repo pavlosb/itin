@@ -63,7 +63,7 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-lg-8">
-        <?php echo form_open("inspection/inspection_save");?>
+        <?php echo form_open("inspection/inspection_save", "id='inspform'");?>
         <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
         <?php 
           $mcp = "";
@@ -171,6 +171,16 @@ $scp = $cp['name_section'];
         console.log(text);
 				console.log(code);
        //console.log(text);
+			 var input = document.createElement("input");
+
+input.setAttribute("type", "hidden");
+
+input.setAttribute("name", "inspimg["+i+"]");
+
+input.setAttribute("value", text);
+
+//append to form element that you want .
+document.getElementById("inspform").appendChild(input);
    });
 
 }
