@@ -113,7 +113,7 @@ if ($cp['name_section'] != $scp) { ?>
 $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
  endforeach ?>
-
+<div class="form-group row" id="imagefields"></div>
 <div id="my_camera"></div>
 <input type=button value="Open Camera" onClick="configure()">
 <input type=button id="takesnapshot" value="Take Snapshot" onClick="take_snapshot()" disabled>
@@ -181,7 +181,8 @@ input.setAttribute("name", "inspimg["+i+"]");
 input.setAttribute("value", text);
 
 //append to form element that you want .
-document.getElementById("inspform").appendChild(input);
+document.getElementById("imagefields").appendChild(input);
+document.getElementById("savesnapshot").disabled = true;
    });
 
 }
