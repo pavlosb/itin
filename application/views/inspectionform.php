@@ -129,14 +129,18 @@ $scp = $cp['name_section'];
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
 <script language="JavaScript">
 	var i = 0;
+	var j = 0;
 	 function configure(){
- Webcam.set({
+	 Webcam.set({
      width: 320,
      height: 240,
 		 dest_width:1024,
 		 dest_height:768,
      image_format: 'jpeg',
-     jpeg_quality: 90
+     jpeg_quality: 90,
+		 constraints: {
+   facingMode: 'environment'
+ }
  });
  Webcam.attach( '#my_camera' );
  i = i+1;
@@ -174,6 +178,7 @@ $scp = $cp['name_section'];
        //console.log(text);
 			 var input = document.createElement("input");
 
+
 input.setAttribute("type", "hidden");
 
 input.setAttribute("name", "inspimg["+i+"]");
@@ -183,6 +188,7 @@ input.setAttribute("value", text);
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input);
 document.getElementById("savesnapshot").disabled = true;
+j = i;
    });
 
 }
