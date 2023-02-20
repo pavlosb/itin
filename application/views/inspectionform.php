@@ -161,6 +161,7 @@ $scp = $cp['name_section'];
      } );
 
      Webcam.reset();
+		 document.getElementById("takesnapshot").disabled = true;
 		 document.getElementById("savesnapshot").disabled = false;
  }
  function saveSnap(){
