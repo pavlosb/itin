@@ -115,8 +115,9 @@ $scp = $cp['name_section'];
  endforeach ?>
 
 <div id="my_camera"></div>
+<input type=button value="Configure" onClick="configure()">
 <input type=button value="Take Snapshot" onClick="take_snapshot()">
- 
+<input type=button value="Save Snapshot" onClick="saveSnap()">
 <div id="results" ></div>
 
 
@@ -127,6 +128,7 @@ $scp = $cp['name_section'];
 </div> 
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
 <script language="JavaScript">
+	 function configure(){
  Webcam.set({
      width: 320,
      height: 240,
@@ -134,24 +136,37 @@ $scp = $cp['name_section'];
      jpeg_quality: 90
  });
  Webcam.attach( '#my_camera' );
-
+	 }
 
  // preload shutter audio clip
  var shutter = new Audio();
  shutter.autoplay = true;
  shutter.src = navigator.userAgent.match(/Firefox/) ? 'shutter.ogg' : 'shutter.mp3';
 
-function take_snapshot() {
-   // play sound effect
-   shutter.play();
+ function take_snapshot() {
+    // play sound effect
+    shutter.play();
 
-   // take snapshot and get image data
-   Webcam.snap( function(data_uri) {
-      // display results in page
-      document.getElementById('results').innerHTML = 
-          '<img src="'+data_uri+'"/>';
-    });
+    // take snapshot and get image data
+    Webcam.snap( function(data_uri) {
+       // display results in page
+       document.getElementById('results').innerHTML = 
+           '<img id="imageprev" src="'+data_uri+'"/>';
+     } );
+
+     Webcam.reset();
+ }
+ function saveSnap(){
+   // Get base64 value from <img id='imageprev'> source
+   var base64image = document.getElementById("imageprev").src;
+
+   Webcam.upload( base64image, 'inspection/photoupload', function(code, text) {
+        console.log('Save successfully');
+       //console.log(text);
+   });
+
 }
+
 </script>
 <script>
 jQuery(document).ready(function($) {
