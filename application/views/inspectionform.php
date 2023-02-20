@@ -128,6 +128,7 @@ $scp = $cp['name_section'];
 </div> 
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
 <script language="JavaScript">
+	var i = 0;
 	 function configure(){
  Webcam.set({
      width: 320,
@@ -138,7 +139,9 @@ $scp = $cp['name_section'];
      jpeg_quality: 90
  });
  Webcam.attach( '#my_camera' );
+ i = i+1;
  document.getElementById("takesnapshot").disabled = false;
+ console.log(i);
 	 }
 
  // preload shutter audio clip
@@ -154,7 +157,7 @@ $scp = $cp['name_section'];
     Webcam.snap( function(data_uri) {
        // display results in page
        document.getElementById('results').innerHTML =
-			         '<div class="col-md-3"><img id="imageprev" class="img-responsive" src="'+data_uri+'"/></div>';
+			         '<div class="col-md-3"><img id="imageprev-'+i'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
      Webcam.reset();
@@ -162,7 +165,7 @@ $scp = $cp['name_section'];
  }
  function saveSnap(){
    // Get base64 value from <img id='imageprev'> source
-   var base64image = document.getElementById("imageprev").src;
+   var base64image = document.getElementById("imageprev-"+i+").src;
 
    Webcam.upload( base64image, '/inspection/photoupload', function(code, text) {
         console.log(text);
