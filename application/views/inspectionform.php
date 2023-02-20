@@ -130,8 +130,10 @@ $scp = $cp['name_section'];
 <script language="JavaScript">
 	 function configure(){
  Webcam.set({
-     width: 1280,
-     height: 1024,
+     width: 320,
+     height: 240,
+		 dest_width:1024,
+		 dest_height:768,
      image_format: 'jpeg',
      jpeg_quality: 90
  });
