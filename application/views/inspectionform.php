@@ -130,8 +130,8 @@ $scp = $cp['name_section'];
 <script language="JavaScript">
 	 function configure(){
  Webcam.set({
-     width: 320,
-     height: 240,
+     width: 1280,
+     height: 1024,
      image_format: 'jpeg',
      jpeg_quality: 90
  });
@@ -161,7 +161,7 @@ $scp = $cp['name_section'];
    var base64image = document.getElementById("imageprev").src;
 
    Webcam.upload( base64image, '/inspection/photoupload', function(code, text) {
-        console.log('Save successfully');
+        console.log(text);
        //console.log(text);
    });
 
