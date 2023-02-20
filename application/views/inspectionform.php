@@ -115,9 +115,9 @@ $scp = $cp['name_section'];
  endforeach ?>
 
 <div id="my_camera"></div>
-<input type=button value="Configure" onClick="configure()">
-<input type=button value="Take Snapshot" onClick="take_snapshot()">
-<input type=button value="Save Snapshot" onClick="saveSnap()">
+<input type=button value="Open Camera" onClick="configure()">
+<input type=button id="takesnapshot" value="Take Snapshot" onClick="take_snapshot()" disbled>
+<input type=button id="savesnapshot" value="Save Snapshot" onClick="saveSnap()" disabled>
 <div id="results" ></div>
 
 
@@ -136,6 +136,7 @@ $scp = $cp['name_section'];
      jpeg_quality: 90
  });
  Webcam.attach( '#my_camera' );
+ document.getElementById("takesnapshot").disabled = false;
 	 }
 
  // preload shutter audio clip
@@ -155,6 +156,7 @@ $scp = $cp['name_section'];
      } );
 
      Webcam.reset();
+		 document.getElementById("savesnapshot").disabled = false;
  }
  function saveSnap(){
    // Get base64 value from <img id='imageprev'> source
