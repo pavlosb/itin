@@ -107,16 +107,17 @@ if ($cp['name_section'] != $scp) { ?>
 	</div>
   </div>
 
-	<?php echo $scp; ?>
-
-
-
+	
 <!-- <tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr> -->
 <?php
 $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
  endforeach ?>
 
+<div id="my_camera"></div>
+<input type=button value="Take Snapshot" onClick="take_snapshot()">
+ 
+<div id="results" ></div>
 
 
 <button type="submit" class="btn btn-primary"><?= $this->lang->line('submit'); ?></button>
@@ -125,6 +126,33 @@ $scp = $cp['name_section'];
 </div>
 </div> 
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
+<script language="JavaScript">
+ Webcam.set({
+     width: 320,
+     height: 240,
+     image_format: 'jpeg',
+     jpeg_quality: 90
+ });
+ Webcam.attach( '#my_camera' );
+
+
+ // preload shutter audio clip
+ var shutter = new Audio();
+ shutter.autoplay = true;
+ shutter.src = navigator.userAgent.match(/Firefox/) ? 'shutter.ogg' : 'shutter.mp3';
+
+function take_snapshot() {
+   // play sound effect
+   shutter.play();
+
+   // take snapshot and get image data
+   Webcam.snap( function(data_uri) {
+      // display results in page
+      document.getElementById('results').innerHTML = 
+          '<img src="'+data_uri+'"/>';
+    });
+}
+</script>
 <script>
 jQuery(document).ready(function($) {
 
