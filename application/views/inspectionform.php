@@ -99,11 +99,17 @@ $scp = $cp['name_section'];
 <div id="results" class="row"></div>
 <div class="row">
 	<div class="col-md-3">
-<input type=button id="opencamera"  class="btn btn-block btn-lg" value="Open Camera" onClick="configure()">
+		<div class="row">
+			<div class="col-md-8">
+<input type=button id="opencamera"  class="btn btn-block btn-lg" value='<i class="fad fa-camera"></i>' onClick="configure()"></div>
+<div class="col-md-4"></div>
+<div class="col-md-12"></div>
 <input type=button id="takesnapshot" class="btn btn-block btn-lg" value="Take Photo" onClick="take_snapshot()" disabled>
 
-<input type=button id="savesnapshot" value="Save Snapshot" onClick="saveSnap()" disabled>	
-	</div><div id="my_camera" class="col-md-9"></div>
+<div class="col-md-6">
+<input type=button id="savesnapshot" class="btn btn-block btn-lg" value="Save Snapshot" onClick="saveSnap()" disabled></div>
+<div class="col-md-6"></div>
+	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
 
 
