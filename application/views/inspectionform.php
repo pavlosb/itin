@@ -102,7 +102,7 @@ $scp = $cp['name_section'];
 		<div class="row">
 			<div class="col-md-8">
 <button id="opencamera"  class="btn btn-primary btn-block btn-lg" onClick="configure()"><i class="fad fa-camera"></i></button></div>
-<div class="col-md-4"></div>
+<div class="col-md-4"><button id="closecamera"  class="btn btn-danger btn-block btn-lg" onClick="closecam()"><i class="fas fa-times"></i></button></div>
 <div class="col-md-12"></div>
 <input type=button id="takesnapshot" class="btn btn-success btn-lg" value="Take Photo" onClick="take_snapshot()" disabled>
 
@@ -194,7 +194,12 @@ document.getElementById("opencamera").disabled = true;
      Webcam.reset();
      document.getElementById("my_camera").style.height = "10px";
 		 document.getElementById("takesnapshot").disabled = true;
-		 document.getElementById("savesnapshot").disabled = false;
+		 }
+ function closecam(){
+	Webcam.reset();
+     document.getElementById("my_camera").style.height = "10px";
+		 document.getElementById("takesnapshot").disabled = true;
+		 document.getElementById("savesnapshot").disabled = true;
  }
  function saveSnap(){
    // Get base64 value from <img id='imageprev'> source
