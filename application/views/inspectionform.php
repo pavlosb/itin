@@ -15,27 +15,7 @@
       <p class="lead"><i class="fal fa-car"></i> <?php echo $inspection->reg_vhcl; ?> <?php echo $inspection->make_vhcl; ?> <?php echo $inspection->model_vhcl; ?></p>
       <p class="lead"><i class="fal fa-user-tie"></i> <?php echo $inspection->name_client; ?></p>
       </div>
-      <div class="col-lg-8 p-3 bg-light">
-<div class="row d-lg-none">
-
-<div class="col-sm-4">
-<canvas id="cnvgauge5" width = "240px" height="120px"></canvas>
-<div style="width:100%" class="text-center small"><?= $this->lang->line('technology_check'); ?></div>
-      <div id="score4" style="width:100%" class="text-center mb-2">0</div>
-</div>
-<div class="col-sm-4">   
-      <canvas id="cnvgauge6"  width = "240px" height="120px"></canvas>
-      <div style="width:100%" class="text-center small"><?= $this->lang->line('bodywork_check'); ?></div>
-      <div id="score5" style="width:100%" class="text-center mb-2">0</div>
       </div>
-<div class="col-sm-4">    
-      <canvas id="cnvgauge7"  width = "240px" height="120px"></canvas>
-      <div style="width:100%" class="text-center small"><?= $this->lang->line('system_check'); ?></div>
-      <div id="score6" style="width:100%" class="text-center mb-2">0</div>
-      </div>
-</div>
-      </div>
-</div>
 
 
 <div id="gauge-wrapper" style="position: fixed; top:150px; left:0px;" class="d-none d-lg-block">
@@ -124,6 +104,31 @@ $scp = $cp['name_section'];
 <button type="submit" class="btn btn-primary"><?= $this->lang->line('submit'); ?></button>
 <?php echo form_close();?>
 </div>
+</div>
+
+
+
+<div class="row justify-content-center">
+      <div class="col-lg-8 p-3 bg-light">
+<div class="row d-lg-none">
+
+<div class="col-sm-4">
+<canvas id="cnvgauge5" width = "240px" height="120px"></canvas>
+<div style="width:100%" class="text-center small"><?= $this->lang->line('technology_check'); ?></div>
+      <div id="score4" style="width:100%" class="text-center mb-2">0</div>
+</div>
+<div class="col-sm-4">   
+      <canvas id="cnvgauge6"  width = "240px" height="120px"></canvas>
+      <div style="width:100%" class="text-center small"><?= $this->lang->line('bodywork_check'); ?></div>
+      <div id="score5" style="width:100%" class="text-center mb-2">0</div>
+      </div>
+<div class="col-sm-4">    
+      <canvas id="cnvgauge7"  width = "240px" height="120px"></canvas>
+      <div style="width:100%" class="text-center small"><?= $this->lang->line('system_check'); ?></div>
+      <div id="score6" style="width:100%" class="text-center mb-2">0</div>
+      </div>
+</div>
+      </div>
 </div>
 </div> 
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
