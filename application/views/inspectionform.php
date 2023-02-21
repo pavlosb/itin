@@ -65,7 +65,7 @@
 </div>
 <div class="col-md-6 pr-0 py-1">
 <button type="button" id="savesnapshot" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnap()" disabled><i class="fas fa-save"></i></button></div>
-<div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" disabled><i class="fas fa-save"></i></button></div>
+<div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" disabled><i class="fal fa-trash-alt"></i></button></div>
 	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
 
@@ -202,6 +202,7 @@ document.getElementById("opencamera").disabled = true;
      document.getElementById("my_camera").style.height = "10px";
 		 document.getElementById("takesnapshot").disabled = true;
 		 document.getElementById("savesnapshot").disabled = false;
+		 document.getElementById("trashsnapshot").disabled = false;
 		 }
  function closecam(){
 	Webcam.reset();
@@ -233,7 +234,7 @@ document.getElementById("savesnapshot").disabled = true;
 j = i;
    });
 
-	 function trashsnap() {
+	 function trashSnap() {
 if (i > j) {
 	document.getElementById("imgbox-"+i).remove();
 	document.getElementById("opencamera").disabled = false;
