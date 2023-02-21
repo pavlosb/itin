@@ -100,15 +100,15 @@ $scp = $cp['name_section'];
 <div class="row pb-3">
 	<div class="col-md-3">
 		<div class="row">
-			<div class="col-md-6 px-0 py-1">
+			<div class="col-md-6 pr-0 py-1">
 <button type="button" id="opencamera"  onclick="configure()" class="btn btn-primary btn-block btn-lg"><i class="fas fa-camera"></i></button></div>
-<div class="col-md-6 px-0 py-1"><button type="button" id="closecamera"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
-<div class="col-md-12 px-0 py-1">
+<div class="col-md-6 pl-0 py-1"><button type="button" id="closecamera"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
+<div class="col-md-12 py-1">
 <input type=button id="takesnapshot" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" disabled>
 </div>
-<div class="col-md-6 px-0 py-1">
+<div class="col-md-6 pr-0 py-1">
 <button type="button" id="savesnapshot" class="btn btn-block btn-primary btn-block btn-lg" onclick="saveSnap()" disabled><i class="fas fa-save"></i></button></div>
-<div class="col-md-6 px-0 py-1"></div>
+<div class="col-md-6 pl-0 py-1"></div>
 	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
 
@@ -194,10 +194,12 @@ document.getElementById("opencamera").disabled = true;
      Webcam.reset();
      document.getElementById("my_camera").style.height = "10px";
 		 document.getElementById("takesnapshot").disabled = true;
+		 document.getElementById("savesnapshot").disabled = false;
 		 }
  function closecam(){
 	Webcam.reset();
      document.getElementById("my_camera").style.height = "10px";
+		 document.getElementById("opencamera").disabled = false;
 		 document.getElementById("takesnapshot").disabled = true;
 		 document.getElementById("savesnapshot").disabled = true;
  }
