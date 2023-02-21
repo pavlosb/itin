@@ -107,9 +107,9 @@ $scp = $cp['name_section'];
 <input type=button id="takesnapshot" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" disabled>
 </div>
 <div class="col-md-6 px-0 py-1">
-<input type=button id="savesnapshot" class="btn btn-block btn-primary btn-block btn-lg" value='<i class="fas fa-save"></i>' onClick="saveSnap()" disabled></div>
+<button type="button" id="savesnapshot" class="btn btn-block btn-primary btn-block btn-lg" onclick="saveSnap()" disabled><i class="fas fa-save"></i></button></div>
 <div class="col-md-6 px-0 py-1"></div>
-	</div></div><div id="my_camera" class="col-md-9 px-0"></div>
+	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
 
 
