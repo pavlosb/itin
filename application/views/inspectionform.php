@@ -115,7 +115,7 @@ $scp = $cp['name_section'];
  endforeach ?>
 <div class="form-group row" id="imagefields"></div>
 <div id="my_camera"></div>
-<input type=button value="Open Camera" onClick="configure()">
+<input type=button id="opencamera" value="Open Camera" onClick="configure()">
 <input type=button id="takesnapshot" value="Take Snapshot" onClick="take_snapshot()" disabled>
 <input type=button id="savesnapshot" value="Save Snapshot" onClick="saveSnap()" disabled>
 <div id="results" class="row"></div>
@@ -141,10 +141,11 @@ $scp = $cp['name_section'];
 		 constraints: {
    facingMode: 'environment'
  }
- 
+
  });
  Webcam.attach( '#my_camera' );
  i = i+1;
+ document.getElementById("opencamera").disabled = true;
  document.getElementById("takesnapshot").disabled = false;
  console.log(i);
 	 }
@@ -162,10 +163,11 @@ $scp = $cp['name_section'];
     Webcam.snap( function(data_uri) {
        // display results in page
        document.getElementById('results').innerHTML +=
-			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
+			         '<div id="imgbox-'+i+'" class="col-md-4"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
      Webcam.reset();
+     document.getElementById("my_camera").style.height = "10px";
 		 document.getElementById("takesnapshot").disabled = true;
 		 document.getElementById("savesnapshot").disabled = false;
  }
