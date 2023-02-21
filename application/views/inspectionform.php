@@ -17,7 +17,7 @@
       </div>
       <div class="col-lg-8 p-3 bg-light">
 <div class="row d-lg-none">
-      
+
 <div class="col-sm-4">
 <canvas id="cnvgauge5" width = "240px" height="120px"></canvas>
 <div style="width:100%" class="text-center small"><?= $this->lang->line('technology_check'); ?></div>
@@ -211,14 +211,17 @@ jQuery(document).ready(function($) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
        $("#score1").text(total1);
+			 $("#score4").text(total1);
           }
           if ($(this).data("sect") === 12) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
        $("#score2").text(total2);
+			 $("#score5").text(total2);
           }
           if ($(this).data("sect") === 16) {
        total3 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
        $("#score3").text(total3);
+			 $("#score6").text(total3);
           }
         }
       });   
