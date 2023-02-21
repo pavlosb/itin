@@ -107,8 +107,8 @@ $scp = $cp['name_section'];
 <input type=button id="takesnapshot" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" disabled>
 </div>
 <div class="col-md-6 pr-0 py-1">
-<button type="button" id="savesnapshot" class="btn btn-block btn-primary btn-block btn-lg" onclick="saveSnap()" disabled><i class="fas fa-save"></i></button></div>
-<div class="col-md-6 pl-0 py-1"></div>
+<button type="button" id="savesnapshot" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnap()" disabled><i class="fas fa-save"></i></button></div>
+<div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" disabled><i class="fas fa-save"></i></button></div>
 	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
 
@@ -225,6 +225,15 @@ document.getElementById("imagefields").appendChild(input);
 document.getElementById("savesnapshot").disabled = true;
 j = i;
    });
+
+	 function trashsnap() {
+if (i > j) {
+	document.getElementById("imgbox-"+i).remove();
+	document.getElementById("opencamera").disabled = false;
+	document.getElementById("savesnapshot").disabled = true;
+}
+
+	 }
 
 }
 
