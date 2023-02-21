@@ -92,6 +92,7 @@ if ($cp['name_section'] != $scp) { ?>
 	
 <!-- <tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr> -->
 <?php
+$prcp = $cp['mainsect_id'];
 $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
  endforeach ?>
