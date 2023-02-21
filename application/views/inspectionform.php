@@ -144,7 +144,7 @@ $scp = $cp['name_section'];
 	var i = 0;
 	var j = 0;
 	var cwdth =  document.getElementById("my_camera").offsetWidth;
-	var cwhght = 3 * cwdth /3;
+	var cwhght = 3 * cwdth /4;
 	 function configure(){
 	 Webcam.set({
      width: cwdth,
