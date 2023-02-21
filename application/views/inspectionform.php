@@ -161,8 +161,11 @@ $scp = $cp['name_section'];
  });
  Webcam.attach( '#my_camera' );
  i = i+1;
- document.getElementById("opencamera").disabled = true;
+ Webcam.on( 'live', function() {
+document.getElementById("opencamera").disabled = true;
  document.getElementById("takesnapshot").disabled = false;
+ });
+ 
  console.log(i);
 	 }
 
