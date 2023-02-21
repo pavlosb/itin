@@ -49,6 +49,7 @@
           $mcp = "";
           $scp = "";
           foreach ($checkpoints as $cp): 
+						echo $cp['sect_cp'];
             if ($cp['mainsect'] != $mcp) 
             {?>
               <h3><?= $cp[$mainsect]; ?></h3>
@@ -335,14 +336,17 @@ gauge3.set(0); // set actual value
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
        $("#score1").text(total1);
+			 $("#score4").text(total1);
           }
           if ($(this).data("sect") === 12) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
        $("#score2").text(total2);
+			 $("#score5").text(total2);
           }
           if ($(this).data("sect") === 16) {
        total3 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
        $("#score3").text(total3);
+			 $("#score6").text(total3);
           }
         }
       });    
