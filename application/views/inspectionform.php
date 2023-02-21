@@ -41,7 +41,7 @@
         <p class="lead"></p>
       </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center pb-5">
       <div class="col-lg-8">
         <?php echo form_open("inspection/inspection_save", "id='inspform'");?>
         <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
@@ -116,7 +116,7 @@ $scp = $cp['name_section'];
 
 
 
-<button type="submit" class="btn btn-primary"><?= $this->lang->line('submit'); ?></button>
+<button type="submit" class="btn btn-lg btn-primary float-right"><?= $this->lang->line('submit'); ?></button>
 <?php echo form_close();?>
 </div>
 </div>
