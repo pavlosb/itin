@@ -141,6 +141,7 @@ $scp = $cp['name_section'];
 		 constraints: {
    facingMode: 'environment'
  }
+ 
  });
  Webcam.attach( '#my_camera' );
  i = i+1;
