@@ -271,6 +271,14 @@ $maxpos = $row->maxpos;
       $this->db->insert_batch('inspectionresults_tbl', $data);
     }
 
+	 public function set_inspectionimg($id, $data) 
+    {
+     //$this->db->where(array('inspectionid_insres' => $id));
+     //$this->db->delete('inspectionresults_tbl');
+
+      $this->db->insert_batch('inspectionimg_tbl', $data);
+    }
+
 	 public function set_inspectionremarks($id, $data) 
     {
       $this->db->where(array('inspectionid_insrem' => $id));

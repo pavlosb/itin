@@ -402,11 +402,19 @@ echo json_encode($status) ;
 			$points = $_POST['checkpoint'];
 			$remarks = $_POST['remark'];
 			$sectors = $_POST['chpsect'];
+			$photos = $_POST['inspimg'];
 foreach ($points as $key => $value):
  
 	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
 
 endforeach;
+
+foreach ($images as $key => $filename):
+ 
+	$imgdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'filename_img' => basename(parse_url($filename)));
+
+endforeach;
+
 foreach ($remarks as $key => $value):
 	if ($value!=""){
 	$remdata[] = array('inspectionid_insrem' => $this->input->post('inspectionid_insres'), 'chkpointid_insrem' => $key, 'remark_insrem' => $value);
@@ -415,6 +423,7 @@ endforeach;
 //print_r($insdata);
 $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
 $this->itindata_model->set_inspectionremarks($this->input->post('inspectionid_insres'), $remdata);
+$this->itindata_model->set_inspectionimg($this->input->post('inspectionid_insres'), $imgdata);
 
 $updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 1);
 $updata['s2score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 12);
