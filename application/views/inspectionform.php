@@ -55,6 +55,7 @@
               <h3><?= $cp[$mainsect]; ?></h3>
       <?php } 
 if ($cp['name_section'] != $scp) { ?>
+
 <div class="row">
  <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp[$name_section]; ?></legend>
 </div>
@@ -147,7 +148,7 @@ $scp = $cp['name_section'];
 	 function configure(){
 	 Webcam.set({
      width: cwdth,
-     height: height,
+     height: cwhght,
 		 dest_width:1024,
 		 dest_height:768,
      image_format: 'jpeg',
