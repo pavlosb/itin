@@ -96,8 +96,8 @@ $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
  endforeach ?>
 <div class="form-group row" id="imagefields"></div>
-<div id="results" class="row"></div>
-<div class="row">
+<div id="results" class="row pb-3"></div>
+<div class="row pb-3">
 	<div class="col-md-3">
 		<div class="row">
 			<div class="col-md-8">
