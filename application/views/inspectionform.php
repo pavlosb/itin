@@ -358,19 +358,36 @@ gauge1.maxValue = 112; // set max gauge value
 gauge1.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge1.animationSpeed = 32; // set animation speed (32 is default value)
 gauge1.set(0); // set actual value
+var target4 = document.getElementById('cnvgauge4'); // your canvas element
+var gauge4 = new Gauge(target4).setOptions(opts1); // create sexy gauge!
+gauge4.maxValue = 112; // set max gauge value
+gauge4.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+gauge4.animationSpeed = 32; // set animation speed (32 is default value)
+gauge4.set(0); // set actual value
 var target2 = document.getElementById('cnvgauge2'); // your canvas elem ent
 var gauge2 = new Gauge(target2).setOptions(opts2); // create sexy gauge!
 gauge2.maxValue = 62; // set max gauge value
 gauge2.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge2.animationSpeed = 32; // set animation speed (32 is default value)
 gauge2.set(0); // set actual value
+var target5 = document.getElementById('cnvgauge5'); // your canvas elem ent
+var gauge5 = new Gauge(target5).setOptions(opts2); // create sexy gauge!
+gauge5.maxValue = 62; // set max gauge value
+gauge5.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+gauge5.animationSpeed = 32; // set animation speed (32 is default value)
+gauge5.set(0); // set actual value
 var target3 = document.getElementById('cnvgauge3'); // your canvas elem ent
 var gauge3 = new Gauge(target3).setOptions(opts3); // create sexy gauge!
 gauge3.maxValue = 16; // set max gauge value
 gauge3.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge3.animationSpeed = 32; // set animation speed (32 is default value)
 gauge3.set(0); // set actual value
-
+var target6 = document.getElementById('cnvgauge6'); // your canvas elem ent
+var gauge6 = new Gauge(target6).setOptions(opts3); // create sexy gauge!
+gauge6.maxValue = 16; // set max gauge value
+gauge6.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+gauge6.animationSpeed = 32; // set animation speed (32 is default value)
+gauge6.set(0); // set actual value
 
 
       var total1 = 0;
@@ -402,7 +419,12 @@ gauge3.set(0); // set actual value
      AnimationUpdater.run();
      gauge3.set(total3);
      AnimationUpdater.run();
-
+		 gauge4.set(total1);
+     AnimationUpdater.run();
+		 gauge5.set(total2);
+     AnimationUpdater.run();
+		 gauge6.set(total3);
+     AnimationUpdater.run();
 
      if ($('#back-to-top').length) {
     var scrollTrigger = 100, // px
