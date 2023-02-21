@@ -95,11 +95,12 @@ $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
  endforeach ?>
 <div class="form-group row" id="imagefields"></div>
+<div id="results" class="row"></div>
 <div id="my_camera"></div>
 <input type=button id="opencamera" value="Open Camera" onClick="configure()">
 <input type=button id="takesnapshot" value="Take Snapshot" onClick="take_snapshot()" disabled>
 <input type=button id="savesnapshot" value="Save Snapshot" onClick="saveSnap()" disabled>
-<div id="results" class="row"></div>
+
 
 
 <button type="submit" class="btn btn-primary"><?= $this->lang->line('submit'); ?></button>
