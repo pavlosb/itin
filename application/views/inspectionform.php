@@ -101,10 +101,10 @@ $scp = $cp['name_section'];
 	<div class="col-md-3">
 		<div class="row">
 			<div class="col-md-6 px-0 py-1">
-<button id="opencamera"  onclick="configure()" class="btn btn-primary btn-block btn-lg"><i class="fas fa-camera"></i></button></div>
-<div class="col-md-6 px-0 py-1"><button id="closecamera"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
+<button type="button" id="opencamera"  onclick="configure()" class="btn btn-primary btn-block btn-lg"><i class="fas fa-camera"></i></button></div>
+<div class="col-md-6 px-0 py-1"><button type="button" id="closecamera"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
 <div class="col-md-12 px-0 py-1">
-<input type=button id="takesnapshot" class="btn btn-success btn-lg btn-block" value="Take Photo" onClick="take_snapshot()" disabled>
+<input type=button id="takesnapshot" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" disabled>
 </div>
 <div class="col-md-6 px-0 py-1">
 <input type=button id="savesnapshot" class="btn btn-block btn-primary btn-block btn-lg" value='<i class="fas fa-save"></i>' onClick="saveSnap()" disabled></div>
