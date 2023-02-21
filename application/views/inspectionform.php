@@ -234,7 +234,11 @@ document.getElementById("savesnapshot").disabled = true;
 j = i;
    });
 
-	 function trashSnap() {
+	
+
+} 
+
+function trashSnap() {
 if (i > j) {
 	document.getElementById("imgbox-"+i).remove();
 	document.getElementById("opencamera").disabled = false;
@@ -242,8 +246,6 @@ if (i > j) {
 }
 
 	 }
-
-}
 
 </script>
 <script>
