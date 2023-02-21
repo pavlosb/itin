@@ -49,7 +49,7 @@
           $mcp = "";
           $scp = "";
           foreach ($checkpoints as $cp): 
-						echo $cp['sect_cp'];
+						print_r($cp);
             if ($cp['mainsect'] != $mcp) 
             {?>
               <h3><?= $cp[$mainsect]; ?></h3>
