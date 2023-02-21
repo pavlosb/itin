@@ -96,10 +96,15 @@ $scp = $cp['name_section'];
  endforeach ?>
 <div class="form-group row" id="imagefields"></div>
 <div id="results" class="row"></div>
-<div id="my_camera"></div>
+<div class="row">
+	<div class="col-md-3">
 <input type=button id="opencamera" value="Open Camera" onClick="configure()">
 <input type=button id="takesnapshot" value="Take Snapshot" onClick="take_snapshot()" disabled>
-<input type=button id="savesnapshot" value="Save Snapshot" onClick="saveSnap()" disabled>
+<input type=button id="savesnapshot" value="Save Snapshot" onClick="saveSnap()" disabled>	
+	</div><div id="my_camera" class="col-md-9"></div>
+</div>
+
+
 
 
 
@@ -137,10 +142,12 @@ $scp = $cp['name_section'];
 <script language="JavaScript">
 	var i = 0;
 	var j = 0;
+	var cwdth =  document.getElementById("my_camera").offsetWidth;
+	var cwhght = 3 * cwdth /3;
 	 function configure(){
 	 Webcam.set({
-     width: 720,
-     height: 540,
+     width: cwdth,
+     height: height,
 		 dest_width:1024,
 		 dest_height:768,
      image_format: 'jpeg',
