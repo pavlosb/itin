@@ -409,7 +409,7 @@ foreach ($points as $key => $value):
 
 endforeach;
 
-foreach ($images as $key => $filename):
+foreach ($photos as $key => $filename):
  
 	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename(parse_url($filename)));
 
