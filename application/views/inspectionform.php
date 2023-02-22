@@ -284,6 +284,12 @@ jQuery(document).ready(function($) {
      AnimationUpdater.run();
      gauge3.set(total3);
      AnimationUpdater.run();
+		 gauge4.set(total1);
+     AnimationUpdater.run();
+     gauge5.set(total2);
+     AnimationUpdater.run();
+     gauge6.set(total3);
+     AnimationUpdater.run();
 
 });
 

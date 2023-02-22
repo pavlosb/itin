@@ -422,9 +422,12 @@ foreach ($remarks as $key => $value):
 endforeach;
 //print_r($insdata);
 $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
+if (count($remdata) > 0) {
 $this->itindata_model->set_inspectionremarks($this->input->post('inspectionid_insres'), $remdata);
+}
+if (count($imgdata) > 0) {
 $this->itindata_model->set_inspectionimg($this->input->post('inspectionid_insres'), $imgdata);
-
+}
 $updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 1);
 $updata['s2score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 12);
 $updata['s3score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 16);
