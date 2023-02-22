@@ -411,7 +411,7 @@ endforeach;
 
 foreach ($photos as $key => $filename):
  
-	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename(parse_url($filename)));
+	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename));
 
 endforeach;
 

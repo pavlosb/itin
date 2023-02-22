@@ -3,6 +3,7 @@
 } else {
   $langprefix ="en_";
   }
+	$prcp = 0;
   $mainsect = $langprefix."mainsect";
   $name_section = $langprefix."name_section";
   $name_cp = $langprefix."name_cp";
