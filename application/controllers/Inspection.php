@@ -164,12 +164,12 @@ class Inspection extends CI_Controller {
 	}
 
 
-	public function inspections_pdf($id) 
+	public function inspections_pdf() 
 	{
 	
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
-			//$id = $this->input->post('id');
+			$id = $this->input->post('id');
 			$user = $this->ion_auth->user()->row();
 			$data = $this->data;
 			$ulang = $data['user_lang'];
@@ -191,7 +191,6 @@ class Inspection extends CI_Controller {
 			$data['sec2score'] = round(100*($inspection->s2score_inspection / 62), -1);
 			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
-			$data['inspremark'] = $this->itindata_model->get_inspectionremarks($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			//$html = $this->load->view('header', $data, true);
@@ -209,9 +208,9 @@ class Inspection extends CI_Controller {
 				}
 			
 			$html = $this->load->view('pdfreport', $data, true);
-	//		$this->load->view('pdfreport');
+			//$this->load->view('pdfreport');
 			//$html .= $this->load->view('footer', $data, true);
-		
+			
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->debug = true;
 			$mpdf->setFooter('{PAGENO}');
