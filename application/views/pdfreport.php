@@ -186,7 +186,7 @@ IBAN:GR8701401200120002320007025</td>
 if ($x==3) {?>
 <tr><td colspan="3">
 									<table width="100%" style="margin-bottom:15px"><tr>
-								<td><img src="<?php echo base_url(); ?>assets/images/carframe.svg"></td>
+								<td><?php echo file_get_contents(base_url().">assets/images/carframe.svg"); ?></td>
 								</table></td></tr>
 						<?php	}
 
@@ -225,7 +225,7 @@ $pointscore = $inspscore[$cp['id_cp']];
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
 <?php if ($x == 2) { ?>
 <script>
-	$(".pt_"+<?= $z ?>).css("fill","green");
+	$(".p_"+<?= $z ?>).css("fill","green");
 </script>
 <?php } ?>
  <?php } else if ($pointscore == 0) { ?>
