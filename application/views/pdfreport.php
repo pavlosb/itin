@@ -185,7 +185,7 @@ IBAN:GR8701401200120002320007025</td>
                 ?>
                 </table>
 								<?php if ($x==3) {
-								echo "SVG HERE";
+								echo '<img src="<?php echo base_url(); ?>assets/images/carframe.svg">';
 								}
                 ?>
             <table border="0" padding="0" width="100%" class="newsect-<?= $x ?>">
