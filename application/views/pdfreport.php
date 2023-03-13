@@ -224,22 +224,22 @@ $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
 <?php if ($x == 2) { ?>
-<script type="text/javascript">
-	$("body").load(function(){
-	$(".p_<?= $z ?>").css("fill","green");
-	});
-</script>
+	<style>
+		.p_<?= $z ?>{
+			fill:green;
+		}
+		</style>
 <?php } ?>
  <?php } else if ($pointscore == 0) { ?>
     <img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
  <?php } else { ?>
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
 		<?php if ($x == 2) { ?>
-			<script type="text/javascript">
-		$("body").load(function(){
-	$(".p_<?= $z ?>").css("fill","red");
-		});
-</script>
+			<style>
+		.p_<?= $z ?>{
+			fill:red;
+		}
+		</style>
 <?php } ?>	
  <?php } ?>
 </td>
