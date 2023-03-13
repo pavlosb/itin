@@ -207,12 +207,14 @@ class Inspection extends CI_Controller {
 				$newprfx = "";
 				}
 			
-			$html = $this->load->view('pdfreport', $data, true);
-			//$this->load->view('pdfreport');
+			//$html = $this->load->view('pdfreport', $data, true);
+			ob_start();
+			$this->load->view('pdfreport');
 			//$html .= $this->load->view('footer', $data, true);
-		
+			$html = ob_get_contents();
+			ob_end_clean();
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
-			$mpdf->debug = true;
+			//$mpdf->debug = true;
 			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
 			$filename = $langprefix;
