@@ -185,7 +185,7 @@ IBAN:GR8701401200120002320007025</td>
 
 if ($x==3) {?>
 <tr><td colspan="3">
-									<table width="100%" style="margin-bottom:15px"><tr>
+									<table width="100%" style="margin-bottom:15px" id="carframe"><tr>
 								<td><?php echo file_get_contents(base_url()."assets/images/carframe.svg"); ?></td>
 								</table></td></tr>
 						<?php	}
@@ -225,7 +225,7 @@ $pointscore = $inspscore[$cp['id_cp']];
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
 <?php if ($x == 2) { ?>
 <script type="text/javascript">
-	$(document).ready(function(){
+	$("#carframe").load(function(){
 	$(".p_<?= $z ?>").css("fill","green");
 	});
 </script>
@@ -236,7 +236,7 @@ $pointscore = $inspscore[$cp['id_cp']];
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
 		<?php if ($x == 2) { ?>
 			<script type="text/javascript">
-		$(document).ready(function(){
+		$("#carframe").load(function(){
 	$(".p_<?= $z ?>").css("fill","red");
 		});
 </script>
