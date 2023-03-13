@@ -468,7 +468,7 @@ $pointscore = $inspscore[$cp['id_cp']];
 <?php if ($x == 2) { ?>
 	<style>
 		.p_<?= $z ?>{
-			fill:green;
+			fill:#008000;
 		}
 		</style>
 <?php } ?>
@@ -479,7 +479,7 @@ $pointscore = $inspscore[$cp['id_cp']];
 		<?php if ($x == 2) { ?>
 			<style>
 		.p_<?= $z ?>{
-			fill:red;
+			fill:#ff0000;
 		}
 		</style>
 <?php } ?>	
