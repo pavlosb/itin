@@ -225,7 +225,9 @@ $pointscore = $inspscore[$cp['id_cp']];
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
 <?php if ($x == 2) { ?>
 <script type="text/javascript">
+	$(document).ready(function(){
 	$(".p_<?= $z ?>").css("fill","green");
+	});
 </script>
 <?php } ?>
  <?php } else if ($pointscore == 0) { ?>
@@ -233,8 +235,10 @@ $pointscore = $inspscore[$cp['id_cp']];
  <?php } else { ?>
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
 		<?php if ($x == 2) { ?>
-<script>
+			<script type="text/javascript">
+		$(document).ready(function(){
 	$(".p_<?= $z ?>").css("fill","red");
+		});
 </script>
 <?php } ?>	
  <?php } ?>
