@@ -184,12 +184,7 @@ IBAN:GR8701401200120002320007025</td>
                 $x = $x+1; 
                 ?>
                 </table>
-								<?php if ($x==3) {?>
-									<table width="100%" style="margin-bottom:15px"><tr>
-								<td><img src="<?php echo base_url(); ?>assets/images/carframe.svg"></td>
-								</tr></table>
-						<?php	}
-                ?>
+								
             <table border="0" padding="0" width="100%" class="newsect-<?= $x ?>">
             <tr><td colspan="3">
             <table width="100%" style="margin-bottom:15px"><tr>
@@ -230,8 +225,16 @@ $pointscore = $inspscore[$cp['id_cp']];
 	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
 	<td colspan="3">
 	<u><?= $this->lang->line('comment'); ?></u><br/>
-<?php		echo $inspremark[$cp['id_cp']]; ?>
+<?php	echo $inspremark[$cp['id_cp']]; ?>
 </td></tr>
+<tr>
+<td colspan="3">
+<?php if ($x==2) {?>
+									<table width="100%" style="margin-bottom:15px"><tr>
+								<td><img src="<?php echo base_url(); ?>assets/images/carframe.svg"></td>
+								</tr></table>
+						<?php	}
+                ?></td></tr>
 	<?php } 
 $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
