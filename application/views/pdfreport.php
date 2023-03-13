@@ -466,22 +466,14 @@ $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
 <?php if ($x == 2) { ?>
-	<style>
-		.p_<?= $z ?>{
-			fill:#008000;
-		}
-		</style>
+	
 <?php } ?>
  <?php } else if ($pointscore == 0) { ?>
     <img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
  <?php } else { ?>
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
 		<?php if ($x == 2) { ?>
-			<style>
-		.p_<?= $z ?>{
-			fill:#ff0000;
-		}
-		</style>
+		
 <?php } ?>	
  <?php } ?>
 </td>
