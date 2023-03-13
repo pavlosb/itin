@@ -164,7 +164,7 @@ class Inspection extends CI_Controller {
 	}
 
 
-	public function inspections_pdf() 
+	public function inspections_pdf($id) 
 	{
 	
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
@@ -208,9 +208,9 @@ class Inspection extends CI_Controller {
 				}
 			
 			$html = $this->load->view('pdfreport', $data, true);
-			//$this->load->view('pdfreport');
+			$this->load->view('pdfreport');
 			//$html .= $this->load->view('footer', $data, true);
-			
+		/*	
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->debug = true;
 			$mpdf->setFooter('{PAGENO}');
@@ -247,7 +247,7 @@ $this->output->set_header("Cache-Control: no-cache, must-revalidate");
 $this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
 $this->output->set_header("Content-type: application/json");
 echo json_encode($status) ;  
-		 
+		 */
 		} else {
 			redirect('auth/login');
 		}
