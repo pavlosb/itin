@@ -223,10 +223,20 @@ $y = $y+1;
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
+<?php if ($x == 2) { ?>
+<script>
+	$(".pt_"+<?= $z ?>).css("fill","green");
+</script>
+<?php } ?>
  <?php } else if ($pointscore == 0) { ?>
     <img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
  <?php } else { ?>
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
+		<?php if ($x == 2) { ?>
+<script>
+	$(".pt_"+<?= $z ?>).css("fill","red");
+</script>
+<?php } ?>	
  <?php } ?>
 </td>
 <td class="text-center">&nbsp;</td>
