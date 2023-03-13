@@ -209,7 +209,7 @@ class Inspection extends CI_Controller {
 			
 			//$html = $this->load->view('pdfreport', $data, true);
 			ob_start();
-			$this->load->view('pdfreport');
+			$this->load->view('pdfreport', $data);
 			//$html .= $this->load->view('footer', $data, true);
 			$html = ob_get_contents();
 			ob_end_clean();
