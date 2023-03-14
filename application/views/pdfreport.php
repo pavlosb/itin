@@ -13,6 +13,7 @@ if (isset($user_lang) && $user_lang == "greek") {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
     <style>
+			.p_1{fill:red;}
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 @page {
                 margin: 120px 40px 120px 80px;
@@ -186,7 +187,7 @@ IBAN:GR8701401200120002320007025</td>
 if ($x==3) {?>
 <tr><td colspan="3">
 									<table width="100%" style="margin-bottom:15px"><tr>
-								<td><img src="<?php echo base_url(); ?>assets/images/carframe.svg"); ?></td>
+								<td><?php echo file_get_contents(base_url()."assets/images/carframe.svg"); ?></td>
 								</table></td></tr>
 						<?php	}
 
