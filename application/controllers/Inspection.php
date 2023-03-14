@@ -163,6 +163,72 @@ class Inspection extends CI_Controller {
 
 	}
 
+	public function newinspections_pdf()
+
+{
+	$this->load->library('Pdf');
+	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
+	{
+		$id = $this->input->post('id');
+		$user = $this->ion_auth->user()->row();
+		$data = $this->data;
+		$ulang = $data['user_lang'];
+		$data['userid'] = $user->id;
+		$data['username'] = $user->first_name." ".$user->last_name;
+		$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
+		$data['inspection'] = $inspections[0];
+		$inspection = $inspections[0];
+		$score1 = $inspection->s1score_inspection;
+		$score2 = $inspection->s2score_inspection;
+		$score3 = $inspection->s3score_inspection;
+		if ( ($score1 >= 92) && ($score2 >= 53) && ($score3 >= 12))
+		{
+			$data['result'] = 1;
+		} else {
+			$data['result'] = 0;
+		}
+		$data['sec1score'] = round(100*($inspection->s1score_inspection / 112), -1);
+		$data['sec2score'] = round(100*($inspection->s2score_inspection / 62), -1);
+		$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
+		$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
+		$data['inspectionid'] = $id;
+		$data['checkpoints'] = $this->itindata_model->get_checkpoints();
+		//$html = $this->load->view('header', $data, true);
+		//$this->load->view('testview', $data);
+		if ($ulang == "greek") {
+			$langprefix ="";
+			$oldlang = "greek";
+			$newlang = "english";
+			$newprfx = "en_";
+		} else {
+			$langprefix ="en_";
+			$newlang = "greek";
+			$oldlang = "english";
+			$newprfx = "";
+			}
+			$this->load->library('Pdf');
+
+		$html = $this->load->view('pdfreport', $data, true);
+
+		$tcpdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
+		$tcpdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+		$filename = $langprefix;
+			$filename .= $this->_stringclean($inspection->number_inspection);
+			$dir ="/home/site/wwwroot/assets/pdfs/";
+		$tcpdf->Output($dir.$filename.".pdf", 'I');
+		$this->itindata_model->upd_inspection($inspection->id_inspection, array($langprefix."filename_inspection" => $filename.".pdf", "status_inspection" => 1));
+		$status[$langprefix."certfile_inspection"] = $filename.".pdf";
+		$status['created'] = "ok";
+//redirect ('inspection/inspections_list', 'refresh');
+$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+$this->output->set_header("Content-type: application/json");
+echo json_encode($status) ;  
+		 
+		} else {
+			redirect('auth/login');
+		}
+}
 
 	public function inspections_pdf() 
 	{
@@ -207,14 +273,12 @@ class Inspection extends CI_Controller {
 				$newprfx = "";
 				}
 			
-			//$html = $this->load->view('pdfreport', $data, true);
-			ob_start();
-			$this->load->view('pdfreport', $data);
+			$html = $this->load->view('pdfreport', $data, true);
+			//$this->load->view('pdfreport');
 			//$html .= $this->load->view('footer', $data, true);
-			$html = ob_get_contents();
-			ob_end_clean();
+			
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
-			//$mpdf->debug = true;
+			$mpdf->debug = true;
 			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
 			$filename = $langprefix;
