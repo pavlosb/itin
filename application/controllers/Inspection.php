@@ -809,10 +809,10 @@ echo $url;
 
  public function dynimg() {
 	$img = file_get_contents(base_url()."assets/images/carframe.svg");
-	$imgparts = explode('</style>',$img);
-	$imgnew = $imgparts[0];
-	$imgnew .= '.p_1{fill:red;}';
-	$imgnew .= $imgparts[1];
-	echo $imgnew;
+	$svgTemplate = new SimpleXMLElement($img);
+$svgTemplate->registerXPathNamespace('svg', 'http://www.w3.org/2000/svg');
+$children = $svgTemplate->children('svg', true);
+$children->style = '.p_1{fill:green}';
+	echo $svgTemplate;
  }
 }
