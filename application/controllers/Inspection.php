@@ -809,6 +809,6 @@ echo $url;
 
  public function dynimg() {
 	$img = file_get_contents(base_url()."assets/images/carframe.svg");
-	return $img;
+	echo $img;
  }
 }
