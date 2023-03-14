@@ -225,8 +225,8 @@ $tcpdf->SetAuthor('onlinecode');
 // Set Display Mode
 $tcpdf->SetDisplayMode('real', 'default');
 // Set Write text
-$pdf->AddPage();
-$pdf->writeHTML($html, true, false, true, false, '');
+$tcpdf->AddPage();
+$tcpdf->writeHTML($html, true, false, true, false, '');
 // Set Output and file name
 		$filename = $langprefix;
 			$filename .= $this->_stringclean($inspection->number_inspection);
