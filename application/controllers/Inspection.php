@@ -163,9 +163,7 @@ class Inspection extends CI_Controller {
 
 	}
 
-	public function newinspections_pdf()
-
-{
+	public function newinspections_pdf(){
 	$this->load->library('Pdf');
 	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 	{
