@@ -205,7 +205,7 @@ class Inspection extends CI_Controller {
 				$oldlang = "english";
 				$newprfx = "";
 				}
-				$this->load->view('pdfreport', $data);
+			$this->load->view('pdfreport', $data);
 			$html = $this->load->view('pdfreport', $data, true);
 			//$this->load->view('pdfreport');
 			//$html .= $this->load->view('footer', $data, true);
