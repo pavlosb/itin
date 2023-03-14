@@ -812,7 +812,7 @@ echo $url;
 	$imgparts = explode('</style>',$img);
 	$imgnew = $imgparts[0];
 	$imgnew .= '.p_1{fill:red;}';
-	$imgnew .= $imgparts[0];
+	$imgnew .= $imgparts[1];
 	echo $imgnew;
  }
 }
