@@ -85,7 +85,7 @@ $(document).ready(function() {
 		type: "POST",
 		dataType: "JSON",
 		data: {id:inspid},
-		url: "<?= base_url()?>inspection/newinspections_pdf",
+		url: "<?= base_url()?>inspection/newpdfgen",
 		success: function(data){
 			//$.each(data, function(i,item){
 				if (data.created == 'ok'){
