@@ -168,8 +168,7 @@ class Inspection extends CI_Controller {
 	
 	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 	{
-		//$id = $this->input->post('id');
-		$id = 19;
+		$id = $this->input->post('id');
 		$user = $this->ion_auth->user()->row();
 		$data = $this->data;
 		$ulang = $data['user_lang'];
@@ -226,7 +225,8 @@ $tcpdf->SetAuthor('onlinecode');
 // Set Display Mode
 $tcpdf->SetDisplayMode('real', 'default');
 // Set Write text
-$tcpdf->Write(5, $html);
+$pdf->AddPage();
+$pdf->writeHTML($html, true, false, true, false, '');
 // Set Output and file name
 		$filename = $langprefix;
 			$filename .= $this->_stringclean($inspection->number_inspection);
