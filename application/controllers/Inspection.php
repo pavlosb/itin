@@ -211,6 +211,7 @@ class Inspection extends CI_Controller {
 		$html = $this->load->view('pdfreport', $data, true);
 
 		$tcpdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
+		$tcpdf->AddPage();
 		$tcpdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 		$filename = $langprefix;
 			$filename .= $this->_stringclean($inspection->number_inspection);
