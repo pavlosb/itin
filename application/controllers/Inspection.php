@@ -407,13 +407,13 @@ foreach ($points as $key => $value):
 	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
 
 endforeach;
-
+if($photos) {
 foreach ($photos as $key => $filename):
- 
+	if ($filename!=""){
 	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename));
-
+	}
 endforeach;
-
+}
 foreach ($remarks as $key => $value):
 	if ($value!=""){
 	$remdata[] = array('inspectionid_insrem' => $this->input->post('inspectionid_insres'), 'chkpointid_insrem' => $key, 'remark_insrem' => $value);
