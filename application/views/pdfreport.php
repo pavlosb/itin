@@ -184,15 +184,7 @@ IBAN:GR8701401200120002320007025</td>
             {
                 $x = $x+1; 
 
-if ($x==3) {?>
-<tr><td colspan="3">
-									<table width="100%" style="margin-bottom:15px"><tr>
-								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td>
-								</table></td></tr>
-						<?php	}
-
-								
-                ?>
+						?>
                 </table>
 								
                
@@ -214,6 +206,16 @@ if ($x==3) {?>
 if ($cp['id_section'] != $scp) { 
     
     $z=1; ?>
+<?php if ($x==2 && $y=2 && $z=1 ) {?>
+<tr><td colspan="3">
+									<table width="100%" style="margin-bottom:15px"><tr>
+								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td>
+								</table></td></tr>
+						<?php	}
+
+								
+                ?>
+		
 <tr><td class="secthd dgreen" colspan="3" style="padding:5px 0; page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp[$printtext_section]; ?></td></tr>
 <?php 
 $y = $y+1;
@@ -224,24 +226,11 @@ $y = $y+1;
 $pointscore = $inspscore[$cp['id_cp']];
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
-<?php if ($x == 2) { ?>
-	<style>
-		.p_<?= $z ?>{
-			fill:green;
-		}
-		</style>
-<?php } ?>
  <?php } else if ($pointscore == 0) { ?>
     <img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
  <?php } else { ?>
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
-		<?php if ($x == 2) { ?>
-			<style>
-		.p_<?= $z ?>{
-			fill:red;
-		}
-		</style>
-<?php } ?>	
+			
  <?php } ?>
 </td>
 <td class="text-center">&nbsp;</td>
