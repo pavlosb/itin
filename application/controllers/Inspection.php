@@ -814,7 +814,7 @@ echo $url;
 	$img = file_get_contents(base_url()."assets/images/carframe.svg");
 	$imgparts = explode('</style>',$img);
 	//$imgnew = $imgparts[0];
-	foreach ($pointscore as $cpoint->$cscore) {
+	foreach ($pointscore as $cpoint=>$cscore) {
 		$npoint = $cpoint - 57;
 	if ($cscore < 0) {
 		$imgnew .= '.p_'.$npoint.'{fill:red;}';
