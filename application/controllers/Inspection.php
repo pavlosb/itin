@@ -816,10 +816,12 @@ echo $url;
 	//$imgnew = $imgparts[0];
 	foreach ($pointscore as $cpoint=>$cscore) {
 		$npoint = $cpoint - 57;
+		echo $cpoint;
+		echo $npoint;
 	if ($cscore < 0) {
 		$imgnew .= '.p_'.$npoint.'{fill:red;}';
 	}
-	if ($cscore < 0) {
+	if ($cscore > 0) {
 		$imgnew .= '.p_'.$npoint.'{fill:green;}';
 	}
 	echo $imgnew;
