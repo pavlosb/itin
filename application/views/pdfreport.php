@@ -187,7 +187,7 @@ IBAN:GR8701401200120002320007025</td>
 if ($x==3) {?>
 <tr><td colspan="3">
 									<table width="100%" style="margin-bottom:15px"><tr>
-								<td><?php echo $dynimg; ?></td>
+								<td><?php echo '<img src="data:image/svg+xml base64,'.base64_encode($dynimg).'"  width="100" height="100" />';?></td>
 								</table></td></tr>
 						<?php	}
 
