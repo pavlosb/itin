@@ -235,9 +235,10 @@ $maxpos = $row->maxpos;
 		$this->db->where(array('inspectionid_insres' => $id, 'chkpointid_insres >=' => 58, 'chkpointid_insres >=' => 76));
 		$query = $this->db->get('inspectionresults_tbl');
 		if ($query -> num_rows() > 0) {
+			
 			foreach ($query->result() as $row)
 			{
-				$score[$row->chkpointid_insres] = $row->chpointscore_insres;
+				$score = array($row->chkpointid_insres => $row->chpointscore_insres);
 			}
 			return $score;
 		} else {
