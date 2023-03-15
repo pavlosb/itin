@@ -232,7 +232,7 @@ $maxpos = $row->maxpos;
     }
 
 	 public function get_scoreforoutside($id) {
-		$this->db->where(array('inspectionid_insres' => $id, 'chkpointid_insres >=' => 58, 'chkpointid_insres <=' => 76));
+		$this->db->where(array('inspectionid_insres' => $id, 'chkpointid_insres >=' => 58, 'chkpointid_insres <=' => 78));
 		$query = $this->db->get('inspectionresults_tbl');
 		if ($query -> num_rows() > 0) {
 			
