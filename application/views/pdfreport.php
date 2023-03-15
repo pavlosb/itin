@@ -187,7 +187,7 @@ IBAN:GR8701401200120002320007025</td>
 if ($x==3) {?>
 <tr><td colspan="3">
 									<table width="100%" style="margin-bottom:15px"><tr>
-								<td><?php echo file_get_contents(base_url()."assets/images/carframe.svg"); ?></td>
+								<td><?php echo $dynimg; ?></td>
 								</table></td></tr>
 						<?php	}
 

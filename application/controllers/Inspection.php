@@ -282,6 +282,7 @@ echo json_encode($status) ;
 			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspectionid'] = $id;
+			$data['dynimg'] = $this->dynimg();
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			if ($ulang == "greek") {
 				$langprefix ="";
@@ -814,6 +815,6 @@ echo $url;
 	$imgnew .= '.p_1{fill:red;}';
 	$imgnew .= '</style>';
 	$imgnew .= $imgparts[1];
-	echo $imgnew;
+	return $imgnew;
  }
 }
