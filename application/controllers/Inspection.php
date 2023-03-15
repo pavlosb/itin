@@ -810,10 +810,10 @@ echo $url;
 
  public function dynimg($id) {
 	$pointscore = $this->itindata_model->get_scoreforoutside($id);
-	print_r($pointscore);
-	/*$img = file_get_contents(base_url()."assets/images/carframe.svg");
+	
+	$img = file_get_contents(base_url()."assets/images/carframe.svg");
 	$imgparts = explode('</style>',$img);
-	$imgnew = $imgparts[0];
+	//$imgnew = $imgparts[0];
 	foreach ($pointscore as $cpoint->$cscore) {
 		$npoint = $cpoint - 57;
 	if ($cscore < 0) {
@@ -822,8 +822,9 @@ echo $url;
 	if ($cscore < 0) {
 		$imgnew .= '.p_'.$npoint.'{fill:green;}';
 	}
+	echo $imgnew;
 	}
-	$imgnew .= '</style>';
+	/*$imgnew .= '</style>';
 	$imgnew .= $imgparts[1];
 	return $imgnew;*/
  }
