@@ -401,7 +401,9 @@ echo json_encode($status) ;
 			$points = $_POST['checkpoint'];
 			$remarks = $_POST['remark'];
 			$sectors = $_POST['chpsect'];
+			if (isset($_POST['inspimg'])) {
 			$photos = $_POST['inspimg'];
+			}
 foreach ($points as $key => $value):
  
 	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
@@ -421,7 +423,7 @@ foreach ($remarks as $key => $value):
 endforeach;
 //print_r($insdata);
 $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
-if (count($remdata) > 0) {
+if ($remdata && count($remdata) > 0) {
 $this->itindata_model->set_inspectionremarks($this->input->post('inspectionid_insres'), $remdata);
 }
 if (count($imgdata) > 0) {
