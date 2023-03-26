@@ -212,6 +212,7 @@ $scp = $cp['name_section'];
 		 document.getElementById("opencamera").style.display = "block";
 		 document.getElementById("takesnapshot").style.display = "none";
 		 document.getElementById("savesnapshot").style.display = "none";
+     document.getElementById("trashsnapshot").style.display = "none";
  }
  function saveSnap(){
    // Get base64 value from <img id='imageprev'> source
