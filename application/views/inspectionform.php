@@ -62,11 +62,11 @@
 <button type="button" id="opencamera"  onclick="configure()" class="btn btn-primary btn-block btn-lg"><i class="fas fa-camera"></i></button></div>
 <div class="col-md-12 py-1"><button type="button" id="closecamera"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
 <div class="col-md-12 py-1">
-<input type=button id="takesnapshot" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" disabled>
+<input type=button id="takesnapshot" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" >
 </div>
 <div class="col-md-6 pr-0 py-1">
 <button type="button" id="savesnapshot" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnap()" disabled><i class="fas fa-save"></i></button></div>
-<div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" disabled><i class="fal fa-trash-alt"></i></button></div>
+<div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" ><i class="fal fa-trash-alt"></i></button></div>
 	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
 
@@ -232,7 +232,7 @@ input.setAttribute("value", text);
 
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input);
-document.getElementById("savesnapshot").disabled = true;
+
 j = i;
    });
 
@@ -243,8 +243,7 @@ j = i;
 function trashSnap() {
 if (i > j) {
 	document.getElementById("imgbox-"+i).remove();
-	document.getElementById("opencamera").disabled = false;
-	document.getElementById("savesnapshot").disabled = true;
+	
 }
 
 	 }
