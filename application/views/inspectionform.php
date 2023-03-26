@@ -58,9 +58,9 @@
 <div class="row pb-3">
 	<div class="col-md-3">
 		<div class="row">
-			<div class="col-md-6 pr-0 py-1">
+			<div class="col-md-12 py-1">
 <button type="button" id="opencamera"  onclick="configure()" class="btn btn-primary btn-block btn-lg"><i class="fas fa-camera"></i></button></div>
-<div class="col-md-6 pl-0 py-1"><button type="button" id="closecamera"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
+<div class="col-md-12 py-1"><button type="button" id="closecamera"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
 <div class="col-md-12 py-1">
 <input type=button id="takesnapshot" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" disabled>
 </div>
@@ -254,6 +254,7 @@ jQuery(document).ready(function($) {
   $('#takesnapshot').hide();
   $('#savesnapshot').hide();
   $('#trashsnapshot').hide();
+  $('#closecamera').hide();
      $('input:radio').change(function ()
 {
 
