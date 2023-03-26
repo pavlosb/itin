@@ -176,7 +176,6 @@ $scp = $cp['name_section'];
  Webcam.attach( '#my_camera' );
  i = i+1;
  Webcam.on( 'live', function() {
-document.getElementById("opencamera").disabled = true;
  document.getElementById("takesnapshot").style.display = "block";
  document.getElementById("closecamera").style.display = "block";
  document.getElementById("opencamera").style.display = "none";
@@ -202,16 +201,17 @@ document.getElementById("opencamera").disabled = true;
 
      Webcam.reset();
      document.getElementById("my_camera").style.height = "10px";
-		 document.getElementById("takesnapshot").disabled = true;
-		 document.getElementById("savesnapshot").disabled = false;
-		 document.getElementById("trashsnapshot").disabled = false;
+		 document.getElementById("takesnapshot").style.display = "none";
+		 document.getElementById("savesnapshot").style.display = "block";
+		 document.getElementById("trashsnapshot").style.display = "block";
 		 }
  function closecam(){
 	Webcam.reset();
      document.getElementById("my_camera").style.height = "10px";
-		 document.getElementById("opencamera").disabled = false;
-		 document.getElementById("takesnapshot").disabled = true;
-		 document.getElementById("savesnapshot").disabled = true;
+     document.getElementById("closecamera").style.display = "none";
+		 document.getElementById("opencamera").style.display = "block";
+		 document.getElementById("takesnapshot").style.display = "none";
+		 document.getElementById("savesnapshot").style.display = "none";
  }
  function saveSnap(){
    // Get base64 value from <img id='imageprev'> source
