@@ -171,10 +171,11 @@ $scp = $cp['name_section'];
 		 constraints: {
    facingMode: 'environment'
  }
- document.getElementById("closecamera").style.display = "block";
- document.getElementById("my_camera").style.display = "none";
+ 
 
  });
+ document.getElementById("closecamera").style.display = "block";
+ document.getElementById("my_camera").style.display = "none";
  Webcam.attach( '#my_camera' );
  i = i+1;
  Webcam.on( 'live', function() {
