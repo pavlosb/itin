@@ -19,7 +19,7 @@
       </div>
 
 
-<div id="gauge-wrapper" style="position: fixed; top:150px; left:0px;" class="d-none d-lg-block">
+<div id="gauge-wrapper" style="position: fixed; top:100px; left:0px;" class="d-none d-lg-block">
 
 <canvas id="cnvgauge1" width = "300px" height="160px"></canvas>
 <div style="width:300px" class="text-center small"><?= $this->lang->line('technology_check'); ?></div>
@@ -171,6 +171,8 @@ $scp = $cp['name_section'];
 		 constraints: {
    facingMode: 'environment'
  }
+ document.getElementById("closecamera").style.display = "block";
+ document.getElementById("my_camera").style.display = "none";
 
  });
  Webcam.attach( '#my_camera' );
