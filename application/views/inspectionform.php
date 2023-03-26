@@ -171,19 +171,17 @@ $scp = $cp['name_section'];
 		 constraints: {
    facingMode: 'environment'
  }
- 
-
  });
- document.getElementById("closecamera").style.display = "block";
- document.getElementById("my_camera").style.display = "none";
+
  Webcam.attach( '#my_camera' );
  i = i+1;
  Webcam.on( 'live', function() {
 document.getElementById("opencamera").disabled = true;
- document.getElementById("takesnapshot").disabled = false;
+ document.getElementById("takesnapshot").style.display = "block";
+ document.getElementById("closecamera").style.display = "block";
+ document.getElementById("opencamera").style.display = "none";
  });
  
- console.log(i);
 	 }
 
  // preload shutter audio clip
