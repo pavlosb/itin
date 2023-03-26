@@ -251,7 +251,9 @@ if (i > j) {
 </script>
 <script>
 jQuery(document).ready(function($) {
-
+  $('#takesnapshot').hide;
+  $('#savesnapshot').hide;
+  $('#trashsnapshot').hide;
      $('input:radio').change(function ()
 {
 
