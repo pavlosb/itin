@@ -125,11 +125,6 @@ $scp = $cp['name_section'];
  endforeach ?>
 <div class="form-group row" id="imagefields"></div>
 
-
-
-
-
-
 <button type="submit" class="btn btn-lg btn-primary float-right"><?= $this->lang->line('submit'); ?></button>
 <?php echo form_close();?>
 </div>
