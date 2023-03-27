@@ -189,6 +189,8 @@ if ($x==3) {?>
 									<table width="100%" style="margin-bottom:15px"><tr>
 								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td></tr>
 								</table></td></tr>
+
+
 								<?php if (isset($inspimg)) {  ?>
 									<tr><td colspan="3">
 <?php
@@ -201,7 +203,7 @@ if ($x==3) {?>
 										
 										if ($im % 2 == 0) {
 											
-											echo "</tr><tr>";
+											echo "</tr>";
 											
 										}?>
 										
