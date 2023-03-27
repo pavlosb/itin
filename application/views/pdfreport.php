@@ -201,11 +201,7 @@ if ($x==3) {?>
 									<table width="100%" style="margin-bottom:15px"><tr>
 									<?php foreach ($inspimg as $key=>$value): 
 										
-										if ($im % 2 == 0) {
-											
-											echo "</tr>";
-											
-										}?>
+								?>
 										
 <td><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 90%; height: auto;"/></td>
 
