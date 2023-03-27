@@ -236,7 +236,11 @@ document.getElementById("imagefields").appendChild(input);
 
 j = i;
    });
-
+   document.getElementById("closecamera").style.display = "block";
+		 document.getElementById("opencamera").style.display = "none";
+		 document.getElementById("takesnapshot").style.display = "block";
+		 document.getElementById("savesnapshot").style.display = "none";
+     document.getElementById("trashsnapshot").style.display = "none";
 	
 
 } 
