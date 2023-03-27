@@ -57,7 +57,7 @@
 							<div id="results" class="row pb-3">
 								<?php if (isset($inspimg)) {
 									foreach ($inspimg as $key=>$value): ?>
-<div class="col-md-4"><img class="img-fluid" src="<?= base_url() ?>/inspection/photoupload/<?= $value ?>"/></div>
+<div class="col-md-4"><img class="img-fluid" src="<?= base_url() ?>inspection/photoupload/<?= $value ?>"/></div>
 							<?php		endforeach;
 								} ?>
 							</div>
