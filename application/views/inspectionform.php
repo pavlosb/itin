@@ -75,7 +75,6 @@
 <div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" ><i class="fal fa-trash-alt"></i></button></div>
 	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
-
 				<?php		}
             if ($cp['mainsect'] != $mcp) 
             {?>
