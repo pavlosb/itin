@@ -110,6 +110,7 @@
 
 <script>
 jQuery(document).ready(function($) {
+	$('.gallery').featherlightGallery();
     $("#spinner").removeClass("d-flex").hide();
     $('.pcert').hide();
   var btns = document.querySelectorAll('button');
