@@ -190,7 +190,7 @@ if ($x==3) {?>
 								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td></tr>
 								</table></td>
 								<?php if (isset($inspimg)) { 
-									$im = 0;
+									$im = 1;
 									
 
 									?>
