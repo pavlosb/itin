@@ -343,7 +343,6 @@ echo json_encode($status) ;
 		
 
 	}
-
 	public function inspection_view($id) 
 	{
 	
@@ -353,7 +352,6 @@ echo json_encode($status) ;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
 			$inspection = $inspections[0];
@@ -367,16 +365,13 @@ echo json_encode($status) ;
 			$this->load->view('header', $data);
 			$this->load->view('inspectionview', $data);
 			$this->load->view('footer', $data);
-			   
+		 
 		} else {
 			redirect('auth/login');
 		}
 		
 
 	}
-
-
-
 	public function inspection_new()
 	{
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))

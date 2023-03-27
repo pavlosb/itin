@@ -29,7 +29,6 @@
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></div>
                 <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('mlg_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->mlg_vhcl; ?></div>
-
             </div>    
 
         </div>
@@ -58,7 +57,7 @@
             <div class="row">
 			<?php
 									foreach ($inspimg as $key=>$value): ?>
-<div class="col-md-6 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/></div>
+<div class="col-md-4 mb-2"> <a class="thumbnail gallery" href="<?= base_url() ?>upload/<?= $value ?>"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/></a></div>
 							<?php		endforeach; ?>
 								
 
