@@ -57,7 +57,7 @@
             <div class="row">
 			<?php
 									foreach ($inspimg as $key=>$value): ?>
-<div class="col-md-4 mb-2"> <a class="thumbnail gallery" href="<?= base_url() ?>upload/<?= $value ?>"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/></a></div>
+<div class="col-md-3 mb-2"> <a class="thumbnail gallery" href="<?= base_url() ?>upload/<?= $value ?>"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/></a></div>
 							<?php		endforeach; ?>
 								
 
