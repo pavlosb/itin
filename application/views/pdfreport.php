@@ -203,10 +203,10 @@ if ($x==3) {?>
 											
 										}?>
 										
-<td><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 80mm; height: 60mm; margin: 0;"/></td>
+<td><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 90%; height: auto;"/></td>
 
 							<?php		
-						$im = $im +1;
+						$im = $im + 1;
 						endforeach; ?>
 
 					</tr></table>
