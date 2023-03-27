@@ -57,7 +57,7 @@
 							<div id="results" class="row pb-3">
 								<?php if (isset($inspimg)) {
 									foreach ($inspimg as $key=>$value): ?>
-<div class="col-md-4"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/></div>
+<div class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/></div>
 							<?php		endforeach;
 								} ?>
 							</div>
@@ -196,7 +196,7 @@ $scp = $cp['name_section'];
     Webcam.snap( function(data_uri) {
        // display results in page
        document.getElementById('results').innerHTML +=
-			         '<div id="imgbox-'+i+'" class="col-md-4"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
+			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
      Webcam.reset();
