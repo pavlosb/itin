@@ -187,8 +187,34 @@ IBAN:GR8701401200120002320007025</td>
 if ($x==3) {?>
 <tr><td colspan="3">
 									<table width="100%" style="margin-bottom:15px"><tr>
-								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td>
-								</table></td></tr>
+								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td></tr>
+								</table></td>
+								<?php if (isset($inspimg)) { 
+									$im = 0;
+									
+
+									?>
+									<table width="100%" style="margin-bottom:15px"><tr>
+									<?php foreach ($inspimg as $key=>$value): 
+										
+										if ($im % 2 == 0) {
+											
+											echo "</tr>";
+											
+										}?>
+										
+<td><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/></td>
+
+							<?php		
+						$im = $im +1;
+						endforeach; ?>
+
+					</tr></table>
+							<?php	} ?>
+							
+							
+							
+							</tr>
 						<?php	}
 
 								
