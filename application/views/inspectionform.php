@@ -54,7 +54,11 @@
 						// Take photos Section 
 						if ($prcp == 12 && $cp['mainsectid'] == 16) { ?>
 						
-							<div id="results" class="row pb-3"></div>
+							<div id="results" class="row pb-3">
+								<?php if (isset($inspimg)) {
+									print_r($inspimg);
+								} ?>
+							</div>
 <div class="row pb-3">
 	<div class="col-md-3">
 		<div class="row">
@@ -255,6 +259,7 @@ document.getElementById("closecamera").style.display = "block";
 		 document.getElementById("takesnapshot").style.display = "block";
 		 document.getElementById("savesnapshot").style.display = "none";
      document.getElementById("trashsnapshot").style.display = "none";
+     configure();
 	 }
 
 </script>
