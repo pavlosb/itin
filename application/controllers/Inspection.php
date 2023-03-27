@@ -361,6 +361,7 @@ echo json_encode($status) ;
 			$data['sec2score'] = $inspection->s2score_inspection;
 			$data['sec3score'] = $inspection->s3score_inspection;
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
+			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			$this->load->view('header', $data);
