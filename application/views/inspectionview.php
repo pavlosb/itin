@@ -52,6 +52,23 @@
                 </div>
             </div>
         </div>
+
+		<?php if (isset($inspimg)) { ?>
+		<div class="col-lg-10 p-3 bg-light">
+            <div class="row">
+			<?php
+									foreach ($inspimg as $key=>$value): ?>
+<div class="col-md-6 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/></div>
+							<?php		endforeach; ?>
+								
+
+			</div>
+        </div>
+
+		<?php } ?>
+
+
+
     </div>
     <div class="row justify-content-center mt-2">
         <div class="col-lg-10 p-3">
