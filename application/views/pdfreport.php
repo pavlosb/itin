@@ -188,8 +188,10 @@ if ($x==3) {?>
 <tr><td colspan="3">
 									<table width="100%" style="margin-bottom:15px"><tr>
 								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td></tr>
-								</table></td>
-								<?php if (isset($inspimg)) { 
+								</table></td></tr>
+								<?php if (isset($inspimg)) {  ?>
+									<tr><td colspan="3">
+<?php
 									$im = 1;
 									
 
@@ -199,7 +201,7 @@ if ($x==3) {?>
 										
 										if ($im % 2 == 0) {
 											
-											echo "</tr>";
+											echo "</tr><tr>";
 											
 										}?>
 										
@@ -210,11 +212,12 @@ if ($x==3) {?>
 						endforeach; ?>
 
 					</tr></table>
+					</td></tr>
 							<?php	} ?>
 							
 							
 							
-							</tr>
+							
 						<?php	}
 
 								
