@@ -402,7 +402,9 @@ echo json_encode($status) ;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$points = $_POST['checkpoint'];
+			if (isset($_POST['remark'])) {
 			$remarks = $_POST['remark'];
+			}
 			$sectors = $_POST['chpsect'];
 			if (isset($_POST['inspimg'])) {
 			$photos = $_POST['inspimg'];
@@ -419,11 +421,13 @@ foreach ($photos as $key => $filename):
 	}
 endforeach;
 }
+if($remarks) {
 foreach ($remarks as $key => $value):
 	if ($value!=""){
 	$remdata[] = array('inspectionid_insrem' => $this->input->post('inspectionid_insres'), 'chkpointid_insrem' => $key, 'remark_insrem' => $value);
 	}
 endforeach;
+}
 //print_r($insdata);
 $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
 if ($remdata && count($remdata) > 0) {
