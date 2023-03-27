@@ -241,7 +241,7 @@ j = i;
 		 document.getElementById("takesnapshot").style.display = "block";
 		 document.getElementById("savesnapshot").style.display = "none";
      document.getElementById("trashsnapshot").style.display = "none";
-	
+     configure();
 
 } 
 
