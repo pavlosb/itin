@@ -839,9 +839,16 @@ echo $url;
 public function removeimg() {
 	$imgid = $this->input->post('id');
 	$filename = $this->itindata_model->getsingleimg($imgid);
+	$delete=unlink('upload/'.$filename);    
+if($delete){  
+	$this->itindata_model->delsingleimg($imgid);
+	$status = "ok";
+}else{  
+	$status = "nok";
+}
 	$this->output->set_header("Cache-Control: no-cache, must-revalidate");
 	$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
 	$this->output->set_header("Content-type: application/json");
-	echo json_encode($filename) ;  
+	echo json_encode($status) ;  
 }
 }

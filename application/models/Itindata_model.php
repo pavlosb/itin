@@ -68,7 +68,7 @@ $maxpos = $row->maxpos;
 
          $this->db->select_max('pos_cp', 'maxpos');
             $query = $this->db->get('checkpoint_tbl');
-            foreach ($query->result() as $row)
+            foreach ($query->result() as $row)prep
 {
 $maxpos = $row->maxpos;
 }
@@ -404,6 +404,13 @@ $maxpos = $row->maxpos;
 		$data = 0;
 	}
 	return $data;
+}
+
+
+public function delsingleimg($imgid) {
+	$this->db->where('id_img', $imgid);
+	$query = $this->db->delete('inspectionimg_tbl'); 
+	return;
 }
 }
 
