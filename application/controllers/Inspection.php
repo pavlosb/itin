@@ -837,7 +837,7 @@ echo $url;
 
 
 public function removeimg() {
-	$imgid = $this->input->post('imgid');
+	$imgid = $this->input->post('id');
 	$filename = $this->itindata_model->getsingleimg($imgid);
 	$this->output->set_header("Cache-Control: no-cache, must-revalidate");
 	$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
