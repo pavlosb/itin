@@ -482,7 +482,7 @@ gauge6.set(0); // set actual value
 $( ".delimg" ).click(function() {
         var imgid =$(this).data("imgid");
      //   $('.prep').hide();
-      //  $("#spinner").addClass("d-flex").show();
+      $("#spinner").addClass("d-flex").show();
     $.ajax({
 		type: "POST",
 		dataType: "JSON",
@@ -494,10 +494,10 @@ $( ".delimg" ).click(function() {
                    // alert(data.created);
                    // alert(data.en_certfile_inspection);
                    // alert(data.certfile_inspection);
-                    //$( ".createrpt" ).hide();
+                    $( "#eimg-"+imgid ).remove();
                     //$('.repel').attr('href','<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
                     //$('.repen').attr('href','<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
-                   // $("#spinner").removeClass("d-flex").hide();
+                   $("#spinner").removeClass("d-flex").hide();
                    // $('.prep').show();
                    // window.location.reload(true);
 		
