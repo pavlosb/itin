@@ -190,28 +190,7 @@ if ($x==3) {?>
 								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td></tr>
 								</table></td></tr>
 
-
-								<?php if (isset($inspimg)) {  ?>
-									<tr><td colspan="3">
-<?php
-									$im = 1;
-									
-
-									?>
-									<table width="100%" style="margin-bottom:15px"><tr>
-									<?php foreach ($inspimg as $key=>$value): 
-										
-								?>
-										
-<td width="25%"><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 90%; height: auto;"/></td>
-
-							<?php		
-						$im = $im + 1;
-						endforeach; ?>
-
-					</tr></table>
-					</td></tr>
-							<?php	} ?>
+		
 							
 							
 							
@@ -271,5 +250,26 @@ $scp = $cp['id_section'];
 $z = $z + 1;
  endforeach ?> 
    </table>
+	 <?php if (isset($inspimg)) {  ?>
+									
+<?php
+									$im = 1;
+									
+
+									?>
+									<table width="100%" style="margin-bottom:15px">
+									<?php foreach ($inspimg as $key=>$value): 
+										
+								?>
+										
+<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 80mm; height: auto;"/></td></tr>
+
+							<?php		
+						$im = $im + 1;
+						endforeach; ?>
+
+					</table>
+					
+							<?php	} ?>
   </body>
   </html>
