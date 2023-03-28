@@ -257,12 +257,12 @@ $z = $z + 1;
 									
 
 									?>
-									<table width="100%" style="margin-bottom:15px">
+									<table width="100%" style="margin-top:50px; margin-bottom:15px">
 									<?php foreach ($inspimg as $key=>$value): 
 										
 								?>
 										
-<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 80mm; height: auto;"/></td></tr>
+<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 100mm; height: auto;"/></td></tr>
 
 							<?php		
 						$im = $im + 1;
