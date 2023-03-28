@@ -272,6 +272,7 @@ document.getElementById("closecamera").style.display = "block";
 </script>
 <script>
 jQuery(document).ready(function($) {
+	$("#spinner").removeClass("d-flex").hide();
   $('#takesnapshot').hide();
   $('#savesnapshot').hide();
   $('#trashsnapshot').hide();
