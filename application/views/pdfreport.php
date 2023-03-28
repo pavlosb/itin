@@ -203,7 +203,7 @@ if ($x==3) {?>
 										
 								?>
 										
-<td><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 90%; height: auto;"/></td>
+<td width="25%"><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 90%; height: auto;"/></td>
 
 							<?php		
 						$im = $im + 1;
