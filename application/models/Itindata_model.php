@@ -391,5 +391,19 @@ $maxpos = $row->maxpos;
          return $data;
      }
    }
+
+	public function getsingleimg($imgid) {
+		$this->db->where('id_img', $imgid);
+      $query = $this->db->get('inspectionimg_tbl'); 
+		if ($query -> num_rows() > 0) {
+		foreach ($query->result() as $row)
+		{
+				$data = $row->filename_img;
+		}
+	} else {
+		$data = 0;
+	}
+	return $data;
+}
 }
 

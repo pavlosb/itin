@@ -834,4 +834,14 @@ echo $url;
 	$imgnew .= $imgparts[1];
 	return $imgnew;
  }
+
+
+public function removeimg() {
+	$imgid = $this->input->post('imgid');
+	$filename = $this->itindata_model->getsingleimg($imgid);
+	$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+	$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+	$this->output->set_header("Content-type: application/json");
+	echo json_encode($filename) ;  
+}
 }

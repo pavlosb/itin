@@ -57,7 +57,7 @@
 							<div id="results" class="row pb-3">
 								<?php if (isset($inspimg)) {
 									foreach ($inspimg as $key=>$value): ?>
-<div class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="btn btn-danger" onclick="remimg(<?= $key ?>)" ><i class="fal fa-trash-alt"></i></button></div></div>
+<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div></div>
 							<?php		endforeach;
 								} ?>
 							</div>
@@ -154,6 +154,11 @@ $scp = $cp['name_section'];
       </div>
 </div>
 </div> 
+<div id="spinner" class="d-flex justify-content-center" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0; z-index: 9999; background: rgba(255,255,255,0.7);">
+  <div class="spinner-border align-self-center" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
 <script language="JavaScript">
 	var i = 0;
@@ -473,5 +478,40 @@ gauge6.set(0); // set actual value
         }, 700);
     });
 }
+
+$( ".delbtn" ).click(function() {
+        var imgid =$(this).data("imgid");
+     //   $('.prep').hide();
+      //  $("#spinner").addClass("d-flex").show();
+    $.ajax({
+		type: "POST",
+		dataType: "JSON",
+		data: {id:imgid},
+		url: "<?= base_url()?>inspection/removeimg",
+		success: function(data){
+			//$.each(data, function(i,item){
+				if (data.deleted == 'ok'){
+                   // alert(data.created);
+                   // alert(data.en_certfile_inspection);
+                   // alert(data.certfile_inspection);
+                    //$( ".createrpt" ).hide();
+                    //$('.repel').attr('href','<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
+                    //$('.repen').attr('href','<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
+                   // $("#spinner").removeClass("d-flex").hide();
+                   // $('.prep').show();
+                   // window.location.reload(true);
+		
+				} else {
+		  
+						}
+			//});
+			}
+		
+	  
+	});
+
+        })
+
+
 });
     </script>
