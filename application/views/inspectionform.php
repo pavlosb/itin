@@ -479,7 +479,7 @@ gauge6.set(0); // set actual value
     });
 }
 
-$( ".delbtn" ).click(function() {
+$( ".delbtn button" ).click(function() {
         var imgid =$(this).data("imgid");
      //   $('.prep').hide();
       //  $("#spinner").addClass("d-flex").show();
