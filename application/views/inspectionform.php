@@ -158,14 +158,17 @@ $scp = $cp['name_section'];
 <script language="JavaScript">
 	var i = 0;
 	var j = 0;
+	var ww = window.innerWidth;
+	var wh = window.innerHeight;
+	var rto = ww / wh;
 	var cwdth =  document.getElementById("my_camera").offsetWidth;
-	var cwhght = 3 * cwdth /4;
+	var cwhght = cwdth / rto;
 	 function configure(){
 	 Webcam.set({
      width: cwdth,
      height: cwhght,
 		 dest_width:1024,
-		 dest_height:768,
+		 dest_height:1024 / rto,
      image_format: 'jpeg',
      jpeg_quality: 90,
 		 constraints: {
