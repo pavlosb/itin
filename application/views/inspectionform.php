@@ -57,7 +57,7 @@
 							<div id="results" class="row pb-3">
 								<?php if (isset($inspimg)) {
 									foreach ($inspimg as $key=>$value): ?>
-<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div></div>
+<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div></div>
 							<?php		endforeach;
 								} ?>
 							</div>
@@ -479,7 +479,7 @@ gauge6.set(0); // set actual value
     });
 }
 
-$( ".delbtn button" ).click(function() {
+$( ".delimg" ).click(function() {
         var imgid =$(this).data("imgid");
      //   $('.prep').hide();
       //  $("#spinner").addClass("d-flex").show();
