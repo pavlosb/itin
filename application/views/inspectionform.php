@@ -161,6 +161,9 @@ $scp = $cp['name_section'];
 	var ww = window.innerWidth;
 	var wh = window.innerHeight;
 	var rto = ww / wh;
+	if (rto > 1.3) {
+		rto = 1.33333;
+	}
 	var cwdth =  document.getElementById("my_camera").offsetWidth;
 	var cwhght = cwdth / rto;
 	 function configure(){
