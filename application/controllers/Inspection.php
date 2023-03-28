@@ -299,6 +299,7 @@ echo json_encode($status) ;
 				$oldlang = "english";
 				$newprfx = "";
 				}
+				$this->load->view('pdfcert', $data);
 			$html = $this->load->view('pdfcert', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
