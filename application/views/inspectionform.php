@@ -491,11 +491,11 @@ $( ".delimg" ).click(function() {
 		url: "<?= base_url()?>inspection/removeimg",
 		success: function(data){
 			//$.each(data, function(i,item){
-				if (data.deleted == 'ok'){
+				if (data == 'ok'){
                    // alert(data.created);
                    // alert(data.en_certfile_inspection);
                    // alert(data.certfile_inspection);
-                    $( "#eimg-"+imgid ).remove();
+                    $( "#eimg-"+imgid).remove();
                     //$('.repel').attr('href','<?= base_url()?>assets/pdfs/'+ data.certfile_inspection);
                     //$('.repen').attr('href','<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
                    $("#spinner").removeClass("d-flex").hide();
