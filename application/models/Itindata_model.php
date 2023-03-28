@@ -68,7 +68,7 @@ $maxpos = $row->maxpos;
 
          $this->db->select_max('pos_cp', 'maxpos');
             $query = $this->db->get('checkpoint_tbl');
-            foreach ($query->result() as $row)prep
+            foreach ($query->result() as $row)
 {
 $maxpos = $row->maxpos;
 }
