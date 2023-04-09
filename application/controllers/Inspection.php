@@ -110,6 +110,8 @@ class Inspection extends CI_Controller {
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
+			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
+			$data['inspremark'] = $this->itindata_model->get_inspectionremarks($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 				$this->load->view('header', $data);
@@ -162,7 +164,6 @@ class Inspection extends CI_Controller {
 
 	}
 
-
 	public function inspections_pdf() 
 	{
 	
@@ -176,6 +177,7 @@ class Inspection extends CI_Controller {
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
+			$data['inspremark'] = $this->itindata_model->get_inspectionremarks($id);
 			$inspection = $inspections[0];
 			$score1 = $inspection->s1score_inspection;
 			$score2 = $inspection->s2score_inspection;
@@ -191,6 +193,8 @@ class Inspection extends CI_Controller {
 			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspectionid'] = $id;
+			$data['dynimg'] = $this->dynimg($id);
+			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			//$html = $this->load->view('header', $data, true);
 			//$this->load->view('testview', $data);
@@ -205,12 +209,13 @@ class Inspection extends CI_Controller {
 				$oldlang = "english";
 				$newprfx = "";
 				}
-			
+			//$this->load->view('pdfreport', $data);
 			$html = $this->load->view('pdfreport', $data, true);
 			//$this->load->view('pdfreport');
 			//$html .= $this->load->view('footer', $data, true);
 			
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
+			$mpdf->img_dpi = 96;
 			$mpdf->debug = true;
 			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
@@ -294,6 +299,7 @@ echo json_encode($status) ;
 				$oldlang = "english";
 				$newprfx = "";
 				}
+				$this->load->view('pdfcert', $data);
 			$html = $this->load->view('pdfcert', $data, true);
 			//$html .= $this->load->view('footer', $data, true);
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
@@ -338,7 +344,6 @@ echo json_encode($status) ;
 		
 
 	}
-
 	public function inspection_view($id) 
 	{
 	
@@ -348,7 +353,6 @@ echo json_encode($status) ;
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-			
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
 			$inspection = $inspections[0];
@@ -356,21 +360,19 @@ echo json_encode($status) ;
 			$data['sec2score'] = $inspection->s2score_inspection;
 			$data['sec3score'] = $inspection->s3score_inspection;
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
+			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			$this->load->view('header', $data);
 			$this->load->view('inspectionview', $data);
 			$this->load->view('footer', $data);
-			   
+		 
 		} else {
 			redirect('auth/login');
 		}
 		
 
 	}
-
-
-
 	public function inspection_new()
 	{
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
@@ -398,14 +400,40 @@ echo json_encode($status) ;
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$points = $_POST['checkpoint'];
+			if (isset($_POST['remark'])) {
+			$remarks = $_POST['remark'];
+			}
 			$sectors = $_POST['chpsect'];
+			if (isset($_POST['inspimg'])) {
+			$photos = $_POST['inspimg'];
+			}
 foreach ($points as $key => $value):
  
 	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
 
 endforeach;
+if($photos) {
+foreach ($photos as $key => $filename):
+	if ($filename!=""){
+	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename));
+	}
+endforeach;
+}
+if($remarks) {
+foreach ($remarks as $key => $value):
+	if ($value!=""){
+	$remdata[] = array('inspectionid_insrem' => $this->input->post('inspectionid_insres'), 'chkpointid_insrem' => $key, 'remark_insrem' => $value);
+	}
+endforeach;
+}
 //print_r($insdata);
 $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insres'), $insdata);
+if ($remdata && count($remdata) > 0) {
+$this->itindata_model->set_inspectionremarks($this->input->post('inspectionid_insres'), $remdata);
+}
+if ($imgdata && count($imgdata) > 0) {
+$this->itindata_model->set_inspectionimg($this->input->post('inspectionid_insres'), $imgdata);
+}
 $updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 1);
 $updata['s2score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 12);
 $updata['s3score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 16);
@@ -773,5 +801,54 @@ echo json_encode($status) ;
 	return $inspnum; 
  }
 
+ public function photoupload(){
 
+	$filename = 'pic_'.date('YmdHis') . '.jpeg';
+
+$url = '';
+if( move_uploaded_file($_FILES['webcam']['tmp_name'],'upload/'.$filename) ){
+   $url = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
+}
+
+// Return image url
+echo $url;
+
+ }
+
+ public function dynimg($id) {
+	$pointscore = $this->itindata_model->get_scoreforoutside($id);
+	
+	$img = file_get_contents(base_url()."assets/images/carframe.svg");
+	$imgparts = explode('</style>',$img);
+	$imgnew = $imgparts[0];
+	foreach ($pointscore as $cpoint=>$cscore) {
+		$npoint = $cpoint - 57;
+	if ($cscore < 0) {
+		$imgnew .= '.p_'.$npoint.'{fill:red;}';
+	}
+	if ($cscore > 0) {
+		$imgnew .= '.p_'.$npoint.'{fill:green;}';
+	}
+	}
+	$imgnew .= '</style>';
+	$imgnew .= $imgparts[1];
+	return $imgnew;
+ }
+
+
+public function removeimg() {
+	$imgid = $this->input->post('id');
+	$filename = $this->itindata_model->getsingleimg($imgid);
+	$delete=unlink('upload/'.$filename);    
+if($delete){  
+	$this->itindata_model->delsingleimg($imgid);
+	$status = "ok";
+}else{  
+	$status = "nok";
+}
+	$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+	$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+	$this->output->set_header("Content-type: application/json");
+	echo json_encode($status);  
+}
 }

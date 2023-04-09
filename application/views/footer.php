@@ -20,6 +20,8 @@
 <script src="<?php echo base_url(); ?>assets/js/bootbox.all.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/clipboard.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/featherlight.js" type="text/javascript" charset="utf-8"></script>
+<script src="<?php echo base_url(); ?>assets/js/featherlight.gallery.js" type="text/javascript" charset="utf-8"></script>
   
 </body>
 </html>

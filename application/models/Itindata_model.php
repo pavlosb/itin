@@ -231,6 +231,22 @@ $maxpos = $row->maxpos;
             }
     }
 
+	 public function get_scoreforoutside($id) {
+		$this->db->where(array('inspectionid_insres' => $id, 'chkpointid_insres >=' => 58, 'chkpointid_insres <=' => 78));
+		$query = $this->db->get('inspectionresults_tbl');
+		if ($query -> num_rows() > 0) {
+			
+			foreach ($query->result() as $row)
+			{
+				$score[$row->chkpointid_insres] = $row->chpointscore_insres;
+			}
+			return $score;
+		} else {
+			return null;
+		}
+		 
+	 }
+
     public function get_inspectionscore($id) {
 
       $this->db->where(array('inspectionid_insres' => $id));
@@ -245,12 +261,60 @@ $maxpos = $row->maxpos;
       return null;
    }
     }
+
+	 public function get_inspectionimages($id) {
+		$this->db->where(array('inspectionid_img' => $id));
+		$query = $this->db->get('inspectionimg_tbl');
+		if ($query -> num_rows() > 0) {
+			foreach ($query->result() as $row)
+			{
+				$inspimg[$row->id_img] = $row->filename_img;
+			}
+			return $inspimg;
+		} else {
+			return null;
+		}
+	 }
+
+	 public function get_inspectionremarks($id) {
+
+      $this->db->where(array('inspectionid_insrem' => $id));
+      $query = $this->db->get('inspectionremarks_tbl');
+      if ($query -> num_rows() > 0) {
+      foreach ($query->result() as $row)
+      {
+         $remark[$row->chkpointid_insrem] = $row->remark_insrem;
+      }
+      return $remark;
+   } else {
+      return null;
+   }
+    }
+
+
+
     public function set_inspectionscore($id, $data) 
     {
       $this->db->where(array('inspectionid_insres' => $id));
       $this->db->delete('inspectionresults_tbl');
 
       $this->db->insert_batch('inspectionresults_tbl', $data);
+    }
+
+	 public function set_inspectionimg($id, $data) 
+    {
+     //$this->db->where(array('inspectionid_insres' => $id));
+     //$this->db->delete('inspectionresults_tbl');
+
+      $this->db->insert_batch('inspectionimg_tbl', $data);
+    }
+
+	 public function set_inspectionremarks($id, $data) 
+    {
+      $this->db->where(array('inspectionid_insrem' => $id));
+      $this->db->delete('inspectionremarks_tbl');
+
+      $this->db->insert_batch('inspectionremarks_tbl', $data);
     }
 
     public function upd_inspection($id, $data){
@@ -322,11 +386,31 @@ $maxpos = $row->maxpos;
       $query = $this->db->get($chk_tbl); 
       if ($query->num_rows() > 0) {
          foreach ($query->result() as $row) {
-
              $data[] = $row;
          }
          return $data;
      }
    }
+
+	public function getsingleimg($imgid) {
+		$this->db->where('id_img', $imgid);
+      $query = $this->db->get('inspectionimg_tbl'); 
+		if ($query -> num_rows() > 0) {
+		foreach ($query->result() as $row)
+		{
+				$data = $row->filename_img;
+		}
+	} else {
+		$data = 0;
+	}
+	return $data;
+}
+
+
+public function delsingleimg($imgid) {
+	$this->db->where('id_img', $imgid);
+	$query = $this->db->delete('inspectionimg_tbl'); 
+	return;
+}
 }
 

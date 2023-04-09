@@ -13,6 +13,7 @@ if (isset($user_lang) && $user_lang == "greek") {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
      <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
     <style>
+			
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 @page {
                 margin: 120px 40px 120px 80px;
@@ -182,9 +183,25 @@ IBAN:GR8701401200120002320007025</td>
             
             {
                 $x = $x+1; 
+
+if ($x==3) {?>
+<tr><td colspan="3">
+									<table width="100%" style="margin-bottom:15px"><tr>
+								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td></tr>
+								</table></td></tr>
+
+		
+							
+							
+							
+							
+						<?php	}
+
+								
                 ?>
                 </table>
-                
+								
+               
             <table border="0" padding="0" width="100%" class="newsect-<?= $x ?>">
             <tr><td colspan="3">
             <table width="100%" style="margin-bottom:15px"><tr>
@@ -217,15 +234,42 @@ $pointscore = $inspscore[$cp['id_cp']];
     <img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
  <?php } else { ?>
     <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
- <?php } ?>
+		 <?php } ?>
 </td>
 <td class="text-center">&nbsp;</td>
 </tr>
-<?php
+<?php if (isset($inspremark[$cp['id_cp']])){ ?>
+	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
+	<td colspan="3">
+	<u><?= $this->lang->line('comment'); ?></u><br/>
+<?php		echo $inspremark[$cp['id_cp']]; ?>
+</td></tr>
+	<?php } 
 $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
 $z = $z + 1;
  endforeach ?> 
    </table>
+	 <?php if (isset($inspimg)) {  ?>
+									
+<?php
+									$im = 1;
+									
+
+									?>
+									<table width="100%" style="margin-top:50px; margin-bottom:15px">
+									<?php foreach ($inspimg as $key=>$value): 
+										
+								?>
+										
+<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 100mm; height: auto;"/></td></tr>
+
+							<?php		
+						$im = $im + 1;
+						endforeach; ?>
+
+					</table>
+					
+							<?php	} ?>
   </body>
   </html>

@@ -90,8 +90,12 @@ $lang['inspection_certificate'] = 'DEKRA Πιστοποιητικό';
 $lang['create_certificate'] = 'Δημιουργία Πιστοποιητικού';
 $lang['inspector'] = 'Εμπειρογνώμονας';
 $lang['leave_empty'] = 'Αφήστε κενό για αυτόματη αρίθμηση';
+<<<<<<< HEAD
 $lang['comment'] = 'Παρατηρήσεις';
 
+=======
+$lang['comment'] = 'Παρατήρηση';
+>>>>>>> dev
 
 
 // PDF REPORT
