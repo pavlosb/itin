@@ -412,14 +412,14 @@ foreach ($points as $key => $value):
 	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
 
 endforeach;
-if($photos) {
+if(isset($photos)) {
 foreach ($photos as $key => $filename):
 	if ($filename!=""){
 	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename));
 	}
 endforeach;
 }
-if($remarks) {
+if(isset($remarks)) {
 foreach ($remarks as $key => $value):
 	if ($value!=""){
 	$remdata[] = array('inspectionid_insrem' => $this->input->post('inspectionid_insres'), 'chkpointid_insrem' => $key, 'remark_insrem' => $value);
@@ -431,7 +431,7 @@ $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insr
 if ($remdata && count($remdata) > 0) {
 $this->itindata_model->set_inspectionremarks($this->input->post('inspectionid_insres'), $remdata);
 }
-if ($imgdata && count($imgdata) > 0) {
+if (isset($imgdata) && count($imgdata) > 0) {
 $this->itindata_model->set_inspectionimg($this->input->post('inspectionid_insres'), $imgdata);
 }
 $updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 1);
