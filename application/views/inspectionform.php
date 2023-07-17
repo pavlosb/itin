@@ -167,6 +167,14 @@ $scp = $cp['name_section'];
 </div>
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
 <script language="JavaScript">
+
+            $('#fileupload').on('change',function(){
+                //get the file name
+                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+                //replace the "Choose a file" label
+                $(this).next('.custom-file-label').html(fileName);
+            })
+  
 	var i = 0;
 	var j = 0;
 	var ww = window.innerWidth;
