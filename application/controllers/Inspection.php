@@ -815,6 +815,21 @@ echo $url;
 
  }
 
+
+ public function imgupload(){
+ /* Get the name of the uploaded file */
+$filename = $_FILES['file']['name'];
+
+/* Choose where to save the uploaded file */
+$location = "upload/".$filename;
+
+/* Save the uploaded file to the local filesystem */
+if ( move_uploaded_file($_FILES['file']['tmp_name'], $location) ) { 
+	$url = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
+} 
+// Return image url
+echo $url;
+ }
  public function dynimg($id) {
 	$pointscore = $this->itindata_model->get_scoreforoutside($id);
 	
