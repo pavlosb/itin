@@ -276,7 +276,7 @@ document.getElementById("closecamera").style.display = "block";
   async function uploadFile() {
   let formData = new FormData(); 
   formData.append("file", fileupload.files[0]);
-  await fetch('inspection/imgupload.php', {
+  await fetch('/inspection/imgupload.php', {
     method: "POST", 
     body: formData
   }); 
