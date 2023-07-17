@@ -277,13 +277,20 @@ document.getElementById("closecamera").style.display = "block";
 
 
 
-  async function uploadFile() {
+ function uploadFile() {
   let formData = new FormData(); 
+	if(fileupload.files[0].length > 0) {
   formData.append("file", fileupload.files[0]);
-  const response = await fetch('/inspection/imgupload', {
-    method: "POST", 
-    body: formData
-  }); 
+
+	$.ajax({
+                    url:'/inspection/imgupload',
+                    type:'post',
+                    data:formData,
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    success:function(response){
+ 
  alert(response.url);
  var input = document.createElement("input");
 
@@ -296,6 +303,11 @@ input.setAttribute("value", response.url);
 
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input);
+										}
+
+} else {
+               alert("Please select a file.");
+          }
   }
 
 </script>

@@ -827,8 +827,10 @@ $location = "upload/".$filename;
 if ( move_uploaded_file($_FILES['file']['tmp_name'], $location) ) { 
 	$url = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
 } 
-// Return image url
-echo $url;
+$response['url'] = $url;
+
+      echo json_encode($response);
+      exit;
  }
  public function dynimg($id) {
 	$pointscore = $this->itindata_model->get_scoreforoutside($id);
