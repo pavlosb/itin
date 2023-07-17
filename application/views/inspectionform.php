@@ -172,7 +172,7 @@ $scp = $cp['name_section'];
                 //get the file name
                 var fileName = $(this).val().replace('C:\\fakepath\\', " ");
                 //replace the "Choose a file" label
-                $(this).next('.custom-file-label').html(fileName);
+                $('.custom-file-label').html(fileName);
             })
   
 	var i = 0;
