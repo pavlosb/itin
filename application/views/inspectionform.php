@@ -276,11 +276,22 @@ document.getElementById("closecamera").style.display = "block";
   async function uploadFile() {
   let formData = new FormData(); 
   formData.append("file", fileupload.files[0]);
-  await fetch('/inspection/imgupload', {
+  const response = await fetch('/inspection/imgupload', {
     method: "POST", 
     body: formData
   }); 
-  alert('The file has been uploaded successfully.');
+ alert(response);
+ var input = document.createElement("input");
+
+
+input.setAttribute("type", "hidden");
+
+input.setAttribute("name", "inspimg["+i+"]");
+
+input.setAttribute("value", text);
+
+//append to form element that you want .
+document.getElementById("imagefields").appendChild(input);
   }
 
 </script>
