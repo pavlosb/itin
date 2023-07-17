@@ -76,7 +76,7 @@
 	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
 <div class="row pb-3"><input id="fileupload" type="file" name="fileupload" />
-<button id="upload-button" onclick="uploadFile()"> Upload </button></div>
+<button  type="button" id="upload-button" onclick="uploadFile()"> Upload </button></div>
 				<?php		}
             if ($cp['mainsect'] != $mcp) 
             {?>
@@ -270,6 +270,18 @@ document.getElementById("closecamera").style.display = "block";
      document.getElementById("trashsnapshot").style.display = "none";
      configure();
 	 }
+
+
+
+  async function uploadFile() {
+  let formData = new FormData(); 
+  formData.append("file", fileupload.files[0]);
+  await fetch('inspection/imgupload.php', {
+    method: "POST", 
+    body: formData
+  }); 
+  alert('The file has been uploaded successfully.');
+  }
 
 </script>
 <script>
