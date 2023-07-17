@@ -279,7 +279,7 @@ document.getElementById("closecamera").style.display = "block";
 
  function uploadFile() {
   let formData = new FormData(); 
-	if(fileupload.files[0].length > 0) {
+	//if(fileupload.files[0].length > 0) {
   formData.append("file", fileupload.files[0]);
 
 	$.ajax({
@@ -306,9 +306,7 @@ document.getElementById("imagefields").appendChild(input);
 										}
 });
 
-} else {
-               alert("Please select a file.");
-          }
+
   }
 
 </script>
