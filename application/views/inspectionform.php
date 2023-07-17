@@ -275,6 +275,40 @@ document.getElementById("closecamera").style.display = "block";
      configure();
 	 }
 
+	 function uploadFile() {
+	i = i+1;
+  let formData = new FormData(); 
+	//if(fileupload.files[0].length > 0) {
+  formData.append("file", fileupload.files[0]);
+
+	$.ajax({
+                    url:'/inspection/imgupload',
+                    type:'post',
+                    data:formData,
+                    dataType: 'json',
+                    contentType: false,
+                    processData: false,
+                    success:function(response){
+ 
+// alert(response.url);
+ document.getElementById('results').innerHTML +=
+			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+response.url+'"/></div>';
+ var input = document.createElement("input");
+
+
+input.setAttribute("type", "hidden");
+
+input.setAttribute("name", "inspimg["+i+"]");
+
+input.setAttribute("value", response.url);
+
+//append to form element that you want .
+document.getElementById("imagefields").appendChild(input);
+										}
+});
+
+
+  }
 </script>
 <script>
 jQuery(document).ready(function($) {
