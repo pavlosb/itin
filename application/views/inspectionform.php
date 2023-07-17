@@ -76,10 +76,11 @@
 	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
 <div class="row pb-3">
+<div class = "col-md-12"><h5>Ανεβάστε μια φωτογραφία</h5></div>
 	<div class = "col-md-8"><input id="fileupload" type="file" class="custom-file-input" name="fileupload" />
-	<label class="custom-file-label" for="customFile">Choose file</label></div>
+	<label class="custom-file-label" for="customFile">Επιλογή αρχείου</label></div>
 	<div class = "col-md-4">
-<button  type="button" id="upload-button" onclick="uploadFile()"> Upload </button></div>
+<button  type="button" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>
 </div>
 				<?php		}
             if ($cp['mainsect'] != $mcp) 
