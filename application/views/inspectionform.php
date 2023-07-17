@@ -280,7 +280,7 @@ document.getElementById("closecamera").style.display = "block";
     method: "POST", 
     body: formData
   }); 
- alert(response);
+ alert(response.url);
  var input = document.createElement("input");
 
 
@@ -288,7 +288,7 @@ input.setAttribute("type", "hidden");
 
 input.setAttribute("name", "inspimg["+i+"]");
 
-input.setAttribute("value", response);
+input.setAttribute("value", response.url);
 
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input);
