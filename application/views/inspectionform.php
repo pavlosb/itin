@@ -75,12 +75,12 @@
 <div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" ><i class="fal fa-trash-alt"></i></button></div>
 	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
-<div class="row pb-3">
+<div class="row pb-5">
 <div class = "col-md-12"><h5>Ανεβάστε μια φωτογραφία</h5></div>
 	<div class = "col-md-8"><input id="fileupload" type="file" class="custom-file-input" name="fileupload" />
 	<label class="custom-file-label" for="customFile">Επιλογή αρχείου</label></div>
 	<div class = "col-md-4">
-<button  type="button" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>
+<button  type="button" class="btn btn-info btn-block" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>
 </div>
 				<?php		}
             if ($cp['mainsect'] != $mcp) 
