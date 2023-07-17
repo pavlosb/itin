@@ -304,6 +304,7 @@ input.setAttribute("value", response.url);
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input);
 										}
+});
 
 } else {
                alert("Please select a file.");
