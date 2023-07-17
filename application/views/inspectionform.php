@@ -77,9 +77,9 @@
 </div>
 <div class="row pb-5">
 <div class = "col-md-12"><h5>Ανεβάστε μια φωτογραφία</h5></div>
-	<div class = "col-md-8"><input id="fileupload" type="file" class="custom-file-input" name="fileupload" />
+	<div class = "col-md-9"><input id="fileupload" type="file" class="custom-file-input" name="fileupload" />
 	<label class="custom-file-label" for="customFile">Επιλογή αρχείου</label></div>
-	<div class = "col-md-4">
+	<div class = "col-md-3">
 <button  type="button" class="btn btn-info btn-block" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>
 </div>
 				<?php		}
