@@ -168,12 +168,10 @@ $scp = $cp['name_section'];
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
 <script language="JavaScript">
 
-            $('#fileupload').on('change',function(){
-                //get the file name
-                var fileName = $(this).val().replace('C:\\fakepath\\', " ");
-                //replace the "Choose a file" label
-                $('.custom-file-label').html(fileName);
-            })
+$('input[type="file"]').change(function(e){
+        var fileName = e.target.files[0].name;
+        $('.custom-file-label').html(fileName);
+    });
   
 	var i = 0;
 	var j = 0;
