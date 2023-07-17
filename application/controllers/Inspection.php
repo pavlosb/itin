@@ -818,7 +818,7 @@ echo $url;
 
  public function imgupload(){
  /* Get the name of the uploaded file */
-$filename = $_FILES['file']['name'];
+$filename = str_replace(' ', '_', $_FILES['file']['name']);
 
 /* Choose where to save the uploaded file */
 $location = "upload/".$filename;
