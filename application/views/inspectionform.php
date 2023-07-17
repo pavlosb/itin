@@ -288,7 +288,7 @@ input.setAttribute("type", "hidden");
 
 input.setAttribute("name", "inspimg["+i+"]");
 
-input.setAttribute("value", text);
+input.setAttribute("value", response);
 
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input);
