@@ -75,6 +75,8 @@
 <div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" ><i class="fal fa-trash-alt"></i></button></div>
 	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
+<div class="row pb-3"><input id="fileupload" type="file" name="fileupload" />
+<button id="upload-button" onclick="uploadFile()"> Upload </button></div>
 				<?php		}
             if ($cp['mainsect'] != $mcp) 
             {?>
@@ -230,8 +232,8 @@ $scp = $cp['name_section'];
    var base64image = document.getElementById("imageprev-"+i).src;
 
    Webcam.upload( base64image, '/inspection/photoupload', function(code, text) {
-        console.log(text);
-				console.log(code);
+      //  console.log(text);
+			//	console.log(code);
        //console.log(text);
 			 var input = document.createElement("input");
 
