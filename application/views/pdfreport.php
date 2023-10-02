@@ -87,7 +87,7 @@ E-Mail: dekra@imperial-dekra.gr<br />
 </td>
 <td align="right">
 <?php if ($result > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg" width="90" height="120">
+<img src="<?php echo base_url(); ?>assets/images/dekra-stamp-new.jpg" width="90" height="120">
 <?php } else { ?>
 &nbsp;
 <?php } ?>

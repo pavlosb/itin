@@ -111,9 +111,9 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 <td width="2%">&nbsp;</td>
 <td align="right">
 <?php if ($result > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg">
+<img src="<?php echo base_url(); ?>assets/images/dekra-stamp-new.jpg">
 <?php } else { ?>
-<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp-fail.jpg">
+<img src="<?php echo base_url(); ?>assets/images/dekra-stamp-new.jpg">
 <?php } ?>
 </td>
  </tr>
