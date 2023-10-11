@@ -868,4 +868,18 @@ if($delete){
 	$this->output->set_header("Content-type: application/json");
 	echo json_encode($status);  
 }
+
+public function getsignature($inspid=null) {
+	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
+	{
+	$this->load->view('header', $data);
+				$this->load->view('signatureform', $data);
+				$this->load->view('footer', $data);
+			} else {
+				redirect('auth/login');
+			}
 }
+
+
+}
+
