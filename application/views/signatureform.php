@@ -21,6 +21,7 @@ echo form_open("inspection/client_save", $attributes);?>
     </div>
 	<canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
     <input type="hidden" id="signature-input" name="signature">
+<button type="submit" class="btn btn-primary">Submit</button>
 <?php echo form_close();?>
 </div>
 </div></div>
