@@ -872,9 +872,14 @@ if($delete){
 public function getsignature($inspid=null) {
 	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 	{
+
+		if(!empty($_POST)) {
+			print_r($_POST);// Something has been posted
+		} else {
 	$this->load->view('header', $data);
 				$this->load->view('signatureform', $data);
 				$this->load->view('footer', $data);
+		}
 			} else {
 				redirect('auth/login');
 			}
