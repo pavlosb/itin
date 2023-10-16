@@ -875,6 +875,8 @@ public function getsignature($inspid=null) {
 
 		if(!empty($_POST)) {
 			print_r($_POST);// Something has been posted
+			$timestamp = date('Y-m-d H:i:s', time());
+			echo $timestamp;
 		} else {
 	$this->load->view('header', $data);
 				$this->load->view('signatureform', $data);
