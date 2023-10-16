@@ -4,6 +4,7 @@
 <?php 
 $attributes = array('id' => 'clientForm');
 echo form_open("inspection/getsignature", $attributes);?>
+<input type="hidden" id="inspectionid" name="inspectionid" value="<?= $inspectionid ?>">"
 <div class="form-group">
   <label for=""></label>
   <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
@@ -19,9 +20,12 @@ echo form_open("inspection/getsignature", $attributes);?>
             <input type="text" class="form-control" id="lastname_client" name ="lastname_client" value ="<?= $lastname_client ?>">
         </div>
     </div>
+	<div class="form-group">
+  <label for="">Υπογραφή</label>
 	<canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
     <input type="hidden" id="signature-input" name="signature">
-<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+<button type="submit" class="btn btn-primary">Καταχώρηση</button>
 <?php echo form_close();?>
 </div>
 </div></div>
