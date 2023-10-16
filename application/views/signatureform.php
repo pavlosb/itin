@@ -3,7 +3,7 @@
 <div class="col-sm-10 col-lg-6">
 <?php 
 $attributes = array('id' => 'clientForm');
-echo form_open("inspection/client_save", $attributes);?>
+echo form_open("", $attributes);?>
 <div class="form-group">
   <label for=""></label>
   <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
