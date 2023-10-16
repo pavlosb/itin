@@ -875,6 +875,7 @@ public function getsignature($inspid=null) {
 
 		if(!empty($_POST)) {
 			print_r($_POST);// Something has been posted
+			date_default_timezone_set('Europe/Athens');
 			$timestamp = date('Y-m-d H:i:s', time());
 			echo $timestamp;
 		} else {

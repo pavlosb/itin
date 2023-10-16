@@ -22,7 +22,7 @@ echo form_open("inspection/getsignature", $attributes);?>
     </div>
 	<div class="form-group">
   <label for="">Υπογραφή</label>
-	<canvas id="signature-pad" class="signature-pad" width=400 height=200></canvas>
+	<canvas id="signature-pad" class="signature-pad" width=350 height=200></canvas>
     <input type="hidden" id="signature-input" name="signature">
 	</div>
 <button type="submit" class="btn btn-primary">Καταχώρηση</button>
