@@ -879,9 +879,19 @@ public function getsignature($inspid=null) {
 			$timestamp = date('Y-m-d H:i:s', time());
 			echo $timestamp;
 		} else {
+
+			$inspdata = $this->itindata_model->get_inspections(array('id_inspection' => $inspid));
+			if ($isnpdata) {
+			$custinfo = $this->itindata_model->get_clients(array('id_client' => $inspdata[0]->id_client));
+			$data['firstname_client'] = $custinfo[0]->firstname_client;
+			$data['lastname_client'] = $custinfo[0]->lastname_client;
+			$data['inspectionid'] = $inspid;
+
+
 	$this->load->view('header', $data);
 				$this->load->view('signatureform', $data);
 				$this->load->view('footer', $data);
+			}
 		}
 			} else {
 				redirect('auth/login');
