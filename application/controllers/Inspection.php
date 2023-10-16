@@ -878,10 +878,18 @@ public function getsignature($inspid=null) {
 			date_default_timezone_set('Europe/Athens');
 			$timestamp = date('Y-m-d H:i:s', time());
 			echo $timestamp;
+			$sgndata['id_inspection'] = $inspid;
+			$sgndata['clientfname'] = $this->input->post('firstname_client');
+			$sgndata['clientlname'] = $this->input->post('lastname_client');
+			$sgndata['signature'] = $this->input->post('signature');
+			$sgndata['timestamp'] = $timestamp;
+			
+			
+
 		} else {
 
 			$inspdata = $this->itindata_model->get_inspections(array('id_inspection' => $inspid));
-			if ($isnpdata) {
+			if ($inspdata) {
 			$custinfo = $this->itindata_model->get_clients(array('id_client' => $inspdata[0]->id_client));
 			$data['firstname_client'] = $custinfo[0]->firstname_client;
 			$data['lastname_client'] = $custinfo[0]->lastname_client;
