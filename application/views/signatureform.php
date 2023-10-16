@@ -1,10 +1,11 @@
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
 <div class="col-sm-10 col-lg-6">
+<p>Έχω διαβάσει και αποδέχομαι τους Όρους Ελέγχου Οχημάτων</p>
 <?php 
 $attributes = array('id' => 'clientForm');
 echo form_open("inspection/getsignature", $attributes);?>
-<input type="hidden" id="inspectionid" name="inspectionid" value="<?= $inspectionid ?>">"
+<input type="hidden" id="inspectionid" name="inspectionid" value="<?= $inspectionid ?>">
 <div class="form-group">
   <label for=""></label>
   <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
