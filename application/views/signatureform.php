@@ -24,7 +24,8 @@ echo form_open("inspection/client_save", $attributes);?>
 <?php echo form_close();?>
 </div>
 </div></div>
-<script src="<?php echo base_url(); ?>assets/js/signature_pad.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+
 <script>
 var canvas = document.querySelector("canvas");
 var signaturePad = new SignaturePad(canvas);
