@@ -31,6 +31,7 @@ echo form_open("inspection/getsignature", $attributes);?>
   <label for="">Υπογραφή</label>
 	<canvas id="signature-pad" class="signature-pad" width=350 height=200></canvas>
     <input type="hidden" id="signature-input" name="signature">
+	<button id="clear">Clear</button>
 	</div>
 <button type="submit" class="btn btn-primary">Καταχώρηση</button>
 <?php echo form_close();?>
@@ -103,6 +104,10 @@ var signaturePad = new SignaturePad(canvas);
 
 canvas.addEventListener("mouseup", function () {
     document.getElementById("signature-input").value = signaturePad.toDataURL();
+});
+
+document.getElementById('clear').addEventListener('click', function () {
+  signaturePad.clear();
 });
 </script>
 
