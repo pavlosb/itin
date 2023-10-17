@@ -128,3 +128,7 @@ $lang['full_date'] = 'Ημερομηνία';
 $lang['seal_granded_by'] = 'Η σφραγίδα χορηγείται από';
 $lang['sign_notice'] = 'Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και δεν απαιτείται υπογραφή.';
 $lang['cert_mlg_vhcl'] = 'Ένδειξη χλμ:';
+
+
+//signature
+$lang['client_signature'] = 'Υπογραφή Πελάτη';

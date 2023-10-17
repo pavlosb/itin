@@ -891,6 +891,7 @@ public function getsignature($inspid=null) {
 			$inspdata = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $inspid));
 		//	if ($inspdata) {
 			$custinfo = $this->itindata_model->get_clients(array('id_client' => $inspdata[0]->client_inspection));
+			$data['id_client'] = $inspdata[0]->client_inspection;
 			$data['firstname_client'] = $custinfo[0]->firstname_client;
 			$data['lastname_client'] = $custinfo[0]->lastname_client;
 			$data['inspectionid'] = $inspid;
