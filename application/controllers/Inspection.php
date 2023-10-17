@@ -874,10 +874,10 @@ public function getsignature($inspid=null) {
 	{
 
 		if(!empty($_POST)) {
-			print_r($_POST);// Something has been posted
+			//print_r($_POST);// Something has been posted
 			date_default_timezone_set('Europe/Athens');
 			$timestamp = date('Y-m-d H:i:s', time());
-			echo $timestamp;
+			//echo $timestamp;
 			$sgndata['inspectionid_signature'] = $this->input->post('inspectionid');
 			$sgndata['clientid_signature'] = $this->input->post('id_client');
 			$sgndata['clientfname_signature'] = $this->input->post('firstname_client');
