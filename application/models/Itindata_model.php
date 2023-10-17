@@ -412,5 +412,12 @@ public function delsingleimg($imgid) {
 	$query = $this->db->delete('inspectionimg_tbl'); 
 	return;
 }
+
+public function set_signature($data) {
+	$this->db->insert('signatures_tbl', $data);
+	return $this->db->insert_id();
+ }
+
+
 }
 

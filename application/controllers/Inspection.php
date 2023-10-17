@@ -878,18 +878,22 @@ public function getsignature($inspid=null) {
 			date_default_timezone_set('Europe/Athens');
 			$timestamp = date('Y-m-d H:i:s', time());
 			echo $timestamp;
-			$sgndata['id_inspection'] = $inspid;
-			$sgndata['clientfname'] = $this->input->post('firstname_client');
-			$sgndata['clientlname'] = $this->input->post('lastname_client');
-			$sgndata['signature'] = $this->input->post('signature');
-			$sgndata['timestamp'] = $timestamp;
+			$sgndata['inspectionid_signature'] = $this->input->post('inspectionid');
+			$sgndata['clientid_signature'] = $this->input->post('id_client');
+			$sgndata['clientfname_signature'] = $this->input->post('firstname_client');
+			$sgndata['clientlname_signature'] = $this->input->post('lastname_client');
+			$sgndata['signature_signature'] = $this->input->post('signature');
+			$sgndata['date_signature'] = $timestamp;
+			if ($this->itindata_model->set_inspection($insdata);) {
+				redirect('inspection/inspections_list');
+			}
 			
 			
 
 		} else {
 
 			$inspdata = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $inspid));
-		//	if ($inspdata) {
+			if ($inspdata) {
 			$custinfo = $this->itindata_model->get_clients(array('id_client' => $inspdata[0]->client_inspection));
 			$data['id_client'] = $inspdata[0]->client_inspection;
 			$data['firstname_client'] = $custinfo[0]->firstname_client;
@@ -900,7 +904,9 @@ public function getsignature($inspid=null) {
 	$this->load->view('header', $data);
 				$this->load->view('signatureform', $data);
 				$this->load->view('footer', $data);
-			//}
+			} else {
+				redirect('inspection/inspections_list');
+			}
 		}
 			} else {
 				redirect('auth/login');
