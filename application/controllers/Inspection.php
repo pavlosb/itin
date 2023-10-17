@@ -884,7 +884,7 @@ public function getsignature($inspid=null) {
 			$sgndata['clientlname_signature'] = $this->input->post('lastname_client');
 			$sgndata['signature_signature'] = $this->input->post('signature');
 			$sgndata['date_signature'] = $timestamp;
-			if ($this->itindata_model->set_inspection($insdata);) {
+			if ($this->itindata_model->set_signature($insdata)) {
 				redirect('inspection/inspections_list');
 			}
 			
