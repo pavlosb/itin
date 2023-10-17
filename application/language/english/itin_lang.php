@@ -127,3 +127,6 @@ $lang['full_date'] = 'Date';
 $lang['seal_granded_by'] = 'Seal granded by';
 $lang['sign_notice'] = 'This document was created electronically and does not require a signature.';
 $lang['cert_mlg_vhcl'] = 'Odometer:';
+
+
+$lang['client_signature'] = 'Client Signature';
