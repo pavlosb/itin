@@ -901,7 +901,7 @@ public function getsignature($inspid=null) {
 			$data['inspectionid'] = $inspid;
 
 
-	$this->load->view('header', $data);
+				$this->load->view('header', $data);
 				$this->load->view('signatureform', $data);
 				$this->load->view('footer', $data);
 			} else {
