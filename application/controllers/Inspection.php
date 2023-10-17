@@ -888,7 +888,7 @@ public function getsignature($inspid=null) {
 
 		} else {
 
-			$inspdata = $this->itindata_model->get_inspections(array('id_inspection' => $inspid));
+			$inspdata = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $inspid));
 		//	if ($inspdata) {
 			$custinfo = $this->itindata_model->get_clients(array('id_client' => $inspdata[0]->id_client));
 			$data['firstname_client'] = $custinfo[0]->firstname_client;
