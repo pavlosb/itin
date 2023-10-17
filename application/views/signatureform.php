@@ -3,10 +3,10 @@
   <div class="col-sm-10 col-lg-6">
 <h1 class="display-4"><?php $this->lang->line('client_signature'); ?></h1>
 <p class="lead"></p>
-</div>
+</div></div>
 <div class="row justify-content-center">
 <div class="col-sm-10 col-lg-6">
-<p>Έχω διαβάσει και αποδέχομαι τους Όρους Ελέγχου Οχημάτων <button type="button" class="btn btn-primary btn-sm"data-toggle="modal" data-target="#myModal">εμφάνιση</button></p>
+<p>Έχω διαβάσει και αποδέχομαι τους Όρους Ελέγχου Οχημάτων <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModalLong">εμφάνιση</button></p>
 <?php 
 $attributes = array('id' => 'clientForm');
 echo form_open("inspection/getsignature", $attributes);?>
