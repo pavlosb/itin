@@ -889,7 +889,7 @@ public function getsignature($inspid=null) {
 		} else {
 
 			$inspdata = $this->itindata_model->get_inspections(array('id_inspection' => $inspid));
-			if ($inspdata) {
+		//	if ($inspdata) {
 			$custinfo = $this->itindata_model->get_clients(array('id_client' => $inspdata[0]->id_client));
 			$data['firstname_client'] = $custinfo[0]->firstname_client;
 			$data['lastname_client'] = $custinfo[0]->lastname_client;
@@ -899,7 +899,7 @@ public function getsignature($inspid=null) {
 	$this->load->view('header', $data);
 				$this->load->view('signatureform', $data);
 				$this->load->view('footer', $data);
-			}
+			//}
 		}
 			} else {
 				redirect('auth/login');
