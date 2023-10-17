@@ -27,7 +27,7 @@ echo form_open("inspection/getsignature", $attributes);?>
             <input type="text" class="form-control" id="lastname_client" name ="lastname_client" value ="<?= $lastname_client ?>">
         </div>
     </div>
-	<div class="form-group">
+	<div class="form-group mb-3">
   <label for="">Υπογραφή</label>
 	<canvas id="signature-pad" class="signature-pad" width=350 height=200></canvas>
     <input type="hidden" id="signature-input" name="signature">
