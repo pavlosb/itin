@@ -107,6 +107,7 @@ canvas.addEventListener("mouseup", function () {
 });
 
 document.getElementById('clear').addEventListener('click', function () {
+  event.preventDefault()
   signaturePad.clear();
   document.getElementById("signature-input").value = "";
 });
