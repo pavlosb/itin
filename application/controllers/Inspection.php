@@ -367,6 +367,7 @@ echo json_encode($status) ;
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
 			$data['inspectionid'] = $id;
+			$data['signature'] = $this->_checksignature($id);
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			$this->load->view('header', $data);
 			$this->load->view('inspectionview', $data);
@@ -900,6 +901,8 @@ public function getsignature($inspid=null) {
 			$inspdata = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $inspid));
 			if ($inspdata) {
 			$custinfo = $this->itindata_model->get_clients(array('id_client' => $inspdata[0]->client_inspection));
+			$data = $this->data;
+			$user = $this->ion_auth->user()->row();
 			$data['id_client'] = $inspdata[0]->client_inspection;
 			$data['firstname_client'] = $custinfo[0]->firstname_client;
 			$data['lastname_client'] = $custinfo[0]->lastname_client;
@@ -918,11 +921,11 @@ public function getsignature($inspid=null) {
 			}
 }
 
-public function checksignature($inspid) {
+private function checksignature($inspid) {
 
 	$signatureinfo = $this->itindata_model->get_signature(array('inspectionid_signature'=>$inspid));
 	if ($signatureinfo) {
-		print_r($signatureinfo);
+		return $signatureinfo[0];
 	} else {
 		return null;
 	}

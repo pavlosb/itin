@@ -30,7 +30,7 @@
                 <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('mlg_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->mlg_vhcl; ?></div>
             </div>    
-
+<div class="row"><?php if ($signature) {echo "signed"; } else { echo "unsigned"; } ?></div>
         </div>
         <div class="col-lg-10 p-3 bg-light">
             <div class="row">
