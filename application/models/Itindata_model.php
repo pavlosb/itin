@@ -417,7 +417,14 @@ public function set_signature($data) {
 	$this->db->insert('signatures_tbl', $data);
 	return $this->db->insert_id();
  }
-
+ public function get_signature($where = null) {
+	if (isset($where)) {
+		$this->db->where($where);
+	  }
+		$query = $this->db->get('signatures_tbl');
+		return $query->result_array();
+  
+ }
 
 }
 

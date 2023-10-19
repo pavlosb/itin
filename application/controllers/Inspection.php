@@ -918,6 +918,15 @@ public function getsignature($inspid=null) {
 			}
 }
 
+public function checksignature($inspid) {
 
+	$signatureinfo = $this->itindata_model->get_signature(array('inspectionid_signature'=>$inspid));
+	if ($signatureinfo) {
+		return $signatureinfo;
+	} else {
+		return null;
+	}
+
+ }
 }
 
