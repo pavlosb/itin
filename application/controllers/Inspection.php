@@ -922,7 +922,7 @@ public function checksignature($inspid) {
 
 	$signatureinfo = $this->itindata_model->get_signature(array('inspectionid_signature'=>$inspid));
 	if ($signatureinfo) {
-		return $signatureinfo;
+		print_r($signatureinfo);
 	} else {
 		return null;
 	}
