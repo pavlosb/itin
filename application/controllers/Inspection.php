@@ -921,7 +921,7 @@ public function getsignature($inspid=null) {
 			}
 }
 
-private function checksignature($inspid) {
+private function _checksignature($inspid) {
 
 	$signatureinfo = $this->itindata_model->get_signature(array('inspectionid_signature'=>$inspid));
 	if ($signatureinfo) {
