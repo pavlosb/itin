@@ -108,6 +108,8 @@ class Inspection extends CI_Controller {
 			$data['username'] = $user->first_name." ".$user->last_name;
 
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
+			$inspstatus = $inspections[0]->status_inspection;
+			if ($inspstatus < 1) {
 			$data['inspection'] = $inspections[0];
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
@@ -117,6 +119,9 @@ class Inspection extends CI_Controller {
 				$this->load->view('header', $data);
 				$this->load->view('inspectionform', $data);
 				$this->load->view('footer', $data);
+			} else {
+				redirect('inspection/inspection_view/'.$id);
+			}
 		} else {
 			redirect('auth/login');
 		}
@@ -885,7 +890,7 @@ public function getsignature($inspid=null) {
 			$sgndata['signature_signature'] = $this->input->post('signature');
 			$sgndata['date_signature'] = $timestamp;
 			if ($this->itindata_model->set_signature($sgndata)) {
-				redirect('inspection/inspections_list');
+				redirect('inspection/inspection_edit/'.$inspid);
 			}
 			
 			
