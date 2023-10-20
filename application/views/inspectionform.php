@@ -11,11 +11,11 @@
   ?>
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
-            <div class="col-lg-8 p-3 bg-light"><div class="row"><?php if ($signature) { ?>
-	<div class="col-12 p-1 bg-success text-white">Έγινε αποδοχή των Όρων Ελέγχου Οχημάτων από <?= $signature->clientlname_signature ?> <?= $signature->clientfname_signature ?></div>
+            <div class="col-lg-8 p-2 bg-light"><div class="row"><?php if ($signature) { ?>
+	<div class="col-12 p-2 bg-success text-white">Έγινε αποδοχή των Όρων Ελέγχου Οχημάτων από <?= $signature->clientlname_signature ?> <?= $signature->clientfname_signature ?></div>
 	
 	<?php } else { ?>
-		<div class="col-12 p-1 bg-warning text-dark">Δεν έχει γίνει αποδοχή των Όρων Ελέγχου Οχημάτων. <a class="btn btn-sm btn-primary" href="/getsignature/<?= $inspection->id_inspection ?>">Λήψη υπογραφής</a></div>	
+		<div class="col-12 p-2 bg-warning text-dark">Δεν έχει γίνει αποδοχή των Όρων Ελέγχου Οχημάτων. <a class="btn btn-sm btn-primary float-right" href="/inspection/getsignature/<?= $inspection->id_inspection ?>">Λήψη υπογραφής</a></div>	
 	<?php  } ?></div>
 <div class="row justify-content-center">
       <div class="col-lg-8 p-3 bg-light">
