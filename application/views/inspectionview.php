@@ -1,6 +1,14 @@
 <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
-            <div class="col-lg-10 p-3 bg-light">
+            <div class="col-lg-10 px-3 py-2 bg-light">
+
+			<div class="row"><?php if ($signature) { ?>
+	<div class="col-sm-12 px-3 py-2 bg-success text-white">Έγινε αποδοχή των Όρων Ελέγχου Οχημάτων από <?= $signature['clientlname_signature'] ?> <?= $signature['clientfname_signature'] ?></div>
+	
+	<?php } else { ?>
+		<div class="col-sm-12 px-3 py-2 bg-warning text-dark">Δεν έχει γίνει αποδοχή των Όρων Ελέγχου Οχημάτων. <a class="btn btn-sm btn-primary float-right" href="/inspection/getsignature/<?= $inspection->id_inspection ?>">Λήψη υπογραφής</a></div>	
+	<?php  } ?></div>
+
             <div class="row mb-2">
                 <div class="col-md-8"><span class="text-secondary"><?= $this->lang->line('number_inspection'); ?>:</span> <?php echo $inspection->number_inspection; ?> <span class="text-secondary"><?= $this->lang->line('inspector'); ?>:</span> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?></div>
                 <div class="col-md-4 text-md-right"><span class="text-secondary"><?= $this->lang->line('date_inspection'); ?>:</span> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>

@@ -11,6 +11,17 @@
   ?>
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
+           <?php if ($signature) { ?>
+	<div class="col-lg-8 px-3 py-2 bg-success text-white">Έγινε αποδοχή των Όρων Ελέγχου Οχημάτων από <?= $signature['clientlname_signature'] ?> <?= $signature['clientfname_signature'] ?></div>
+	
+	<?php } else { ?>
+		<div class="col-lg-8 px-3 py-2 bg-warning text-dark">Δεν έχει γίνει αποδοχή των Όρων Ελέγχου Οχημάτων. <a class="btn btn-sm btn-primary float-right" href="/inspection/getsignature/<?= $inspection->id_inspection ?>">Λήψη υπογραφής</a></div>	
+	<?php  } ?></div>
+
+
+
+
+<div class="row justify-content-center">
       <div class="col-lg-8 p-3 bg-light">
       <p class="lead"><i class="fal fa-clipboard-check"></i> <?php echo $inspection->number_inspection; ?> Test</p>
       <p class="lead"><i class="fal fa-car"></i> <?php echo $inspection->reg_vhcl; ?> <?php echo $inspection->make_vhcl; ?> <?php echo $inspection->model_vhcl; ?></p>
@@ -42,7 +53,7 @@
         <p class="lead"></p>
       </div>
     </div>
-    <div class="row justify-content-center pb-5">
+    <div class="row justify-content-center pb-5 <?php if (!$signature) { echo "disablediv"; } ?>">
       <div class="col-lg-8">
         <?php echo form_open("inspection/inspection_save", "id='inspform'");?>
         <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
