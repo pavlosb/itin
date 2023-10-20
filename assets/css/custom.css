@@ -117,3 +117,8 @@ body {
 	width: 100%;
 	height:250px;
 }
+
+.disablediv {
+	pointer-events: none;
+    opacity: 0.4;
+}

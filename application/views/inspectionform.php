@@ -53,7 +53,7 @@
         <p class="lead"></p>
       </div>
     </div>
-    <div class="row justify-content-center pb-5">
+    <div class="row justify-content-center pb-5 <?php if (!$signature) { echo "disablediv"; } ?>">
       <div class="col-lg-8">
         <?php echo form_open("inspection/inspection_save", "id='inspform'");?>
         <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
