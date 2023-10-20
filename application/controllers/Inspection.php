@@ -108,15 +108,21 @@ class Inspection extends CI_Controller {
 			$data['username'] = $user->first_name." ".$user->last_name;
 
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
+$inspstatus = $inspections[0]->status_inspection;
+			if ($inspstatus < 1) {
 			$data['inspection'] = $inspections[0];
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
 			$data['inspremark'] = $this->itindata_model->get_inspectionremarks($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
+$data['signature'] = $this->_checksignature($id);
 				$this->load->view('header', $data);
 				$this->load->view('inspectionform', $data);
 				$this->load->view('footer', $data);
+		} else {
+redirect('inspection/inspection_view/'.$id);
+			}
 		} else {
 			redirect('auth/login');
 		}
@@ -362,6 +368,7 @@ echo json_encode($status) ;
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
 			$data['inspectionid'] = $id;
+$data['signature'] = $this->_checksignature($id);
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			$this->load->view('header', $data);
 			$this->load->view('inspectionview', $data);
@@ -868,4 +875,62 @@ if($delete){
 	$this->output->set_header("Content-type: application/json");
 	echo json_encode($status);  
 }
+
+public function getsignature($inspid=null) {
+	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
+	{
+
+		if(!empty($_POST)) {
+			//print_r($_POST);// Something has been posted
+			date_default_timezone_set('Europe/Athens');
+			$timestamp = date('Y-m-d H:i:s', time());
+			//echo $timestamp;
+			$sgndata['inspectionid_signature'] = $this->input->post('inspectionid');
+			$sgndata['clientid_signature'] = $this->input->post('id_client');
+			$sgndata['clientfname_signature'] = $this->input->post('firstname_client');
+			$sgndata['clientlname_signature'] = $this->input->post('lastname_client');
+			$sgndata['signature_signature'] = $this->input->post('signature');
+			$sgndata['date_signature'] = $timestamp;
+			if ($this->itindata_model->set_signature($sgndata)) {
+				redirect('inspection/inspection_edit/'.$this->input->post('inspectionid'));
+			}
+			
+			
+
+		} else {
+
+			$inspdata = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $inspid));
+			if ($inspdata) {
+			$custinfo = $this->itindata_model->get_clients(array('id_client' => $inspdata[0]->client_inspection));
+			$data = $this->data;
+			$user = $this->ion_auth->user()->row();
+			$data['id_client'] = $inspdata[0]->client_inspection;
+			$data['firstname_client'] = $custinfo[0]->firstname_client;
+			$data['lastname_client'] = $custinfo[0]->lastname_client;
+			$data['inspectionid'] = $inspid;
+
+
+				$this->load->view('header', $data);
+				$this->load->view('signatureform', $data);
+				$this->load->view('footer', $data);
+			} else {
+				redirect('inspection/inspections_list');
+			}
+		}
+			} else {
+				redirect('auth/login');
+			}
 }
+
+private function _checksignature($inspid) {
+
+	$signatureinfo = $this->itindata_model->get_signature(array('inspectionid_signature'=>$inspid));
+	if ($signatureinfo) {
+		return $signatureinfo[0];
+	} else {
+		return null;
+	}
+
+ }
+}
+
