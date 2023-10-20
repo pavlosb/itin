@@ -822,6 +822,7 @@ echo $url;
 
  }
 
+
  public function imgupload(){
 	/* Get the name of the uploaded file */
    $filename = str_replace(' ', '_', $_FILES['file']['name']);
@@ -838,7 +839,6 @@ echo $url;
 		 echo json_encode($response);
 		 exit;
 	}
-
  public function dynimg($id) {
 	$pointscore = $this->itindata_model->get_scoreforoutside($id);
 	
