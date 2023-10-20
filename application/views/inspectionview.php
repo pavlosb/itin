@@ -1,6 +1,11 @@
 <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
-            <div class="col-lg-10 p-3 bg-light">
+            <div class="col-lg-10 p-3 bg-light"><div class="row"><?php if ($signature) { ?>
+	<div class="col-12 p-3 bg-success text-white"><?php print_r($signature); ?></div>
+	
+	<?php } else { ?>
+		<div class="col-12 p-3 bg-warning text-dark">Δεν υπάρχει υπογραφή στους Όρους Ελέγχου. <a class="btn btn-sm btn-primary" href="inspection/getsignature/<?= $inspection->id_inspection ?>">Λήψη υπογραφής</a></div>	
+	<?php  } ?></div>
             <div class="row mb-2">
                 <div class="col-md-8"><span class="text-secondary"><?= $this->lang->line('number_inspection'); ?>:</span> <?php echo $inspection->number_inspection; ?> <span class="text-secondary"><?= $this->lang->line('inspector'); ?>:</span> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?></div>
                 <div class="col-md-4 text-md-right"><span class="text-secondary"><?= $this->lang->line('date_inspection'); ?>:</span> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></div>
@@ -30,12 +35,7 @@
                 <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('mlg_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->mlg_vhcl; ?></div>
             </div>    
-<div class="row"><?php if ($signature) { ?>
-	<div class="col-12 p-3 bg-success text-white"><?php print_r($signature); ?></div>
-	
-	<?php } else { ?>
-		<div class="col-12 p-3 bg-warning text-dark">Δεν υπάρχει υπογραφή στους Όρους Ελέγχου. <a class="btn btn-sm btn-primary" href="inspection/getsignature/<?= $inspection->id_inspection ?>">Λήψη υπογραφής</a></div>	
-	<?php  } ?></div>
+
         </div>
         <div class="col-lg-10 p-3 bg-light">
             <div class="row">
