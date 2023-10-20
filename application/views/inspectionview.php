@@ -4,7 +4,7 @@
 	<div class="col-12 p-3 bg-success text-white"><?php print_r($signature); ?></div>
 	
 	<?php } else { ?>
-		<div class="col-12 p-3 bg-warning text-dark">Δεν υπάρχει υπογραφή στους Όρους Ελέγχου. <a class="btn btn-sm btn-primary" href="inspection/getsignature/<?= $inspection->id_inspection ?>">Λήψη υπογραφής</a></div>	
+		<div class="col-12 p-3 bg-warning text-dark">Δεν υπάρχει υπογραφή στους Όρους Ελέγχου. <a class="btn btn-sm btn-primary" href="/getsignature/<?= $inspection->id_inspection ?>">Λήψη υπογραφής</a></div>	
 	<?php  } ?></div>
             <div class="row mb-2">
                 <div class="col-md-8"><span class="text-secondary"><?= $this->lang->line('number_inspection'); ?>:</span> <?php echo $inspection->number_inspection; ?> <span class="text-secondary"><?= $this->lang->line('inspector'); ?>:</span> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?></div>
