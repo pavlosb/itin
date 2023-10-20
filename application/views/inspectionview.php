@@ -30,7 +30,12 @@
                 <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('mlg_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->mlg_vhcl; ?></div>
             </div>    
-<div class="row"><?php if ($signature) {echo "signed"; } else { echo "unsigned"; } ?></div>
+<div class="row"><?php if ($signature) { ?>
+	<div class="col-12 p-3 bg-success text-white"><?php print_r($signature); ?></div>
+	
+	<?php } else { ?>
+		<div class="col-12 p-3 bg-warning text-dark">Δεν υπάρχει υπογραφή στους Όρους Ελέγχου. <a class="btn btn-sm btn-primary" href="inspection/getsignature/<?= $inspection->id_inspection ?>">Λήψη υπογραφής</a></div>	
+	<?php  } ?></div>
         </div>
         <div class="col-lg-10 p-3 bg-light">
             <div class="row">
