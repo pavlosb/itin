@@ -150,7 +150,7 @@ E-Mail: dekra@imperial-dekra.gr<br />
 </table>
 <table width="100%">
 <tr><td class="top-border smalltxt">&nbsp;</td></tr>
-<tr><td><?= $this->lang->line('pdf_inspector'); ?> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?><br/><br/><span class="smalltxt"><?= $this->lang->line('pdf_sign_notice'); ?></span></td></tr>
+<tr><td><?php // echo $this->lang->line('pdf_inspector'); ?> <?php //echo $inspection->last_name; ?> <?php //echo $inspection->first_name; ?><br/><br/><span class="smalltxt"><?php //echo $this->lang->line('pdf_sign_notice'); ?></span></td></tr>
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
 <table width="100%" style="margin-top:160px" class="page_break_after">
