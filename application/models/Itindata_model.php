@@ -118,9 +118,9 @@ $maxpos = $row->maxpos;
 
     public function get_clients($where = null) {
 
-    $q = "Select c.*, v.*, i.* from clients_tbl c
+    $q = "Select c.*, v.*, k.* from clients_tbl c
             LEFT JOIN vehicles_tbl AS v ON c.id_client = v.client_vhcl
-            LEFT JOIN inspections_tbl AS i ON v.id_vhcl = i.vehicle_inspection";
+            LEFT JOIN inspections_tbl AS k ON v.id_vhcl = k.vehicle_inspection";
 
       if (isset($where)) 
       {
@@ -159,8 +159,8 @@ $maxpos = $row->maxpos;
 
     public function get_vehiclesfull($where=null) 
     {
-      $q = "Select  v.*, i.*, c.*  from vehicles_tbl v
-            LEFT JOIN inspections_tbl AS i ON  v.id_vhcl = i.vehicle_inspection
+      $q = "Select  v.*, k.*, c.*  from vehicles_tbl v
+            LEFT JOIN inspections_tbl AS k ON  v.id_vhcl = k.vehicle_inspection
             LEFT JOIN clients_tbl AS c ON v.client_vhcl = c.id_client"
             ;
 
@@ -207,10 +207,10 @@ $maxpos = $row->maxpos;
 
     public function get_inspectionsfull($where=null) 
     {
-      $q = "Select i.*, v.*, c.*, u.first_name, u.last_name from inspections_tbl I
-            LEFT JOIN vehicles_tbl AS v ON i.vehicle_inspection = v.id_vhcl
-            LEFT JOIN clients_tbl AS c ON i.client_inspection = c.id_client 
-            LEFT JOIN users AS u ON i.inspector_inspection = u.id";
+      $q = "Select k.*, v.*, c.*, u.first_name, u.last_name from inspections_tbl as k
+            LEFT JOIN vehicles_tbl AS v ON k.vehicle_inspection = v.id_vhcl
+            LEFT JOIN clients_tbl AS c ON k.client_inspection = c.id_client 
+            LEFT JOIN users AS u ON k.inspector_inspection = u.id";
 
       if (isset($where)) 
       {
