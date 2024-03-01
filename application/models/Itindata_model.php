@@ -118,7 +118,7 @@ $maxpos = $row->maxpos;
 
     public function get_clients($where = null) {
 
-    $q = "Select c.*, v.*, i.* from clients_tbl c
+    $q = "Select c.*, v.*, i.* from clients_tbl AS c
             LEFT JOIN vehicles_tbl AS v ON c.id_client = v.client_vhcl
             LEFT JOIN inspections_tbl AS i ON v.id_vhcl = i.vehicle_inspection";
 
