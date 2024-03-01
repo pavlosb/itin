@@ -207,7 +207,7 @@ $maxpos = $row->maxpos;
 
     public function get_inspectionsfull($where=null) 
     {
-      $q = "Select i.*, v.*, c.*, u.first_name, u.last_name from inspections_tbl I
+      $q = "Select i.*, v.*, c.*, u.first_name, u.last_name from inspections_tbl AS I
             LEFT JOIN vehicles_tbl AS v ON i.vehicle_inspection = v.id_vhcl
             LEFT JOIN clients_tbl AS c ON i.client_inspection = c.id_client 
             LEFT JOIN users AS u ON i.inspector_inspection = u.id";
