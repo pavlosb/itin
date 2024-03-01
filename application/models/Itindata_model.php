@@ -159,7 +159,7 @@ $maxpos = $row->maxpos;
 
     public function get_vehiclesfull($where=null) 
     {
-      $q = "Select  v.*, i.*, c.*  from vehicles_tbl v
+      $q = "Select  v.*, i.*, c.*  from vehicles_tbl AS v
             LEFT JOIN inspections_tbl AS i ON v.id_vhcl = i.vehicle_inspection
             LEFT JOIN clients_tbl AS c ON v.client_vhcl = c.id_client"
             ;
