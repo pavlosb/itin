@@ -84,7 +84,7 @@ $maxpos = $row->maxpos;
     {
        // $this->db->order_by('compname_clients', 'ASC');
        
-        $query = $this->db->query('SELECT  c.id_section as mainsectid, c.name_section as mainsect, c.en_name_section as en_mainsect, c.printtext_section as mainsectprint, c.en_printtext_section as en_mainsectprint, b.id_section, b.name_section, b.en_name_section, b.printtext_section, b.en_printtext_section, a.id_cp, a.name_cp, a.en_name_cp, a.points_cp, a.printtext_cp, a.en_printtext_cp, a.nokpoints_cp, a.helptext_cp, a.en_helptext_cp  FROM db_itin.checkpoint_tbl as a left join db_itin.sections_tbl as b on b.id_section = a.sect_cp inner join db_itin.sections_tbl as c on b.parent_section = c.id_section');
+        $query = $this->db->query('SELECT  c.id_section AS mainsectid, c.name_section AS mainsect, c.en_name_section AS en_mainsect, c.printtext_section AS mainsectprint, c.en_printtext_section AS en_mainsectprint, b.id_section, b.name_section, b.en_name_section, b.printtext_section, b.en_printtext_section, a.id_cp, a.name_cp, a.en_name_cp, a.points_cp, a.printtext_cp, a.en_printtext_cp, a.nokpoints_cp, a.helptext_cp, a.en_helptext_cp  FROM db_itin.checkpoint_tbl AS a left join db_itin.sections_tbl AS b on b.id_section = a.sect_cp inner join db_itin.sections_tbl AS c on b.parent_section = c.id_section');
         return $query->result_array();
     }
     
@@ -160,7 +160,7 @@ $maxpos = $row->maxpos;
     public function get_vehiclesfull($where=null) 
     {
       $q = "Select  v.*, i.*, c.*  from vehicles_tbl v
-            LEFT JOIN inspections_tbl AS i ON  v.id_vhcl = i.vehicle_inspection
+            LEFT JOIN inspections_tbl AS i ON v.id_vhcl = i.vehicle_inspection
             LEFT JOIN clients_tbl AS c ON v.client_vhcl = c.id_client"
             ;
 
