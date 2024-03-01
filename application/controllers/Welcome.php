@@ -25,7 +25,8 @@ class Welcome extends CI_Controller {
 		  redirect('auth/login');
 		} else if ($this->ion_auth->is_admin())
 			{
-			  redirect('admin');
+			  //redirect('admin');
+			  redirect('inspection');
 			} else if ($this->ion_auth->in_group('managers'))
 			{
 			  redirect('manage');
