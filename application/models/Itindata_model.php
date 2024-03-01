@@ -118,9 +118,9 @@ $maxpos = $row->maxpos;
 
     public function get_clients($where = null) {
 
-    $q = "Select c.*, v.*, i.* from clients_tbl AS c
+    $q = "Select c.*, v.*, is.* from clients_tbl AS c
             LEFT JOIN vehicles_tbl AS v ON c.id_client = v.client_vhcl
-            LEFT JOIN inspections_tbl AS i ON v.id_vhcl = i.vehicle_inspection";
+            LEFT JOIN inspections_tbl AS is ON v.id_vhcl = is.vehicle_inspection";
 
       if (isset($where)) 
       {
@@ -159,8 +159,8 @@ $maxpos = $row->maxpos;
 
     public function get_vehiclesfull($where=null) 
     {
-      $q = "Select  v.*, i.*, c.*  from vehicles_tbl AS v
-            LEFT JOIN inspections_tbl AS i ON v.id_vhcl = i.vehicle_inspection
+      $q = "Select  v.*, is.*, c.*  from vehicles_tbl AS v
+            LEFT JOIN inspections_tbl AS is ON v.id_vhcl = is.vehicle_inspection
             LEFT JOIN clients_tbl AS c ON v.client_vhcl = c.id_client"
             ;
 
