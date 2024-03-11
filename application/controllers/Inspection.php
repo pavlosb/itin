@@ -417,6 +417,20 @@ $data['signature'] = $this->_checksignature($id);
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
+			if (isset($_POST['rmrk_inspection']) && $_POST['rmrk_inspection'] <> "") {
+				$insupd['rmrk_inspection'] = $this->input->post('rmrk_inspection');
+				} else {
+					$insupd['rmrk_inspection'] = "n/a";	
+				}
+				if (isset($_POST['en_rmrk_inspection']) && $_POST['en_rmrk_inspection'] <> "") {
+					$insupd['en_rmrk_inspection'] = $this->input->post('en_rmrk_inspection');
+				} else {
+					$insupd['en_rmrk_inspection'] = "n/a";	
+				}
+				$this->itindata_model->upd_inspection($this->input->post('inspectionid_insres'), array("en_rmrk_inspection" => $insupd['en_rmrk_inspection'], "rmrk_inspection" => $insupd['rmrk_inspection']));
+
+
+
 			$points = $_POST['checkpoint'];
 			if (isset($_POST['remark'])) {
 			$remarks = $_POST['remark'];
@@ -425,6 +439,8 @@ $data['signature'] = $this->_checksignature($id);
 			if (isset($_POST['inspimg'])) {
 			$photos = $_POST['inspimg'];
 			}
+
+
 foreach ($points as $key => $value):
  
 	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
