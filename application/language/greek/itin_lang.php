@@ -90,6 +90,7 @@ $lang['create_certificate'] = 'Δημιουργία Πιστοποιητικού
 $lang['inspector'] = 'Εμπειρογνώμονας';
 $lang['leave_empty'] = 'Αφήστε κενό για αυτόματη αρίθμηση';
 $lang['comment'] = 'Παρατήρηση';
+$lang['genremark_inspection'] = 'Γενική Παρατήρηση';
 
 
 // PDF REPORT
