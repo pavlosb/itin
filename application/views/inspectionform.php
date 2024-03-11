@@ -490,8 +490,9 @@ gauge6.set(0); // set actual value
         if (!$(this).hasClass('do-not-calc')) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
-       $("#score1").text(total1);
-			 $("#score4").text(total1);
+       total1pc = 100 * (total1 / 112);
+       $("#score1").text(total1pc + '%');
+			 $("#score4").text(total1pc + '%');
           }
           if ($(this).data("sect") === 12) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
