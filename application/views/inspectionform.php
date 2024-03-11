@@ -1,7 +1,15 @@
-<?php if (isset($user_lang) && $user_lang == "greek") {
+<?php 
+$inspremark ="";
+if (isset($user_lang) && $user_lang == "greek") {
   $langprefix ="";
+	if (isset($inspection->rmrk_inspection) && $inspection->rmrk_inspection != "n/a") {
+		$inspremark = $inspection->rmrk_inspection;
+	}
 } else {
   $langprefix ="en_";
+	if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection != "n/a") {
+		$inspremark = $inspection->en_rmrk_inspection;
+	}
   }
 	$prcp = 0;
   $mainsect = $langprefix."mainsect";
