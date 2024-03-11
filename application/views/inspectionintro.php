@@ -1,3 +1,8 @@
+<?php if (isset($user_lang) && $user_lang == "greek") {
+  $langprefix ="";
+} else {
+  $langprefix ="en_";
+  } ?>
 <div class="container mt-5">
 <div class="row justify-content-center">
   <div class="col-sm-10 col-lg-8">
@@ -56,6 +61,12 @@ $attributes = array('id' => 'inspectionIntroForm');
       </div>
   </div>
 </div> 
+<div class="form-row">
+<div class="form-group col">
+<label for="exampleFormControlTextarea1"><?= $this->lang->line('genremark_inspection'); ?></label>
+    <textarea class="form-control" id="<?= $langprefix ?>rmrk_inspection" name="<?= $langprefix ?>rmrk_inspection" rows="5"></textarea>
+			</div>
+			</div>
    <button type="submit" class="btn btn-primary"><?= $this->lang->line('continue'); ?></button>
 <?php echo form_close();?>
 <?php } else {?>
