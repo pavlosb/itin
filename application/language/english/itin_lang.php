@@ -90,6 +90,7 @@ $lang['create_certificate'] = 'Create Certificate';
 $lang['inspector'] = 'Inspector';
 $lang['leave_empty'] = 'Leave empty for auto-numbering';
 $lang['comment'] = 'Remarks';
+$lang['genremark_inspection'] = 'Important Remark';
 
 //PDF REPORT
 $lang['pdf_report_num'] = 'REPORT NUMBER:';
