@@ -45,17 +45,17 @@
                 <div class="col-sm-4 text-center">
                     <canvas id="cnvgauge5" ></canvas>
                     <div style="width:100%" class="text-center small"><?= $this->lang->line('technology_check'); ?></div>
-                    <div id="score4" style="width:100%" class="text-center mb-2"><?= 100 * ($sec1score / 112) ?><small>%</small></div>
+                    <div id="score4" style="width:100%" class="text-center mb-2"><?= round(100 * ($sec1score / 112), 2) ?><small>%</small></div>
                 </div>
                 <div class="col-sm-4 text-center">   
                     <canvas id="cnvgauge6"></canvas>
                     <div style="width:100%" class="text-center small"><?= $this->lang->line('bodywork_check'); ?></div>
-                    <div id="score5" style="width:100%" class="text-center mb-2"><?= 100 * ($sec2score / 62) ?><small>%</small></div>
+                    <div id="score5" style="width:100%" class="text-center mb-2"><?= round(100 * ($sec2score / 62), 2) ?><small>%</small></div>
                 </div>
                 <div class="col-sm-4 text-center">    
                     <canvas id="cnvgauge7"></canvas>
                     <div style="width:100%" class="text-center small"><?= $this->lang->line('system_check'); ?></div>
-                    <div id="score6" style="width:100%" class="text-center mb-2"><?= 100 * ($sec3score / 16) ?><small>%</small></div>
+                    <div id="score6" style="width:100%" class="text-center mb-2"><?= round(100 * ($sec3score / 16), 2) ?><small>%</small></div>
                 </div>
             </div>
         </div>
