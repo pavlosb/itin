@@ -349,20 +349,20 @@ jQuery(document).ready(function($) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
 			 total1pc = 100 * (total1 / 112);
-       $("#score1").text(total1pc + '%');
-			 $("#score4").text(total1pc + '%');
+       $("#score1").text(total1pc.toFixed(2) + '%');
+			 $("#score4").text(total1pc.toFixed(2) + '%');
           }
           if ($(this).data("sect") === 12) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
 			 total2pc = 100 * (total2 / 62);
-       $("#score2").text(total2pc + '%');
-			 $("#score5").text(total2pc + '%');
+       $("#score2").text(total2pc.toFixed(2) + '%');
+			 $("#score5").text(total2pc.toFixed(2) + '%');
           }
           if ($(this).data("sect") === 16) {
        total3 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
 			 total3pc = 100 * (total3 / 16);
-       $("#score3").text(total3pc + '%');
-			 $("#score6").text(total3pc + '%');
+       $("#score3").text(total3pc.toFixed(2) + '%');
+			 $("#score6").text(total3pc.toFixed(2) + '%');
           }
         }
       });   
@@ -494,20 +494,20 @@ gauge6.set(0); // set actual value
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
        total1pc = 100 * (total1 / 112);
-       $("#score1").text(total1pc + '%');
-			 $("#score4").text(total1pc + '%');
+       $("#score1").text(total1pc.toFixed(2) + '%');
+			 $("#score4").text(total1pc.toFixed(2) + '%');
           }
           if ($(this).data("sect") === 12) {
        total2 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
 			 total2pc = 100 * (total2 / 62);
-       $("#score2").text(total2pc + '%');
-			 $("#score5").text(total2pc + '%');
+       $("#score2").text(total2pc.toFixed(2) + '%');
+			 $("#score5").text(total2pc.toFixed(2) + '%');
           }
           if ($(this).data("sect") === 16) {
        total3 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
 			 total3pc = 100 * (total3 / 16);
-       $("#score3").text(total3pc + '%');
-			 $("#score6").text(total3pc + '%');
+       $("#score3").text(total3pc.toFixed(2) + '%');
+			 $("#score6").text(total3pc.toFixed(2) + '%');
           }
         }
       });    
