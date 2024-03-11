@@ -57,6 +57,15 @@
       <div class="col-lg-8">
         <?php echo form_open("inspection/inspection_save", "id='inspform'");?>
         <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
+				<div class="row">
+<div class="form-group col">
+<label for="exampleFormControlTextarea1"><?= $this->lang->line('genremark_inspection'); ?></label>
+    <textarea class="form-control" id="<?= $langprefix ?>rmrk_inspection" name="<?= $langprefix ?>rmrk_inspection" rows="5"></textarea>
+			</div>
+			</div>
+
+
+				
         <?php 
           $mcp = "";
           $scp = "";
