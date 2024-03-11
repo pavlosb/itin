@@ -60,7 +60,7 @@
 				<div class="row">
 <div class="form-group col">
 <label for="exampleFormControlTextarea1"><?= $this->lang->line('genremark_inspection'); ?></label>
-    <textarea class="form-control" id="<?= $langprefix ?>rmrk_inspection" name="<?= $langprefix ?>rmrk_inspection" rows="5"></textarea>
+    <textarea class="form-control" id="<?= $langprefix ?>rmrk_inspection" name="<?= $langprefix ?>rmrk_inspection" rows="5"><?php echo $inspection->rmrk_inspection; ?></textarea>
 			</div>
 			</div>
 
