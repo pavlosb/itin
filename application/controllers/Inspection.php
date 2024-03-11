@@ -74,10 +74,14 @@ class Inspection extends CI_Controller {
 				$insdata['status_inspection'] = 0;
 				if (isset($_POST['rmrk_inspection']) && $_POST['rmrk_inspection'] <> "") {
 					$insdata['rmrk_inspection'] = $this->input->post('rmrk_inspection');
+					} else {
+						$insdata['rmrk_inspection'] = "n/a";	
 					}
 					if (isset($_POST['en_rmrk_inspection']) && $_POST['en_rmrk_inspection'] <> "") {
 						$insdata['en_rmrk_inspection'] = $this->input->post('en_rmrk_inspection');
-						}
+					} else {
+						$insdata['en_rmrk_inspection'] = "n/a";	
+					}
 
 				$data['inspectionid'] = $this->itindata_model->set_inspection($insdata);
 				
