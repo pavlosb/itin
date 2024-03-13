@@ -89,7 +89,7 @@ $lang['inspection_certificate'] = 'DEKRA Πιστοποιητικό';
 $lang['create_certificate'] = 'Δημιουργία Πιστοποιητικού';
 $lang['inspector'] = 'Εμπειρογνώμονας';
 $lang['leave_empty'] = 'Αφήστε κενό για αυτόματη αρίθμηση';
-$lang['comment'] = 'Παρατήρηση';
+$lang['comment'] = 'Παρατηρήσεις';
 $lang['genremark_inspection'] = 'Γενική Παρατήρηση';
 
 
