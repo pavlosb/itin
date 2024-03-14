@@ -59,7 +59,17 @@
                 </div>
             </div>
         </div>
+		<?php if (isset($inspection->rmrk_inspection)) { ?>
+		<div class="col-lg-10 p-3 bg-light">
+		<div class="row">
+<div class = "col">
+	<h4><?= $this->lang->line('genremark_inspection'); ?></h4>
+	<div class = "col"><?= $inspection->rmrk_inspection ?></div>
+		</div>
+		</div>
+		</div>
 
+		<?php } ?>
 		<?php if (isset($inspimg)) { ?>
 		<div class="col-lg-10 p-3 bg-light">
             <div class="row">
