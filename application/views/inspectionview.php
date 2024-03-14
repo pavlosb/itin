@@ -59,7 +59,9 @@
                 </div>
             </div>
         </div>
-		<?php if (isset($inspection->rmrk_inspection)) { ?>
+		<?php if (isset($user_lang) && $user_lang == "greek") {
+		
+		if (isset($inspection->rmrk_inspection)) { ?>
 		<div class="col-lg-10 p-3 bg-light">
 		<div class="row">
 <div class = "col">
@@ -69,7 +71,19 @@
 		</div>
 		</div>
 
-		<?php } ?>
+		<?php } } else {
+
+			if (isset($inspection->en_rmrk_inspection)) { ?>
+		<div class="col-lg-10 p-3 bg-light">
+		<div class="row">
+<div class = "col">
+	<h4><?= $this->lang->line('genremark_inspection'); ?></h4></div>
+	<div class = "col pb-3"><?= $inspection->en_rmrk_inspection ?></div>
+		
+		</div>
+		</div>
+
+			<?php } } ?>
 		<?php if (isset($inspimg)) { ?>
 		<div class="col-lg-10 p-3 bg-light">
             <div class="row">
