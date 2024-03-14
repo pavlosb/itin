@@ -64,9 +64,9 @@
 		if (isset($inspection->rmrk_inspection)) { ?>
 		<div class="col-lg-10 p-3 bg-light">
 		<div class="row">
-<div class = "col">
+<div class = "col-12">
 	<h4><?= $this->lang->line('genremark_inspection'); ?></h4></div>
-	<div class = "col pb-3"><?= $inspection->rmrk_inspection ?></div>
+	<div class = "col-12 pb-3"><?= $inspection->rmrk_inspection ?></div>
 		
 		</div>
 		</div>
@@ -76,9 +76,9 @@
 			if (isset($inspection->en_rmrk_inspection)) { ?>
 		<div class="col-lg-10 p-3 bg-light">
 		<div class="row">
-<div class = "col">
+<div class = "col-12">
 	<h4><?= $this->lang->line('genremark_inspection'); ?></h4></div>
-	<div class = "col pb-3"><?= $inspection->en_rmrk_inspection ?></div>
+	<div class = "col-12 pb-3"><?= $inspection->en_rmrk_inspection ?></div>
 		
 		</div>
 		</div>
