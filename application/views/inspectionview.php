@@ -61,7 +61,7 @@
         </div>
 		<?php if (isset($user_lang) && $user_lang == "greek") {
 		
-		if (isset($inspection->rmrk_inspection)) { ?>
+		if (isset($inspection->rmrk_inspection) && $inspection->rmrk_inspection != "n/a") { ?>
 		<div class="col-lg-10 p-3 bg-light">
 		<div class="row">
 <div class = "col-12">
@@ -73,7 +73,7 @@
 
 		<?php } } else {
 
-			if (isset($inspection->en_rmrk_inspection)) { ?>
+			if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection != "n/a") { ?>
 		<div class="col-lg-10 p-3 bg-light">
 		<div class="row">
 <div class = "col-12">
