@@ -63,9 +63,9 @@
 		<div class="col-lg-10 p-3 bg-light">
 		<div class="row">
 <div class = "col">
-	<h4><?= $this->lang->line('genremark_inspection'); ?></h4>
+	<h4><?= $this->lang->line('genremark_inspection'); ?></h4></div>
 	<div class = "col"><?= $inspection->rmrk_inspection ?></div>
-		</div>
+		
 		</div>
 		</div>
 
