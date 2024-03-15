@@ -154,7 +154,7 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
 <table width="100%">
-	<tr><td height="15">
+	<tr><td height="25px">
 	<?php if (isset($user_lang) && $user_lang == "greek") { 
 		if (isset($inspection->rmrk_inspection) && $inspection->rmrk_inspection != "n/a") { ?>
 <?= $this->lang->line('genremark_inspection'); ?>
@@ -165,7 +165,7 @@ if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection !=
 	<?php	} }
 		?>
 	</td></tr>
-	<tr><td height="110">
+	<tr><td height="100px">
 	<?php if (isset($user_lang) && $user_lang == "greek") { 
 		if (isset($inspection->rmrk_inspection) && $inspection->rmrk_inspection != "n/a") { ?>
 <?= $inspection->rmrk_inspection; ?>
