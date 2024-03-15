@@ -153,7 +153,31 @@ E-Mail: savvas.tzanis@dekra.com<br />
 <tr><td><?= $this->lang->line('pdf_inspector'); ?> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?><br/><br/><span class="smalltxt"><?= $this->lang->line('pdf_sign_notice'); ?></span></td></tr>
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
-<table width="100%" style="margin-top:160px" class="page_break_after">
+<table width="100%">
+	<tr><td height="25">
+	<?php if (isset($user_lang) && $user_lang == "greek") { 
+		if (isset($inspection->rmrk_inspection) && $inspection->rmrk_inspection != "n/a") { ?>
+<?= $this->lang->line('genremark_inspection'); ?>
+		<?php } } else { 
+if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection != "n/a") { ?>
+<?= $this->lang->line('genremark_inspection'); ?>
+
+	<?php	} }
+		?>
+	</td></tr>
+	<tr><td height="100">
+	<?php if (isset($user_lang) && $user_lang == "greek") { 
+		if (isset($inspection->rmrk_inspection) && $inspection->rmrk_inspection != "n/a") { ?>
+<?= $inspection->rmrk_inspection; ?>
+		<?php } } else { 
+if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection != "n/a") { ?>
+<?= $this->lang->line('genremark_inspection'); ?>
+<?= $inspection->en_rmrk_inspection; ?>
+	<?php	} }
+		?>
+	</td></tr>
+</table>
+<table width="100%" style="margin-top:25px" class="page_break_after">
   <tr><td width="18%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
 DEKRA PARTNER 
 </td>
