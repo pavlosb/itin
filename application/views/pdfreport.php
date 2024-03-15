@@ -154,7 +154,7 @@ E-Mail: dekra@imperial-dekra.gr<br />
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
 <table width="100%">
-	<tr><td height="25">
+	<tr><td height="15">
 	<?php if (isset($user_lang) && $user_lang == "greek") { 
 		if (isset($inspection->rmrk_inspection) && $inspection->rmrk_inspection != "n/a") { ?>
 <?= $this->lang->line('genremark_inspection'); ?>
@@ -165,7 +165,7 @@ if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection !=
 	<?php	} }
 		?>
 	</td></tr>
-	<tr><td height="100">
+	<tr><td height="110">
 	<?php if (isset($user_lang) && $user_lang == "greek") { 
 		if (isset($inspection->rmrk_inspection) && $inspection->rmrk_inspection != "n/a") { ?>
 <?= $inspection->rmrk_inspection; ?>
@@ -177,7 +177,7 @@ if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection !=
 		?>
 	</td></tr>
 </table>
-<table width="100%" style="margin-top:25px" class="page_break_after">
+<table width="100%" style="margin-top:30px" class="page_break_after">
   <tr><td width="18%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
 DEKRA EXCLUSIVE PARTNER 
 </td>
