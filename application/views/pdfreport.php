@@ -78,19 +78,21 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
        
         <table width="100%">
  <tr>
- <td valign="top" style="font-size:12px; line-height:12px;">IMPERIAL AUTOMOTIVE<br />
-DEKRA EXCLUSIVE PARTNER<br />
+ <td valign="top" style="font-size:12px; line-height:12px;">ΙΜΠΕΡΙΑΛ ΕΠΙΘΕΩΡΗΣΕΙΣ ΚΑΙ ΠΙΣΤΟΠΟΙΗΣΕΙΣ ΙΚΕ<br />DEKRA IMPERIAL<br />
 ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253 ΝΕΑ ΣΜΥΡΝΗ<br />
 Τ.Κ. 17122<br />
 Τηλέφωνο: 2109426352<br />
 E-Mail: dekra@imperial-dekra.gr<br />
 </td>
 <td align="right">
-<?php if ($result > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/dekra-stamp-new.jpg" width="90" height="120">
-<?php } else { ?>
+<img src="<?php echo base_url(); ?>assets/images/dekra-imperial.png" width="100" height="100">
+	<!--
+<?php //if ($result > 0) { ?>
+<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg" width="90" height="120">
+<?php //} else { ?>
 &nbsp;
-<?php } ?>
+<?php //} ?>
+-->
 </td>
  </tr>
  </table>
@@ -178,18 +180,15 @@ if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection !=
 	</td></tr>
 </table>
 <table width="100%" style="margin-top:30px" class="page_break_after">
-  <tr><td width="18%" valign="top" class="smalltxt">IMPERIAL AUTOMOTIVE<br/>
-DEKRA EXCLUSIVE PARTNER 
+  <tr><td width="18%" valign="top" class="smalltxt">ΙΜΠΕΡΙΑΛ ΕΠΙΘΕΩΡΗΣΕΙΣ ΚΑΙ ΠΙΣΤΟΠΟΙΗΣΕΙΣ ΙΚΕ<br/>
+	DEKRA IMPERIAL 
 </td>
 <td width="52%" valign="top" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
 ΝΕΑ ΣΜΥΡΝΗ TΚ 17122<br/>
 ΤΗΛ. 2109426352<br/>
 E-Mail : dekra@imperial-dekra.gr</td>
 <td width="30%" valign="top" class="smalltxt">Έδρα ΑΘΗΝΑ<br/>
-ΑΦΜ.998469321 ΔOY ΝΕΑΣ ΣΜΥΡΝΗΣ<br/>
-<br/>
-<br/>
-</td>
+ΑΦΜ: 998469321 ΔOY: ΚΑΛΛΙΘΕΑΣ</td>
   </table>
 
  <table width="100%" border="0">
