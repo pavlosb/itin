@@ -1,14 +1,14 @@
 <?php 
-$inspremark ="";
+$insgenpremark ="";
 if (isset($user_lang) && $user_lang == "greek") {
   $langprefix ="";
 	if (isset($inspection->rmrk_inspection) && $inspection->rmrk_inspection != "n/a") {
-		$inspremark = $inspection->rmrk_inspection;
+		$insgenpremark = $inspection->rmrk_inspection;
 	}
 } else {
   $langprefix ="en_";
 	if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection != "n/a") {
-		$inspremark = $inspection->en_rmrk_inspection;
+		$insgenpremark = $inspection->en_rmrk_inspection;
 	}
   }
 	$prcp = 0;
@@ -68,7 +68,7 @@ if (isset($user_lang) && $user_lang == "greek") {
 				<div class="row">
 <div class="form-group col">
 <label for="exampleFormControlTextarea1"><?= $this->lang->line('genremark_inspection'); ?></label>
-    <textarea class="form-control" id="<?= $langprefix ?>rmrk_inspection" name="<?= $langprefix ?>rmrk_inspection" rows="5"><?php echo $inspremark; ?></textarea>
+    <textarea class="form-control" id="<?= $langprefix ?>rmrk_inspection" name="<?= $langprefix ?>rmrk_inspection" rows="5"><?php echo $insgenpremark; ?></textarea>
 			</div>
 			</div>
 
