@@ -85,7 +85,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 E-Mail: dekra@imperial-dekra.gr<br />
 </td>
 <td align="right">
-<img src="<?php echo base_url(); ?>assets/images/dekra-imperial.png" width="150" height="150">
+<img src="<?php echo base_url(); ?>assets/images/dekra-imperial-crop.png" width="150" height="75">
 	<!--
 <?php //if ($result > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg" width="90" height="120">
