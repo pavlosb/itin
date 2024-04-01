@@ -193,6 +193,7 @@ class Inspection extends CI_Controller {
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
+			$data['fueltypes'] = $this->_getfueltypes();
 			$data['inspection'] = $inspections[0];
 			$data['inspremark'] = $this->itindata_model->get_inspectionremarks($id);
 			$inspection = $inspections[0];
@@ -487,6 +488,7 @@ redirect('inspection/inspections_list', 'refresh');
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$data['carbrands'] = $this->_getcarbrands();
 			$data['vhcltypes'] = $this->_getvhcltypes();
+			$data['fueltypes'] = $this->_getfueltypes();
 			$data['clients'] = $this->itindata_model->get_clientsplain();
 			$this->load->view('header', $data);
 			$this->load->view('vehiclesform', $data);
@@ -519,7 +521,8 @@ redirect('inspection/inspections_list', 'refresh');
 			$insdata['doors_vhcl'] = $this->input->post('doors_vhcl');
 			$insdata['colour_vhcl'] = $this->input->post('colour_vhcl');
 			$insdata['firstreg_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('firstreg_vhcl'))))));
-			$insdata['nxtdate_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('nxtdate_vhcl'))))));
+			$insdata['fueltyp_vhcl'] = $this->input->post('fueltyp_vhcl');
+			//$insdata['nxtdate_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('nxtdate_vhcl'))))));
 			if (isset($_POST['id_vhcl'])) {
 			$this->itindata_model->upd_vehicle($this->input->post('id_vhcl'), $insdata);
 			redirect('inspection/vehicles_list', 'refresh');
@@ -692,6 +695,7 @@ redirect('inspection/inspections_list', 'refresh');
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$data['carbrands'] = $this->_getcarbrands();
 			$data['vhcltypes'] = $this->_getvhcltypes();
+			$data['fueltypes'] = $this->_getfueltypes();
 			$data['clients'] = $this->itindata_model->get_clientsplain();
 			$data['vhcldata'] = $this->itindata_model->get_vehiclesfull(array('id_vhcl' => $id_vhcl));
 			//print_r($data['clients']);
@@ -794,6 +798,11 @@ echo json_encode($status) ;
 		);
 
 		return $vhcltype;
+	}
+
+	private function _getfueltypes() {
+		$fueltypes = array('petrol', 'diesel', 'hybridpetrol', 'hybriddiesel', 'pluginpetrol', 'plugindiesel', 'electric', 'cng', 'lng');
+		return $fueltypes;
 	}
 	
 	private function _getclients() {

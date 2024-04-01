@@ -73,6 +73,15 @@ $lang['colour_vhcl'] = 'Colour';
 $lang['displ_vhcl'] = 'Displacement';
 $lang['pow_vhcl'] = 'Power';
 $lang['fuel_vhcl'] = 'Fuel type';
+$lang['petrol'] = 'Petrol';
+$lang['diesel'] = 'Diesel';
+$lang['hybridpetrol'] = 'Hybrid Petrol';
+$lang['hybriddiesel'] = 'Hybrid Diesel';
+$lang['pluginpetrol'] = 'Plug-In Hybrid Petrol';
+$lang['plugindiesel'] = 'Plug-In Hybrid Diesel';
+$lang['electric'] = 'Electric';
+$lang['cng'] = 'CNG';
+$lang['lng'] = 'LNG';
 
 
 //INSPECTION
