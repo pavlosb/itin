@@ -28,9 +28,11 @@ if (isset($vhcldata)) {
   $displ_vhcl = $vhcldata[0]->displ_vhcl;
   $pow_vhcl = $vhcldata[0]->pow_vhcl;
   $id_vhcl = $vhcldata[0]->id_vhcl;
+	$fueltyp_vhcl = $vhcldata[0]->fuel_vhcl;
 
 }
 
+$fueltypes = array('petrol', 'diesel', 'hybridpetrol', 'hybriddiesel', 'pluginpetrol', 'plugindiesel', 'electric', 'cng', 'lng');
 
 ?>
 
@@ -88,10 +90,9 @@ echo form_open("inspection/vehicle_save", $attributes);?>
     <label for="fueltyp_vhcl"><?= $this->lang->line('fuel_vhcl'); ?></label>
       <div class="input-group mb-3 date" named="fueltyp_vhcl" id="fueltyp_vhcl" data-target-input="nearest">
 	<select class="custom-select" id="inputGroupSelect01">
-    <option selected>Choose...</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
+    <?php foreach ($fueltypes as $ft) { ?>
+			<option value="<?= $ft ?>" <?php if ($ft ==	$fueltyp_vhcl) { echo "SELECTED"; } ?>><?= $this->lang->line($ft); ?></option>
+		<?php } ?>
   </select>
           <div class="input-group-append" data-target="#fueltyp_vhcl">
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-gas-pump"></i></span>

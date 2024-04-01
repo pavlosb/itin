@@ -73,6 +73,15 @@ $lang['colour_vhcl'] = 'Χρώμα';
 $lang['displ_vhcl'] = 'Κυβικά';
 $lang['pow_vhcl'] = 'Ιπποδύναμη';
 $lang['fuel_vhcl'] = 'Καύσιμο';
+$lang['petrol'] = 'Βενζίνη';
+$lang['diesel'] = 'Diesel';
+$lang['hybridpetrol'] = 'Υβριδικό Βενζίνη';
+$lang['hybriddiesel'] = 'Υβριδικό Diesel';
+$lang['pluginpetrol'] = 'Plug-In Υβριδικό Diesel';
+$lang['plugindiesel'] = 'Plug-In Υβριδικό Diesel';
+$lang['electric'] = 'Ηλεκτρικό';
+$lang['cng'] = 'CNG';
+$lang['lng'] = 'lng';
 
 
 //INSPECTION
