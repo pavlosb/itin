@@ -85,15 +85,15 @@ echo form_open("inspection/vehicle_save", $attributes);?>
     <input type="number" class="form-control" id="mlg_vhcl" name ="mlg_vhcl" value = "<?= $mlg_vhcl ?>">
   </div>
   <div class="form-group col">
-    <label for="nxtdate_vhcl"><?= $this->lang->line('nxtdate_vhcl'); ?></label>
-      <div class="input-group mb-3 date" id="datetimepicker12" data-target-input="nearest">
+    <label for="fueltyp_vhcl"><?= $this->lang->line('fuel_vhcl'); ?></label>
+      <div class="input-group mb-3 date" named="fueltyp_vhcl" id="fueltyp_vhcl" data-target-input="nearest">
 	<select class="custom-select" id="inputGroupSelect01">
     <option selected>Choose...</option>
     <option value="1">One</option>
     <option value="2">Two</option>
     <option value="3">Three</option>
   </select>
-          <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
+          <div class="input-group-append" data-target="#fueltyp_vhcl">
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-gas-pump"></i></span>
           </div>
       </div>
