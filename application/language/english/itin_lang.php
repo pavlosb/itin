@@ -72,6 +72,7 @@ $lang['doors_vhcl'] = 'Doors';
 $lang['colour_vhcl'] = 'Colour';
 $lang['displ_vhcl'] = 'Displacement';
 $lang['pow_vhcl'] = 'Power';
+$lang['fuel_vhcl'] = 'Fuel type';
 
 
 //INSPECTION

@@ -72,6 +72,7 @@ $lang['doors_vhcl'] = 'Πόρτες';
 $lang['colour_vhcl'] = 'Χρώμα';
 $lang['displ_vhcl'] = 'Κυβικά';
 $lang['pow_vhcl'] = 'Ιπποδύναμη';
+$lang['fuel_vhcl'] = 'Καύσιμο';
 
 
 //INSPECTION
