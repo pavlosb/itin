@@ -516,12 +516,12 @@ redirect('inspection/inspections_list', 'refresh');
 			$insdata['type_vhcl'] = $this->input->post('type_vhcl');
 			$insdata['make_vhcl'] = $this->input->post('make_vhcl');
 			$insdata['model_vhcl'] = $this->input->post('model_vhcl');
+			$insdata['fueltyp_vhcl'] = $this->input->post('fueltyp_vhcl');
 			$insdata['displ_vhcl'] = $this->input->post('displ_vhcl');
 			$insdata['pow_vhcl'] = $this->input->post('pow_vhcl');
 			$insdata['doors_vhcl'] = $this->input->post('doors_vhcl');
 			$insdata['colour_vhcl'] = $this->input->post('colour_vhcl');
 			$insdata['firstreg_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('firstreg_vhcl'))))));
-			$insdata['fueltyp_vhcl'] = $this->input->post('fueltyp_vhcl');
 			//$insdata['nxtdate_vhcl'] = date('Y-m-d', strtotime(date('Y-d-m', strtotime('01/' . str_replace('-', '/', $this->input->post('nxtdate_vhcl'))))));
 			if (isset($_POST['id_vhcl'])) {
 			$this->itindata_model->upd_vehicle($this->input->post('id_vhcl'), $insdata);

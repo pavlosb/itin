@@ -88,7 +88,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   </div>
   <div class="form-group col">
     <label for="fueltyp_vhcl"><?= $this->lang->line('fuel_vhcl'); ?></label>
-      <div class="input-group mb-3 date" named="fueltyp_vhcl" id="fueltyp_vhcl" data-target-input="nearest">
+      <div class="input-group mb-3 date" name="fueltyp_vhcl" id="fueltyp_vhcl" data-target-input="nearest">
 	<select class="custom-select" id="inputGroupSelect01">
     <?php foreach ($fueltypes as $ft) { ?>
 			<option value="<?= $ft ?>" <?php if ($ft ==	$fueltyp_vhcl) { echo "SELECTED"; } ?>><?= $this->lang->line($ft); ?></option>
