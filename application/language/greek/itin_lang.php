@@ -77,11 +77,11 @@ $lang['petrol'] = 'Βενζίνη';
 $lang['diesel'] = 'Diesel';
 $lang['hybridpetrol'] = 'Υβριδικό Βενζίνη';
 $lang['hybriddiesel'] = 'Υβριδικό Diesel';
-$lang['pluginpetrol'] = 'Plug-In Υβριδικό Diesel';
+$lang['pluginpetrol'] = 'Plug-In Υβριδικό Βενζίνη';
 $lang['plugindiesel'] = 'Plug-In Υβριδικό Diesel';
 $lang['electric'] = 'Ηλεκτρικό';
 $lang['cng'] = 'CNG';
-$lang['lng'] = 'lng';
+$lang['lng'] = 'LNG';
 
 
 //INSPECTION

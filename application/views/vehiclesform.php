@@ -32,7 +32,7 @@ if (isset($vhcldata)) {
 
 }
 
-$fueltypes = array('petrol', 'diesel', 'hybridpetrol', 'hybriddiesel', 'pluginpetrol', 'plugindiesel', 'electric', 'cng', 'lng');
+
 
 ?>
 
