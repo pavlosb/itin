@@ -87,9 +87,14 @@ echo form_open("inspection/vehicle_save", $attributes);?>
   <div class="form-group col">
     <label for="nxtdate_vhcl"><?= $this->lang->line('nxtdate_vhcl'); ?></label>
       <div class="input-group mb-3 date" id="datetimepicker12" data-target-input="nearest">
-        <input type="text" class="form-control datetimepicker-input" id="nxtdate_vhcl" value = "<?= date("m/Y", strtotime($nxtdate_vhcl)) ?>" name ="nxtdate_vhcl" data-target="#datetimepicker12">
+	<select class="custom-select" id="inputGroupSelect01">
+    <option selected>Choose...</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
           <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
-            <span class="input-group-text" id="basic-addon2"><i class="fal fa-calendar-alt"></i></span>
+            <span class="input-group-text" id="basic-addon2"><i class="fal fa-gas-pump"></i></span>
           </div>
       </div>
   </div>
