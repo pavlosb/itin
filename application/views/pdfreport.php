@@ -180,15 +180,15 @@ if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection !=
 	</td></tr>
 </table>
 <table width="100%" style="margin-top:30px" class="page_break_after">
-  <tr><td width="18%" valign="top" class="smalltxt">ΙΜΠΕΡΙΑΛ ΕΠΙΘΕΩΡΗΣΕΙΣ ΚΑΙ ΠΙΣΤΟΠΟΙΗΣΕΙΣ ΙΚΕ<br/>
+  <tr><td width="33%" valign="top" class="smalltxt">ΙΜΠΕΡΙΑΛ ΕΠΙΘΕΩΡΗΣΕΙΣ ΚΑΙ ΠΙΣΤΟΠΟΙΗΣΕΙΣ ΙΚΕ<br/>
 	DEKRA IMPERIAL 
 </td>
-<td width="52%" valign="top" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
+<td width="33%" valign="top" class="smalltxt">ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253<br/>
 ΝΕΑ ΣΜΥΡΝΗ TΚ 17122<br/>
 ΤΗΛ. 2109426352<br/>
 E-Mail : dekra@imperial-dekra.gr</td>
-<td width="30%" valign="top" class="smalltxt">Έδρα ΑΘΗΝΑ<br/>
-ΑΦΜ: 998469321 ΔOY: ΚΑΛΛΙΘΕΑΣ</td>
+<td width="34%" valign="top" class="smalltxt">Έδρα ΑΘΗΝΑ<br/>
+ΑΦΜ: 801447762 ΔOY: ΚΑΛΛΙΘΕΑΣ</td>
   </table>
 
  <table width="100%" border="0">
