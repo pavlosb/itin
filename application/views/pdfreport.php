@@ -126,7 +126,7 @@ E-Mail: dekra@imperial-dekra.gr<br />
 <td class="frcellfld"><?= $this->lang->line('pdf_make_vhcl'); ?></td><td><?php echo $inspection->make_vhcl; ?></td><td class="frcellfld"><?= $this->lang->line('pdf_colour_vhcl'); ?></td><td><?php echo $inspection->colour_vhcl; ?></td>
 </tr>
 <tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_model_vhcl'); ?></td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap><?= $this->lang->line('fuel_vhcl'); ?></td><td><?php echo $this->lang->line($inspection->colour_vhcl); ?></td>
+<td class="frcellfld"><?= $this->lang->line('pdf_model_vhcl'); ?></td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap><?= $this->lang->line('fuel_vhcl'); ?>:</td><td><?php echo $this->lang->line($inspection->fueltyp_vhcl); ?></td>
 </tr>
 <tr>
 <td class="frcellfld"><?= $this->lang->line('pdf_vin_vhcl'); ?></td><td class="small"><?php echo $inspection->vin_vhcl; ?></td><td class="frcellfld"><?= $this->lang->line('pdf_mlg_vhcl'); ?></td><td><?php echo $inspection->mlg_vhcl; ?></td>
