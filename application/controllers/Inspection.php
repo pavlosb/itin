@@ -373,6 +373,7 @@ echo json_encode($status) ;
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['inspection'] = $inspections[0];
+			$data['fueltypes'] = $this->_getfueltypes();
 			$inspection = $inspections[0];
 			$data['sec1score'] = $inspection->s1score_inspection;
 			$data['sec2score'] = $inspection->s2score_inspection;
