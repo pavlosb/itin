@@ -31,8 +31,8 @@
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->colour_vhcl; ?></div>
                 <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('model_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->model_vhcl; ?></div>
-                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('nxtdate_vhcl'); ?>:</div>
-                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo date("m/Y", strtotime($inspection->nxtdate_vhcl)); ?></div>
+                <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('fuel_vhcl'); ?>:</div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $this->lang->line($inspection->fueltyp_vhcl); ?></div>
                 <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('pdf_displpow_vhcl'); ?></div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></div>
                 <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('mlg_vhcl'); ?>:</div>
