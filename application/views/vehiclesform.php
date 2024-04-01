@@ -28,7 +28,7 @@ if (isset($vhcldata)) {
   $displ_vhcl = $vhcldata[0]->displ_vhcl;
   $pow_vhcl = $vhcldata[0]->pow_vhcl;
   $id_vhcl = $vhcldata[0]->id_vhcl;
-	$fueltyp_vhcl = $vhcldata[0]->fuel_vhcl;
+	$fueltyp_vhcl = $vhcldata[0]->fueltyp_vhcl;
 
 }
 
