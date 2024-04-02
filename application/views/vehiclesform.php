@@ -223,7 +223,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 							message: '<?= $this->lang->line('required_field'); ?>'
 						},
 											}
-				}
+				},
         fueltyp_vhcl: {
 					validators: {
 						notEmpty: {
