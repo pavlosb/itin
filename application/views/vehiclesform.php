@@ -90,7 +90,7 @@ echo form_open("inspection/vehicle_save", $attributes);?>
     <label for="fueltyp_vhcl"><?= $this->lang->line('fuel_vhcl'); ?></label>
       <div class="input-group mb-3">
 	<select class="custom-select"  name="fueltyp_vhcl" id="fueltyp_vhcl" >
-		<option>Επιλογή...</option>
+	<option value = ""><?= $this->lang->line('choose'); ?></option>
     <?php foreach ($fueltypes as $ft) { ?>
 			<option value="<?= $ft ?>" <?php if ($ft ==	$fueltyp_vhcl) { echo "SELECTED"; } ?>><?= $this->lang->line($ft); ?></option>
 		<?php } ?>
@@ -217,7 +217,14 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 						},
 											}
 				},
-        make_vhcl: {
+				make_vhcl: {
+					validators: {
+						notEmpty: {
+							message: '<?= $this->lang->line('required_field'); ?>'
+						},
+											}
+				}
+        fueltyp_vhcl: {
 					validators: {
 						notEmpty: {
 							message: '<?= $this->lang->line('required_field'); ?>'
