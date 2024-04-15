@@ -29,6 +29,7 @@ if (isset($vhcldata)) {
   $pow_vhcl = $vhcldata[0]->pow_vhcl;
   $id_vhcl = $vhcldata[0]->id_vhcl;
 	$fueltyp_vhcl = $vhcldata[0]->fueltyp_vhcl;
+	$wheeldrive_vhcl = $vhcldata[0]->wheeldrive_vhcl;
 
 }
 
@@ -77,16 +78,12 @@ echo form_open("inspection/vehicle_save", $attributes);?>
       </div>
   </div>
 </div>
-  <div class="form-group">
+<div class="form-row">
+  <div class="form-group col">
     <label for="vin_vhcl"><?= $this->lang->line('vin_vhcl'); ?></label>
     <input type="text" class="form-control" id="vin_vhcl" name ="vin_vhcl" value = "<?= $vin_vhcl ?>"  onfocusout="checkifexists(this, 15)">
   </div>
-  <div class="form-row">
-  <div class="form-group col">
-    <label for="mlg_vhcl"><?= $this->lang->line('mlg_vhcl'); ?></label>
-    <input type="number" class="form-control" id="mlg_vhcl" name ="mlg_vhcl" value = "<?= $mlg_vhcl ?>">
-  </div>
-  <div class="form-group col">
+	<div class="form-group col">
     <label for="fueltyp_vhcl"><?= $this->lang->line('fuel_vhcl'); ?></label>
       <div class="input-group mb-3">
 	<select class="custom-select"  name="fueltyp_vhcl" id="fueltyp_vhcl" >
@@ -99,6 +96,23 @@ echo form_open("inspection/vehicle_save", $attributes);?>
             <span class="input-group-text" id="basic-addon2"><i class="fal fa-gas-pump"></i></span>
           </div>
       </div>
+  </div>
+	</div>
+  <div class="form-row">
+  <div class="form-group col">
+    <label for="mlg_vhcl"><?= $this->lang->line('mlg_vhcl'); ?></label>
+    <input type="number" class="form-control" id="mlg_vhcl" name ="mlg_vhcl" value = "<?= $mlg_vhcl ?>">
+  </div>
+  <div class="form-group col">
+    <label for="wheeldrive_vhcl"><?= $this->lang->line('wheeldrive_vhcl'); ?></label>
+  <select class="custom-select"  name="wheeldrive_vhcl" id="wheeldrive_vhcl" >
+	<option value = ""><?= $this->lang->line('choose'); ?></option>
+    <?php foreach ($wheeldrives as $wd) { ?>
+			<option value="<?= $wd ?>" <?php if ($wd ==	$wheeldrive_vhcl) { echo "SELECTED"; } ?>><?= $this->lang->line($wd); ?></option>
+		<?php } ?>
+  </select>
+    
+     
   </div>
 </div>
   <div class="form-group">
