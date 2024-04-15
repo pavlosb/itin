@@ -335,7 +335,7 @@ $( "#resetinsp" ).click(function() {
 	});
 }
 });
-
+});
 bootbox.setDefaults({
           /**
            * @optional String
@@ -345,6 +345,7 @@ bootbox.setDefaults({
            */
           locale: "<?= $ulcl ?>"
     });
+
 
 });
     </script>
