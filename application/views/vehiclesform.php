@@ -245,6 +245,13 @@ echo form_open("inspection/vehicle_save", $attributes);?>
 						},
 											}
 				},
+				wheeldrive_vhcl: {
+					validators: {
+						notEmpty: {
+							message: '<?= $this->lang->line('required_field'); ?>'
+						},
+											}
+				},
         model_vhcl: {
 					validators: {
 						notEmpty: {
