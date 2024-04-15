@@ -113,7 +113,7 @@
             <?php if ($inspection->en_filename_inspection != NULL) {?>
                 <p class="inspfile"><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('englishlang'); ?>)</a></p>
             <?php } ?>
-			<button type="button" id="resetinsp" class="btn btn-outline-danger btn-sm"><i class="fas fa-minus"></i> <?= $this->lang->line('reset_inspection'); ?></button>
+			<button type="button" id="resetinsp" class="btn btn-outline-danger btn-sm"><i class="fas fa-redo-alt"></i> <?= $this->lang->line('reset_inspection'); ?></button>
             </div>
             <div class="col-sm-6 text-center text-sm-right p-1 ">
            <?php if ( ($inspection->s1score_inspection >= 92) && ($inspection->s2score_inspection >= 53) && ($inspection->s1score_inspection >= 12))
@@ -306,6 +306,8 @@ $( "#createcert" ).click(function() {
 	});
 });
 $( "#resetinsp" ).click(function() {
+	bootbox.confirm("<?= $this->lang->line('confirm_erase'); ?>", function(result) {    
+                if (result) {
     $("#spinner").addClass("d-flex").show();
     $.ajax({
 		type: "POST",
@@ -327,10 +329,22 @@ $( "#resetinsp" ).click(function() {
 		  
 						}
 			//});
-			}
+			
 		
-	  
+		}
 	});
+}
 });
+
+bootbox.setDefaults({
+          /**
+           * @optional String
+           * @default: en
+           * which locale settings to use to translate the three
+           * standard button labels: OK, CONFIRM, CANCEL
+           */
+          locale: "<?= $ulcl ?>"
+    });
+
 });
     </script>

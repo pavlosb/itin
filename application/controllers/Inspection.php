@@ -778,7 +778,7 @@ redirect('inspection/inspections_list', 'refresh');
 			}
 
 
-		}
+		
 	}
 
 	public function vindecoder($vinr) {
