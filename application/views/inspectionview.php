@@ -108,11 +108,12 @@
             <div class="row mb-2">
             <div class="col-sm-6 p-1 text-center text-sm-left">
             <?php if ($inspection->filename_inspection != NULL) {?>
-                <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('greeklang'); ?>)</a></p>
+                <p class="inspfile"><a href="<?= base_url()?>assets/pdfs/<?= $inspection->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('greeklang'); ?>)</a></p>
             <?php } ?>
             <?php if ($inspection->en_filename_inspection != NULL) {?>
-                <p><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('englishlang'); ?>)</a></p>
+                <p class="inspfile"><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('englishlang'); ?>)</a></p>
             <?php } ?>
+			<button type="button" id="resetinsp" class="btn btn-outline-danger btn-sm"><i class="fas fa-minus"></i> <?= $this->lang->line('reset_inspection'); ?></button>
             </div>
             <div class="col-sm-6 text-center text-sm-right p-1 ">
            <?php if ( ($inspection->s1score_inspection >= 92) && ($inspection->s2score_inspection >= 53) && ($inspection->s1score_inspection >= 12))
@@ -294,6 +295,33 @@ $( "#createcert" ).click(function() {
                     $('.btnen').attr('data-clipboard-text', '<?= base_url()?>assets/pdfs/'+ data.en_certfile_inspection);
                     $("#spinner").removeClass("d-flex").hide();
                     $('.pcert').show();
+		
+				} else {
+		  
+						}
+			//});
+			}
+		
+	  
+	});
+});
+$( "#resetinsp" ).click(function() {
+    $("#spinner").addClass("d-flex").show();
+    $.ajax({
+		type: "POST",
+		dataType: "JSON",
+		data: {id:<?= $inspection->id_inspection ?>},
+		url: "<?= base_url()?>inspection/resetinspection",
+		success: function(data){
+			//$.each(data, function(i,item){
+				if (data.reseted == 'ok'){
+                   // alert(data.created);
+                   // alert(data.en_certfile_inspection);
+                   // alert(data.certfile_inspection);
+                    $( "#resetinsp" ).hide();
+					$('.inspfile').remove();
+                    $("#spinner").removeClass("d-flex").hide();
+                    
 		
 				} else {
 		  

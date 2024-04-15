@@ -737,6 +737,47 @@ redirect('inspection/inspections_list', 'refresh');
 
 	}
 
+	public function resetinspection() 
+	{
+	
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
+		{
+
+			$id = $this->input->post('id');
+			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
+			$ulang = $data['user_lang'];
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
+			$data['inspection'] = $inspections[0];
+			$inspection = $inspections[0];
+			$dir ="/home/site/wwwroot/assets/pdfs/";
+			$grfile = $dir.$inspection->$filename_inspection;
+			$enfile = $dir.$inspection->$en_filename_inspection;
+
+			if (unlink($grfile) && unlink($enfile)) {
+			$updinsp['status_inspection'] = 0;
+			$updinsp['filename_inspection'] = '';
+			$updinsp['en_filename_inspection'] = '';
+			$this->itindata_model->upd_inspection($id, $updinsp);
+			$status['reseted'] = "ok";	
+			}
+
+			
+			$this->lang->load('itin',$oldlang);
+			$this->session->set_userdata('site_lang', $oldlang);
+			//redirect ('inspection/inspection_view/'.$id, 'refresh');
+			$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+			$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+			$this->output->set_header("Content-type: application/json");
+			echo json_encode($status) ;  
+				   
+			}
+
+
+		}
+	}
 
 	public function vindecoder($vinr) {
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
