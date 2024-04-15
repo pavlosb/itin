@@ -194,6 +194,7 @@ redirect('inspection/inspection_view/'.$id);
 			$data['username'] = $user->first_name." ".$user->last_name;
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$data['fueltypes'] = $this->_getfueltypes();
+			$data['wheeldrives'] = $this->_getwheeldrives();
 			$data['inspection'] = $inspections[0];
 			$data['inspremark'] = $this->itindata_model->get_inspectionremarks($id);
 			$inspection = $inspections[0];
@@ -804,6 +805,11 @@ echo json_encode($status) ;
 	private function _getfueltypes() {
 		$fueltypes = array('petrol', 'diesel', 'hybridpetrol', 'hybriddiesel', 'pluginpetrol', 'plugindiesel', 'electric', 'cng', 'lng');
 		return $fueltypes;
+	}
+
+	private function _getwheeldrives() {
+		$wheeldrives = array('fwd', 'rwd', 'awd');
+		return $wheeldrives;
 	}
 	
 	private function _getclients() {
