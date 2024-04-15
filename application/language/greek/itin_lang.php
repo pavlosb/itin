@@ -82,6 +82,10 @@ $lang['plugindiesel'] = 'Plug-In Υβριδικό Diesel';
 $lang['electric'] = 'Ηλεκτρικό';
 $lang['cng'] = 'CNG';
 $lang['lng'] = 'LNG';
+$lang['wheeldrive'] = 'Κίνηση';
+$lang['fwd'] = 'Εμπρός τροχοί';
+$lang['ρwd'] = 'Πίσω τροχοί';
+$lang['awd'] = 'Όλοι οι τροχοί - 4x4';
 
 
 //INSPECTION
