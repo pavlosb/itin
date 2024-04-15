@@ -521,6 +521,7 @@ redirect('inspection/inspections_list', 'refresh');
 			$insdata['make_vhcl'] = $this->input->post('make_vhcl');
 			$insdata['model_vhcl'] = $this->input->post('model_vhcl');
 			$insdata['fueltyp_vhcl'] = $this->input->post('fueltyp_vhcl');
+			$insdata['wheeldrive_vhcl'] = $this->input->post('wheeldrive_vhcl');
 			$insdata['displ_vhcl'] = $this->input->post('displ_vhcl');
 			$insdata['pow_vhcl'] = $this->input->post('pow_vhcl');
 			$insdata['doors_vhcl'] = $this->input->post('doors_vhcl');
