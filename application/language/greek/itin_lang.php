@@ -84,7 +84,7 @@ $lang['cng'] = 'CNG';
 $lang['lng'] = 'LNG';
 $lang['wheeldrive_vhcl'] = 'Κίνηση';
 $lang['fwd'] = 'Εμπρός τροχοί';
-$lang['ρwd'] = 'Πίσω τροχοί';
+$lang['rwd'] = 'Πίσω τροχοί';
 $lang['awd'] = 'Όλοι οι τροχοί - 4x4';
 
 
