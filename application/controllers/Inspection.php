@@ -762,6 +762,8 @@ redirect('inspection/inspections_list', 'refresh');
 			$updinsp['en_filename_inspection'] = '';
 			$this->itindata_model->upd_inspection($id, $updinsp);
 			$status['reseted'] = "ok";	
+			} else {
+			$status['reseted'] = "nok";	
 			}
 
 			
