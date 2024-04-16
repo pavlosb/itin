@@ -327,7 +327,6 @@ document.getElementById("closecamera").style.display = "block";
                     processData: false,
                     success:function(response){
  
- alert(response.url);
  document.getElementById('results').innerHTML +=
 			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+response.url+'"/></div>';
  var input = document.createElement("input");
