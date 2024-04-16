@@ -105,7 +105,7 @@ $lang['inspector'] = 'Εμπειρογνώμονας';
 $lang['leave_empty'] = 'Αφήστε κενό για αυτόματη αρίθμηση';
 $lang['comment'] = 'Παρατηρήσεις';
 $lang['genremark_inspection'] = 'Γενική Παρατήρηση';
-
+$lang['reset_inspection'] = 'Επαναφορά';
 
 // PDF REPORT
 $lang['pdf_report_num'] = 'ΑΡΙΘΜΟΣ ΕΚΘΕΣΗΣ:';
