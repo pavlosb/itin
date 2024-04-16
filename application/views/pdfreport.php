@@ -132,7 +132,7 @@ E-Mail: dekra@imperial-dekra.gr<br />
 <td class="frcellfld"><?= $this->lang->line('pdf_model_vhcl'); ?></td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap><?= $this->lang->line('fuel_vhcl'); ?>:</td><td><?php echo $this->lang->line($inspection->fueltyp_vhcl); ?></td>
 </tr>
 <tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_vin_vhcl'); ?></td><td class="small"><?php echo $inspection->vin_vhcl; ?></td><td class="frcellfld"><?= $this->lang->line('pdf_mlg_vhcl'); ?></td><td><?php echo $inspection->mlg_vhcl; ?></td>
+<td class="frcellfld"><?= $this->lang->line('pdf_wheeldrive_vhcl'); ?></td><td><?php echo $this->lang->line($inspection->wheeldrive_vhcl); ?></td><td class="frcellfld"><?= $this->lang->line('pdf_mlg_vhcl'); ?></td><td><?php echo $inspection->mlg_vhcl; ?></td>
 </tr>
 <tr>
 <td class="frcellfld"><?= $this->lang->line('pdf_displpow_vhcl'); ?></td><td><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td><td class="frcellfld" nowrap><?= $this->lang->line('pdf_firstreg_vhcl'); ?></td><td><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></td>
