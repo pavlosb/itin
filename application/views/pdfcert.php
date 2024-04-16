@@ -75,6 +75,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 <p class="certhead"><?= $this->lang->line('certificate'); ?></p>
 <p class="certsubhead"><?= $this->lang->line('dekra_nr'); ?>: <?php echo $inspection->number_inspection; ?></p>
 <table width = "80%" align="center">
+<tr><td width="40%" class="certfield" style="padding: 15px 0"><?= $this->lang->line('pdf_vin_vhcl'); ?></td><td colspan="3" class="certfield" style="padding: 15px 0"><?php echo $inspection->vin_vhcl; ?></td></tr>
 <tr><td width="40%" class="certfield" style="padding: 15px 0"><?= $this->lang->line('pdf_make_vhcl'); ?></td><td class="certfield" style="padding: 15px 0"><?php echo $inspection->make_vhcl; ?></td></tr>
 <tr><td width="40%" class="certfield" style="padding: 15px 0"><?= $this->lang->line('pdf_model_vhcl'); ?></td><td class="certfield" style="padding: 15px 0"><?php echo $inspection->model_vhcl; ?></td></tr>
 <tr><td width="40%" class="certfield" style="padding: 15px 0"><?= $this->lang->line('pdf_vin_vhcl'); ?></td><td class="certfield" style="padding: 15px 0"><?php echo $inspection->vin_vhcl; ?></td></tr>
