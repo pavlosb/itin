@@ -126,6 +126,7 @@ $lang['pdf_colour_vhcl'] = 'Χρώμα:';
 $lang['pdf_model_vhcl'] = 'Εμπορική ονομασία:';
 $lang['pdf_nxtdate_vhcl'] = 'Επόμενος Τεχ.ελεγχ.:';
 $lang['pdf_vin_vhcl'] = 'Αριθμός Πλαισίου:';
+$lang['pdf_wheeldrive_vhcl'] = 'Κίνηση:';
 $lang['pdf_mlg_vhcl'] = 'Ένδειξη χλμ*<br />(καταγεγραμμένη):';
 $lang['pdf_displpow_vhcl'] = 'Ισχύς/Κυβισμός:';
 $lang['pdf_firstreg_vhcl'] = 'Ημ.1ης ταξινόμησης:';

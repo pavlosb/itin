@@ -82,10 +82,10 @@ $lang['plugindiesel'] = 'Plug-In Hybrid Diesel';
 $lang['electric'] = 'Electric';
 $lang['cng'] = 'CNG';
 $lang['lng'] = 'LNG';
-$lang['wheeldrive_vhcl'] = 'Κίνηση';
+$lang['wheeldrive_vhcl'] = 'Drive';
 $lang['fwd'] = 'Front wheel drive';
 $lang['rwd'] = 'Rear wheel drive';
-$lang['awd'] = 'All whell drive - 4x4';
+$lang['awd'] = 'AWD - 4x4';
 
 
 //INSPECTION
@@ -127,6 +127,7 @@ $lang['pdf_colour_vhcl'] = 'Colour:';
 $lang['pdf_model_vhcl'] = 'Model:';
 $lang['pdf_nxtdate_vhcl'] = 'Next MOT Check:';
 $lang['pdf_vin_vhcl'] = 'VIN:';
+$lang['pdf_wheeldrive_vhcl'] = 'Drive:';
 $lang['pdf_mlg_vhcl'] = 'Mileage*:';
 $lang['pdf_displpow_vhcl'] = 'Power/Displac.:';
 $lang['pdf_firstreg_vhcl'] = 'Reg. Date:';
