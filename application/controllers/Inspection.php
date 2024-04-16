@@ -755,7 +755,17 @@ redirect('inspection/inspections_list', 'refresh');
 			$dir ="/home/site/wwwroot/assets/pdfs/";
 			$grfile = $dir.$inspection->filename_inspection;
 			$enfile = $dir.$inspection->en_filename_inspection;
-
+			if ($ulang == "greek") {
+				$langprefix ="";
+				$oldlang = "greek";
+				$newlang = "english";
+				$newprfx = "en_";
+			} else {
+				$langprefix ="en_";
+				$newlang = "greek";
+				$oldlang = "english";
+				$newprfx = "";
+				}
 			if (unlink($grfile) && unlink($enfile)) {
 			$updinsp['status_inspection'] = 0;
 			$updinsp['filename_inspection'] = '';
@@ -765,8 +775,6 @@ redirect('inspection/inspections_list', 'refresh');
 			} else {
 			$status['reseted'] = "nok";	
 			}
-
-			
 			$this->lang->load('itin',$oldlang);
 			$this->session->set_userdata('site_lang', $oldlang);
 			//redirect ('inspection/inspection_view/'.$id, 'refresh');
@@ -781,7 +789,7 @@ redirect('inspection/inspections_list', 'refresh');
 		
 	}
 
-	public function vindecoder($vinr) {
+public function vindecoder($vinr) {
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 		
@@ -831,7 +839,7 @@ echo json_encode($status) ;
 }
 
 
-	private function _getcarbrands(){
+private function _getcarbrands(){
 
 		
 		$carbrands = $this->itindata_model->get_carbrands();
@@ -839,7 +847,7 @@ echo json_encode($status) ;
 		return $carbrands;
 		}
 
-	private function _getvhcltypes(){
+private function _getvhcltypes(){
 
 		$vhcltype = array(
 			array('nametype' => 'ΙΧ Επιβατικό'),
@@ -849,7 +857,7 @@ echo json_encode($status) ;
 		return $vhcltype;
 	}
 
-	private function _getfueltypes() {
+private function _getfueltypes() {
 		$fueltypes = array('petrol', 'diesel', 'hybridpetrol', 'hybriddiesel', 'pluginpetrol', 'plugindiesel', 'electric', 'cng', 'lng');
 		return $fueltypes;
 	}
