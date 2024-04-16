@@ -753,8 +753,8 @@ redirect('inspection/inspections_list', 'refresh');
 			$data['inspection'] = $inspections[0];
 			$inspection = $inspections[0];
 			$dir ="/home/site/wwwroot/assets/pdfs/";
-			$grfile = $dir.$inspection->$filename_inspection;
-			$enfile = $dir.$inspection->$en_filename_inspection;
+			$grfile = $dir.$inspection->filename_inspection;
+			$enfile = $dir.$inspection->en_filename_inspection;
 
 			if (unlink($grfile) && unlink($enfile)) {
 			$updinsp['status_inspection'] = 0;
