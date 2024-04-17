@@ -316,7 +316,7 @@ document.getElementById("closecamera").style.display = "block";
 	i = i+1;
   let formData = new FormData(); 
 	//if(fileupload.files[0].length > 0) {
-  formData.append("file", fileupload.files[0]);
+  formData.append("file", fileupload.files);
 
 	$.ajax({
                     url:'/inspection/imgupload',

@@ -922,6 +922,9 @@ echo $url;
 
 
  public function imgupload(){
+
+	for($i=0;$i<count($_FILES["file"]["name"]);$i++)  
+    {  
  /* Get the name of the uploaded file */
 $filename = str_replace(' ', '_', $_FILES['file']['name']);
 
@@ -930,8 +933,9 @@ $location = "upload/".$filename;
 
 /* Save the uploaded file to the local filesystem */
 if ( move_uploaded_file($_FILES['file']['tmp_name'], $location) ) { 
-	$url = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
+	$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
 } 
+	}
 $response['url'] = $url;
 
       echo json_encode($response);
