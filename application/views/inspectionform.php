@@ -322,7 +322,7 @@ document.getElementById("closecamera").style.display = "block";
   }
 
   //formData.append("file", fileupload[].files);
-	alert(formdata)
+
 
 	$.ajax({
                     url:'/inspection/imgupload',
