@@ -315,8 +315,13 @@ document.getElementById("closecamera").style.display = "block";
  function uploadFile() {
 	i = i+1;
   let formData = new FormData(); 
+	alert(fileupload.length)
 	//if(fileupload.files[0].length > 0) {
-  formData.append("file", fileupload[].files);
+		for (let i = 0; i < fileupload.length; i++) {
+    formData.append(fileupload[i].files)
+  }
+
+  //formData.append("file", fileupload[].files);
 	alert(formdata)
 
 	$.ajax({
