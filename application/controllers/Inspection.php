@@ -923,16 +923,16 @@ echo $url;
 
  public function imgupload(){
 
-	for($i=0;$i<count($_FILES["file"]["name"]);$i++)  
+	for($i=0;$i < count($_FILES["file"]);$i++)  
     {  
  /* Get the name of the uploaded file */
-$filename = str_replace(' ', '_', $_FILES['file']['name']);
+$filename = str_replace(' ', '_', $_FILES['file']['name'][$i]);
 
 /* Choose where to save the uploaded file */
 $location = "upload/".$filename;
 
 /* Save the uploaded file to the local filesystem */
-if ( move_uploaded_file($_FILES['file']['tmp_name'], $location) ) { 
+if ( move_uploaded_file($_FILES['file']['tmp_name'][$i], $location) ) { 
 	$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
 } 
 	}
