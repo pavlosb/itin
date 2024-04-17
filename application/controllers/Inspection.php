@@ -936,7 +936,7 @@ if ( move_uploaded_file($_FILES['file']['tmp_name'][$i], $location) ) {
 	$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
 } 
 	}
-$response['url'] = $url[];
+$response['url'] = $url;
 
       echo json_encode($response);
       exit;
