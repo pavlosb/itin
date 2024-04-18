@@ -331,8 +331,9 @@ document.getElementById("closecamera").style.display = "block";
                     contentType: false,
                     processData: false,
                     success:function(response){
+											alert(response.files);
  
- document.getElementById('results').innerHTML +=
+/* document.getElementById('results').innerHTML +=
 			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+response.url+'"/></div>';
  var input = document.createElement("input");
 
@@ -344,7 +345,7 @@ input.setAttribute("name", "inspimg["+i+"]");
 input.setAttribute("value", response.url);
 
 //append to form element that you want .
-document.getElementById("imagefields").appendChild(input);
+document.getElementById("imagefields").appendChild(input); */
 										}
 });
 
