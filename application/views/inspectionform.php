@@ -105,7 +105,7 @@ if (isset($user_lang) && $user_lang == "greek") {
 </div>
 <div class="row pb-5">
 <div class = "col-md-12"><h5>Ανεβάστε μια φωτογραφία</h5></div>
-	<div class = "col-md-9"><input id="fileupload" type="file" class="custom-file-input" name="fileupload[]" multiple/>
+	<div class = "col-md-9"><input id="fileupload" type="file"  name="fileupload[]" multiple/>
 	<label class="custom-file-label" for="customFile">Επιλογή αρχείου</label></div>
 	<div class = "col-md-3">
 <button  type="button" class="btn btn-info btn-block" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>

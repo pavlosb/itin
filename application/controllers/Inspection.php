@@ -942,7 +942,7 @@ echo $url;
 //	}
 //$response['url'] = $url;
 $files = $_FILES;
-$howmany = count($_FILES["fileupload"]['name']);
+//$howmany = count($_FILES["fileInput"]['name']);
 $response['files'] = $files;
 $response['hm'] = $howmany;
 
