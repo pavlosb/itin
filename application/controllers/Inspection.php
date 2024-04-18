@@ -923,25 +923,30 @@ echo $url;
 
  public function imgupload(){
 
-	for($i=0;$i < count($_FILES["file"]);$i++)  
-    {  
+
+
+	
+for($i=0;$i < count($_FILES["fileupload"]['name']);$i++)  
+  {  
  /* Get the name of the uploaded file */
-$filename = str_replace(' ', '_', $_FILES['file'][$i]['name']);
+$filename = str_replace(' ', '_', $_FILES["fileupload"]['name'][$i]);
 
 /* Choose where to save the uploaded file */
 $location = "upload/".$filename;
 
 /* Save the uploaded file to the local filesystem */
-if ( move_uploaded_file($_FILES['file'][$i]['tmp_name'], $location) ) { 
+if ( move_uploaded_file($_FILES["fileupload"]['tmp_name'][$i], $location) ) { 
 	$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
 } 
-$fns[] = $filename;
-	}
-$response['url'] = $fns;
+//$fns[] = $filename;
+//	}
+$response['url'] = $url;
+$response['files'] = $_FILES;
 
-      echo json_encode($response);
-      exit;
+echo json_encode($response);
+exit; 
  }
+}
  public function dynimg($id) {
 	$pointscore = $this->itindata_model->get_scoreforoutside($id);
 	
