@@ -336,11 +336,11 @@ document.getElementById("closecamera").style.display = "block";
                     contentType: false,
                     processData: false,
                     success:function(response){
-											console.table(response.files);
-											console.log(response.hm);
+											
+											$.each(files, function(k, url) {
  
-/* document.getElementById('results').innerHTML +=
-			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+response.url+'"/></div>';
+document.getElementById('results').innerHTML +=
+			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+files[k]+'"/></div>';
  var input = document.createElement("input");
 
 
@@ -348,11 +348,13 @@ input.setAttribute("type", "hidden");
 
 input.setAttribute("name", "inspimg["+i+"]");
 
-input.setAttribute("value", response.url);
+input.setAttribute("value", files[k]);
 
 //append to form element that you want .
-document.getElementById("imagefields").appendChild(input); */
-									}
+document.getElementById("imagefields").appendChild(input); 
+i=i+1;
+									});
+								}
 });
 
 
