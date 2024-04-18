@@ -926,7 +926,7 @@ echo $url;
 
 
 	
-for($i=0;$i < count($_FILES['file']['name']);$i++)  
+for($i=0;$i < count($_FILES['file']);$i++)  
   {  
  /* Get the name of the uploaded file */
 $filename = str_replace(' ', '_', $_FILES['file']['name'][$i]);
