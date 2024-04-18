@@ -926,16 +926,16 @@ echo $url;
 
 
 	
-for($i=0;$i < count($_FILES['name']);$i++)  
+for($i=0;$i < count($_FILES['file']['name']);$i++)  
   {  
  /* Get the name of the uploaded file */
-$filename = str_replace(' ', '_', $_FILES['name'][$i]);
+$filename = str_replace(' ', '_', $_FILES['file']['name'][$i]);
 
 /* Choose where to save the uploaded file */
 $location = "upload/".$filename;
 
 /* Save the uploaded file to the local filesystem */
-if ( move_uploaded_file($_FILES["fileupload"]['tmp_name'][$i], $location) ) { 
+if ( move_uploaded_file($_FILES['file']['tmp_name'][$i], $location) ) { 
 	$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
 } 
 //$fns[] = $filename;
