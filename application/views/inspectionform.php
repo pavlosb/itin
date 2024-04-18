@@ -322,11 +322,10 @@ document.getElementById("closecamera").style.display = "block";
     formData.append("file", fileupload.files[j])
 		console.table(fileupload.files[j]);
 		}
-		console.table(formData);
-		console.table(formData.file);
+		
   //formData.append("file", fileupload[].files);
 
-/*
+
 	$.ajax({
                     url:'/inspection/imgupload',
                     type:'post',
@@ -335,7 +334,7 @@ document.getElementById("closecamera").style.display = "block";
                     contentType: false,
                     processData: false,
                     success:function(response){
-											alert(response.files);
+											console.table(response.files);
  
 /* document.getElementById('results').innerHTML +=
 			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+response.url+'"/></div>';
@@ -350,9 +349,9 @@ input.setAttribute("value", response.url);
 
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input); */
-	/*									}
+									}
 });
-*/
+
 
   }
 
