@@ -337,7 +337,7 @@ document.getElementById("closecamera").style.display = "block";
                     processData: false,
                     success:function(response){
 											
-											$.each(files, function(k, url) {
+											$.each(response.files, function(k, url) {
  
 document.getElementById('results').innerHTML +=
 			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+files[k]+'"/></div>';
