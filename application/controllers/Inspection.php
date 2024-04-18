@@ -941,7 +941,10 @@ echo $url;
 //$fns[] = $filename;
 //	}
 //$response['url'] = $url;
-$response['files'] = $_FILES;
+$files = $_FILES;
+$howmany = count($_FILES["fileupload"]['name']);
+$response['files'] = $files;
+$response['hm'] = $howmany;
 
 echo json_encode($response);
 exit; 
