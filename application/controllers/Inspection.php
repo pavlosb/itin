@@ -920,27 +920,50 @@ echo $url;
 
  }
 
+ public function multitest () {
+
+	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
+	{
+		$data = $this->data;
+		$user = $this->ion_auth->user()->row();
+		$data['userid'] = $user->id;
+		$data['username'] = $user->first_name." ".$user->last_name;
+		$this->load->view('header', $data);
+		$this->load->view('multitest', $data);
+		$this->load->view('footer', $data);
+
+	} else {
+		redirect('auth/login');
+	}
+
+ }
+ 
 
  public function imgupload(){
 
-	for($i=0;$i < count($_FILES["file"]);$i++)  
-    {  
+	print_r($_FILES);
+	echo"<br/><br/><br/>";
+	print_r($_POST);
+echo count($_FILES["file"]);
+	
+//	for($i=0;$i < count($_FILES["file"]);$i++)  
+ //   {  
  /* Get the name of the uploaded file */
-$filename = str_replace(' ', '_', $_FILES['file'][$i]['name']);
+//$filename = str_replace(' ', '_', $_FILES['file'][$i]['name']);
 
 /* Choose where to save the uploaded file */
-$location = "upload/".$filename;
+//$location = "upload/".$filename;
 
 /* Save the uploaded file to the local filesystem */
-if ( move_uploaded_file($_FILES['file'][$i]['tmp_name'], $location) ) { 
-	$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
-} 
-$fns[] = $filename;
-	}
-$response['url'] = $fns;
+//if ( move_uploaded_file($_FILES['file'][$i]['tmp_name'], $location) ) { 
+//	$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
+//} 
+//$fns[] = $filename;
+//	}
+//$response['url'] = $fns;
 
-      echo json_encode($response);
-      exit;
+//      echo json_encode($response);
+//      exit; 
  }
  public function dynimg($id) {
 	$pointscore = $this->itindata_model->get_scoreforoutside($id);
