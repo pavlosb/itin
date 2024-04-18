@@ -319,9 +319,9 @@ document.getElementById("closecamera").style.display = "block";
 	//if(fileupload.files[0].length > 0) {
 	for (let j = 0; j < fileupload.files.length; j++) {
     formData.append("file", fileupload.files[j])
-		alert (fileupload.files[j]);
-  }
-
+		console.table(fileupload.files[j]);
+		}
+		console.table(formData);
   //formData.append("file", fileupload[].files);
 
 /*
