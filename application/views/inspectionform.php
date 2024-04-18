@@ -315,14 +315,16 @@ document.getElementById("closecamera").style.display = "block";
  function uploadFile() {
 	i = i+1;
   let formData = new FormData(); 
+	alert(fileupload.files.length);
 	//if(fileupload.files[0].length > 0) {
-		for (let j = 0; j < fileupload.files.length; j++) {
+	for (let j = 0; j < fileupload.files.length; j++) {
     formData.append("file", fileupload.files[j])
+		alert (fileupload.files[j]);
   }
 
   //formData.append("file", fileupload[].files);
 
-
+/*
 	$.ajax({
                     url:'/inspection/imgupload',
                     type:'post',
@@ -346,9 +348,9 @@ input.setAttribute("value", response.url);
 
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input); */
-										}
+	/*									}
 });
-
+*/
 
   }
 
