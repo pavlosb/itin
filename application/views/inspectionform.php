@@ -315,12 +315,13 @@ document.getElementById("closecamera").style.display = "block";
  function uploadFile() {
 	i = i+1;
   let formData = new FormData(); 
-	alert(fileupload.files.length);
+	const fileInput = document.getElementById("fileupload");
+	
 	//if(fileupload.files[0].length > 0) {
-	for (let j = 0; j < fileupload.files.length; j++) {
-		console.log(j);
-    formData.append("file", fileupload.files[j])
-		console.table(fileupload.files[j]);
+	for (let j = 0; j < fileInput.length; j++) {
+		
+    formData.append("file[]", selectedFiles[j])
+	
 		}
 		
   //formData.append("file", fileupload[].files);
