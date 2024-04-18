@@ -1,4 +1,4 @@
-<?php echo form_open("inspection/imgupload", "id='inspform'");?>
+<?php echo form_open_multipart("inspection/imgupload", "id='inspform'");?>
 <div class="row">
 <div class = "col-md-9"><input id="fileupload" type="file" class="custom-file-input" name="fileupload" multiple/>
 	<label class="custom-file-label" for="customFile">Επιλογή αρχείου</label></div>
