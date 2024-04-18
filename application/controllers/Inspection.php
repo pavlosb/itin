@@ -946,18 +946,18 @@ echo $url;
 	print_r($_POST);
 echo count($_FILES["fileupload"]['name']);
 	
-	for($i=0;$i < count($_FILES["fileupload"]['name']);$i++)  
-  {  
+//	for($i=0;$i < count($_FILES["file"]);$i++)  
+ //   {  
  /* Get the name of the uploaded file */
-$filename = str_replace(' ', '_', $_FILES["fileupload"]['name'][$i]);
-echo $filename;
+//$filename = str_replace(' ', '_', $_FILES['file'][$i]['name']);
+
 /* Choose where to save the uploaded file */
 //$location = "upload/".$filename;
 
 /* Save the uploaded file to the local filesystem */
 //if ( move_uploaded_file($_FILES['file'][$i]['tmp_name'], $location) ) { 
 //	$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
-} 
+//} 
 //$fns[] = $filename;
 //	}
 //$response['url'] = $fns;
