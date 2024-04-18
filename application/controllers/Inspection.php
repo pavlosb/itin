@@ -944,7 +944,7 @@ echo $url;
 	print_r($_FILES);
 	echo"<br/><br/><br/>";
 	print_r($_POST);
-echo count($_FILES["fileupload"]['name']);
+echo count($_FILES["file"]);
 	
 //	for($i=0;$i < count($_FILES["file"]);$i++)  
  //   {  
