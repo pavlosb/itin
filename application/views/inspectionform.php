@@ -316,9 +316,10 @@ document.getElementById("closecamera").style.display = "block";
 	i = i+1;
   let formData = new FormData(); 
 	const fileInput = document.getElementById("fileupload");
+	const selectedFiles = fileInput.files;
 	
 	//if(fileupload.files[0].length > 0) {
-	for (let j = 0; j < fileInput.length; j++) {
+	for (let j = 0; j < selectedFiles.length; j++) {
 		
     formData.append("file[]", selectedFiles[j])
 	
