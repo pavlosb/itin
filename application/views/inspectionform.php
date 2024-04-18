@@ -340,7 +340,7 @@ document.getElementById("closecamera").style.display = "block";
 											$.each(response.files, function(k, url) {
  
 document.getElementById('results').innerHTML +=
-			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+files[k]+'"/></div>';
+			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+url[k]+'"/></div>';
  var input = document.createElement("input");
 
 
