@@ -922,21 +922,32 @@ echo $url;
 
 
  public function imgupload(){
-	/* Get the name of the uploaded file */
-   $filename = str_replace(' ', '_', $_FILES['file']['name']);
-   
-   /* Choose where to save the uploaded file */
-   $location = "upload/".$filename;
-   
-   /* Save the uploaded file to the local filesystem */
-   if ( move_uploaded_file($_FILES['file']['tmp_name'], $location) ) { 
-	   $url = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
-   } 
-   $response['url'] = $url;
-   
-		 echo json_encode($response);
-		 exit;
+	
+	for($i=0;$i < count($_FILES['file']);$i++)  
+	  {  
+	 /* Get the name of the uploaded file */
+	$filename = str_replace(' ', '_', $_FILES['file']['name'][$i]);
+	
+	/* Choose where to save the uploaded file */
+	$location = "upload/".$filename;
+	
+	/* Save the uploaded file to the local filesystem */
+	if ( move_uploaded_file($_FILES['file']['tmp_name'][$i], $location) ) { 
+		$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
+	} 
+	//$fns[] = $filename;
 	}
+	//$response['url'] = $url;
+	$files = $url;
+	//$howmany = count($_FILES["fileInput"]['name']);
+	$response['files'] = $files;
+	
+	
+	echo json_encode($response);
+	exit; 
+	} 
+
+
  public function dynimg($id) {
 	$pointscore = $this->itindata_model->get_scoreforoutside($id);
 	
