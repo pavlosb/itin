@@ -24,7 +24,7 @@ echo $id;
 	{
 		$data = $this->data;
 			
-			$inspections = $this->itindata_model->get_inspectionsfull(array('qrcode_inspection' => $qc));
+			$inspections = $this->itindata_model->get_inspectionsfull(array('k.qrcode_inspection' => $qc));
 			$data['inspection'] = $inspections[0];
 			$data['fueltypes'] = $this->_getfueltypes();
 			$data['wheeldrives'] = $this->_getwheeldrives();
