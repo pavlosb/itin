@@ -20,11 +20,11 @@ class Publicview extends CI_Controller {
 echo $id;
 	}
 
-	public function show($qc)
+	public function show($qrc)
 	{
 		$data = $this->data;
 			
-			$inspections = $this->itindata_model->get_inspectionsfull(array('number_inspection' => $qc));
+			$inspections = $this->itindata_model->get_inspectionsfull(array('qrcode_inspection' => $qrc));
 			$data['inspection'] = $inspections[0];
 			$data['fueltypes'] = $this->_getfueltypes();
 			$data['wheeldrives'] = $this->_getwheeldrives();
