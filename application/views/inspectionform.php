@@ -336,7 +336,10 @@ document.getElementById("closecamera").style.display = "block";
                     contentType: false,
                     processData: false,
                     success:function(response){
-											console.log(response.files[0]);
+											
+                      response.files.forEach(function(url) {
+  console.log(url);
+});
 										/*	$.each(response.files, function(url) {
  
 document.getElementById('results').innerHTML +=
