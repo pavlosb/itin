@@ -23,9 +23,7 @@ echo $id;
 	public function show($qc)
 	{
 		$data = $this->data;
-			$user = $this->ion_auth->user()->row();
-			$data['userid'] = $user->id;
-			$data['username'] = $user->first_name." ".$user->last_name;
+			
 			$inspections = $this->itindata_model->get_inspectionsfull(array('qrcode_inspection' => $qc));
 			$data['inspection'] = $inspections[0];
 			$data['fueltypes'] = $this->_getfueltypes();
@@ -36,7 +34,7 @@ echo $id;
 			$data['sec3score'] = $inspection->s3score_inspection;
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			//$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
-			$data['inspectionid'] = $id;
+			$data['inspectionid'] = $inspection->id_inspection;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			$this->load->view('public/header', $data);
 			$this->load->view('public/publicshow', $data);
