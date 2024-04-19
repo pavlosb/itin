@@ -336,8 +336,8 @@ document.getElementById("closecamera").style.display = "block";
                     contentType: false,
                     processData: false,
                     success:function(response){
-											
-											$.each(response.files, function(url) {
+											console.log(response.files[0]);
+										/*	$.each(response.files, function(url) {
  
 document.getElementById('results').innerHTML +=
 			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+url+'"/></div>';
@@ -354,7 +354,7 @@ input.setAttribute("value", url);
 document.getElementById("imagefields").appendChild(input); 
 i=i+1;
 									});
-								}
+								}*/
 });
 
 
