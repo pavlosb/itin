@@ -217,7 +217,7 @@ $maxpos = $row->maxpos;
 
          $q .= " WHERE ";
             foreach ($where as $field => $value):
-               $q .= $field." = ".$value;
+               $q .= $field." = '".$value."'";
             endforeach;
       }
             $query = $this->db->query($q);
