@@ -10,6 +10,7 @@ echo $id;
 	public function show($id)
 	{
 		echo "show";
+		echo "<br />";
 echo $id;
 	}
 
