@@ -104,8 +104,8 @@ if (isset($user_lang) && $user_lang == "greek") {
 	</div></div><div id="my_camera" class="col-md-9"></div>
 </div>
 <div class="row pb-5">
-<div class = "col-md-12"><h5>Ανεβάστε μια φωτογραφία</h5></div>
-	<div class = "col-md-9"><input id="fileupload" type="file"  name="fileupload[]" multiple/>
+<div class = "col-md-12"><h5>Ανεβάστε φωτογραφίες</h5></div>
+	<div class = "col-md-9"><input id="fileupload" type="file"  name="fileupload[]" accept="image/png, image/jpeg" multiple/>
 	<!--<label class="custom-file-label" for="customFile">Επιλογή αρχείου</label> --></div>
 	<div class = "col-md-3">
 <button  type="button" class="btn btn-info btn-block" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>
@@ -338,9 +338,7 @@ document.getElementById("closecamera").style.display = "block";
                     success:function(response){
 											
                       response.files.forEach(function(url) {
-  console.log(url);
-});
-										/*	$.each(response.files, function(url) {
+
  
 document.getElementById('results').innerHTML +=
 			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+url+'"/></div>';
@@ -356,7 +354,7 @@ input.setAttribute("value", url);
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input); 
 i=i+1;
-									});*/
+									});
 								}
 });
 
