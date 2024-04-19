@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Publicview extends Inspection {
+class Publicview extends CI_Controller {
 	public function __construct()
 	{
 			parent::__construct();
@@ -41,6 +41,16 @@ echo $id;
 			$this->load->view('public/header', $data);
 			$this->load->view('public/publicshow', $data);
 			$this->load->view('public/footer', $data);
+	}
+
+	private function _getfueltypes() {
+		$fueltypes = array('petrol', 'diesel', 'hybridpetrol', 'hybriddiesel', 'pluginpetrol', 'plugindiesel', 'electric', 'cng', 'lng');
+		return $fueltypes;
+	}
+
+	private function _getwheeldrives() {
+		$wheeldrives = array('fwd', 'rwd', 'awd');
+		return $wheeldrives;
 	}
 
 
