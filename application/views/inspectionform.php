@@ -353,8 +353,8 @@ input.setAttribute("value", url);
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input); 
 i=i+1;
-									});
-								}*/
+									});*/
+								}
 });
 
 
