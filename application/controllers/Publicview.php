@@ -22,9 +22,8 @@ echo $id;
 
 	public function show($qc)
 	{
-		echo $qc;
 		$data = $this->data;
-		/*
+			
 			$inspections = $this->itindata_model->get_inspectionsfull(array('qrcode_inspection' => $qc));
 			$data['inspection'] = $inspections[0];
 			$data['fueltypes'] = $this->_getfueltypes();
@@ -40,7 +39,6 @@ echo $id;
 			$this->load->view('public/header', $data);
 			$this->load->view('public/publicshow', $data);
 			$this->load->view('public/footer', $data);
-			*/
 	}
 
 	private function _getfueltypes() {
