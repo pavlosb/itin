@@ -348,7 +348,7 @@ input.setAttribute("type", "hidden");
 
 input.setAttribute("name", "inspimg["+i+"]");
 
-input.setAttribute("value", files[k]);
+input.setAttribute("value", url[k]);
 
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input); 
