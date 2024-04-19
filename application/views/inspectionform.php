@@ -337,10 +337,10 @@ document.getElementById("closecamera").style.display = "block";
                     processData: false,
                     success:function(response){
 											
-											$.each(response.files, function(k, url) {
+											$.each(response.files, function(url) {
  
 document.getElementById('results').innerHTML +=
-			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+url[k]+'"/></div>';
+			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+url+'"/></div>';
  var input = document.createElement("input");
 
 
@@ -348,7 +348,7 @@ input.setAttribute("type", "hidden");
 
 input.setAttribute("name", "inspimg["+i+"]");
 
-input.setAttribute("value", url[k]);
+input.setAttribute("value", url);
 
 //append to form element that you want .
 document.getElementById("imagefields").appendChild(input); 
