@@ -115,7 +115,7 @@ echo form_open("inspection/qrcode_save", $attributes);?>
     <input type="hidden" name="id_inspection" value = "<?= $inspection->id_inspection ?>" >	
 <div class="col-6 col-md-3"><label for="reg_vhcl">QR Code</label></div>
 <div class="col-6 col-md-6"><input type="text" class="form-control" id="qrcode_inspection" name ="qrcode_inspection" onkeyup="checkifexists(this, 4)"></div>
-<div class = "col col-md-3"><button type="submit" class="btn btn-primary" disabled><?= $this->lang->line('submit'); ?></button></div>
+<div class = "col col-md-3"><button type="submit" class="btn btn-primary btn-block" disabled><?= $this->lang->line('submit'); ?></button></div>
 </div>
 <?php
  echo form_close();
@@ -381,7 +381,7 @@ function checkifexists(fld, len){
 		type: "POST",
 		dataType: "JSON",
 		data: {chk_fld:chkfld, chk_val:chkval},
-		url: "checkifexists",
+		url: "<?= base_url()?>inspection/checkifexists",
 		success: function(data){
 			$.each(data, function(i,item){
 				if (item.EXISTS == 'exists'){
