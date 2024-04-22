@@ -843,7 +843,7 @@ public function qrcode_save() {
 	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 	{
 	if (isset($_POST)) {
-$id = $id = $this->input->post('id_ispection');
+$id = $this->input->post('id_inspection');
 $updinsp['qrcode_inspection'] = $this->input->post('qrcode_inspection');
 $this->itindata_model->upd_inspection($id, $updinsp);
 redirect('inspection/inspection_view/'.$id);
