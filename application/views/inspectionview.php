@@ -367,7 +367,7 @@ bootbox.setDefaults({
 });
   
   
-function checkifexists(fld, 3){
+function checkifexists(fld, len){
 		
 		var chkval = fld.value;
 		var chkfld  = fld.name;
