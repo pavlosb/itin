@@ -816,7 +816,8 @@ $fieldtables = array (
 	'reg_vhcl' => 'vehicles_tbl',
 	'vatno_client'=> 'clients_tbl',
 	'email_client'=> 'clients_tbl',
-	'number_inspection' => 'inspections_tbl'
+	'number_inspection' => 'inspections_tbl',
+	'qrcode_inspection' => 'inspections_tbl'
 );
 $chk_fld = $this->input->post('chk_fld');
 $chk_val = $this->input->post('chk_val');
