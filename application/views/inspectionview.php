@@ -103,6 +103,18 @@
 
 
     </div>
+	<div class="row justify-content-center mt-2">
+<?php if (isset($inspection->qrcode_inspection)) {
+
+} else { ?>
+
+<div class="col-6 col-md-3"><label for="reg_vhcl">QR Code</label></div>
+<div class="col-6 col-md-6"><input type="text" class="form-control" id="qrcode_inspection" name ="qrcode_inspection" ></div>
+<div class = " col col-md-3">
+<button  type="button" class="btn btn-info btn-block" id="upload-button" onclick="saveqrcode('qrcode_inspection')"> Αποθήκευση </button></div>
+<? } ?>
+
+	</div>
     <div class="row justify-content-center mt-2">
         <div class="col-lg-10 p-3">
             <div class="row mb-2">
@@ -348,4 +360,35 @@ bootbox.setDefaults({
 
 
 });
-    </script>
+  
+  
+function saveqrcode(fld){
+		
+		var chkval = fld.value;
+		var chkfld  = fld.name;
+	
+		
+			$(".memberok").empty();
+			$(".nomember").empty();
+	$.ajax({
+		type: "POST",
+		dataType: "JSON",
+		data: {chk_fld:chkfld, chk_val:chkval},
+		url: "checkifexists",
+		success: function(data){
+			$.each(data, function(i,item){
+				if (item.EXISTS == 'exists'){
+				
+			fld.value ="";
+			fld.placeholder = chkval+"- <?= $this->lang->line('already_exists'); ?>";
+			fld.focus();
+			} else {
+				}
+			});
+			}
+		
+	  
+	}); 
+	
+	}
+		</script>
