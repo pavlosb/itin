@@ -38,7 +38,8 @@ body {
 
 .footer {
     flex-shrink: 0;
-    background-color: #f5f5f5;
+    background-color: #006b52;
+	color:#fff;
 }
 
 #back-to-top {
