@@ -105,9 +105,11 @@
     </div>
 <div class="row justify-content-center">	
 	<div class="col-lg-10">
-<?php if (isset($inspection->qrcode_inspection)) {
-
-} else {  ?>
+<?php if (isset($inspection->qrcode_inspection)) { ?>
+<div class="row justify-content-center mt-2">
+<div class = "col">QRCODE: <strong><?= $inspection->qrcode_inspection ?></strong></div>
+</div>
+<?php } else {  ?>
 	
 <?php $attributes = array('id' => 'qrcodeForm');
 echo form_open("inspection/qrcode_save", $attributes);?>
@@ -115,7 +117,7 @@ echo form_open("inspection/qrcode_save", $attributes);?>
     <input type="hidden" name="id_inspection" value = "<?= $inspection->id_inspection ?>" >	
 <div class="col-6 col-md-3"><label for="reg_vhcl">QR Code</label></div>
 <div class="col-6 col-md-6"><input type="text" class="form-control" id="qrcode_inspection" name ="qrcode_inspection" onkeyup="checkifexists(this, 4)"></div>
-<div class = "col col-md-3"><button type="submit" class="btn btn-primary btn-block" disabled><?= $this->lang->line('submit'); ?></button></div>
+<div class = "col col-md-3"><button type="submit" id="submitbtn" class="btn btn-primary btn-block"><?= $this->lang->line('submit'); ?></button></div>
 </div>
 <?php
  echo form_close();
@@ -373,7 +375,7 @@ function checkifexists(fld, len){
 		
 		var chkval = fld.value;
 		var chkfld  = fld.name;
-	
+	$('#submitbtn').prop("disabled",true);
 		if (chkval.length > len) {
 			$(".memberok").empty();
 			$(".nomember").empty();
@@ -389,7 +391,7 @@ function checkifexists(fld, len){
 			fld.placeholder = chkval+"- <?= $this->lang->line('already_exists'); ?>";
 			fld.focus();
 			} else {
-				console.log("ok!");
+				$('#submitbtn').prop("disabled",false);
 				}
 			});
 			}
