@@ -17,7 +17,7 @@
 <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/webcam.min.js"></script>
    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/rg-1.1.0/datatables.min.js"></script>
- <title>ITIN</title>
+ <title>IMPERIAL DEKRA</title>
   </head>
   <body>
   <div class="content">  

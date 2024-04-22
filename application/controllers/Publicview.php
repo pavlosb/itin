@@ -24,7 +24,8 @@ echo $id;
 	{
 		$data = $this->data;
 			
-			$inspections = $this->itindata_model->get_inspectionsfull(array('qrcode_inspection' => $qrc));
+			if ($inspections = $this->itindata_model->get_inspectionsfull(array('qrcode_inspection' => $qrc))) {
+				;
 			$data['inspection'] = $inspections[0];
 			$data['fueltypes'] = $this->_getfueltypes();
 			$data['wheeldrives'] = $this->_getwheeldrives();
@@ -39,6 +40,9 @@ echo $id;
 			$this->load->view('public/header', $data);
 			$this->load->view('public/publicshow', $data);
 			$this->load->view('public/footer', $data);
+			} else {
+				redirect('https://www.imperial-dekra.gr/');
+			}
 	}
 
 	private function _getfueltypes() {
