@@ -25,7 +25,7 @@ echo $id;
 		$data = $this->data;
 			
 			if ($inspections = $this->itindata_model->get_inspectionsfull(array('qrcode_inspection' => $qrc))) {
-				;
+				
 			$data['inspection'] = $inspections[0];
 			$data['fueltypes'] = $this->_getfueltypes();
 			$data['wheeldrives'] = $this->_getwheeldrives();
