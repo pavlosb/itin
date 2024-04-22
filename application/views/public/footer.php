@@ -3,14 +3,14 @@
 <footer class="footer">
     <div class = "container ">
         <div class="row">
-            <div class="col-sm-6 text-sm-center text-xs-center pt-2 pb-2">
+            <div class="col-sm-6 text-center text-md-left pt-2 pb-2">
             <p class="small">ΙΜΠΕΡΙΑΛ ΕΠΙΘΕΩΡΗΣΕΙΣ ΚΑΙ ΠΙΣΤΟΠΟΙΗΣΕΙΣ ΙΚΕ<br />
 DEKRA IMPERIAL<br />
 ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253 ΝΕΑ ΣΜΥΡΝΗ, Τ.Κ. 17122<br />
 Τηλέφωνο: 2109426352<br />
 E-Mail: dekra@imperial-dekra.gr<br />
             </div>
-            <div class="col-sm-6 text-sm-center text-xs-center text-md-right pt-2 pb-2">
+            <div class="col-sm-6 text-center text-md-right pt-2 pb-2">
             <small>created by INLINE</small>
             </div>
 </div></div>
