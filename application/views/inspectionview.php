@@ -103,6 +103,23 @@
 
 
     </div>
+	<div class="row justify-content-center mt-2">
+<?php if (isset($inspection->qrcode_inspection)) {
+
+} else { 
+	
+$attributes = array('id' => 'qrcodeForm');
+echo form_open("inspection/qrcode_save", $attributes);?>
+<input type="hidden" name="id_inspection" value = "<?= $inspection->id_inspection ?>" >	
+<div class="col-6 col-md-3"><label for="reg_vhcl">QR Code</label></div>
+<div class="col-6 col-md-6"><input type="text" class="form-control" id="qrcode_inspection" name ="qrcode_inspection" onfocusout="checkifexists(this, 4)"></div>
+<div class = "col col-md-3">
+<button type="submit" class="btn btn-primary" disabled><?= $this->lang->line('submit'); ?></button></div>
+<?php
+ echo form_close();
+} ?>
+
+	</div>
     <div class="row justify-content-center mt-2">
         <div class="col-lg-10 p-3">
             <div class="row mb-2">
@@ -348,4 +365,35 @@ bootbox.setDefaults({
 
 
 });
-    </script>
+  
+  
+function checkifexists(fld, 3){
+		
+		var chkval = fld.value;
+		var chkfld  = fld.name;
+	
+		if (chkval.length > len) {
+			$(".memberok").empty();
+			$(".nomember").empty();
+	$.ajax({
+		type: "POST",
+		dataType: "JSON",
+		data: {chk_fld:chkfld, chk_val:chkval},
+		url: "checkifexists",
+		success: function(data){
+			$.each(data, function(i,item){
+				if (item.EXISTS == 'exists'){
+				
+			fld.value ="";
+			fld.placeholder = chkval+"- <?= $this->lang->line('already_exists'); ?>";
+			fld.focus();
+			} else {
+				}
+			});
+			}
+		
+	  
+	}); 
+	}
+	}
+		</script>
