@@ -4,7 +4,7 @@
     <div class = "container ">
         <div class="row">
             <div class="col-sm-6 text-xs-center pt-2 pb-2">
-            <small>IMPERIAL AUTOMOTIVE DEKRA PARTNER</small>
+            <small>IMPERIAL DEKRA</small>
             </div>
             <div class="col-sm-6 text-xs-center text-sm-right pt-2 pb-2">
             <small>created by INLINE</small>
