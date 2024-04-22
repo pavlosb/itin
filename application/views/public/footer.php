@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-6 text-center text-md-left pt-2 pb-2">
             <p class="small">ΙΜΠΕΡΙΑΛ ΕΠΙΘΕΩΡΗΣΕΙΣ ΚΑΙ ΠΙΣΤΟΠΟΙΗΣΕΙΣ ΙΚΕ<br />
-DEKRA IMPERIAL<br />
+<span class="strong">DEKRA IMPERIAL</span><br />
 ΛΕΩΦΟΡΟΣ ΣΥΓΓΡΟΥ 253 ΝΕΑ ΣΜΥΡΝΗ, Τ.Κ. 17122<br />
 Τηλέφωνο: 2109426352<br />
 E-Mail: dekra@imperial-dekra.gr<br />
