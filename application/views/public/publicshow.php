@@ -1,4 +1,4 @@
-<div class="container pt-5 pb-5">
+<div class="container">
 	<div class="row"><div class="col text-center py-2 text-light bg-green"><h3><?= $this->lang->line('pdf_dekra_report'); ?></h3></div></div>
         <div class="row justify-content-center">
             <div class="col-lg-10 px-3 py-2 bg-light">
@@ -37,7 +37,7 @@
 
         </div>
         <div class="col-lg-10 p-3 bg-light">
-			<div class="row"><div class="col py-1"><h4>Αποτελέσματα</h4></div></div>
+			<div class="row"><div class="col py-1 text-center"><h4>Αποτελέσματα</h4></div></div>
             <div class="row">
                 <div class="col-sm-4 text-center">
                     <canvas id="cnvgauge5" ></canvas>
@@ -73,7 +73,7 @@
 			if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection != "n/a") { ?>
 		<div class="col-lg-10 p-3 bg-light">
 		<div class="row">
-<div class = "col-12">
+<div class = "col-12 text-center">
 	<h4><?= $this->lang->line('genremark_inspection'); ?></h4></div>
 	<div class = "col-12 pb-3"><?= $inspection->en_rmrk_inspection ?></div>
 		
@@ -89,11 +89,7 @@
    
     
 </div>
-<div id="spinner" class="d-flex justify-content-center" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0; z-index: 9999; background: rgba(255,255,255,0.7);">
-  <div class="spinner-border align-self-center" role="status">
-    <span class="sr-only">Loading...</span>
-  </div>
-</div>
+
 
 
 
