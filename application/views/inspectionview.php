@@ -103,24 +103,25 @@
 
 
     </div>
-	
+<div class="row justify-content-center">	
+	<div class="col-lg-10">
 <?php if (isset($inspection->qrcode_inspection)) {
 
 } else {  ?>
 	
 <?php $attributes = array('id' => 'qrcodeForm');
 echo form_open("inspection/qrcode_save", $attributes);?>
-<div class="row justify-content-center mt-2">
+<div class="row justify-content-center mt-2">D165237
 <input type="hidden" name="id_inspection" value = "<?= $inspection->id_inspection ?>" >	
 <div class="col-6 col-md-3"><label for="reg_vhcl">QR Code</label></div>
-<div class="col-6 col-md-6"><input type="text" class="form-control" id="qrcode_inspection" name ="qrcode_inspection" onfocusout="checkifexists(this, 4)"></div>
+<div class="col-6 col-md-6"><input type="text" class="form-control" id="qrcode_inspection" name ="qrcode_inspection" onkeyup="checkifexists(this, 4)"></div>
 <div class = "col col-md-3"><button type="submit" class="btn btn-primary" disabled><?= $this->lang->line('submit'); ?></button></div>
 </div>
 <?php
  echo form_close();
 } ?>
-
-	
+</div>
+</div>
     <div class="row justify-content-center mt-2">
         <div class="col-lg-10 p-3">
             <div class="row mb-2">
@@ -389,6 +390,7 @@ function checkifexists(fld, len){
 			fld.placeholder = chkval+"- <?= $this->lang->line('already_exists'); ?>";
 			fld.focus();
 			} else {
+				console.log("ok!")
 				}
 			});
 			}
