@@ -972,13 +972,18 @@ echo $url;
 public function removeimg() {
 	$imgid = $this->input->post('id');
 	$filename = $this->itindata_model->getsingleimg($imgid);
+	if (file_exists('upload/'.$filename)) {	
 	$delete=unlink('upload/'.$filename);    
 if($delete){  
 	$this->itindata_model->delsingleimg($imgid);
 	$status = "ok";
 }else{  
 	$status = "nok";
+} } else {
+	$this->itindata_model->delsingleimg($imgid);
+	$status = "ok";
 }
+
 	$this->output->set_header("Cache-Control: no-cache, must-revalidate");
 	$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
 	$this->output->set_header("Content-type: application/json");
