@@ -333,7 +333,7 @@ $.ajax({
     type: "POST",
     dataType: "JSON",
     data: {chk_fld:chkfld, chk_val:chkval},
-    url: "checkifexists",
+    url: "<?= base_url()?>inspection/checkifexists",
     success: function(data){
     	$.each(data, function(i,item){
 			if (item.EXISTS == 'exists'){
