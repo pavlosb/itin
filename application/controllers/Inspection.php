@@ -849,9 +849,9 @@ $this->itindata_model->upd_inspection($id, $updinsp);
 redirect('inspection/inspection_view/'.$id);
 
 
-	}
+	} else {
 	redirect('inspection/inspections_list')
-
+	}
 } else {
 	redirect('auth/login');
 }
