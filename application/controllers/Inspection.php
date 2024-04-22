@@ -850,7 +850,7 @@ redirect('inspection/inspection_view/'.$id);
 
 
 	} else {
-	redirect('inspection/inspections_list')
+	redirect('inspection/inspections_list');
 	}
 } else {
 	redirect('auth/login');
