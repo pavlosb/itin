@@ -46,12 +46,12 @@
                 </div>
                 <div class="col-sm-4 text-center">   
                     <canvas id="cnvgauge6"></canvas>
-                    <div style="width:100%" class="text-center small"><?= $this->lang->line('pdf_technology_check'); ?></div>
+                    <div style="width:100%" class="text-center small"><?= $this->lang->line('pdf_bodywork_check'); ?></div>
                     <div id="score5" style="width:100%" class="text-center mb-2"><?= round(100 * ($sec2score / 62), 2) ?><small>%</small></div>
                 </div>
                 <div class="col-sm-4 text-center">    
                     <canvas id="cnvgauge7"></canvas>
-                    <div style="width:100%" class="text-center small"><?= $this->lang->line('pdf_technology_check'); ?></div>
+                    <div style="width:100%" class="text-center small"><?= $this->lang->line('pdf_system_check'); ?></div>
                     <div id="score6" style="width:100%" class="text-center mb-2"><?= round(100 * ($sec3score / 16), 2) ?><small>%</small></div>
                 </div>
             </div>
