@@ -113,7 +113,7 @@
 <div id="qrcode" class="float-md-right"></div>
 <script type="text/javascript">
 var qrcode = new QRCode("qrcode", {
-    text: "<?= base_url()?>publickview/<?= $inspection->qrcode_inspection ?>",
+    text: "<?= base_url()?>publicview/<?= $inspection->qrcode_inspection ?>",
     width: 80,
     height: 80,
     colorDark : "#000000",
