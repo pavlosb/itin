@@ -104,7 +104,7 @@
 
 
     </div>
-<div class="row justify-content-center mt-2">	
+<div id="qrcodeinfo" class="row justify-content-center mt-2">	
 	<div class="col-lg-10 bg-warning">
 <?php if (isset($inspection->qrcode_inspection)) { ?>
 <div class="row justify-content-center align-items-center py-2">
@@ -357,6 +357,7 @@ $( "#resetinsp" ).click(function() {
                    // alert(data.certfile_inspection);
                     $( "#resetinsp" ).hide();
 					$('.inspfile').remove();
+					$('#qrcodeinfo').remove();
                     $("#spinner").removeClass("d-flex").hide();
                     
 		
