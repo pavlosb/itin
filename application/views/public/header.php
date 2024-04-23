@@ -23,6 +23,6 @@
   <div class="content">  
   <header>
   <div class="container">
-		<div class="row"><div class="col px-3 py-5"><img src="<?php echo base_url(); ?>assets/images/Dekra-Imperial_Horizontal-1.svg" class="img-fluid"></div></div>
+		<div class="row"><div class="col-md-4 px-3 py-5"><img src="<?php echo base_url(); ?>assets/images/Dekra-Imperial_Horizontal-1.svg" class="img-fluid"></div></div>
 </div>
 </header>
