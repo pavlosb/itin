@@ -140,6 +140,7 @@ if ($cp['name_section'] != $scp) { ?>
 </div>
     </div>
   </div>
+ 
 	<div class="form-group row pb-3">
 		<div class="col-12">
     <label for="rmrk[<?= $cp['id_cp']; ?>]"><?= $this->lang->line('comment'); ?></label>
@@ -195,11 +196,12 @@ $scp = $cp['name_section'];
 </div>
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
 <script language="JavaScript">
-	$('input[type="file"]').change(function(e){
+
+$('input[type="file"]').change(function(e){
         var fileName = e.target.files[0].name;
         $('.custom-file-label').html(fileName);
     });
-		
+  
 	var i = 0;
 	var j = 0;
 	var ww = window.innerWidth;
@@ -269,8 +271,8 @@ $scp = $cp['name_section'];
    var base64image = document.getElementById("imageprev-"+i).src;
 
    Webcam.upload( base64image, '/inspection/photoupload', function(code, text) {
-        console.log(text);
-				console.log(code);
+      //  console.log(text);
+			//	console.log(code);
        //console.log(text);
 			 var input = document.createElement("input");
 
@@ -308,7 +310,9 @@ document.getElementById("closecamera").style.display = "block";
      configure();
 	 }
 
-	 function uploadFile() {
+
+
+ function uploadFile() {
 	i = i+1;
   let formData = new FormData(); 
 	const fileInput = document.getElementById("fileupload");
@@ -355,8 +359,8 @@ i=i+1;
 });
 
 
-  
   }
+
 </script>
 <script>
 jQuery(document).ready(function($) {

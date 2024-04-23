@@ -1,7 +1,8 @@
+
 <div class="container mt-5 mb-5">
         <div class="row justify-content-center">
             <div class="col-lg-10 px-3 py-2 bg-light">
-
+				
 			<div class="row"><?php if ($signature) { ?>
 	<div class="col-sm-12 px-3 py-2 bg-success text-white">Έγινε αποδοχή των Όρων Ελέγχου Οχημάτων από <?= $signature['clientlname_signature'] ?> <?= $signature['clientfname_signature'] ?></div>
 	
@@ -103,6 +104,40 @@
 
 
     </div>
+<div class="row justify-content-center mt-2">	
+	<div class="col-lg-10 bg-warning">
+<?php if (isset($inspection->qrcode_inspection)) { ?>
+<div class="row justify-content-center py-2">
+<div class = "col">QRCODE: <strong><?= $inspection->qrcode_inspection ?></strong></div>
+<div class="col">
+<div id="qrcode" class="float-md-right"></div>
+<script type="text/javascript">
+var qrcode = new QRCode("qrcode", {
+    text: "<?= base_url()?>publicview/<?= $inspection->qrcode_inspection ?>",
+    width: 80,
+    height: 80,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+});
+</script>
+</div>
+</div>
+<?php } else {  ?>
+	
+<?php $attributes = array('id' => 'qrcodeForm');
+echo form_open("inspection/qrcode_save", $attributes);?>
+<div class="row justify-content-center py-2-2">
+    <input type="hidden" name="id_inspection" value = "<?= $inspection->id_inspection ?>" >	
+<div class="col-4 col-md-2 py-1"><label for="reg_vhcl">QR Code</label></div>
+<div class="col-8 col-md-8 py-1"><input type="text" class="form-control" id="qrcode_inspection" name ="qrcode_inspection" onkeyup="checkifexists(this, 4)"></div>
+<div class = "col col-md-3 py-1"><button type="submit" id="submitbtn" class="btn btn-success btn-block"><?= $this->lang->line('submit'); ?></button></div>
+</div>
+<?php
+ echo form_close();
+} ?>
+</div>
+</div>
     <div class="row justify-content-center mt-2">
         <div class="col-lg-10 p-3">
             <div class="row mb-2">
@@ -348,4 +383,35 @@ bootbox.setDefaults({
 
 
 });
-    </script>
+  
+  
+function checkifexists(fld, len){
+		
+		var chkval = fld.value;
+		var chkfld  = fld.name;
+	$('#submitbtn').prop("disabled",true);
+		if (chkval.length > len) {
+			$(".memberok").empty();
+			$(".nomember").empty();
+	$.ajax({
+		type: "POST",
+		dataType: "JSON",
+		data: {chk_fld:chkfld, chk_val:chkval},
+		url: "<?= base_url()?>inspection/checkifexists",
+		success: function(data){
+			$.each(data, function(i,item){
+				if (item.EXISTS == 'exists'){
+			fld.value ="";
+			fld.placeholder = chkval+"- <?= $this->lang->line('already_exists'); ?>";
+			fld.focus();
+			} else {
+				$('#submitbtn').prop("disabled",false);
+				}
+			});
+			}
+		
+	  
+	}); 
+	}
+	}
+		</script>

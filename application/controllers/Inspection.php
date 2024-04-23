@@ -119,7 +119,7 @@ class Inspection extends CI_Controller {
 			$data['username'] = $user->first_name." ".$user->last_name;
 
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
-$inspstatus = $inspections[0]->status_inspection;
+			$inspstatus = $inspections[0]->status_inspection;
 			if ($inspstatus < 1) {
 			$data['inspection'] = $inspections[0];
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
@@ -127,12 +127,12 @@ $inspstatus = $inspections[0]->status_inspection;
 			$data['inspremark'] = $this->itindata_model->get_inspectionremarks($id);
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
-$data['signature'] = $this->_checksignature($id);
+			$data['signature'] = $this->_checksignature($id);
 				$this->load->view('header', $data);
 				$this->load->view('inspectionform', $data);
 				$this->load->view('footer', $data);
-		} else {
-redirect('inspection/inspection_view/'.$id);
+			} else {
+				redirect('inspection/inspection_view/'.$id);
 			}
 		} else {
 			redirect('auth/login');
@@ -383,7 +383,7 @@ echo json_encode($status) ;
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
 			$data['inspectionid'] = $id;
-$data['signature'] = $this->_checksignature($id);
+			$data['signature'] = $this->_checksignature($id);
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			$this->load->view('header', $data);
 			$this->load->view('inspectionview', $data);
@@ -450,14 +450,14 @@ foreach ($points as $key => $value):
 	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
 
 endforeach;
-if(isset($photos)) {
+if($photos) {
 foreach ($photos as $key => $filename):
 	if ($filename!=""){
 	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename));
 	}
 endforeach;
 }
-if(isset($remarks)) {
+if($remarks) {
 foreach ($remarks as $key => $value):
 	if ($value!=""){
 	$remdata[] = array('inspectionid_insrem' => $this->input->post('inspectionid_insres'), 'chkpointid_insrem' => $key, 'remark_insrem' => $value);
@@ -469,7 +469,7 @@ $this->itindata_model->set_inspectionscore($this->input->post('inspectionid_insr
 if ($remdata && count($remdata) > 0) {
 $this->itindata_model->set_inspectionremarks($this->input->post('inspectionid_insres'), $remdata);
 }
-if (isset($imgdata) && count($imgdata) > 0) {
+if ($imgdata && count($imgdata) > 0) {
 $this->itindata_model->set_inspectionimg($this->input->post('inspectionid_insres'), $imgdata);
 }
 $updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 1);
@@ -816,7 +816,8 @@ $fieldtables = array (
 	'reg_vhcl' => 'vehicles_tbl',
 	'vatno_client'=> 'clients_tbl',
 	'email_client'=> 'clients_tbl',
-	'number_inspection' => 'inspections_tbl'
+	'number_inspection' => 'inspections_tbl',
+	'qrcode_inspection' => 'inspections_tbl'
 );
 $chk_fld = $this->input->post('chk_fld');
 $chk_val = $this->input->post('chk_val');
@@ -838,6 +839,23 @@ echo json_encode($status) ;
 }
 }
 
+public function qrcode_save() {
+	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
+	{
+	if (isset($_POST)) {
+$id = $this->input->post('id_inspection');
+$updinsp['qrcode_inspection'] = $this->input->post('qrcode_inspection');
+$this->itindata_model->upd_inspection($id, $updinsp);
+redirect('inspection/inspection_view/'.$id);
+
+
+	} else {
+	redirect('inspection/inspections_list');
+	}
+} else {
+	redirect('auth/login');
+}
+}
 
 private function _getcarbrands(){
 
@@ -922,32 +940,34 @@ echo $url;
 
 
  public function imgupload(){
-	
-	for($i=0;$i < count($_FILES['file']);$i++)  
-	  {  
-	 /* Get the name of the uploaded file */
-	$filename = str_replace(' ', '_', $_FILES['file']['name'][$i]);
-	
-	/* Choose where to save the uploaded file */
-	$location = "upload/".$filename;
-	
-	/* Save the uploaded file to the local filesystem */
-	if ( move_uploaded_file($_FILES['file']['tmp_name'][$i], $location) ) { 
-		$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
-	} 
-	//$fns[] = $filename;
-	}
-	//$response['url'] = $url;
-	$files = $url;
-	//$howmany = count($_FILES["fileInput"]['name']);
-	$response['files'] = $files;
-	
-	
-	echo json_encode($response);
-	exit; 
-	} 
 
 
+
+	
+for($i=0;$i < count($_FILES['file']);$i++)  
+  {  
+ /* Get the name of the uploaded file */
+$filename = str_replace(' ', '_', $_FILES['file']['name'][$i]);
+
+/* Choose where to save the uploaded file */
+$location = "upload/".$filename;
+
+/* Save the uploaded file to the local filesystem */
+if ( move_uploaded_file($_FILES['file']['tmp_name'][$i], $location) ) { 
+	$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
+} 
+//$fns[] = $filename;
+}
+//$response['url'] = $url;
+$files = $url;
+//$howmany = count($_FILES["fileInput"]['name']);
+$response['files'] = $files;
+
+
+echo json_encode($response);
+exit; 
+// }
+}
  public function dynimg($id) {
 	$pointscore = $this->itindata_model->get_scoreforoutside($id);
 	
