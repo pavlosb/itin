@@ -964,7 +964,9 @@ $files = $url;
 //$howmany = count($_FILES["fileInput"]['name']);
 $response['files'] = $files;
 
-
+$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+$this->output->set_header("Content-type: application/json");
 echo json_encode($response);
 exit; 
 // }
