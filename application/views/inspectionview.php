@@ -104,8 +104,8 @@
 
 
     </div>
-<div class="row justify-content-center">	
-	<div class="col-lg-10">
+<div class="row justify-content-center mt-2">	
+	<div class="col-lg-10 bg-warning">
 <?php if (isset($inspection->qrcode_inspection)) { ?>
 <div class="row justify-content-center mt-2">
 <div class = "col">QRCODE: <strong><?= $inspection->qrcode_inspection ?></strong></div>
@@ -114,8 +114,8 @@
 <script type="text/javascript">
 var qrcode = new QRCode("qrcode", {
     text: "http://jindo.dev.naver.com/collie",
-    width: 128,
-    height: 128,
+    width: 80,
+    height: 80,
     colorDark : "#000000",
     colorLight : "#ffffff",
     correctLevel : QRCode.CorrectLevel.H
