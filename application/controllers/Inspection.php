@@ -767,10 +767,10 @@ redirect('inspection/inspections_list', 'refresh');
 				$newprfx = "";
 				}
 			if (unlink($grfile) && unlink($enfile)) {
-			$updinsp['qrcode_inspection'] = '';		
+			$updinsp['qrcode_inspection'] = NULL;		
 			$updinsp['status_inspection'] = 0;
-			$updinsp['filename_inspection'] = '';
-			$updinsp['en_filename_inspection'] = '';
+			$updinsp['filename_inspection'] = NULL;
+			$updinsp['en_filename_inspection'] = NULL;
 			$this->itindata_model->upd_inspection($id, $updinsp);
 			$status['reseted'] = "ok";	
 			} else {
