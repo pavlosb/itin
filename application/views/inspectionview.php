@@ -107,13 +107,13 @@
 <div class="row justify-content-center mt-2">	
 	<div class="col-lg-10 bg-warning">
 <?php if (isset($inspection->qrcode_inspection)) { ?>
-<div class="row justify-content-center mt-2">
+<div class="row justify-content-center py-2">
 <div class = "col">QRCODE: <strong><?= $inspection->qrcode_inspection ?></strong></div>
 <div class="col">
-<div id="qrcode"></div>
+<div id="qrcode" class="float-md-right"></div>
 <script type="text/javascript">
 var qrcode = new QRCode("qrcode", {
-    text: "http://jindo.dev.naver.com/collie",
+    text: "<?= base_url()?>publickview/<?= $inspection->qrcode_inspection ?>",
     width: 80,
     height: 80,
     colorDark : "#000000",
