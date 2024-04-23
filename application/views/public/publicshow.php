@@ -86,7 +86,7 @@
 
 
     </div>
-    <div class="row justify-content-center mx-5">
+    <div class="row justify-content-center my-5">
     <div class="col-lg-10" style="overflow-y: scroll; height: 400px;">
 	<h3 classs="text-center">ΟΡΟΙ ΕΛΕΓΧΩΝ ΟΧΗΜΑΤΩΝ</h3>
 	<h5>ΕΙΣΑΓΩΓΙΚΑ</h5>
