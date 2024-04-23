@@ -767,6 +767,7 @@ redirect('inspection/inspections_list', 'refresh');
 				$newprfx = "";
 				}
 			if (unlink($grfile) && unlink($enfile)) {
+			$updinsp['qrcode_inspection'] = '';		
 			$updinsp['status_inspection'] = 0;
 			$updinsp['filename_inspection'] = '';
 			$updinsp['en_filename_inspection'] = '';
