@@ -107,7 +107,7 @@
 <div class="row justify-content-center mt-2">	
 	<div class="col-lg-10 bg-warning">
 <?php if (isset($inspection->qrcode_inspection)) { ?>
-<div class="row justify-content-center py-2">
+<div class="row justify-content-center align-items-center py-2">
 <div class = "col">QRCODE: <strong><?= $inspection->qrcode_inspection ?></strong></div>
 <div class="col">
 <div id="qrcode" class="float-md-right"></div>
@@ -127,7 +127,7 @@ var qrcode = new QRCode("qrcode", {
 	
 <?php $attributes = array('id' => 'qrcodeForm');
 echo form_open("inspection/qrcode_save", $attributes);?>
-<div class="row justify-content-center py-2-2">
+<div class="row justify-content-center align-items-center py-2-2">
     <input type="hidden" name="id_inspection" value = "<?= $inspection->id_inspection ?>" >	
 <div class="col-4 col-md-2 py-1"><label for="reg_vhcl">QR Code</label></div>
 <div class="col-8 col-md-7 py-1"><input type="text" class="form-control" id="qrcode_inspection" name ="qrcode_inspection" onkeyup="checkifexists(this, 4)"></div>
