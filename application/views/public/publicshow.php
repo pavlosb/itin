@@ -87,7 +87,7 @@
 
     </div>
     <div class="row justify-content-center my-5">
-    <div class="col-lg-10" style="overflow-y: scroll; height: 400px;">
+    <div class="col-lg-10" style="overflow-y: scroll;height: 400px;border: 1px solid #4d4d4d;">
 	<h3 classs="text-center">ΟΡΟΙ ΕΛΕΓΧΩΝ ΟΧΗΜΑΤΩΝ</h3>
 	<h5>ΕΙΣΑΓΩΓΙΚΑ</h5>
 		<p>Η εταιρεία Ιmperial DEKRA διαθέτοντας υψηλή τεχνογνωσία και εξειδίκευση διενεργεί κατόπιν αιτήσεων ελέγχους σε παντός είδους οχήματα. Οι έλεγχοι της διέπονται από συγκεκριμένους όρους και προϋποθέσεις οι οποίες αναφέρονται αναλυτικά στο παρόν έγγραφο. </p>
