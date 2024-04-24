@@ -131,7 +131,7 @@ if ($cp['name_section'] != $scp) { ?>
     <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1" data-substract = "<?= $cp['points_cp']; ?>" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
   </label>
   <label class="btn btnna btn-secondary <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "active"; } ?>">
-    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2" data-substract = "-<?= $cp['points_cp']; ?>" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2" data-substract = "0" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
   </label>
   <label class="btn btnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "active"; } ?>">
     <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "checked"; } ?> data-substract = "<?= $cp['points_cp']; ?>" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
@@ -385,10 +385,9 @@ jQuery(document).ready(function($) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
 			 total1pc = 100 * (total1 / 112);
-			 if (typeof $(this).data('substract') !== 'undefined') {
 			 $newscore1 = $newscore1 + parseInt($(this).data('substract'));
-			 }
-			 console.log($totscore1);
+			
+			 console.log($newscore1);
        $("#score1").text(total1pc.toFixed(2) + '%');
 			 $("#score4").text(total1pc.toFixed(2) + '%');
           }
