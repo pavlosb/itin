@@ -266,7 +266,9 @@ if ($pointscore != 0) {
 </td>
 <td class="text-center">&nbsp;</td>
 </tr>
- <?php } ?>
+ <?php 
+$z = $z + 1;
+} ?>
 <?php if (isset($inspremark[$cp['id_cp']])){ ?>
 	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
 	<td colspan="3">
@@ -276,7 +278,7 @@ if ($pointscore != 0) {
 	<?php } 
 $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
-$z = $z + 1;
+
  endforeach ?> 
    </table>
 	 <?php if (isset($inspimg)) {  ?>
