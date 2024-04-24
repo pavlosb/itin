@@ -384,7 +384,9 @@ jQuery(document).ready(function($) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
 			 total1pc = 100 * (total1 / 112);
+			 if (typeof $(this).data('substract') !== 'undefined') {
 			 $totscore1 = $totscore1 - parseInt($(this).data('substract'));
+			 }
 			 console.log($totscore1);
        $("#score1").text(total1pc.toFixed(2) + '%');
 			 $("#score4").text(total1pc.toFixed(2) + '%');
