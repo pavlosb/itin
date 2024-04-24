@@ -248,11 +248,14 @@ if ($cp['id_section'] != $scp) {
 <tr><td class="secthd dgreen" colspan="3" style="padding:5px 0; page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp[$printtext_section]; ?></td></tr>
 <?php 
 $y = $y+1;
-} ?>
+} 
+$pointscore = $inspscore[$cp['id_cp']];
+if ($pointscore != 0) {
+?>
 <tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
     <td style="width:60%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
 <td class="text-center" style="width:5%; padding:2px 0 0 0"><?php 
-$pointscore = $inspscore[$cp['id_cp']];
+
  if ($pointscore > 0) { ?>
 <img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
  <?php } else if ($pointscore == 0) { ?>
@@ -263,6 +266,7 @@ $pointscore = $inspscore[$cp['id_cp']];
 </td>
 <td class="text-center">&nbsp;</td>
 </tr>
+ <?php } ?>
 <?php if (isset($inspremark[$cp['id_cp']])){ ?>
 	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
 	<td colspan="3">
