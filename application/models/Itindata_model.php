@@ -21,6 +21,7 @@ class Itindata_model extends CI_Model
        if (isset($where)) {
         $this->db->where($where);
        }
+		 $this->db->order_by('name_carbrand ASC');
         $query = $this->db->get('carbrands_tbl');
         if ($query -> num_rows() > 0) {
 			foreach ($query->result() as $row) {
