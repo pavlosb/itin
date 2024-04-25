@@ -372,7 +372,7 @@ jQuery(document).ready(function($) {
   $('#closecamera').hide();
      $('input:radio').change(function ()
 {
-  alert($(this).data("cpid"));
+  
 
       var total1 = 0;
       var total2 = 0;
@@ -383,6 +383,9 @@ jQuery(document).ready(function($) {
 			$newscore1 = 0;
 
       $('input:radio:checked').each(function(){
+      $cpid = $(this).data("cpid");
+      $ptscp = $(this).data("ptscp");
+      $('input["points['+$cpid +']"').val($ptscp);
         if (!$(this).hasClass('do-not-calc')) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
