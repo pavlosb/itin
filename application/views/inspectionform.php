@@ -578,7 +578,7 @@ gauge6.set(0); // set actual value
 			$("input[data-sectpen='16']").each(function(){
 				pensect3 += parseInt($(this).val());
 			});
-			alert(pensect1, pensect2, pensect3)
+			console.log(pensect1, pensect2, pensect3)
   
      gauge1.set(total1);
      AnimationUpdater.run();
