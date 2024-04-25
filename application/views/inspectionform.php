@@ -372,7 +372,7 @@ jQuery(document).ready(function($) {
   $('#closecamera').hide();
      $('input:radio').change(function ()
 {
-  alert($(this).data(cpid));
+  alert($(this).data("cpid"));
 
       var total1 = 0;
       var total2 = 0;
