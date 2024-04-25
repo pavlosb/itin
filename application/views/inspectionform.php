@@ -412,13 +412,13 @@ jQuery(document).ready(function($) {
       });  
 			
 			$("input[data-sectpen='1']").each(function(){
-				pensect1 += parseInt($(this).val())
+				pensect1 += parseInt($(this).val());
 			});
 			$("input[data-sectpen='2']").each(function(){
-				pensect2 += parseInt($(this).val())
+				pensect2 += parseInt($(this).val());
 			});
 			$("input[data-sectpen='3']").each(function(){
-				pensect3 += parseInt($(this).val())
+				pensect3 += parseInt($(this).val());
 			});
 			console.log(pensect1, pensect2, pensect3);
   
