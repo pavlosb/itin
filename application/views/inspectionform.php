@@ -420,7 +420,7 @@ jQuery(document).ready(function($) {
 			$("input[data-sectpen='16']").each(function(){
 				pensect3 += parseInt($(this).val());
 			});
-			console.log(pensect1, pensect2, pensect3);
+		
   
      gauge1.set(total1);
      AnimationUpdater.run();
@@ -545,6 +545,9 @@ gauge6.set(0); // set actual value
       var total2 = 0;
       var total3 = 0;
       $('input:radio:checked').each(function(){
+				$cpid = $(this).data("cpid");
+      $ptscp = isNaN(parseInt($(this).data("ptscp"))) ? 0 : parseInt($(this).data("ptscp"));
+			$('[name="points['+$cpid +']"]').val($ptscp);
         if (!$(this).hasClass('do-not-calc')) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
@@ -566,6 +569,16 @@ gauge6.set(0); // set actual value
           }
         }
       });    
+			$("input[data-sectpen='1']").each(function(){
+				pensect1 += parseInt($(this).val());
+			});
+			$("input[data-sectpen='12']").each(function(){
+				pensect2 += parseInt($(this).val());
+			});
+			$("input[data-sectpen='16']").each(function(){
+				pensect3 += parseInt($(this).val());
+			});
+			alert(pensect1, pensect2, pensect3)
   
      gauge1.set(total1);
      AnimationUpdater.run();
