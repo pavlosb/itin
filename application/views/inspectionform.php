@@ -377,6 +377,9 @@ jQuery(document).ready(function($) {
       var total1 = 0;
       var total2 = 0;
       var total3 = 0;
+			pensect1 = 0;
+			pensect2 = 0;
+			pensect3 = 0; 
 			$totscore1 = 112;
 			$totscore2 = 62;
 			$totscore2 = 16;
