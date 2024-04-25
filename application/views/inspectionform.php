@@ -420,7 +420,7 @@ jQuery(document).ready(function($) {
 			$("input[data-sectpen='3']").each(function(){
 				pensect3 += parseInt($(this).val())
 			});
-			console.log(sectpen1, sectpen2, sectpen3);
+			console.log(pensect1, pensect2, pensect3);
   
      gauge1.set(total1);
      AnimationUpdater.run();
