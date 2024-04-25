@@ -124,18 +124,18 @@ if ($cp['name_section'] != $scp) { ?>
 
 <div class="form-group row pt-3">
   <input type=hidden name="chpsect[<?= $cp['id_cp']; ?>]" value ="<?= $cp['mainsectid']; ?>">
-  <input type=hidden name="points[<?= $cp['id_cp']; ?>]" value ="0">
+  <input type=hidden name="points[<?= $cp['id_cp']; ?>]" data-sectpen="<?= $cp['mainsectid']; ?>" value ="0">
     <label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
     <div class="col-sm-5 text-center text-sm-right">
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
-    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>" data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="<?= $cp['points_cp']; ?>" class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1[<?= $cp['id_cp']; ?>]" data-substract = "<?= $cp['points_cp']; ?>" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>" data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="0" class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1[<?= $cp['id_cp']; ?>]" data-substract = "<?= $cp['points_cp']; ?>" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
   </label>
   <label class="btn btnna btn-secondary <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "active"; } ?>">
-    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>" data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="0" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2[<?= $cp['id_cp']; ?>]" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>" data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="<?= $cp['points_cp']; ?>" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2[<?= $cp['id_cp']; ?>]" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
   </label>
   <label class="btn btnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "active"; } ?>">
-    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="<?= $cp['points_cp']; ?>" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3[<?= $cp['id_cp']; ?>]" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "checked"; } ?> data-substract = "<?= $cp['points_cp']; ?>" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="0" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3[<?= $cp['id_cp']; ?>]" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "checked"; } ?> data-substract = "<?= $cp['points_cp']; ?>" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
   </label>
   
 </div>
@@ -385,7 +385,7 @@ jQuery(document).ready(function($) {
       $('input:radio:checked').each(function(){
       $cpid = $(this).data("cpid");
       $ptscp = $(this).data("ptscp");
-      $('[name="['+$cpid +']"]').val($ptscp);
+			$('[name="['+$cpid +']"]').val($ptscp);
         if (!$(this).hasClass('do-not-calc')) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
@@ -406,7 +406,18 @@ jQuery(document).ready(function($) {
 			 $("#score6").text(total3pc.toFixed(2) + '%');
           }
         }
-      });   
+      });  
+			
+			$("input[data-sectpen='1']").each(function(){
+				pensect1 += parseInt($(this).val())
+			});
+			$("input[data-sectpen='2']").each(function(){
+				pensect2 += parseInt($(this).val())
+			});
+			$("input[data-sectpen='3']").each(function(){
+				pensect3 += parseInt($(this).val())
+			});
+			console.log(sectpen1, sectpen2, sectpen3);
   
      gauge1.set(total1);
      AnimationUpdater.run();
