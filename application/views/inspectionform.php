@@ -129,13 +129,13 @@ if ($cp['name_section'] != $scp) { ?>
     <div class="col-sm-5 text-center text-sm-right">
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
-    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1[<?= $cp['id_cp']; ?>]" data-substract = "<?= $cp['points_cp']; ?>" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>" data-cpid = "<?= $cp['id_cp']; ?>" class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1[<?= $cp['id_cp']; ?>]" data-substract = "<?= $cp['points_cp']; ?>" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
   </label>
   <label class="btn btnna btn-secondary <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "active"; } ?>">
-    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2[<?= $cp['id_cp']; ?>]" data-substract = "<?= $cp['points_cp']; ?>" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>" data-cpid = "<?= $cp['id_cp']; ?>" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2[<?= $cp['id_cp']; ?>]" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
   </label>
   <label class="btn btnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "active"; } ?>">
-    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3[<?= $cp['id_cp']; ?>]" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "checked"; } ?> data-substract = "<?= $cp['points_cp']; ?>" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  data-cpid = "<?= $cp['id_cp']; ?>" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3[<?= $cp['id_cp']; ?>]" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "checked"; } ?> data-substract = "<?= $cp['points_cp']; ?>" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
   </label>
   
 </div>
@@ -372,6 +372,7 @@ jQuery(document).ready(function($) {
   $('#closecamera').hide();
      $('input:radio').change(function ()
 {
+  alert($(this).data(cpid));
 
       var total1 = 0;
       var total2 = 0;
