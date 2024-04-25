@@ -388,8 +388,7 @@ jQuery(document).ready(function($) {
       $('input:radio:checked').each(function(){
       $cpid = $(this).data("cpid");
       $ptscp = isNaN(parseInt($(this).data("ptscp"))) ? 0 : parseInt($(this).data("ptscp"));
-			console.log($ptscp);
-			$('[name="['+$cpid +']"]').val($ptscp);
+			$('[name="points['+$cpid +']"]').val($ptscp);
         if (!$(this).hasClass('do-not-calc')) {
           if ($(this).data("sect") === 1) {
        total1 += isNaN(parseInt($(this).val())) ? 0 : parseInt($(this).val());
