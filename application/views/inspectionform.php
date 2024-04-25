@@ -387,7 +387,7 @@ jQuery(document).ready(function($) {
 
       $('input:radio:checked').each(function(){
       $cpid = $(this).data("cpid");
-      $ptscp = $(this).data("ptscp");
+      $ptscp = isNaN(parseInt($(this).data("ptscp"))) ? 0 : parseInt($(this).data("ptscp"));
 			$('[name="['+$cpid +']"]').val($ptscp);
         if (!$(this).hasClass('do-not-calc')) {
           if ($(this).data("sect") === 1) {
@@ -414,10 +414,10 @@ jQuery(document).ready(function($) {
 			$("input[data-sectpen='1']").each(function(){
 				pensect1 += parseInt($(this).val());
 			});
-			$("input[data-sectpen='2']").each(function(){
+			$("input[data-sectpen='12']").each(function(){
 				pensect2 += parseInt($(this).val());
 			});
-			$("input[data-sectpen='3']").each(function(){
+			$("input[data-sectpen='16']").each(function(){
 				pensect3 += parseInt($(this).val());
 			});
 			console.log(pensect1, pensect2, pensect3);
