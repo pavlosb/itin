@@ -540,7 +540,9 @@ gauge6.setMinValue(0);  // Prefer setter over gauge.minValue = 0
 gauge6.animationSpeed = 32; // set animation speed (32 is default value)
 gauge6.set(0); // set actual value
 
-
+var pensect1 = 0;
+			var pensect2 = 0;
+			var pensect3 = 0; 
       var total1 = 0;
       var total2 = 0;
       var total3 = 0;
