@@ -159,7 +159,9 @@ $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
  endforeach ?>
 <div class="form-group row" id="imagefields"></div>
-
+<input type=hidden name="pensect1" value ="0">
+<input type=hidden name="pensect2" value ="0">
+<input type=hidden name="pensect3" value ="0">
 <button type="submit" class="btn btn-lg btn-primary float-right"><?= $this->lang->line('submit'); ?></button>
 <?php echo form_close();?>
 </div>
@@ -420,7 +422,9 @@ jQuery(document).ready(function($) {
 			$("input[data-sectpen='16']").each(function(){
 				pensect3 += parseInt($(this).val());
 			});
-		
+      $('[name="pensect1"]').val(pensect1);
+      $('[name="pensect2"]').val(pensect2);
+      $('[name="pensect3"]').val(pensect3);
   
      gauge1.set(total1);
      AnimationUpdater.run();
@@ -580,7 +584,9 @@ var pensect1 = 0;
 			$("input[data-sectpen='16']").each(function(){
 				pensect3 += parseInt($(this).val());
 			});
-			console.log(pensect1, pensect2, pensect3)
+      $('[name="pensect1"]').val(pensect1);
+      $('[name="pensect2"]').val(pensect2);
+      $('[name="pensect3"]').val(pensect3);
   
      gauge1.set(total1);
      AnimationUpdater.run();
