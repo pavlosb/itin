@@ -475,6 +475,10 @@ $this->itindata_model->set_inspectionimg($this->input->post('inspectionid_insres
 $updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 1);
 $updata['s2score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 12);
 $updata['s3score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 16);
+$updata['s1pen_inspection'] = $this->input->post('pensect1');
+$updata['s2pen_inspection'] = $this->input->post('pensect2');
+$updata['s3pen_inspection'] = $this->input->post('pensect3');
+
 $this->itindata_model->upd_inspection($this->input->post('inspectionid_insres'), $updata);
 redirect('inspection/inspections_list', 'refresh');
 	} else {
