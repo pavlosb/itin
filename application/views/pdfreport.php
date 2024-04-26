@@ -254,16 +254,25 @@ $y = $y+1;
     <td style="width:60%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
 <td class="text-center" style="width:5%; padding:2px 0 0 0"><?php 
 $pointscore = $inspscore[$cp['id_cp']];
- if ($pointscore > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
- <?php } else if ($pointscore == 0) { ?>
-    <img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
- <?php } else { ?>
-    <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
-		 <?php } ?>
-</td>
-<td class="text-center">&nbsp;</td>
-</tr>
+if ($pointscore != 0) {
+	?>
+	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
+			<td style="width:60%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
+	<td class="text-center" style="width:5%; padding:2px 0 0 0"><?php 
+	
+	 if ($pointscore > 0) { ?>
+	<img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
+	 <?php } else if ($pointscore == 0) { ?>
+			<img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
+	 <?php } else { ?>
+			<img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
+			 <?php } ?>
+	</td>
+	<td class="text-center">&nbsp;</td>
+	</tr>
+	 <?php 
+	$z = $z + 1;
+	} ?>
 <?php if (isset($inspremark[$cp['id_cp']])){ ?>
 	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
   <td>&nbsp;</td>
@@ -275,7 +284,6 @@ $pointscore = $inspscore[$cp['id_cp']];
 	<?php } 
 $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
-$z = $z + 1;
  endforeach ?> 
    </table>
 	 <?php if (isset($inspimg)) {  ?>
