@@ -70,6 +70,7 @@ $(document).ready(function() {
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
+			"stateSave": true,
             "columnDefs": [
                 {"searchable": false, "orderable": false, "targets": 6 }
         ],
