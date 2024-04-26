@@ -22,6 +22,11 @@ a .red {
     border-color: #1e7e34!important;
 }
 
+.btnna.active {
+    background-color: #000!important;
+    border-color: #000!important;
+}
+
 html,
 body {
     height: 100%;
