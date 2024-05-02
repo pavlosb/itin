@@ -3,10 +3,10 @@
 <footer class="footer">
     <div class = "container ">
         <div class="row">
-            <div class="col-sm-6 text-xs-center pt-2 pb-2">
+            <div class="col-sm-6 text-center text-md-left pt-2 pb-2">
             <small>IMPERIAL DEKRA</small>
             </div>
-            <div class="col-sm-6 text-xs-center text-sm-right pt-2 pb-2">
+            <div class="col-sm-6 text-center text-md-right pt-2 pb-2">
             <small>created by INLINE</small>
             </div>
 </div></div>
