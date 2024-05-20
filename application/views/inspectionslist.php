@@ -69,10 +69,9 @@ $(document).ready(function() {
     $('#inspectlist').DataTable({
 
 		"layout": {
-        "topStart": {
-            "buttons": ['copy', 'csv', 'excel', 'pdf', 'print']
-        }
+        "topStart": 'buttons'
     },
+    "buttons": ['copy', { extend: 'excel', text: 'Save as Excel' }],
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
