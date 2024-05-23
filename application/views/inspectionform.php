@@ -222,7 +222,7 @@ $('input[type="file"]').change(function(e){
 		 dest_width:1024,
 		 dest_height:1024 / rto,
      image_format: 'jpeg',
-     jpeg_quality: 90,
+     jpeg_quality: 95,
 		 constraints: {
    facingMode: 'environment'
  }
