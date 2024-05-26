@@ -92,6 +92,10 @@ if (isset($user_lang) && $user_lang == "greek") {
 <div class="row pb-3">
 	<div class="col-md-3">
 		<div class="row">
+    <div class="col-md-12 py-1">
+    <label for="photo" class="capture-button">Take a Photo</label>
+    <input type="file" id="photo" capture="environment" accept="image/*,video/*">
+              </div>
 			<div class="col-md-12 py-1">
 <button type="button" id="opencamera"  onclick="configure()" class="btn btn-primary btn-block btn-lg"><i class="fas fa-camera"></i></button></div>
 <div class="col-md-12 py-1"><button type="button" id="closecamera"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
