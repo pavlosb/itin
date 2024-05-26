@@ -326,7 +326,65 @@ document.getElementById("closecamera").style.display = "block";
 	//if(fileupload.files[0].length > 0) {
 	for (let j = 0; j < selectedFiles.length; j++) {
 		
-    formData.append("file[]", selectedFiles[j])
+		const upload = selectedFiles[j];
+		let canvas = document.createElement("canvas");
+let canvasContext = canvas.getContext("2d");
+
+let reader = new FileReader();
+
+reader.readAsDataURL(upload);
+
+reader.onload = function () {
+
+  let dummyImg = new Image(
+    0,
+    0
+  );
+
+  dummyImg.src = this.result;
+
+  dummyImg.onload = function () {
+
+    const origWidth = dummyImg.naturalWidth;
+    const origHeight = dummyImg.naturalHeight;
+
+    const desiredWidth = 1024;
+
+    const ratio = desiredWidth / origWidth;
+
+    const correspondingHeight = ratio * origHeight;
+
+    canvas.width = desiredWidth;
+    canvas.height = correspondingHeight;
+
+    canvasContext.drawImage(
+      dummyImg,
+      0,
+      0,
+      desiredWidth,
+      correspondingHeight
+    );
+
+    const resizedImage = canvas.toDataURL(
+      upload.type,
+      1.0
+    );
+
+    // If you bind this code as change listener to your upload element
+    // , I would store the value of 'resizedImage' in a variable,
+    // which you then submit to the server upon form submit. I 
+    // leave that decision up to you. Personally, I prefer storing 
+    // the obtained base64 string in a variable, and then post to 
+    // the server on submit.
+    resizedFile = resizedImage;
+
+  }
+
+} 
+
+
+
+    formData.append("file[]", resizedFile)
 	
 		}
 		
