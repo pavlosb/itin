@@ -89,7 +89,7 @@ if (isset($user_lang) && $user_lang == "greek") {
 							<?php		endforeach;
 								} ?>
 							</div>
-<div class="row pb-3">
+<div class="row pb-3 camerafunc">
 	<div class="col-md-3">
 		<div class="row">
 			<div class="col-md-12 py-1">
@@ -108,7 +108,7 @@ if (isset($user_lang) && $user_lang == "greek") {
 	<div class = "col-md-9"><input id="fileupload" type="file"  name="fileupload[]" accept="image/png, image/jpeg" multiple/>
 	<!--<label class="custom-file-label" for="customFile">Επιλογή αρχείου</label> --></div>
 	<div class = "col-md-3">
-<button  type="button" class="btn btn-info btn-block" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>
+<button  type="button" class="btn btn-info btn-lg btn-block" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>
 </div>
 				<?php		}
             if ($cp['mainsect'] != $mcp) 

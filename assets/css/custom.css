@@ -74,6 +74,8 @@ body {
     opacity: 1;
 }
 
+.camerafunc {opacity: 0;}
+
 ::file-selector-button{
     padding: .5rem 1rem;
     font-size: 1.25rem;
