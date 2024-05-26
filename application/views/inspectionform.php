@@ -377,7 +377,7 @@ reader.onload = function () {
 
 } 
 
-
+alert(resizedFile);
 
     formData.append("file[]", resizedFile)
 	
