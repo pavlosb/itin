@@ -363,10 +363,7 @@ reader.onload = function () {
       correspondingHeight
     );
 
-    const resizedImage = canvas.toDataURL(
-      upload.type,
-      1.0
-    );
+    const resizedImage = canvas.toDataURL(upload.type, 1.0);
 
     // If you bind this code as change listener to your upload element
     // , I would store the value of 'resizedImage' in a variable,
