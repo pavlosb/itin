@@ -341,7 +341,7 @@ reader.onload = function () {
 
   dummyImg.src = this.result;
 
-  dummyImg.onload = function () {
+ 
 
     const origWidth = dummyImg.naturalWidth;
     const origHeight = dummyImg.naturalHeight;
@@ -372,8 +372,7 @@ reader.onload = function () {
     // the obtained base64 string in a variable, and then post to 
     // the server on submit.
     resizedFile = resizedImage;
-		return resizedFile;
-  }
+ 
 
 } 
 
