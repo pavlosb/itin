@@ -329,7 +329,7 @@ document.getElementById("closecamera").style.display = "block";
 		let canvas = document.createElement("canvas");
 		let canvasContext = canvas.getContext("2d");
 		let reader = new FileReader();
-const resizedImage = "";
+		var resizedFile;
 reader.readAsDataURL(upload);
 
 reader.onload = function () {
@@ -363,7 +363,7 @@ reader.onload = function () {
       correspondingHeight
     );
 
-    resizedImage = canvas.toDataURL(
+    const resizedImage = canvas.toDataURL(
       upload.type,
       1.0
     );
