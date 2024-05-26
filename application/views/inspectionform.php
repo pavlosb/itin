@@ -327,6 +327,7 @@ document.getElementById("closecamera").style.display = "block";
 	for (let j = 0; j < selectedFiles.length; j++) {
 		
 		const upload = selectedFiles[j];
+		const resizedImage;
 		let canvas = document.createElement("canvas");
 let canvasContext = canvas.getContext("2d");
 
@@ -365,7 +366,7 @@ reader.onload = function () {
       correspondingHeight
     );
 
-    const resizedImage = canvas.toDataURL(
+    resizedImage = canvas.toDataURL(
       upload.type,
       1.0
     );
