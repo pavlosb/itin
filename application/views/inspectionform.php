@@ -367,6 +367,7 @@ document.getElementById("closecamera").style.display = "block";
             image.src = readerEvent.target.result;
         }
         reader.readAsDataURL(file);
+        alert(event.blob);
         formData.append("file[]", event.blob);
       }
 		
