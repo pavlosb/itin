@@ -211,7 +211,7 @@ $maxpos = $row->maxpos;
       $q = "Select k.*, v.*, c.*, u.first_name, u.last_name from inspections_tbl as k
             LEFT JOIN vehicles_tbl AS v ON k.vehicle_inspection = v.id_vhcl
             LEFT JOIN clients_tbl AS c ON k.client_inspection = c.id_client 
-            LEFT JOIN users AS u ON k.inspector_inspection = u.id ORDER BY k.date_inspection DESC";
+            LEFT JOIN users AS u ON k.inspector_inspection = u.id";
 
       if (isset($where)) 
       {
