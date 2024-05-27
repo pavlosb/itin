@@ -240,6 +240,8 @@ class Inspection extends CI_Controller {
 			$mpdf->WriteHTML($html);
 			$filename = $langprefix;
 			$filename .= $this->_stringclean($inspection->number_inspection);
+			$filename .= "-";
+			$filename .= $id;
 			$dir ="/home/site/wwwroot/assets/pdfs/";
 			//$mpdf->Output();
 			$mpdf->Output($dir.$filename.".pdf",\Mpdf\Output\Destination::FILE);
