@@ -317,7 +317,7 @@ document.getElementById("closecamera").style.display = "block";
 
  function uploadFile() {
 
-  var spinnerdiv = document.getElementById("spinner");
+  let spinnerdiv = document.getElementById("spinner");
   spinnerdiv.classList.add("d-flex");
   spinnerdiv.style.removeProperty("display");
   $("#spinner").addClass("d-flex").show();
@@ -363,10 +363,12 @@ input.setAttribute("value", url);
 document.getElementById("imagefields").appendChild(input); 
 i=i+1;
 									});
+                  let spinnerdiv = document.getElementById("spinner");
+  spinnerdiv.classList.remove("d-flex");
+  spinnerdiv.style.setProperty("display", "none");                
 								}
 });
-spinnerdiv.classList.remove("d-flex");
-  spinnerdiv.style.setProperty("display", "none");
+
 
   }
 
