@@ -367,7 +367,8 @@ document.getElementById("closecamera").style.display = "block";
             image.src = readerEvent.target.result;
         }
         reader.readAsDataURL(file);
-    }
+        formData.append("file[]", event.blob);
+      }
 		
 		var dataURLToBlob = function(dataURL) {
     var BASE64_MARKER = ';base64,';
@@ -393,7 +394,7 @@ document.getElementById("closecamera").style.display = "block";
     return new Blob([uInt8Array], {type: contentType});
 }
     
-formData.append("file[]", event.blob);
+
 		}
 		
   //formData.append("file", fileupload[].files);
