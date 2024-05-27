@@ -393,7 +393,7 @@ document.getElementById("closecamera").style.display = "block";
     return new Blob([uInt8Array], {type: contentType});
 }
     
-	
+formData.append("file[]", event.blob);
 		}
 		
   //formData.append("file", fileupload[].files);
