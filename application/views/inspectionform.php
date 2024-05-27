@@ -316,6 +316,10 @@ document.getElementById("closecamera").style.display = "block";
 
 
  function uploadFile() {
+
+  var spinnerdiv = document.getElementById("spinner");
+  spinnerdiv.classList.add("d-flex");
+  spinnerdiv.style.removeProperty("display");
   $("#spinner").addClass("d-flex").show();
 	i = i+1;
   let formData = new FormData(); 
@@ -361,7 +365,8 @@ i=i+1;
 									});
 								}
 });
-$("#spinner").removeClass("d-flex").hide();
+spinnerdiv.classList.remove("d-flex");
+  spinnerdiv.style.setProperty("display", "none");
 
   }
 
