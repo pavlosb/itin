@@ -316,6 +316,7 @@ document.getElementById("closecamera").style.display = "block";
 
 
  function uploadFile() {
+  $("#spinner").addClass("d-flex").show();
 	i = i+1;
   let formData = new FormData(); 
 	const fileInput = document.getElementById("fileupload");
@@ -360,7 +361,7 @@ i=i+1;
 									});
 								}
 });
-
+$("#spinner").removeClass("d-flex").hide();
 
   }
 
