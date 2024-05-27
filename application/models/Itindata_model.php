@@ -220,7 +220,9 @@ $maxpos = $row->maxpos;
             foreach ($where as $field => $value):
                $q .= $field." = ".$value;
             endforeach;
-      }
+      } else {
+			$q .= " ORDER BY k.date_inspection DESC";
+		}
             $query = $this->db->query($q);
             if ($query -> num_rows() > 0) {
                foreach ($query->result() as $row) {
