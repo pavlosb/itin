@@ -324,60 +324,74 @@ document.getElementById("closecamera").style.display = "block";
 	//if(fileupload.files[0].length > 0) {
 	for (let j = 0; j < selectedFiles.length; j++) {
 		
-		const upload = selectedFiles[j];
 		
-		let canvas = document.createElement("canvas");
-		let canvasContext = canvas.getContext("2d");
-		let reader = new FileReader();
+		var file = selectedFiles[j];
+
+    // Ensure it's an image
+    if(file.type.match(/image.*/)) {
+        console.log('An image has been loaded');
+
+        // Load the image
+        var reader = new FileReader();
+        reader.onload = function (readerEvent) {
+            var image = new Image();
+            image.onload = function (imageEvent) {
+
+                // Resize the image
+                var canvas = document.createElement('canvas'),
+                    max_size = 544,// TODO : pull max size from a site config
+                    width = image.width,
+                    height = image.height;
+                if (width > height) {
+                    if (width > max_size) {
+                        height *= max_size / width;
+                        width = max_size;
+                    }
+                } else {
+                    if (height > max_size) {
+                        width *= max_size / height;
+                        height = max_size;
+                    }
+                }
+                canvas.width = width;
+                canvas.height = height;
+                canvas.getContext('2d').drawImage(image, 0, 0, width, height);
+                var dataUrl = canvas.toDataURL('image/jpeg');
+                var resizedImage = dataURLToBlob(dataUrl);
+                $.event.trigger({
+                    type: "imageResized",
+                    blob: resizedImage,
+                    url: dataUrl
+                });
+            }
+            image.src = readerEvent.target.result;
+        }
+        reader.readAsDataURL(file);
+    }
 		
-reader.readAsDataURL(upload);
+		var dataURLToBlob = function(dataURL) {
+    var BASE64_MARKER = ';base64,';
+    if (dataURL.indexOf(BASE64_MARKER) == -1) {
+        var parts = dataURL.split(',');
+        var contentType = parts[0].split(':')[1];
+        var raw = parts[1];
 
-reader.onload = function () {
+        return new Blob([raw], {type: contentType});
+    }
 
-  let dummyImg = new Image(
-    0,
-    0
-  );
+    var parts = dataURL.split(BASE64_MARKER);
+    var contentType = parts[0].split(':')[1];
+    var raw = window.atob(parts[1]);
+    var rawLength = raw.length;
 
-  dummyImg.src = this.result;
+    var uInt8Array = new Uint8Array(rawLength);
 
- 
+    for (var i = 0; i < rawLength; ++i) {
+        uInt8Array[i] = raw.charCodeAt(i);
+    }
 
-    const origWidth = dummyImg.naturalWidth;
-    const origHeight = dummyImg.naturalHeight;
-
-    const desiredWidth = 1024;
-
-    const ratio = desiredWidth / origWidth;
-
-    const correspondingHeight = ratio * origHeight;
-
-    canvas.width = desiredWidth;
-    canvas.height = correspondingHeight;
-
-    canvasContext.drawImage(
-      dummyImg,
-      0,
-      0,
-      desiredWidth,
-      correspondingHeight
-    );
-
-    const resizedImage = canvas.toDataURL(upload.type, 1.0);
-
-    // If you bind this code as change listener to your upload element
-    // , I would store the value of 'resizedImage' in a variable,
-    // which you then submit to the server upon form submit. I 
-    // leave that decision up to you. Personally, I prefer storing 
-    // the obtained base64 string in a variable, and then post to 
-    // the server on submit.
-    resizedFile = resizedImage;
-    formData.append("file[]", resizedFile);
-
-} 
-
-		
-
+    return new Blob([uInt8Array], {type: contentType});
+}
     
 	
 		}
