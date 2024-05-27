@@ -372,13 +372,13 @@ reader.onload = function () {
     // the obtained base64 string in a variable, and then post to 
     // the server on submit.
     resizedFile = resizedImage;
- 
+    formData.append("file[]", resizedFile);
 
 } 
 
-		alert(resizedFile);
+		
 
-    formData.append("file[]", resizedFile)
+    
 	
 		}
 		
