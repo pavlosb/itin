@@ -23,7 +23,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap4.js"></script>
    <!--<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/rg-1.1.0/datatables.min.js"></script> -->
 	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
-	 <script type="text/javascript" src="https://cdn.datatables.net/buttons/3.0.2/js/dataTables.buttons.min.js"></script>
+	 <script type="text/javascript" src="https://cdn.datatables.net/buttons/3.0.2/js/buttons.dataTables.js"></script>
   </head>
   <body>
   <div class="content">  
