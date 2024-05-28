@@ -75,12 +75,13 @@ new DataTable('#inspectlist', {
         topStart: {
             buttons: [{
                     extend: 'excel',
+					filename: "itin-inspection_list_"+currentDate,
+						title: "ITIN - Κατάλογος Επιθεωρήσεων"
                     exportOptions: {
                         modifier: {
                             page: 'current'
                         },
-						filename: "itin-inspection_list_"+currentDate,
-						title: "ITIN - Κατάλογος Επιθεωρήσεων"
+						
                     }
                 }, 'print'],
 			
