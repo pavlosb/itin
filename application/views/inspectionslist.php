@@ -65,7 +65,8 @@ var ulang = '<?= ucfirst($user_lang) ?>';
 new DataTable('#inspectlist', {
 	layout: {
         topStart: {
-            buttons: ['excel', 'pdf', 'print']
+            buttons: ['excel', 'pdf', 'print'],
+			bottomStart: 'pageLength'
         }
     },
     order: [[1, 'desc']],
