@@ -62,7 +62,14 @@ if (isset($user_lang) && $user_lang == "greek") {
 </div>
 <script>
 var ulang = '<?= ucfirst($user_lang) ?>';
-var tdate = new Date();
+const date = new Date();
+
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+
+// This arrangement can be altered based on how we want the date's format to appear.
+let currentDate = '${day}-${month}-${year}';
 new DataTable('#inspectlist', {
 	layout: {
         topStart: {
@@ -72,7 +79,7 @@ new DataTable('#inspectlist', {
                         modifier: {
                             page: 'current'
                         },
-						filename: "itin-inspection_list_"+tdate
+						filename: "itin-inspection_list_"+currentDate
                     }
                 }, 'pdf', 'print'],
 			
