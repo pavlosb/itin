@@ -69,7 +69,7 @@ let month = date.getMonth() + 1;
 let year = date.getFullYear();
 
 // This arrangement can be altered based on how we want the date's format to appear.
-let currentDate = day + '-' + month + '-' + year';
+let currentDate = day + '-' + month + '-' + year;
 new DataTable('#inspectlist', {
 	layout: {
         topStart: {
