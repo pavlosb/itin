@@ -101,7 +101,7 @@ $lang['no_vehicle_chosen'] = 'Δεν έχετε επιλέξει Όχημα';
 $lang['inspection_report'] = 'Έκθεση Επιθεώρησης';
 $lang['inspection_certificate'] = 'DEKRA Πιστοποιητικό';
 $lang['create_certificate'] = 'Δημιουργία Πιστοποιητικού';
-$lang['inspector'] = 'Εμπειρογνώμονας';
+$lang['inspector'] = 'Επιθεωρητής';
 $lang['leave_empty'] = 'Αφήστε κενό για αυτόματη αρίθμηση';
 $lang['comment'] = 'Παρατηρήσεις';
 $lang['genremark_inspection'] = 'Γενική Παρατήρηση';
@@ -134,7 +134,7 @@ $lang['pdf_mlg_notice'] = '*Θεωρείται δεδομένο, ότι η συ�
 $lang['pdf_technology_check'] = 'DEKRA Τεχνικός Έλεγχος';
 $lang['pdf_bodywork_check'] = 'DEKRA Έλεγχος Αμαξώματος';
 $lang['pdf_system_check'] = 'DEKRA Έλεγχος Συστήματος';
-$lang['pdf_inspector'] = 'Ο εμπειρογνώμονας';
+$lang['pdf_inspector'] = 'Ο επιθεωρητής';
 $lang['pdf_sign_notice'] = 'Αυτό το έγγραφο συντάχθηκε ηλεκτρονικά και είναι έγκυρο και δίχως υπογραφή';
 
 // PDF CERT
