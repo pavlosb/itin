@@ -79,9 +79,10 @@ new DataTable('#inspectlist', {
                         modifier: {
                             page: 'current'
                         },
-						filename: "itin-inspection_list_"+currentDate
+						filename: "itin-inspection_list_"+currentDate,
+						title: "ITIN - Κατάλογος Επιθεωρήσεων"
                     }
-                }, 'pdf', 'print'],
+                }, 'print'],
 			
         }, bottomStart: 'pageLength'
     },
