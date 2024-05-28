@@ -61,21 +61,51 @@ if (isset($user_lang) && $user_lang == "greek") {
   </div>
 </div>
 <script>
+var ulang = '<?= ucfirst($user_lang) ?>';
+const date = new Date();
+
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+
+// This arrangement can be altered based on how we want the date's format to appear.
+let currentDate = day + '-' + month + '-' + year;
+new DataTable('#inspectlist', {
+	layout: {
+        topStart: {
+            buttons: [{
+                    extend: 'excel',
+					className: 'btn btn-success',
+					filename: "itin-inspection_list_"+currentDate,
+						title: "ITIN - Κατάλογος Επιθεωρήσεων",
+                    exportOptions: {
+                        modifier: {
+                            page: 'current'
+                        },
+						
+                    }
+                }, 'print'],
+			
+        }, bottomStart: 'pageLength'
+    },
+    order: [[1, 'desc']],
+            language: {
+                url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
+            },
+			stateSave: true,
+            columnDefs: [
+                {searchable: false, orderable: false, targets: [4,5,6] },
+				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
+        ],
+        lengthMenu: [ 25, 50, 100 ]
+        });
+
 $(document).ready(function() {
     $("#spinner").removeClass("d-flex").hide();
     $('.prep').hide();
-    var ulang = '<?= ucfirst($user_lang) ?>';
+    
 
-    $('#inspectlist').DataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
-            },
-			"stateSave": true,
-            "columnDefs": [
-                {"searchable": false, "orderable": false, "targets": 6 }
-        ],
-        "lengthMenu": [ 25, 50, 100 ]
-        });
+   
 
 
         $( ".createrpt" ).click(function() {
