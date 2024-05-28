@@ -28,7 +28,7 @@ if (isset($user_lang) && $user_lang == "greek") {
                     <td class="text-center"><?php echo $insp->date_inspection; ?></td>
                     <td class="text-center"><?php echo $insp->reg_vhcl; ?> <?php echo $insp->make_vhcl; ?></td>
                     <td class="text-center"><?php echo $insp->name_client; ?></td>
-					<td class="text-center"><?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?></td>
+					<td class="text-center"><?php echo $insp->last_name; ?> <?php echo $insp->first_name; ?></td>
                     <td class="text-center"><?php 
                     if ($insp->filename_inspection != NULL) {?>
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
