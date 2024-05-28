@@ -77,10 +77,7 @@ $(document).ready(function() {
             },
             "columnDefs": [
                 {"searchable": false, "orderable": false, "targets": 6 },
-				{
-            "targets": 1,
-            "render": DataTable.render.date()
-        }
+				{"targets": 1, "render": DataTable.render.date()}
         ],
         "lengthMenu": [ 25, 50, 100 ]
         });
