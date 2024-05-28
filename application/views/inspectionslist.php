@@ -70,7 +70,7 @@ new DataTable('#inspectlist', {
 			stateSave: true,
             columnDefs: [
                 {searchable: false, orderable: false, targets: [4,5,6] },
-				{targets: 1, render: DataTable.render.date()}
+				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
         ],
         lengthMenu: [ 25, 50, 100 ]
         });
