@@ -76,7 +76,11 @@ $(document).ready(function() {
                 "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
             "columnDefs": [
-                {"searchable": false, "orderable": false, "targets": 6 }
+                {"searchable": false, "orderable": false, "targets": 6 },
+				{
+            "targets": 1,
+            "render": DataTable.render.date()
+        }
         ],
         "lengthMenu": [ 25, 50, 100 ]
         });
