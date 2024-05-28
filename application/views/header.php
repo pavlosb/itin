@@ -18,6 +18,7 @@
 <script src="<?php echo base_url(); ?>assets/js/webcam.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/qrcode.min.js"></script>
    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/rg-1.1.0/datatables.min.js"></script>
+	 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.2/moment.min.js"></script>
  <title>ITIN</title>
   </head>
   <body>
