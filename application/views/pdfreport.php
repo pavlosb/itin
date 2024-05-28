@@ -132,10 +132,10 @@ E-Mail: dekra@imperial-dekra.gr<br />
 <td class="frcellfld"><?= $this->lang->line('pdf_model_vhcl'); ?></td><td><?php echo $inspection->model_vhcl; ?></td><td class="frcellfld" nowrap><?= $this->lang->line('fuel_vhcl'); ?>:</td><td><?php echo $this->lang->line($inspection->fueltyp_vhcl); ?></td>
 </tr>
 <tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_wheeldrive_vhcl'); ?></td><td><?php echo $this->lang->line($inspection->wheeldrive_vhcl); ?></td><td class="frcellfld"><?= $this->lang->line('pdf_mlg_vhcl'); ?></td><td><?php echo $inspection->mlg_vhcl; ?></td>
+<td class="frcellfld"><?= $this->lang->line('pdf_wheeldrive_vhcl'); ?></td><td><?php echo $this->lang->line($inspection->wheeldrive_vhcl); ?></td><td class="frcellfld"><?= $this->lang->line('pdf_mlg_vhcl'); ?></td><td><?php echo number_format($inspection->mlg_vhcl, 0,',', '.'); ?></td>
 </tr>
 <tr>
-<td class="frcellfld"><?= $this->lang->line('pdf_displpow_vhcl'); ?></td><td><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td><td class="frcellfld" nowrap><?= $this->lang->line('pdf_firstreg_vhcl'); ?></td><td><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></td>
+<td class="frcellfld"><?= $this->lang->line('pdf_displpow_vhcl'); ?></td><td><?php echo number_format($inspection->pow_vhcl, 0,',', '.'); ?>kW / <?php echo number_format($inspection->displ_vhcl, 0,',', '.'); ?>ccm</td><td class="frcellfld" nowrap><?= $this->lang->line('pdf_firstreg_vhcl'); ?></td><td><?php echo date("m/Y", strtotime($inspection->firstreg_vhcl)); ?></td>
 </tr>
 <tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
 <tr><td colspan="4" class="smalltxt"><?= $this->lang->line('pdf_mlg_notice'); ?></td></tr>
