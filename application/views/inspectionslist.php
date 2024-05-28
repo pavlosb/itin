@@ -76,6 +76,7 @@ let scn =   date.getSeconds();
 // This arrangement can be altered based on how we want the date's format to appear.
 let currentDate = day + '-' + month + '-' + year+'_'+ hr + mint + scn;
 new DataTable('#inspectlist', {
+	responsive: true,
 	layout: {
         topStart: {
             buttons: [{
