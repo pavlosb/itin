@@ -62,10 +62,19 @@ if (isset($user_lang) && $user_lang == "greek") {
 </div>
 <script>
 var ulang = '<?= ucfirst($user_lang) ?>';
+var tdate = new Date();
 new DataTable('#inspectlist', {
 	layout: {
         topStart: {
-            buttons: ['excel', 'pdf', 'print'],
+            buttons: [{
+                    extend: 'excel',
+                    exportOptions: {
+                        modifier: {
+                            page: 'current'
+                        },
+						filename: "itin-inspection_list_"+tdate
+                    }
+                }, 'pdf', 'print'],
 			
         }, bottomStart: 'pageLength'
     },
