@@ -63,6 +63,11 @@ if (isset($user_lang) && $user_lang == "greek") {
 <script>
 var ulang = '<?= ucfirst($user_lang) ?>';
 new DataTable('#inspectlist', {
+	layout: {
+        topStart: {
+            buttons: ['excel', 'pdf', 'print']
+        }
+    },
     order: [[1, 'desc']],
             language: {
                 url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
