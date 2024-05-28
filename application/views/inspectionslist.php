@@ -61,26 +61,26 @@ if (isset($user_lang) && $user_lang == "greek") {
   </div>
 </div>
 <script>
+var ulang = '<?= ucfirst($user_lang) ?>';
+new DataTable('#inspectlist', {
+    order: [[1, 'desc']],
+            language: {
+                url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
+            },
+			stateSave: true,
+            columnDefs: [
+                {searchable: false, orderable: false, targets: 6 },
+				{targets: 1, render: DataTable.render.date()}
+        ],
+        lengthMenu: [ 25, 50, 100 ]
+        });
+
 $(document).ready(function() {
     $("#spinner").removeClass("d-flex").hide();
     $('.prep').hide();
     var ulang = '<?= ucfirst($user_lang) ?>';
 
-    $('#inspectlist').DataTable({
-
-		"layout": {
-        "topStart": 'buttons'
-    },
-    "buttons": ['copy', { extend: 'excel', text: 'Save as Excel' }],
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
-            },
-            "columnDefs": [
-                {"searchable": false, "orderable": false, "targets": 6 },
-				{"targets": 1, "render": DataTable.render.date()}
-        ],
-        "lengthMenu": [ 25, 50, 100 ]
-        });
+    
 
 
         $( ".createrpt" ).click(function() {
