@@ -77,7 +77,7 @@ new DataTable('#inspectlist', {
                     extend: 'excel',
 					className: 'btn btn-success',
 					filename: "itin-inspection_list_"+currentDate,
-						title: "ITIN - Κατάλογος Επιθεωρήσεων"
+						title: "ITIN - Κατάλογος Επιθεωρήσεων",
                     exportOptions: {
                         modifier: {
                             page: 'current'
