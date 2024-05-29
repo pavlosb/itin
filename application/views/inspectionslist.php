@@ -5,7 +5,7 @@ if (isset($user_lang) && $user_lang == "greek") {
 } else {
   $langprefix ="en_";
   }
-?><div class="container mt-5">
+?><div class="container mt-5 mb-5">
     <div class="row justify-content-center">
          <div class="col-12">
             <table id="inspectlist" class="table table-striped table-sm">
