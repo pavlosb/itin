@@ -15,6 +15,7 @@ if (isset($user_lang) && $user_lang == "greek") {
                         <th scope="col" class="text-center"><?= $this->lang->line('date_inspection'); ?></th>
 						<th scope="col" class="text-center"><?= $this->lang->line('vehicle_inspection'); ?></th>
                         <th scope="col" class="text-center"><?= $this->lang->line('reg_vhcl'); ?></th>
+						<th scope="col" class="text-center"><?= $this->lang->line('vin_vhcl'); ?></th>
                         <th scope="col" class="text-center"><?= $this->lang->line('client_vhcl'); ?></th>
 						<th scope="col" class="text-center"><?= $this->lang->line('inspector'); ?></th>
                         <th scope="col" class="text-center"><i class="fal fa-file-alt"></i></th>
@@ -25,10 +26,11 @@ if (isset($user_lang) && $user_lang == "greek") {
                 <tbody>
                 <?php foreach ($inspections as $insp): ?>
                     <tr>
-                    <td class="text-left"><?php echo $insp->number_inspection; ?></td>
+                    <td class="text-left"><small><?php echo $insp->number_inspection; ?></small></td>
                     <td class="text-center"><?php echo $insp->date_inspection; ?></td>
 					<td class="text-center"><?php echo $insp->make_vhcl; ?> <?php echo $insp->model_vhcl; ?></td>
                     <td class="text-center"><?php echo $insp->reg_vhcl; ?></td>
+                    <td class="text-center"><small><?php echo $insp->vin_vhcl; ?></small></td>
                     <td class="text-center"><?php echo $insp->name_client; ?></td>
 					<td class="text-center"><?php echo $insp->last_name; ?> <?php echo $insp->first_name; ?></td>
                     <td class="text-center"><?php 
@@ -37,8 +39,8 @@ if (isset($user_lang) && $user_lang == "greek") {
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
                     <?php } else { ?>
                         <button type="button" class="createrpt btn btn-outline-success btn-sm" data-inspid="<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></button>
-                        <span class="prep"><a class="repel" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
-                        <span class="prep"><a class="repen" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
+                        <span class="prep" style="display:none;"><a class="repel" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
+                        <span class="prep" style="display:none;"><a class="repen" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
                     <?php } ?></td>
                     <td class="text-center"><?php 
                     if ( ($insp->s1score_inspection >= 92) && ($insp->s2score_inspection >= 53) && ($insp->s1score_inspection >= 12))
