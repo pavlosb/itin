@@ -11,17 +11,17 @@ if (isset($user_lang) && $user_lang == "greek") {
             <table id="inspectlist" class="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th scope="col" class="text-center"><small><?= $this->lang->line('number_inspection'); ?></small></th>
-                        <th scope="col" class="text-center"><small><?= $this->lang->line('date_inspection'); ?></small></th>
+                    <th scope="col" class="text-center min-tablet-l"><small><?= $this->lang->line('number_inspection'); ?></small></th>
+                    <th scope="col" class="text-center all"><small><?= $this->lang->line('date_inspection'); ?></small></th>
 						<th scope="col" class="text-center"><small><?= $this->lang->line('make_vhcl'); ?></small></th>
 						<th scope="col" class="text-center"><small><?= $this->lang->line('model_vhcl'); ?></small></th>
                         <th scope="col" class="text-center"><small><?= $this->lang->line('reg_vhcl'); ?></small></th>
-						<th scope="col" class="text-center"><small><?= $this->lang->line('vin_vhcl'); ?></small></th>
+						<th scope="col" class="text-center never"><small><?= $this->lang->line('vin_vhcl'); ?></small></th>
                         <th scope="col" class="text-center"><small><?= $this->lang->line('client_vhcl'); ?></small></th>
-						<th scope="col" class="text-center"><small><?= $this->lang->line('inspector'); ?></small></th>
-                        <th scope="col" class="text-center"><i class="fal fa-file-alt"></i></th>
+						<th scope="col" class="text-center never"><small><?= $this->lang->line('inspector'); ?></small></th>
+                        <th scope="col" class="text-center all"><i class="fal fa-file-alt"></i></th>
                         <th scope="col" class="text-center"><i class="fal fa-tachometer-fast"></i></th>
-                        <th scope="col" class="text-center"></th>
+                        <th scope="col" class="text-center all"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -83,7 +83,7 @@ let scn =   date.getSeconds();
 let currentDate = day + '-' + month + '-' + year+'_'+ hr + mint + scn;
 new DataTable('#inspectlist', {
 	columnDefs: [
-				{targets: [5,7], visible: false},
+				/*{targets: [5,7], visible: false},*/
                 {searchable: false, orderable: false, targets: [8,9,10] },
 				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
 				
@@ -98,7 +98,7 @@ new DataTable('#inspectlist', {
 						title: "ITIN - Κατάλογος Επιθεωρήσεων",
                     exportOptions: {
                         modifier: {
-                            page: 'current',
+                            page: 'all',
 							
                         },
 						columns: [0,1,2,3,4,5,6,7]
