@@ -11,14 +11,14 @@ if (isset($user_lang) && $user_lang == "greek") {
             <table id="inspectlist" class="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th scope="col" class="text-center"><?= $this->lang->line('number_inspection'); ?></th>
-                        <th scope="col" class="text-center"><?= $this->lang->line('date_inspection'); ?></th>
-						<th scope="col" class="text-center"><?= $this->lang->line('make_vhcl'); ?></th>
-						<th scope="col" class="text-center"><?= $this->lang->line('model_vhcl'); ?></th>
-                        <th scope="col" class="text-center"><?= $this->lang->line('reg_vhcl'); ?></th>
-						<th scope="col" class="text-center"><?= $this->lang->line('vin_vhcl'); ?></th>
-                        <th scope="col" class="text-center"><?= $this->lang->line('client_vhcl'); ?></th>
-						<th scope="col" class="text-center"><?= $this->lang->line('inspector'); ?></th>
+                        <th scope="col" class="text-center"><small><?= $this->lang->line('number_inspection'); ?></small></th>
+                        <th scope="col" class="text-center"><small><?= $this->lang->line('date_inspection'); ?></small></th>
+						<th scope="col" class="text-center"><small><?= $this->lang->line('make_vhcl'); ?></small></th>
+						<th scope="col" class="text-center"><small><?= $this->lang->line('model_vhcl'); ?></small></th>
+                        <th scope="col" class="text-center"><small><?= $this->lang->line('reg_vhcl'); ?></small></th>
+						<th scope="col" class="text-center"><small><?= $this->lang->line('vin_vhcl'); ?></small></th>
+                        <th scope="col" class="text-center"><small><?= $this->lang->line('client_vhcl'); ?></small></th>
+						<th scope="col" class="text-center"><small><?= $this->lang->line('inspector'); ?></small></th>
                         <th scope="col" class="text-center"><i class="fal fa-file-alt"></i></th>
                         <th scope="col" class="text-center"><i class="fal fa-tachometer-fast"></i></th>
                         <th scope="col" class="text-center"></th>
@@ -108,7 +108,7 @@ new DataTable('#inspectlist', {
 			stateSave: true,
             columnDefs: [
                 {searchable: false, orderable: false, targets: [8,9,10] },
-				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
+				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')},
 				{ visible: false, targets: [5,7] }
         ],
         lengthMenu: [ 25, 50, 100 ]
