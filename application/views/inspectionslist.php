@@ -83,7 +83,7 @@ let scn =   date.getSeconds();
 let currentDate = day + '-' + month + '-' + year+'_'+ hr + mint + scn;
 new DataTable('#inspectlist', {
 	columnDefs: [
-				{targets: [5,7], visible: false},
+				/*{targets: [5,7], visible: false},*/
                 {searchable: false, orderable: false, targets: [8,9,10] },
 				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
 				
@@ -128,7 +128,7 @@ new DataTable('#inspectlist', {
             language: {
                 url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
-			/*stateSave: true,*/
+			stateSave: true,
                     lengthMenu: [ 25, 50, 100 ]
         });
 
