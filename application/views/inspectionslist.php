@@ -93,9 +93,9 @@ new DataTable('#inspectlist', {
                     exportOptions: {
                         modifier: {
                             page: 'current',
-							columns: [0,1,2,3,4]
+							
                         },
-						
+						columns: [0,1,2,3,4,5,6,7]
                     }
                 }, 'print'],
 			
@@ -107,7 +107,7 @@ new DataTable('#inspectlist', {
             },
 			stateSave: true,
             columnDefs: [
-                {searchable: false, orderable: false, targets: [4,5,6] },
+                {searchable: false, orderable: false, targets: [8,9,10] },
 				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
         ],
         lengthMenu: [ 25, 50, 100 ]
