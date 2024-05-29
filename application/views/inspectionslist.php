@@ -93,7 +93,22 @@ new DataTable('#inspectlist', {
         topStart: {
             buttons: [{
                     extend: 'excel',
+                    text: 'Excel'
 					className: 'btn btn-success',
+					filename: "itin-inspection_list_"+currentDate,
+						title: "ITIN - Κατάλογος Επιθεωρήσεων",
+                    exportOptions: {
+                        modifier: {
+                            page: 'all',
+							
+                        },
+						columns: [0,1,2,3,4,5,6,7]
+                    }
+                },
+                {
+                    extend: 'excel',
+                    text: 'Excel (όλα)'
+					className: 'btn btn-info',
 					filename: "itin-inspection_list_"+currentDate,
 						title: "ITIN - Κατάλογος Επιθεωρήσεων",
                     exportOptions: {
@@ -103,7 +118,9 @@ new DataTable('#inspectlist', {
                         },
 						columns: [0,1,2,3,4,5,6,7]
                     }
-                }, 'print'],
+                },           
+                
+                'print'],
 			
         }, bottomStart: 'pageLength'
     },
