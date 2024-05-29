@@ -82,7 +82,13 @@ let scn =   date.getSeconds();
 // This arrangement can be altered based on how we want the date's format to appear.
 let currentDate = day + '-' + month + '-' + year+'_'+ hr + mint + scn;
 new DataTable('#inspectlist', {
-	responsive: true,
+	columnDefs: [
+				{targets: [5,7], visible: false},
+                {searchable: false, orderable: false, targets: [8,9,10] },
+				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
+				
+        ],
+		responsive: true,
 	layout: {
         topStart: {
             buttons: [{
@@ -106,13 +112,7 @@ new DataTable('#inspectlist', {
                 url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
 			stateSave: true,
-            columnDefs: [
-				{visible: false, target: [5,7] },
-                {searchable: false, orderable: false, targets: [8,9,10] },
-				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
-				
-        ],
-        lengthMenu: [ 25, 50, 100 ]
+                    lengthMenu: [ 25, 50, 100 ]
         });
 
 $(document).ready(function() {
