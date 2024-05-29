@@ -111,7 +111,7 @@ new DataTable('#inspectlist', {
             language: {
                 url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
-			stateSave: true,
+			/*stateSave: true,*/
                     lengthMenu: [ 25, 50, 100 ]
         });
 
