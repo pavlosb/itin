@@ -26,6 +26,7 @@ if (isset($user_lang) && $user_lang == "greek") {
                 <tbody>
                 <?php foreach ($inspections as $insp): ?>
                     <tr>
+                    <td class="text-left"><small><?php echo $insp->date_inspection; ?></small></td>
                     <td class="text-left"><small><?php echo $insp->number_inspection; ?></small></td>
                     <td class="text-center"><?php echo $insp->date_inspection; ?></td>
 					<td class="text-center"><?php echo $insp->make_vhcl; ?></td>
