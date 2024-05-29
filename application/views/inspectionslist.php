@@ -107,9 +107,9 @@ new DataTable('#inspectlist', {
             },
 			stateSave: true,
             columnDefs: [
-				{visible: false, targets: [5,7] }
+				{visible: false, targets: [5,7] },
                 {searchable: false, orderable: false, targets: [8,9,10] },
-				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')},
+				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
 				
         ],
         lengthMenu: [ 25, 50, 100 ]
