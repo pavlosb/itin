@@ -93,7 +93,7 @@ new DataTable('#inspectlist', {
         topStart: {
             buttons: [{
                     extend: 'excel',
-                    text: 'Excel'
+                    text: 'Excel',
 					className: 'btn btn-success',
 					filename: "itin-inspection_list_"+currentDate,
 						title: "ITIN - Κατάλογος Επιθεωρήσεων",
@@ -107,7 +107,7 @@ new DataTable('#inspectlist', {
                 },
                 {
                     extend: 'excel',
-                    text: 'Excel (όλα)'
+                    text: 'Excel (όλα)',
 					className: 'btn btn-info',
 					filename: "itin-inspection_list_"+currentDate,
 						title: "ITIN - Κατάλογος Επιθεωρήσεων",
