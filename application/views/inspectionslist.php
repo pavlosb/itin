@@ -11,10 +11,13 @@ if (isset($user_lang) && $user_lang == "greek") {
             <table id="inspectlist" class="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th scope="col" class="text-center"><?= $this->lang->line('number_inspection'); ?></th>
-                        <th scope="col" class="text-center"><?= $this->lang->line('date_inspection'); ?></th>
-                        <th scope="col" class="text-center"><?= $this->lang->line('vehicle_inspection'); ?></th>
-                        <th scope="col" class="text-center"><?= $this->lang->line('client_vhcl'); ?></th>
+                    <th scope="col" class="text-center"><small><?= $this->lang->line('date_inspection'); ?></small></th>
+						<th scope="col" class="text-center"><small><?= $this->lang->line('make_vhcl'); ?></small></th>
+						<th scope="col" class="text-center"><small><?= $this->lang->line('model_vhcl'); ?></small></th>
+                        <th scope="col" class="text-center"><small><?= $this->lang->line('reg_vhcl'); ?></small></th>
+						<th scope="col" class="text-center"><small><?= $this->lang->line('vin_vhcl'); ?></small></th>
+                        <th scope="col" class="text-center"><small><?= $this->lang->line('client_vhcl'); ?></small></th>
+						<th scope="col" class="text-center"><small><?= $this->lang->line('inspector'); ?></small></th>
                         <th scope="col" class="text-center"><i class="fal fa-file-alt"></i></th>
                         <th scope="col" class="text-center"><i class="fal fa-tachometer-fast"></i></th>
                         <th scope="col" class="text-center"></th>
@@ -23,10 +26,14 @@ if (isset($user_lang) && $user_lang == "greek") {
                 <tbody>
                 <?php foreach ($inspections as $insp): ?>
                     <tr>
-                    <td class="text-left"><?php echo $insp->number_inspection; ?></td>
-                    <td class="text-center"><?php echo date("d-m-Y", strtotime($insp->date_inspection)); ?></td>
-                    <td class="text-center"><?php echo $insp->reg_vhcl; ?> <?php echo $insp->make_vhcl; ?></td>
+                    <td class="text-left"><small><?php echo $insp->number_inspection; ?></small></td>
+                    <td class="text-center"><?php echo $insp->date_inspection; ?></td>
+					<td class="text-center"><?php echo $insp->make_vhcl; ?></td>
+					<td class="text-center"><?php echo $insp->model_vhcl; ?></td>
+                    <td class="text-center"><?php echo $insp->reg_vhcl; ?></td>
+                    <td class="text-center"><small><?php echo $insp->vin_vhcl; ?></small></td>
                     <td class="text-center"><?php echo $insp->name_client; ?></td>
+					<td class="text-center"><?php echo $insp->last_name; ?> <?php echo $insp->first_name; ?></td>
                     <td class="text-center"><?php 
                     if ($insp->filename_inspection != NULL) {?>
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
