@@ -13,7 +13,8 @@ if (isset($user_lang) && $user_lang == "greek") {
                     <tr>
                         <th scope="col" class="text-center"><?= $this->lang->line('number_inspection'); ?></th>
                         <th scope="col" class="text-center"><?= $this->lang->line('date_inspection'); ?></th>
-						<th scope="col" class="text-center"><?= $this->lang->line('vehicle_inspection'); ?></th>
+						<th scope="col" class="text-center"><?= $this->lang->line('make_vhcl'); ?></th>
+						<th scope="col" class="text-center"><?= $this->lang->line('model_vhcl'); ?></th>
                         <th scope="col" class="text-center"><?= $this->lang->line('reg_vhcl'); ?></th>
 						<th scope="col" class="text-center"><?= $this->lang->line('vin_vhcl'); ?></th>
                         <th scope="col" class="text-center"><?= $this->lang->line('client_vhcl'); ?></th>
@@ -28,7 +29,8 @@ if (isset($user_lang) && $user_lang == "greek") {
                     <tr>
                     <td class="text-left"><small><?php echo $insp->number_inspection; ?></small></td>
                     <td class="text-center"><?php echo $insp->date_inspection; ?></td>
-					<td class="text-center"><?php echo $insp->make_vhcl; ?> <?php echo $insp->model_vhcl; ?></td>
+					<td class="text-center"><?php echo $insp->make_vhcl; ?></td>
+					<td class="text-center"><?php echo $insp->model_vhcl; ?></td>
                     <td class="text-center"><?php echo $insp->reg_vhcl; ?></td>
                     <td class="text-center"><small><?php echo $insp->vin_vhcl; ?></small></td>
                     <td class="text-center"><?php echo $insp->name_client; ?></td>
