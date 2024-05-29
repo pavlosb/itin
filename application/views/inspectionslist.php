@@ -16,9 +16,9 @@ if (isset($user_lang) && $user_lang == "greek") {
 						<th scope="col" class="text-center"><small><?= $this->lang->line('make_vhcl'); ?></small></th>
 						<th scope="col" class="text-center"><small><?= $this->lang->line('model_vhcl'); ?></small></th>
                         <th scope="col" class="text-center"><small><?= $this->lang->line('reg_vhcl'); ?></small></th>
-						<th scope="col" class="text-center"><small><?= $this->lang->line('vin_vhcl'); ?></small></th>
+						<th scope="col" class="text-center never"><small><?= $this->lang->line('vin_vhcl'); ?></small></th>
                         <th scope="col" class="text-center"><small><?= $this->lang->line('client_vhcl'); ?></small></th>
-						<th scope="col" class="text-center"><small><?= $this->lang->line('inspector'); ?></small></th>
+						<th scope="col" class="text-center never"><small><?= $this->lang->line('inspector'); ?></small></th>
                         <th scope="col" class="text-center all"><i class="fal fa-file-alt"></i></th>
                         <th scope="col" class="text-center"><i class="fal fa-tachometer-fast"></i></th>
                         <th scope="col" class="text-center all"></th>
@@ -103,7 +103,7 @@ new DataTable('#inspectlist', {
             language: {
                 url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
-		/*	stateSave: true, */
+		stateSave: true, 
             columnDefs: [
                 {searchable: false, orderable: false, targets: [4,5,6] },
 				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
