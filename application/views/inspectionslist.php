@@ -92,7 +92,8 @@ new DataTable('#inspectlist', {
 						title: "ITIN - Κατάλογος Επιθεωρήσεων",
                     exportOptions: {
                         modifier: {
-                            page: 'current'
+                            page: 'current',
+							columns: [0,1,2,3,4]
                         },
 						
                     }
