@@ -103,7 +103,7 @@ new DataTable('#inspectlist', {
             language: {
                 url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
-			stateSave: true,
+		/*	stateSave: true, */
             columnDefs: [
                 {searchable: false, orderable: false, targets: [4,5,6] },
 				{targets: 1, render: DataTable.render.date('YYYY-MM-DD', 'DD-MM-YYYY', 'el')}
