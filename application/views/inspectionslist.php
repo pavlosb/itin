@@ -11,6 +11,7 @@ if (isset($user_lang) && $user_lang == "greek") {
             <table id="inspectlist" class="table table-striped table-sm">
                 <thead>
                     <tr>
+					<th scope="col" class="text-center"><small><?= $this->lang->line('number_inspection'); ?></small></th>
                     <th scope="col" class="text-center"><small><?= $this->lang->line('date_inspection'); ?></small></th>
 						<th scope="col" class="text-center"><small><?= $this->lang->line('make_vhcl'); ?></small></th>
 						<th scope="col" class="text-center"><small><?= $this->lang->line('model_vhcl'); ?></small></th>
@@ -26,7 +27,6 @@ if (isset($user_lang) && $user_lang == "greek") {
                 <tbody>
                 <?php foreach ($inspections as $insp): ?>
                     <tr>
-                    <td class="text-left"><small><?php echo $insp->date_inspection; ?></small></td>
                     <td class="text-left"><small><?php echo $insp->number_inspection; ?></small></td>
                     <td class="text-center"><?php echo $insp->date_inspection; ?></td>
 					<td class="text-center"><?php echo $insp->make_vhcl; ?></td>
