@@ -41,8 +41,8 @@ if (isset($user_lang) && $user_lang == "greek") {
                     <a href="<?= base_url()?>assets/pdfs/<?= $insp->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a>
                     <?php } else { ?>
                         <button type="button" class="createrpt btn btn-outline-success btn-sm" data-inspid="<?= $insp->id_inspection ?>"><i class="fas fa-plus"></i></button>
-                        <span class="prep"><a class="repel" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
-                        <span class="prep"><a class="repen" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
+                        <span class="prep" style="display:none;"><a class="repel" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
+                        <span class="prep" style="display:none;"><a class="repen" href="" target="_blank"><i class="fal fa-file-pdf fa-lg"></i></a></span>
                     <?php } ?></td>
                     <td class="text-center"><?php 
                     if ( ($insp->s1score_inspection >= 92) && ($insp->s2score_inspection >= 53) && ($insp->s1score_inspection >= 12))
