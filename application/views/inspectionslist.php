@@ -5,13 +5,13 @@ if (isset($user_lang) && $user_lang == "greek") {
 } else {
   $langprefix ="en_";
   }
-?><div class="container mt-5 mb-5">
+?><div class="container mt-5 mb-3">
     <div class="row justify-content-center">
          <div class="col-12">
             <table id="inspectlist" class="table table-striped table-sm">
                 <thead>
                     <tr>
-                    <th scope="col" class="text-center min-tablet-l"><small><?= $this->lang->line('number_inspection'); ?></small></th>
+					<th scope="col" class="text-center min-tablet-l"><small><?= $this->lang->line('number_inspection'); ?></small></th>
                     <th scope="col" class="text-center all"><small><?= $this->lang->line('date_inspection'); ?></small></th>
 						<th scope="col" class="text-center"><small><?= $this->lang->line('make_vhcl'); ?></small></th>
 						<th scope="col" class="text-center"><small><?= $this->lang->line('model_vhcl'); ?></small></th>
@@ -93,7 +93,22 @@ new DataTable('#inspectlist', {
         topStart: {
             buttons: [{
                     extend: 'excel',
+                    text: 'Excel',
 					className: 'btn btn-success',
+					filename: "itin-inspection_list_"+currentDate,
+						title: "ITIN - Κατάλογος Επιθεωρήσεων",
+                    exportOptions: {
+                        modifier: {
+                            page: 'current',
+							
+                        },
+						columns: [0,1,2,3,4,5,6,7]
+                    }
+                },
+                {
+                    extend: 'excel',
+                    text: 'Excel (όλα)',
+					className: 'btn btn-info',
 					filename: "itin-inspection_list_"+currentDate,
 						title: "ITIN - Κατάλογος Επιθεωρήσεων",
                     exportOptions: {
@@ -103,22 +118,27 @@ new DataTable('#inspectlist', {
                         },
 						columns: [0,1,2,3,4,5,6,7]
                     }
-                }, 'print'],
-			
-        }, bottomStart: 'pageLength'
+                },           
+                
+                'print'],
+		        }, bottomStart: 'pageLength'
     },
     order: [[1, 'desc']],
             language: {
                 url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/"+ ulang +".json"
             },
-			stateSave: true,
+			/*stateSave: true,*/
                     lengthMenu: [ 25, 50, 100 ]
         });
 
 $(document).ready(function() {
     $("#spinner").removeClass("d-flex").hide();
     $('.prep').hide();
-    var ulang = '<?= ucfirst($user_lang) ?>';
+    
+
+   
+
+
         $( ".createrpt" ).click(function() {
         var inspid =$(this).data("inspid");
         $('.prep').hide();
