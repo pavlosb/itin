@@ -121,8 +121,7 @@ new DataTable('#inspectlist', {
                 },           
                 
                 'print'],
-			
-        }, bottomStart: 'pageLength'
+		        }, bottomStart: 'pageLength'
     },
     order: [[1, 'desc']],
             language: {
