@@ -72,13 +72,7 @@ if (isset($user_lang) && $user_lang == "greek") {
 			</div>
 			</div>
 
-			<div class="form-group row pt-3">
-			<label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
-
-			<div class="col-sm-5 text-center text-sm-right">
-				
-	</div>			
-			</div>
+			
 
 				
         <?php 
