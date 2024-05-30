@@ -67,11 +67,18 @@ if (isset($user_lang) && $user_lang == "greek") {
         <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
 				<div class="row">
 <div class="form-group col">
-<label for="exampleFormControlTextarea1"><?= $this->lang->line('genremark_inspection'); ?></label>
+<label for="<?= $langprefix ?>rmrk_inspection"><?= $this->lang->line('genremark_inspection'); ?></label>
     <textarea class="form-control" id="<?= $langprefix ?>rmrk_inspection" name="<?= $langprefix ?>rmrk_inspection" rows="5"><?php echo $insgenpremark; ?></textarea>
 			</div>
 			</div>
 
+			<div class="form-group row pt-3">
+			<label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
+
+			<div class="col-sm-5 text-center text-sm-right">
+				
+	</div>			
+			</div>
 
 				
         <?php 
