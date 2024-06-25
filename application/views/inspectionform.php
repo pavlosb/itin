@@ -11,7 +11,7 @@ if (isset($user_lang) && $user_lang == "greek") {
 		$insgenpremark = $inspection->en_rmrk_inspection;
 	}
   }
-	
+
 	$prcp = 0;
   $mainsect = $langprefix."mainsect";
   $name_section = $langprefix."name_section";
@@ -123,7 +123,7 @@ if ($cp['name_section'] != $scp) { ?>
  <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp[$name_section]; ?></legend>
 </div>
 <?php } ?>
-
+<?php if ($cp['cptype'] == 'chs') { ?>
 <div class="form-group row pt-3">
   <input type=hidden name="chpsect[<?= $cp['id_cp']; ?>]" value ="<?= $cp['mainsectid']; ?>">
   <input type=hidden name="points[<?= $cp['id_cp']; ?>]" data-sectpen="<?= $cp['mainsectid']; ?>" value ="<?= $cp['points_cp']; ?>">
@@ -143,7 +143,16 @@ if ($cp['name_section'] != $scp) { ?>
 </div>
     </div>
   </div>
- 
+  <?php } else { ?>
+		<div class="form-group row pt-3">
+		<input type=hidden name="chpsect[<?= $cp['id_cp']; ?>]" value ="<?= $cp['mainsectid']; ?>">
+		<label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
+    <div class="col-sm-5 text-center text-sm-right">
+			 <input type="number" name="checkpoint[<?= $cp['id_cp']; ?>]">
+	</div>
+	</div>
+
+<?php } ?>
 	<div class="form-group row pb-3">
 		<div class="col-12">
     <label for="rmrk[<?= $cp['id_cp']; ?>]"><?= $this->lang->line('comment'); ?></label>
