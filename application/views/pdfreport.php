@@ -4,6 +4,12 @@ if (isset($user_lang) && $user_lang == "greek") {
 } else {
   $langprefix ="en_";
   }
+
+	$ev = array("electric", "pluginpetrol", "plugindiesel");
+	if (!in_array($inspection->fueltyp_vhcl, $ev)) {
+	unset($checkpoints[0]);
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -252,6 +258,7 @@ $y = $y+1;
 $pointscore = $inspscore[$cp['id_cp']];
 if ($pointscore != 0) {
 ?>
+<?php if ($cp['cptype'] == 'chs') { ?>
 <tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
     <td style="width:60%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
 <td class="text-center" style="width:5%; padding:2px 0 0 0"><?php 
@@ -266,6 +273,16 @@ if ($pointscore != 0) {
 </td>
 <td class="text-center">&nbsp;</td>
 </tr>
+<?php } else { ?>
+	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
+    <td style="width:60%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
+<td class="text-center" style="width:5%; padding:2px 0 0 0"><?php 
+echo $pointscore." %"; 
+?>
+</td>
+<td class="text-center">&nbsp;</td>
+</tr>
+	<?php } ?>
  <?php 
 $z = $z + 1;
 } ?>
