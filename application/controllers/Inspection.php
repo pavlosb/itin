@@ -117,7 +117,6 @@ class Inspection extends CI_Controller {
 			$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
-
 			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
 			$inspstatus = $inspections[0]->status_inspection;
 			if ($inspstatus < 1) {
@@ -131,6 +130,7 @@ class Inspection extends CI_Controller {
 			//$this->load->view('header', $data);
 			//$this->load->view('inspectionform', $data);
 			//$this->load->view('footer', $data);
+			unset($data['checkpoints'][0]);
 			print_r($data['checkpoints']);
 			} else {
 				redirect('inspection/inspection_view/'.$id);
