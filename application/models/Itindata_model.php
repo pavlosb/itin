@@ -84,8 +84,7 @@ $maxpos = $row->maxpos;
     public function get_checkpoints()
     {
        // $this->db->order_by('compname_clients', 'ASC');
-		 $this->db->cache_delete_all();
-        $query = $this->db->query('SELECT  c.id_section as mainsectid, c.name_section as mainsect, c.pos_section as sectionpos, c.en_name_section as en_mainsect, c.printtext_section as mainsectprint, c.en_printtext_section as en_mainsectprint, b.id_section, b.name_section, b.en_name_section, b.printtext_section, b.en_printtext_section, a.id_cp, a.name_cp, a.en_name_cp, a.points_cp, a.printtext_cp, a.pos_cp, a.en_printtext_cp, a.nokpoints_cp, a.helptext_cp, a.en_helptext_cp  FROM db_itin.checkpoint_tbl as a left join db_itin.sections_tbl as b on b.id_section = a.sect_cp inner join db_itin.sections_tbl as c on b.parent_section = c.id_section ORDER BY c.pos_section, a.pos_cp');
+		  $query = $this->db->query('SELECT  c.id_section as mainsectid, c.name_section as mainsect, c.pos_section as sectionpos, c.en_name_section as en_mainsect, c.printtext_section as mainsectprint, c.en_printtext_section as en_mainsectprint, b.id_section, b.name_section, b.en_name_section, b.printtext_section, b.en_printtext_section, a.id_cp, a.name_cp, a.en_name_cp, a.points_cp, a.printtext_cp, a.pos_cp, a.en_printtext_cp, a.nokpoints_cp, a.helptext_cp, a.en_helptext_cp  FROM db_itindev.checkpoint_tbl as a left join db_itindev.sections_tbl as b on b.id_section = a.sect_cp inner join db_itindev.sections_tbl as c on b.parent_section = c.id_section ORDER BY c.pos_section, a.pos_cp');
         return $query->result_array();
     }
     
