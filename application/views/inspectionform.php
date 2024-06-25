@@ -148,7 +148,7 @@ if ($cp['name_section'] != $scp) { ?>
 		<input type=hidden name="chpsect[<?= $cp['id_cp']; ?>]" value ="<?= $cp['mainsectid']; ?>">
 		<label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
     <div class="col-sm-5 text-center text-sm-right">
-			 <input type="number" name="checkpoint[<?= $cp['id_cp']; ?>]" <?php if (isset($inspscore)) { echo "value='$inspscore[$cp['id_cp']]'"; } ?>>
+			 <input type="number" name="checkpoint[<?= $cp['id_cp']; ?>]" <?php if (isset($inspscore)) {?> value="<?= $inspscore[$cp['id_cp']] ?>" <?php } ?>>
 	</div>
 	</div>
 
