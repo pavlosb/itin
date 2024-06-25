@@ -18,7 +18,8 @@ if (isset($user_lang) && $user_lang == "greek") {
   $name_cp = $langprefix."name_cp";
   $helptext_cp = $langprefix."helptext_cp";
 
-if ($inspection->fueltyp_vhcl != "electric" || $inspection->fueltyp_vhcl != "pluginpetrol" || $inspection->fueltyp_vhcl != "plugindiesel") {
+	$ev = array("electric", "pluginpetrol", "plugindiesel");
+	if (!in_array($inspection->fueltyp_vhcl, $ev)) {
 	unset($checkpoints[0]);
 }
 
