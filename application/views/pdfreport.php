@@ -285,7 +285,7 @@ echo $pointscore." %";
 	<?php } ?>
  <?php 
 
-} ?>
+ ?>
 <?php if (isset($inspremark[$cp['id_cp']])){ ?>
 	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
   <td>&nbsp;</td>
@@ -295,7 +295,8 @@ echo $pointscore." %";
 <?php		echo $inspremark[$cp['id_cp']]; ?>
 </td></tr>
 	<?php }
-$z = $z + 1;	
+$z = $z + 1;
+}	
 $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
 
