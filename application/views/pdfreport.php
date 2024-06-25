@@ -284,15 +284,18 @@ echo $pointscore." %";
 </tr>
 	<?php } ?>
  <?php 
-$z = $z + 1;
+
 } ?>
 <?php if (isset($inspremark[$cp['id_cp']])){ ?>
 	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-	<td colspan="3">
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+	<td>
 	<u><?= $this->lang->line('comment'); ?></u><br/>
 <?php		echo $inspremark[$cp['id_cp']]; ?>
 </td></tr>
-	<?php } 
+	<?php }
+$z = $z + 1;	
 $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
 
