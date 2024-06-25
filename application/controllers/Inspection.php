@@ -128,9 +128,10 @@ class Inspection extends CI_Controller {
 			$data['inspectionid'] = $id;
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			$data['signature'] = $this->_checksignature($id);
-				$this->load->view('header', $data);
-				$this->load->view('inspectionform', $data);
-				$this->load->view('footer', $data);
+			//	$this->load->view('header', $data);
+			//	$this->load->view('inspectionform', $data);
+			//	$this->load->view('footer', $data);
+			print_r($data['checkpoints']);
 			} else {
 				redirect('inspection/inspection_view/'.$id);
 			}
