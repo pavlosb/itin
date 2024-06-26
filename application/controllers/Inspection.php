@@ -1077,16 +1077,13 @@ private function _checksignature($inspid) {
  }
 
 public function emailsend() {
-
-	$this->load->library('email');
-	$this->email->to('pavlos.bizimis@inline.gr');
-	$this->email->from('itin-noreply@imperial-dekra.gr', 'IMPERIAL-DEKRA');
+$this->load->library('email');
+$this->email->to('pavlos.bizimis@inline.gr');
+$this->email->from('itin-noreply@imperial-dekra.gr', 'IMPERIAL-DEKRA');
 $this->email->cc('pavlos.bizimis@gmail.com');
 //$this->email->bcc('them@their-example.com');
-
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
-
 $this->email->send();
 	
 
