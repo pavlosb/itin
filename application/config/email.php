@@ -12,5 +12,5 @@ $config['smtp_host'] = '185.4.133.216';
 $config['smtp_user'] = 'itin-noreply@imperial-dekra.gr';
 $config['smtp_pass'] = $smtpass;
 $config['smtp_crypto'] = 'TLS';
-$config['smtp_port'] = '25';
+$config['smtp_port'] = '587';
 $config['smtp_timeout'] = '15'; 
