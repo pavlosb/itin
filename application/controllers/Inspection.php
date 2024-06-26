@@ -1080,7 +1080,8 @@ public function emailsend() {
 
 	$this->load->library('email');
 	$this->email->to('pavlos.bizimis@inline.gr');
-//$this->email->cc('another@another-example.com');
+	$this->email->from('itin-noreply@imperial-dekra.gr', 'IMPERIAL-DEKRA');
+$this->email->cc('pavlos.bizimis@gmail.com');
 //$this->email->bcc('them@their-example.com');
 
 $this->email->subject('Email Test');
