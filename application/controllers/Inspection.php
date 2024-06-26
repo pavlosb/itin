@@ -1077,7 +1077,8 @@ private function _checksignature($inspid) {
  }
 
 public function emailsend() {
-
+	$smtpass = getenv("SMTPPASS"); 
+	echo $smtpass;
 	$this->load->library('email');
 	$this->email->to('pavlos.bizimis@inline.gr');
 	$this->email->from('itin-noreply@imperial-dekra.gr', 'IMPERIAL-DEKRA');
