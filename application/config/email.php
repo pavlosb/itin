@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 $smtpass = getenv("SMTPPASS"); 
 
 $config['protocol'] = 'smtp';
