@@ -1075,5 +1075,14 @@ private function _checksignature($inspid) {
 	}
 
  }
+
+public function emailsend() {
+
+	$this->load->library('email');
+	print_r($config);
+
+}
+
+
 }
 
