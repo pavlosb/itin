@@ -1079,7 +1079,15 @@ private function _checksignature($inspid) {
 public function emailsend() {
 
 	$this->load->library('email');
-	print_r($config);
+	$this->email->to('pavlos.bizimis@inline.gr');
+//$this->email->cc('another@another-example.com');
+//$this->email->bcc('them@their-example.com');
+
+$this->email->subject('Email Test');
+$this->email->message('Testing the email class.');
+
+$this->email->send();
+	
 
 }
 
