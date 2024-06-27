@@ -1103,6 +1103,10 @@ $this->email->cc('pavlos.bizimis@gmail.com');
 //$this->email->bcc('them@their-example.com');
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
+$this->email->send(FALSE);
+
+// Will only print the email headers, excluding the message subject and body
+$this->email->print_debugger(array('headers'));
 if ($this->email->send()) {
 	echo "ok";
 	
