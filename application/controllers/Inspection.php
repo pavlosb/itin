@@ -1115,7 +1115,7 @@ $this->email->message('Testing the email class.');
 //} else {
 //	echo "nok";
 //}
-$fp = fsockopen($config['smtp_host'], 443, $errno1, $errstr1, 50);
+$fp = fsockopen('www.inline.gr', 443, $errno1, $errstr1, 50);
 echo "443 ".$errno1." ".$errstr1."<br>";
 $fp = fsockopen($config['smtp_host'], 587, $errno2, $errstr2, 50);
 echo "587 ".$errno2." ".$errstr2."<br>";
