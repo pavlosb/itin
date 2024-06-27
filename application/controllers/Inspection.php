@@ -1081,7 +1081,7 @@ public function emailsend() {
 
 
 
-$this->load->library('email');
+//$this->load->library('email');
 $smtpass = getenv("SMTPPASS"); 
 $config['protocol'] = 'smtp';
 $config['wordwrap'] = TRUE;
@@ -1093,7 +1093,8 @@ $config['smtp_host'] = '162.55.99.207';
 $config['smtp_user'] = 'imperial-dekra@customers.inline.gr';
 $config['smtp_pass'] = $smtpass;
 $config['smtp_crypto'] = 'TLS';
-$config['smtp_port'] = '587';$config['smtp_timeout'] = '15'; 
+$config['smtp_port'] = '587';
+$config['smtp_timeout'] = '15'; 
 $this->email->initialize($config);
 $this->email->to('pavlos.bizimis@outlook.gr');
 $this->email->from('imperial-dekra@customers.inline.gr', 'IMPERIAL-DEKRA');
