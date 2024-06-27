@@ -1103,19 +1103,23 @@ $this->email->cc('pavlos.bizimis@gmail.com');
 //$this->email->bcc('them@their-example.com');
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
-$this->email->send(FALSE);
+//$this->email->send(FALSE);
 
 // Will only print the email headers, excluding the message subject and body
-$this->email->print_debugger();
+//$this->email->print_debugger();
 
 
-if ($this->email->send()) {
-	echo "ok";
+//if ($this->email->send()) {
+//	echo "ok";
 	
-} else {
-	echo "nok";
-}
-	
+//} else {
+//	echo "nok";
+//}
+$fp = fsockopen($config['smtp_host'], 25, $errno1, $errstr1, 30);
+echo "25 ".$errno1." ".$errstr1."<br>";
+$fp = fsockopen($config['smtp_host'], 587, $errno2, $errstr2, 30);
+echo "587 ".$errno2." ".$errstr2."<br>";
+
 
 }
 
