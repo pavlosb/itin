@@ -1083,7 +1083,6 @@ public function emailsend() {
 
 $this->load->library('email');
 $smtpass = getenv("SMTPPASS"); 
-echo $smtpass;
 $config['protocol'] = 'smtp';
 $config['wordwrap'] = TRUE;
 $config['mailtype'] = 'html';
@@ -1106,6 +1105,8 @@ $this->email->send(FALSE);
 
 // Will only print the email headers, excluding the message subject and body
 $this->email->print_debugger();
+
+
 if ($this->email->send()) {
 	echo "ok";
 	
