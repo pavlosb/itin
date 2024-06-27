@@ -1106,7 +1106,7 @@ $this->email->message('Testing the email class.');
 $this->email->send(FALSE);
 
 // Will only print the email headers, excluding the message subject and body
-$this->email->print_debugger(array('headers'));
+$this->email->print_debugger();
 if ($this->email->send()) {
 	echo "ok";
 	
