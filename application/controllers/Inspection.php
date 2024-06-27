@@ -1091,7 +1091,6 @@ $config['crlf'] = '\r\n';
 $config['newline'] = '\r\n';
 $config['smtp_host'] = 'smtp.customers.inline.gr';
 $config['smtp_user'] = 'imperial-dekra@customers.inline.gr';
-$config['_smtp_auth'] = TRUE; //important
 $config['smtp_pass'] = $smtpass;
 $config['starttls'] = true;
 $config['smtp_crypto'] = 'TLS';
