@@ -1083,7 +1083,7 @@ public function emailsend() {
 
 $this->load->library('email');
 $smtpass = getenv("SMTPPASS"); 
-
+echo $smtpass;
 $config['protocol'] = 'smtp';
 $config['wordwrap'] = TRUE;
 $config['mailtype'] = 'html';
