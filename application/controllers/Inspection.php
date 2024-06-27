@@ -1078,8 +1078,8 @@ private function _checksignature($inspid) {
 
 public function emailsend() {
 $this->load->library('email');
-$this->email->to('pavlos.bizimis@inline.gr');
-$this->email->from('itin-noreply@imperial-dekra.gr', 'IMPERIAL-DEKRA');
+$this->email->to('pavlos.bizimis@outlook.gr');
+$this->email->from('imperial-dekra@customers.inline.gr', 'IMPERIAL-DEKRA');
 $this->email->cc('pavlos.bizimis@gmail.com');
 //$this->email->bcc('them@their-example.com');
 $this->email->subject('Email Test');
