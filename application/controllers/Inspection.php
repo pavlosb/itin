@@ -1084,7 +1084,12 @@ $this->email->cc('pavlos.bizimis@gmail.com');
 //$this->email->bcc('them@their-example.com');
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
-$this->email->send();
+if ($this->email->send()) {
+	echo "ok";
+	
+} else {
+	echo "nok";
+}
 	
 
 }
