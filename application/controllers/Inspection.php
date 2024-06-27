@@ -1081,7 +1081,7 @@ public function emailsend() {
 
 
 
-//$this->load->library('email');
+$this->load->library('email');
 $smtpass = getenv("SMTPPASS"); 
 $config['protocol'] = 'smtp';
 $config['wordwrap'] = TRUE;
@@ -1091,7 +1091,7 @@ $config['crlf'] = '\r\n';
 $config['newline'] = '\r\n';
 $config['smtp_host'] = 'smtp.customers.inline.gr';
 $config['smtp_user'] = 'imperial-dekra@customers.inline.gr';
-$config['smtp_pass'] = $smtpass;
+$config['smtp_pass'] = '*1@0$aghLvGq%';
 /*$config['starttls'] = true;
 $config['smtp_crypto'] = 'TLS';*/
 $config['smtp_port'] = '587';
