@@ -1089,9 +1089,10 @@ $config['mailtype'] = 'html';
 $config['charset'] = 'utf-8';
 $config['crlf'] = '\r\n';
 $config['newline'] = '\r\n';
-$config['smtp_host'] = '162.55.99.207';
+$config['smtp_host'] = 'customers.inline.gr';
 $config['smtp_user'] = 'imperial-dekra@customers.inline.gr';
-$config['smtp_pass'] = $smtpass;
+$config['smtp_pass'] = '*1@0$aghLvGq%';
+$config['smtp_crypto'] = 'TLS';
 $config['smtp_port'] = '587';
 $config['smtp_timeout'] = '15'; 
 $this->email->initialize($config);
@@ -1101,17 +1102,17 @@ $this->email->cc('pavlos.bizimis@gmail.com');
 //$this->email->bcc('them@their-example.com');
 $this->email->subject('Email Test');
 $this->email->message('Testing the email class.');
-$this->email->send(FALSE);
+//$this->email->send(FALSE);
 
 // Will only print the email headers, excluding the message subject and body
-$this->email->print_debugger();
+//$this->email->print_debugger();
 
 
 if ($this->email->send()) {
-	echo "ok"."<br>";
+	echo "ok";
 	
 } else {
-	echo "nok"."<br>";
+	echo "nok";
 }
 //$fp = fsockopen('www.inline.gr', 443, $errno1, $errstr1, 50);
 //echo "443 ".$errno1." ".$errstr1."<br>";
