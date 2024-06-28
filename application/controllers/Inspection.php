@@ -1079,20 +1079,29 @@ private function _checksignature($inspid) {
 public function emailsend($inspid=null) {
 $this->load->library('email');
 $inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $inspid));
-print_r($inspections);
-$this->email->to('pavlos.bizimis@outlook.gr');
+$insp = $inspections[0];
+$message = "Γειά σας\r\n";
+$message .= "Η επιθεώρηση σας έχει ολοκληρωθεί με επιτυχία.\r\n";
+$message .= "Παρακαλώ ελέγξτε τα αρχεία που σας στείλαμε.\r\n";
+$message .= "Αν προκύψει οποιαδήποτε διευκρίνηση ή απορία είμαστε στην διάθεση σας.\r\n";
+$message .= "\r\n";
+$message .= "\r\n";
+$message .= "\r\n";
+$message .= "Με εκτίμηση,\r\n";
+$message .= "Car Inspections Department.\r\n";
+$this->email->to($insp->email_client);
 $this->email->from('itin-noreply@imperial-dekra.gr', 'IMPERIAL-DEKRA');
 $this->email->cc('pavlos.bizimis@gmail.com');
 //$this->email->bcc('them@their-example.com');
-$this->email->subject('Email Test');
-$this->email->message('Testing the email class.');
+$this->email->subject('Έκθεση ελέγχου DEKRA IMPERIAL - αριθμός: '.$insp->number_inspection);
+$this->email->message($message);
+$this->email->attach('/home/site/wwwroot/assets/pdfs/'.$insp->filename_inspection);
 
-/*if ($this->email->send()) {
-	echo "ook";
-	
+if ($this->email->send()) {
+	echo "ok";
 } else {
-	echo "nnok";
-}*/
+	echo "nok";
+}
 //$fp = fsockopen('www.inline.gr', 443, $errno1, $errstr1, 50);
 //echo "443 ".$errno1." ".$errstr1."<br>";
 //$fp = fsockopen($config['smtp_host'], 587, $errno2, $errstr2, 50);
