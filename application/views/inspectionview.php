@@ -150,7 +150,7 @@ echo form_open("inspection/qrcode_save", $attributes);?>
             <div class="col-sm-6 p-1 text-center text-sm-left">
             <?php if ($inspection->filename_inspection != NULL) {?>
                 <p class="inspfile"><a href="<?= base_url()?>assets/pdfs/<?= $inspection->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('greeklang'); ?>)</a></p>
-            <?php } ?>
+            <?php } ?> <a class = "btn btn-primary emailsend" href="<?=base_url()?>inspection/emailsend/<?= $insp->id_inspection?>">>Αποστολή με email</a>
             <?php if ($inspection->en_filename_inspection != NULL) {?>
                 <p class="inspfile"><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('englishlang'); ?>)</a></p>
             <?php } ?>
@@ -390,7 +390,16 @@ bootbox.setDefaults({
 
 
 });
-  
+
+$('.emailsend').on('click', function (e) {
+  e.preventDefault();
+  href = $(this).attr('href');
+  return bootbox.confirm('Η έκθεση θα αποσταλεί με email στη διεύθυνση <?= $inspection->email_client ?>. Συμφωνείτε;', function(result) {
+    if (result) {
+      window.location = href
+    }
+  });
+});
   
 function checkifexists(fld, len){
 		
