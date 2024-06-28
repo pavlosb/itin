@@ -1075,5 +1075,52 @@ private function _checksignature($inspid) {
 	}
 
  }
+ public function emailsend($inspid=null) {
+	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
+	{
+		
+$this->load->library('email');
+$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $inspid));
+$insp = $inspections[0];
+$message = "Γειά σας,<br/>";
+$message .= "Η επιθεώρηση σας έχει ολοκληρωθεί με επιτυχία.<br/>";
+$message .= "Παρακαλώ ελέγξτε το συνημμένο αρχείο.<br/>";
+$message .= "Αν προκύψει οποιαδήποτε διευκρίνηση ή απορία είμαστε στην διάθεση σας.<br/>";
+$message .= "<br/>";
+$message .= "<br/>";
+$message .= "<br/>";
+$message .= "Με εκτίμηση,<br/>";
+$message .= "Car Inspections Department.<br/>";
+$this->email->to($insp->email_client);
+$this->email->from('itin-noreply@imperial-dekra.gr', 'IMPERIAL-DEKRA');
+$this->email->cc('pavlos.bizimis@gmail.com');
+//$this->email->bcc('them@their-example.com');
+$this->email->subject('Έκθεση ελέγχου DEKRA IMPERIAL - αριθμός: '.$insp->number_inspection);
+$this->email->message($message);
+$this->email->attach('/home/site/wwwroot/assets/pdfs/'.$insp->filename_inspection);
+
+if ($this->email->send()) {
+	$data['status'] = "success";
+	$data['msg'] = "Η αποστολή ήταν επιτυχής";
+} else {
+	$data['msg'] = "Προέκυψε κάποιο πρόβλημα. Δοκιμάστε ξανά αργότερα";
+	$data['status'] = "warning";
+}
+$data['inspid'] = $inspid;
+//$fp = fsockopen('www.inline.gr', 443, $errno1, $errstr1, 50);
+//echo "443 ".$errno1." ".$errstr1."<br>";
+//$fp = fsockopen($config['smtp_host'], 587, $errno2, $errstr2, 50);
+//echo "587 ".$errno2." ".$errstr2."<br>";
+$this->load->view('header', $data);
+$this->load->view('resultpg', $data);
+$this->load->view('footer', $data);
+
+
+} else {
+	redirect('auth/login');
+}
+
+}
+
 }
 
