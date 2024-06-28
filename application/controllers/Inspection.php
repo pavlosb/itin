@@ -1092,8 +1092,8 @@ $config['newline'] = '\r\n';
 $config['smtp_host'] = 'smtp.customers.inline.gr';
 $config['smtp_user'] = 'imperial-dekra@customers.inline.gr';
 $config['smtp_pass'] = '*1@0$aghLvGq%';
-/*$config['starttls'] = true;
-$config['smtp_crypto'] = 'TLS';*/
+
+$config['smtp_crypto'] = 'TLS';
 $config['smtp_port'] = '587';
 $config['smtp_timeout'] = '15'; 
 $this->email->initialize($config);
@@ -1109,16 +1109,16 @@ $this->email->message('Testing the email class.');
 //$this->email->print_debugger();
 
 
-//if ($this->email->send()) {
-//	echo "ok";
+if ($this->email->send()) {
+	echo "ok";
 	
-//} else {
-//	echo "nok";
-//}
-$fp = fsockopen('www.inline.gr', 443, $errno1, $errstr1, 50);
-echo "443 ".$errno1." ".$errstr1."<br>";
-$fp = fsockopen($config['smtp_host'], 587, $errno2, $errstr2, 50);
-echo "587 ".$errno2." ".$errstr2."<br>";
+} else {
+	echo "nok";
+}
+//$fp = fsockopen('www.inline.gr', 443, $errno1, $errstr1, 50);
+//echo "443 ".$errno1." ".$errstr1."<br>";
+//$fp = fsockopen($config['smtp_host'], 587, $errno2, $errstr2, 50);
+//echo "587 ".$errno2." ".$errstr2."<br>";
 
 
 }
