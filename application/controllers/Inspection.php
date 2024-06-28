@@ -1082,22 +1082,23 @@ public function emailsend() {
 
 
 $this->load->library('email');
-$smtpass = getenv("SMTPPASS"); 
+$smtpass2 = getenv("SMTPPASS"); 
+$smtpass = '*1@0$aghLvGq%';
 $config['protocol'] = 'smtp';
 $config['wordwrap'] = TRUE;
 $config['mailtype'] = 'html';
 $config['charset'] = 'utf-8';
 $config['crlf'] = '\r\n';
 $config['newline'] = '\r\n';
-$config['smtp_host'] = 'customers.inline.gr';
-$config['smtp_user'] = 'imperial-dekra@customers.inline.gr';
-$config['smtp_pass'] = '*1@0$aghLvGq%';
-$config['smtp_crypto'] = 'TLS';
-$config['smtp_port'] = '587';
+$config['smtp_host'] = 'imperial-dekra.gr';
+$config['smtp_user'] = 'itin-noreply@imperial-dekra.gr';
+$config['smtp_pass'] = $smtpass;
+/*$config['smtp_crypto'] = 'TLS';*/
+$config['smtp_port'] = '25';
 $config['smtp_timeout'] = '15'; 
 $this->email->initialize($config);
 $this->email->to('pavlos.bizimis@outlook.gr');
-$this->email->from('imperial-dekra@customers.inline.gr', 'IMPERIAL-DEKRA');
+$this->email->from('itin-noreply@imperial-dekra.gr', 'IMPERIAL-DEKRA');
 $this->email->cc('pavlos.bizimis@gmail.com');
 //$this->email->bcc('them@their-example.com');
 $this->email->subject('Email Test');
@@ -1109,10 +1110,10 @@ $this->email->message('Testing the email class.');
 
 
 if ($this->email->send()) {
-	echo "ok";
+	echo "ook";
 	
 } else {
-	echo "nok";
+	echo "nnok";
 }
 //$fp = fsockopen('www.inline.gr', 443, $errno1, $errstr1, 50);
 //echo "443 ".$errno1." ".$errstr1."<br>";
