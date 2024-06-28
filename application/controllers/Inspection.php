@@ -1103,6 +1103,7 @@ $this->email->attach('/home/site/wwwroot/assets/pdfs/'.$insp->filename_inspectio
 if ($this->email->send()) {
 	$data['status'] = "success";
 	$data['msg'] = "Η αποστολή ήταν επιτυχής";
+	$this->itindata_model->upd_inspection($inspid, array("datesend_inspection" => date('Y-m-d')));
 } else {
 	$data['msg'] = "Προέκυψε κάποιο πρόβλημα. Δοκιμάστε ξανά αργότερα";
 	$data['status'] = "warning";

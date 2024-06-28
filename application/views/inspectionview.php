@@ -154,6 +154,9 @@ echo form_open("inspection/qrcode_save", $attributes);?>
                 <p class="inspfile"><a href="<?= base_url()?>assets/pdfs/<?= $inspection->filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('greeklang'); ?>)</a></p>
             <?php } ?> 
 			</div><div class="col-sm-6 pb-1 text-center text-sm-left">
+				<?php if (isset($inspection->datesend_inspection) && $inspection->datesend_inspection !=NULL) {
+					echo "<small>Η επιθεώρηση έχει σταλεί με email στις ".date("d-m-Y", strtotime($inspection->datesend_inspection))."</small>";
+				} ?>
 			<a class = "btn btn-primary emailsend" href="<?=base_url()?>inspection/emailsend/<?= $inspection->id_inspection?>">Αποστολή με email</a></div></div>
             <div class="row">
 			<?php if ($inspection->en_filename_inspection != NULL) {?>
