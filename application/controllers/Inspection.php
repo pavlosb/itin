@@ -1082,19 +1082,18 @@ public function emailsend() {
 
 
 $this->load->library('email');
-$smtpass2 = getenv("SMTPPASS"); 
-$smtpass = '*1@0$aghLvGq%';
+$smtpass = getenv("SMTPPASS"); 
 $config['protocol'] = 'smtp';
 $config['wordwrap'] = TRUE;
 $config['mailtype'] = 'html';
 $config['charset'] = 'utf-8';
 $config['crlf'] = '\r\n';
 $config['newline'] = '\r\n';
-$config['smtp_host'] = 'imperial-dekra.gr';
-$config['smtp_user'] = 'itin-noreply@imperial-dekra.gr';
+$config['smtp_host'] = 'smtp.sendgrid.net';
+$config['smtp_user'] = 'apikey';
 $config['smtp_pass'] = $smtpass;
 $config['smtp_crypto'] = 'TLS';
-$config['smtp_port'] = '143';
+$config['smtp_port'] = '587';
 $config['smtp_timeout'] = '15'; 
 $this->email->initialize($config);
 $this->email->to('pavlos.bizimis@outlook.gr');
