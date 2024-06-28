@@ -85,7 +85,7 @@ $lang['lng'] = 'LNG';
 $lang['wheeldrive_vhcl'] = 'Drive';
 $lang['fwd'] = 'Front wheel drive';
 $lang['rwd'] = 'Rear wheel drive';
-$lang['awd'] = 'AWD - 4x4';
+$lang['awd'] = 'All wheel drive - AWD';
 
 
 //INSPECTION

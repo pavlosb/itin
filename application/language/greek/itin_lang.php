@@ -85,7 +85,7 @@ $lang['lng'] = 'LNG';
 $lang['wheeldrive_vhcl'] = 'Κίνηση';
 $lang['fwd'] = 'Εμπρός τροχοί';
 $lang['rwd'] = 'Πίσω τροχοί';
-$lang['awd'] = 'Όλοι οι τροχοί - 4x4';
+$lang['awd'] = 'Όλοι οι τροχοί - AWD';
 
 
 //INSPECTION
