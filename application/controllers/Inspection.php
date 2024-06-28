@@ -1089,11 +1089,9 @@ $config['mailtype'] = 'html';
 $config['charset'] = 'utf-8';
 $config['crlf'] = '\r\n';
 $config['newline'] = '\r\n';
-$config['smtp_host'] = 'smtp.customers.inline.gr';
+$config['smtp_host'] = 'customers.inline.gr';
 $config['smtp_user'] = 'imperial-dekra@customers.inline.gr';
 $config['smtp_pass'] = '*1@0$aghLvGq%';
-
-$config['smtp_crypto'] = 'TLS';
 $config['smtp_port'] = '587';
 $config['smtp_timeout'] = '15'; 
 $this->email->initialize($config);
