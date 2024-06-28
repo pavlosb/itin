@@ -1076,26 +1076,9 @@ private function _checksignature($inspid) {
 
  }
 
-public function emailsend() {
-
-
-
-
+public function emailsend($inspid=null) {
 $this->load->library('email');
-$smtpass = getenv("SMTPPASS"); 
-$config['protocol'] = 'smtp';
-$config['wordwrap'] = TRUE;
-$config['mailtype'] = 'html';
-$config['charset'] = 'utf-8';
-$config['crlf'] = '\r\n';
-$config['newline'] = '\r\n';
-$config['smtp_host'] = 'smtp.sendgrid.net';
-$config['smtp_user'] = 'apikey';
-$config['smtp_pass'] = $smtpass;
-$config['smtp_crypto'] = 'TLS';
-$config['smtp_port'] = '587';
-$config['smtp_timeout'] = '15'; 
-$this->email->initialize($config);
+
 $this->email->to('pavlos.bizimis@outlook.gr');
 $this->email->from('itin-noreply@imperial-dekra.gr', 'IMPERIAL-DEKRA');
 $this->email->cc('pavlos.bizimis@gmail.com');
