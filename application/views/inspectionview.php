@@ -160,7 +160,7 @@ echo form_open("inspection/qrcode_save", $attributes);?>
 				<div class="col-sm-6 p-1 text-center text-sm-left">
                 <p class="inspfile"><a href="<?= base_url()?>assets/pdfs/<?= $inspection->en_filename_inspection ?>" target="_blank"><i class="fal fa-file-pdf"></i> <?= $this->lang->line('inspection_report'); ?> (<?= $this->lang->line('englishlang'); ?>)</a></p>
             <?php } ?>
-			</div><div class="col-sm-6 p-1 text-center text-sm-left"></div>
+			</div><div class="col-sm-6 p-1 text-center text-sm-left"></div></div>
 			<div class="row"><div class="col  text-center text-sm-left">
 			<button type="button" id="resetinsp" class="btn btn-outline-danger btn-sm"><i class="fas fa-redo-alt"></i> <?= $this->lang->line('reset_inspection'); ?></button>
             </div></div></div>
