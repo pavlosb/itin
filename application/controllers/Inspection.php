@@ -1108,10 +1108,10 @@ $this->email->print_debugger();
 
 
 if ($this->email->send()) {
-	echo "ok";
+	echo "ok"."<br>";
 	
 } else {
-	echo "nok";
+	echo "nok"."<br>";
 }
 //$fp = fsockopen('www.inline.gr', 443, $errno1, $errstr1, 50);
 //echo "443 ".$errno1." ".$errstr1."<br>";
