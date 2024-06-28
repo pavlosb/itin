@@ -1093,8 +1093,8 @@ $config['newline'] = '\r\n';
 $config['smtp_host'] = 'imperial-dekra.gr';
 $config['smtp_user'] = 'itin-noreply@imperial-dekra.gr';
 $config['smtp_pass'] = $smtpass;
-/*$config['smtp_crypto'] = 'TLS';*/
-$config['smtp_port'] = '25';
+$config['smtp_crypto'] = 'TLS';
+$config['smtp_port'] = '465';
 $config['smtp_timeout'] = '15'; 
 $this->email->initialize($config);
 $this->email->to('pavlos.bizimis@outlook.gr');
