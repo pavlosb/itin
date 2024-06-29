@@ -382,7 +382,7 @@ $config['encryption_key'] = '';
 |
 */
 $config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'itin_session';
+$config['sess_cookie_name'] = 'itindev_session';
 $config['sess_expiration'] = 86500;
 $config['sess_save_path'] = 'sessions';
 $config['sess_match_ip'] = FALSE;
@@ -404,8 +404,8 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
-$config['cookie_prefix']	= 'itin_';
-$config['cookie_domain']	= '';
+$config['cookie_prefix']	= 'itindev_';
+$config['cookie_domain']	= '.azurewebsites.net';
 $config['cookie_path']		= '/';
 $config['cookie_secure']	= FALSE;
 $config['cookie_httponly'] 	= FALSE;
