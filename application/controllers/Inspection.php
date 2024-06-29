@@ -26,10 +26,17 @@ class Inspection extends CI_Controller {
 			$this->load->helper('form');
 			$this->lang->load('itin','greek');
 			$sesdata = $this->session->userdata;
-			$this->data = array(
-			'user_lang' => $sesdata['site_lang'],
-			'usrgrp' => 3
-			);
+			$this->data['usrgrp'] = 3;
+			if (isset($sesdata['user_lang'])) {
+			$this->data['user_lang'] = $sesdata['site_lang'];
+			} else {
+				$this->data['user_lang'] = "greek";
+			}
+
+			//$this->data = array(
+			//'user_lang' => $sesdata['site_lang'],
+			//'usrgrp' => 3
+			//);
 			
 	}
 	public function index()
