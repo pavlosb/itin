@@ -4,6 +4,11 @@ if (isset($user_lang) && $user_lang == "greek") {
 } else {
   $langprefix ="en_";
   }
+	$ev = array("electric", "pluginpetrol", "plugindiesel");
+	if (!in_array($inspection->fueltyp_vhcl, $ev)) {
+	unset($checkpoints[0]);
+}
+
 ?>
 <!doctype html>
 <html lang="en">
