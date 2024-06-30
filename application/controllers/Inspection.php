@@ -1093,7 +1093,7 @@ $message .= "Με εκτίμηση,<br/>";
 $message .= "Car Inspections Department.<br/>";
 $this->email->to($insp->email_client);
 $this->email->from('itin-noreply@imperial-dekra.gr', 'IMPERIAL-DEKRA');
-$this->email->cc('pavlos.bizimis@gmail.com');
+//$this->email->cc('pavlos.bizimis@gmail.com');
 //$this->email->bcc('them@their-example.com');
 $this->email->subject('Έκθεση ελέγχου DEKRA IMPERIAL - αριθμός: '.$insp->number_inspection);
 $this->email->message($message);
