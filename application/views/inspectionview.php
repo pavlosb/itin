@@ -408,7 +408,15 @@ bootbox.setDefaults({
 
 
 });
-  
+$('.emailsend').on('click', function (e) {
+  e.preventDefault();
+  href = $(this).attr('href');
+  return bootbox.confirm('Η έκθεση θα αποσταλεί με email στη διεύθυνση <?= $inspection->email_client ?>. Συμφωνείτε;', function(result) {
+    if (result) {
+      window.location = href
+    }
+  });
+});  
   
 function checkifexists(fld, len){
 		
