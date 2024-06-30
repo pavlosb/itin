@@ -16,6 +16,10 @@ if (isset($user_lang) && $user_lang == "greek") {
   $name_section = $langprefix."name_section";
   $name_cp = $langprefix."name_cp";
   $helptext_cp = $langprefix."helptext_cp";
+	$ev = array("electric", "pluginpetrol", "plugindiesel");
+	if (!in_array($inspection->fueltyp_vhcl, $ev)) {
+	unset($checkpoints[0]);
+}
   ?>
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
