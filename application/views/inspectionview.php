@@ -37,7 +37,13 @@
 				<div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('wheeldrive_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo $this->lang->line($inspection->wheeldrive_vhcl); ?></div>
                 <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('pdf_displpow_vhcl'); ?></div>
-                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo number_format($inspection->pow_vhcl, 0,',', '.'); ?>kW / <?php echo number_format($inspection->displ_vhcl, 0,',', '.'); ?>ccm</td></div>
+                <div class="col-6 col-md-3 pt-2 pb-2"><?php echo number_format($inspection->pow_vhcl, 0,',', '.'); ?>kW / <?php 
+				if ($inspection->displ_vhcl >0) {
+				echo number_format($inspection->displ_vhcl, 0,',', '.')."ccm"; 
+				} else {
+					echo " - ";
+				}
+				?></td></div>
                 <div class="col-6 col-md-3 text-secondary pt-2 pb-2"><?= $this->lang->line('mlg_vhcl'); ?>:</div>
                 <div class="col-6 col-md-3 pt-2 pb-2"><?php echo number_format($inspection->mlg_vhcl, 0,',', '.'); ?></div>
             </div>    
