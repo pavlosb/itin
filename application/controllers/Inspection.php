@@ -31,6 +31,7 @@ class Inspection extends CI_Controller {
 			$this->data['user_lang'] = $sesdata['site_lang'];
 			} else {
 				$this->data['user_lang'] = "greek";
+				$this->data['ulcl'] = "el";
 			}
 
 			
