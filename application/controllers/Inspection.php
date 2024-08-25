@@ -1144,7 +1144,7 @@ public function pdftest($inspid=null)
 			$data['inspection'] = $inspections[0];
 			$data['inspremark'] = $this->itindata_model->get_inspectionremarks($id);
 			$inspection = $inspections[0];
-			echo $score1;
+			
 			$score1 = $inspection->s1score_inspection;
 			$score2 = $inspection->s2score_inspection;
 			$score3 = $inspection->s3score_inspection;
@@ -1155,6 +1155,7 @@ public function pdftest($inspid=null)
 				$data['result'] = 0;
 			}
 			$data['sec1score'] = round(100*($inspection->s1score_inspection / 112), -1);
+			echo $score1;
 			echo $data['sec1score'];
 			$data['sec2score'] = round(100*($inspection->s2score_inspection / 62), -1);
 			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
