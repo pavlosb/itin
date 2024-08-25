@@ -440,8 +440,12 @@ echo json_encode($status) ;
 				$this->itindata_model->upd_inspection($this->input->post('inspectionid_insres'), array("en_rmrk_inspection" => $insupd['en_rmrk_inspection'], "rmrk_inspection" => $insupd['rmrk_inspection']));
 
 
-
-			$points = $_POST['checkpoint'];
+				$pointsforscore = $_POST['checkpoint'];
+				if (array_key_exists('97', $pointsforscore)) {
+unset($pointsforscore[97]);
+				}
+			//$points = $_POST['checkpoint'];
+			$points = $pointsforscore;
 			if (isset($_POST['remark'])) {
 			$remarks = $_POST['remark'];
 			}
@@ -478,9 +482,8 @@ $this->itindata_model->set_inspectionremarks($this->input->post('inspectionid_in
 if ($imgdata && count($imgdata) > 0) {
 $this->itindata_model->set_inspectionimg($this->input->post('inspectionid_insres'), $imgdata);
 }
-$pointsforscore = $this->input->post('inspectionid_insres');
-unset($pointsforscore[97]);
-$updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($pointsforscore, 1);
+
+$updata['s1score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 1);
 $updata['s2score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 12);
 $updata['s3score_inspection'] = $this->itindata_model->get_sectionscore($this->input->post('inspectionid_insres'), 16);
 $updata['s1pen_inspection'] = $this->input->post('pensect1');
