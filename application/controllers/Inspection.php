@@ -440,12 +440,9 @@ echo json_encode($status) ;
 				$this->itindata_model->upd_inspection($this->input->post('inspectionid_insres'), array("en_rmrk_inspection" => $insupd['en_rmrk_inspection'], "rmrk_inspection" => $insupd['rmrk_inspection']));
 
 
-				$pointsforscore = $_POST['checkpoint'];
-				if (array_key_exists('97', $pointsforscore)) {
-unset($pointsforscore[97]);
-				}
-			//$points = $_POST['checkpoint'];
-			$points = $pointsforscore;
+				
+			$points = $_POST['checkpoint'];
+			//$points = $pointsforscore;
 			if (isset($_POST['remark'])) {
 			$remarks = $_POST['remark'];
 			}
