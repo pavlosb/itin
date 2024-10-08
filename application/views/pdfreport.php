@@ -122,7 +122,7 @@ E-Mail: dekra@imperial-dekra.gr<br />
 <tr><td colspan="4" class="bot-border smalltxt">&nbsp;</td></tr>
 <tr>
 <td width="60%" colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_vehicle_description'); ?></td>
-<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_reg_vhcl'); ?> <span style = "font-weight:normal; color: #000;"><?php echo $inspection->reg_vhcl; ?></span> </td>
+<td width="40%"  colspan="2" class="frcellhdr dgreen bot-border"><?= $this->lang->line('pdf_reg_vhcl'); ?> <span style = "font-weight:normal; color: #000;"><?php echo $inspection->firstreg_vhcl; ?></span> </td>
 </tr>
 <tr>
 <td class="frcellfld" width="20%"><?= $this->lang->line('pdf_vin_vhcl'); ?></td><td colspan="3"><?php echo $inspection->vin_vhcl; ?>
