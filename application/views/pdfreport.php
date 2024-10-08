@@ -8,7 +8,6 @@ if (isset($user_lang) && $user_lang == "greek") {
 	if (!in_array($inspection->fueltyp_vhcl, $ev)) {
 	unset($checkpoints[0]);
 }
-
 ?>
 <!doctype html>
 <html lang="en">
