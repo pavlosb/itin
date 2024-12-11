@@ -211,9 +211,9 @@ class Inspection extends CI_Controller {
 			} else {
 				$data['result'] = 0;
 			}
-			$data['sec1score'] = round(100*($inspection->s1score_inspection / 112), -1);
-			$data['sec2score'] = round(100*($inspection->s2score_inspection / 62), -1);
-			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
+			$data['sec1score'] = round(100*abs($inspection->s1score_inspection / 112), -1);
+			$data['sec2score'] = round(100*abs($inspection->s2score_inspection / 62), -1);
+			$data['sec3score'] = round(100*abs($inspection->s3score_inspection / 16), -1);
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspectionid'] = $id;
 			$data['dynimg'] = $this->dynimg($id);
