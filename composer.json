@@ -12,6 +12,8 @@
 	},
 	"require": {
 		"dompdf/dompdf" : "^0.8.0",
-		"mpdf/mpdf" : "^8.0.0"
+		"mpdf/mpdf" : "^8.0.0",
+		"tecnickcom/tcpdf" : "^6.9.1",
+		"phpseclib/phpseclib":"~3.0"
   }
 }
