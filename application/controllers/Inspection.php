@@ -316,14 +316,6 @@ class Inspection extends CI_Controller {
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->img_dpi = 96;
 			$mpdf->debug = true;
-			$mpdf->SetSignature(
-				'/home/site/wwwroot/assets/cert/certificate.p12',
-				'imperialdekra',
-				'Imperial Dekra',
-				'Athens',
-				'Official'
-			);
-			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
 			$filename = $langprefix;
 			$filename .= $this->_stringclean($inspection->number_inspection);
