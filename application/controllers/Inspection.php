@@ -254,7 +254,7 @@ class Inspection extends CI_Controller {
 
  public function pdftest() {
 	echo \Mpdf\Mpdf::VERSION;
-	echo "<br/>"
+	echo "<br/>";
 	print_r(get_class_methods(new \Mpdf\Mpdf()));
  }
 
