@@ -187,6 +187,70 @@ class Inspection extends CI_Controller {
 		
 
 	}
+	public function inspectionspdf2() {
+		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
+		{
+			$id = $this->input->post('id');
+			$user = $this->ion_auth->user()->row();
+			$data = $this->data;
+			$ulang = $data['user_lang'];
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
+			$data['fueltypes'] = $this->_getfueltypes();
+			$data['wheeldrives'] = $this->_getwheeldrives();
+			$data['inspection'] = $inspections[0];
+			$data['inspremark'] = $this->itindata_model->get_inspectionremarks($id);
+			$inspection = $inspections[0];
+			$score1 = $inspection->s1score_inspection;
+			$score2 = $inspection->s2score_inspection;
+			$score3 = $inspection->s3score_inspection;
+			if ( ($score1 >= 92) && ($score2 >= 53) && ($score3 >= 12))
+			{
+				$data['result'] = 1;
+			} else {
+				$data['result'] = 0;
+			}
+			$data['sec1score'] = round(100*($inspection->s1score_inspection / 112), -1);
+			$data['sec2score'] = round(100*($inspection->s2score_inspection / 62), -1);
+			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
+			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
+			$data['inspectionid'] = $id;
+			$data['dynimg'] = $this->dynimg($id);
+			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
+			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
+			//$html = $this->load->view('header', $data, true);
+			//$this->load->view('testview', $data);
+			if ($ulang == "greek") {
+				$langprefix ="";
+				$oldlang = "greek";
+				$newlang = "english";
+				$newprfx = "en_";
+			} else {
+				$langprefix ="en_";
+				$newlang = "greek";
+				$oldlang = "english";
+				$newprfx = "";
+				}
+			//$this->load->view('pdfreport', $data);
+			$html = $this->load->view('pdfreport', $data, true);
+			$this->load->library('pdf');
+			$pdf = new Pdf();
+			$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+			$pdf->Output('/home/site/wwwroot/assets/pdfs/example_001.pdf', 'I');
+
+		} else {
+			redirect('auth/login');
+		}
+		
+
+	}
+
+
+
+
+
+
 
 	public function inspections_pdf() 
 	{
