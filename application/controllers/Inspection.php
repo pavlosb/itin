@@ -191,7 +191,7 @@ class Inspection extends CI_Controller {
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 			//$id = $this->input->post('id');
-			$id = 102;
+			$id = 24;
 			$user = $this->ion_auth->user()->row();
 			$data = $this->data;
 			$ulang = $data['user_lang'];
@@ -239,7 +239,7 @@ class Inspection extends CI_Controller {
 			$html = $this->load->view('pdfreport', $data, true);
 			$this->load->library('pdf');
 			$pdf = new Pdf();
-			$pdf->SetFont('dejavusans', '', 12);
+			$pdf->SetFont('dejavusans', '', 10);
 			$pdf->AddPage(); 
 			$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 			$pdf->Output('/home/site/wwwroot/assets/pdfs/example_001.pdf', 'I');
