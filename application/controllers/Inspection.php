@@ -218,6 +218,8 @@ class Inspection extends CI_Controller {
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspectionid'] = $id;
 			$data['dynimg'] = $this->dynimg($id);
+
+			
 			$data['inspimg'] = $this->itindata_model->get_inspectionimages($id);
 			$data['checkpoints'] = $this->itindata_model->get_checkpoints();
 			//$html = $this->load->view('header', $data, true);

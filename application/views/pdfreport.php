@@ -224,7 +224,7 @@ E-Mail : dekra@imperial-dekra.gr</td>
 if ($x==3) {?>
 <tr><td colspan="3">
 									<table width="100%" style="margin-bottom:15px"><tr>
-								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td></tr>
+								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" width="600" height="400"/>';?></td></tr>
 								</table></td></tr>
 
 		
