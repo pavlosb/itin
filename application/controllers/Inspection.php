@@ -253,9 +253,25 @@ class Inspection extends CI_Controller {
 
 
  public function pdftest() {
-	echo \Mpdf\Mpdf::VERSION;
-	echo "<br/>";
-	print_r(get_class_methods(new \Mpdf\Mpdf()));
+	$this->load->library('PdfSigner');
+
+        $this->pdfsigner->signPdf(
+            '/home/site/wwwroot/assets/pdfs/2024062522413-24.pdf',       // mPDF generated file
+            'home/site/wwwroot/assets/pdfs/signed.pdf',
+            '/home/site/wwwroot/assets/cert/certificate.crt',
+            '/home/site/wwwroot/assets/cert/private.key',
+            '',
+			2,
+			[
+				'Name' => 'Your Name',
+				'Location' => 'Athens, GR',
+				'Reason' => 'Document signing',
+				'ContactInfo' => 'you@example.com'
+			]           // optional signature image
+        );
+
+        echo 'PDF signed successfully.';
+    }
  }
 
 
