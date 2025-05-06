@@ -257,7 +257,7 @@ class Inspection extends CI_Controller {
 
         $this->pdfsigner->signPdf(
             '/home/site/wwwroot/assets/pdfs/2024062522413-24.pdf',       // mPDF generated file
-            'home/site/wwwroot/assets/pdfs/signed.pdf',
+            '/home/site/wwwroot/assets/pdfs/signed.pdf',
             '/home/site/wwwroot/assets/cert/certificate.crt',
             '/home/site/wwwroot/assets/cert/private.key',
             '',
