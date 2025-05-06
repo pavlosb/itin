@@ -239,6 +239,7 @@ class Inspection extends CI_Controller {
 			$html = $this->load->view('pdfreport', $data, true);
 			$this->load->library('pdf');
 			$pdf = new Pdf();
+			$pdf->SetFont('dejavusans', '', 12);
 			$pdf->AddPage(); 
 			$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 			$pdf->Output('/home/site/wwwroot/assets/pdfs/example_001.pdf', 'I');
