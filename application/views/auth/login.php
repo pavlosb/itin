@@ -29,6 +29,7 @@
   <div class="col-sm-8 col-lg-6">
 <h1 class="display-4"><?php echo lang('login_heading');?></h1>
 <p class="lead"><?php echo lang('login_subheading');?></p>
+<p class="text-danger">DEV Environment DO NOT USE!</p>
 <?php if ($message !=""){ ?>
 <div class="alert <?php echo $msgclass;?>" role="alert"><?php echo $message;?></div>
 <?php } ?>
