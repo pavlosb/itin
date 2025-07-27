@@ -169,11 +169,9 @@ if ($cp['name_section'] != $scp) { ?>
 <div class="row pb-3">
 	<div class="col-md-3">
 		<div class="row">
-   			<div class="col-md-12 py-1">
-<div class="col-md-12 py-1"><button type="button" id="closecamera_<?= $cp['id_cp']; ?>"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
-<div class="col-md-12 py-1">
-<input type=button id="takesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" >
-</div>
+   	  <div class="col-md-12 py-1"><button type="button" id="closecamera_<?= $cp['id_cp']; ?>"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
+			<div class="col-md-12 py-1"><input type=button id="takesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" >
+			</div>
 <div class="col-md-6 pr-0 py-1">
 <button type="button" id="savesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnap()"><i class="fas fa-save"></i></button></div>
 <div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" ><i class="fal fa-trash-alt"></i></button></div>
