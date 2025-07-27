@@ -166,7 +166,7 @@ if ($cp['name_section'] != $scp) { ?>
 							<?php		endforeach;
 								} ?>
 							</div>
-<div class="row pb-3">
+<div id="camerabox_<?= $cp['id_cp']; ?>"class="row pb-3">
 	<div class="col-md-3">
 		<div class="row">
    	  <div class="col-md-12 py-1"><button type="button" id="closecamera_<?= $cp['id_cp']; ?>"  class="btn btn-danger btn-block btn-lg" onclick="closecamnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-times"></i></button></div>
@@ -274,6 +274,7 @@ $('input[type="file"]').change(function(e){
 	 }
 
 	function configurenew($idcp){
+	document.getElementById("camerabox_"+ $idcp).style.display = "block";
 	 Webcam.set({
      width: cwdth,
      height: cwhght,
@@ -347,7 +348,8 @@ function take_snapshotnew($idcp) {
  }
   function closecamnew($idcp){
 	Webcam.reset();
-     document.getElementById("my_camera_"+ $idcp).style.height = "10px";
+		 document.getElementById("camerabox_"+ $idcp).style.display = "none";
+	   document.getElementById("my_camera_"+ $idcp).style.height = "10px";
      document.getElementById("closecamera_"+ $idcp).style.display = "none";
 		 document.getElementById("opencamera_"+ $idcp).style.display = "inline-block";
 		 document.getElementById("takesnapshot_"+ $idcp).style.display = "none";
@@ -462,6 +464,7 @@ i=i+1;
 <script>
 jQuery(document).ready(function($) {
 	$("[id^=spinner]").removeClass("d-flex").hide();
+	$("[id^=camerabox]").hide();
   $("[id^=takesnapshot]").hide();
   $("[id^=savesnapshot]").hide();
   $("[id^=trashsnapshot]").hide();
