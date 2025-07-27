@@ -173,7 +173,7 @@ if ($cp['name_section'] != $scp) { ?>
 <div class="row pb-3">
 	<div class="col-md-3">
 		<div class="row">
-   	  <div class="col-md-12 py-1"><button type="button" id="closecamera_<?= $cp['id_cp']; ?>"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
+   	  <div class="col-md-12 py-1"><button type="button" id="closecamera_<?= $cp['id_cp']; ?>"  class="btn btn-danger btn-block btn-lg" onclick="closecamnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-times"></i></button></div>
 			<div class="col-md-12 py-1"><input type=button id="takesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" >
 			</div>
 <div class="col-md-6 pr-0 py-1">
@@ -312,7 +312,7 @@ $('input[type="file"]').change(function(e){
     // take snapshot and get image data
     Webcam.snap( function(data_uri) {
        // display results in page
-       document.getElementById('results').innerHTML +=
+       document.getElementById("results_"+ $idcp).innerHTML +=
 			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
@@ -322,6 +322,24 @@ $('input[type="file"]').change(function(e){
 		 document.getElementById("savesnapshot").style.display = "block";
 		 document.getElementById("trashsnapshot").style.display = "block";
 		 }
+function take_snapshotnew($idcp) {
+    // play sound effect
+    shutter.play();
+
+    // take snapshot and get image data
+    Webcam.snap( function(data_uri) {
+       // display results in page
+       document.getElementById('results').innerHTML +=
+			         '<div id="imgbox_'+$idcp+'-'+i+'" class="col-md-3"><img id="imageprev_'+$idcp+'-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
+     } );
+
+     Webcam.reset();
+     document.getElementById("my_camera_"+ $idcp).style.height = "10px";
+		 document.getElementById("takesnapshot_"+ $idcp).style.display = "none";
+		 document.getElementById("savesnapshot_"+ $idcp).style.display = "block";
+		 document.getElementById("trashsnapshot_"+ $idcp).style.display = "block";
+		 }
+		 
  function closecam(){
 	Webcam.reset();
      document.getElementById("my_camera").style.height = "10px";
@@ -331,6 +349,16 @@ $('input[type="file"]').change(function(e){
 		 document.getElementById("savesnapshot").style.display = "none";
      document.getElementById("trashsnapshot").style.display = "none";
  }
+  function closecamnew($idcp){
+	Webcam.reset();
+     document.getElementById("my_camera_"+ $idcp).style.height = "10px";
+     document.getElementById("closecamera_"+ $idcp).style.display = "none";
+		 document.getElementById("opencamera_"+ $idcp).style.display = "inline-block";
+		 document.getElementById("takesnapshot_"+ $idcp).style.display = "none";
+		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
+     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
+ }
+ 
  function saveSnap(){
    // Get base64 value from <img id='imageprev'> source
    var base64image = document.getElementById("imageprev-"+i).src;
