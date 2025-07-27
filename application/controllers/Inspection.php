@@ -553,7 +553,7 @@ endforeach;
 if($photos) {
 foreach ($photos as $key => $filename):
 	if ($filename!=""){
-	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename), 'chkpointid_img' =>'');
+	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename));
 	}
 endforeach;
 }
@@ -568,7 +568,7 @@ if (isset($_POST['cpinspimg']) && is_array($_POST['cpinspimg'])) {
                 $imgdata[] = [
                     'inspectionid_img' => $inspectionId,
                     'filename_img'     => basename($filename),
-                    'chkpointid_img'           => $outerKey // this is the "1" in cpinspimg[1][2]
+                    'chkpointid_img'   => $outerKey // this is the "1" in cpinspimg[1][2]
                 ];
             }
         }
