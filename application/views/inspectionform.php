@@ -137,7 +137,7 @@ if ($cp['name_section'] != $scp) { ?>
     <label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
     <div class="col-sm-5 text-center text-sm-right">
 		<?php // add camera button to point ?>
-		<button type="button" id="opencamera"  onclick="configure()" class="btn btn-primary"><i class="fas fa-camera"></i></button>	
+		<button type="button" id="opencamera_<?= $cp['id_cp']; ?>"  onclick="configurenew(<?= $cp['id_cp']; ?>)" class="btn btn-primary"><i class="fas fa-camera"></i></button>	
 		<?php // add camera button to point ?>
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
@@ -163,6 +163,19 @@ if ($cp['name_section'] != $scp) { ?>
 	</div>
 
 <?php } ?>
+<div class="row pb-3">
+	<div class="col-md-3">
+		<div class="row">
+   			<div class="col-md-12 py-1">
+<div class="col-md-12 py-1"><button type="button" id="closecamera_<?= $cp['id_cp']; ?>"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
+<div class="col-md-12 py-1">
+<input type=button id="takesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" >
+</div>
+<div class="col-md-6 pr-0 py-1">
+<button type="button" id="savesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnap()"><i class="fas fa-save"></i></button></div>
+<div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" ><i class="fal fa-trash-alt"></i></button></div>
+	</div></div><div id="my_camera_<?= $cp['id_cp']; ?>" class="col-md-9"></div>
+</div>
 	<div class="form-group row pb-3">
 		<div class="col-12">
     <label for="rmrk[<?= $cp['id_cp']; ?>]"><?= $this->lang->line('comment'); ?></label>
@@ -236,7 +249,7 @@ $('input[type="file"]').change(function(e){
 	}
 	var cwdth =  document.getElementById("my_camera").offsetWidth;
 	var cwhght = cwdth / rto;
-	 function configure(){
+	function configure(){
 	 Webcam.set({
      width: cwdth,
      height: cwhght,
@@ -250,6 +263,29 @@ $('input[type="file"]').change(function(e){
  });
 
  Webcam.attach( '#my_camera' );
+ i = i+1;
+ Webcam.on( 'live', function() {
+ document.getElementById("takesnapshot").style.display = "block";
+ document.getElementById("closecamera").style.display = "block";
+ document.getElementById("opencamera").style.display = "none";
+ });
+ 
+	 }
+
+	function configurenew($idcp){
+	 Webcam.set({
+     width: cwdth,
+     height: cwhght,
+		 dest_width:1024,
+		 dest_height:1024 / rto,
+     image_format: 'jpeg',
+     jpeg_quality: 95,
+		 constraints: {
+   facingMode: 'environment'
+ }
+ });
+
+ Webcam.attach( '#my_camera_'+ $idcp );
  i = i+1;
  Webcam.on( 'live', function() {
  document.getElementById("takesnapshot").style.display = "block";
