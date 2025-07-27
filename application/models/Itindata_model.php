@@ -270,7 +270,7 @@ $maxpos = $row->maxpos;
 		if ($query -> num_rows() > 0) {
 			foreach ($query->result() as $row)
 			{
-				if ($inspimg[$row->chkpointid_img]) {
+				if ($row->chkpointid_img) {
 				$inspimg[$row->chkpointid_img][$row->id_img] = $row->filename_img;
 				} else {
 				$inspimg[0][$row->id_img] = $row->filename_img;
