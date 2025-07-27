@@ -217,7 +217,7 @@ if (isset($filter) && isset($value)) {
 
 	}
 
-	public function inspections_pdf() 
+		public function inspections_pdf() 
 	{
 	
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
