@@ -173,7 +173,7 @@ if ($cp['name_section'] != $scp) { ?>
 			<div class="col-md-12 py-1"><input type=button id="takesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshotnew(<?= $cp['id_cp']; ?>)" >
 			</div>
 <div class="col-md-6 pr-0 py-1">
-<button type="button" id="savesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnap()"><i class="fas fa-save"></i></button></div>
+<button type="button" id="savesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnapnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-save"></i></button></div>
 <div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnapnew(<?= $cp['id_cp']; ?>)" ><i class="fal fa-trash-alt"></i></button></div>
 	</div></div><div id="my_camera_<?= $cp['id_cp']; ?>" class="col-md-9"></div>
 </div>
@@ -401,6 +401,25 @@ document.getElementById("closecamera").style.display = "block";
      configure();
 	 }
 
+	 function trashSnapnew($idcp) {
+if (i > j) {
+	document.getElementById("imgbox_"+$idcp+"-"+i).remove();
+	
+}
+document.getElementById("closecamera_"+ $idcp).style.display = "block";
+		 document.getElementById("opencamera_"+ $idcp).style.display = "none";
+		 document.getElementById("takesnapshot_"+ $idcp).style.display = "block";
+		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
+     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
+     configurenew($idcp);
+	 }
+
+   var dataURLToBlob = function(dataURL) {
+    var BASE64_MARKER = ';base64,';
+    if (dataURL.indexOf(BASE64_MARKER) == -1) {
+        var parts = dataURL.split(',');
+        var contentType = parts[0].split(':')[1];
+        var raw = parts[1];
 
 
  function uploadFile() {
