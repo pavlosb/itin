@@ -274,7 +274,7 @@ $('input[type="file"]').change(function(e){
 	 }
 
 	function configurenew($idcp){
-	document.getElementById("camerabox_"+ $idcp).style.display = "block";
+	document.getElementById("camerabox_"+ $idcp).style.display = "flex";
 	 Webcam.set({
      width: cwdth,
      height: cwhght,
@@ -385,6 +385,47 @@ j = i;
 		 document.getElementById("savesnapshot").style.display = "none";
      document.getElementById("trashsnapshot").style.display = "none";
      configure();
+
+} 
+function closecamnew($idcp){
+	Webcam.reset();
+		 document.getElementById("camerabox_"+ $idcp).style.display = "none";
+	   document.getElementById("my_camera_"+ $idcp).style.height = "10px";
+     document.getElementById("closecamera_"+ $idcp).style.display = "none";
+		 document.getElementById("opencamera_"+ $idcp).style.display = "inline-block";
+		 document.getElementById("takesnapshot_"+ $idcp).style.display = "none";
+		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
+     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
+ }
+ 
+ function saveSnapnew($idcp){
+   // Get base64 value from <img id='imageprev'> source
+   var base64image = document.getElementById("imageprev_"+$idcp+"-"+i).src;
+
+   Webcam.upload( base64image, '/inspection/photoupload', function(code, text) {
+      //  console.log(text);
+			//	console.log(code);
+       //console.log(text);
+			 var input = document.createElement("input");
+
+
+input.setAttribute("type", "hidden");
+
+input.setAttribute("name", "inspimg["+$idcp+"]["+i+"]");
+
+input.setAttribute("value", text);
+
+//append to form element that you want .
+document.getElementById("imagefields").appendChild(input);
+
+j = i;
+   });
+   document.getElementById("closecamera_"+ $idcp).style.display = "block";
+		 document.getElementById("opencamera_"+ $idcp).style.display = "none";
+		 document.getElementById("takesnapshot_"+ $idcp).style.display = "block";
+		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
+     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
+     configurenew($idcp);
 
 } 
 
