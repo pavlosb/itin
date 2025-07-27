@@ -136,6 +136,9 @@ if ($cp['name_section'] != $scp) { ?>
   <input type=hidden name="points[<?= $cp['id_cp']; ?>]" data-sectpen="<?= $cp['mainsectid']; ?>" value ="<?= $cp['points_cp']; ?>">
     <label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
     <div class="col-sm-5 text-center text-sm-right">
+		<?php // add camera button to point ?>
+		<button type="button" id="opencamera_<?= $cp['id_cp']; ?>"  onclick="configurenew(<?= $cp['id_cp']; ?>)" class="btn btn-primary"><i class="fas fa-camera"></i></button>	
+		<?php // add camera button to point ?>
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
     <input type="radio" data-sect="<?= $cp['mainsectid']; ?>" data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="0" class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1[<?= $cp['id_cp']; ?>]" data-substract = "<?= $cp['points_cp']; ?>" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
@@ -160,6 +163,24 @@ if ($cp['name_section'] != $scp) { ?>
 	</div>
 
 <?php } ?>
+<div id="results_<?= $cp['id_cp']; ?>" class="row pb-3">
+								<?php if (isset($inspimg)) {
+									foreach ($inspimg as $key=>$value): ?>
+<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div></div>
+							<?php		endforeach;
+								} ?>
+							</div>
+<div id="camerabox_<?= $cp['id_cp']; ?>"class="row pb-3">
+	<div class="col-md-3">
+		<div class="row">
+   	  <div class="col-md-12 py-1"><button type="button" id="closecamera_<?= $cp['id_cp']; ?>"  class="btn btn-danger btn-block btn-lg" onclick="closecamnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-times"></i></button></div>
+			<div class="col-md-12 py-1"><input type=button id="takesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshotnew(<?= $cp['id_cp']; ?>)" >
+			</div>
+<div class="col-md-6 pr-0 py-1">
+<button type="button" id="savesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnapnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-save"></i></button></div>
+<div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnapnew(<?= $cp['id_cp']; ?>)" ><i class="fal fa-trash-alt"></i></button></div>
+	</div></div><div id="my_camera_<?= $cp['id_cp']; ?>" class="col-md-9"></div>
+</div>
 	<div class="form-group row pb-3">
 		<div class="col-12">
     <label for="rmrk[<?= $cp['id_cp']; ?>]"><?= $this->lang->line('comment'); ?></label>
@@ -233,7 +254,7 @@ $('input[type="file"]').change(function(e){
 	}
 	var cwdth =  document.getElementById("my_camera").offsetWidth;
 	var cwhght = cwdth / rto;
-	 function configure(){
+	function configure(){
 	 Webcam.set({
      width: cwdth,
      height: cwhght,
@@ -256,6 +277,30 @@ $('input[type="file"]').change(function(e){
  
 	 }
 
+	function configurenew($idcp){
+	document.getElementById("camerabox_"+ $idcp).style.display = "flex";
+	 Webcam.set({
+     width: cwdth,
+     height: cwhght,
+		 dest_width:1024,
+		 dest_height:1024 / rto,
+     image_format: 'jpeg',
+     jpeg_quality: 95,
+		 constraints: {
+   facingMode: 'environment'
+ }
+ });
+
+ Webcam.attach( '#my_camera_'+ $idcp );
+ i = i+1;
+ Webcam.on( 'live', function() {
+ document.getElementById("takesnapshot_"+ $idcp).style.display = "block";
+ document.getElementById("closecamera_"+ $idcp).style.display = "block";
+ document.getElementById("opencamera_"+ $idcp).style.display = "none";
+ });
+ 
+	 }
+
  // preload shutter audio clip
  var shutter = new Audio();
  /*shutter.autoplay = true;*/
@@ -268,7 +313,7 @@ $('input[type="file"]').change(function(e){
     // take snapshot and get image data
     Webcam.snap( function(data_uri) {
        // display results in page
-       document.getElementById('results').innerHTML +=
+       document.getElementById("results").innerHTML +=
 			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
@@ -278,6 +323,24 @@ $('input[type="file"]').change(function(e){
 		 document.getElementById("savesnapshot").style.display = "block";
 		 document.getElementById("trashsnapshot").style.display = "block";
 		 }
+function take_snapshotnew($idcp) {
+    // play sound effect
+    shutter.play();
+
+    // take snapshot and get image data
+    Webcam.snap( function(data_uri) {
+       // display results in page
+       document.getElementById("results_"+ $idcp).innerHTML +=
+			         '<div id="imgbox_'+$idcp+'-'+i+'" class="col-md-3"><img id="imageprev_'+$idcp+'-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
+     } );
+
+     Webcam.reset();
+     document.getElementById("my_camera_"+ $idcp).style.height = "10px";
+		 document.getElementById("takesnapshot_"+ $idcp).style.display = "none";
+		 document.getElementById("savesnapshot_"+ $idcp).style.display = "block";
+		 document.getElementById("trashsnapshot_"+ $idcp).style.display = "block";
+		 }
+		 
  function closecam(){
 	Webcam.reset();
      document.getElementById("my_camera").style.height = "10px";
@@ -287,6 +350,17 @@ $('input[type="file"]').change(function(e){
 		 document.getElementById("savesnapshot").style.display = "none";
      document.getElementById("trashsnapshot").style.display = "none";
  }
+  function closecamnew($idcp){
+	Webcam.reset();
+		 document.getElementById("camerabox_"+ $idcp).style.display = "none";
+	   document.getElementById("my_camera_"+ $idcp).style.height = "10px";
+     document.getElementById("closecamera_"+ $idcp).style.display = "none";
+		 document.getElementById("opencamera_"+ $idcp).style.display = "inline-block";
+		 document.getElementById("takesnapshot_"+ $idcp).style.display = "none";
+		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
+     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
+ }
+ 
  function saveSnap(){
    // Get base64 value from <img id='imageprev'> source
    var base64image = document.getElementById("imageprev-"+i).src;
@@ -317,6 +391,47 @@ j = i;
      configure();
 
 } 
+function closecamnew($idcp){
+	Webcam.reset();
+		 document.getElementById("camerabox_"+ $idcp).style.display = "none";
+	   document.getElementById("my_camera_"+ $idcp).style.height = "10px";
+     document.getElementById("closecamera_"+ $idcp).style.display = "none";
+		 document.getElementById("opencamera_"+ $idcp).style.display = "inline-block";
+		 document.getElementById("takesnapshot_"+ $idcp).style.display = "none";
+		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
+     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
+ }
+ 
+ function saveSnapnew($idcp){
+   // Get base64 value from <img id='imageprev'> source
+   var base64image = document.getElementById("imageprev_"+$idcp+"-"+i).src;
+
+   Webcam.upload( base64image, '/inspection/photoupload', function(code, text) {
+      //  console.log(text);
+			//	console.log(code);
+       //console.log(text);
+			 var input = document.createElement("input");
+
+
+input.setAttribute("type", "hidden");
+
+input.setAttribute("name", "cpinspimg["+$idcp+"]["+i+"]");
+
+input.setAttribute("value", text);
+
+//append to form element that you want .
+document.getElementById("imagefields").appendChild(input);
+
+j = i;
+   });
+   document.getElementById("closecamera_"+ $idcp).style.display = "block";
+		 document.getElementById("opencamera_"+ $idcp).style.display = "none";
+		 document.getElementById("takesnapshot_"+ $idcp).style.display = "block";
+		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
+     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
+     configurenew($idcp);
+
+} 
 
 function trashSnap() {
 if (i > j) {
@@ -329,6 +444,19 @@ document.getElementById("closecamera").style.display = "block";
 		 document.getElementById("savesnapshot").style.display = "none";
      document.getElementById("trashsnapshot").style.display = "none";
      configure();
+	 }
+
+	 function trashSnapnew($idcp) {
+if (i > j) {
+	document.getElementById("imgbox_"+$idcp+"-"+i).remove();
+	
+}
+document.getElementById("closecamera_"+ $idcp).style.display = "block";
+		 document.getElementById("opencamera_"+ $idcp).style.display = "none";
+		 document.getElementById("takesnapshot_"+ $idcp).style.display = "block";
+		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
+     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
+     configurenew($idcp);
 	 }
 
    var dataURLToBlob = function(dataURL) {
@@ -455,12 +583,13 @@ i=i+1;
 </script>
 <script>
 jQuery(document).ready(function($) {
-	$("#spinner").removeClass("d-flex").hide();
-  $('#takesnapshot').hide();
-  $('#savesnapshot').hide();
-  $('#trashsnapshot').hide();
-  $('#closecamera').hide();
-     $('input:radio').change(function ()
+	$("[id^=spinner]").removeClass("d-flex").hide();
+	$("[id^=camerabox]").hide();
+  $("[id^=takesnapshot]").hide();
+  $("[id^=savesnapshot]").hide();
+  $("[id^=trashsnapshot]").hide();
+  $("[id^=closecamera]").hide();
+     $('input:radio]').change(function ()
 {
   
 
