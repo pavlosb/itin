@@ -318,7 +318,7 @@ if ($pointscore != 0) {
 		</td>
 		<td>&nbsp;</td>
 		<td>
-		<?php	if (isset($inspremark[$cp['id_cp']]) { ?>
+		<?php	if (isset($inspremark[$cp['id_cp']])) { ?>
 		<u><?= $this->lang->line('comment'); ?></u><br/>
 	<?php		echo $inspremark[$cp['id_cp']]; ?>
 	<?php } ?>
