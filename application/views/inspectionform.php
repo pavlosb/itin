@@ -181,7 +181,6 @@ if ($cp['name_section'] != $scp) { ?>
 <div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" ><i class="fal fa-trash-alt"></i></button></div>
 	</div></div><div id="my_camera_<?= $cp['id_cp']; ?>" class="col-md-9"></div>
 </div>
-	</div>
 	<div class="form-group row pb-3">
 		<div class="col-12">
     <label for="rmrk[<?= $cp['id_cp']; ?>]"><?= $this->lang->line('comment'); ?></label>
