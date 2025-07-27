@@ -11,7 +11,7 @@ if (isset($user_lang) && $user_lang == "greek") {
 		$insgenpremark = $inspection->en_rmrk_inspection;
 	}
   }
-
+	var_dump($inspimg);
 	$prcp = 0;
   $mainsect = $langprefix."mainsect";
   $name_section = $langprefix."name_section";
