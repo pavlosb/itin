@@ -132,6 +132,9 @@ if ($cp['name_section'] != $scp) { ?>
   <input type=hidden name="points[<?= $cp['id_cp']; ?>]" data-sectpen="<?= $cp['mainsectid']; ?>" value ="<?= $cp['points_cp']; ?>">
     <label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
     <div class="col-sm-5 text-center text-sm-right">
+		<?php // add camera button to point ?>
+		<button type="button" id="opencamera"  onclick="configure()" class="btn btn-primary"><i class="fas fa-camera"></i></button>	
+		<?php // add camera button to point ?>
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
     <input type="radio" data-sect="<?= $cp['mainsectid']; ?>" data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="0" class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1[<?= $cp['id_cp']; ?>]" data-substract = "<?= $cp['points_cp']; ?>" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
