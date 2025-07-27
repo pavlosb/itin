@@ -430,10 +430,10 @@ i=i+1;
 <script>
 jQuery(document).ready(function($) {
 	$("[id^=spinner]").removeClass("d-flex").hide();
-  $("[id^takesnapshot]").hide();
-  $("[id^savesnapshot]").hide();
-  $("[id^trashsnapshot]").hide();
-  $("[id^closecamera]").hide();
+  $("[id^=takesnapshot]").hide();
+  $("[id^=savesnapshot]").hide();
+  $("[id^=trashsnapshot]").hide();
+  $("[id^=closecamera]").hide();
      $('input:radio]').change(function ()
 {
   
