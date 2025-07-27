@@ -277,7 +277,7 @@ class Inspection extends CI_Controller {
 
 
 
-	public function inspections_pdf() 
+		public function inspections_pdf() 
 	{
 	
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
@@ -303,9 +303,9 @@ class Inspection extends CI_Controller {
 			} else {
 				$data['result'] = 0;
 			}
-			$data['sec1score'] = round(100*($inspection->s1score_inspection / 112), -1);
-			$data['sec2score'] = round(100*($inspection->s2score_inspection / 62), -1);
-			$data['sec3score'] = round(100*($inspection->s3score_inspection / 16), -1);
+			$data['sec1score'] = round(100*abs($inspection->s1score_inspection / 112), -1);
+			$data['sec2score'] = round(100*abs($inspection->s2score_inspection / 62), -1);
+			$data['sec3score'] = round(100*abs($inspection->s3score_inspection / 16), -1);
 			$data['inspscore'] = $this->itindata_model->get_inspectionscore($id);
 			$data['inspectionid'] = $id;
 			$data['dynimg'] = $this->dynimg($id);
@@ -332,6 +332,7 @@ class Inspection extends CI_Controller {
 			$mpdf = new \Mpdf\Mpdf(['format' => 'A4']);
 			$mpdf->img_dpi = 96;
 			$mpdf->debug = true;
+			$mpdf->setFooter('{PAGENO}');
 			$mpdf->WriteHTML($html);
 			$filename = $langprefix;
 			$filename .= $this->_stringclean($inspection->number_inspection);
