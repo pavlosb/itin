@@ -415,7 +415,7 @@ function closecamnew($idcp){
 
 input.setAttribute("type", "hidden");
 
-input.setAttribute("name", "inspimg["+$idcp+"]["+i+"]");
+input.setAttribute("name", "cpinspimg["+$idcp+"]["+i+"]");
 
 input.setAttribute("value", text);
 
