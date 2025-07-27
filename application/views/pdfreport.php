@@ -294,7 +294,7 @@ if ($pointscore != 0) {
 	<?php if (isset($inspremark[$cp['id_cp']]) || isset($inspimg[$cp['id_cp']])){ ?>
 		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
 		<td>
-			<?php if (isset($inspimg)) {  ?>
+			<?php if (isset($inspimg[$cp['id_cp']])) {  ?>
 									
 <?php
 									$im = 1;
@@ -318,8 +318,10 @@ if ($pointscore != 0) {
 		</td>
 		<td>&nbsp;</td>
 		<td>
+		<?php	if (isset($inspremark[$cp['id_cp']]) { ?>
 		<u><?= $this->lang->line('comment'); ?></u><br/>
 	<?php		echo $inspremark[$cp['id_cp']]; ?>
+	<?php } ?>
 	</td></tr>
 		<?php }
 	$z = $z + 1;
