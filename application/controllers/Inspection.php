@@ -553,7 +553,7 @@ endforeach;
 if($photos) {
 foreach ($photos as $key => $filename):
 	if ($filename!=""){
-	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename), 'chkpointid_img' =>'');
+	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename));
 	}
 endforeach;
 }
