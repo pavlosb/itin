@@ -164,8 +164,8 @@ if ($cp['name_section'] != $scp) { ?>
 
 <?php } ?>
 <div id="results_<?= $cp['id_cp']; ?>" class="row pb-3">
-								<?php if (isset($inspimg['id_cp'])) {
-									foreach ($inspimg['id_cp'] as $key=>$value): ?>
+								<?php if (isset($inspimg[$cp['id_cp']])) {
+									foreach ($inspimg[$cp['id_cp']] as $key=>$value): ?>
 <div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div></div>
 							<?php		endforeach;
 								} ?>
