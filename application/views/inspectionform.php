@@ -91,34 +91,7 @@ if (isset($user_lang) && $user_lang == "greek") {
 						// Take photos Section 
 						if ($prcp == 12 && $cp['mainsectid'] == 16) { ?>
 						
-							<div id="results" class="row pb-3">
-								<?php if (isset($inspimg[0])) {
-									foreach ($inspimg[0] as $key=>$value): ?>
-<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div></div>
-							<?php		endforeach;
-								} ?>
-							</div>
-<div class="row pb-3">
-	<div class="col-md-3">
-		<div class="row">
-   			<div class="col-md-12 py-1">
-<button type="button" id="opencamera"  onclick="configure()" class="btn btn-primary btn-block btn-lg"><i class="fas fa-camera"></i></button></div>
-<div class="col-md-12 py-1"><button type="button" id="closecamera"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
-<div class="col-md-12 py-1">
-<input type=button id="takesnapshot" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" >
-</div>
-<div class="col-md-6 pr-0 py-1">
-<button type="button" id="savesnapshot" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnap()"><i class="fas fa-save"></i></button></div>
-<div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" ><i class="fal fa-trash-alt"></i></button></div>
-	</div></div><div id="my_camera" class="col-md-9"></div>
-</div>
-<div class="row pb-5">
-<div class = "col-md-12"><h5>Ανεβάστε φωτογραφίες</h5></div>
-	<div class = "col-md-9"><input id="fileupload" type="file"  name="fileupload[]" multiple/>
-	<!--<label class="custom-file-label" for="customFile">Επιλογή αρχείου</label> --></div>
-	<div class = "col-md-3">
-<button  type="button" class="btn btn-info btn-block" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>
-</div>
+							
 				<?php		}
             if ($cp['mainsect'] != $mcp) 
             {?>
@@ -197,6 +170,34 @@ $prcp = $cp['mainsectid'];
 $mcp = $cp['mainsect'];
 $scp = $cp['name_section'];
  endforeach ?>
+ <div id="results" class="row pb-3">
+								<?php if (isset($inspimg[0])) {
+									foreach ($inspimg[0] as $key=>$value): ?>
+<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div></div>
+							<?php		endforeach;
+								} ?>
+							</div>
+<div class="row pb-3">
+	<div class="col-md-3">
+		<div class="row">
+   			<div class="col-md-12 py-1">
+<button type="button" id="opencamera"  onclick="configure()" class="btn btn-primary btn-block btn-lg"><i class="fas fa-camera"></i></button></div>
+<div class="col-md-12 py-1"><button type="button" id="closecamera"  class="btn btn-danger btn-block btn-lg" onclick="closecam()"><i class="fas fa-times"></i></button></div>
+<div class="col-md-12 py-1">
+<input type=button id="takesnapshot" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshot()" >
+</div>
+<div class="col-md-6 pr-0 py-1">
+<button type="button" id="savesnapshot" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnap()"><i class="fas fa-save"></i></button></div>
+<div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnap()" ><i class="fal fa-trash-alt"></i></button></div>
+	</div></div><div id="my_camera" class="col-md-9"></div>
+</div>
+<div class="row pb-5">
+<div class = "col-md-12"><h5>Ανεβάστε φωτογραφίες</h5></div>
+	<div class = "col-md-9"><input id="fileupload" type="file"  name="fileupload[]" multiple/>
+	<!--<label class="custom-file-label" for="customFile">Επιλογή αρχείου</label> --></div>
+	<div class = "col-md-3">
+<button  type="button" class="btn btn-info btn-block" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>
+</div>
 <div class="form-group row" id="imagefields"></div>
 <input type=hidden name="pensect1" value ="0">
 <input type=hidden name="pensect2" value ="0">
