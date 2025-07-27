@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-		<title>ITIN</title>
+		<title>DCHECK</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,7 +41,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#itinnavbartoggle" aria-controls="itinnavbartoggle" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="<?php echo base_url(); ?>inspection">ITIN <img src="<?php echo base_url(); ?>assets/images/itin-dekra.png" width="24" height="30" alt=""></a>
+  <a class="navbar-brand" href="<?php echo base_url(); ?>inspection"><img src="<?php echo base_url(); ?>assets/images/itin-dekra.png" width="24" height="30" alt="">CHECK</a>
 
   <div class="collapse navbar-collapse" id="itinnavbartoggle">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
