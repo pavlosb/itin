@@ -330,7 +330,7 @@ $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
  endforeach ?> 
    </table>
-	 <?php if (isset($inspimg)) {  ?>
+	 <?php if (isset($inspimg[0])) {  ?>
 									
 <?php
 									$im = 1;
@@ -338,7 +338,7 @@ $scp = $cp['id_section'];
 
 									?>
 									<table width="100%" style="margin-top:50px; margin-bottom:15px">
-									<?php foreach ($inspimg as $key=>$value): 
+									<?php foreach ($inspimg[0] as $key=>$value): 
 										
 								?>
 										
