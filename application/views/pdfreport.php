@@ -4,12 +4,10 @@ if (isset($user_lang) && $user_lang == "greek") {
 } else {
   $langprefix ="en_";
   }
-
 	$ev = array("electric", "pluginpetrol", "plugindiesel");
 	if (!in_array($inspection->fueltyp_vhcl, $ev)) {
 	unset($checkpoints[0]);
 }
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -72,7 +70,15 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
     <title>ITIN</title>
   </head>
   <body>
+  <htmlpageheader name="pgheader" style="display:none">
+  <table width="100%" style="border-top: 1px solid #000; border-bottom: 1px solid #000;">
+  <tr><td width="70%"><?= $this->lang->line('pdf_report_num'); ?> <?php echo $inspection->number_inspection; ?></td><td width="30%" align="right"><?= $this->lang->line('pdf_date'); ?> <?php echo date("d-m-Y", strtotime($inspection->date_inspection)); ?></td></tr>
+  </table>
+        </htmlpageheader>
 
+        <htmlpagefooter name="pgfooter" style="display:none">
+        <div style="width:100%; text-align:right;"><?= $this->lang->line('pdf_page'); ?> {PAGENO}</div>
+        </htmlpagefooter>
        
         <table width="100%">
  <tr>
@@ -159,7 +165,7 @@ E-Mail: dekra@imperial-dekra.gr<br />
 </table>
 <table width="100%">
 <tr><td class="top-border smalltxt">&nbsp;</td></tr>
-<tr><td><!-- <?= $this->lang->line('pdf_inspector'); ?> <?php echo $inspection->last_name; ?> <?php echo $inspection->first_name; ?><br/><br/>--><span class="smalltxt"><?= $this->lang->line('pdf_sign_notice'); ?></span></td></tr>
+<tr><td><!--<?php // echo $this->lang->line('pdf_inspector'); ?> <?php //echo $inspection->last_name; ?> <?php //echo $inspection->first_name; ?><br/><br/>--><span class="smalltxt"><?php //echo $this->lang->line('pdf_sign_notice'); ?></span></td></tr>
 <tr><td class="bot-border smalltxt">&nbsp;</td></tr>
 </table>
 <table width="100%">
@@ -170,6 +176,7 @@ E-Mail: dekra@imperial-dekra.gr<br />
 		<?php } } else { 
 if (isset($inspection->en_rmrk_inspection) && $inspection->en_rmrk_inspection != "n/a") { ?>
 <?= $this->lang->line('genremark_inspection'); ?>
+
 	<?php	} }
 		?>
 	</td></tr>
@@ -216,7 +223,7 @@ E-Mail : dekra@imperial-dekra.gr</td>
 if ($x==3) {?>
 <tr><td colspan="3">
 									<table width="100%" style="margin-bottom:15px"><tr>
-								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" width="600" height="400"/>';?></td></tr>
+								<td><?php echo '<img src="data:image/svg+xml;base64,'.base64_encode($dynimg).'" />';?></td></tr>
 								</table></td></tr>
 
 		
@@ -252,52 +259,51 @@ if ($cp['id_section'] != $scp) {
 <tr><td class="secthd dgreen" colspan="3" style="padding:5px 0; page-break-after:avoid;"><?= $x ?>.<?= $y ?> <?= $cp[$printtext_section]; ?></td></tr>
 <?php 
 $y = $y+1;
-} 
-$pointscore = $inspscore[$cp['id_cp']];
+} ?>
+<?php $pointscore = $inspscore[$cp['id_cp']];
 if ($pointscore != 0) {
-?>
-<?php if ($cp['cptype'] == 'chs') { ?>
-<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <td style="width:58%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
-<td class="text-center" style="width:7%; padding:2px 0 0 0"><?php 
-
- if ($pointscore > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
- <?php } else if ($pointscore == 0) { ?>
-    <img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
- <?php } else { ?>
-    <img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
-		 <?php } ?>
-</td>
-<td class="text-center">&nbsp;</td>
-</tr>
-<?php } else { ?>
+	?>
+	<?php if ($cp['cptype'] == 'chs') { ?>
 	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-    <td style="width:58%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
-<td class="text-center" style="width:7%; padding:2px 0 0 0"><?php 
-echo $pointscore." %"; 
-?>
-</td>
-<td class="text-center">&nbsp;</td>
-</tr>
-	<?php } ?>
- <?php 
-
- ?>
-<?php if (isset($inspremark[$cp['id_cp']])){ ?>
-	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-  <td>&nbsp;</td>
-  <td>&nbsp;</td>
-	<td>
-	<u><?= $this->lang->line('comment'); ?></u><br/>
-<?php		echo $inspremark[$cp['id_cp']]; ?>
-</td></tr>
-	<?php }
-$z = $z + 1;
-}	
+			<td style="width:58%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
+	<td class="text-center" style="width:7%; padding:2px 0 0 0"><?php 
+	
+	 if ($pointscore > 0) { ?>
+	<img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
+	 <?php } else if ($pointscore == 0) { ?>
+			<img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
+	 <?php } else { ?>
+			<img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
+			 <?php } ?>
+	</td>
+	<td class="text-center">&nbsp;</td>
+	</tr>
+	<?php } else { ?>
+		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
+			<td style="width:58%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
+	<td class="text-center" style="width:7%; padding:2px 0 0 0"><?php 
+	echo $pointscore." %"; 
+	?>
+	</td>
+	<td class="text-center">&nbsp;</td>
+	</tr>
+		<?php } ?>
+	 <?php 
+	
+	 ?>
+	<?php if (isset($inspremark[$cp['id_cp']])){ ?>
+		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>
+		<u><?= $this->lang->line('comment'); ?></u><br/>
+	<?php		echo $inspremark[$cp['id_cp']]; ?>
+	</td></tr>
+		<?php }
+	$z = $z + 1;
+	}	
 $mcp = $cp['mainsectid'];
 $scp = $cp['id_section'];
-
  endforeach ?> 
    </table>
 	 <?php if (isset($inspimg)) {  ?>
