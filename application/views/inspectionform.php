@@ -163,6 +163,13 @@ if ($cp['name_section'] != $scp) { ?>
 	</div>
 
 <?php } ?>
+<div id="results_<?= $cp['id_cp']; ?>" class="row pb-3">
+								<?php if (isset($inspimg)) {
+									foreach ($inspimg as $key=>$value): ?>
+<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div></div>
+							<?php		endforeach;
+								} ?>
+							</div>
 <div class="row pb-3">
 	<div class="col-md-3">
 		<div class="row">
@@ -289,9 +296,9 @@ $('input[type="file"]').change(function(e){
  Webcam.attach( '#my_camera_'+ $idcp );
  i = i+1;
  Webcam.on( 'live', function() {
- document.getElementById("takesnapshot").style.display = "block";
- document.getElementById("closecamera").style.display = "block";
- document.getElementById("opencamera").style.display = "none";
+ document.getElementById("takesnapshot_"+ $idcp).style.display = "block";
+ document.getElementById("closecamera_"+ $idcp).style.display = "block";
+ document.getElementById("opencamera_"+ $idcp).style.display = "none";
  });
  
 	 }
