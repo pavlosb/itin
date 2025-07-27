@@ -589,7 +589,7 @@ jQuery(document).ready(function($) {
   $("[id^=savesnapshot]").hide();
   $("[id^=trashsnapshot]").hide();
   $("[id^=closecamera]").hide();
-     $('[input:radio]').change(function ()
+     $('input:radio').change(function ()
 {
   
 
