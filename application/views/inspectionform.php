@@ -87,8 +87,8 @@ if (isset($user_lang) && $user_lang == "greek") {
 						if ($prcp == 12 && $cp['mainsectid'] == 16) { ?>
 						
 							<div id="results" class="row pb-3">
-								<?php if (isset($inspimg)) {
-									foreach ($inspimg as $key=>$value): ?>
+								<?php if (isset($inspimg[0])) {
+									foreach ($inspimg[0] as $key=>$value): ?>
 <div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div></div>
 							<?php		endforeach;
 								} ?>
@@ -160,8 +160,8 @@ if ($cp['name_section'] != $scp) { ?>
 
 <?php } ?>
 <div id="results_<?= $cp['id_cp']; ?>" class="row pb-3">
-								<?php if (isset($inspimg)) {
-									foreach ($inspimg as $key=>$value): ?>
+								<?php if (isset($inspimg['id_cp'])) {
+									foreach ($inspimg['id_cp'] as $key=>$value): ?>
 <div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div></div>
 							<?php		endforeach;
 								} ?>
