@@ -540,6 +540,9 @@ echo json_encode($status) ;
 			if (isset($_POST['inspimg'])) {
 			$photos = $_POST['inspimg'];
 			}
+			if (isset($_POST['cpinspimg'])) {
+			$cpphotos = $_POST['cpinspimg'];
+			}
 
 
 foreach ($points as $key => $value):
@@ -550,10 +553,33 @@ endforeach;
 if($photos) {
 foreach ($photos as $key => $filename):
 	if ($filename!=""){
-	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename));
+	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename), 'chkpointid_img' =>'');
 	}
 endforeach;
 }
+
+
+if (isset($_POST['cpinspimg']) && is_array($_POST['cpinspimg'])) {
+    $cpphotos = $_POST['cpinspimg'];
+    $inspectionId = $this->input->post('inspectionid_insres');
+    foreach ($cpphotos as $outerKey => $innerArray) {
+        foreach ($innerArray as $innerKey => $filename) {
+            if (!empty($filename)) {
+                $imgdata[] = [
+                    'inspectionid_img' => $inspectionId,
+                    'filename_img'     => basename($filename),
+                    'chkpointid_img'           => $outerKey // this is the "1" in cpinspimg[1][2]
+                ];
+            }
+        }
+    }
+ }
+
+
+
+
+
+
 if($remarks) {
 foreach ($remarks as $key => $value):
 	if ($value!=""){
