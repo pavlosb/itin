@@ -291,9 +291,31 @@ if ($pointscore != 0) {
 	 <?php 
 	
 	 ?>
-	<?php if (isset($inspremark[$cp['id_cp']])){ ?>
+	<?php if (isset($inspremark[$cp['id_cp']]) || isset($inspimg[$cp['id_cp']])){ ?>
 		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-		<td>&nbsp;</td>
+		<td>
+			<?php if (isset($inspimg)) {  ?>
+									
+<?php
+									$im = 1;
+									
+
+									?>
+									<table width="100%" style="margin-top:50px; margin-bottom:15px">
+									<?php foreach ($inspimg[$cp['id_cp']] as $key=>$value): 
+										
+								?>
+										
+<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 100mm; height: auto;"/></td></tr>
+
+							<?php		
+						$im = $im + 1;
+						endforeach; ?>
+
+					</table>
+					
+							<?php	} ?>
+		</td>
 		<td>&nbsp;</td>
 		<td>
 		<u><?= $this->lang->line('comment'); ?></u><br/>
