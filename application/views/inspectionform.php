@@ -245,12 +245,13 @@ $scp = $cp['name_section'];
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
+				<div class="modal-body">
 				<div class="form-group">
             <label for="item-checkpoint">Checkpoint</label>
             <input type="text" class="form-control" name="checkpoint" id="item-checkpoint" required>
           </>
         </div>
-
+				</div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success">Save</button>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
