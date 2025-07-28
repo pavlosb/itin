@@ -24,6 +24,7 @@ $lang['system_check'] = 'Έλεγχος Συστήματος';
 $lang['greeklang'] = 'Ελληνικά';
 $lang['englishlang'] = 'Αγγλικά';
 $lang['confirm_erase'] = "Να γίνει η διαγραφή;";
+$lang['inspections'] = 'Επιθεωρήσεις';
 
 // HEADER - MENU
 $lang['logout'] = 'Αποσύνδεση';
@@ -55,6 +56,9 @@ $lang['tel_client'] = 'Τηλέφωνο';
 $lang['email_client'] = 'email';
 $lang['createaccount'] = 'Δημιουργία Λογαριασμού';
 
+//INSPECTORS
+$lang['inspectors'] = 'Επιθεωρητές';
+$lang['name_inspector'] = 'Όνομα';
 // VEHICLES
 $lang['vehicles'] = 'Οχήματα';
 $lang['incorrect_vin'] = 'Ο αριθμός πλαισίου δεν είναι έγκυρος';
