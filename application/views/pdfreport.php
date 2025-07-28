@@ -308,7 +308,7 @@ if ($pointscore != 0) {
         if ($im % 2 == 0) echo "<tr>"; // Start a new row every 2 images
     ?>
         <td width="45%" align="center">
-            <img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 50mm; height: auto; display:inline;"/>
+            <img src="<?= base_url() ?>upload/<?= $value['filename'] ?>" style="width: 50mm; height: auto;"/><br /><?= $value['caption'] ?>
         </td>
     <?php 
         $im++;
