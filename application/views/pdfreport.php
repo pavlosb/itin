@@ -308,7 +308,7 @@ if ($pointscore != 0) {
         if ($im % 2 == 0) echo "<tr>"; // Start a new row every 2 images
     ?>
         <td width="45%" align="center">
-            <img src="<?= base_url() ?>upload/<?= $value['filename'] ?>" style="width: 50mm; height: auto;"/><br /><?= $value['caption'] ?>
+            <img src="<?= base_url() ?>upload/<?= $value['filename'] ?>" style="width: 50mm; height: auto;"/><br /><span class="smalltxt"><?= $value['caption'] ?></span>
         </td>
     <?php 
         $im++;
@@ -349,7 +349,7 @@ $scp = $cp['id_section'];
 										
 								?>
 										
-<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value['filename'] ?>" style="width: 100mm; height: auto;"/><br /><?= $value['caption'] ?></td></tr>
+<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value['filename'] ?>" style="width: 100mm; height: auto;"/><br /><span class="smalltxt"><?= $value['caption'] ?></span></td></tr>
 
 							<?php		
 						$im = $im + 1;
