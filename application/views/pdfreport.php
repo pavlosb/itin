@@ -264,9 +264,9 @@ $y = $y+1;
 if ($pointscore != 0) {
 	?>
 	<?php if ($cp['cptype'] == 'chs') { ?>
-	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo " background: #ccc;"; } else {echo " border:1px solid #000;"; } ?>" class="pointrow">
-			<td style="width:58%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
-	<td class="text-center" style="width:7%; padding:2px 0 0 0"><?php 
+	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo " background: #ccc;"; } else {echo " border:1px solid #ccc;"; } ?>" class="pointrow">
+			<td style="width:58%; min-height:20px; <?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
+	<td class="text-center" style="width:7%; padding:2px 0 0 0 <?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>"><?php 
 	
 	 if ($pointscore > 0) { ?>
 	<img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
@@ -276,10 +276,10 @@ if ($pointscore != 0) {
 			<img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
 			 <?php } ?>
 	</td>
-	<td class="text-center">&nbsp;</td>
+	<td class="text-center" style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">&nbsp;</td>
 	</tr>
 	<?php } else { ?>
-		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo " background: #ccc"; } else {echo " border:1px solid #000;"; } ?>" class="pointrow">
+		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo " background: #ccc"; } else {echo " border:1px solid #ccc;"; } ?>" class="pointrow">
 			<td style="width:58%; min-height:20px;"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
 	<td class="text-center" style="width:7%; padding:2px 0 0 0"><?php 
 	echo $pointscore." %"; 
@@ -293,7 +293,7 @@ if ($pointscore != 0) {
 	 ?>
 	<?php if (isset($inspremark[$cp['id_cp']]) || isset($inspimg[$cp['id_cp']])){ ?>
 		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-		<td>
+		<td style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">
 			<?php if (isset($inspimg[$cp['id_cp']])) {  ?>
 									
 <?php
@@ -323,8 +323,8 @@ if ($pointscore != 0) {
 					
 							<?php	} ?>
 		</td>
-		<td>&nbsp;</td>
-		<td>
+		<td style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">&nbsp;</td>
+		<td style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">
 		<?php	if (isset($inspremark[$cp['id_cp']])) { ?>
 		<u><?= $this->lang->line('comment'); ?></u><br/>
 	<?php		echo $inspremark[$cp['id_cp']]; ?>
