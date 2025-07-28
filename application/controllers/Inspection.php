@@ -168,6 +168,31 @@ class Inspection extends CI_Controller {
 
 	}
 
+
+	public function inspectors_list() {
+
+
+	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
+		{
+		$data = $this->data;
+		$user = $this->ion_auth->user()->row();
+			$data['userid'] = $user->id;
+			$data['username'] = $user->first_name." ".$user->last_name;
+			$data['inspectors'] = $this->itindata_model->get_inspectors_with_inspection_count();
+			$this->load->view('header', $data);
+			$this->load->view('inspectorslist', $data);
+			$this->load->view('footer', $data);
+		} else {
+			redirect('auth/login');
+		}
+
+
+
+
+
+		
+	}
+
 	public function vehicles_list() 
 	{
 	
