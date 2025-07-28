@@ -264,23 +264,29 @@ $maxpos = $row->maxpos;
    }
     }
 
-	 public function get_inspectionimages($id) {
-		$this->db->where(array('inspectionid_img' => $id));
-		$query = $this->db->get('inspectionimg_tbl');
-		if ($query -> num_rows() > 0) {
-			foreach ($query->result() as $row)
-			{
-				if ($row->chkpointid_img) {
-				$inspimg[$row->chkpointid_img][$row->id_img] = $row->filename_img;
-				} else {
-				$inspimg[0][$row->id_img] = $row->filename_img;
-				}
-			}
-			return $inspimg;
-		} else {
-			return null;
-		}
-	 }
+public function get_inspectionimages($id)
+{
+    $this->db->where(['inspectionid_img' => $id]);
+    $query = $this->db->get('inspectionimg_tbl');
+
+    if ($query->num_rows() > 0) {
+        $inspimg = [];
+
+        foreach ($query->result() as $row) {
+            $checkpoint = $row->chkpointid_img ? $row->chkpointid_img : 0;
+
+            $inspimg[$checkpoint][$row->id_img] = [
+                'filename' => $row->filename_img,
+                'caption' => $row->caption_img
+            ];
+        }
+
+        return $inspimg;
+    } else {
+        return null;
+    }
+}
+
 
 	 public function get_inspectionremarks($id) {
 
