@@ -1245,4 +1245,24 @@ $this->load->view('footer', $data);
 }
 
 }
+
+
+public function get_image_data()
+{
+    $id = $this->input->get('id');
+    $image = $this->itindata_model->get_image_by_id($id);
+	$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+	$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+	$this->output->set_header("Content-type: application/json");
+
+    if ($image) {
+        echo json_encode($image);
+    } else {
+        echo json_encode(null);
+    }
+}
+
+
+
+
 }
