@@ -24,6 +24,10 @@ $lang['system_check'] = 'System Check';
 $lang['greeklang'] = 'Greek';
 $lang['englishlang'] = 'English';
 $lang['confirm_erase'] = "Are you sure you want to delete this;";
+$lang['inspections'] = 'Inspections';
+
+
+
 
 // HEADER - MENU
 $lang['logout'] = 'Logout';
@@ -54,6 +58,11 @@ $lang['zip_client'] = 'ZIP';
 $lang['tel_client'] = 'Tel';
 $lang['email_client'] = 'email';
 $lang['createaccount'] = 'Create Account';
+
+
+//INSPECTORS
+$lang['inspectors'] = 'Inspectors';
+$lang['name_inspector'] = 'Name';
 
 // VEHICLES
 $lang['vehicles'] = 'Vehicles';
@@ -105,7 +114,7 @@ $lang['inspector'] = 'Inspector';
 $lang['leave_empty'] = 'Leave empty for auto-numbering';
 $lang['comment'] = 'Remarks';
 $lang['genremark_inspection'] = 'Important Remark';
-$lang['reset_inspection'] = 'Επαναφορά';
+$lang['reset_inspection'] = 'Reset';
 
 
 //PDF REPORT
