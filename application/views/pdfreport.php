@@ -297,22 +297,29 @@ if ($pointscore != 0) {
 			<?php if (isset($inspimg[$cp['id_cp']])) {  ?>
 									
 <?php
-									$im = 1;
+									//$im = 1;
 									
 
 									?>
-									<table width="100%" style="margin-top:50px; margin-bottom:15px">
-									<?php foreach ($inspimg[$cp['id_cp']] as $key=>$value): 
-										
-								?>
-										
-<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 50mm; height: auto; display:inline;"/></td></tr>
+									<table width="100%" style="margin-top:15px; margin-bottom:15px">
+    <?php 
+    $im = 0;
+    foreach ($inspimg[$cp['id_cp']] as $key => $value): 
+        if ($im % 2 == 0) echo "<tr>"; // Start a new row every 2 images
+    ?>
+        <td width="45%" align="center">
+            <img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 50mm; height: auto; display:inline;"/>
+        </td>
+    <?php 
+        $im++;
+        if ($im % 2 == 0) echo "</tr>"; // Close the row after 2 images
+    endforeach;
 
-							<?php		
-						$im = $im + 1;
-						endforeach; ?>
+    // If the last row has only 1 image, close the row
+    if ($im % 2 != 0) echo "</tr>";
+    ?>
+</table>
 
-					</table>
 					
 							<?php	} ?>
 		</td>
