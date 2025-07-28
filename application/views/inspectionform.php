@@ -139,7 +139,10 @@ if ($cp['name_section'] != $scp) { ?>
 <div id="results_<?= $cp['id_cp']; ?>" class="row pb-3">
 								<?php if (isset($inspimg[$cp['id_cp']])) {
 									foreach ($inspimg[$cp['id_cp']] as $key=>$value): ?>
-<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div><div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>"><i class="fal fa-edit"></i></button></div></div>
+<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/>
+<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>"><i class="fal fa-edit"></i></button></div>
+<div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div>
+</div>
 							<?php		endforeach;
 								} ?>
 							</div>
@@ -173,7 +176,10 @@ $scp = $cp['name_section'];
  <div id="results" class="row pb-3">
 								<?php if (isset($inspimg[0])) {
 									foreach ($inspimg[0] as $key=>$value): ?>
-<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/><div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div><div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>"><i class="fal fa-edit"></i></button></div></div>
+<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/>
+<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>"><i class="fal fa-edit"></i></button></div>
+<div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div>
+</div>
 							<?php		endforeach;
 								} ?>
 							</div>
