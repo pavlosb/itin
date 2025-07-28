@@ -306,7 +306,7 @@ if ($pointscore != 0) {
 										
 								?>
 										
-<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 100mm; height: auto;"/></td></tr>
+<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value ?>" style="width: 50mm; height: auto; display:inline;"/></td></tr>
 
 							<?php		
 						$im = $im + 1;
