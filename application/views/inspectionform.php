@@ -136,7 +136,7 @@ if ($cp['name_section'] != $scp) { ?>
 								<?php if (isset($inspimg[$cp['id_cp']])) {
 									foreach ($inspimg[$cp['id_cp']] as $key=>$value): ?>
 <div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/>
-<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>" data-toggle="modal" data-target="#editimgModal">><i class="fal fa-edit"></i></button></div>
+<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>" data-toggle="modal" data-target="#editimgModal"><i class="fal fa-edit"></i></button></div>
 <div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div>
 </div>
 							<?php		endforeach;
@@ -173,7 +173,7 @@ $scp = $cp['name_section'];
 								<?php if (isset($inspimg[0])) {
 									foreach ($inspimg[0] as $key=>$value): ?>
 <div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/>
-<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>" data-toggle="modal" data-target="#editimgModal">><i class="fal fa-edit"></i></button></div>
+<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>" data-toggle="modal" data-target="#editimgModal"><i class="fal fa-edit"></i></button></div>
 <div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div>
 </div>
 							<?php		endforeach;
@@ -246,11 +246,19 @@ $scp = $cp['name_section'];
           </button>
         </div>
 				<div class="modal-body">
+					<input type=hidden name="id_img">
 				<div class="form-group">
-            <label for="item-checkpoint">Checkpoint</label>
-            <input type="text" class="form-control" name="checkpoint" id="item-checkpoint" required>
-          </>
-        </div>
+    <label for="chkpointid_img">Σημείο ελέγχου</label>
+    <select name="chkpointid_img" class="form-control" id="chkpointid_img">
+			<?php foreach ($checkpoints as $cp): ?>
+      <option value="<?= $cp['id_cp']; ?>"><?= $cp[$name_cp]; ?></option>
+			<?php endforeach; ?>
+    </select>
+  </div>
+	<div class="form-group">
+    <label for="caption_img">Παρατήρηση</label>
+    <textarea name="caption_img" class="form-control" id="caption_img" rows="3"></textarea>
+  </div>
 				</div>
         <div class="modal-footer">
           <button type="submit" class="btn btn-success">Save</button>
@@ -847,6 +855,31 @@ $( ".delimg" ).click(function() {
 
         })
 
+$('#editimgModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget);
+  var imgId = button.data('imgid');
+
+  // Clear previous values
+ $('#editForm')[0].reset();
+ $('input[name="id_img"]').val(imgId);
+  // Fetch data via AJAX
+  $.ajax({
+    url: '<?= site_url("inspection/get_image_data") ?>',
+    type: 'GET',
+    data: { id: imgId },
+    dataType: 'json',
+    success: function (data) {
+      if (data) {
+        $('#caption_img').val(data.caption);
+        $('#chkpointid_img').val(data.checkpoint); // assumes value matches <option value="">
+      } 
+    },
+    error: function () {
+      alert('Σφάλμα κατά την ανάκτηση των δεδομένων.');
+      $('#editimgModal').modal('hide');
+    }
+  });
+});
 
 
 
