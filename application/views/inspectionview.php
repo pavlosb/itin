@@ -98,7 +98,7 @@
             <div class="row">
 			<?php
 									foreach ($inspimg[0] as $key=>$value): ?>
-<div class="col-md-3 mb-2"> <a class="thumbnail gallery" href="<?= base_url() ?>upload/<?= $value ?>"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value['filename'] ?>"/></a></div>
+<div class="col-md-3 mb-2"> <a class="thumbnail gallery" href="<?= base_url() ?>upload/<?= $value['filename'] ?>"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value['filename'] ?>"/></a></div>
 							<?php		endforeach; ?>
 								
 
@@ -106,10 +106,7 @@
         </div>
 
 		<?php } ?>
-
-
-
-    </div>
+</div>
 <div id="qrcodeinfo" class="row justify-content-center mt-2">	
 	<div class="col-lg-10 bg-warning">
 <?php if (isset($inspection->qrcode_inspection)) { ?>
