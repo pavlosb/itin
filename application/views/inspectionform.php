@@ -140,7 +140,7 @@ if ($cp['name_section'] != $scp) { ?>
 								<?php if (isset($inspimg[$cp['id_cp']])) {
 									foreach ($inspimg[$cp['id_cp']] as $key=>$value): ?>
 <div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/>
-<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>"><i class="fal fa-edit"></i></button></div>
+<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>" data-toggle="modal" data-target="#editimgModal">><i class="fal fa-edit"></i></button></div>
 <div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div>
 </div>
 							<?php		endforeach;
@@ -177,7 +177,7 @@ $scp = $cp['name_section'];
 								<?php if (isset($inspimg[0])) {
 									foreach ($inspimg[0] as $key=>$value): ?>
 <div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/>
-<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>"><i class="fal fa-edit"></i></button></div>
+<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>" data-toggle="modal" data-target="#editimgModal">><i class="fal fa-edit"></i></button></div>
 <div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div>
 </div>
 							<?php		endforeach;
@@ -238,6 +238,32 @@ $scp = $cp['name_section'];
       </div>
 </div>
 </div> 
+<!-- Modal -->
+<div class="modal fade" id="editimgModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <form id="editForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit Item</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+				<div class="form-group">
+            <label for="item-checkpoint">Checkpoint</label>
+            <input type="text" class="form-control" name="checkpoint" id="item-checkpoint" required>
+          </>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <div id="spinner" class="d-flex justify-content-center" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0; z-index: 9999; background: rgba(255,255,255,0.7);">
   <div class="spinner-border align-self-center" role="status">
     <span class="sr-only">Loading...</span>
@@ -839,6 +865,8 @@ $( ".delimg" ).click(function() {
 	});
 
         })
+
+
 
 
 });
