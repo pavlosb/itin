@@ -301,7 +301,7 @@ if ($pointscore != 0) {
 									
 
 									?>
-									<table width="100%" style="margin-top:15px; margin-bottom:15px">
+									<table width="100%" style="margin-top:5px; margin-bottom:5px">
     <?php 
     $im = 0;
     foreach ($inspimg[$cp['id_cp']] as $key => $value): 
