@@ -93,11 +93,11 @@
 		</div>
 
 			<?php } } ?>
-		<?php if (isset($inspimg)) { ?>
+		<?php if (isset($inspimg[0])) { ?>
 		<div class="col-lg-10 p-3 bg-light">
             <div class="row">
 			<?php
-									foreach ($inspimg as $key=>$value): ?>
+									foreach ($inspimg[0] as $key=>$value): ?>
 <div class="col-md-3 mb-2"> <a class="thumbnail gallery" href="<?= base_url() ?>upload/<?= $value ?>"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value ?>"/></a></div>
 							<?php		endforeach; ?>
 								
