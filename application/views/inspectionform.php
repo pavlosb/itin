@@ -254,6 +254,7 @@ $scp = $cp['name_section'];
 				<div class="form-group">
     <label for="chkpointid_img">Σημείο ελέγχου</label>
     <select name="chkpointid_img" class="form-control" id="chkpointid_img">
+			<option>Επιλογή</option>
 			<?php foreach ($checkpoints as $cp): ?>
       <option value="<?= $cp['id_cp']; ?>"><?= $cp[$name_cp]; ?></option>
 			<?php endforeach; ?>
