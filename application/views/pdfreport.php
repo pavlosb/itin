@@ -264,7 +264,7 @@ $y = $y+1;
 if ($pointscore != 0) {
 	?>
 	<?php if ($cp['cptype'] == 'chs') { ?>
-	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo " background: #ccc;"; } else {echo " border:1px solid #ccc;"; } ?>" class="pointrow">
+	<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo " background: #ccc;"; } ?>" class="pointrow">
 			<td style="width:58%; min-height:20px; <?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>"><?= sprintf("%02d",$z) ?> <?= $cp[$printtext_cp]; ?></td>
 	<td class="text-center" style="width:7%; padding:2px 0 0 0 <?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>"><?php 
 	
