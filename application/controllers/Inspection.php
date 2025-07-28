@@ -1262,6 +1262,22 @@ public function get_image_data()
     }
 }
 
+public function update_image_data()
+{
+    $id_img = $this->input->post('id_img');
+    $caption_img = $this->input->post('caption_img');
+    $chkpointid_img = $this->input->post('chkpointid_img');
+
+    $updated = $this->itindata_model->update_image($id_img, $caption_img, $chkpointid_img);
+	$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+	$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+	$this->output->set_header("Content-type: application/json");
+    if ($updated) {
+        echo json_encode(['status' => 'success']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Η ενημέρωση απέτυχε.']);
+    }
+}
 
 
 
