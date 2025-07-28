@@ -438,5 +438,17 @@ public function get_image_by_id($id)
     return $this->db->get_where('inspectionimg_tbl', ['id_img' => $id])->row_array();
 }
 
+public function update_image($id_img, $caption_img, $chkpointid_img)
+{
+    $data = [
+        'caption_img' => $caption_img,
+        'chkpointid_img' => $chkpointid_img
+    ];
+
+    $this->db->where('id_img', $id_img);
+    return $this->db->update('inspectionimg_tbl', $data);
+}
+
 
 }
+
