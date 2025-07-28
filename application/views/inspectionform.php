@@ -871,8 +871,8 @@ $('#editimgModal').on('show.bs.modal', function (event) {
     dataType: 'json',
     success: function (data) {
       if (data) {
-        $('#caption_img').val(data.caption);
-        $('#chkpointid_img').val(data.checkpoint); // assumes value matches <option value="">
+        $('#caption_img').val(data.caption_img);
+        $('#chkpointid_img').val(data.chkpointid_img); // assumes value matches <option value="">
       } 
     },
     error: function () {
