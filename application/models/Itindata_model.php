@@ -430,5 +430,37 @@ public function set_signature($data) {
   
  }
 
+ 
+public function get_image_by_id($id)
+{
+    return $this->db->get_where('inspectionimg_tbl', ['id_img' => $id])->row_array();
+}
+
+public function update_image($id_img, $caption_img, $chkpointid_img)
+{
+    $data = [
+        'caption_img' => $caption_img,
+        'chkpointid_img' => $chkpointid_img
+    ];
+
+    $this->db->where('id_img', $id_img);
+    return $this->db->update('inspectionimg_tbl', $data);
+}
+
+
+public function get_inspectors_with_inspection_count()
+{
+    $this->db->select('u.id, u.first_name, u.last_name, u.email, COUNT(i.id_inspection) AS total_inspections');
+    $this->db->from('users u');
+    $this->db->join('users_groups ug', 'u.id = ug.user_id');
+    $this->db->join('inspections_tbl i', 'u.id = i.inspector_inspection', 'left');
+    $this->db->where('ug.group_id', 3); // Group 3 = Inspectors
+    $this->db->group_by('u.id');
+
+    $query = $this->db->get();
+    return $query->result();
+}
+
+
 }
 
