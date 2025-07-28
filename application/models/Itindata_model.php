@@ -458,5 +458,19 @@ public function update_image($id_img, $caption_img, $chkpointid_img)
 }
 
 
+public function get_inspectors_with_inspection_count()
+{
+    $this->db->select('u.id, u.first_name, u.last_name, u.email, COUNT(i.id_inspection) AS total_inspections');
+    $this->db->from('users u');
+    $this->db->join('users_groups ug', 'u.id = ug.user_id');
+    $this->db->join('inspections_tbl i', 'u.id = i.inspector_inspection', 'left');
+    $this->db->where('ug.group_id', 3); // Group 3 = Inspectors
+    $this->db->group_by('u.id');
+
+    $query = $this->db->get();
+    return $query->result();
+}
+
+
 }
 
