@@ -882,6 +882,29 @@ $('#editimgModal').on('show.bs.modal', function (event) {
   });
 });
 
+$('#editForm').submit(function (e) {
+  e.preventDefault(); // prevent default form submission
+
+  $.ajax({
+    url: '<?= site_url("inspection/update_image_data") ?>',
+    type: 'POST',
+    data: $(this).serialize(),
+    dataType: 'json',
+    success: function (response) {
+      if (response.status === 'success') {
+        $('#editimgModal').modal('hide');
+        alert('Η εικόνα ενημερώθηκε επιτυχώς!');
+        location.reload(); // or update the DOM manually
+      } else {
+        alert('Αποτυχία ενημέρωσης: ' + response.message);
+      }
+    },
+    error: function () {
+      alert('Σφάλμα κατά την αποθήκευση των δεδομένων.');
+    }
+  });
+});
+
 
 
 });
