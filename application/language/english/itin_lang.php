@@ -40,6 +40,9 @@ $lang['mnu_vehicles_list'] = "Vehicles' List";
 $lang['mnu_inspections'] = 'Inspections';
 $lang['mnu_inspection_add'] = 'New Inspection';
 $lang['mnu_inspections_list'] = "Inspections' List";
+$lang['mnu_inspectors_list'] = "Inspectors' List";
+$lang['mnu_inspectors'] = 'Inspectors';
+$lang['mnu_inspector_add'] = 'New Inspector';
 
 // INSPECTIONS
 $lang['home_new_client'] = 'New<br />Client';
