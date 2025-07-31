@@ -6,6 +6,14 @@ if (isset($user_lang) && $user_lang == "greek") {
   $langprefix ="en_";
   }
 ?><div class="container mt-5 mb-3">
+	<?php if (isset($cinspector)) { ?>
+	<div class="row mb-3">
+		<div class="col-xs-12">
+			<h3>Επιθεωρήσεις από <?= $cinspector->last_name?> <?= $cinspector->first_name?></h3>
+		</div>
+		
+	</div>
+	<?php } ?>
     <div class="row justify-content-center">
          <div class="col-12">
             <table id="inspectlist" class="table table-striped table-sm">
