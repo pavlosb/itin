@@ -69,6 +69,14 @@
           <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/inspections_list"><?= $this->lang->line('mnu_inspections_list'); ?></a>
           </div>
       </li>
+			<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $this->lang->line('mnu_inspectors'); ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <!--<a class="dropdown-item" href="<?php echo base_url(); ?>inspection/inspection_new"><?= $this->lang->line('mnu_inspector_add'); ?></a>-->
+          <a class="dropdown-item" href="<?php echo base_url(); ?>inspection/inspectors_list"><?= $this->lang->line('mnu_inspectors_list'); ?></a>
+          </div>
+      </li>
     </ul>
     
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">

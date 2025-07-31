@@ -37,6 +37,9 @@ $lang['mnu_vehicles_list'] = "Κατάλογος";
 $lang['mnu_inspections'] = 'Επιθεωρήσεις';
 $lang['mnu_inspection_add'] = 'Νέα Επιθεώρηση';
 $lang['mnu_inspections_list'] = "Κατάλογος";
+$lang['mnu_inspectors_list'] = "Κατάλογος";
+$lang['mnu_inspectors'] = 'Επιθεωρητές';
+$lang['mnu_inspector_add'] = 'Προσθήκη επιθεωρητή';
 
 // INSPECTIONS
 $lang['home_new_client'] = 'Νέος<br />Πελάτης';
