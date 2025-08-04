@@ -111,7 +111,7 @@ if ($cp['name_section'] != $scp) { ?>
     <label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
     <div class="col-sm-5 text-center text-sm-right">
 		<?php // add camera button to point ?>
-		<button type="button" id="opencamera_<?= $cp['id_cp']; ?>"  onclick="configurenew(<?= $cp['id_cp']; ?>)" class="btn btn-primary"><i class="fas fa-camera"></i></button>	
+		<button type="button" disabled id="opencamera_<?= $cp['id_cp']; ?>"  onclick="configurenew(<?= $cp['id_cp']; ?>)" class="btn btn-primary"><i class="fas fa-camera"></i></button>	
 		<?php // add camera button to point ?>
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
@@ -623,6 +623,7 @@ jQuery(document).ready(function($) {
 
       $('input:radio:checked').each(function(){
       $cpid = $(this).data("cpid");
+			$('#opencamera_'+$cpid).prop('disabled', false);
       $ptscp = isNaN(parseInt($(this).data("ptscp"))) ? 0 : parseInt($(this).data("ptscp"));
 			$('[name="points['+$cpid +']"]').val($ptscp);
         if (!$(this).hasClass('do-not-calc')) {
