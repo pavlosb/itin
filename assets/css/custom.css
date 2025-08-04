@@ -147,7 +147,7 @@ body {
 }
 #floating-submit {
   position: fixed;
-  bottom: 20px;   /* distance from bottom of the page */
+  bottom: 140px;   /* distance from bottom of the page */
   right: 20px;    /* distance from right edge */
   z-index: 9999;
   /* Optional: style to make it look good */
