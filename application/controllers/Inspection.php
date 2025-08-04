@@ -149,9 +149,13 @@ class Inspection extends CI_Controller {
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
 		$where = null;
-		if (isset($filter) && isset($value)) {
+
+		$data = $this->data;
+				if (isset($filter) && isset($value)) {
 			$where = array($filter => $value);
-		}
+$data['cinspector'] = $this->ion_auth->user($value)->row();
+}
+
 		$data = $this->data;
 		$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
