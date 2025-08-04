@@ -156,7 +156,7 @@ class Inspection extends CI_Controller {
 $data['cinspector'] = $this->ion_auth->user($value)->row();
 }
 
-		$data = $this->data;
+		
 		$user = $this->ion_auth->user()->row();
 			$data['userid'] = $user->id;
 			$data['username'] = $user->first_name." ".$user->last_name;
