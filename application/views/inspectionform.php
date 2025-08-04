@@ -72,7 +72,7 @@ if (isset($user_lang) && $user_lang == "greek") {
     <div class="row justify-content-center pb-5 <?php if (!$signature) { echo "disablediv"; } ?>">
       <div class="col-lg-8">
         <?php echo form_open("inspection/inspection_save", "id='inspform'");?>
-        <button type="submit" id="floating-submit" class="btn btn-primary"><?= $this->lang->line('submit'); ?></button>
+        <button type="submit" id="floating-submit" class="btn btn-primary btn-lg"><?= $this->lang->line('submit'); ?></button>
         <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
 				<div class="row">
 <div class="form-group col">
@@ -606,9 +606,11 @@ jQuery(document).ready(function($) {
   $("[id^=savesnapshot]").hide();
   $("[id^=trashsnapshot]").hide();
   $("[id^=closecamera]").hide();
-     $('input:radio').change(function ()
+  $('input:radio').change(function ()
+	
 {
-  
+  $cpidthis = $(this).data("cpid");
+	$('#opencamera_'+ $cpidthis ).prop('disabled', false);
 
       var total1 = 0;
       var total2 = 0;
@@ -623,7 +625,7 @@ jQuery(document).ready(function($) {
 
       $('input:radio:checked').each(function(){
       $cpid = $(this).data("cpid");
-			$('#opencamera_'+$cpid).prop('disabled', false);
+			
       $ptscp = isNaN(parseInt($(this).data("ptscp"))) ? 0 : parseInt($(this).data("ptscp"));
 			$('[name="points['+$cpid +']"]').val($ptscp);
         if (!$(this).hasClass('do-not-calc')) {
