@@ -282,6 +282,19 @@ $scp = $cp['name_section'];
 </div>
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
 <script language="JavaScript">
+document.addEventListener("scroll", function() {
+  var form = document.querySelector("form");
+  var mainSubmit = form.querySelector("button[type='submit']:last-of-type");
+  var floating = document.getElementById("floating-submit");
+  
+  var rect = mainSubmit.getBoundingClientRect();
+  if(rect.top < window.innerHeight && rect.bottom >= 0) {
+    // Main button is visible, hide floating
+    floating.style.display = "none";
+  } else {
+    floating.style.display = "block";
+  }
+});
 
 $('input[type="file"]').change(function(e){
         var fileName = e.target.files[0].name;
