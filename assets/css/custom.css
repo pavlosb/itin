@@ -143,3 +143,12 @@ body {
 	pointer-events: none;
     opacity: 0.4;
 }
+#floating-submit {
+  position: fixed;
+  bottom: 20px;   /* distance from bottom of the page */
+  right: 20px;    /* distance from right edge */
+  z-index: 9999;
+  /* Optional: style to make it look good */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display:none;
+}
