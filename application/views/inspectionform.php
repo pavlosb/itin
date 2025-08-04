@@ -11,15 +11,19 @@ if (isset($user_lang) && $user_lang == "greek") {
 		$insgenpremark = $inspection->en_rmrk_inspection;
 	}
   }
+
 	$prcp = 0;
   $mainsect = $langprefix."mainsect";
   $name_section = $langprefix."name_section";
   $name_cp = $langprefix."name_cp";
   $helptext_cp = $langprefix."helptext_cp";
+
 	$ev = array("electric", "pluginpetrol", "plugindiesel");
 	if (!in_array($inspection->fueltyp_vhcl, $ev)) {
 	unset($checkpoints[0]);
 }
+
+
   ?>
 <div class="container mt-5 mb-5">
 <div class="row justify-content-center">
@@ -71,11 +75,12 @@ if (isset($user_lang) && $user_lang == "greek") {
         <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
 				<div class="row">
 <div class="form-group col">
-<label for="exampleFormControlTextarea1"><?= $this->lang->line('genremark_inspection'); ?></label>
+<label for="<?= $langprefix ?>rmrk_inspection"><?= $this->lang->line('genremark_inspection'); ?></label>
     <textarea class="form-control" id="<?= $langprefix ?>rmrk_inspection" name="<?= $langprefix ?>rmrk_inspection" rows="5"><?php echo $insgenpremark; ?></textarea>
 			</div>
 			</div>
 
+			
 
 				
         <?php 
@@ -98,7 +103,6 @@ if ($cp['name_section'] != $scp) { ?>
  <legend class="col-form-label col-form-label-lg col-sm-12"><?= $cp[$name_section]; ?></legend>
 </div>
 <?php } ?>
-
 <?php if ($cp['cptype'] == 'chs') { ?>
 <div class="form-group row pt-3">
   <input type=hidden name="chpsect[<?= $cp['id_cp']; ?>]" value ="<?= $cp['mainsectid']; ?>">
@@ -153,7 +157,6 @@ if ($cp['name_section'] != $scp) { ?>
 <div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnapnew(<?= $cp['id_cp']; ?>)" ><i class="fal fa-trash-alt"></i></button></div>
 	</div></div><div id="my_camera_<?= $cp['id_cp']; ?>" class="col-md-9"></div>
 </div>
-	</div>
 	<div class="form-group row pb-3">
 		<div class="col-12">
     <label for="rmrk[<?= $cp['id_cp']; ?>]"><?= $this->lang->line('comment'); ?></label>
@@ -506,6 +509,22 @@ document.getElementById("closecamera_"+ $idcp).style.display = "block";
         var contentType = parts[0].split(':')[1];
         var raw = parts[1];
 
+        return new Blob([raw], {type: contentType});
+    }
+
+    var parts = dataURL.split(BASE64_MARKER);
+    var contentType = parts[0].split(':')[1];
+    var raw = window.atob(parts[1]);
+    var rawLength = raw.length;
+
+    var uInt8Array = new Uint8Array(rawLength);
+
+    for (var i = 0; i < rawLength; ++i) {
+        uInt8Array[i] = raw.charCodeAt(i);
+    }
+
+    return new Blob([uInt8Array], {type: contentType});
+}
 
  function uploadFile() {
 
