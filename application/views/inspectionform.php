@@ -72,6 +72,7 @@ if (isset($user_lang) && $user_lang == "greek") {
     <div class="row justify-content-center pb-5 <?php if (!$signature) { echo "disablediv"; } ?>">
       <div class="col-lg-8">
         <?php echo form_open("inspection/inspection_save", "id='inspform'");?>
+        <button type="submit" id="floating-submit" class="btn btn-primary"><?= $this->lang->line('submit'); ?></button>
         <input type="hidden" name="inspectionid_insres" value = "<?= $inspectionid ?> ">
 				<div class="row">
 <div class="form-group col">
@@ -244,7 +245,7 @@ $scp = $cp['name_section'];
     <div class="modal-content">
       <form id="editForm">
         <div class="modal-header">
-          <h5 class="modal-title" id="editModalLabel">Edit Item</h5>
+          <h5 class="modal-title" id="editModalLabel">Επεξεργασία</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -266,8 +267,8 @@ $scp = $cp['name_section'];
   </div>
 				</div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Save</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-success">Αποθήκευση αλλαγών</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Ακύρωση</button>
         </div>
       </form>
     </div>
