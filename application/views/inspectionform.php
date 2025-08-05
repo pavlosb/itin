@@ -275,9 +275,17 @@ $scp = $cp['name_section'];
   </div>
 </div>
 
-<div id="spinner" class="d-flex justify-content-center" style="position: fixed; width: 100vw; height: 100vh; top: 0px; left: 0; z-index: 9999; background: rgba(255,255,255,0.7);">
+<div id="spinner" class="d-flex justify-content-center"
+  style="position: fixed; width: 100vw; height: 100vh; top: 0px; left: 0; z-index: 9999; background: rgba(255,255,255,0.7);">
   <div class="spinner-border align-self-center" role="status">
     <span class="sr-only">Loading...</span>
+  </div>
+  <div id="spinner-imgupload-progress" style="display:none; width:60%; margin-top:2rem;">
+    <div class="progress">
+      <div id="spinner-progressbar" class="progress-bar progress-bar-striped progress-bar-animated"
+           role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div id="spinner-progress-text" style="font-size:1rem; text-align:center; margin-top:0.5rem;"></div>
   </div>
 </div>
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
@@ -371,7 +379,7 @@ $('input[type="file"]').change(function(e){
     Webcam.snap( function(data_uri) {
        // display results in page
        document.getElementById("results").innerHTML +=
-			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
+			         '<div id="imgbox-'+i+'" class="col-md-3 mb-1"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
      Webcam.reset();
@@ -388,7 +396,7 @@ function take_snapshotnew($idcp) {
     Webcam.snap( function(data_uri) {
        // display results in page
        document.getElementById("results_"+ $idcp).innerHTML +=
-			         '<div id="imgbox_'+$idcp+'-'+i+'" class="col-md-3"><img id="imageprev_'+$idcp+'-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
+			         '<div id="imgbox_'+$idcp+'-'+i+'" class="col-md-3 mb-1"><img id="imageprev_'+$idcp+'-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
      Webcam.reset();
@@ -543,7 +551,7 @@ document.getElementById("closecamera_"+ $idcp).style.display = "block";
  //function uploadFile() {
 
  // Batch size: how many images per upload group
-const BATCH_SIZE = 5;
+const BATCH_SIZE = 4;
 
 async function uploadFile() {
   let spinnerdiv = document.getElementById("spinner");
@@ -551,18 +559,25 @@ async function uploadFile() {
   spinnerdiv.style.removeProperty("display");
   $("#spinner").addClass("d-flex").show();
 
-  const fileInput = document.getElementById("fileupload");
-  const selectedFiles = Array.from(fileInput.files); // make a real array
-  let i = 0; // local index for each image
+  // PROGRESS BAR SETUP
+  const spinnerImgProgress = document.getElementById("spinner-imgupload-progress");
+  const spinnerBar = document.getElementById("spinner-progressbar");
+  const spinnerText = document.getElementById("spinner-progress-text");
+  spinnerImgProgress.style.display = "block";
+  spinnerBar.style.width = "0%";
+  spinnerBar.setAttribute('aria-valuenow', 0);
+  spinnerText.innerText = "Uploading 0%...";
 
-  // Split files into batches
+  const fileInput = document.getElementById("fileupload");
+  const selectedFiles = Array.from(fileInput.files);
+  let i = 0;
+
   for (let start = 0; start < selectedFiles.length; start += BATCH_SIZE) {
     const batch = selectedFiles.slice(start, start + BATCH_SIZE);
     let formData = new FormData();
     batch.forEach(file => formData.append("file[]", file));
 
     try {
-      // Wait for each batch to finish before starting the next
       await $.ajax({
         url: '/inspection/imgupload',
         type: 'post',
@@ -572,10 +587,8 @@ async function uploadFile() {
         processData: false,
         success: function(response) {
           response.files.forEach(function(url) {
-            // Show the image preview
             document.getElementById('results').innerHTML +=
-              '<div id="imgbox-' + i + '" class="col-md-3"><img id="imageprev-' + i + '" class="img-fluid" src="' + url + '"/></div>';
-            // Add hidden field for each uploaded image
+              '<div id="imgbox-' + i + '" class="col-md-3 mb-1"><img id="imageprev-' + i + '" class="img-fluid" src="' + url + '"/></div>';
             var input = document.createElement("input");
             input.setAttribute("type", "hidden");
             input.setAttribute("name", "inspimg[" + i + "]");
@@ -591,11 +604,24 @@ async function uploadFile() {
     } catch (e) {
       alert("Network error or batch failed: " + e.message);
     }
+
+    // UPDATE PROGRESS
+    let percent = Math.min(100, Math.round(((start + BATCH_SIZE) / selectedFiles.length) * 100));
+    spinnerBar.style.width = percent + "%";
+    spinnerBar.setAttribute('aria-valuenow', percent);
+    spinnerText.innerText = `Uploading ${percent}%...`;
   }
+
+  // CLEAN UP PROGRESS DISPLAY
+  spinnerImgProgress.style.display = "none";
+  spinnerBar.style.width = "0%";
+  spinnerBar.setAttribute('aria-valuenow', 0);
+  spinnerText.innerText = "";
 
   spinnerdiv.classList.remove("d-flex");
   spinnerdiv.style.setProperty("display", "none");
 }
+
 
 
 
