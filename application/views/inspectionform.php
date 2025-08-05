@@ -371,7 +371,7 @@ $('input[type="file"]').change(function(e){
     Webcam.snap( function(data_uri) {
        // display results in page
        document.getElementById("results").innerHTML +=
-			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
+			         '<div id="imgbox-'+i+'" class="col-md-3 mb-1"><img id="imageprev-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
      Webcam.reset();
@@ -388,7 +388,7 @@ function take_snapshotnew($idcp) {
     Webcam.snap( function(data_uri) {
        // display results in page
        document.getElementById("results_"+ $idcp).innerHTML +=
-			         '<div id="imgbox_'+$idcp+'-'+i+'" class="col-md-3"><img id="imageprev_'+$idcp+'-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
+			         '<div id="imgbox_'+$idcp+'-'+i+'" class="col-md-3 mb-1"><img id="imageprev_'+$idcp+'-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
      } );
 
      Webcam.reset();
@@ -543,7 +543,7 @@ document.getElementById("closecamera_"+ $idcp).style.display = "block";
  //function uploadFile() {
 
  // Batch size: how many images per upload group
-const BATCH_SIZE = 5;
+const BATCH_SIZE = 4;
 
 async function uploadFile() {
   let spinnerdiv = document.getElementById("spinner");
@@ -574,7 +574,7 @@ async function uploadFile() {
           response.files.forEach(function(url) {
             // Show the image preview
             document.getElementById('results').innerHTML +=
-              '<div id="imgbox-' + i + '" class="col-md-3"><img id="imageprev-' + i + '" class="img-fluid" src="' + url + '"/></div>';
+              '<div id="imgbox-' + i + '" class="col-md-3 mb-1"><img id="imageprev-' + i + '" class="img-fluid" src="' + url + '"/></div>';
             // Add hidden field for each uploaded image
             var input = document.createElement("input");
             input.setAttribute("type", "hidden");
