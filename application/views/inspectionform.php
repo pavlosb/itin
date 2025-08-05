@@ -542,57 +542,61 @@ document.getElementById("closecamera_"+ $idcp).style.display = "block";
 
  function uploadFile() {
 
+ // Batch size: how many images per upload group
+const BATCH_SIZE = 5;
+
+async function uploadFile() {
   let spinnerdiv = document.getElementById("spinner");
   spinnerdiv.classList.add("d-flex");
   spinnerdiv.style.removeProperty("display");
   $("#spinner").addClass("d-flex").show();
-	i = i+1;
-  let formData = new FormData(); 
-	const fileInput = document.getElementById("fileupload");
-	const selectedFiles = fileInput.files;
-	
-	//if(fileupload.files[0].length > 0) {
-	for (let j = 0; j < selectedFiles.length; j++) {
-		
-    formData.append("file[]", selectedFiles[j])
-	
-		}
-		
-  //formData.append("file", fileupload[].files);
 
+  const fileInput = document.getElementById("fileupload");
+  const selectedFiles = Array.from(fileInput.files); // make a real array
+  let i = 0; // local index for each image
 
-	$.ajax({
-                    url:'/inspection/imgupload',
-                    type:'post',
-                    data:formData,
-                    dataType: 'json',
-                    contentType: false,
-                    processData: false,
-                    success:function(response){
-											
-                      response.files.forEach(function(url) {
+  // Split files into batches
+  for (let start = 0; start < selectedFiles.length; start += BATCH_SIZE) {
+    const batch = selectedFiles.slice(start, start + BATCH_SIZE);
+    let formData = new FormData();
+    batch.forEach(file => formData.append("file[]", file));
 
- 
-document.getElementById('results').innerHTML +=
-			         '<div id="imgbox-'+i+'" class="col-md-3"><img id="imageprev-'+i+'" class="img-fluid" src="'+url+'"/></div>';
- var input = document.createElement("input");
+    try {
+      // Wait for each batch to finish before starting the next
+      await $.ajax({
+        url: '/inspection/imgupload',
+        type: 'post',
+        data: formData,
+        dataType: 'json',
+        contentType: false,
+        processData: false,
+        success: function(response) {
+          response.files.forEach(function(url) {
+            // Show the image preview
+            document.getElementById('results').innerHTML +=
+              '<div id="imgbox-' + i + '" class="col-md-3"><img id="imageprev-' + i + '" class="img-fluid" src="' + url + '"/></div>';
+            // Add hidden field for each uploaded image
+            var input = document.createElement("input");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("name", "inspimg[" + i + "]");
+            input.setAttribute("value", url);
+            document.getElementById("imagefields").appendChild(input);
+            i = i + 1;
+          });
+        },
+        error: function(xhr, status, error) {
+          alert("Batch upload failed: " + error);
+        }
+      });
+    } catch (e) {
+      alert("Network error or batch failed: " + e.message);
+    }
+  }
 
-
-input.setAttribute("type", "hidden");
-
-input.setAttribute("name", "inspimg["+i+"]");
-
-input.setAttribute("value", url);
-
-//append to form element that you want .
-document.getElementById("imagefields").appendChild(input); 
-i=i+1;
-									});
-                  let spinnerdiv = document.getElementById("spinner");
   spinnerdiv.classList.remove("d-flex");
-  spinnerdiv.style.setProperty("display", "none");                
-								}
-});
+  spinnerdiv.style.setProperty("display", "none");
+}
+
 
 
   }
