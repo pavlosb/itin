@@ -540,7 +540,7 @@ document.getElementById("closecamera_"+ $idcp).style.display = "block";
     return new Blob([uInt8Array], {type: contentType});
 }
 
- function uploadFile() {
+ //function uploadFile() {
 
  // Batch size: how many images per upload group
 const BATCH_SIZE = 5;
@@ -599,7 +599,7 @@ async function uploadFile() {
 
 
 
-  }
+ // }
 
 </script>
 <script>
