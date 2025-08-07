@@ -559,7 +559,7 @@ async function uploadFile() {
     const batch = selectedFiles.slice(start, start + BATCH_SIZE);
     let formData = new FormData();
     batch.forEach(file => formData.append("file[]", file));
-
+		i = i + 1;
     try {
       // Wait for each batch to finish before starting the next
       await $.ajax({
@@ -580,7 +580,7 @@ async function uploadFile() {
             input.setAttribute("name", "inspimg[" + i + "]");
             input.setAttribute("value", url);
             document.getElementById("imagefields").appendChild(input);
-            i = i + 1;
+            
           });
         },
         error: function(xhr, status, error) {
