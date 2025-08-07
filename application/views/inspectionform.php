@@ -544,7 +544,6 @@ document.getElementById("closecamera_"+ $idcp).style.display = "block";
 
  // Batch size: how many images per upload group
 const BATCH_SIZE = 4;
-const i = 0
 async function uploadFile() {
   let spinnerdiv = document.getElementById("spinner");
   spinnerdiv.classList.add("d-flex");
