@@ -15,7 +15,6 @@ class Auth extends CI_Controller
 		$this->load->database();
 		$this->load->library(['ion_auth', 'form_validation']);
 		$this->load->helper(['url', 'language']);
-
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 		$sesdata = $this->session->userdata;
 			$this->data = array(
