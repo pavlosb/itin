@@ -157,6 +157,15 @@ if ($cp['name_section'] != $scp) { ?>
 <button type="button" id="savesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnapnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-save"></i></button></div>
 <div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnapnew(<?= $cp['id_cp']; ?>)" ><i class="fal fa-trash-alt"></i></button></div>
 	</div></div><div id="my_camera_<?= $cp['id_cp']; ?>" class="col-md-9"></div>
+	<!-- Active photo preview, status, retry for snapshot -->
+<div class="col-12 mt-2">
+  <div id="snapshot-previewbox_<?= $cp['id_cp']; ?>"></div>
+  <div id="snapshot-status_<?= $cp['id_cp']; ?>"></div>
+  <button id="retry-snapshot-btn_<?= $cp['id_cp']; ?>" style="display:none;" class="btn btn-danger btn-block mt-1"
+    onclick="retrySnapUpload(<?= $cp['id_cp']; ?>)">
+    <i class="fas fa-redo"></i> Επανάληψη αποστολής
+  </button>
+</div>
 </div>
 	<div class="form-group row pb-3">
 		<div class="col-12">
@@ -333,30 +342,32 @@ $('input[type="file"]').change(function(e){
  });
  
 	 }
+	 let snapshotUploadInProgress = false;
+let lastSnapshotData = {}; // keyed by idcp, holds current data_uri
+let snapshotIndex = {}; // per idcp (so multiple checkpoints can be used in parallel)
 
-	function configurenew($idcp){
-	document.getElementById("camerabox_"+ $idcp).style.display = "flex";
-	 Webcam.set({
-     width: cwdth,
-     height: cwhght,
-		 dest_width:1024,
-		 dest_height:1024 / rto,
-     image_format: 'jpeg',
-     jpeg_quality: 95,
-		 constraints: {
-   facingMode: 'environment'
- }
- });
+// Camera open/configure
+function configurenew($idcp){
+  document.getElementById("camerabox_" + $idcp).style.display = "flex";
+  Webcam.set({
+    width: cwdth,
+    height: cwhght,
+    dest_width: 1024,
+    dest_height: 1024 / rto,
+    image_format: 'jpeg',
+    jpeg_quality: 95,
+    constraints: { facingMode: 'environment' }
+  });
+  Webcam.attach('#my_camera_' + $idcp);
 
- Webcam.attach( '#my_camera_'+ $idcp );
- i = i+1;
- Webcam.on( 'live', function() {
- document.getElementById("takesnapshot_"+ $idcp).style.display = "block";
- document.getElementById("closecamera_"+ $idcp).style.display = "block";
- document.getElementById("opencamera_"+ $idcp).style.display = "none";
- });
- 
-	 }
+  // Per-checkpoint image index, for unique IDs
+  if (!(snapshotIndex[$idcp] >= 0)) snapshotIndex[$idcp] = 0;
+  Webcam.on('live', function() {
+    document.getElementById("takesnapshot_" + $idcp).style.display = "block";
+    document.getElementById("closecamera_" + $idcp).style.display = "block";
+    document.getElementById("opencamera_" + $idcp).style.display = "none";
+  });
+}
 
  // preload shutter audio clip
  var shutter = new Audio();
@@ -381,22 +392,21 @@ $('input[type="file"]').change(function(e){
 		 document.getElementById("trashsnapshot").style.display = "block";
 		 }
 function take_snapshotnew($idcp) {
-    // play sound effect
-    shutter.play();
+  Webcam.snap(function(data_uri) {
+    document.getElementById("snapshot-previewbox_" + $idcp).innerHTML =
+      `<img id="imageprev_${$idcp}-${snapshotIndex[$idcp]}" class="img-fluid mb-2" style="max-width:180px; max-height:180px; border:1px solid #ddd;" src="${data_uri}"/>`;
+    lastSnapshotData[$idcp] = { data_uri: data_uri, index: snapshotIndex[$idcp] };
 
-    // take snapshot and get image data
-    Webcam.snap( function(data_uri) {
-       // display results in page
-       document.getElementById("results_"+ $idcp).innerHTML +=
-			         '<div id="imgbox_'+$idcp+'-'+i+'" class="col-md-3 mb-1"><img id="imageprev_'+$idcp+'-'+i+'" class="img-fluid" src="'+data_uri+'"/></div>';
-     } );
-
-     Webcam.reset();
-     document.getElementById("my_camera_"+ $idcp).style.height = "10px";
-		 document.getElementById("takesnapshot_"+ $idcp).style.display = "none";
-		 document.getElementById("savesnapshot_"+ $idcp).style.display = "block";
-		 document.getElementById("trashsnapshot_"+ $idcp).style.display = "block";
-		 }
+    // Show Save/Trash, hide Take Photo
+    document.getElementById("takesnapshot_" + $idcp).style.display = "none";
+    document.getElementById("savesnapshot_" + $idcp).style.display = "block";
+    document.getElementById("trashsnapshot_" + $idcp).style.display = "block";
+    document.getElementById("snapshot-status_" + $idcp).innerHTML = "";
+    document.getElementById("retry-snapshot-btn_" + $idcp).style.display = "none";
+  });
+  Webcam.reset();
+  document.getElementById("my_camera_" + $idcp).style.height = "10px";
+}
 		 
  function closecam(){
 	Webcam.reset();
@@ -448,47 +458,67 @@ j = i;
      configure();
 
 } 
-function closecamnew($idcp){
-	Webcam.reset();
-		 document.getElementById("camerabox_"+ $idcp).style.display = "none";
-	   document.getElementById("my_camera_"+ $idcp).style.height = "10px";
-     document.getElementById("closecamera_"+ $idcp).style.display = "none";
-		 document.getElementById("opencamera_"+ $idcp).style.display = "inline-block";
-		 document.getElementById("takesnapshot_"+ $idcp).style.display = "none";
-		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
-     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
- }
+ffunction closecamnew($idcp) {
+  Webcam.reset();
+  document.getElementById("camerabox_" + $idcp).style.display = "none";
+  document.getElementById("opencamera_" + $idcp).style.display = "block";
+}
  
- function saveSnapnew($idcp){
-   // Get base64 value from <img id='imageprev'> source
-   var base64image = document.getElementById("imageprev_"+$idcp+"-"+i).src;
+function saveSnapnew($idcp) {
+  let snap = lastSnapshotData[$idcp];
+  if (!snap) {
+    alert("Δεν υπάρχει φωτογραφία προς αποστολή!");
+    return;
+  }
+  let base64image = snap.data_uri;
+  let index = snap.index;
 
-   Webcam.upload( base64image, '/inspection/photoupload', function(code, text) {
-      //  console.log(text);
-			//	console.log(code);
-       //console.log(text);
-			 var input = document.createElement("input");
+  snapshotUploadInProgress = true;
+  let spinnerdiv = document.getElementById("spinner");
+  spinnerdiv.classList.add("d-flex");
+  spinnerdiv.style.removeProperty("display");
 
+  let statusDiv = document.getElementById("snapshot-status_" + $idcp);
+  statusDiv.innerHTML = "Αποστολή φωτογραφίας...";
+  document.getElementById("retry-snapshot-btn_" + $idcp).style.display = "none";
+  document.getElementById("savesnapshot_" + $idcp).disabled = true;
+  document.getElementById("trashsnapshot_" + $idcp).disabled = true;
 
-input.setAttribute("type", "hidden");
+  Webcam.upload(base64image, '/inspection/photoupload', function(code, text) {
+    spinnerdiv.classList.remove("d-flex");
+    spinnerdiv.style.setProperty("display", "none");
+    snapshotUploadInProgress = false;
+    document.getElementById("savesnapshot_" + $idcp).disabled = false;
+    document.getElementById("trashsnapshot_" + $idcp).disabled = false;
 
-input.setAttribute("name", "cpinspimg["+$idcp+"]["+i+"]");
+    if (code === 200 && text && text.startsWith('http')) {
+      // Add to gallery/results area (with a unique id for possible future edit/delete)
+      let newKey = "snap-" + Date.now() + "-" + Math.floor(Math.random()*10000);
+      document.getElementById("results_" + $idcp).innerHTML +=
+        `<div id="eimg-${newKey}" class="col-md-3 mb-2">
+            <img class="img-fluid" src="${text}"/>
+          </div>`;
+      // Hidden input for form submission
+      var input = document.createElement("input");
+      input.setAttribute("type", "hidden");
+      input.setAttribute("name", "cpinspimg[" + $idcp + "][]");
+      input.setAttribute("value", text);
+      document.getElementById("imagefields").appendChild(input);
 
-input.setAttribute("value", text);
-
-//append to form element that you want .
-document.getElementById("imagefields").appendChild(input);
-
-j = i;
-   });
-   document.getElementById("closecamera_"+ $idcp).style.display = "block";
-		 document.getElementById("opencamera_"+ $idcp).style.display = "none";
-		 document.getElementById("takesnapshot_"+ $idcp).style.display = "block";
-		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
-     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
-     configurenew($idcp);
-
-} 
+      // Reset preview/status, allow next photo
+      document.getElementById("snapshot-previewbox_" + $idcp).innerHTML = "";
+      statusDiv.innerHTML = '<span style="color:green;">✅ Αποστολή επιτυχής!</span>';
+      document.getElementById("takesnapshot_" + $idcp).style.display = "block";
+      document.getElementById("savesnapshot_" + $idcp).style.display = "none";
+      document.getElementById("trashsnapshot_" + $idcp).style.display = "none";
+      lastSnapshotData[$idcp] = null;
+      snapshotIndex[$idcp]++; // ready for next image
+    } else {
+      statusDiv.innerHTML = '<span style="color:red;">❌ Η αποστολή απέτυχε. Δοκιμάστε ξανά.</span>';
+      document.getElementById("retry-snapshot-btn_" + $idcp).style.display = "block";
+    }
+  });
+}
 
 function trashSnap() {
 if (i > j) {
@@ -504,17 +534,26 @@ document.getElementById("closecamera").style.display = "block";
 	 }
 
 	 function trashSnapnew($idcp) {
-if (i > j) {
-	document.getElementById("imgbox_"+$idcp+"-"+i).remove();
-	
+  document.getElementById("snapshot-previewbox_" + $idcp).innerHTML = "";
+  document.getElementById("snapshot-status_" + $idcp).innerHTML = "";
+  document.getElementById("takesnapshot_" + $idcp).style.display = "block";
+  document.getElementById("savesnapshot_" + $idcp).style.display = "none";
+  document.getElementById("trashsnapshot_" + $idcp).style.display = "none";
+  document.getElementById("retry-snapshot-btn_" + $idcp).style.display = "none";
+  lastSnapshotData[$idcp] = null;
 }
-document.getElementById("closecamera_"+ $idcp).style.display = "block";
-		 document.getElementById("opencamera_"+ $idcp).style.display = "none";
-		 document.getElementById("takesnapshot_"+ $idcp).style.display = "block";
-		 document.getElementById("savesnapshot_"+ $idcp).style.display = "none";
-     document.getElementById("trashsnapshot_"+ $idcp).style.display = "none";
-     configurenew($idcp);
-	 }
+
+function retrySnapUpload($idcp) {
+  saveSnapnew($idcp);
+}
+
+// Navigation warning if upload in progress
+window.addEventListener('beforeunload', function(e) {
+  if (snapshotUploadInProgress) {
+    e.preventDefault();
+    e.returnValue = '';
+  }
+});
 
    var dataURLToBlob = function(dataURL) {
     var BASE64_MARKER = ';base64,';
