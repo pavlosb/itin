@@ -15,7 +15,6 @@ class Auth extends CI_Controller
 		$this->load->database();
 		$this->load->library(['ion_auth', 'form_validation']);
 		$this->load->helper(['url', 'language']);
-		$this->session->set_userdata('site_lang', 'greek');
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
 		$sesdata = $this->session->userdata();
 			$this->data = array(
@@ -73,7 +72,6 @@ class Auth extends CI_Controller
 	 */
 	public function login()
 	{
-		$this->session->set_userdata('site_lang', 'greek');
 		$this->data['title'] = $this->lang->line('login_heading');
 
 		// validate form input
@@ -92,7 +90,7 @@ class Auth extends CI_Controller
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
 				$this->session->set_flashdata('msgclass', 'alert-success');
-				redirect('/', 'refresh');
+				redirect('/inspection', 'refresh');
 			}
 			else
 			{
