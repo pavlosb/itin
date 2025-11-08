@@ -16,11 +16,17 @@ class Auth extends CI_Controller
 		$this->load->library(['ion_auth', 'form_validation']);
 		$this->load->helper(['url', 'language']);
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
-		$sesdata = $this->session->userdata;
+		$sesdata = $this->session->userdata();
+		$session_lang = $this->session->userdata('site_lang');
+                if (empty($session_lang))
+                {
+                        $session_lang = 'greek';
+                }
 			$this->data = array(
-			'user_lang' => $sesdata['site_lang'],
+
+			'user_lang' => $session_lang,
 			);
-		$this->lang->load('auth',$sesdata['site_lang']);
+		$this->lang->load('auth',$session_lang);
 	}
 
 	/**
