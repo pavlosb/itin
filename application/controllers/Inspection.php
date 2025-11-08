@@ -26,7 +26,7 @@ class Inspection extends CI_Controller {
 			$this->load->helper('form');
 			$this->lang->load('itin','greek');
 			$this->session->set_userdata('site_lang', 'greek');
-			$sesdata = $this->session->userdata;
+			$sesdata = $this->session->userdata();
 			$this->data['usrgrp'] = 3;
 			if (isset($sesdata['user_lang'])) {
 			$this->data['user_lang'] = $sesdata['site_lang'];
