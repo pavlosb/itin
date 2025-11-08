@@ -24,14 +24,15 @@ class Inspection extends CI_Controller {
 			$this->load->model('itindata_model');
 			$this->load->helper('url_helper');
 			$this->load->helper('form');
-			$this->lang->load('itin','greek');
-			$sesdata = $this->session->userdata;
-			$this->data['usrgrp'] = 3;
-			if (isset($sesdata['user_lang'])) {
-			$this->data['user_lang'] = $sesdata['site_lang'];
-			} else {
-				$this->data['user_lang'] = "greek";
-			}
+			$session_lang = $this->session->userdata('site_lang');
+                if (empty($session_lang))
+                {
+                        $session_lang = (string) $this->config->item('language');
+                }
+
+                $this->lang->load('itin', $session_lang);
+                $this->data['usrgrp'] = 3;
+                $this->data['user_lang'] = $session_lang;
 
 			//$this->data = array(
 			//'user_lang' => $sesdata['site_lang'],
