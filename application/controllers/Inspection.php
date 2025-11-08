@@ -587,6 +587,7 @@ foreach ($points as $key => $value):
 	$insdata[] = array('inspectionid_insres' => $this->input->post('inspectionid_insres'), 'chkpointsect_insres' => $sectors[$key], 'chkpointid_insres' => $key, 'chpointscore_insres' => $value);
 
 endforeach;
+$imgdata = [];
 if (!empty($photos)) {
 foreach ($photos as $key => $filename):
 	if ($filename!=""){
@@ -615,7 +616,7 @@ if (isset($_POST['cpinspimg']) && is_array($_POST['cpinspimg'])) {
 
 
 
-
+$remdata = [];
 
 if (!empty($remarks)) {
 foreach ($remarks as $key => $value):
