@@ -347,7 +347,7 @@ let lastSnapshotData = {}; // keyed by idcp, holds current data_uri
 let snapshotIndex = {}; // per idcp (so multiple checkpoints can be used in parallel)
 
 // Camera open/configure
-function configurenew($idcp){
+function configurenew($idcp) {
   document.getElementById("camerabox_" + $idcp).style.display = "flex";
   Webcam.set({
     width: cwdth,
@@ -458,7 +458,7 @@ j = i;
      configure();
 
 } 
-ffunction closecamnew($idcp) {
+function closecamnew($idcp) {
   Webcam.reset();
   document.getElementById("camerabox_" + $idcp).style.display = "none";
   document.getElementById("opencamera_" + $idcp).style.display = "block";
