@@ -18,36 +18,29 @@ class Inspection extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	        public function __construct()
-        {
-                parent::__construct();
-                $this->load->model('itindata_model');
-                $this->load->helper('url_helper');
-                $this->load->helper('form');
+	public function __construct()
+	{
+			parent::__construct();
+			$this->load->model('itindata_model');
+			$this->load->helper('url_helper');
+			$this->load->helper('form');
+			$session_lang = $this->session->userdata('site_lang');
+                if (empty($session_lang))
+                {
+                        $session_lang = (string) $this->config->item('language');
+                }
 
-		$session_data = (array) $this->session->userdata();
-		$session_lang = isset($session_data['site_lang']) && $session_data['site_lang']
-			? $session_data['site_lang']
-			: (isset($session_data['user_lang']) && $session_data['user_lang']
-				? $session_data['user_lang']
-				: (string) $this->config->item('language'));
+                $this->lang->load('itin', $session_lang);
+                $this->data['usrgrp'] = 3;
+                $this->data['user_lang'] = $session_lang;
 
-		if (empty($session_lang))
-		{
-			$session_lang = 'greek';
-		}
-			if (!isset($session_data['site_lang']) || $session_data['site_lang'] !== $session_lang)
-		{
-			$this->session->set_userdata('site_lang', $session_lang);
-		}
-
-		$this->lang->load('itin', $session_lang);
-		$this->data['usrgrp'] = 3;
-		$this->data['user_lang'] = $session_lang;
-
-        }
-
-        public function index()
+			//$this->data = array(
+			//'user_lang' => $sesdata['site_lang'],
+			//'usrgrp' => 3
+			//);
+			
+	}
+	public function index()
 	{
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
