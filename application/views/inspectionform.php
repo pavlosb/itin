@@ -413,6 +413,7 @@ function configurenew($idcp) {
 		 document.getElementById("trashsnapshot").style.display = "block";
 		 }
 function take_snapshotnew($idcp) {
+	shutter.play();
   Webcam.snap(function(data_uri) {
     // Show the preview in your UI (adjust for your HTML structure)
     document.getElementById("snapshot-previewbox_" + $idcp).innerHTML =
