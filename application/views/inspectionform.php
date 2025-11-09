@@ -105,64 +105,76 @@ if ($cp['name_section'] != $scp) { ?>
 </div>
 <?php } ?>
 <?php if ($cp['cptype'] == 'chs') { ?>
-<div class="form-group row pt-3 checkpoint-block">
-  <input type="hidden" name="chpsect[<?= $cp['id_cp']; ?>]" value="<?= $cp['mainsectid']; ?>">
-  <label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label">
-    <?= $cp[$name_cp]; ?>
-    <small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small>
+<div class="form-group row pt-3">
+  <input type=hidden name="chpsect[<?= $cp['id_cp']; ?>]" value ="<?= $cp['mainsectid']; ?>">
+  <input type=hidden name="points[<?= $cp['id_cp']; ?>]" data-sectpen="<?= $cp['mainsectid']; ?>" value ="<?= $cp['points_cp']; ?>">
+    <label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
+    <div class="col-sm-5 text-center text-sm-right">
+		<?php // add camera button to point ?>
+		<button type="button" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "disabled"; } ?> id="opencamera_<?= $cp['id_cp']; ?>"  onclick="configurenew(<?= $cp['id_cp']; ?>)" class="btn btn-primary"><i class="fas fa-camera"></i></button>	
+		<?php // add camera button to point ?>
+    <div class="btn-group btn-group-toggle " data-toggle="buttons">
+  <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>" data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="0" class="do-not-calc" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option1[<?= $cp['id_cp']; ?>]" data-substract = "<?= $cp['points_cp']; ?>" value="-1" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "checked"; } ?> autocomplete="off"><i class="fal fa-times-square"></i>
   </label>
-  <div class="col-sm-5 text-center text-sm-right">
-    <input type="number" name="checkpoint[<?= $cp['id_cp']; ?>]" <?php if (isset($inspscore)) {?> value="<?= $inspscore[$cp['id_cp']] ?>" <?php } ?>>
-    <!-- Camera Open Button -->
-    <button type="button"
-      id="opencamera_<?= $cp['id_cp']; ?>"
-      onclick="configurenew(<?= $cp['id_cp']; ?>)"
-      class="btn btn-primary btn-sm mt-2"
-      style="min-width:40px">
-      <i class="fas fa-camera"></i>
-      <span class="d-none d-md-inline">Φωτογραφία</span>
-    </button>
-  </div>
+  <label class="btn btnna btn-secondary <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "active"; } ?>">
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>" data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="<?= $cp['points_cp']; ?>" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option2[<?= $cp['id_cp']; ?>]" value="0" autocomplete="off" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "checked"; } ?>> <i class="fal fa-stop"></i>
+  </label>
+  <label class="btn btnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "active"; } ?>">
+    <input type="radio" data-sect="<?= $cp['mainsectid']; ?>"  data-cpid = "<?= $cp['id_cp']; ?>" data-ptscp="0" name="checkpoint[<?= $cp['id_cp']; ?>]" id="option3[<?= $cp['id_cp']; ?>]" <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == $cp['points_cp']) { echo "checked"; } ?> data-substract = "<?= $cp['points_cp']; ?>" value ="<?= $cp['points_cp']; ?>"autocomplete="off"> <i class="fal fa-check-square"></i>
+  </label>
+  
 </div>
-
-<div id="results_<?= $cp['id_cp']; ?>" class="row pb-3 results-area">
-  <?php if (isset($inspimg[$cp['id_cp']])) {
-    foreach ($inspimg[$cp['id_cp']] as $key => $value): ?>
-      <div id="eimg-<?= $key ?>" class="col-md-3 mb-2 img-thumb">
-        <img class="img-fluid" src="<?= base_url() ?>upload/<?= $value['filename'] ?>"/>
-        <div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>" data-toggle="modal" data-target="#editimgModal"><i class="fal fa-edit"></i></button></div>
-        <div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div>
-      </div>
-    <?php endforeach;
-  } ?>
-</div>
-
-<!-- Camera/preview area - always shown as a distinct card/box -->
-<div id="camerabox_<?= $cp['id_cp']; ?>" class="camera-overlay row pb-3" style="display:none;">
-  <div class="col-md-12 col-12">
-    <div class="camera-controls mb-2 d-flex flex-wrap justify-content-center">
-      <button type="button" id="closecamera_<?= $cp['id_cp']; ?>" class="btn btn-danger m-1" onclick="closecamnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-times"></i> Κλείσιμο</button>
-      <button type="button" id="takesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-success m-1" onclick="take_snapshotnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-camera"></i> Λήψη</button>
-      <button type="button" id="savesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-info m-1" onclick="saveSnapnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-save"></i> Αποθήκευση</button>
-      <button type="button" id="trashsnapshot_<?= $cp['id_cp']; ?>" class="btn btn-warning m-1" onclick="trashSnapnew(<?= $cp['id_cp']; ?>)"><i class="fal fa-trash-alt"></i> Απόρριψη</button>
-      <button id="retry-snapshot-btn_<?= $cp['id_cp']; ?>" style="display:none;" class="btn btn-danger m-1"
-        onclick="retrySnapUpload(<?= $cp['id_cp']; ?>)">
-        <i class="fas fa-redo"></i> Επανάληψη αποστολής
-      </button>
     </div>
-    <div id="my_camera_<?= $cp['id_cp']; ?>" class="camera-view"></div>
-    <div id="snapshot-previewbox_<?= $cp['id_cp']; ?>" class="snapshot-preview mt-2"></div>
-    <div id="snapshot-status_<?= $cp['id_cp']; ?>" class="status-message mt-1"></div>
   </div>
-</div>
+  <?php } else { ?>
+		<div class="form-group row pt-3">
+		<input type=hidden name="chpsect[<?= $cp['id_cp']; ?>]" value ="<?= $cp['mainsectid']; ?>">
+		<label for="chpsect[<?= $cp['id_cp']; ?>]" class="col-sm-7 col-form-label "><?= $cp[$name_cp]; ?><small class="form-text text-muted"><?= $cp[$helptext_cp]; ?></small></label>
+    <div class="col-sm-5 text-center text-sm-right">
+			 <input type="number" name="checkpoint[<?= $cp['id_cp']; ?>]" <?php if (isset($inspscore)) {?> value="<?= $inspscore[$cp['id_cp']] ?>" <?php } ?>>
+	</div>
+	</div>
 
-<div class="form-group row pb-3">
-  <div class="col-12">
+<?php } ?>
+<div id="results_<?= $cp['id_cp']; ?>" class="row pb-3">
+								<?php if (isset($inspimg[$cp['id_cp']])) {
+									foreach ($inspimg[$cp['id_cp']] as $key=>$value): ?>
+<div id="eimg-<?= $key ?>" class="col-md-3 mb-2"><img class="img-fluid" src="<?= base_url() ?>upload/<?= $value['filename'] ?>"/>
+<div class="editbtn"><button type="button" class="editimg btn btn-success" data-imgid="<?= $key ?>" data-toggle="modal" data-target="#editimgModal"><i class="fal fa-edit"></i></button></div>
+<div class="dellbtn"><button type="button" class="delimg btn btn-danger" data-imgid="<?= $key ?>"><i class="fal fa-trash-alt"></i></button></div>
+</div>
+							<?php		endforeach;
+								} ?>
+							</div>
+<div id="camerabox_<?= $cp['id_cp']; ?>"class="row pb-3">
+	<div class="col-md-3">
+		<div class="row">
+   	  <div class="col-md-12 py-1"><button type="button" id="closecamera_<?= $cp['id_cp']; ?>"  class="btn btn-danger btn-block btn-lg" onclick="closecamnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-times"></i></button></div>
+			<div class="col-md-12 py-1"><input type=button id="takesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-success btn-lg btn-block" value="Take Photo" onclick="take_snapshotnew(<?= $cp['id_cp']; ?>)" >
+			</div>
+<div class="col-md-6 pr-0 py-1">
+<button type="button" id="savesnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-info btn-block btn-lg" onclick="saveSnapnew(<?= $cp['id_cp']; ?>)"><i class="fas fa-save"></i></button></div>
+<div class="col-md-6 pl-0 py-1"><button type="button" id="trashsnapshot_<?= $cp['id_cp']; ?>" class="btn btn-block btn-warning btn-block btn-lg" onclick="trashSnapnew(<?= $cp['id_cp']; ?>)" ><i class="fal fa-trash-alt"></i></button></div>
+	</div></div><div id="my_camera_<?= $cp['id_cp']; ?>" class="col-md-9"></div>
+	<!-- Active photo preview, status, retry for snapshot -->
+<div class="col-12 mt-2">
+  <div id="snapshot-previewbox_<?= $cp['id_cp']; ?>"></div>
+  <div id="snapshot-status_<?= $cp['id_cp']; ?>"></div>
+  <button id="retry-snapshot-btn_<?= $cp['id_cp']; ?>" style="display:none;" class="btn btn-danger btn-block mt-1"
+    onclick="retrySnapUpload(<?= $cp['id_cp']; ?>)">
+    <i class="fas fa-redo"></i> Επανάληψη αποστολής
+  </button>
+</div>
+</div>
+	<div class="form-group row pb-3">
+		<div class="col-12">
     <label for="rmrk[<?= $cp['id_cp']; ?>]"><?= $this->lang->line('comment'); ?></label>
-    <textarea name="remark[<?= $cp['id_cp']; ?>]" class="form-control" id="remark[<?= $cp['id_cp']; ?>]" rows="3"><?php if (isset($inspremark[$cp['id_cp']])){ echo $inspremark[$cp['id_cp']]; }?></textarea>
+    <textarea name="remark[<?= $cp['id_cp']; ?>]"class="form-control" id="remark[<?= $cp['id_cp']; ?>]" rows="3"><?php if (isset($inspremark[$cp['id_cp']])){ 
+		echo $inspremark[$cp['id_cp']];
+	}?></textarea>
+	</div>
   </div>
-</div>
-
 
 	
 <!-- <tr><td><?= $cp['name_cp']; ?></td><td class="text-center"><?= $cp['points_cp']; ?></td><td class="text-center"><i class="fal fa-edit"></i></td></tr> -->
