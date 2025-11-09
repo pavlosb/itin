@@ -291,6 +291,9 @@ $scp = $cp['name_section'];
 </div>
 <a href="#" id="back-to-top" title="Back to top"><i class="fal fa-arrow-from-bottom fa-3x"></i></a>
 <script language="JavaScript">
+const PENDING_KEY_PREFIX = 'pendingSnapshot_';
+let lastSnapshotData = {}; // { [idcp]: { data_uri, index } }
+let snapshotIndex = {};    // { [idcp]: index }
 document.addEventListener("scroll", function() {
   var form = document.querySelector("form");
   var mainSubmit = form.querySelector("button[type='submit']:last-of-type");
@@ -343,12 +346,22 @@ $('input[type="file"]').change(function(e){
  
 	 }
 	 let snapshotUploadInProgress = false;
-let lastSnapshotData = {}; // keyed by idcp, holds current data_uri
-let snapshotIndex = {}; // per idcp (so multiple checkpoints can be used in parallel)
+
 
 // Camera open/configure
 function configurenew($idcp) {
   document.getElementById("camerabox_" + $idcp).style.display = "flex";
+
+  // --- Check for pending (not-yet-uploaded) snapshot ---
+  let pending = localStorage.getItem(PENDING_KEY_PREFIX + $idcp);
+  if (pending) {
+    // Show preview + buttons, skip camera initialization!
+    restorePendingSnapshot($idcp);
+    // (Do NOT initialize Webcam here.)
+    return;
+  }
+
+  // --- Otherwise, initialize camera as normal ---
   Webcam.set({
     width: cwdth,
     height: cwhght,
@@ -362,12 +375,20 @@ function configurenew($idcp) {
 
   // Per-checkpoint image index, for unique IDs
   if (!(snapshotIndex[$idcp] >= 0)) snapshotIndex[$idcp] = 0;
+
   Webcam.on('live', function() {
     document.getElementById("takesnapshot_" + $idcp).style.display = "block";
     document.getElementById("closecamera_" + $idcp).style.display = "block";
     document.getElementById("opencamera_" + $idcp).style.display = "none";
+    // Clear preview/status from any previous session
+    document.getElementById("snapshot-previewbox_" + $idcp).innerHTML = "";
+    document.getElementById("snapshot-status_" + $idcp).innerHTML = "";
+    document.getElementById("savesnapshot_" + $idcp).style.display = "none";
+    document.getElementById("trashsnapshot_" + $idcp).style.display = "none";
+    document.getElementById("retry-snapshot-btn_" + $idcp).style.display = "none";
   });
 }
+
 
  // preload shutter audio clip
  var shutter = new Audio();
@@ -393,12 +414,13 @@ function configurenew($idcp) {
 		 }
 function take_snapshotnew($idcp) {
   Webcam.snap(function(data_uri) {
+    // Show the preview in your UI (adjust for your HTML structure)
     document.getElementById("snapshot-previewbox_" + $idcp).innerHTML =
       `<img id="imageprev_${$idcp}-${snapshotIndex[$idcp]}" class="img-fluid mb-2" style="max-width:180px; max-height:180px; border:1px solid #ddd;" src="${data_uri}"/>`;
+    // Save snapshot info in memory and localStorage
     lastSnapshotData[$idcp] = { data_uri: data_uri, index: snapshotIndex[$idcp] };
-
-    // Show Save/Trash, hide Take Photo
-    document.getElementById("takesnapshot_" + $idcp).style.display = "none";
+    localStorage.setItem(PENDING_KEY_PREFIX + $idcp, JSON.stringify(lastSnapshotData[$idcp]));
+		document.getElementById("takesnapshot_" + $idcp).style.display = "none";
     document.getElementById("savesnapshot_" + $idcp).style.display = "block";
     document.getElementById("trashsnapshot_" + $idcp).style.display = "block";
     document.getElementById("snapshot-status_" + $idcp).innerHTML = "";
@@ -406,6 +428,34 @@ function take_snapshotnew($idcp) {
   });
   Webcam.reset();
   document.getElementById("my_camera_" + $idcp).style.height = "10px";
+}
+
+// Call this on camera open or on page load, to restore pending snapshot for a checkpoint (if exists)
+function restorePendingSnapshot($idcp) {
+  let pending = localStorage.getItem(PENDING_KEY_PREFIX + $idcp);
+  if (pending) {
+    try {
+      pending = JSON.parse(pending);
+      lastSnapshotData[$idcp] = pending;
+      snapshotIndex[$idcp] = pending.index;
+      document.getElementById("snapshot-previewbox_" + $idcp).innerHTML =
+        `<img id="imageprev_${$idcp}-${pending.index}" class="img-fluid mb-2" style="max-width:180px; max-height:180px; border:1px solid #ddd;" src="${pending.data_uri}"/>`;
+      // SHOW Save/Upload and Trash buttons, HIDE Take Photo
+      document.getElementById("takesnapshot_" + $idcp).style.display = "none";
+      document.getElementById("savesnapshot_" + $idcp).style.display = "block";
+      document.getElementById("trashsnapshot_" + $idcp).style.display = "block";
+      // Status indicator
+      document.getElementById("snapshot-status_" + $idcp).innerHTML =
+        '<span style="color:#ca8600;">Φωτογραφία προς αποστολή</span>';
+      document.getElementById("retry-snapshot-btn_" + $idcp).style.display = "none";
+    } catch (e) {/* If parsing fails, ignore */}
+  }
+}
+
+
+function removePendingSnapshot($idcp) {
+  localStorage.removeItem(PENDING_KEY_PREFIX + $idcp);
+  lastSnapshotData[$idcp] = null;
 }
 		 
  function closecam(){
@@ -458,11 +508,11 @@ j = i;
      configure();
 
 } 
-function closecamnew($idcp) {
-  Webcam.reset();
-  document.getElementById("camerabox_" + $idcp).style.display = "none";
-  document.getElementById("opencamera_" + $idcp).style.display = "block";
-}
+//function closecamnew($idcp) {
+//  Webcam.reset();
+//  document.getElementById("camerabox_" + $idcp).style.display = "none";
+//  document.getElementById("opencamera_" + $idcp).style.display = "inline-block";
+//}
  
 function saveSnapnew($idcp) {
   let snap = lastSnapshotData[$idcp];
@@ -511,8 +561,11 @@ function saveSnapnew($idcp) {
       document.getElementById("takesnapshot_" + $idcp).style.display = "block";
       document.getElementById("savesnapshot_" + $idcp).style.display = "none";
       document.getElementById("trashsnapshot_" + $idcp).style.display = "none";
+			removePendingSnapshot($idcp);
+			highlightSubmitButtons();
       lastSnapshotData[$idcp] = null;
       snapshotIndex[$idcp]++; // ready for next image
+			configurenew($idcp);
     } else {
       statusDiv.innerHTML = '<span style="color:red;">❌ Η αποστολή απέτυχε. Δοκιμάστε ξανά.</span>';
       document.getElementById("retry-snapshot-btn_" + $idcp).style.display = "block";
@@ -540,13 +593,20 @@ document.getElementById("closecamera").style.display = "block";
   document.getElementById("savesnapshot_" + $idcp).style.display = "none";
   document.getElementById("trashsnapshot_" + $idcp).style.display = "none";
   document.getElementById("retry-snapshot-btn_" + $idcp).style.display = "none";
+	removePendingSnapshot($idcp);
   lastSnapshotData[$idcp] = null;
+	configurenew($idcp);
 }
 
 function retrySnapUpload($idcp) {
   saveSnapnew($idcp);
 }
-
+function highlightSubmitButtons() {
+  // jQuery version (easy)
+  $("form button[type=submit]").removeClass("btn-primary").addClass("btn-danger");
+  // If you have custom floating submit as well:
+  $("#floating-submit").removeClass("btn-primary").addClass("btn-danger");
+}
 // Navigation warning if upload in progress
 window.addEventListener('beforeunload', function(e) {
   if (snapshotUploadInProgress) {
@@ -554,6 +614,8 @@ window.addEventListener('beforeunload', function(e) {
     e.returnValue = '';
   }
 });
+
+
 
    var dataURLToBlob = function(dataURL) {
     var BASE64_MARKER = ';base64,';
@@ -620,6 +682,7 @@ async function uploadFile() {
             input.setAttribute("name", "inspimg[" + i + "]");
             input.setAttribute("value", url);
             document.getElementById("imagefields").appendChild(input);
+						highlightSubmitButtons();
             i = i + 1;
           });
         },
