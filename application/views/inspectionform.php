@@ -648,6 +648,10 @@ window.addEventListener('beforeunload', function(e) {
 const BATCH_SIZE = 4;
 
 async function uploadFile() {
+  if (!navigator.onLine) {
+    alert("Είστε εκτός σύνδεσης! Η μεταφόρτωση φωτογραφιών δεν είναι δυνατή αυτή τη στιγμή.");
+    return;
+  }
   let spinnerdiv = document.getElementById("spinner");
   spinnerdiv.classList.add("d-flex");
   spinnerdiv.style.removeProperty("display");
@@ -1049,7 +1053,93 @@ $('#editForm').submit(function (e) {
   });
 });
 
+  // --- Offline Resilience & Draft Auto-Save ---
+  const inspectionId = $('input[name="inspectionid_insres"]').val().trim();
+  const draftKey = 'inspection_draft_' + inspectionId;
 
+  // 1. Restore draft
+  function restoreDraft() {
+    const saved = localStorage.getItem(draftKey);
+    if (saved) {
+      try {
+        const draftData = JSON.parse(saved);
+        let restoredAny = false;
+        $.each(draftData, function(name, value) {
+          const $el = $('[name="' + name + '"]');
+          if ($el.length) {
+            if ($el.is(':radio')) {
+              // Only trigger if changed
+              const $radio = $el.filter('[value="' + value + '"]');
+              if (!$radio.prop('checked')) {
+                $radio.prop('checked', true).trigger('change');
+                restoredAny = true;
+              }
+            } else if ($el.is('textarea') || $el.is('input[type="text"]') || $el.is('input[type="number"]')) {
+              if ($el.val() !== value) {
+                $el.val(value).trigger('change');
+                restoredAny = true;
+              }
+            }
+          }
+        });
+        if (restoredAny) {
+          console.log("Draft restored from localStorage.");
+        }
+      } catch (e) {
+        console.error('Failed to restore draft', e);
+      }
+    }
+  }
+
+  // 2. Save draft on input change
+  function saveDraft() {
+    const formData = $('#inspform').serializeArray();
+    const draftData = {};
+    formData.forEach(item => {
+      draftData[item.name] = item.value;
+    });
+    localStorage.setItem(draftKey, JSON.stringify(draftData));
+  }
+
+  $('#inspform').on('change input', 'input, textarea, select', function() {
+    saveDraft();
+  });
+
+  // Call restore immediately
+  restoreDraft();
+
+  // 3. Online/Offline Listeners
+  function updateConnectionStatus() {
+    const isOnline = navigator.onLine;
+    const $mainSubmit = $('form button[type="submit"]:last-of-type');
+    const $floatSubmit = $('#floating-submit');
+    
+    if (!isOnline) {
+      $mainSubmit.removeClass('btn-primary').addClass('btn-danger').prop('disabled', true).text('Εκτός Σύνδεσης');
+      $floatSubmit.removeClass('btn-primary').addClass('btn-danger').prop('disabled', true).text('Εκτός Σύνδεσης');
+      $('#inspform').css('opacity', '0.8');
+    } else {
+      $mainSubmit.removeClass('btn-danger').addClass('btn-primary').prop('disabled', false).html('<?= $this->lang->line("submit"); ?>');
+      $floatSubmit.removeClass('btn-danger').addClass('btn-primary').prop('disabled', false).html('<?= $this->lang->line("submit"); ?>');
+      $('#inspform').css('opacity', '1');
+    }
+  }
+
+  window.addEventListener('offline', updateConnectionStatus);
+  window.addEventListener('online', updateConnectionStatus);
+  
+  // Set initial status
+  updateConnectionStatus();
+
+  // Prevent submit if offline (fallback)
+  $('#inspform').on('submit', function(e) {
+    if (!navigator.onLine) {
+      e.preventDefault();
+      alert('Είστε εκτός σύνδεσης! Η φόρμα έχει αποθηκευτεί τοπικά. Περιμένετε να επανέλθει η σύνδεση.');
+      return false;
+    }
+  });
+  // --- End Offline Resilience ---
 
 });
     </script>
