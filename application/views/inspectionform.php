@@ -112,6 +112,10 @@ if ($cp['name_section'] != $scp) { ?>
     <div class="col-sm-5 text-center text-sm-right">
 		<?php // add camera button to point ?>
 		<button type="button" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "disabled"; } ?> id="opencamera_<?= $cp['id_cp']; ?>"  onclick="configurenew(<?= $cp['id_cp']; ?>)" class="btn btn-primary"><i class="fas fa-camera"></i></button>	
+        <label class="btn btn-info mb-0" id="uploadcamerabtn_<?= $cp['id_cp']; ?>" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "disabled"; } ?> style="cursor: pointer;">
+			<i class="fas fa-upload"></i>
+			<input type="file" id="uploadcamera_<?= $cp['id_cp']; ?>" <?php if (!isset($inspscore) || (isset($inspscore) && $inspscore[$cp['id_cp']] == 0)) { echo "disabled"; } ?> style="display: none;" accept="image/*" multiple onchange="uploadCheckpointPhoto(this, <?= $cp['id_cp']; ?>)">
+		</label>
 		<?php // add camera button to point ?>
     <div class="btn-group btn-group-toggle " data-toggle="buttons">
   <label class="btn btnnok btn-secondary <?php if (isset($inspscore) && $inspscore[$cp['id_cp']] == -1) { echo "active"; } ?>">
@@ -704,7 +708,58 @@ async function uploadFile() {
   spinnerdiv.style.setProperty("display", "none");
 }
 
+async function uploadCheckpointPhoto(inputElement, idcp) {
+  if (!navigator.onLine) {
+    alert("Είστε εκτός σύνδεσης! Η μεταφόρτωση δεν είναι δυνατή αυτή τη στιγμή.");
+    return;
+  }
+  
+  const files = inputElement.files;
+  if (!files || files.length === 0) return;
+  
+  let spinnerdiv = document.getElementById("spinner");
+  spinnerdiv.classList.add("d-flex");
+  spinnerdiv.style.removeProperty("display");
+  $("#spinner").addClass("d-flex").show();
 
+  let formData = new FormData();
+  Array.from(files).forEach(file => formData.append("file[]", file));
+
+  try {
+    await $.ajax({
+      url: '/inspection/imgupload',
+      type: 'post',
+      data: formData,
+      dataType: 'json',
+      contentType: false,
+      processData: false,
+      success: function(response) {
+        response.files.forEach(function(url) {
+          let newKey = "up-" + Date.now() + "-" + Math.floor(Math.random()*10000);
+          document.getElementById("results_" + idcp).innerHTML +=
+            `<div id="eimg-${newKey}" class="col-md-3 mb-2">
+                <img class="img-fluid" src="${url}"/>
+              </div>`;
+          var input = document.createElement("input");
+          input.setAttribute("type", "hidden");
+          input.setAttribute("name", "cpinspimg[" + idcp + "][]");
+          input.setAttribute("value", url);
+          document.getElementById("imagefields").appendChild(input);
+        });
+        highlightSubmitButtons();
+      },
+      error: function(xhr, status, error) {
+        alert("Upload failed: " + error);
+      }
+    });
+  } catch (e) {
+    alert("Network error: " + e.message);
+  }
+
+  spinnerdiv.classList.remove("d-flex");
+  spinnerdiv.style.setProperty("display", "none");
+  inputElement.value = "";
+}
 
  // }
 
@@ -722,6 +777,8 @@ jQuery(document).ready(function($) {
 {
   $cpidthis = $(this).data("cpid");
 	$('#opencamera_'+ $cpidthis ).prop('disabled', false);
+	$('#uploadcamerabtn_'+ $cpidthis ).prop('disabled', false);
+	$('#uploadcamera_'+ $cpidthis ).prop('disabled', false);
 
       var total1 = 0;
       var total2 = 0;

@@ -10,11 +10,16 @@
 		"slack": "https://codeigniterchat.slack.com",
 		"source": "https://github.com/bcit-ci/CodeIgniter"
 	},
+	"config": {
+		"audit": {
+			"block-insecure": false
+		}
+	},
 	"require": {
-		"dompdf/dompdf" : "^0.8.0",
-		"mpdf/mpdf" : "^8.0.0",
-		"tecnickcom/tcpdf" : "^6.9.1",
-		"phpseclib/phpseclib":"~3.0",
+		"dompdf/dompdf": "^0.8.0",
+		"mpdf/mpdf": "^8.0.0",
+		"tecnickcom/tcpdf": "^6.9.1",
+		"phpseclib/phpseclib": "~3.0",
 		"setasign/fpdi-tcpdf": "^2.3"
-  }
+	}
 }
