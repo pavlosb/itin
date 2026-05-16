@@ -12,6 +12,8 @@ $doors_vhcl = "";
 $colour_vhcl = "";
 $displ_vhcl = "";
 $pow_vhcl = "";
+$fueltyp_vhcl = "";
+$wheeldrive_vhcl = "";
 if (isset($vhcldata)) {
   $id_vhcl = $vhcldata[0]->id_vhcl;
   $client_vhcl = $vhcldata[0]->client_vhcl;

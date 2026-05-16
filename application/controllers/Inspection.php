@@ -103,6 +103,7 @@ class Inspection extends CI_Controller {
 				$data['inspection'] = $inspections[0];
 				$data['vehicleinfo'] = array ('vhclreg' => $vehicle->reg_vhcl, 'vhclmake' => $vehicle->make_vhcl, 'modelvhcl' => $vehicle->model_vhcl);
 				$data['checkpoints'] = $this->itindata_model->get_checkpoints();
+				$data['signature'] = null;
 				$this->load->view('header', $data);
 				$this->load->view('inspectionform', $data);
 				$this->load->view('footer', $data);
@@ -502,7 +503,7 @@ $imgdata = [];
 if (!empty($photos)) {
 foreach ($photos as $key => $filename):
 	if ($filename!=""){
-	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename));
+	$imgdata[] = array('inspectionid_img' => $this->input->post('inspectionid_insres'), 'filename_img' => basename($filename), 'chkpointid_img' => NULL);
 	}
 endforeach;
 }
@@ -1021,22 +1022,22 @@ echo $url;
 
 
 
-	
-for($i=0;$i < count($_FILES['file']);$i++)  
-  {  
- /* Get the name of the uploaded file */
-$filename = str_replace(' ', '_', $_FILES['file']['name'][$i]);
+$url = [];
+if (isset($_FILES['file']['name']) && is_array($_FILES['file']['name'])) {
+	for($i=0;$i < count($_FILES['file']['name']);$i++)  
+	{  
+		/* Get the name of the uploaded file */
+		$filename = str_replace(' ', '_', $_FILES['file']['name'][$i]);
 
-/* Choose where to save the uploaded file */
-$location = "upload/".$filename;
+		/* Choose where to save the uploaded file */
+		$location = "upload/".$filename;
 
-/* Save the uploaded file to the local filesystem */
-if ( move_uploaded_file($_FILES['file']['tmp_name'][$i], $location) ) { 
-	$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
-} 
-//$fns[] = $filename;
+		/* Save the uploaded file to the local filesystem */
+		if ( move_uploaded_file($_FILES['file']['tmp_name'][$i], $location) ) { 
+			$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
+		} 
+	}
 }
-//$response['url'] = $url;
 $files = $url;
 //$howmany = count($_FILES["fileInput"]['name']);
 $response['files'] = $files;
@@ -1149,6 +1150,10 @@ private function _checksignature($inspid) {
  public function emailsend($inspid=null) {
 	if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 	{
+		$data = $this->data;
+		$user = $this->ion_auth->user()->row();
+		$data['userid'] = $user->id;
+		$data['username'] = $user->first_name." ".$user->last_name;
 		
 $this->load->library('email');
 $inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $inspid));
