@@ -27,7 +27,8 @@ class Admin extends CI_Controller {
 			$this->lang->load('itin','greek');
 			$sesdata = $this->session->userdata;
 			$this->data = array(
-			'user_lang' => $sesdata['site_lang']
+			'user_lang' => isset($sesdata['site_lang']) ? $sesdata['site_lang'] : "greek",
+            'ulcl' => (isset($sesdata['site_lang']) && $sesdata['site_lang'] == "english") ? "en" : "el"
 			);
 			
 	}
