@@ -1029,14 +1029,19 @@ if (isset($_FILES['file']['name']) && is_array($_FILES['file']['name'])) {
 	{  
 		/* Get the name of the uploaded file */
 		$filename = str_replace(' ', '_', $_FILES['file']['name'][$i]);
+		
+		$imageFileType = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+		$valid_extensions = array("jpg","jpeg","png","gif","webp");
+		
+		if(in_array($imageFileType, $valid_extensions)) {
+			/* Choose where to save the uploaded file */
+			$location = "upload/".$filename;
 
-		/* Choose where to save the uploaded file */
-		$location = "upload/".$filename;
-
-		/* Save the uploaded file to the local filesystem */
-		if ( move_uploaded_file($_FILES['file']['tmp_name'][$i], $location) ) { 
-			$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
-		} 
+			/* Save the uploaded file to the local filesystem */
+			if ( move_uploaded_file($_FILES['file']['tmp_name'][$i], $location) ) { 
+				$url[] = 'https://' . $_SERVER['HTTP_HOST'] .'/upload/' . $filename;
+			}
+		}
 	}
 }
 $files = $url;

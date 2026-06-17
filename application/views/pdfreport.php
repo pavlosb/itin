@@ -305,6 +305,7 @@ if ($pointscore != 0) {
     <?php 
     $im = 0;
     foreach ($inspimg[$cp['id_cp']] as $key => $value): 
+        if (strtolower(pathinfo($value['filename'], PATHINFO_EXTENSION)) == 'pdf') continue;
         if ($im % 2 == 0) echo "<tr>"; // Start a new row every 2 images
     ?>
         <td width="45%" align="center">
@@ -346,7 +347,7 @@ $scp = $cp['id_section'];
 									?>
 									<table width="100%" style="margin-top:50px; margin-bottom:15px">
 									<?php foreach ($inspimg[0] as $key=>$value): 
-										
+										if (strtolower(pathinfo($value['filename'], PATHINFO_EXTENSION)) == 'pdf') continue;
 								?>
 										
 <tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value['filename'] ?>" style="width: 100mm; height: auto;"/><br /><span class="smalltxt"><?= $value['caption'] ?></span></td></tr>

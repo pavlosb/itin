@@ -209,7 +209,7 @@ $scp = $cp['name_section'];
 </div>
 <div class="row pb-5">
 <div class = "col-md-12"><h5>Ανεβάστε φωτογραφίες</h5></div>
-	<div class = "col-md-9"><input id="fileupload" type="file"  name="fileupload[]" multiple/>
+	<div class = "col-md-9"><input id="fileupload" type="file" accept="image/*" name="fileupload[]" multiple/>
 	<!--<label class="custom-file-label" for="customFile">Επιλογή αρχείου</label> --></div>
 	<div class = "col-md-3">
 <button  type="button" class="btn btn-info btn-block" id="upload-button" onclick="uploadFile()"> Αποθήκευση </button></div>
