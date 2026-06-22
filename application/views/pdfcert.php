@@ -11,7 +11,7 @@ if (isset($user_lang) && $user_lang == "greek") {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
+   <link rel="stylesheet" href="<?php echo FCPATH; ?>assets/css/all.min.css">
 
    <style>
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
@@ -64,7 +64,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 
 </style>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
-   <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
+   <script src="<?php echo FCPATH; ?>assets/js/jquery-3.3.1.min.js"></script>
     <title>ITIN</title>
   </head>
   <body>
@@ -82,9 +82,9 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 </table>
 <table  width="100%" style="border:0px; margin-top:25px;">
 <tr>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1-<?php echo $sec1score ?>.jpg" width="100" height="102"></td>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge2-<?php echo $sec2score ?>.jpg" width="100" height="102"></td>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge3-<?php echo $sec3score ?>.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo FCPATH; ?>assets/images/dekra-gauge1-<?php echo $sec1score ?>.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo FCPATH; ?>assets/images/dekra-gauge2-<?php echo $sec2score ?>.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo FCPATH; ?>assets/images/dekra-gauge3-<?php echo $sec3score ?>.jpg" width="100" height="102"></td>
 </tr>
 <tr>
 <td align="center" class="smalltxt dgreen"><?= $this->lang->line('pdf_technology_check'); ?></td>
@@ -111,9 +111,9 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 <td width="2%">&nbsp;</td>
 <td align="right">
 <?php if ($result > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/dekra-stamp-new.jpg">
+<img src="<?php echo FCPATH; ?>assets/images/dekra-stamp-new.jpg">
 <?php } else { ?>
-<img src="<?php echo base_url(); ?>assets/images/dekra-stamp-new.jpg">
+<img src="<?php echo FCPATH; ?>assets/images/dekra-stamp-new.jpg">
 <?php } ?>
 </td>
  </tr>

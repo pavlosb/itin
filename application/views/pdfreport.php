@@ -15,7 +15,7 @@ if (isset($user_lang) && $user_lang == "greek") {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/all.min.css">
+     <link rel="stylesheet" href="<?php echo FCPATH; ?>assets/css/all.min.css">
     <style>
 			
 body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
@@ -66,7 +66,7 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 
 </style>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
-   <script src="<?php echo base_url(); ?>assets/js/jquery-3.3.1.min.js"></script>
+   <script src="<?php echo FCPATH; ?>assets/js/jquery-3.3.1.min.js"></script>
     <title>ITIN</title>
   </head>
   <body>
@@ -89,10 +89,10 @@ body {font-family:DejaVuSans;font-size:13px; line-height:14px;}
 E-Mail: dekra@imperial-dekra.gr<br />
 </td>
 <td align="right">
-<img src="<?php echo base_url(); ?>assets/images/dekra-imperial-crop.png" width="150" height="75">
+<img src="<?php echo FCPATH; ?>assets/images/dekra-imperial-crop.png" width="150" height="75">
 	<!--
 <?php //if ($result > 0) { ?>
-<img src="<?php echo base_url(); ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg" width="90" height="120">
+<img src="<?php echo FCPATH; ?>assets/images/<?php echo  $langprefix; ?>dekra-stamp.jpg" width="90" height="120">
 <?php //} else { ?>
 &nbsp;
 <?php //} ?>
@@ -152,9 +152,9 @@ E-Mail: dekra@imperial-dekra.gr<br />
 </table>
 <table  width="100%" style="border:0px; margin-top:15px;">
 <tr>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge1-<?php echo $sec1score ?>.jpg" width="100" height="102"></td>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge2-<?php echo $sec2score ?>.jpg" width="100" height="102"></td>
-<td align="center"><img src="<?php echo base_url(); ?>assets/images/dekra-gauge3-<?php echo $sec3score ?>.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo FCPATH; ?>assets/images/dekra-gauge1-<?php echo $sec1score ?>.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo FCPATH; ?>assets/images/dekra-gauge2-<?php echo $sec2score ?>.jpg" width="100" height="102"></td>
+<td align="center"><img src="<?php echo FCPATH; ?>assets/images/dekra-gauge3-<?php echo $sec3score ?>.jpg" width="100" height="102"></td>
 </tr>
 <tr>
 <td align="center" class="smalltxt dgreen"><?= $this->lang->line('pdf_technology_check'); ?></td>
@@ -241,7 +241,7 @@ if ($x==3) {?>
             <table border="0" padding="0" width="100%" class="newsect-<?= $x ?>">
             <tr><td colspan="3">
             <table width="100%" style="margin-bottom:15px"><tr>
-            <td width="22%"><img src="<?php echo base_url(); ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
+            <td width="22%"><img src="<?php echo FCPATH; ?>assets/images/sect-<?= $x ?>.jpg" width="100" height="98"></td>
             <td width="30%" valign="top" style="padding-right:1%; font-size:16px;" class="text-right dgreen"><?= $this->lang->line('pdf_vehicle_description'); ?>:</td>
             <td width="20%" valign="top" style="margin-left:1%" class="small"><?= $this->lang->line('pdf_type_vhcl'); ?><br /><?= $this->lang->line('pdf_make_vhcl'); ?><br /><?= $this->lang->line('pdf_model_vhcl'); ?>:<br /><?= $this->lang->line('pdf_vin_vhcl'); ?><br /><?= $this->lang->line('pdf_displpow_vhcl'); ?></td>
             <td class="small" valign="top"><?php echo $inspection->type_vhcl; ?><br /><?php echo $inspection->make_vhcl; ?><br /><?php echo $inspection->model_vhcl; ?><br /><?php echo $inspection->vin_vhcl; ?><br /><?php echo $inspection->pow_vhcl; ?>kW / <?php echo $inspection->displ_vhcl; ?>ccm</td></tr>
@@ -269,11 +269,11 @@ if ($pointscore != 0) {
 	<td class="text-center" style="width:7%; padding:2px 0 0 0 <?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>"><?php 
 	
 	 if ($pointscore > 0) { ?>
-	<img src="<?php echo base_url(); ?>assets/images/check.png" width="18" height="18">
+	<img src="<?php echo FCPATH; ?>assets/images/check.png" width="18" height="18">
 	 <?php } else if ($pointscore == 0) { ?>
-			<img src="<?php echo base_url(); ?>assets/images/minus.png" width="18" height="18">
+			<img src="<?php echo FCPATH; ?>assets/images/minus.png" width="18" height="18">
 	 <?php } else { ?>
-			<img src="<?php echo base_url(); ?>assets/images/times.png" width="18" height="18">
+			<img src="<?php echo FCPATH; ?>assets/images/times.png" width="18" height="18">
 			 <?php } ?>
 	</td>
 	<td class="text-center" style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">&nbsp;</td>
@@ -308,7 +308,7 @@ if ($pointscore != 0) {
         if ($im % 2 == 0) echo "<tr>"; // Start a new row every 2 images
     ?>
         <td width="45%" align="center">
-            <img src="<?= base_url() ?>upload/<?= $value['filename'] ?>" style="width: 50mm; height: auto;"/><br /><span class="smalltxt"><?= $value['caption'] ?></span>
+            <img src="<?= FCPATH ?>upload/<?= $value['filename'] ?>" style="width: 50mm; height: auto;"/><br /><span class="smalltxt"><?= $value['caption'] ?></span>
         </td>
     <?php 
         $im++;
@@ -349,7 +349,7 @@ $scp = $cp['id_section'];
 										
 								?>
 										
-<tr><td width="100%" align="center"><img src="<?= base_url() ?>upload/<?= $value['filename'] ?>" style="width: 100mm; height: auto;"/><br /><span class="smalltxt"><?= $value['caption'] ?></span></td></tr>
+<tr><td width="100%" align="center"><img src="<?= FCPATH ?>upload/<?= $value['filename'] ?>" style="width: 100mm; height: auto;"/><br /><span class="smalltxt"><?= $value['caption'] ?></span></td></tr>
 
 							<?php		
 						$im = $im + 1;
