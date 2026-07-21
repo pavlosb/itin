@@ -816,59 +816,64 @@ redirect('inspection/inspections_list', 'refresh');
 
 	}
 
-	public function resetinspection() 
+	public function resetinspection()
 	{
-	
-		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
-		{
+		$status = array('reseted' => 'nok');
 
-			$id = $this->input->post('id');
-			$user = $this->ion_auth->user()->row();
-			$data = $this->data;
-			$ulang = $data['user_lang'];
-			$data['userid'] = $user->id;
-			$data['username'] = $user->first_name." ".$user->last_name;
-			$inspections = $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id));
-			$data['inspection'] = $inspections[0];
-			$inspection = $inspections[0];
-			$dir ="/home/site/wwwroot/assets/pdfs/";
-			$grfile = $dir.$inspection->filename_inspection;
-			$enfile = $dir.$inspection->en_filename_inspection;
-			if ($ulang == "greek") {
-				$langprefix ="";
-				$oldlang = "greek";
-				$newlang = "english";
-				$newprfx = "en_";
-			} else {
-				$langprefix ="en_";
-				$newlang = "greek";
-				$oldlang = "english";
-				$newprfx = "";
-				}
-			if (unlink($grfile) && unlink($enfile)) {
-			$updinsp['qrcode_inspection'] = NULL;		
-			$updinsp['status_inspection'] = 0;
-			$updinsp['filename_inspection'] = NULL;
-			$updinsp['en_filename_inspection'] = NULL;
+		if (!$this->ion_auth->logged_in() || !$this->ion_auth->in_group('inspectors')) {
+			$this->output->set_status_header(401);
+			$this->output->set_content_type('application/json');
+			echo json_encode($status);
+			return;
+		}
+
+		$id = (int) $this->input->post('id');
+		$inspections = $id > 0
+			? $this->itindata_model->get_inspectionsfull(array('id_inspection' => $id))
+			: array();
+
+		if (empty($inspections)) {
+			$this->output->set_status_header(404);
+			$this->output->set_content_type('application/json');
+			echo json_encode($status);
+			return;
+		}
+
+		$inspection = $inspections[0];
+		$dir = "/home/site/wwwroot/assets/pdfs/";
+		$filenames = array(
+			$inspection->filename_inspection,
+			$inspection->en_filename_inspection
+		);
+		$filesRemoved = true;
+
+		foreach ($filenames as $filename) {
+			if (empty($filename)) {
+				continue;
+			}
+
+			$file = $dir.basename($filename);
+			if (is_file($file) && !unlink($file)) {
+				$filesRemoved = false;
+			}
+		}
+
+		if ($filesRemoved) {
+			$updinsp = array(
+				'qrcode_inspection' => NULL,
+				'status_inspection' => 0,
+				'filename_inspection' => NULL,
+				'en_filename_inspection' => NULL
+			);
 			$this->itindata_model->upd_inspection($id, $updinsp);
-			$status['reseted'] = "ok";	
-			} else {
-			$status['reseted'] = "nok";	
-			}
-			$this->lang->load('itin',$oldlang);
-			$this->session->set_userdata('site_lang', $oldlang);
-			//redirect ('inspection/inspection_view/'.$id, 'refresh');
-			$this->output->set_header("Cache-Control: no-cache, must-revalidate");
-			$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
-			$this->output->set_header("Content-type: application/json");
-			echo json_encode($status) ;  
-				   
-			}
+			$status['reseted'] = 'ok';
+		}
 
-
-		
+		$this->output->set_header("Cache-Control: no-cache, must-revalidate");
+		$this->output->set_header("Expires: Mon, 4 Apr 1994 04:44:44 GMT");
+		$this->output->set_content_type('application/json');
+		echo json_encode($status);
 	}
-
 public function vindecoder($vinr) {
 		if ($this->ion_auth->logged_in() && $this->ion_auth->in_group('inspectors'))
 		{
