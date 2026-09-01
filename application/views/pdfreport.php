@@ -292,7 +292,7 @@ if ($pointscore != 0) {
 	
 	 ?>
 	<?php if (isset($inspremark[$cp['id_cp']]) || isset($inspimg[$cp['id_cp']])){ ?>
-		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
+		<tr style="padding:3px 0;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
 		<td style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">
 			<?php if (isset($inspimg[$cp['id_cp']])) {  ?>
 									
