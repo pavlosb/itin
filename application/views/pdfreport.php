@@ -291,46 +291,34 @@ if ($pointscore != 0) {
 	 <?php 
 	
 	 ?>
-	<?php if (isset($inspremark[$cp['id_cp']]) || isset($inspimg[$cp['id_cp']])){ ?>
-		<tr style="padding:3px 0;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
-		<td style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">
-			<?php if (isset($inspimg[$cp['id_cp']])) {  ?>
-									
-<?php
-									//$im = 1;
-									
-
-									?>
-									<table width="100%" style="margin-top:5px; margin-bottom:5px">
-    <?php 
-    $im = 0;
-    foreach ($inspimg[$cp['id_cp']] as $key => $value): 
-        if ($im % 2 == 0) echo "<tr>"; // Start a new row every 2 images
-    ?>
-        <td width="45%" align="center">
-            <img src="<?= FCPATH ?>upload/<?= $value['filename'] ?>" style="width: 50mm; height: auto;"/><br /><span class="smalltxt"><?= $value['caption'] ?></span>
-        </td>
-    <?php 
-        $im++;
-        if ($im % 2 == 0) echo "</tr>"; // Close the row after 2 images
-    endforeach;
-
-    // If the last row has only 1 image, close the row
-    if ($im % 2 != 0) echo "</tr>";
-    ?>
-</table>
-
-					
-							<?php	} ?>
+	<?php if (isset($inspimg[$cp['id_cp']])) {
+		$imagepairs = array_chunk($inspimg[$cp['id_cp']], 2);
+		foreach ($imagepairs as $imagepair): ?>
+		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
+		<td colspan="3" style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">
+			<table width="100%" style="margin-top:5px; margin-bottom:5px">
+			<tr>
+			<?php foreach ($imagepair as $value): ?>
+				<td width="50%" align="center">
+					<img src="<?= FCPATH ?>upload/<?= $value['filename'] ?>" style="width: 50mm; height: auto;"/><br /><span class="smalltxt"><?= $value['caption'] ?></span>
+				</td>
+			<?php endforeach; ?>
+			<?php if (count($imagepair) == 1) { ?><td width="50%">&nbsp;</td><?php } ?>
+			</tr>
+			</table>
 		</td>
-		<td style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">&nbsp;</td>
+		</tr>
+	<?php endforeach;
+	} ?>
+	<?php if (isset($inspremark[$cp['id_cp']])) { ?>
+		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
+		<td colspan="2" style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">&nbsp;</td>
 		<td style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">
-		<?php	if (isset($inspremark[$cp['id_cp']])) { ?>
-		<u><?= $this->lang->line('comment'); ?></u><br/>
-	<?php		echo $inspremark[$cp['id_cp']]; ?>
-	<?php } ?>
-	</td></tr>
-		<?php }
+			<u><?= $this->lang->line('comment'); ?></u><br/>
+			<?php echo $inspremark[$cp['id_cp']]; ?>
+		</td>
+		</tr>
+	<?php }
 	$z = $z + 1;
 	}	
 $mcp = $cp['mainsectid'];
