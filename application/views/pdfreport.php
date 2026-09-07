@@ -293,34 +293,18 @@ if ($pointscore != 0) {
 	 ?>
 	<?php if (isset($inspimg[$cp['id_cp']])) {
 		$imagepairs = array_chunk($inspimg[$cp['id_cp']], 2);
-		foreach ($imagepairs as $imagepair):
-    $imagepair = array_values(array_filter($imagepair, static function ($image) {
-        return isset($image['filename'])
-            && is_file(FCPATH . 'upload/' . $image['filename']);
-    }));
-
-    if (empty($imagepair)) {
-        continue;
-    }
-?>
+		foreach ($imagepairs as $imagepair): ?>
 		<tr style="padding:3px 0; page-break-inside:avoid;<?php if($z % 2 != 0){ echo "; background: #ccc;"; } ?>" class="pointrow">
 		<td colspan="3" style="<?php if($z % 2 != 0){ echo " border:1px solid #fff;"; } else {echo " border:1px solid #ccc;"; } ?>">
 			<table width="100%" style="margin-top:5px; margin-bottom:5px">
-			<?php if (
-    isset($value['filename'])
-    && is_file(FCPATH . 'upload/' . $value['filename'])
-): ?>
-    <tr>
-        <td width="100%" align="center">
-            <img
-                src="<?= FCPATH ?>upload/<?= $value['filename'] ?>"
-                style="width: 100mm; height: auto;"
-            />
-            <br />
-            <span class="smalltxt"><?= $value['caption'] ?></span>
-        </td>
-    </tr>
-<?php endif; ?>
+			<tr>
+			<?php foreach ($imagepair as $value): ?>
+				<td width="50%" align="center">
+					<img src="<?= FCPATH ?>upload/<?= $value['filename'] ?>" style="width: 50mm; height: auto;"/><br /><span class="smalltxt"><?= $value['caption'] ?></span>
+				</td>
+			<?php endforeach; ?>
+			<?php if (count($imagepair) == 1) { ?><td width="50%">&nbsp;</td><?php } ?>
+			</tr>
 			</table>
 		</td>
 		</tr>
